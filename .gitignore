@@ -1,0 +1,13 @@
+# Local secrets (including nested environment files)
+.env
+.env.*
+!.env.example
+
+# Runtime content is stored in Docker volumes; only our plugin is source-controlled.
+/wp-content/*
+!/wp-content/plugins/
+/wp-content/plugins/*
+!/wp-content/plugins/love-fortune-core/
+*.log
+.DS_Store
+Thumbs.db
