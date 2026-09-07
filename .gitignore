@@ -11,3 +11,6 @@
 *.log
 .DS_Store
 Thumbs.db
+
+# Development tools are kept outside the WordPress document root.
+/.tools/

@@ -1,7 +1,7 @@
 # LOVE FORTUNE — 로컬 Docker 개발환경
 
 이번 구성은 `LF-BOOT-001`(T00 중 Docker 로컬 환경)에 해당합니다.
-WordPress, PHP 8.3/Apache, MySQL 8.4를 실행합니다. Composer, CI 및 T01 플러그인 구현은 후속 작업입니다.
+WordPress, PHP 8.3/Apache, MySQL 8.4를 실행합니다. T01 플러그인 부트스트랩 코드가 포함되어 있으며 Composer, CI는 후속 작업입니다.
 일반 사용자 Birth Data 테이블, 계산 엔진, LOVE SCORE, REST 비즈니스 로직, AI, 사용자 UI, Admin 기능은 구현하지 않습니다.
 
 ## 준비
@@ -49,7 +49,9 @@ MySQL은 호스트 포트를 공개하지 않으며 WordPress가 Compose 내부 
 5. 생성한 운영자 계정으로 로그인합니다. DB 연결 정보는 환경변수로 제공되므로 입력할 필요가 없습니다.
 
 WordPress 기본 설치 테이블과 운영 계정만 생성됩니다. LOVE FORTUNE 전용 테이블은 생성하지 않습니다.
-플러그인 폴더는 현재 `.gitkeep`만 있으므로 플러그인 목록에 나타나지 않습니다. 활성화 가능한 플러그인은 T01에서 구현합니다.
+설치 후 **플러그인 → LOVE FORTUNE Core → 활성화**를 선택합니다.
+현재 공통 부트스트랩만 포함하여 별도 메뉴/화면은 추가하지 않습니다.
+구조, 범위와 테스트 명령은 [플러그인 README](wp-content/plugins/love-fortune-core/README.md)를 참고하세요.
 
 ## 종료 / 재시작
 
