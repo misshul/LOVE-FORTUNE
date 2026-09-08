@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "requestId": "synthetic-request-only",
+    "versions": {
+      "serviceVersion": "synthetic-fixture-v1",
+      "apiVersion": "v1",
+      "sajuEngineVersion": "synthetic-fixture-v1",
+      "astrologyEngineVersion": "synthetic-fixture-v1",
+      "scoreVersion": "synthetic-fixture-v1",
+      "configVersion": "synthetic-fixture-v1",
+      "locationReferenceVersion": "synthetic-fixture-v1",
+      "timezoneDataVersion": "synthetic-fixture-v1",
+      "ephemerisProviderVersion": "synthetic-fixture-v1",
+      "ephemerisDataVersion": "synthetic-fixture-v1"
+    }
+  },
+  "overallScore": null,
+  "status": "INSUFFICIENT_DATA",
+  "resultConfidence": 0,
+  "coverage": 0.8,
+  "categories": {
+    "ATTRACTION": {
+      "score": 50,
+      "status": "INSUFFICIENT_DATA",
+      "coverage": 1.01,
+      "resultConfidence": 0
+    },
+    "EMOTION": {
+      "score": 50,
+      "status": "INSUFFICIENT_DATA",
+      "coverage": 0.8,
+      "resultConfidence": 0
+    },
+    "COMMUNICATION": {
+      "score": 50,
+      "status": "INSUFFICIENT_DATA",
+      "coverage": 0.8,
+      "resultConfidence": 0
+    },
+    "PASSION": {
+      "score": 50,
+      "status": "INSUFFICIENT_DATA",
+      "coverage": 0.8,
+      "resultConfidence": 0
+    },
+    "STABILITY": {
+      "score": 50,
+      "status": "INSUFFICIENT_DATA",
+      "coverage": 0.8,
+      "resultConfidence": 0
+    },
+    "HARMONY": {
+      "score": 50,
+      "status": "INSUFFICIENT_DATA",
+      "coverage": 0.8,
+      "resultConfidence": 0
+    },
+    "SUPPORT": {
+      "score": 50,
+      "status": "INSUFFICIENT_DATA",
+      "coverage": 0.8,
+      "resultConfidence": 0
+    },
+    "LONG_TERM": {
+      "score": 50,
+      "status": "INSUFFICIENT_DATA",
+      "coverage": 0.8,
+      "resultConfidence": 0
+    }
+  },
+  "features": [],
+  "warnings": []
+}

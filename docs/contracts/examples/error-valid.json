@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "PAYLOAD_TOO_LARGE",
+    "messageKey": "error.payload_too_large",
+    "details": {}
+  }
+}

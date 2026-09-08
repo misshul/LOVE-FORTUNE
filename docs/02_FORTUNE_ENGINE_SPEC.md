@@ -1,9 +1,12 @@
 # LOVE FORTUNE
 # 02_FORTUNE_ENGINE_SPEC.md
 
-Version: 2.0.0
-Status: FINAL
+Version: 3.2.0
+Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: Fortune Engine Specification
+
+Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
+Freeze Gate: [Freeze validation and readiness](contracts/README.md)
 
 ---
 
@@ -15,19 +18,9 @@ AI는 본 계산에 참여하지 않는다.
 
 ---
 
-# 2. 전체 Engine 구조
+# 2. Engine Pipeline
 
-```text
-Validated Birth Input
-↓
-Calendar / Time Normalization
-├─ Saju Engine
-└─ Astrology Engine
-↓
-Structured Relationship Features
-↓
-Score Engine
-```
+Normalized input -> Saju/Astrology -> Structured Features -> Score/Period -> deterministic result. Structured Features feed both Score Engine and AI evidence selection. AI runs through a separate API and is not a Core dependency.
 
 ---
 
@@ -148,15 +141,9 @@ Timezone correction과 longitude correction을 중복 적용하지 않는다.
 
 ---
 
-# 8. Birth Time Unknown — Saju
+# 8. Birth Time Unknown - Saju
 
-출생시간을 모르는 경우:
-
-- year/month/day pillar 계산 가능
-- hour pillar = null
-- hour 기반 feature 제외
-- limited precision warning 반환
-- 임의 hour 생성 금지
+Hour Pillar is UNKNOWN; never invent a birth time. Preserve boundary candidates. Group by ruleId+subject+category+period; signedValue and numeric rawValue use candidate means. featureConfidence uses agreement and availability ratio. Normative contract: [Final Decision v2 SC-01](contracts/runtime-contract-v2.md#sc-01-confidence-and-coverage). Normative contract: [Final Decision v2 SC-02](contracts/runtime-contract-v2.md#sc-02-rule-catalog-and-candidates).
 
 ---
 
@@ -173,26 +160,9 @@ weighted_strength
 
 ---
 
-# 10. Saju 관계 Feature
+# 10. Saju Feature Direction
 
-예:
-
-```json
-{
-  "source": "SAJU",
-  "rule": "DAY_BRANCH_COMBINATION",
-  "categories": ["HARMONY", "LONG_TERM"],
-  "direction": "POSITIVE",
-  "strength": 0.85,
-  "confidence": 1.0
-}
-```
-
-합/충은 primary,
-형/해/파는 secondary relation으로 취급한다.
-
-규칙은 카테고리별 의미를 가진다.
-단순히 합=좋음, 충=나쁨으로 처리하지 않는다.
+Hap/Samhap are primary supportive relations; Chung/Hyeong/Hae require contextual interpretation. Do not automatically map every Hap to positive or every Chung to negative. The versioned rule catalog must define category-specific direction, signed value and weight factors. Unregistered rules cannot contribute to production scores (SC-02).
 
 ---
 
@@ -312,11 +282,13 @@ Jupiter / Saturn      -1°
 Uranus / Neptune / Pluto -2°
 ```
 
-두 행성 adjustment 결합은 현재 versioned product rule을 사용한다.
+The two planet orb adjustments require a specified combination rule (SC-02). Do not assume an unlisted versioned rule exists.
 
 ---
 
 # 16. Aspect Strength
+
+This geometric measure is not an additional score multiplier. Its mapping into the approved weight/feature catalog remains SC-02.
 
 ```text
 strength =
@@ -331,14 +303,9 @@ Clamp:
 
 ---
 
-# 17. Birth Time Unknown — Astrology
+# 17. Birth Time Unknown - Astrology
 
-출생시간을 모르면:
-
-- ASC unavailable
-- House unavailable
-- base LOVE SCORE penalty 없음
-- Moon uncertainty 별도 처리
+ASC/House are UNKNOWN with zero score weight. Evaluate possible Moon positions across the unknown interval without inventing a representative time. Candidate grouping/agreement/availability follows v2. Normative contract: [Final Decision v2 SC-01](contracts/runtime-contract-v2.md#sc-01-confidence-and-coverage). Normative contract: [Final Decision v2 SC-02](contracts/runtime-contract-v2.md#sc-02-rule-catalog-and-candidates).
 
 ---
 
@@ -377,8 +344,7 @@ EphemerisProviderInterface
 Provider metadata:
 
 ```text
-providerName
-providerSoftwareVersion
+ephemerisProviderVersion
 ephemerisDataVersion
 ```
 
@@ -392,98 +358,27 @@ ephemerisDataVersion
 
 ---
 
-# 20. Daily Astrology
+# 20. Daily Astrology / DST
 
-Daily target timezone 기준:
-
-```text
-00:00
-06:00
-12:00
-18:00
-```
-
-각 시점을 UTC로 변환해 계산한다.
-
-Outer planets는 direct daily influence 0을 기본으로 한다.
+Four nominal samples:06:00,12:00,18:00,23:00 in targetTimezone. Exclude missing samples; source signal=clamp(0.75*mean+0.25*signedPeak,-1,1). Peak ties select earlier local sample. Nonexistent local time moves to first valid instant afterward; ambiguous local time selects earlier UTC instant. Record pinned timezoneDataVersion. Outer daily direct influence remains0. Normative contract: [Final Decision v2 SC-05](contracts/runtime-contract-v2.md#sc-05-daily-sampling-and-dst).
 
 ---
 
 # 21. Period Rules
 
-Hierarchy:
-
-```text
-Lifetime
-↓
-Yearly
-↓
-Monthly
-↓
-Weekly
-↓
-Daily
-```
-
-Daily Saju는 target timezone date 기준.
-
-Weekly:
-
-```text
-Monday–Sunday
-```
-
-Monthly:
-
-```text
-Calendar Month
-```
-
-Yearly:
-
-```text
-Gregorian Year Presentation
-```
-
-Saju annual boundary:
-
-```text
-Lichun
-```
+Dependency: Lifetime -> Daily -> Monthly -> Yearly; Weekly also derives from Daily. Monthly is the mean of valid daily scores; Yearly is the mean of valid monthly scores. Remove standalone major_period_signal, saju_annual and major_transit formulas. Period rules contribute versioned structured features through the common pipeline. Saju period features require both people. See 03 for aggregation.
 
 ---
 
-# 22. Structured Feature 공통 모델
+# 22. Structured Feature Contract
 
-```json
-{
-  "source": "ASTROLOGY",
-  "rule": "VENUS_MARS_TRINE",
-  "categories": ["ATTRACTION", "PASSION"],
-  "direction": "POSITIVE",
-  "strength": 0.92,
-  "confidence": 1.0
-}
-```
-
-Direction:
-
-```text
-POSITIVE
-NEGATIVE
-NEUTRAL
-MIXED
-```
+Fields: featureId,ruleId,source,subject,category,direction,signedValue,rawValue,baseWeight,confidence,period,metadata. subject is PERSON_A/PERSON_B/PAIR. rawValue is scalar or null. Period uses LIFETIME/DAY/WEEK/MONTH/YEAR objects. Metadata is an explicit allowlist. featureId is ft_ plus48 lowercase hex SHA-256 characters over canonical identity fields; signedValue/confidence are excluded. No personal identifiers. Normative contract: [Final Decision v2 SC-04](contracts/runtime-contract-v2.md#sc-04-feature-and-canonical-identity).
 
 ---
 
 # 23. Confidence
 
-Confidence는 score penalty 자체가 아니라
-해당 feature/evidence의 신뢰도를 나타낸다.
-
-Missing data는 coverage/confidence로 표현하고
-무조건 낮은 점수로 처리하지 않는다.
+Normative contract: [Final Decision v2 SC-01](contracts/runtime-contract-v2.md#sc-01-confidence-and-coverage). feature confidence wire field is confidence. coverage is available/eligible pre-confidence weight, not feature count. Category resultConfidence is coverage times weighted feature confidence; overall uses the v2 pre-coverage categoryResultConfidence formula. Missing-input supported rules remain eligible; unsupported/disabled rules do not.
 
 ---
 
@@ -516,5 +411,10 @@ Engine 구현은 다음을 만족해야 한다.
 - timezone aware
 - birth-time-unknown aware
 - provider abstracted
+
+
+## Final v3 contract alignment
+
+[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (SAJU_DAY_PILLAR_EPOCH, EPHEMERIS_PROVIDER).
 
 END OF DOCUMENT

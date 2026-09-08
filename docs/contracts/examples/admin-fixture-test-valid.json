@@ -1,0 +1,15 @@
+{
+  "fixtureId": "SYNTHETIC_REGISTERED_FIXTURE",
+  "versions": {
+    "serviceVersion": "synthetic-fixture-v1",
+    "apiVersion": "v1",
+    "sajuEngineVersion": "synthetic-fixture-v1",
+    "astrologyEngineVersion": "synthetic-fixture-v1",
+    "scoreVersion": "synthetic-fixture-v1",
+    "configVersion": "synthetic-fixture-v1",
+    "locationReferenceVersion": "synthetic-fixture-v1",
+    "timezoneDataVersion": "synthetic-fixture-v1",
+    "ephemerisProviderVersion": "synthetic-fixture-v1",
+    "ephemerisDataVersion": "synthetic-fixture-v1"
+  }
+}

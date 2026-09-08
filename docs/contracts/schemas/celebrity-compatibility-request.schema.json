@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/celebrity-compatibility-request.schema.json",
+  "title": "LOVE FORTUNE celebrity-compatibility-request v2",
+  "type": "object",
+  "properties": {
+    "personA": {
+      "$ref": "person-input.schema.json"
+    },
+    "relationshipType": {
+      "enum": [
+        "COUPLE",
+        "MARRIED",
+        "DATING",
+        "CRUSH",
+        "FRIEND",
+        "UNKNOWN"
+      ]
+    },
+    "targetTimezone": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Required semantic IANA tzdb validation; no implicit default."
+    },
+    "locale": {
+      "enum": [
+        "ko-KR",
+        "ja-JP",
+        "en-US"
+      ],
+      "default": "ko-KR"
+    }
+  },
+  "required": [
+    "personA",
+    "relationshipType",
+    "targetTimezone"
+  ],
+  "additionalProperties": false,
+  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate."
+}

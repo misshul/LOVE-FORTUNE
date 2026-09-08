@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-09-08T22:48:55.804Z",
+  "structural": {
+    "schemaFiles": 22,
+    "examples": 103,
+    "validExamples": 63,
+    "invalidExamples": 40,
+    "disabledRuleRecords": 19,
+    "enabledRules": 0,
+    "categoryWeights": 8,
+    "canonicalVectors": 6,
+    "signedValid": 2,
+    "signedInvalid": 8,
+    "httpPrivacyVectors": 19,
+    "openapiOperations": 20,
+    "adminOperations": 7,
+    "publicPostOperations": 8,
+    "openapi": "PASS"
+  },
+  "semantic": {
+    "existingSemanticVectors": 36,
+    "v3SemanticVectors": 44,
+    "totalSemanticVectors": 80,
+    "dstVectors": 4,
+    "tzdb": "2025c",
+    "icu": "78.2",
+    "result": "PASS",
+    "comparison": "exact; decimal rational confidence and HALF_UP rounding"
+  },
+  "codeFilesChanged": "NONE",
+  "nonDocsHashed": 30,
+  "specConflictRemaining": 0,
+  "crossSpecContradictionsRemaining": 0,
+  "scStatuses": {
+    "SC-01": "RESOLVED",
+    "SC-02": "RESOLVED",
+    "SC-03": "RESOLVED",
+    "SC-04": "RESOLVED",
+    "SC-05": "RESOLVED",
+    "SC-06": "RESOLVED",
+    "SC-07": "RESOLVED",
+    "SC-08": "RESOLVED",
+    "SC-09": "RESOLVED",
+    "SC-10": "RESOLVED"
+  },
+  "contractFreeze": "PASS",
+  "scoreEngineReadiness": "BLOCKED_CATALOG",
+  "productionEngineReadiness": "BLOCKED_EXTERNAL",
+  "blockers": [
+    "SCORING_RULE_CATALOG_APPROVAL",
+    "SAJU_DAY_PILLAR_EPOCH",
+    "EPHEMERIS_PROVIDER"
+  ]
+}

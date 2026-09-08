@@ -1,0 +1,15 @@
+{
+  "personA": {
+    "birthDate": "1995-06-15",
+    "birthLocationId": "SYNTHETIC_LOCATION_A",
+    "birthTime": "10:30"
+  },
+  "relationshipType": "COUPLE",
+  "locale": "en-US",
+  "targetTimezone": "Asia/Tokyo",
+  "personB": {
+    "birthDate": "1995-06-15",
+    "birthLocationId": "SYNTHETIC_LOCATION_A",
+    "birthTime": "10:30"
+  }
+}

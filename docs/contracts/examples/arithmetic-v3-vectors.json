@@ -1,0 +1,457 @@
+{
+  "provenance": "Synthetic documentation regression inputs for approved Final Decision v3; no user data or new scoring rules.",
+  "coverage": [
+    {
+      "name": "zero-confidence-retains-coverage",
+      "eligible": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "available": [
+        {
+          "w": 4,
+          "c": 0
+        }
+      ],
+      "expected": {
+        "coverage": 0.8,
+        "categoryResultConfidence": 0,
+        "resultConfidence": 0,
+        "usable": 0
+      }
+    },
+    {
+      "name": "no-available",
+      "eligible": [
+        1
+      ],
+      "available": [],
+      "expected": {
+        "coverage": 0,
+        "categoryResultConfidence": 0,
+        "resultConfidence": 0,
+        "usable": 0
+      }
+    },
+    {
+      "name": "no-eligible",
+      "eligible": [],
+      "available": [],
+      "expected": {
+        "coverage": 0,
+        "categoryResultConfidence": 0,
+        "resultConfidence": 0,
+        "usable": 0
+      }
+    },
+    {
+      "name": "weighted-available-includes-zero-confidence",
+      "eligible": [
+        3,
+        1,
+        1
+      ],
+      "available": [
+        {
+          "w": 3,
+          "c": 1
+        },
+        {
+          "w": 1,
+          "c": 0
+        }
+      ],
+      "expected": {
+        "coverage": 0.8,
+        "categoryResultConfidence": 0.75,
+        "resultConfidence": 0.6,
+        "usable": 1
+      }
+    },
+    {
+      "name": "zero-weight-unusable",
+      "eligible": [
+        1
+      ],
+      "available": [
+        {
+          "w": 0,
+          "c": 1
+        }
+      ],
+      "expected": {
+        "coverage": 0,
+        "categoryResultConfidence": 0,
+        "resultConfidence": 0,
+        "usable": 0
+      }
+    }
+  ],
+  "sourceConfidence": [
+    {
+      "samples": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "expected": 1
+    },
+    {
+      "samples": [
+        1,
+        null,
+        null,
+        null
+      ],
+      "expected": 0.25
+    },
+    {
+      "samples": [
+        0.8,
+        0.4,
+        null,
+        null
+      ],
+      "expected": 0.3
+    },
+    {
+      "samples": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "expected": 0
+    },
+    {
+      "samples": [
+        0,
+        null,
+        null,
+        null
+      ],
+      "expected": 0
+    }
+  ],
+  "dailyConfidence": [
+    {
+      "sources": [
+        {
+          "available": true,
+          "c": 0.25
+        },
+        {
+          "available": true,
+          "c": 1
+        }
+      ],
+      "expected": 0.625
+    },
+    {
+      "sources": [
+        {
+          "available": true,
+          "c": 0.25
+        },
+        {
+          "available": false,
+          "c": 0
+        }
+      ],
+      "expected": 0.25
+    },
+    {
+      "sources": [
+        {
+          "available": false,
+          "c": 0
+        },
+        {
+          "available": true,
+          "c": 0.5
+        }
+      ],
+      "expected": 0.5
+    },
+    {
+      "sources": [
+        {
+          "available": false,
+          "c": 0
+        },
+        {
+          "available": false,
+          "c": 0
+        }
+      ],
+      "expected": 0
+    },
+    {
+      "sources": [
+        {
+          "available": true,
+          "c": 0
+        },
+        {
+          "available": true,
+          "c": 1
+        }
+      ],
+      "expected": 0.5
+    }
+  ],
+  "validDays": [
+    {
+      "score": 50,
+      "lifetime": 50,
+      "error": false,
+      "status": "STABLE",
+      "supported": true,
+      "expected": true
+    },
+    {
+      "score": 50,
+      "lifetime": 50,
+      "error": false,
+      "status": "INSUFFICIENT_PERIOD_DATA",
+      "supported": true,
+      "expected": false
+    },
+    {
+      "score": null,
+      "lifetime": 50,
+      "error": false,
+      "status": "INSUFFICIENT_DATA",
+      "supported": true,
+      "expected": false
+    },
+    {
+      "score": 50,
+      "lifetime": null,
+      "error": false,
+      "status": "INSUFFICIENT_DATA",
+      "supported": true,
+      "expected": false
+    },
+    {
+      "score": 50,
+      "lifetime": 50,
+      "error": true,
+      "status": "STABLE",
+      "supported": true,
+      "expected": false
+    },
+    {
+      "score": 50,
+      "lifetime": 50,
+      "error": false,
+      "status": "STABLE",
+      "supported": false,
+      "expected": false
+    }
+  ],
+  "weekly": [
+    {
+      "scores": [
+        40,
+        40,
+        100
+      ],
+      "confidence": [
+        0.5,
+        0.5,
+        1
+      ],
+      "expectedScore": 60,
+      "expectedConfidence": 0.6666666666666666
+    },
+    {
+      "scores": [],
+      "confidence": [],
+      "expectedScore": null,
+      "expectedConfidence": 0
+    }
+  ],
+  "action": [
+    {
+      "refs": [
+        "a",
+        "b"
+      ],
+      "features": [
+        {
+          "id": "a",
+          "w": 3,
+          "c": 1
+        },
+        {
+          "id": "b",
+          "w": 1,
+          "c": 0
+        }
+      ],
+      "expected": 0.75
+    },
+    {
+      "refs": [
+        "a",
+        "b"
+      ],
+      "features": [
+        {
+          "id": "a",
+          "w": 0,
+          "c": 1
+        },
+        {
+          "id": "b",
+          "w": 2,
+          "c": 0.5
+        }
+      ],
+      "expected": 0.5
+    },
+    {
+      "refs": [
+        "a"
+      ],
+      "features": [
+        {
+          "id": "a",
+          "w": 0,
+          "c": 1
+        }
+      ],
+      "expected": null
+    },
+    {
+      "refs": [
+        "a"
+      ],
+      "features": [
+        {
+          "id": "a",
+          "w": 1,
+          "c": 0
+        }
+      ],
+      "expected": 0
+    },
+    {
+      "refs": [],
+      "features": [
+        {
+          "id": "a",
+          "w": 1,
+          "c": 1
+        }
+      ],
+      "expected": null
+    },
+    {
+      "refs": [
+        "missing"
+      ],
+      "features": [
+        {
+          "id": "a",
+          "w": 1,
+          "c": 1
+        }
+      ],
+      "expected": "INVALID_EVIDENCE_REF"
+    }
+  ],
+  "trend": [
+    {
+      "period": null,
+      "lifetime": 50,
+      "delta": null,
+      "status": "INSUFFICIENT_DATA",
+      "direction": "UNKNOWN"
+    },
+    {
+      "period": 50,
+      "lifetime": null,
+      "delta": null,
+      "status": "INSUFFICIENT_DATA",
+      "direction": "UNKNOWN"
+    },
+    {
+      "period": 50,
+      "lifetime": 50,
+      "delta": 0,
+      "status": "STABLE",
+      "direction": "STABLE"
+    },
+    {
+      "period": 53,
+      "lifetime": 50,
+      "delta": 3,
+      "status": "NOTICEABLE",
+      "direction": "UP"
+    },
+    {
+      "period": 47,
+      "lifetime": 50,
+      "delta": -3,
+      "status": "NOTICEABLE",
+      "direction": "DOWN"
+    },
+    {
+      "period": 58,
+      "lifetime": 50,
+      "delta": 8,
+      "status": "SIGNIFICANT",
+      "direction": "UP"
+    },
+    {
+      "period": 42,
+      "lifetime": 50,
+      "delta": -8,
+      "status": "SIGNIFICANT",
+      "direction": "DOWN"
+    },
+    {
+      "period": 52.99999,
+      "lifetime": 50,
+      "delta": 2.999989999999997,
+      "status": "STABLE",
+      "direction": "STABLE"
+    }
+  ],
+  "bands": [
+    {
+      "score": 44.9999,
+      "status": "CAUTION"
+    },
+    {
+      "score": 45,
+      "status": "BALANCED"
+    },
+    {
+      "score": 60,
+      "status": "GOOD"
+    },
+    {
+      "score": 75,
+      "status": "VERY_GOOD"
+    },
+    {
+      "score": 85,
+      "status": "EXCELLENT"
+    },
+    {
+      "score": 100,
+      "status": "EXCELLENT"
+    },
+    {
+      "score": null,
+      "status": "INSUFFICIENT_DATA"
+    }
+  ]
+}

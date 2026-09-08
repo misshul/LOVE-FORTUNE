@@ -1,0 +1,256 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/daily-response.schema.json",
+  "title": "LOVE FORTUNE daily-response v2",
+  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate.",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "$ref": "common.schema.json#/$defs/meta"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$"
+    },
+    "targetTimezone": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Required semantic IANA tzdb validation; no implicit default."
+    },
+    "lifetimeScore": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "multipleOf": 0.0001
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "dailyScore": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "multipleOf": 0.0001
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "dailyDelta": {
+      "type": "number",
+      "minimum": -18,
+      "maximum": 18,
+      "multipleOf": 0.0001
+    },
+    "dailyStatus": {
+      "enum": [
+        "VERY_LOW",
+        "LOW",
+        "STABLE",
+        "GOOD",
+        "VERY_GOOD",
+        "INSUFFICIENT_PERIOD_DATA",
+        "INSUFFICIENT_DATA"
+      ]
+    },
+    "resultConfidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "coverage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "$ref": "feature.schema.json"
+      }
+    },
+    "warnings": {
+      "$ref": "common.schema.json#/$defs/warnings"
+    },
+    "signedInterpretationContext": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "meta",
+    "date",
+    "targetTimezone",
+    "lifetimeScore",
+    "dailyScore",
+    "dailyDelta",
+    "dailyStatus",
+    "resultConfidence",
+    "coverage",
+    "features",
+    "warnings"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "dailyStatus": {
+            "const": "INSUFFICIENT_PERIOD_DATA"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "dailyDelta": {
+            "const": 0
+          },
+          "resultConfidence": {
+            "const": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifetimeScore": {
+            "type": "null"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "dailyScore": {
+            "type": "null"
+          },
+          "dailyStatus": {
+            "const": "INSUFFICIENT_DATA"
+          },
+          "resultConfidence": {
+            "const": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "dailyScore": {
+            "type": "null"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "dailyStatus": {
+            "const": "INSUFFICIENT_DATA"
+          },
+          "resultConfidence": {
+            "const": 0
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "dailyStatus": {
+            "not": {
+              "const": "INSUFFICIENT_DATA"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "dailyStatus": {
+            "const": "VERY_LOW"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "dailyDelta": {
+            "maximum": -12
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "dailyStatus": {
+            "const": "LOW"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "dailyDelta": {
+            "exclusiveMinimum": -12,
+            "maximum": -6
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "dailyStatus": {
+            "const": "STABLE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "dailyDelta": {
+            "exclusiveMinimum": -6,
+            "exclusiveMaximum": 6
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "dailyStatus": {
+            "const": "GOOD"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "dailyDelta": {
+            "minimum": 6,
+            "exclusiveMaximum": 12
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "dailyStatus": {
+            "const": "VERY_GOOD"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "dailyDelta": {
+            "minimum": 12
+          }
+        }
+      }
+    }
+  ]
+}

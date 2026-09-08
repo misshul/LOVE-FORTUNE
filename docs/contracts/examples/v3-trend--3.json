@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "requestId": "synthetic-request-only",
+    "versions": {
+      "serviceVersion": "synthetic-fixture-v1",
+      "apiVersion": "v1",
+      "sajuEngineVersion": "synthetic-fixture-v1",
+      "astrologyEngineVersion": "synthetic-fixture-v1",
+      "scoreVersion": "synthetic-fixture-v1",
+      "configVersion": "synthetic-fixture-v1",
+      "locationReferenceVersion": "synthetic-fixture-v1",
+      "timezoneDataVersion": "synthetic-fixture-v1",
+      "ephemerisProviderVersion": "synthetic-fixture-v1",
+      "ephemerisDataVersion": "synthetic-fixture-v1"
+    }
+  },
+  "period": {
+    "type": "WEEK",
+    "startDate": "2026-09-07",
+    "endDate": "2026-09-13",
+    "timezone": "Asia/Tokyo"
+  },
+  "targetTimezone": "Asia/Tokyo",
+  "resultConfidence": 0.8,
+  "coverage": 1,
+  "warnings": [],
+  "features": [],
+  "weeklyScore": 60,
+  "bestDays": [],
+  "cautionDays": [],
+  "volatility": 0,
+  "status": "GOOD",
+  "periodDelta": -3,
+  "trendStatus": "NOTICEABLE",
+  "trendDirection": "DOWN"
+}

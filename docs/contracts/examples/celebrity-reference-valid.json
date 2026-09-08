@@ -1,0 +1,11 @@
+{
+  "celebrityId": "SYNTHETIC_PUBLIC_REFERENCE",
+  "displayName": "Synthetic person",
+  "displayNameLocalized": {
+    "en-US": "Synthetic person"
+  },
+  "publicBirthPrecision": "UNKNOWN",
+  "availableFeatures": [],
+  "imageReference": null,
+  "sourceSummary": "Synthetic test reference, not a real celebrity."
+}

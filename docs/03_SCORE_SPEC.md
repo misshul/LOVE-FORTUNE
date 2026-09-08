@@ -1,9 +1,12 @@
 # LOVE FORTUNE
 # 03_SCORE_SPEC.md
 
-Version: 1.0.0
-Status: FINAL
+Version: 2.2.0
+Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: LOVE SCORE Specification
+
+Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
+Freeze Gate: [Freeze validation and readiness](contracts/README.md)
 
 ---
 
@@ -14,13 +17,9 @@ Daily / Weekly / Monthly / Yearly Score 규칙을 정의한다.
 
 ---
 
-# 2. 점수 기본
+# 2. Score Range / Canonical Precision
 
-- 범위: 0–100
-- Neutral: 50
-- Internal/response precision: 4 decimals
-- UI: rounded display
-- Status는 표시 반올림 이전 값 기준
+Category and overall scores range from 0 to 100; neutral is 50. Keep full precision in intermediate calculations. Canonical API scores use four decimal places, HALF_UP (74.123456 -> 74.1235). Determine status from the canonical score before UI rounding. No display clamp may change canonical score/status. Missing evidence follows sections 11 and 19.
 
 ---
 
@@ -56,107 +55,45 @@ Total = 1.00
 
 ---
 
-# 5. Saju / Astrology Source Weight
+# 5. Source Weight Application
 
-```text
-Category        Saju    Astrology
-
-ATTRACTION      .30     .70
-EMOTION         .40     .60
-COMMUNICATION   .40     .60
-PASSION         .30     .70
-STABILITY       .70     .30
-HARMONY         .60     .40
-SUPPORT         .55     .45
-LONG_TERM       .70     .30
-```
+Use the unified category feature aggregation in decision v1 sections 11-14. The previous lifetime Saju/Astrology percentage blend is superseded; do not add a separate source/category multiplier to effectiveWeight. Daily source weights remain 0.50/0.50 under section 23.
 
 ---
 
 # 6. Feature Value
 
-```text
-signed_value =
-direction_sign × strength
-```
-
-Direction sign:
-
-```text
-POSITIVE  +1
-NEGATIVE  -1
-NEUTRAL    0
-MIXED      category-specific
-```
+signedValue = +1 for POSITIVE, -1 for NEGATIVE, 0 for NEUTRAL. MIXED requires a registered category-specific value in [-1,1]. Unregistered rules cannot be scored. The former direction_sign times strength formula is superseded. rawValue is not an additional implicit multiplier.
 
 ---
 
 # 7. Effective Weight
 
-```text
-effective_weight =
-rule_weight
-× category_rule_weight
-× confidence
-```
+preConfidenceWeight=baseWeight*ruleWeight*pairWeight. For outer evidence cap that PRODUCT to0.50, then effectiveWeight=preConfidenceWeight*featureConfidence. categoryWeight applies only to overall. A single existing weight becomes baseWeight with the other factors1. Catalogs may only normalize documented values. Normative contract: [Final Decision v2 SC-02](contracts/runtime-contract-v2.md#sc-02-rule-catalog-and-candidates). Normative contract: [Final Decision v2 SC-03](contracts/runtime-contract-v2.md#sc-03-outer-cap).
 
 ---
 
-# 8. Source Category Raw
+# 8. Category Weighted Signal
 
-```text
-raw =
-Σ(signed_value × effective_weight)
-/
-Σ(effective_weight)
-```
-
-Range:
-
-```text
--1.0 ~ 1.0
-```
+After individual caps, confidence, outer cap and single-feature guardrail: E=sum(effectiveWeight); weightedSignal=sum(signedValue*effectiveWeight)/E. NEUTRAL contributes denominator weight. R=50+50*weightedSignal. A zero final effective-weight sum uses Raw Score50; coverage still follows section10. Normative contract: [Final Decision v2 SC-07](contracts/runtime-contract-v2.md#sc-07-daily-category-actions-and-guardrail).
 
 ---
 
-# 9. Raw → Score
+# 9. Category Raw Score
 
-```text
-score =
-50 + raw × 50
-```
+R = 50 + 50 * weightedSignal, in [0,100]. Apply evidence stabilization exactly once after this step.
 
 ---
 
-# 10. Evidence Stabilization
+# 10. Evidence Stabilization / Coverage
 
-```text
-E = Σ effective_weight
-```
-
-```text
-S = min(1, E / TARGET_EVIDENCE)
-```
-
-```text
-TARGET_EVIDENCE = 3.0
-```
-
-```text
-source_final =
-50 + (raw × 50) × S
-```
-
-Neutral feature는 numerator/denominator에서 제외 가능.
+categoryScore=50+(R-50)*coverage. coverage=clamp(sum(available preConfidenceWeight)/sum(eligible preConfidenceWeight),0,1), with zero denominator giving0. Do not multiply confidence into coverage. Unsupported rules are ineligible; missing-time supported rules remain eligible. Normative contract: [Final Decision v2 SC-01](contracts/runtime-contract-v2.md#sc-01-confidence-and-coverage).
 
 ---
 
-# 11. Missing Data
+# 11. Missing Data / Confidence
 
-Missing source/feature는 penalty가 아니라
-available evidence 기준 reweight한다.
-
-Coverage와 Confidence는 별도로 반환한다.
+No fixed missing-time penalty. Distinguish eligible, available and usable evidence. Only available Features with confidence>0 and preConfidenceWeight>0 are usable for scoring. No usable evidence gives category50/resultConfidence0/INSUFFICIENT_DATA while retaining structural coverage; exclude that category overall. All insufficient gives null overall. categoryResultConfidence is the preConfidenceWeight-weighted confidence over available evidence; category wire resultConfidence=coverage*categoryResultConfidence. Overall retains the v2 pre-coverage confidence formula. Normative contract: [SC-01 with v3 decisions](contracts/runtime-contract-v2.md#sc-01-confidence-and-coverage).
 
 ---
 
@@ -218,24 +155,15 @@ sqrt(weightA × weightB)
 
 ---
 
-# 15. Astrology Feature Weight
+# 15. Astrology Weight Catalog
 
-```text
-aspect_base_weight
-×
-planet_pair_weight
-×
-category_mapping_weight
-```
+Keep sections12-14 tables without inventing interpretations. Normalize existing weights only; a complete category/direction mapping is required before enabling a scoring rule. Missing mappings remain disabled and cannot contribute to production. See contracts/rules/astrology-rules.json and Normative contract: [Final Decision v2 SC-02](contracts/runtime-contract-v2.md#sc-02-rule-catalog-and-candidates).
 
 ---
 
 # 16. Outer Planet Cap
 
-각 Outer Planet rule weight 최대 0.50.
-
-Outer Planet Feature 전체 기여는
-해당 Category Astrology Weight의 최대 15%.
+Uranus/Neptune/Pluto only; Jupiter/Saturn are excluded. preConfidenceWeight=min(0.50,baseWeight*ruleWeight*pairWeight) for outer evidence. Apply featureConfidence, then alpha=min(1,(0.15/0.85)*N/O) to all outer effective weights when O>0. N/O sum non-outer/outer Astrology weights. N=0 means outer context only; O=0 means no scaling. Apply the all-feature guardrail afterward. Normative contract: [Final Decision v2 SC-03](contracts/runtime-contract-v2.md#sc-03-outer-cap).
 
 ---
 
@@ -269,35 +197,33 @@ DESTRUCTION            0.45
 
 ---
 
-# 19. Evidence Minimum
+# 19. Evidence Minimum / Overall
 
-Source/category evidence가 0.50 미만이면
-insufficient로 처리 가능.
+Use section 11 for usableEvidence and confidence. The previous optional E<0.50 insufficient-data threshold is superseded.
+
+overallScore = sum(available categoryScore * categoryWeight) / sum(available categoryWeight).
+
+With no available categories return null and INSUFFICIENT_DATA. Preserve section 4 category weights, whose full sum is 1.00. No additional resultConfidence penalty is permitted.
 
 ---
 
-# 20. Display Clamp
+# 20. Display
 
-Recommended:
-
-```text
-Category: 10–95
-Lifetime: 15–95
-```
-
-Internal raw와 display를 분리한다.
+Preserve canonical scores in [0,100]. Remove earlier category/lifetime display clamps. UI may format canonical values but must not recompute status. JSON numeric values need not preserve trailing zeros; the draft schema uses numbers.
 
 ---
 
 # 21. Lifetime Status
 
-```text
-0–44     CAUTION
-45–59    BALANCED
-60–74    GOOD
-75–84    VERY_GOOD
-85–100   EXCELLENT
-```
+Determine status from the canonical score:
+
+- [0,45): CAUTION
+- [45,60): BALANCED
+- [60,75): GOOD
+- [75,85): VERY_GOOD
+- [85,100]: EXCELLENT
+
+A category with no usableEvidence uses INSUFFICIENT_DATA even though its neutral score is 50.
 
 ---
 
@@ -319,23 +245,7 @@ max 5
 
 # 23. Daily Score
 
-```text
-daily_score =
-lifetime_score
-+
-daily_delta
-```
-
-```text
-daily_delta range = -18 ~ +18
-```
-
-Source:
-
-```text
-Saju       0.45
-Astrology  0.55
-```
+dailySignal=0.50*sajuDailySignal+0.50*astrologyDailySignal; delta=18*signal; score=clamp(lifetimeScore+delta,0,100). One source gets100%; neither gives lifetime/delta0/INSUFFICIENT_PERIOD_DATA. Lifetime null gives null dailyScore and INSUFFICIENT_DATA. Normative contract: [Final Decision v2 SC-05](contracts/runtime-contract-v2.md#sc-05-daily-sampling-and-dst). Normative contract: [Final Decision v2 SC-06](contracts/runtime-contract-v2.md#sc-06-dates-periods-and-statuses).
 
 ---
 
@@ -354,50 +264,21 @@ Outer     0 direct
 
 ---
 
-# 25. Daily Transit Aggregation
+# 25. Daily Transit Aggregation / DST
 
-4 samples:
-
-```text
-00:00
-06:00
-12:00
-18:00
-```
-
-```text
-transit_signal =
-0.75 × mean
-+
-0.25 × signed_peak
-```
+Versioned samples06:00/12:00/18:00/23:00. For signal, each source excludes unavailable samples; zero samples means unavailable. For confidence, sourceDailyConfidence=sum(four sample confidences)/4, counting unavailable samples as0. Both sources use0.50/0.50; one uses its confidence; none gives0. sourceDailySignal=clamp(0.75*mean+0.25*peak,-1,1), peak by absolute magnitude and earlier nominal local-time tie. Ambiguous time chooses earlier UTC instant; nonexistent time advances to first valid instant. Normative contract: [Final Decision v2 SC-05](contracts/runtime-contract-v2.md#sc-05-daily-sampling-and-dst).
 
 ---
 
-# 26. Daily Display
+# 26. Daily Category
 
-Recommended:
-
-```text
-15–95
-```
-
-Category daily delta:
-
-```text
-max ±20
-```
+categoryDailyDelta=18*categoryDailySignal from category-specific evidence; categoryDailyScore=clamp(lifetimeCategoryScore+categoryDailyDelta,0,100). No category period evidence gives delta0/periodStatus INSUFFICIENT_PERIOD_DATA. Full precision internally; serialize scores with4-decimal HALF_UP. Normative contract: [Final Decision v2 SC-07](contracts/runtime-contract-v2.md#sc-07-daily-category-actions-and-guardrail).
 
 ---
 
 # 27. Daily Status
 
-```text
-85–95   VERY_GOOD
-70–84   GOOD
-50–69   NORMAL
-15–49   CAUTION
-```
+Use dailyDelta: <=-12 VERY_LOW; (-12,-6] LOW; (-6,6) STABLE; [6,12) GOOD; >=12 VERY_GOOD. Missing period source gives INSUFFICIENT_PERIOD_DATA; null lifetime gives INSUFFICIENT_DATA. No absolute daily-score status bands. Normative contract: [Final Decision v2 SC-06](contracts/runtime-contract-v2.md#sc-06-dates-periods-and-statuses).
 
 ---
 
@@ -453,134 +334,55 @@ EMOTION       .25
 STABILITY     .10
 ```
 
-Daily action adjustment: max ±10.
+Action adjustment = 0; this table is recommendation reference only.
 
 ---
 
-# 29. Action Status
+# 29. Action Recommendation
 
-```text
-80+     VERY_GOOD
-65–79   GOOD
-45–64   NORMAL
-<45     CAUTION
-```
+Action adjustment=0. Actions are a separate deterministic recommendation layer and never change LOVE SCORE. No evidence means no Action. Require evidenceRefs to actual featureIds. Exclude refs with preConfidenceWeight<=0; actionConfidence=sum(preConfidenceWeight*Feature.confidence)/sum(preConfidenceWeight) over remaining refs. No valid refs means no Action. AI cannot change this confidence. Existing Action weight tables are reference only; no score mutation. Normative contract: [Final Decision v2 SC-07](contracts/runtime-contract-v2.md#sc-07-daily-category-actions-and-guardrail).
 
 ---
 
 # 30. Weekly
 
-```text
-weekly =
-mean × .80
-+
-peak × .10
-+
-low × .10
-```
-
-Least-squares slope:
-
-```text
->= +1 RISING
-<= -1 FALLING
-otherwise STABLE
-```
+Valid Daily requires a non-null score and lifetime, no Core error, supported date and dailyStatus not INSUFFICIENT_PERIOD_DATA. Exclude numeric lifetime fallback from aggregates. Weekly/Monthly/Yearly status uses lifetime bands; periodDelta/trendStatus/trendDirection follow section34. ISO Monday-Sunday in targetTimezone. weeklyScore=arithmetic mean of valid full-precision Daily scores. Empty results or null lifetime give null score/INSUFFICIENT_DATA/confidence0. OLS slope uses calendar-day index and points/day; fewer than2 valid days gives null. Confidence averages valid Daily confidence. bestDays/cautionDays max2 each. Normative contract: [Final Decision v2 SC-06](contracts/runtime-contract-v2.md#sc-06-dates-periods-and-statuses). Normative contract: [Final Decision v2 SC-07](contracts/runtime-contract-v2.md#sc-07-daily-category-actions-and-guardrail).
 
 ---
 
 # 31. Monthly
 
-```text
-monthly =
-daily_mean × .65
-+
-top5mean × .15
-+
-bottom5mean × .10
-+
-major_period_signal × .10
-```
-
-Volatility candidate:
-
-```text
-stddev >= 9
-```
+monthlyScore=mean(valid full-precision dailyScore), volatility=population standard deviation of those values. Empty or lifetime-null gives null/INSUFFICIENT_DATA/confidence0. resultConfidence=mean(valid daily resultConfidence). best/caution max5 each. Status uses lifetime score bands; trendStatus uses change significance. Normative contract: [Final Decision v2 SC-06](contracts/runtime-contract-v2.md#sc-06-dates-periods-and-statuses).
 
 ---
 
 # 32. Yearly
 
-Period:
-
-```text
-monthly_average × .60
-+
-saju_annual × .20
-+
-major_transit × .20
-```
-
-User Year:
-
-```text
-lifetime × .45
-+
-period × .55
-```
-
-Saju annual energy는 입춘 기준.
+yearlyScore=mean(valid full-precision monthlyScore); yearlyVolatility=population standard deviation. resultConfidence=mean(valid Monthly resultConfidence). Empty or lifetime-null gives null/INSUFFICIENT_DATA/confidence0. bestMonths/cautionMonths max3 each. Status uses lifetime bands; trendStatus uses change significance. No standalone saju_annual/major_transit score. Normative contract: [Final Decision v2 SC-06](contracts/runtime-contract-v2.md#sc-06-dates-periods-and-statuses).
 
 ---
 
-# 33. Trend
+# 33. Period Tie / Rounding
 
-Return:
-
-```text
-average
-min
-max
-slope
-volatility
-positive_days
-caution_days
-```
+Best: internal full-precision score DESC, then resultConfidence DESC, then chronological ASC. Caution: internal score ASC, confidence DESC, chronological ASC. Monthly averages unrounded Daily values; Yearly averages unrounded Monthly values. Round API scores only to4-decimal HALF_UP. Normative contract: [Final Decision v2 SC-06](contracts/runtime-contract-v2.md#sc-06-dates-periods-and-statuses).
 
 ---
 
 # 34. Change Significance
 
-Absolute difference:
-
-```text
-< 3     STABLE
-3–7     NOTICEABLE
->= 8    SIGNIFICANT
-```
+periodDelta=periodScore-lifetimeScore using internal full precision. Null operand gives null delta, INSUFFICIENT_DATA trendStatus and UNKNOWN trendDirection. Otherwise direction is STABLE for abs(delta)<3, UP for delta>=3, DOWN for delta<=-3. OLS slope is secondary and does not set trendStatus. For absolute periodDelta d: d<3 is STABLE; 3<=d<8 is NOTICEABLE; d>=8 is SIGNIFICANT. Do not change these thresholds arbitrarily.
 
 ---
 
-# 35. Relationship Complexity
+# 35. Complexity
 
-```text
-complexity =
-min(positive_intensity, negative_intensity)
-```
-
-AI context only.
-
-Score를 직접 변경하지 않는다.
+Not a numeric Score modifier in v1. Optional UI/context information only. No invented intensity formula. Normative contract: [Final Decision v2 SC-07](contracts/runtime-contract-v2.md#sc-07-daily-category-actions-and-guardrail).
 
 ---
 
-# 36. Single Feature Guardrail
+# 36. Single-feature Guardrail
 
-하나의 minor rule/aspect/transit/outer feature가
-Category를 20점 이상 변경하지 않도록 제한한다.
-
-Critical rule 개념은 사용하지 않는다.
+Apply to ALL features after individual caps -> confidence -> outer cap. For each feature compare raw category score with and without it; abs difference must be<=20. Reduce its effectiveWeight with binary search, max32 iterations. The user approved featureId ascending order, sequential binary search (32 iterations each), global revalidation for at most32 passes, empty raw score50, and a calculation error if the final global condition fails. See contracts/clarification-v2.md. Normative contract: [Final Decision v2 SC-07](contracts/runtime-contract-v2.md#sc-07-daily-category-actions-and-guardrail).
 
 ---
 
@@ -618,24 +420,13 @@ AI는:
 
 # 40. Response
 
-Score response는 최소 다음을 포함할 수 있다.
-
-```text
-raw
-display
-status
-confidence
-coverage
-categories
-```
+Core returns overall/category canonical scores and statuses, coverage, resultConfidence, approved features and calculation versions. It has no interpretation field. Feature confidence retains wire name confidence and means featureConfidence. See 05 and draft schemas for the response envelope.
 
 ---
 
 # 41. Version
 
-```text
-score_version = 1.0.0
-```
+This document update does not overwrite a released scoreVersion. Approved v3/v2 decisions and normalized catalogs are versioned separately. Active rules0 is BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL), not SPEC_CONFLICT. Freeze status and two independent external engine gates are in contracts/README.md.
 
 ---
 
@@ -662,6 +453,6 @@ score_version = 1.0.0
 - Threshold
 - Daily/Period Regression
 
-동일 Version 결과는 ±0.01 이상 변하지 않아야 한다.
+Same provider/software/data/config/version and input require exact canonical output. A named floating regression tolerance is permitted only with an explicit justification; no global +/-0.01 allowance. Golden data must be synthetic, licensed or approved public reference, never real-user input.
 
 END OF DOCUMENT

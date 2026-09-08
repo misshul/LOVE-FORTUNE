@@ -1,9 +1,12 @@
 # LOVE FORTUNE
 # 01_SERVICE_SPEC.md
 
-Version: 2.0.0
-Status: FINAL
+Version: 2.3.0
+Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: Service Specification
+
+Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
+Freeze Gate: [Freeze validation and readiness](contracts/README.md)
 
 ---
 
@@ -25,7 +28,7 @@ LOVE FORTUNE은 두 사람의 생년월일시를 기반으로
 # 2. 핵심 기능
 
 - 두 사람의 생년월일/출생시간/출생지 입력
-- 양력/음력 및 윤달 지원
+- Gregorian birth dates1900..2099; Public lunar/leap flags are excluded in v2.
 - 출생시간 모름 지원
 - 한국식 사주 궁합
 - Western Astrology Synastry
@@ -67,23 +70,7 @@ MVP라는 이유로 기능을 제외하지 않는다.
 
 # 4. Privacy-first Stateless Architecture
 
-일반 사용자 출생정보는 기본적으로 서버에 영구 저장하지 않는다.
-
-기본 흐름:
-
-```text
-Input
-↓
-Calculation Request
-↓
-Saju / Astrology / Score
-↓
-Result
-↓
-Request 종료
-```
-
-사용자 입력은 `Temporary Calculation Input`으로 취급한다.
+General-user Birth, Partner, Relationship and History data are transient calculation input, never server resources. No personal DB tables, stable anonymous IDs, fingerprinting, Birth-hash tracking, user-derived calculation cache or AI cache. Request-local memory reuse is permitted. Do not log request/response bodies, signed contexts, prompts or raw AI output. Infrastructure and retention requirements are in 04 sections 28-29.
 
 ---
 
@@ -107,20 +94,9 @@ Request 종료
 
 ---
 
-# 6. 재방문 UX
+# 6. Profile UX / Browser Storage
 
-두 사람 정보가 브라우저에 저장되어 있으면
-메인 화면에서 저장된 관계를 보여줄 수 있다.
-
-예:
-
-```text
-나 × 상대방
-[오늘의 사랑운 보기]
-```
-
-페이지 로드만으로 저장 정보를 서버에 자동 전송하지 않는다.
-사용자가 버튼을 누른 뒤 계산 요청을 전송한다.
+Support one My Profile and one Partner Profile. Saving is independently opt-in, default OFF. OFF uses memory; ON uses IndexedDB. Provide explicit save/edit/replace/delete and delete-all controls. Names and nicknames remain client-side display labels. No automatic transmission on page load, navigation, timer, prefetch, service worker, background sync, analytics or error reporting. Send stored birth input only after an explicit calculation action.
 
 ---
 
@@ -136,37 +112,15 @@ Request 종료
 
 ---
 
-# 8. 입력 정보
+# 8. Input / Location / Target Timezone
 
-Person A / Person B:
-
-- nickname 또는 display label
-- birthDate
-- birthTime
-- birthTimeKnown
-- calendarType: SOLAR / LUNAR
-- isLeapMonth
-- optional gender
-- birth location
-- timezone
-- latitude / longitude
-
-이름/닉네임은 점수 계산에 영향을 주지 않는다.
+Person requires birthDate and birthLocationId; birthTime defaults to null. Public birth input is Gregorian1900..2099. No gender, raw coordinates, birth timezone or client labels. Resolve birthLocationId from versioned server references. targetTimezone is required; Asia/Tokyo is UI/config default only, never a calculation fallback. locale defaults to ko-KR; support ko-KR/ja-JP/en-US. Normative contract: [Final Decision v2 SC-08](contracts/runtime-contract-v2.md#sc-08-public-api-wire).
 
 ---
 
-# 9. 출생시간 모름
+# 9. Calculation Pipeline
 
-출생시간이 없는 경우에도 계산을 제공한다.
-
-- Saju hour pillar: unavailable
-- ASC: unavailable
-- House: unavailable
-- Moon: 날짜 중 sign 이동 여부를 판단해 certainty 제공
-- Base LOVE SCORE에 출생시간 미입력 패널티를 직접 부여하지 않는다.
-
-UI는 “결과가 부정확하다”보다
-“출생시간이 필요한 일부 세부 분석이 제외된다”고 안내한다.
+Normalized input -> Saju/Astrology -> Structured Features -> Score/Period -> Deterministic Result -> Frontend. The same feature set feeds score calculation and approved AI evidence selection. Do not invent evidence after scoring. Core calculation does not depend on AI. Interpretation is a separate signed-context request.
 
 ---
 
@@ -289,26 +243,7 @@ Celebrity 데이터는 서버의 콘텐츠/reference 데이터로 관리하며
 
 # 18. AI
 
-AI는 계산 엔진이 아니라 해석 계층이다.
-
-AI 입력 중심:
-
-- LOVE SCORE
-- Category Score
-- Structured Feature
-- Trend
-- Action
-- Relationship Type
-- Confidence
-- Coverage
-
-AI가 하지 않는 일:
-
-- 사주 계산
-- 점성술 계산
-- 행성 위치 계산
-- LOVE SCORE 생성/수정
-- 미래 사건 확정 예측
+POST /interpretation/generate verifies an HMAC-SHA-256 context with a five-minute TTL and an environment-managed secret. Context is tamper-evident, not encrypted or guaranteed one-time. It contains no raw Birth Data or personal labels. AI outputs summary, strengths, challenges and advice; strengths/challenges include approved evidenceRefs. AI must not generate numeric scores, percentages, probabilities or ranks. Frontend displays deterministic scores. AI disabled, timeout, outage, schema/evidence/safety failures use deterministic template fallback without invalidating Core results.
 
 ---
 
@@ -351,47 +286,21 @@ S17 Error / Retry
 
 ---
 
-# 21. 서비스 구조
+# 21. Service Notices
 
-```text
-Browser
-↓
-WordPress REST API
-↓
-Application Service
-↓
-Saju Engine
-+
-Astrology Engine
-↓
-Compatibility Feature Engine
-↓
-Score Engine
-↓
-Daily / Period Engine
-↓
-Structured Result
-↓
-AI Interpretation
-↓
-Browser
-```
+Notifications mean non-personal Service Notices. Personal Push, Web Push subscriptions and birth-based background notifications are excluded from v1.
 
 ---
 
-# 22. 개인정보 보호
+# 22. Implementation Gate / Versions
 
-- Birth Data URL 포함 금지
-- Raw Request Body 로그 금지
-- AI에 Birth Data 전달 최소화
-- 개인 계산 Response `Cache-Control: no-store`
-- CDN/WAF/APM/Analytics의 민감 데이터 수집 검토
-- Birth Data Hash를 자동으로 anonymous로 간주하지 않음
-- User fingerprint 생성 금지
+Final Decision v3 supersedes v2/v1 where changed. Contract Freeze requires zero unresolved conflicts and successful contract tests. Separately, SAJU_DAY_PILLAR_EPOCH and EPHEMERIS_PROVIDER block production engines until verified; these two external dependencies alone do not fail Freeze. No guessed rules or code changes. See contracts/README.md for actual status.
 
 ---
 
 # 23. 결과 표현
+
+User-entered birth dates are not verified ages. All v1 content and fallback must use all-ages safe language. Exclude sexual/adult/exploitative content. Celebrity readings must not assert hidden feelings, private personality, attraction to the user, intent, meetings or private relationships.
 
 점술 결과는 오락/관계 해석 맥락으로 제공한다.
 
@@ -425,5 +334,10 @@ Explainable Score
 +
 Optional AI Interpretation
 ```
+
+
+## Final v3 contract alignment
+
+[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (SAJU_DAY_PILLAR_EPOCH, EPHEMERIS_PROVIDER).
 
 END OF DOCUMENT

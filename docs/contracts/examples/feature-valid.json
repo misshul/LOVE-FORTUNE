@@ -1,0 +1,21 @@
+{
+  "ruleId": "SYNTHETIC_RULE",
+  "source": "ASTROLOGY",
+  "subject": "PAIR",
+  "category": "HARMONY",
+  "direction": "POSITIVE",
+  "signedValue": 1,
+  "rawValue": 1,
+  "baseWeight": 0.5,
+  "confidence": 1,
+  "period": {
+    "type": "LIFETIME"
+  },
+  "metadata": {
+    "planetA": "VENUS",
+    "planetB": "MARS",
+    "aspect": "TRINE",
+    "ruleVariant": "Café"
+  },
+  "featureId": "ft_c03583aa163c57aaa3462408fda52704fea71c9d64c90385"
+}

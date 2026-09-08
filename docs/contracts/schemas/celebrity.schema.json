@@ -1,0 +1,76 @@
+{
+  "type": "object",
+  "properties": {
+    "celebrityId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "displayName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "displayNameLocalized": {
+      "type": "object",
+      "properties": {
+        "ko-KR": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ja-JP": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en-US": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "publicBirthPrecision": {
+      "enum": [
+        "UNKNOWN",
+        "DATE_ONLY",
+        "DATE_AND_TIME"
+      ]
+    },
+    "availableFeatures": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "imageReference": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "sourceSummary": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "celebrityId",
+    "displayName",
+    "displayNameLocalized",
+    "publicBirthPrecision",
+    "availableFeatures",
+    "imageReference",
+    "sourceSummary"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/celebrity.schema.json",
+  "title": "LOVE FORTUNE celebrity v2",
+  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate."
+}

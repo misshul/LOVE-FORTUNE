@@ -1,0 +1,17 @@
+{
+  "contractVersion": "2.0.0",
+  "provenance": {
+    "document": "03_SCORE_SPEC.md",
+    "section": 4
+  },
+  "weights": {
+    "ATTRACTION": 0.12,
+    "EMOTION": 0.17,
+    "COMMUNICATION": 0.14,
+    "PASSION": 0.1,
+    "STABILITY": 0.15,
+    "HARMONY": 0.12,
+    "SUPPORT": 0.08,
+    "LONG_TERM": 0.12
+  }
+}

@@ -1,9 +1,12 @@
 # LOVE FORTUNE
 # 10_AGENTS.md
 
-Version: 1.0.0
-Status: FINAL
+Version: 1.3.0
+Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: Codex / AI Coding Agent Development Rules
+
+Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
+Freeze Gate: [Freeze validation and readiness](contracts/README.md)
 
 ---
 
@@ -53,24 +56,9 @@ Codex의 역할은 새로운 사양을 만드는 것이 아니라
 
 ---
 
-# 4. 충돌 처리
+# 4. Conflict Resolution
 
-우선:
-
-```text
-1. 해당 Domain의 직접 SPEC
-2. 더 구체적인 정의
-3. 최신 Version
-4. 전체 Service 원칙
-```
-
-해결 불가 시:
-
-```text
-SPEC_CONFLICT
-```
-
-로 보고하고 임의 구현하지 않는다.
+Explicit approved Final Decision v3 supersedes v2/v1 where changed; the approved v2 clarifications remain valid. Never invent Saju/Astrology rules. Unregistered/incomplete rules are disabled. Freeze and readiness are separate: empty active catalog means BLOCKED_CATALOG/SCORING_RULE_CATALOG_APPROVAL; epoch/provider gates mean BLOCKED_EXTERNAL. Neither alone fails Freeze. Report actual conflicts, never invent approved rules.
 
 ---
 
@@ -201,15 +189,7 @@ Double correction 금지.
 
 # 12. Birth Time Unknown
 
-```text
-hourPillar = null
-ASC = unavailable
-House = unavailable
-```
-
-임의 시간 생성 금지.
-
-Moon은 날짜 전체 범위로 CERTAIN/UNCERTAIN 판단.
+Do not invent birth times. UNKNOWN Hour/ASC/House and boundary candidates follow v2 candidate mean/agreement/availability rules. Normative contract: [Final Decision v2 SC-01](contracts/runtime-contract-v2.md#sc-01-confidence-and-coverage). Normative contract: [Final Decision v2 SC-02](contracts/runtime-contract-v2.md#sc-02-rule-catalog-and-candidates).
 
 ---
 
@@ -353,7 +333,7 @@ Location
 Public Content
 ```
 
-개인 결과 장기 cache 금지.
+User-derived calculation and AI caches are prohibited, including short-lived caches. Request-local reuse is permitted; shared caches must be non-personal references.
 
 Birth Data Hash를 anonymous로 간주하지 않는다.
 
@@ -361,23 +341,7 @@ Birth Data Hash를 anonymous로 간주하지 않는다.
 
 # 21. API
 
-Base:
-
-```text
-/wp-json/love-fortune/v1
-```
-
-Birth Data는 POST JSON Body.
-
-URL/query/path에 넣지 않는다.
-
-Response에서 불필요하게 echo하지 않는다.
-
-Personal response:
-
-```text
-Cache-Control: no-store
-```
+Use the six Core POST routes and separate interpretation route. Person requires birthDate/birthLocationId, birthTime optionalnull, no gender/calendar/timeKnown/raw coordinate/label fields. targetTimezone required; Asia/Tokyo UI-only default; locales ko-KR/ja-JP/en-US. Exact transport/rate/errors follow v2. Normative contract: [Final Decision v2 SC-08](contracts/runtime-contract-v2.md#sc-08-public-api-wire). Normative contract: [Final Decision v2 SC-10](contracts/runtime-contract-v2.md#sc-10-http-security-and-retention).
 
 ---
 
@@ -411,46 +375,13 @@ AI failure와 core failure를 분리한다.
 
 # 24. AI
 
-구조:
-
-```text
-Engine
-↓
-Score
-↓
-Structured Result
-↓
-AI
-```
-
-AI가 사주/점성술/점수를 계산하지 않는다.
-
-AI input은 Score/Feature/Trend/Action 중심.
-
-Raw Birth Data 전달 최소화.
+Structured Features precede Score and AI evidence selection. Core never depends on AI. LFIC signed context binds purpose INTERPRETATION, locale and300-second TTL; keys in environment, no token DB. Scoreless output/evidenceRefs, bounded provider budget and deterministic fallback follow Normative contract: [Final Decision v2 SC-09](contracts/runtime-contract-v2.md#sc-09-signed-context-and-ai-execution).
 
 ---
 
-# 25. AI Validation
+# 25. AI Validation / Fallback
 
-검증:
-
-```text
-Schema
-Score consistency
-Category
-Action
-Date
-Safety
-HTML
-Length
-```
-
-AI failure 시 deterministic fallback 사용 가능.
-
-Raw Prompt production logging 금지.
-
-AI result persistence default OFF.
+Validate schema, evidenceRefs, category/direction/period, length/HTML and safety. AI disabled/timeout/outage/schema/evidence/safety failures use deterministic template fallback. Core results remain valid. No numeric score fields or invented scores/probabilities/percentages/ranks. Prohibit raw prompt/output/repair/provider-error logging and user-derived AI caches. Disallow provider training on user input; review retention/abuse/cache/region/subprocessors/deletion. Apply all-ages language and celebrity rules against claims about hidden feelings/private personality/attraction/intent/meetings/private relationships.
 
 ---
 
@@ -488,26 +419,9 @@ AI User History
 
 ---
 
-# 28. Logging
+# 28. Logging / Retention
 
-절대 금지 예:
-
-```php
-error_log(json_encode($request));
-```
-
-허용:
-
-```text
-request_id
-type
-status
-duration_ms
-version
-error_code
-```
-
-민감정보 redaction 필수.
+Normative contract: [Final Decision v2 SC-10](contracts/runtime-contract-v2.md#sc-10-http-security-and-retention). Use exact operational and Admin mutation allowlists. Retention/application backup30 days; audit/security backup90 days; Birth0; aggregate<=13 months; HMAC rate keys<=3600 seconds. No body/context/prompt/raw output capture, tracking/fingerprinting or personal caches.
 
 ---
 

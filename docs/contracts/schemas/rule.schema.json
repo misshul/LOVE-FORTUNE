@@ -1,0 +1,197 @@
+{
+  "type": "object",
+  "properties": {
+    "ruleId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "enum": [
+        "SAJU",
+        "ASTROLOGY"
+      ]
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "categoryMappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "enum": [
+              "ATTRACTION",
+              "EMOTION",
+              "COMMUNICATION",
+              "PASSION",
+              "STABILITY",
+              "HARMONY",
+              "SUPPORT",
+              "LONG_TERM"
+            ]
+          },
+          "direction": {
+            "enum": [
+              "POSITIVE",
+              "NEGATIVE",
+              "NEUTRAL",
+              "MIXED"
+            ]
+          },
+          "signedValue": {
+            "type": "number",
+            "minimum": -1,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "category",
+          "direction",
+          "signedValue"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "direction": {
+                  "const": "POSITIVE"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "signedValue": {
+                  "const": 1
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "direction": {
+                  "const": "NEGATIVE"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "signedValue": {
+                  "const": -1
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "direction": {
+                  "const": "NEUTRAL"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "signedValue": {
+                  "const": 0
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "baseWeight": {
+      "type": "number",
+      "minimum": 0
+    },
+    "ruleWeight": {
+      "type": "number",
+      "minimum": 0
+    },
+    "pairWeight": {
+      "type": "number",
+      "minimum": 0
+    },
+    "requiresBirthTime": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "contextOnly": {
+      "type": "boolean"
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "document": {
+          "type": "string",
+          "minLength": 1
+        },
+        "section": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "document",
+        "section"
+      ],
+      "additionalProperties": false
+    },
+    "disabledReason": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "ruleId",
+    "source",
+    "enabled",
+    "categoryMappings",
+    "baseWeight",
+    "ruleWeight",
+    "pairWeight",
+    "requiresBirthTime",
+    "contextOnly",
+    "version"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "enabled": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "requiresBirthTime": {
+            "type": "boolean"
+          },
+          "categoryMappings": {
+            "minItems": 1
+          }
+        },
+        "not": {
+          "required": [
+            "disabledReason"
+          ]
+        }
+      }
+    }
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/rule.schema.json",
+  "title": "LOVE FORTUNE rule v2",
+  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate."
+}

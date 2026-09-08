@@ -1,9 +1,12 @@
 # LOVE FORTUNE
 # 04_DATABASE_SPEC.md
 
-Version: 2.0.0
-Status: FINAL
+Version: 2.3.0
+Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: Database Specification
+
+Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
+Freeze Gate: [Freeze validation and readiness](contracts/README.md)
 
 ---
 
@@ -86,13 +89,8 @@ Optional:
 {prefix}lf_audit_logs
 ```
 
-Conditional:
-
-```text
-{prefix}lf_ai_cache
-```
-
-AI cache는 기본 OFF.
+`lf_calculation_cache` is restricted to non-personal shared reference data.
+Do not create `lf_ai_cache` or user-derived calculation/AI caches.
 
 ---
 
@@ -170,7 +168,6 @@ country_code
 birth_date
 birth_time
 birth_time_known
-calendar_type
 birth_location_id
 timezone_id
 latitude
@@ -223,36 +220,13 @@ Love Content
 
 # 12. Location Reference
 
-Optional schema concept:
-
-```text
-location_id
-country_code
-region
-city
-display_name
-timezone_id
-latitude
-longitude
-data_version
-status
-```
-
-다국어/검색 성능을 위해 alias/normalized name 구조를 추가할 수 있다.
+Server versioned location reference resolves public birthLocationId to lat/lon/timezone. Public reference routes use locationId; calculation Person uses birthLocationId. Both reference DB and packaged dataset remain supported. targetTimezone is required; service-config default Asia/Tokyo is UI-only. Normative contract: [Final Decision v2 SC-08](contracts/runtime-contract-v2.md#sc-08-public-api-wire).
 
 ---
 
 # 13. Calculation Cache
 
-기본 허용 대상:
-
-- solar terms
-- ephemeris positions
-- calendar reference
-- location reference
-- public celebrity calculation components
-
-User pair compatibility 전체 cache는 기본 OFF.
+User-derived calculation caches are prohibited, including caches keyed by Birth Data hashes. Request-local memory reuse is allowed. Cache only non-personal reference/config/rule/calendar/ephemeris data. No opt-in personal cache is introduced by this specification.
 
 ---
 
@@ -269,51 +243,21 @@ Birth Data Hash를 자동으로 anonymous로 간주하지 않는다.
 
 ---
 
-# 15. AI Cache
+# 15. AI Cache / Signed Context
 
-기본:
-
-```text
-AI_RESULT_PERSISTENCE = OFF
-```
-
-사용하려면 별도 privacy review 필요.
+Do not create lf_ai_cache or another user-derived AI cache. Signed contexts are transient, client-held and sent in POST bodies with no-store responses. HMAC-SHA-256 verifies integrity; TTL is five minutes. Secrets belong in environment/secret management, never plaintext wp_options. No server replay store or strict one-time claim. Token serialization follows Final Decision v2 SC-09 and runtime-contract-v2.md.
 
 ---
 
 # 16. Browser Storage
 
-Browser storage는 DB schema의 일부가 아니다.
-
-권장:
-
-```text
-IndexedDB
-```
-
-두 profile은 independent opt-in.
-
-OFF일 때 memory-only.
+My Profile: maximum one. Partner Profile: maximum one. Each has independent opt-in, default OFF. OFF uses memory; ON uses IndexedDB. Support explicit save/edit/replace/delete/delete-all. Names/nicknames remain client-side. Never auto-send stored Birth Data on page load, navigation, timers, prefetch, service worker, background sync, analytics or error reporting.
 
 ---
 
-# 17. Browser Storage 최소 데이터
+# 17. Browser Storage Minimum
 
-재계산에 필요한 값만 저장한다.
-
-예:
-
-```json
-{
-  "schemaVersion": 1,
-  "birthDate": "1990-05-10",
-  "birthTime": "14:30",
-  "birthTimeKnown": true,
-  "calendarType": "SOLAR",
-  "isLeapMonth": false,
-  "locationId": "KR-SEOUL"
-}
-```
+Local-only display label plus birthDate,birthLocationId and optional birthTime. My/Partner opt-ins remain independent and default OFF. The calculation DTO excludes labels and requires explicit targetTimezone; no gender, birthTimeKnown or lunar/calendar flags are sent.
 
 ---
 
@@ -330,24 +274,9 @@ OFF일 때 memory-only.
 
 ---
 
-# 19. Audit Logs
+# 19. Security / Admin Audit
 
-Admin 변경만 기록한다.
-
-예:
-
-```text
-admin_user_id
-action
-target_type
-target_id
-before_summary
-after_summary
-reason
-created_at
-```
-
-일반 사용자 calculation payload는 audit 대상이 아니다.
+Record Admin mutations only. Allowlist: timestamp,adminUserId,action,resourceType,resourceId,result,requestId. No raw payload or personal input. Retention and audit backup maximum90 days then deletion. Normative contract: [Final Decision v2 SC-10](contracts/runtime-contract-v2.md#sc-10-http-security-and-retention).
 
 ---
 
@@ -403,11 +332,7 @@ Job Queue
 
 # 24. Response Cache
 
-Personal calculation response:
-
-```text
-Cache-Control: no-store
-```
+Core calculation, AI interpretation and signed-context responses require Cache-Control: no-store. No CDN/shared cache. Only non-personal reference responses may be cached.
 
 ---
 
@@ -455,57 +380,21 @@ CompatibilityHistoryRepository
 
 ---
 
-# 28. Logs / External Systems
+# 28. Logs / Infrastructure
 
-Database만 비워두면 privacy가 완료된 것이 아니다.
-
-검토 대상:
-
-```text
-Nginx/Apache
-Reverse Proxy
-WAF
-CDN
-PHP
-APM
-Analytics
-AI Provider
-Backup
-```
-
-Request body capture를 disable/redact한다.
+Operational allowlist: timestamp,requestId,endpoint,method,httpStatus,durationMs,errorCode,engineVersion,scoreVersion,configVersion. Remove all other fields before persistence. Disable body capture in CDN/WAF/APM/proxy/error tracking; backups must exclude Birth Data, request-response bodies, signed context, prompts and AI output. No stable IDs/fingerprinting/user-derived cache. Normative contract: [Final Decision v2 SC-10](contracts/runtime-contract-v2.md#sc-10-http-security-and-retention).
 
 ---
 
 # 29. Retention
 
-정의 필요:
-
-- audit retention
-- error retention
-- aggregate analytics retention
-- shared cache TTL
-- external log retention
-
-Raw Birth Data Retention:
-
-```text
-NOT ALLOWED
-```
+Raw Birth0; operational/application logs and backups<=30 days; Security/Admin audit logs and backups<=90 days; non-personal aggregate<=13 months; HMAC rate keys<=3600 seconds. Delete expired backups. No forbidden data under any retention category. Normative contract: [Final Decision v2 SC-10](contracts/runtime-contract-v2.md#sc-10-http-security-and-retention).
 
 ---
 
-# 30. Backup
+# 30. Backups
 
-Backup 대상:
-
-- celebrity
-- content
-- config/version metadata
-- audit
-- aggregate analytics
-
-일반 사용자 Birth Profile backup은 존재하지 않아야 한다.
+Application log backup maximum30 days; Security/Admin audit backup maximum90 days, delete after expiry. Raw Birth Data, request bodies, signed contexts, raw prompts/AI outputs are forbidden in every backup. Normative contract: [Final Decision v2 SC-10](contracts/runtime-contract-v2.md#sc-10-http-security-and-retention).
 
 ---
 
@@ -520,5 +409,10 @@ Application Log
 ```
 
 에서 개인 Birth/Relationship/History row가 생성되지 않아야 한다.
+
+
+## Final v3 contract alignment
+
+[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (SAJU_DAY_PILLAR_EPOCH, EPHEMERIS_PROVIDER).
 
 END OF DOCUMENT

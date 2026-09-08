@@ -1,0 +1,525 @@
+{
+  "provenance": {
+    "type": "synthetic",
+    "description": "Invented documentation fixtures; no real-user or real-person birth data. Placeholder versions, reference IDs and tokens are not production data. No external dataset/license dependency."
+  },
+  "scope": "JSON Schema structural expectations only. No real engine calculations, signature verification or resolved location lookup.",
+  "cases": [
+    {
+      "file": "compatibility-valid.json",
+      "schema": "../schemas/compatibility-request.schema.json",
+      "valid": true
+    },
+    {
+      "file": "unknown-time-valid.json",
+      "schema": "../schemas/compatibility-request.schema.json",
+      "valid": true
+    },
+    {
+      "file": "unknown-time-invalid.json",
+      "schema": "../schemas/compatibility-request.schema.json",
+      "valid": false
+    },
+    {
+      "file": "reject-includeInterpretation.json",
+      "schema": "../schemas/compatibility-request.schema.json",
+      "valid": false
+    },
+    {
+      "file": "reject-nickname.json",
+      "schema": "../schemas/compatibility-request.schema.json",
+      "valid": false
+    },
+    {
+      "file": "reject-latitude.json",
+      "schema": "../schemas/compatibility-request.schema.json",
+      "valid": false
+    },
+    {
+      "file": "reject-unexpected.json",
+      "schema": "../schemas/compatibility-request.schema.json",
+      "valid": false
+    },
+    {
+      "file": "reject-person-name.json",
+      "schema": "../schemas/compatibility-request.schema.json",
+      "valid": false
+    },
+    {
+      "file": "reject-person-coordinates.json",
+      "schema": "../schemas/compatibility-request.schema.json",
+      "valid": false
+    },
+    {
+      "file": "daily-valid.json",
+      "schema": "../schemas/daily-request.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-date-invalid.json",
+      "schema": "../schemas/daily-request.schema.json",
+      "valid": false
+    },
+    {
+      "file": "range-valid.json",
+      "schema": "../schemas/daily-range-request.schema.json",
+      "valid": true
+    },
+    {
+      "file": "weekly-valid.json",
+      "schema": "../schemas/period-request.schema.json",
+      "valid": true
+    },
+    {
+      "file": "monthly-valid.json",
+      "schema": "../schemas/period-request.schema.json",
+      "valid": true
+    },
+    {
+      "file": "yearly-valid.json",
+      "schema": "../schemas/period-request.schema.json",
+      "valid": true
+    },
+    {
+      "file": "month-invalid.json",
+      "schema": "../schemas/period-request.schema.json",
+      "valid": false
+    },
+    {
+      "file": "core-insufficient-valid.json",
+      "schema": "../schemas/compatibility-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "core-insufficient-invalid.json",
+      "schema": "../schemas/compatibility-response.schema.json",
+      "valid": false
+    },
+    {
+      "file": "reject-core-interpretation.json",
+      "schema": "../schemas/compatibility-response.schema.json",
+      "valid": false
+    },
+    {
+      "file": "core-boundary-0.json",
+      "schema": "../schemas/compatibility-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "core-boundary-44_9999.json",
+      "schema": "../schemas/compatibility-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "core-boundary-45.json",
+      "schema": "../schemas/compatibility-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "core-boundary-59_9999.json",
+      "schema": "../schemas/compatibility-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "core-boundary-60.json",
+      "schema": "../schemas/compatibility-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "core-boundary-74_9999.json",
+      "schema": "../schemas/compatibility-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "core-boundary-75.json",
+      "schema": "../schemas/compatibility-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "core-wrong-status.json",
+      "schema": "../schemas/compatibility-response.schema.json",
+      "valid": false
+    },
+    {
+      "file": "core-boundary-84_9999.json",
+      "schema": "../schemas/compatibility-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "core-boundary-85.json",
+      "schema": "../schemas/compatibility-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "core-boundary-100.json",
+      "schema": "../schemas/compatibility-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-fallback-valid.json",
+      "schema": "../schemas/daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-fallback-delta-invalid.json",
+      "schema": "../schemas/daily-response.schema.json",
+      "valid": false
+    },
+    {
+      "file": "range-response-valid.json",
+      "schema": "../schemas/daily-range-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "interpretation-fallback-valid.json",
+      "schema": "../schemas/interpretation-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "interpretation-numeric-invalid.json",
+      "schema": "../schemas/interpretation-response.schema.json",
+      "valid": false
+    },
+    {
+      "file": "interpretation-empty-evidence-invalid.json",
+      "schema": "../schemas/interpretation-response.schema.json",
+      "valid": false
+    },
+    {
+      "file": "interpretation-request-valid.json",
+      "schema": "../schemas/interpretation-request.schema.json",
+      "valid": true
+    },
+    {
+      "file": "error-valid.json",
+      "schema": "../schemas/error.schema.json",
+      "valid": true
+    },
+    {
+      "file": "error-secret-invalid.json",
+      "schema": "../schemas/error.schema.json",
+      "valid": false
+    },
+    {
+      "file": "feature-valid.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
+    },
+    {
+      "file": "feature-private-metadata-invalid.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": false
+    },
+    {
+      "file": "feature-tracking-field-invalid.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": false
+    },
+    {
+      "file": "context-payload-valid.json",
+      "schema": "../schemas/signed-context.schema.json",
+      "valid": true
+    },
+    {
+      "file": "context-birth-invalid.json",
+      "schema": "../schemas/signed-context.schema.json",
+      "valid": false
+    },
+    {
+      "file": "weekly-response-valid.json",
+      "schema": "../schemas/period-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "monthly-response-valid.json",
+      "schema": "../schemas/period-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "yearly-response-valid.json",
+      "schema": "../schemas/period-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "interpretation-evidence-valid.json",
+      "schema": "../schemas/interpretation-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "core-excess-precision-invalid.json",
+      "schema": "../schemas/compatibility-response.schema.json",
+      "valid": false
+    },
+    {
+      "file": "timezone-required-invalid.json",
+      "schema": "../schemas/compatibility-request.schema.json",
+      "valid": false
+    },
+    {
+      "file": "legacy-locale-invalid.json",
+      "schema": "../schemas/compatibility-request.schema.json",
+      "valid": false
+    },
+    {
+      "file": "default-locale-valid.json",
+      "schema": "../schemas/compatibility-request.schema.json",
+      "valid": true
+    },
+    {
+      "file": "gender-invalid.json",
+      "schema": "../schemas/compatibility-request.schema.json",
+      "valid": false
+    },
+    {
+      "file": "omitted-time-valid.json",
+      "schema": "../schemas/compatibility-request.schema.json",
+      "valid": true
+    },
+    {
+      "file": "seconds-invalid.json",
+      "schema": "../schemas/compatibility-request.schema.json",
+      "valid": false
+    },
+    {
+      "file": "date-before-coverage-invalid.json",
+      "schema": "../schemas/compatibility-request.schema.json",
+      "valid": false
+    },
+    {
+      "file": "signed-header-valid.json",
+      "schema": "../schemas/signed-header.schema.json",
+      "valid": true
+    },
+    {
+      "file": "signed-header-alg-invalid.json",
+      "schema": "../schemas/signed-header.schema.json",
+      "valid": false
+    },
+    {
+      "file": "delta-neg18.json",
+      "schema": "../schemas/daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "delta-neg12.json",
+      "schema": "../schemas/daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "delta-neg11_9999.json",
+      "schema": "../schemas/daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "delta-neg6.json",
+      "schema": "../schemas/daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "delta-neg5_9999.json",
+      "schema": "../schemas/daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "delta-0.json",
+      "schema": "../schemas/daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "delta-5_9999.json",
+      "schema": "../schemas/daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "delta-6.json",
+      "schema": "../schemas/daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "delta-11_9999.json",
+      "schema": "../schemas/daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "delta-12.json",
+      "schema": "../schemas/daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "delta-18.json",
+      "schema": "../schemas/daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "delta-wrong-status.json",
+      "schema": "../schemas/daily-response.schema.json",
+      "valid": false
+    },
+    {
+      "file": "daily-lifetime-null.json",
+      "schema": "../schemas/daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "feature-candidates-valid.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true,
+      "note": "User-approved candidates allowlist clarification"
+    },
+    {
+      "file": "disabled-rule-valid.json",
+      "schema": "../schemas/rule.schema.json",
+      "valid": true
+    },
+    {
+      "file": "mixed-rule-schema-valid.json",
+      "schema": "../schemas/rule.schema.json",
+      "valid": true
+    },
+    {
+      "file": "mixed-missing-value-invalid.json",
+      "schema": "../schemas/rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "positive-negative-value-invalid.json",
+      "schema": "../schemas/rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "incomplete-enabled-rule-invalid.json",
+      "schema": "../schemas/rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "location-reference-valid.json",
+      "schema": "../schemas/location.schema.json",
+      "valid": true
+    },
+    {
+      "file": "location-latitude-invalid.json",
+      "schema": "../schemas/location.schema.json",
+      "valid": false
+    },
+    {
+      "file": "celebrity-reference-valid.json",
+      "schema": "../schemas/celebrity.schema.json",
+      "valid": true
+    },
+    {
+      "file": "celebrity-raw-birth-invalid.json",
+      "schema": "../schemas/celebrity.schema.json",
+      "valid": false
+    },
+    {
+      "file": "service-config-valid.json",
+      "schema": "../schemas/service-config.schema.json",
+      "valid": true
+    },
+    {
+      "file": "feature-object-raw-invalid.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": false
+    },
+    {
+      "file": "feature-candidate-object-invalid.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": false
+    },
+    {
+      "file": "celebrity-calculation-valid.json",
+      "schema": "../schemas/celebrity-compatibility-request.schema.json",
+      "valid": true
+    },
+    {
+      "file": "celebrity-calculation-personB-invalid.json",
+      "schema": "../schemas/celebrity-compatibility-request.schema.json",
+      "valid": false
+    },
+    {
+      "file": "admin-version-mutation-valid.json",
+      "schema": "../schemas/admin.schema.json",
+      "valid": true
+    },
+    {
+      "file": "admin-version-code-invalid.json",
+      "schema": "../schemas/admin.schema.json",
+      "valid": false
+    },
+    {
+      "file": "admin-celebrity-valid.json",
+      "schema": "../schemas/admin.schema.json",
+      "valid": true
+    },
+    {
+      "file": "admin-fixture-test-valid.json",
+      "schema": "../schemas/admin.schema.json",
+      "valid": true
+    },
+    {
+      "file": "v3-zero-confidence-coverage-valid.json",
+      "schema": "../schemas/compatibility-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "v3-coverage-overflow-invalid.json",
+      "schema": "../schemas/compatibility-response.schema.json",
+      "valid": false
+    },
+    {
+      "file": "v3-trend-null.json",
+      "schema": "../schemas/period-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "v3-trend-null-invalid.json",
+      "schema": "../schemas/period-response.schema.json",
+      "valid": false
+    },
+    {
+      "file": "v3-trend--8.json",
+      "schema": "../schemas/period-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "v3-trend--3.json",
+      "schema": "../schemas/period-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "v3-trend--2.99999.json",
+      "schema": "../schemas/period-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "v3-trend-0.json",
+      "schema": "../schemas/period-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "v3-trend-2.99999.json",
+      "schema": "../schemas/period-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "v3-trend-3.json",
+      "schema": "../schemas/period-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "v3-trend-3-invalid.json",
+      "schema": "../schemas/period-response.schema.json",
+      "valid": false
+    },
+    {
+      "file": "v3-trend-8.json",
+      "schema": "../schemas/period-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "v3-period-delta-missing-invalid.json",
+      "schema": "../schemas/period-response.schema.json",
+      "valid": false
+    }
+  ]
+}

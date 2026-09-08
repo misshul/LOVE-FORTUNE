@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "requestId": "synthetic-request-only",
+    "versions": {
+      "serviceVersion": "synthetic-fixture-v1",
+      "apiVersion": "v1",
+      "sajuEngineVersion": "synthetic-fixture-v1",
+      "astrologyEngineVersion": "synthetic-fixture-v1",
+      "scoreVersion": "synthetic-fixture-v1",
+      "configVersion": "synthetic-fixture-v1",
+      "locationReferenceVersion": "synthetic-fixture-v1",
+      "timezoneDataVersion": "synthetic-fixture-v1",
+      "ephemerisProviderVersion": "synthetic-fixture-v1",
+      "ephemerisDataVersion": "synthetic-fixture-v1"
+    }
+  },
+  "overallScore": 59.9999,
+  "status": "BALANCED",
+  "resultConfidence": 1,
+  "coverage": 1,
+  "categories": {
+    "ATTRACTION": {
+      "score": 59.9999,
+      "status": "BALANCED",
+      "resultConfidence": 1,
+      "coverage": 1
+    },
+    "EMOTION": {
+      "score": 59.9999,
+      "status": "BALANCED",
+      "resultConfidence": 1,
+      "coverage": 1
+    },
+    "COMMUNICATION": {
+      "score": 59.9999,
+      "status": "BALANCED",
+      "resultConfidence": 1,
+      "coverage": 1
+    },
+    "PASSION": {
+      "score": 59.9999,
+      "status": "BALANCED",
+      "resultConfidence": 1,
+      "coverage": 1
+    },
+    "STABILITY": {
+      "score": 59.9999,
+      "status": "BALANCED",
+      "resultConfidence": 1,
+      "coverage": 1
+    },
+    "HARMONY": {
+      "score": 59.9999,
+      "status": "BALANCED",
+      "resultConfidence": 1,
+      "coverage": 1
+    },
+    "SUPPORT": {
+      "score": 59.9999,
+      "status": "BALANCED",
+      "resultConfidence": 1,
+      "coverage": 1
+    },
+    "LONG_TERM": {
+      "score": 59.9999,
+      "status": "BALANCED",
+      "resultConfidence": 1,
+      "coverage": 1
+    }
+  },
+  "features": [],
+  "warnings": []
+}

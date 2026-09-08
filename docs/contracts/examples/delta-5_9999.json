@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "requestId": "synthetic-request-only",
+    "versions": {
+      "serviceVersion": "synthetic-fixture-v1",
+      "apiVersion": "v1",
+      "sajuEngineVersion": "synthetic-fixture-v1",
+      "astrologyEngineVersion": "synthetic-fixture-v1",
+      "scoreVersion": "synthetic-fixture-v1",
+      "configVersion": "synthetic-fixture-v1",
+      "locationReferenceVersion": "synthetic-fixture-v1",
+      "timezoneDataVersion": "synthetic-fixture-v1",
+      "ephemerisProviderVersion": "synthetic-fixture-v1",
+      "ephemerisDataVersion": "synthetic-fixture-v1"
+    }
+  },
+  "date": "2026-09-08",
+  "targetTimezone": "Asia/Tokyo",
+  "lifetimeScore": 50,
+  "dailyScore": 55.9999,
+  "dailyDelta": 5.9999,
+  "dailyStatus": "STABLE",
+  "resultConfidence": 1,
+  "coverage": 1,
+  "features": [],
+  "warnings": []
+}

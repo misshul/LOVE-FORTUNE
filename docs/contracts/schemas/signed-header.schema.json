@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "alg": {
+      "const": "HS256"
+    },
+    "typ": {
+      "const": "LFIC"
+    },
+    "kid": {
+      "type": "string",
+      "minLength": 1
+    },
+    "v": {
+      "const": 1
+    }
+  },
+  "required": [
+    "alg",
+    "typ",
+    "kid",
+    "v"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/signed-header.schema.json",
+  "title": "LOVE FORTUNE signed-header v2",
+  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate."
+}

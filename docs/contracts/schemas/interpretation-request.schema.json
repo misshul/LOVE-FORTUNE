@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "signedContext": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]{43}$"
+    },
+    "locale": {
+      "enum": [
+        "ko-KR",
+        "ja-JP",
+        "en-US"
+      ],
+      "default": "ko-KR"
+    }
+  },
+  "required": [
+    "signedContext"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/interpretation-request.schema.json",
+  "title": "LOVE FORTUNE interpretation-request v2",
+  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate."
+}

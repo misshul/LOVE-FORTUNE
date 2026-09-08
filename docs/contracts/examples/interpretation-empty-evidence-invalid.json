@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "requestId": "synthetic-request-only",
+    "versions": {
+      "serviceVersion": "synthetic-fixture-v1",
+      "apiVersion": "v1",
+      "sajuEngineVersion": "synthetic-fixture-v1",
+      "astrologyEngineVersion": "synthetic-fixture-v1",
+      "scoreVersion": "synthetic-fixture-v1",
+      "configVersion": "synthetic-fixture-v1",
+      "locationReferenceVersion": "synthetic-fixture-v1",
+      "timezoneDataVersion": "synthetic-fixture-v1",
+      "ephemerisProviderVersion": "synthetic-fixture-v1",
+      "ephemerisDataVersion": "synthetic-fixture-v1"
+    },
+    "aiPromptVersion": "synthetic-prompt-v1",
+    "provider": null,
+    "model": null,
+    "interpretationMode": "FALLBACK"
+  },
+  "summary": "There is not enough evidence for a specific interpretation.",
+  "strengths": [
+    {
+      "text": "A claim.",
+      "evidenceRefs": []
+    }
+  ],
+  "challenges": [],
+  "advice": "Communicate openly and respect each other."
+}

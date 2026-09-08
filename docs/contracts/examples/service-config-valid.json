@@ -1,0 +1,14 @@
+{
+  "defaultTimezone": "Asia/Tokyo",
+  "defaultLocale": "ko-KR",
+  "supportedLocales": [
+    "ko-KR",
+    "ja-JP",
+    "en-US"
+  ],
+  "dateRange": {
+    "start": "1900-01-01",
+    "end": "2099-12-31"
+  },
+  "maxDailyRangeDays": 31
+}

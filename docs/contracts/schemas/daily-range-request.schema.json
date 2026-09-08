@@ -1,0 +1,57 @@
+{
+  "type": "object",
+  "properties": {
+    "personA": {
+      "$ref": "person-input.schema.json"
+    },
+    "personB": {
+      "$ref": "person-input.schema.json"
+    },
+    "relationshipType": {
+      "enum": [
+        "COUPLE",
+        "MARRIED",
+        "DATING",
+        "CRUSH",
+        "FRIEND",
+        "UNKNOWN"
+      ]
+    },
+    "targetTimezone": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Required semantic IANA tzdb validation; no implicit default."
+    },
+    "locale": {
+      "enum": [
+        "ko-KR",
+        "ja-JP",
+        "en-US"
+      ],
+      "default": "ko-KR"
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$"
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$"
+    }
+  },
+  "required": [
+    "personA",
+    "personB",
+    "relationshipType",
+    "targetTimezone",
+    "startDate",
+    "endDate"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/daily-range-request.schema.json",
+  "title": "LOVE FORTUNE daily-range-request v2",
+  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate."
+}

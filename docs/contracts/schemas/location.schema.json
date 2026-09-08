@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "properties": {
+    "locationId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "displayName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timezoneId": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Required semantic IANA tzdb validation; no implicit default."
+    },
+    "latitude": {
+      "type": "number",
+      "minimum": -90,
+      "maximum": 90
+    },
+    "longitude": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180
+    }
+  },
+  "required": [
+    "locationId",
+    "displayName",
+    "timezoneId",
+    "latitude",
+    "longitude"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/location.schema.json",
+  "title": "LOVE FORTUNE location v2",
+  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate."
+}

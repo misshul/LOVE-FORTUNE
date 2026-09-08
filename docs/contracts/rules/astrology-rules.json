@@ -1,0 +1,151 @@
+{
+  "contractVersion": "3.0.0",
+  "status": "INCOMPLETE_DISABLED_INVENTORY",
+  "rules": [
+    {
+      "ruleId": "CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 12
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    },
+    {
+      "ruleId": "OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 12
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    },
+    {
+      "ruleId": "TRINE",
+      "source": "ASTROLOGY",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 12
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    },
+    {
+      "ruleId": "SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 12
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    },
+    {
+      "ruleId": "SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 12
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    }
+  ],
+  "referenceTables": {
+    "planetWeights": {
+      "SUN": 1,
+      "MOON": 1.1,
+      "MERCURY": 0.9,
+      "VENUS": 1.1,
+      "MARS": 1,
+      "JUPITER": 0.75,
+      "SATURN": 0.9,
+      "URANUS": 0.45,
+      "NEPTUNE": 0.45,
+      "PLUTO": 0.5
+    },
+    "pairOverrides": {
+      "SUN-MOON": 1.2,
+      "MOON-MOON": 1.25,
+      "MOON-VENUS": 1.2,
+      "VENUS-VENUS": 1.15,
+      "VENUS-MARS": 1.25,
+      "MERCURY-MERCURY": 1.15,
+      "MERCURY-MOON": 1.15,
+      "SUN-SUN": 1,
+      "SUN-VENUS": 1.05,
+      "SUN-MARS": 1,
+      "MOON-MARS": 1.05,
+      "MARS-MARS": 0.95,
+      "SATURN-MOON": 1.1,
+      "SATURN-VENUS": 1.1,
+      "JUPITER-SUN": 0.85,
+      "JUPITER-MOON": 0.85
+    },
+    "genericPairWeight": "sqrt(weightA * weightB)",
+    "baseOrbs": {
+      "CONJUNCTION": 8,
+      "OPPOSITION": 8,
+      "TRINE": 7,
+      "SQUARE": 7,
+      "SEXTILE": 5
+    },
+    "planetOrbAdjustments": {
+      "SUN": 1,
+      "MOON": 1,
+      "MERCURY": 0,
+      "VENUS": 0,
+      "MARS": 0,
+      "JUPITER": -1,
+      "SATURN": -1,
+      "URANUS": -2,
+      "NEPTUNE": -2,
+      "PLUTO": -2
+    }
+  },
+  "contractStatus": "FROZEN",
+  "scoreEngineReadiness": "BLOCKED_CATALOG",
+  "blocker": "SCORING_RULE_CATALOG_APPROVAL",
+  "catalogApprovalRequirements": [
+    "Category/direction/activation catalogs are absent",
+    "Combination of two planet orb adjustments is unspecified",
+    "No invented synastry rule combinations"
+  ]
+}

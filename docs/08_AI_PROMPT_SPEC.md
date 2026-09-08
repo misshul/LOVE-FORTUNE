@@ -1,9 +1,12 @@
 # LOVE FORTUNE
 # 08_AI_PROMPT_SPEC.md
 
-Version: 1.0.0
-Status: FINAL
+Version: 2.2.0
+Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: AI Prompt / Interpretation Specification
+
+Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
+Freeze Gate: [Freeze validation and readiness](contracts/README.md)
 
 ---
 
@@ -33,34 +36,9 @@ Trend
 
 ---
 
-# 3. AI 입력
+# 3. AI Input
 
-가능하면 다음만 전달한다.
-
-```text
-LOVE SCORE
-Category Score
-Structured Features
-Trend
-Actions
-Relationship Type
-Confidence
-Coverage
-Warnings
-```
-
-기본적으로 전달하지 않는다.
-
-```text
-birthDate
-birthTime
-birthCity
-latitude
-longitude
-IP
-email
-device ID
-```
+Only verified LFIC signed context from a separate Interpretation request. No raw Birth/labels/identifiers. Header/payload/signing bytes, key rotation and TTL follow Normative contract: [Final Decision v2 SC-09](contracts/runtime-contract-v2.md#sc-09-signed-context-and-ai-execution).
 
 ---
 
@@ -81,55 +59,13 @@ CELEBRITY_COMPATIBILITY
 
 # 5. Compatibility Input
 
-```json
-{
-  "type": "COMPATIBILITY",
-  "relationshipType": "DATING",
-  "loveScore": {
-    "display": 78,
-    "status": "VERY_GOOD",
-    "confidence": 0.91,
-    "coverage": 0.87
-  },
-  "categories": {
-    "ATTRACTION": 84,
-    "EMOTION": 80,
-    "COMMUNICATION": 68,
-    "PASSION": 87,
-    "STABILITY": 73,
-    "HARMONY": 71,
-    "SUPPORT": 77,
-    "LONG_TERM": 76
-  },
-  "positiveFeatures": [],
-  "negativeFeatures": [],
-  "warnings": []
-}
-```
+Interpretation request carries signedContext and optional locale default ko-KR. Verify signed purpose INTERPRETATION and bound locale. Payload result/evidence are authoritative; never trust unsigned score/features. Person roles PERSON_A/PERSON_B/PAIR. Normative contract: [Final Decision v2 SC-09](contracts/runtime-contract-v2.md#sc-09-signed-context-and-ai-execution).
 
 ---
 
-# 6. Compatibility Output
+# 6. Interpretation Output
 
-```json
-{
-  "headline": "...",
-  "summary": "...",
-  "strengths": ["..."],
-  "challenges": ["..."],
-  "advice": "...",
-  "categorySummaries": {
-    "ATTRACTION": "...",
-    "EMOTION": "...",
-    "COMMUNICATION": "...",
-    "PASSION": "...",
-    "STABILITY": "...",
-    "HARMONY": "...",
-    "SUPPORT": "...",
-    "LONG_TERM": "..."
-  }
-}
-```
+summary,strengths,challenges,advice; strength/challenge {text,evidenceRefs}. Reference approved featureId values and preserve evidence category/period/direction. No numeric score fields, invented scores/probabilities/percentages/ranks. Metadata interpretationMode=AI|FALLBACK plus aiPromptVersion/provider/model. Normative contract: [Final Decision v2 SC-09](contracts/runtime-contract-v2.md#sc-09-signed-context-and-ai-execution).
 
 ---
 
@@ -188,15 +124,7 @@ MIXED는 장점과 긴장을 함께 설명한다.
 
 # 10. Confidence / Coverage
 
-낮은 confidence는 확정적 표현을 완화한다.
-
-Coverage가 낮다고 score 자체를 낮게 설명하지 않는다.
-
-Birth Time Unknown:
-
-```text
-출생시간이 필요한 일부 세부 요소는 분석에서 제외되었습니다.
-```
+Normative contract: [Final Decision v2 SC-01](contracts/runtime-contract-v2.md#sc-01-confidence-and-coverage). Feature confidence is featureConfidence; coverage excludes confidence factors. Do not invent confidence or turn low confidence into a direct score penalty. Period confidence and ties follow v2.
 
 ---
 
@@ -246,39 +174,13 @@ Input에 없는 aspect 생성 금지.
 
 # 15. Daily Input
 
-```json
-{
-  "type": "DAILY",
-  "date": "2026-09-07",
-  "lifetimeScore": 78,
-  "dailyScore": {
-    "display": 84,
-    "status": "GOOD",
-    "deltaFromLifetime": 6
-  },
-  "yesterday": {
-    "score": 79,
-    "difference": 5
-  },
-  "categories": {},
-  "actions": {}
-}
-```
+Display Core first. Signed payload result contains approved deterministic period data and evidence. purpose=INTERPRETATION for all scopes; result identifies the calculation shape. Raw Birth remains excluded. Normative contract: [Final Decision v2 SC-09](contracts/runtime-contract-v2.md#sc-09-signed-context-and-ai-execution).
 
 ---
 
 # 16. Daily Output
 
-```json
-{
-  "headline": "...",
-  "summary": "...",
-  "yesterdayComparison": "...",
-  "bestActions": [],
-  "cautionActions": [],
-  "advice": "..."
-}
-```
+Use the common scoreless interpretation response. No legacy bestActions/cautionActions response override. Actions remain Core-derived recommendations; AI explains only approved evidence. Normative contract: [Final Decision v2 SC-09](contracts/runtime-contract-v2.md#sc-09-signed-context-and-ai-execution).
 
 ---
 
@@ -361,51 +263,21 @@ Yearly 결과에서도 다음을 확정하지 않는다.
 
 ---
 
-# 21. Celebrity
+# 21. Celebrity / Age Safety
 
-Entertainment context로 표현.
-
-실제로 만나거나 연애/결혼할 가능성을 예측하지 않는다.
+Celebrity readings describe an entertainment model based on approved public reference data. Do not assert a real person's hidden feelings, private personality, attraction toward the user, intentions, meetings or private relationships. User-entered birth dates are not age verification. v1 uses all-ages relationship language and excludes sexual/adult/exploitative content. Apply these rules to prompts, output validation and deterministic fallback.
 
 ---
 
 # 22. Structured Output
 
-Production AI는 JSON Schema 기반 Structured Output을 우선한다.
-
-Validation:
-
-- required fields
-- score consistency
-- category
-- action
-- date
-- unsupported rule
-- HTML
-- length
-- safety
+Validate JSON Schema, required fields, lengths, escaping/HTML, numeric-score prohibition, approved evidenceRefs, evidence category/direction/period, canonical status consistency and safety. Schema validation alone cannot validate factual evidence alignment or safe natural language. No unknown output fields.
 
 ---
 
 # 23. Retry / Fallback
 
-권장:
-
-```text
-MAX_AI_RETRY = 1
-```
-
-Flow:
-
-```text
-Validation Fail
-↓
-Repair/Retry
-↓
-Deterministic Fallback
-```
-
-AI 실패가 core calculation 실패가 되어서는 안 된다.
+Total provider budget8 seconds; each call timeout6 seconds or remaining budget. Retry network/5xx at most once. Schema failure allows at most one repair inside the same8-second budget. AI OFF/timeout/outage/schema/evidence/safety failures return200 when deterministic fallback is available; only inability to return fallback gives503 INTERPRETATION_UNAVAILABLE. meta.interpretationMode=AI|FALLBACK. Core results remain valid. Normative contract: [Final Decision v2 SC-09](contracts/runtime-contract-v2.md#sc-09-signed-context-and-ai-execution).
 
 ---
 
@@ -463,6 +335,8 @@ Unknown rule은 AI input에서 제외하거나
 
 # 27. Prompt Injection
 
+Names and nicknames must never be sent to the server or AI. This section does not authorize sending labels or free text in prompts.
+
 nickname/free text를 instruction으로 처리하지 않는다.
 
 현재 기본 서비스에서는 사용자 자유형 문장을
@@ -472,24 +346,7 @@ AI prompt에 직접 넣지 않는다.
 
 # 28. Locale
 
-```text
-ko
-ja
-en
-```
-
-ko:
-- 자연스러운 존댓말
-- 점술가 과장 말투 금지
-
-ja:
-- 자연스러운 丁寧語
-- 단정적 占い 표현 금지
-
-en:
-- warm
-- concise
-- non-deterministic
+Supported ko-KR,ja-JP,en-US; default ko-KR. AI request locale must match signed context; mismatch422 INTERPRETATION_LOCALE_MISMATCH. Korean natural polite language; Japanese polite language; English warm concise non-fatalistic language.
 
 ---
 
@@ -507,54 +364,21 @@ en:
 
 ---
 
-# 30. AI Logging
+# 30. AI Logging / Provider
 
-허용:
-
-```text
-request_id
-prompt_type
-prompt_version
-model
-status
-duration_ms
-token_count
-error_code
-```
-
-금지:
-
-```text
-raw prompt
-raw birth payload
-birthDate
-birthTime
-```
+Use non-personal metadata allowlists only. No raw prompts, outputs, repair payloads, provider raw errors, request/response bodies or signed contexts in logs. RequestId is per request, not a tracking ID. Retention follows 04 section 29. Before provider enablement, prohibit training on user input and review retention, abuse monitoring, caching, region, subprocessors and deletion settings. Provider evaluation is not permission to log personal content.
 
 ---
 
 # 31. AI Result Persistence
 
-기본:
-
-```text
-OFF
-```
+No user-derived AI server cache or persistent result/history. Signed contexts and interpretation responses are no-store with no shared CDN cache. Do not auto-send browser-stored Birth Data in background operations.
 
 ---
 
-# 32. Version
+# 32. Version / Projection
 
-관리:
-
-```text
-promptVersion
-interpretationRuleVersion
-provider
-model
-```
-
-Prompt 변경은 새 Version으로 관리한다.
+Core version metadata is independent of AI; interpretation adds aiPromptVersion/provider/model. Signed payload separates engineVersions,scoreVersion,configVersion. Exact Core comparison excludes requestId,generatedAt,issuedAt,expiresAt,signedInterpretationContext. Never overwrite released version definitions. Normative contract: [Final Decision v2 SC-09](contracts/runtime-contract-v2.md#sc-09-signed-context-and-ai-execution).
 
 ---
 
@@ -563,7 +387,11 @@ Prompt 변경은 새 Version으로 관리한다.
 검증:
 
 - JSON Schema
-- Score unchanged
+- Core Score unchanged
+- No numeric score output
+- Evidence references valid
+- All-ages/celebrity safety
+- Fallback conditions
 - No hallucinated rules
 - No deterministic prediction
 - Correct locale
@@ -577,24 +405,13 @@ Prompt 변경은 새 Version으로 관리한다.
 
 # 34. Final Principle
 
-```text
-Calculation
-↓
-Score
-↓
-Feature
-↓
-AI Interpretation
-```
+Core calculates; AI interprets approved evidence. Frontend displays deterministic numeric scores. AI failure uses deterministic fallback without invalidating calculations. Maintain client-only labels, stateless privacy and all-ages/celebrity safety throughout.
 
-절대로:
+---
 
-```text
-AI
-↓
-Calculation
-```
 
-구조가 되어서는 안 된다.
+## Final v3 contract alignment
+
+[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (SAJU_DAY_PILLAR_EPOCH, EPHEMERIS_PROVIDER).
 
 END OF DOCUMENT

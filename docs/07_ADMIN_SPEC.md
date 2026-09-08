@@ -1,9 +1,12 @@
 # LOVE FORTUNE
 # 07_ADMIN_SPEC.md
 
-Version: 1.0.0
-Status: FINAL
+Version: 1.3.0
+Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: Admin / Operations Specification
+
+Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
+Freeze Gate: [Freeze validation and readiness](contracts/README.md)
 
 ---
 
@@ -78,6 +81,8 @@ lf_view_audit
 
 # 4. Dashboard
 
+Admin methods/DTOs and exact existing capability assignments: [v2 API details](contracts/api-details-v2.md).
+
 주요 KPI:
 
 ```text
@@ -148,31 +153,7 @@ P99
 
 # 7. Sanitized Calculation Log
 
-허용:
-
-```json
-{
-  "request_id": "req_xxx",
-  "type": "COMPATIBILITY",
-  "status": "SUCCESS",
-  "duration_ms": 842,
-  "fortune_engine_version": "2.0.0",
-  "score_version": "1.0.0"
-}
-```
-
-금지:
-
-```text
-name
-nickname
-birthDate
-birthTime
-latitude
-longitude
-partner information
-raw request body
-```
+Allowlisted operational metadata only: per-request requestId, endpoint, HTTP status, duration, errorCode and non-personal version identifiers. No Birth Data, coordinates, names/nicknames, request/response bodies, signed context or raw AI prompt/output. No stable anonymous identifier or fingerprint. See 04 retention and SC-10 for exact audit allowlists.
 
 ---
 
@@ -238,11 +219,7 @@ Admin Activation
 
 # 10. Golden Dataset
 
-Admin Test Console에서 synthetic/golden fixtures를 사용할 수 있다.
-
-실사용자 payload를 가져오지 않는다.
-
-Version activation 전에 Golden Test PASS를 gate로 사용할 수 있다.
+Use synthetic, licensed or explicitly approved public-reference fixtures with documented provenance/permission. Never turn real-user input into Golden fixtures. Same input/provider/software/data/config/version requires exact deterministic output where possible. +/-0.01 is not a global acceptance rule; use a named floating regression tolerance only for explicitly justified runtime/provider differences. Protect existing expected results from automatic regeneration to match code.
 
 ---
 
@@ -318,20 +295,9 @@ Disclaimer
 
 ---
 
-# 14. Notifications
+# 14. Service Notices
 
-현재 일반 사용자 account/email/push token 저장을 전제로 하지 않는다.
-
-Service Notice는 가능:
-
-```text
-INFO
-WARNING
-MAINTENANCE
-EMERGENCY
-```
-
-개인화 Push/Email은 별도 Privacy 설계가 필요하다.
+Admin manages non-personal Service Notices such as maintenance and announcements. Exclude personalized Push, Web Push subscriptions and Birth Data-based notification targeting. Destructive notice operations require authenticated POST/DELETE with nonce and capability checks.
 
 ---
 
@@ -368,7 +334,7 @@ CONTENT
 SAFE_CALCULATION_REFERENCE
 ```
 
-개인 궁합 전체 cache는 기본 OFF.
+User-derived calculation and AI caches are prohibited, not configurable opt-ins.
 
 Raw Birth Data key/payload 금지.
 
@@ -408,21 +374,7 @@ CRITICAL
 
 # 18. Log Sanitization
 
-제거:
-
-```text
-birthDate
-birthTime
-name
-nickname
-latitude
-longitude
-location
-partner data
-Authorization
-API Key
-Cookie
-```
+Normative contract: [Final Decision v2 SC-10](contracts/runtime-contract-v2.md#sc-10-http-security-and-retention). Operational logs use the exact v2 allowlist; Admin mutation audit uses its separate allowlist. Sanitize before persistence and disable body capture throughout infrastructure. No Birth Data/raw prompt-output/context in backups.
 
 ---
 
@@ -474,21 +426,7 @@ Privacy Scan                 NORMAL
 
 # 21. Retention
 
-관리:
-
-```text
-Calculation Log Retention
-Error Log Retention
-Audit Log Retention
-Temporary Cache TTL
-Analytics Retention
-```
-
-Raw Birth Data Retention:
-
-```text
-NOT ALLOWED
-```
+Operations/application logs and backups<=30 days; Security/Admin audit and backups<=90 days; aggregates<=13 months; HMAC rate keys<=3600 seconds; Birth retention0. Expire backups. Normative contract: [Final Decision v2 SC-10](contracts/runtime-contract-v2.md#sc-10-http-security-and-retention).
 
 ---
 
@@ -590,30 +528,15 @@ Check-in
 
 # 27. Admin REST
 
-Base:
+Admin methods/DTOs and exact existing capability assignments: [v2 API details](contracts/api-details-v2.md).
 
-```text
-/wp-json/love-fortune/v1/admin/
-```
-
-모든 endpoint:
-
-- authentication
-- capability
-- nonce
-- input validation
+Namespace /wp-json/love-fortune/v1/admin. Every route requires authenticated WordPress admin, capability and nonce. Use POST/PUT/DELETE for mutations; never GET. Errors401 ADMIN_AUTH_REQUIRED,403 ADMIN_CAPABILITY_REQUIRED,403 ADMIN_NONCE_INVALID. No arbitrary SQL/code or plaintext wp_options secrets. Normative contract: [Final Decision v2 SC-08](contracts/runtime-contract-v2.md#sc-08-public-api-wire). Normative contract: [Final Decision v2 SC-10](contracts/runtime-contract-v2.md#sc-10-http-security-and-retention).
 
 ---
 
 # 28. Security
 
-- least privilege
-- output escaping
-- CSRF protection
-- no secrets in UI
-- no arbitrary SQL
-- destructive action confirmation
-- PROD stronger confirmation
+Secrets belong in environment/secret management, never plaintext wp_options. Prohibit arbitrary SQL/PHP/code execution and unrestricted query consoles. Use prepared queries, least-privilege capabilities and non-personal audit logs. Production Admin MFA is recommended. Do not expose personal profile/history management.
 
 ---
 
@@ -638,5 +561,10 @@ Admin이 답할 수 없어야 하는 질문:
 누구와 궁합을 봤는가?
 지난 30일 개인 LOVE SCORE는?
 ```
+
+
+## Final v3 contract alignment
+
+[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (SAJU_DAY_PILLAR_EPOCH, EPHEMERIS_PROVIDER).
 
 END OF DOCUMENT

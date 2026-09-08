@@ -1,0 +1,376 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/compatibility-response.schema.json",
+  "title": "LOVE FORTUNE compatibility-response v2",
+  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate.",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "$ref": "common.schema.json#/$defs/meta"
+    },
+    "overallScore": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "multipleOf": 0.0001
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "status": {
+      "enum": [
+        "CAUTION",
+        "BALANCED",
+        "GOOD",
+        "VERY_GOOD",
+        "EXCELLENT",
+        "INSUFFICIENT_DATA"
+      ]
+    },
+    "resultConfidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "coverage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "categories": {
+      "type": "object",
+      "properties": {
+        "ATTRACTION": {
+          "$ref": "common.schema.json#/$defs/categoryScore"
+        },
+        "EMOTION": {
+          "$ref": "common.schema.json#/$defs/categoryScore"
+        },
+        "COMMUNICATION": {
+          "$ref": "common.schema.json#/$defs/categoryScore"
+        },
+        "PASSION": {
+          "$ref": "common.schema.json#/$defs/categoryScore"
+        },
+        "STABILITY": {
+          "$ref": "common.schema.json#/$defs/categoryScore"
+        },
+        "HARMONY": {
+          "$ref": "common.schema.json#/$defs/categoryScore"
+        },
+        "SUPPORT": {
+          "$ref": "common.schema.json#/$defs/categoryScore"
+        },
+        "LONG_TERM": {
+          "$ref": "common.schema.json#/$defs/categoryScore"
+        }
+      },
+      "required": [
+        "ATTRACTION",
+        "EMOTION",
+        "COMMUNICATION",
+        "PASSION",
+        "STABILITY",
+        "HARMONY",
+        "SUPPORT",
+        "LONG_TERM"
+      ],
+      "additionalProperties": false
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "$ref": "feature.schema.json"
+      }
+    },
+    "warnings": {
+      "$ref": "common.schema.json#/$defs/warnings"
+    },
+    "signedInterpretationContext": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "meta",
+    "overallScore",
+    "status",
+    "resultConfidence",
+    "coverage",
+    "categories",
+    "features",
+    "warnings"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "overallScore": {
+            "type": "null"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "const": "INSUFFICIENT_DATA"
+          },
+          "categories": {
+            "properties": {
+              "ATTRACTION": {
+                "properties": {
+                  "status": {
+                    "const": "INSUFFICIENT_DATA"
+                  }
+                }
+              },
+              "EMOTION": {
+                "properties": {
+                  "status": {
+                    "const": "INSUFFICIENT_DATA"
+                  }
+                }
+              },
+              "COMMUNICATION": {
+                "properties": {
+                  "status": {
+                    "const": "INSUFFICIENT_DATA"
+                  }
+                }
+              },
+              "PASSION": {
+                "properties": {
+                  "status": {
+                    "const": "INSUFFICIENT_DATA"
+                  }
+                }
+              },
+              "STABILITY": {
+                "properties": {
+                  "status": {
+                    "const": "INSUFFICIENT_DATA"
+                  }
+                }
+              },
+              "HARMONY": {
+                "properties": {
+                  "status": {
+                    "const": "INSUFFICIENT_DATA"
+                  }
+                }
+              },
+              "SUPPORT": {
+                "properties": {
+                  "status": {
+                    "const": "INSUFFICIENT_DATA"
+                  }
+                }
+              },
+              "LONG_TERM": {
+                "properties": {
+                  "status": {
+                    "const": "INSUFFICIENT_DATA"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "status": {
+            "enum": [
+              "CAUTION",
+              "BALANCED",
+              "GOOD",
+              "VERY_GOOD",
+              "EXCELLENT"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "categories": {
+            "properties": {
+              "ATTRACTION": {
+                "properties": {
+                  "status": {
+                    "const": "INSUFFICIENT_DATA"
+                  }
+                }
+              },
+              "EMOTION": {
+                "properties": {
+                  "status": {
+                    "const": "INSUFFICIENT_DATA"
+                  }
+                }
+              },
+              "COMMUNICATION": {
+                "properties": {
+                  "status": {
+                    "const": "INSUFFICIENT_DATA"
+                  }
+                }
+              },
+              "PASSION": {
+                "properties": {
+                  "status": {
+                    "const": "INSUFFICIENT_DATA"
+                  }
+                }
+              },
+              "STABILITY": {
+                "properties": {
+                  "status": {
+                    "const": "INSUFFICIENT_DATA"
+                  }
+                }
+              },
+              "HARMONY": {
+                "properties": {
+                  "status": {
+                    "const": "INSUFFICIENT_DATA"
+                  }
+                }
+              },
+              "SUPPORT": {
+                "properties": {
+                  "status": {
+                    "const": "INSUFFICIENT_DATA"
+                  }
+                }
+              },
+              "LONG_TERM": {
+                "properties": {
+                  "status": {
+                    "const": "INSUFFICIENT_DATA"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "overallScore": {
+            "type": "null"
+          },
+          "status": {
+            "const": "INSUFFICIENT_DATA"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "overallScore": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "multipleOf": 0.0001
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "CAUTION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "overallScore": {
+            "type": "number",
+            "minimum": 0,
+            "exclusiveMaximum": 45
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "BALANCED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "overallScore": {
+            "type": "number",
+            "minimum": 45,
+            "exclusiveMaximum": 60
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "GOOD"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "overallScore": {
+            "type": "number",
+            "minimum": 60,
+            "exclusiveMaximum": 75
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "VERY_GOOD"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "overallScore": {
+            "type": "number",
+            "minimum": 75,
+            "exclusiveMaximum": 85
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "EXCELLENT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "overallScore": {
+            "type": "number",
+            "minimum": 85,
+            "maximum": 100
+          }
+        }
+      }
+    }
+  ]
+}

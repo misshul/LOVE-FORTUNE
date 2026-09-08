@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/feature.schema.json",
+  "title": "LOVE FORTUNE feature v2",
+  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate.",
+  "type": "object",
+  "properties": {
+    "featureId": {
+      "type": "string",
+      "pattern": "^ft_[0-9a-f]{48}$"
+    },
+    "source": {
+      "enum": [
+        "SAJU",
+        "ASTROLOGY"
+      ]
+    },
+    "subject": {
+      "enum": [
+        "PERSON_A",
+        "PERSON_B",
+        "PAIR"
+      ]
+    },
+    "category": {
+      "$ref": "common.schema.json#/$defs/category"
+    },
+    "direction": {
+      "enum": [
+        "POSITIVE",
+        "NEGATIVE",
+        "NEUTRAL",
+        "MIXED"
+      ]
+    },
+    "rawValue": {
+      "type": [
+        "number",
+        "string",
+        "boolean",
+        "null"
+      ]
+    },
+    "baseWeight": {
+      "type": "number",
+      "minimum": 0
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "featureConfidence, not resultConfidence."
+    },
+    "period": {
+      "$ref": "common.schema.json#/$defs/period"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "planetA": {
+          "enum": [
+            "SUN",
+            "MOON",
+            "MERCURY",
+            "VENUS",
+            "MARS",
+            "JUPITER",
+            "SATURN",
+            "URANUS",
+            "NEPTUNE",
+            "PLUTO"
+          ]
+        },
+        "planetB": {
+          "enum": [
+            "SUN",
+            "MOON",
+            "MERCURY",
+            "VENUS",
+            "MARS",
+            "JUPITER",
+            "SATURN",
+            "URANUS",
+            "NEPTUNE",
+            "PLUTO"
+          ]
+        },
+        "aspect": {
+          "enum": [
+            "CONJUNCTION",
+            "OPPOSITION",
+            "TRINE",
+            "SQUARE",
+            "SEXTILE"
+          ]
+        },
+        "orb": {
+          "type": "number",
+          "minimum": 0
+        },
+        "pillar": {
+          "type": "string",
+          "minLength": 1
+        },
+        "element": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidateCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "availabilityRatio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "sampleCount": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "referenceId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ruleVariant": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": [
+              "number",
+              "string",
+              "boolean",
+              "null"
+            ]
+          },
+          "description": "Explicit user clarification: candidate scalar values; never raw Birth/labels. Non-identity metadata."
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "ruleId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "signedValue": {
+      "type": "number",
+      "minimum": -1,
+      "maximum": 1
+    }
+  },
+  "required": [
+    "featureId",
+    "ruleId",
+    "source",
+    "subject",
+    "category",
+    "direction",
+    "rawValue",
+    "baseWeight",
+    "confidence",
+    "period",
+    "metadata",
+    "signedValue"
+  ],
+  "additionalProperties": false
+}

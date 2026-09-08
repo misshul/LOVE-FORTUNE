@@ -1,0 +1,468 @@
+{
+  "provenance": "Synthetic arithmetic inputs and public timezone transition boundaries; not user data or an executable fortune rule catalog.",
+  "confidence": [
+    {
+      "name": "complete-certain",
+      "eligible": [
+        1,
+        1
+      ],
+      "available": [
+        {
+          "w": 1,
+          "c": 1
+        },
+        {
+          "w": 1,
+          "c": 1
+        }
+      ],
+      "expected": {
+        "coverage": 1,
+        "categoryResultConfidence": 1,
+        "resultConfidence": 1
+      }
+    },
+    {
+      "name": "coverage-without-double-confidence",
+      "eligible": [
+        1,
+        1
+      ],
+      "available": [
+        {
+          "w": 1,
+          "c": 0.5
+        }
+      ],
+      "expected": {
+        "coverage": 0.5,
+        "categoryResultConfidence": 0.5,
+        "resultConfidence": 0.25
+      }
+    },
+    {
+      "name": "empty",
+      "eligible": [
+        1
+      ],
+      "available": [],
+      "expected": {
+        "coverage": 0,
+        "categoryResultConfidence": 0,
+        "resultConfidence": 0
+      }
+    },
+    {
+      "name": "unsupported",
+      "eligible": [],
+      "available": [],
+      "expected": {
+        "coverage": 0,
+        "categoryResultConfidence": 0,
+        "resultConfidence": 0
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "values": [
+        1
+      ],
+      "present": 1,
+      "total": 1,
+      "agreement": 1,
+      "confidence": 1,
+      "mean": 1
+    },
+    {
+      "values": [
+        -1,
+        1
+      ],
+      "present": 2,
+      "total": 2,
+      "agreement": 0,
+      "confidence": 0,
+      "mean": 0
+    },
+    {
+      "values": [
+        0,
+        1
+      ],
+      "present": 2,
+      "total": 4,
+      "agreement": 0.5,
+      "confidence": 0.25,
+      "mean": 0.5
+    }
+  ],
+  "sampleSignals": [
+    {
+      "samples": [
+        {
+          "time": "06:00",
+          "signal": -1
+        },
+        {
+          "time": "12:00",
+          "signal": 1
+        },
+        {
+          "time": "18:00",
+          "signal": null
+        },
+        {
+          "time": "23:00",
+          "signal": 0
+        }
+      ],
+      "expected": -0.25
+    },
+    {
+      "samples": [
+        {
+          "time": "06:00",
+          "signal": 0.5
+        },
+        {
+          "time": "12:00",
+          "signal": null
+        },
+        {
+          "time": "18:00",
+          "signal": null
+        },
+        {
+          "time": "23:00",
+          "signal": null
+        }
+      ],
+      "expected": 0.5
+    },
+    {
+      "samples": [
+        {
+          "time": "06:00",
+          "signal": null
+        },
+        {
+          "time": "12:00",
+          "signal": null
+        },
+        {
+          "time": "18:00",
+          "signal": null
+        },
+        {
+          "time": "23:00",
+          "signal": null
+        }
+      ],
+      "expected": null
+    }
+  ],
+  "guardrail": [
+    {
+      "name": "empty",
+      "features": [],
+      "expected": "PASS",
+      "raw": 50
+    },
+    {
+      "name": "single-positive-removes-to-zero",
+      "features": [
+        {
+          "id": "a",
+          "v": 1,
+          "w": 1
+        }
+      ],
+      "expected": "PASS",
+      "raw": 50
+    },
+    {
+      "name": "small-influence",
+      "features": [
+        {
+          "id": "a",
+          "v": 1,
+          "w": 1
+        },
+        {
+          "id": "b",
+          "v": 0,
+          "w": 1
+        },
+        {
+          "id": "c",
+          "v": 0,
+          "w": 1
+        },
+        {
+          "id": "d",
+          "v": 0,
+          "w": 1
+        },
+        {
+          "id": "e",
+          "v": 0,
+          "w": 1
+        }
+      ],
+      "expected": "PASS",
+      "raw": 60
+    },
+    {
+      "name": "opposing-pair-non-convergence",
+      "features": [
+        {
+          "id": "a",
+          "v": 1,
+          "w": 1
+        },
+        {
+          "id": "b",
+          "v": -1,
+          "w": 1
+        }
+      ],
+      "expected": "SCORE_GUARDRAIL_UNSATISFIED"
+    },
+    {
+      "name": "same-sign",
+      "features": [
+        {
+          "id": "a",
+          "v": 1,
+          "w": 1
+        },
+        {
+          "id": "b",
+          "v": 1,
+          "w": 1
+        }
+      ],
+      "expected": "PASS",
+      "raw": 100
+    }
+  ],
+  "periods": [
+    {
+      "start": "2026-09-01",
+      "end": "2026-10-01",
+      "expected": 31
+    },
+    {
+      "start": "2026-09-01",
+      "end": "2026-10-02",
+      "expected": "DATE_RANGE_TOO_LARGE"
+    },
+    {
+      "start": "2026-09-02",
+      "end": "2026-09-01",
+      "expected": "INVALID_DATE_RANGE"
+    },
+    {
+      "start": "2099-12-31",
+      "end": "2100-01-01",
+      "expected": "UNSUPPORTED_DATE"
+    },
+    {
+      "start": "2000-02-28",
+      "end": "2000-03-01",
+      "expected": 3
+    }
+  ],
+  "slope": [
+    {
+      "x": [
+        0,
+        1,
+        2
+      ],
+      "y": [
+        40,
+        50,
+        60
+      ],
+      "expected": 10
+    },
+    {
+      "x": [
+        0,
+        2,
+        6
+      ],
+      "y": [
+        40,
+        44,
+        52
+      ],
+      "expected": 2
+    },
+    {
+      "x": [
+        0
+      ],
+      "y": [
+        50
+      ],
+      "expected": null
+    }
+  ],
+  "rounding": [
+    {
+      "input": "74.99995",
+      "expected": 75
+    },
+    {
+      "input": "74.123456",
+      "expected": 74.1235
+    },
+    {
+      "input": "-1.23445",
+      "expected": -1.2345
+    }
+  ],
+  "dst": [
+    {
+      "name": "nonexistent",
+      "timezone": "America/New_York",
+      "local": "2026-03-08T02:30",
+      "expected": "2026-03-08T07:00:00.000Z"
+    },
+    {
+      "name": "ambiguous-earlier-utc",
+      "timezone": "America/New_York",
+      "local": "2026-11-01T01:30",
+      "expected": "2026-11-01T05:30:00.000Z"
+    },
+    {
+      "name": "ordinary-sample",
+      "timezone": "Asia/Tokyo",
+      "local": "2026-09-08T06:00",
+      "expected": "2026-09-07T21:00:00.000Z"
+    },
+    {
+      "name": "skipped-date",
+      "timezone": "Pacific/Apia",
+      "local": "2011-12-30T06:00",
+      "expected": "2011-12-30T10:00:00.000Z"
+    }
+  ],
+  "outerAfterGuardrail": [
+    {
+      "name": "non-outer-shrink-breaks-group-cap",
+      "features": [
+        {
+          "id": "a",
+          "v": 1,
+          "w": 0.85,
+          "outer": false
+        },
+        {
+          "id": "b",
+          "v": 0,
+          "w": 0.03,
+          "outer": true
+        },
+        {
+          "id": "c",
+          "v": 0,
+          "w": 0.03,
+          "outer": true
+        },
+        {
+          "id": "d",
+          "v": 0,
+          "w": 0.03,
+          "outer": true
+        },
+        {
+          "id": "e",
+          "v": 0,
+          "w": 0.03,
+          "outer": true
+        },
+        {
+          "id": "f",
+          "v": 0,
+          "w": 0.03,
+          "outer": true
+        }
+      ],
+      "expected": "SCORE_CAP_INVARIANT_FAILED"
+    }
+  ],
+  "aggregates": [
+    {
+      "name": "monthly-full-precision",
+      "values": [
+        49.99994,
+        49.99994,
+        50.00004
+      ],
+      "canonicalMean": 50
+    },
+    {
+      "name": "yearly-full-precision",
+      "values": [
+        69.99994,
+        69.99994,
+        70.00004
+      ],
+      "canonicalMean": 70
+    },
+    {
+      "name": "population-not-sample",
+      "values": [
+        40,
+        60
+      ],
+      "canonicalMean": 50,
+      "populationStdDev": 10
+    }
+  ],
+  "ties": [
+    {
+      "order": "best",
+      "items": [
+        {
+          "date": "2026-09-01",
+          "score": 60.00001,
+          "resultConfidence": 1
+        },
+        {
+          "date": "2026-09-02",
+          "score": 60.00004,
+          "resultConfidence": 0.1
+        }
+      ],
+      "expectedDates": [
+        "2026-09-02",
+        "2026-09-01"
+      ]
+    },
+    {
+      "order": "caution",
+      "items": [
+        {
+          "date": "2026-09-02",
+          "score": 60.00004,
+          "resultConfidence": 1
+        },
+        {
+          "date": "2026-09-01",
+          "score": 60.00001,
+          "resultConfidence": 0.1
+        }
+      ],
+      "expectedDates": [
+        "2026-09-01",
+        "2026-09-02"
+      ]
+    }
+  ]
+}

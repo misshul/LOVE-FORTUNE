@@ -1,0 +1,6 @@
+{
+  "alg": "HS256",
+  "typ": "LFIC",
+  "kid": "fixture-current",
+  "v": 1
+}

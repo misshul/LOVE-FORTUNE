@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "defaultTimezone": {
+      "const": "Asia/Tokyo"
+    },
+    "defaultLocale": {
+      "const": "ko-KR"
+    },
+    "supportedLocales": {
+      "const": [
+        "ko-KR",
+        "ja-JP",
+        "en-US"
+      ]
+    },
+    "dateRange": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "const": "1900-01-01"
+        },
+        "end": {
+          "const": "2099-12-31"
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ],
+      "additionalProperties": false
+    },
+    "maxDailyRangeDays": {
+      "const": 31
+    }
+  },
+  "required": [
+    "defaultTimezone",
+    "defaultLocale",
+    "supportedLocales",
+    "dateRange",
+    "maxDailyRangeDays"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/service-config.schema.json",
+  "title": "LOVE FORTUNE service-config v2",
+  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate."
+}

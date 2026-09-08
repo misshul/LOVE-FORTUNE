@@ -1,0 +1,96 @@
+{
+  "provenance": "Synthetic contract-only vectors, not production rules.",
+  "vectors": [
+    {
+      "name": "nfc-and-identity",
+      "input": {
+        "ruleId": "SYNTHETIC_RULE",
+        "source": "ASTROLOGY",
+        "subject": "PAIR",
+        "category": "HARMONY",
+        "direction": "POSITIVE",
+        "signedValue": 1,
+        "rawValue": 1,
+        "baseWeight": 0.5,
+        "confidence": 1,
+        "period": {
+          "type": "LIFETIME"
+        },
+        "metadata": {
+          "planetA": "VENUS",
+          "planetB": "MARS",
+          "aspect": "TRINE",
+          "ruleVariant": "Café"
+        }
+      },
+      "canonical": "{\"category\":\"HARMONY\",\"metadata\":{\"aspect\":\"TRINE\",\"planetA\":\"VENUS\",\"planetB\":\"MARS\",\"ruleVariant\":\"Café\"},\"period\":{\"type\":\"LIFETIME\"},\"ruleId\":\"SYNTHETIC_RULE\",\"source\":\"ASTROLOGY\",\"subject\":\"PAIR\"}",
+      "featureId": "ft_c03583aa163c57aaa3462408fda52704fea71c9d64c90385"
+    },
+    {
+      "name": "confidence-signal-not-identity",
+      "input": {
+        "ruleId": "SYNTHETIC_RULE",
+        "source": "ASTROLOGY",
+        "subject": "PAIR",
+        "category": "HARMONY",
+        "direction": "POSITIVE",
+        "signedValue": 0.5,
+        "rawValue": null,
+        "baseWeight": 0.5,
+        "confidence": 0.25,
+        "period": {
+          "type": "LIFETIME"
+        },
+        "metadata": {
+          "planetA": "VENUS",
+          "planetB": "MARS",
+          "aspect": "TRINE",
+          "ruleVariant": "Café",
+          "orb": 1.25,
+          "candidateCount": 2
+        }
+      },
+      "canonical": "{\"category\":\"HARMONY\",\"metadata\":{\"aspect\":\"TRINE\",\"planetA\":\"VENUS\",\"planetB\":\"MARS\",\"ruleVariant\":\"Café\"},\"period\":{\"type\":\"LIFETIME\"},\"ruleId\":\"SYNTHETIC_RULE\",\"source\":\"ASTROLOGY\",\"subject\":\"PAIR\"}",
+      "featureId": "ft_c03583aa163c57aaa3462408fda52704fea71c9d64c90385"
+    },
+    {
+      "name": "different-role",
+      "input": {
+        "ruleId": "SYNTHETIC_RULE",
+        "source": "ASTROLOGY",
+        "subject": "PERSON_A",
+        "category": "HARMONY",
+        "direction": "POSITIVE",
+        "signedValue": 1,
+        "rawValue": 1,
+        "baseWeight": 0.5,
+        "confidence": 1,
+        "period": {
+          "type": "LIFETIME"
+        },
+        "metadata": {
+          "planetA": "VENUS",
+          "planetB": "MARS",
+          "aspect": "TRINE",
+          "ruleVariant": "Café"
+        }
+      },
+      "canonical": "{\"category\":\"HARMONY\",\"metadata\":{\"aspect\":\"TRINE\",\"planetA\":\"VENUS\",\"planetB\":\"MARS\",\"ruleVariant\":\"Café\"},\"period\":{\"type\":\"LIFETIME\"},\"ruleId\":\"SYNTHETIC_RULE\",\"source\":\"ASTROLOGY\",\"subject\":\"PERSON_A\"}",
+      "featureId": "ft_ec9a9fc24e1d2cc1bf20618ca5912bd3f5f81d43ada6978d"
+    }
+  ],
+  "numericExamples": [
+    {
+      "input": 1e-7,
+      "canonical": "0.0000001"
+    },
+    {
+      "input": 1e+21,
+      "canonical": "1000000000000000000000"
+    },
+    {
+      "input": 0,
+      "canonical": "0"
+    }
+  ]
+}

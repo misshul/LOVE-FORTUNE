@@ -1,0 +1,1890 @@
+openapi: 3.1.1
+info:
+  title: LOVE FORTUNE API contract
+  version: 3.0.0
+  description: Final Decision v3 and retained v2 contracts frozen. Catalog and external
+    engine readiness gates are separate. No implementation code is included.
+jsonSchemaDialect: https://json-schema.org/draft/2020-12/schema
+servers:
+  - url: /wp-json/love-fortune/v1
+paths:
+  /compatibility/calculate:
+    post:
+      operationId: calculateCompatibility
+      summary: /compatibility/calculate
+      security: []
+      x-contract-status: FROZEN_READINESS_SEPARATE
+      x-rate-limit:
+        requests: 60
+        windowSeconds: 600
+        scope: Trusted proxy validated source IP, else remote address; HMAC key, never
+          raw IP
+        rawKeyMaxRetentionSeconds: 3600
+        algorithm: fixed-window
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./schemas/compatibility-request.schema.json
+      responses:
+        "200":
+          description: Deterministic calculation result
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/compatibility-response.schema.json
+        "400":
+          description: Malformed request
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "404":
+          description: Unknown reference
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "413":
+          description: Payload too large
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "415":
+          description: Unsupported media type
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "422":
+          description: Semantic validation failed
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "429":
+          description: Rate limit exceeded
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+            Retry-After:
+              description: Integer seconds remaining until the current600-second fixed window
+                ends.
+              required: true
+              schema:
+                type: string
+                pattern: ^[0-9]+$
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "500":
+          description: Internal error
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "503":
+          description: Temporary calculation provider unavailable
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+      x-max-payload-bytes: 32768
+      x-content-encoding: Any Content-Encoding header is rejected with415
+        UNSUPPORTED_CONTENT_ENCODING
+      x-content-type: application/json or application/json; charset=utf-8 only;
+        charset case-insensitive
+  /fortune/daily:
+    post:
+      operationId: calculateDaily
+      summary: /fortune/daily
+      security: []
+      x-contract-status: FROZEN_READINESS_SEPARATE
+      x-rate-limit:
+        requests: 60
+        windowSeconds: 600
+        scope: Trusted proxy validated source IP, else remote address; HMAC key, never
+          raw IP
+        rawKeyMaxRetentionSeconds: 3600
+        algorithm: fixed-window
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./schemas/daily-request.schema.json
+      responses:
+        "200":
+          description: Deterministic calculation result
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/daily-response.schema.json
+        "400":
+          description: Malformed request
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "404":
+          description: Unknown reference
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "413":
+          description: Payload too large
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "415":
+          description: Unsupported media type
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "422":
+          description: Semantic validation failed
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "429":
+          description: Rate limit exceeded
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+            Retry-After:
+              description: Integer seconds remaining until the current600-second fixed window
+                ends.
+              required: true
+              schema:
+                type: string
+                pattern: ^[0-9]+$
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "500":
+          description: Internal error
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "503":
+          description: Temporary calculation provider unavailable
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+      x-max-payload-bytes: 32768
+      x-content-encoding: Any Content-Encoding header is rejected with415
+        UNSUPPORTED_CONTENT_ENCODING
+      x-content-type: application/json or application/json; charset=utf-8 only;
+        charset case-insensitive
+  /fortune/daily-range:
+    post:
+      operationId: calculateDailyRange
+      summary: /fortune/daily-range
+      security: []
+      x-contract-status: FROZEN_READINESS_SEPARATE
+      x-rate-limit:
+        requests: 60
+        windowSeconds: 600
+        scope: Trusted proxy validated source IP, else remote address; HMAC key, never
+          raw IP
+        rawKeyMaxRetentionSeconds: 3600
+        algorithm: fixed-window
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./schemas/daily-range-request.schema.json
+      responses:
+        "200":
+          description: Deterministic calculation result
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/daily-range-response.schema.json
+        "400":
+          description: Malformed request
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "404":
+          description: Unknown reference
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "413":
+          description: Payload too large
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "415":
+          description: Unsupported media type
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "422":
+          description: Semantic validation failed
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "429":
+          description: Rate limit exceeded
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+            Retry-After:
+              description: Integer seconds remaining until the current600-second fixed window
+                ends.
+              required: true
+              schema:
+                type: string
+                pattern: ^[0-9]+$
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "500":
+          description: Internal error
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "503":
+          description: Temporary calculation provider unavailable
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+      x-max-payload-bytes: 32768
+      x-content-encoding: Any Content-Encoding header is rejected with415
+        UNSUPPORTED_CONTENT_ENCODING
+      x-content-type: application/json or application/json; charset=utf-8 only;
+        charset case-insensitive
+  /fortune/weekly:
+    post:
+      operationId: calculateWeekly
+      summary: /fortune/weekly
+      security: []
+      x-contract-status: FROZEN_READINESS_SEPARATE
+      x-rate-limit:
+        requests: 60
+        windowSeconds: 600
+        scope: Trusted proxy validated source IP, else remote address; HMAC key, never
+          raw IP
+        rawKeyMaxRetentionSeconds: 3600
+        algorithm: fixed-window
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./schemas/period-request.schema.json#/$defs/Weekly
+      responses:
+        "200":
+          description: Deterministic calculation result
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/period-response.schema.json#/$defs/Weekly
+        "400":
+          description: Malformed request
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "404":
+          description: Unknown reference
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "413":
+          description: Payload too large
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "415":
+          description: Unsupported media type
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "422":
+          description: Semantic validation failed
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "429":
+          description: Rate limit exceeded
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+            Retry-After:
+              description: Integer seconds remaining until the current600-second fixed window
+                ends.
+              required: true
+              schema:
+                type: string
+                pattern: ^[0-9]+$
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "500":
+          description: Internal error
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "503":
+          description: Temporary calculation provider unavailable
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+      x-max-payload-bytes: 32768
+      x-content-encoding: Any Content-Encoding header is rejected with415
+        UNSUPPORTED_CONTENT_ENCODING
+      x-content-type: application/json or application/json; charset=utf-8 only;
+        charset case-insensitive
+  /fortune/monthly:
+    post:
+      operationId: calculateMonthly
+      summary: /fortune/monthly
+      security: []
+      x-contract-status: FROZEN_READINESS_SEPARATE
+      x-rate-limit:
+        requests: 60
+        windowSeconds: 600
+        scope: Trusted proxy validated source IP, else remote address; HMAC key, never
+          raw IP
+        rawKeyMaxRetentionSeconds: 3600
+        algorithm: fixed-window
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./schemas/period-request.schema.json#/$defs/Monthly
+      responses:
+        "200":
+          description: Deterministic calculation result
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/period-response.schema.json#/$defs/Monthly
+        "400":
+          description: Malformed request
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "404":
+          description: Unknown reference
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "413":
+          description: Payload too large
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "415":
+          description: Unsupported media type
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "422":
+          description: Semantic validation failed
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "429":
+          description: Rate limit exceeded
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+            Retry-After:
+              description: Integer seconds remaining until the current600-second fixed window
+                ends.
+              required: true
+              schema:
+                type: string
+                pattern: ^[0-9]+$
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "500":
+          description: Internal error
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "503":
+          description: Temporary calculation provider unavailable
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+      x-max-payload-bytes: 32768
+      x-content-encoding: Any Content-Encoding header is rejected with415
+        UNSUPPORTED_CONTENT_ENCODING
+      x-content-type: application/json or application/json; charset=utf-8 only;
+        charset case-insensitive
+  /fortune/yearly:
+    post:
+      operationId: calculateYearly
+      summary: /fortune/yearly
+      security: []
+      x-contract-status: FROZEN_READINESS_SEPARATE
+      x-rate-limit:
+        requests: 60
+        windowSeconds: 600
+        scope: Trusted proxy validated source IP, else remote address; HMAC key, never
+          raw IP
+        rawKeyMaxRetentionSeconds: 3600
+        algorithm: fixed-window
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./schemas/period-request.schema.json#/$defs/Yearly
+      responses:
+        "200":
+          description: Deterministic calculation result
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/period-response.schema.json#/$defs/Yearly
+        "400":
+          description: Malformed request
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "404":
+          description: Unknown reference
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "413":
+          description: Payload too large
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "415":
+          description: Unsupported media type
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "422":
+          description: Semantic validation failed
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "429":
+          description: Rate limit exceeded
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+            Retry-After:
+              description: Integer seconds remaining until the current600-second fixed window
+                ends.
+              required: true
+              schema:
+                type: string
+                pattern: ^[0-9]+$
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "500":
+          description: Internal error
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "503":
+          description: Temporary calculation provider unavailable
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+      x-max-payload-bytes: 32768
+      x-content-encoding: Any Content-Encoding header is rejected with415
+        UNSUPPORTED_CONTENT_ENCODING
+      x-content-type: application/json or application/json; charset=utf-8 only;
+        charset case-insensitive
+  /interpretation/generate:
+    post:
+      operationId: generateInterpretation
+      summary: /interpretation/generate
+      security: []
+      x-contract-status: FROZEN_READINESS_SEPARATE
+      x-rate-limit:
+        requests: 10
+        windowSeconds: 600
+        scope: Trusted proxy validated source IP, else remote address; HMAC key, never
+          raw IP
+        rawKeyMaxRetentionSeconds: 3600
+        algorithm: fixed-window
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./schemas/interpretation-request.schema.json
+      responses:
+        "200":
+          description: AI interpretation or deterministic fallback;
+            meta.interpretationMode=AI|FALLBACK
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/interpretation-response.schema.json
+        "400":
+          description: Malformed request
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "404":
+          description: Unknown reference
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "413":
+          description: Payload too large
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "415":
+          description: Unsupported media type
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "422":
+          description: Semantic validation failed
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "429":
+          description: Rate limit exceeded
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+            Retry-After:
+              description: Integer seconds remaining until the current600-second fixed window
+                ends.
+              required: true
+              schema:
+                type: string
+                pattern: ^[0-9]+$
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "500":
+          description: Internal error
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "503":
+          description: "INTERPRETATION_UNAVAILABLE: neither AI interpretation nor
+            deterministic fallback can be returned"
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+      x-max-payload-bytes: 65536
+      x-content-encoding: Any Content-Encoding header is rejected with415
+        UNSUPPORTED_CONTENT_ENCODING
+      x-content-type: application/json or application/json; charset=utf-8 only;
+        charset case-insensitive
+  /celebrities:
+    get:
+      summary: Public read-only reference
+      operationId: getCelebrityList
+      security: []
+      responses:
+        "200":
+          description: Public reference data; never user Birth Data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ./schemas/celebrity.schema.json
+        "404":
+          description: Unknown reference
+          content:
+            application/json:
+              schema: &a7
+                $ref: ./schemas/error.schema.json
+      parameters:
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+            maxLength: 128
+          description: Optional NFC case-insensitive substring of reference ID or display
+            name; never echoed or logged.
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 50
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            minimum: 0
+            default: 0
+  /admin/versions:
+    summary: Admin resource contract; no arbitrary SQL/code
+    get:
+      operationId: getadminversions
+      security:
+        - WordPressSession: []
+          WordPressNonce: []
+      x-required-capability: lf_manage_engine
+      responses:
+        "200":
+          description: Authorized operation result
+          headers: &a1
+            Cache-Control:
+              required: true
+              description: No storage
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ./schemas/admin.schema.json#/$defs/VersionRecord
+        "400":
+          description: Malformed request
+          headers: *a1
+          content:
+            application/json:
+              schema: &a2
+                $ref: ./schemas/error.schema.json
+        "401":
+          description: ADMIN_AUTH_REQUIRED
+          headers: *a1
+          content:
+            application/json:
+              schema: *a2
+        "403":
+          description: ADMIN_CAPABILITY_REQUIRED or ADMIN_NONCE_INVALID
+          headers: *a1
+          content:
+            application/json:
+              schema: *a2
+        "404":
+          description: Unknown resource
+          headers: *a1
+          content:
+            application/json:
+              schema: *a2
+        "413":
+          description: Payload too large
+          headers: *a1
+          content:
+            application/json:
+              schema: *a2
+        "415":
+          description: Unsupported media type
+          headers: *a1
+          content:
+            application/json:
+              schema: *a2
+        "422":
+          description: Invalid semantics, unapproved reference, or engine version not ready
+          headers: *a1
+          content:
+            application/json:
+              schema: *a2
+        "500":
+          description: Internal error
+          headers: *a1
+          content:
+            application/json:
+              schema: *a2
+    post:
+      operationId: postadminversions
+      security:
+        - WordPressSession: []
+          WordPressNonce: []
+      x-required-capability: lf_manage_engine
+      responses:
+        "200":
+          description: Authorized operation result
+          headers: &a3
+            Cache-Control:
+              required: true
+              description: No storage
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/admin.schema.json#/$defs/VersionRecord
+        "400":
+          description: Malformed request
+          headers: *a3
+          content:
+            application/json:
+              schema: *a2
+        "401":
+          description: ADMIN_AUTH_REQUIRED
+          headers: *a3
+          content:
+            application/json:
+              schema: *a2
+        "403":
+          description: ADMIN_CAPABILITY_REQUIRED or ADMIN_NONCE_INVALID
+          headers: *a3
+          content:
+            application/json:
+              schema: *a2
+        "404":
+          description: Unknown resource
+          headers: *a3
+          content:
+            application/json:
+              schema: *a2
+        "413":
+          description: Payload too large
+          headers: *a3
+          content:
+            application/json:
+              schema: *a2
+        "415":
+          description: Unsupported media type
+          headers: *a3
+          content:
+            application/json:
+              schema: *a2
+        "422":
+          description: Invalid semantics, unapproved reference, or engine version not ready
+          headers: *a3
+          content:
+            application/json:
+              schema: *a2
+        "500":
+          description: Internal error
+          headers: *a3
+          content:
+            application/json:
+              schema: *a2
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./schemas/admin.schema.json#/$defs/VersionMutation
+  /admin/celebrities:
+    summary: Admin resource contract; no arbitrary SQL/code
+    get:
+      operationId: getadmincelebrities
+      security:
+        - WordPressSession: []
+          WordPressNonce: []
+      x-required-capability: lf_manage_celebrities
+      responses:
+        "200":
+          description: Authorized operation result
+          headers: &a4
+            Cache-Control:
+              required: true
+              description: No storage
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ./schemas/admin.schema.json#/$defs/CelebrityRecord
+        "400":
+          description: Malformed request
+          headers: *a4
+          content:
+            application/json:
+              schema: *a2
+        "401":
+          description: ADMIN_AUTH_REQUIRED
+          headers: *a4
+          content:
+            application/json:
+              schema: *a2
+        "403":
+          description: ADMIN_CAPABILITY_REQUIRED or ADMIN_NONCE_INVALID
+          headers: *a4
+          content:
+            application/json:
+              schema: *a2
+        "404":
+          description: Unknown resource
+          headers: *a4
+          content:
+            application/json:
+              schema: *a2
+        "413":
+          description: Payload too large
+          headers: *a4
+          content:
+            application/json:
+              schema: *a2
+        "415":
+          description: Unsupported media type
+          headers: *a4
+          content:
+            application/json:
+              schema: *a2
+        "422":
+          description: Invalid semantics, unapproved reference, or engine version not ready
+          headers: *a4
+          content:
+            application/json:
+              schema: *a2
+        "500":
+          description: Internal error
+          headers: *a4
+          content:
+            application/json:
+              schema: *a2
+    post:
+      operationId: postadmincelebrities
+      security:
+        - WordPressSession: []
+          WordPressNonce: []
+      x-required-capability: lf_manage_celebrities
+      responses:
+        "201":
+          description: Authorized operation result
+          headers: &a5
+            Cache-Control:
+              required: true
+              description: No storage
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/admin.schema.json#/$defs/CelebrityRecord
+        "400":
+          description: Malformed request
+          headers: *a5
+          content:
+            application/json:
+              schema: *a2
+        "401":
+          description: ADMIN_AUTH_REQUIRED
+          headers: *a5
+          content:
+            application/json:
+              schema: *a2
+        "403":
+          description: ADMIN_CAPABILITY_REQUIRED or ADMIN_NONCE_INVALID
+          headers: *a5
+          content:
+            application/json:
+              schema: *a2
+        "404":
+          description: Unknown resource
+          headers: *a5
+          content:
+            application/json:
+              schema: *a2
+        "413":
+          description: Payload too large
+          headers: *a5
+          content:
+            application/json:
+              schema: *a2
+        "415":
+          description: Unsupported media type
+          headers: *a5
+          content:
+            application/json:
+              schema: *a2
+        "422":
+          description: Invalid semantics, unapproved reference, or engine version not ready
+          headers: *a5
+          content:
+            application/json:
+              schema: *a2
+        "500":
+          description: Internal error
+          headers: *a5
+          content:
+            application/json:
+              schema: *a2
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./schemas/admin.schema.json#/$defs/CelebrityRecord
+  /admin/calculation/test:
+    summary: Admin resource contract; no arbitrary SQL/code
+    post:
+      operationId: postadmincalculationtest
+      security:
+        - WordPressSession: []
+          WordPressNonce: []
+      x-required-capability: lf_view_calculations
+      responses:
+        "200":
+          description: Authorized operation result
+          headers: &a6
+            Cache-Control:
+              required: true
+              description: No storage
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/admin.schema.json#/$defs/CalculationTestResponse
+        "400":
+          description: Malformed request
+          headers: *a6
+          content:
+            application/json:
+              schema: *a2
+        "401":
+          description: ADMIN_AUTH_REQUIRED
+          headers: *a6
+          content:
+            application/json:
+              schema: *a2
+        "403":
+          description: ADMIN_CAPABILITY_REQUIRED or ADMIN_NONCE_INVALID
+          headers: *a6
+          content:
+            application/json:
+              schema: *a2
+        "404":
+          description: Unknown resource
+          headers: *a6
+          content:
+            application/json:
+              schema: *a2
+        "413":
+          description: Payload too large
+          headers: *a6
+          content:
+            application/json:
+              schema: *a2
+        "415":
+          description: Unsupported media type
+          headers: *a6
+          content:
+            application/json:
+              schema: *a2
+        "422":
+          description: Invalid semantics, unapproved reference, or engine version not ready
+          headers: *a6
+          content:
+            application/json:
+              schema: *a2
+        "500":
+          description: Internal error
+          headers: *a6
+          content:
+            application/json:
+              schema: *a2
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./schemas/admin.schema.json#/$defs/CalculationTestRequest
+  /locations:
+    get:
+      summary: Public read-only reference
+      operationId: getLocationList
+      security: []
+      responses:
+        "200":
+          description: Public reference data; never user Birth Data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ./schemas/location.schema.json
+        "404":
+          description: Unknown reference
+          content:
+            application/json:
+              schema: *a7
+      parameters:
+        - name: q
+          in: query
+          required: false
+          schema:
+            type: string
+            maxLength: 128
+          description: Optional NFC case-insensitive substring of reference ID or display
+            name; never echoed or logged.
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 50
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            minimum: 0
+            default: 0
+  /locations/{locationId}:
+    get:
+      summary: Public read-only reference
+      operationId: getLocation
+      security: []
+      responses:
+        "200":
+          description: Public reference data; never user Birth Data
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/location.schema.json
+        "404":
+          description: Unknown reference
+          content:
+            application/json:
+              schema: *a7
+    parameters:
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+  /service-config:
+    get:
+      summary: Public read-only reference
+      operationId: getServiceConfig
+      security: []
+      responses:
+        "200":
+          description: Public reference data; never user Birth Data
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/service-config.schema.json
+        "404":
+          description: Unknown reference
+          content:
+            application/json:
+              schema: *a7
+  /celebrities/{celebrityId}:
+    get:
+      summary: Public read-only reference
+      operationId: getCelebrity
+      security: []
+      responses:
+        "200":
+          description: Public reference data; never user Birth Data
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/celebrity.schema.json
+        "404":
+          description: Unknown reference
+          content:
+            application/json:
+              schema: *a7
+    parameters:
+      - name: celebrityId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+  /celebrities/{celebrityId}/compatibility:
+    parameters:
+      - in: path
+        name: celebrityId
+        required: true
+        schema: &a9
+          type: string
+          minLength: 1
+    post:
+      operationId: calculateCelebrityCompatibility
+      summary: Existing celebrity calculation, normalized to v2 ID naming
+      security: []
+      x-contract-status: FROZEN_READINESS_SEPARATE
+      x-rate-limit:
+        requests: 60
+        windowSeconds: 600
+        scope: Trusted proxy validated source IP, else remote address; HMAC key, never
+          raw IP
+        rawKeyMaxRetentionSeconds: 3600
+        algorithm: fixed-window
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./schemas/celebrity-compatibility-request.schema.json
+      responses:
+        "200":
+          description: Deterministic calculation result
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/compatibility-response.schema.json
+        "400":
+          description: Malformed request
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "404":
+          description: Unknown reference
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "413":
+          description: Payload too large
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "415":
+          description: Unsupported media type
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "422":
+          description: Semantic validation failed
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "429":
+          description: Rate limit exceeded
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+            Retry-After:
+              description: Integer seconds remaining until the current600-second fixed window
+                ends.
+              required: true
+              schema:
+                type: string
+                pattern: ^[0-9]+$
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "500":
+          description: Internal error
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+        "503":
+          description: Temporary calculation provider unavailable
+          headers:
+            Cache-Control:
+              description: "Required: no-store"
+              required: true
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/error.schema.json
+      x-max-payload-bytes: 32768
+      x-content-encoding: Any Content-Encoding header is rejected with415
+        UNSUPPORTED_CONTENT_ENCODING
+      x-content-type: application/json or application/json; charset=utf-8 only;
+        charset case-insensitive
+  /admin/celebrities/{celebrityId}:
+    summary: Admin resource contract; no arbitrary SQL/code
+    put:
+      operationId: putadmincelebritiescelebrityId
+      security:
+        - WordPressSession: []
+          WordPressNonce: []
+      x-required-capability: lf_manage_celebrities
+      responses:
+        "200":
+          description: Authorized operation result
+          headers: &a8
+            Cache-Control:
+              required: true
+              description: No storage
+              schema:
+                type: string
+                const: no-store
+          content:
+            application/json:
+              schema:
+                $ref: ./schemas/admin.schema.json#/$defs/CelebrityRecord
+        "400":
+          description: Malformed request
+          headers: *a8
+          content:
+            application/json:
+              schema: *a2
+        "401":
+          description: ADMIN_AUTH_REQUIRED
+          headers: *a8
+          content:
+            application/json:
+              schema: *a2
+        "403":
+          description: ADMIN_CAPABILITY_REQUIRED or ADMIN_NONCE_INVALID
+          headers: *a8
+          content:
+            application/json:
+              schema: *a2
+        "404":
+          description: Unknown resource
+          headers: *a8
+          content:
+            application/json:
+              schema: *a2
+        "413":
+          description: Payload too large
+          headers: *a8
+          content:
+            application/json:
+              schema: *a2
+        "415":
+          description: Unsupported media type
+          headers: *a8
+          content:
+            application/json:
+              schema: *a2
+        "422":
+          description: Invalid semantics, unapproved reference, or engine version not ready
+          headers: *a8
+          content:
+            application/json:
+              schema: *a2
+        "500":
+          description: Internal error
+          headers: *a8
+          content:
+            application/json:
+              schema: *a2
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./schemas/admin.schema.json#/$defs/CelebrityRecord
+    parameters:
+      - name: celebrityId
+        in: path
+        required: true
+        schema: *a9
+    delete:
+      operationId: deleteadmincelebritiescelebrityId
+      security:
+        - WordPressSession: []
+          WordPressNonce: []
+      x-required-capability: lf_manage_celebrities
+      responses:
+        "204":
+          description: Authorized operation result
+          headers: &a10
+            Cache-Control:
+              required: true
+              description: No storage
+              schema:
+                type: string
+                const: no-store
+        "400":
+          description: Malformed request
+          headers: *a10
+          content:
+            application/json:
+              schema: *a2
+        "401":
+          description: ADMIN_AUTH_REQUIRED
+          headers: *a10
+          content:
+            application/json:
+              schema: *a2
+        "403":
+          description: ADMIN_CAPABILITY_REQUIRED or ADMIN_NONCE_INVALID
+          headers: *a10
+          content:
+            application/json:
+              schema: *a2
+        "404":
+          description: Unknown resource
+          headers: *a10
+          content:
+            application/json:
+              schema: *a2
+        "413":
+          description: Payload too large
+          headers: *a10
+          content:
+            application/json:
+              schema: *a2
+        "415":
+          description: Unsupported media type
+          headers: *a10
+          content:
+            application/json:
+              schema: *a2
+        "422":
+          description: Invalid semantics, unapproved reference, or engine version not ready
+          headers: *a10
+          content:
+            application/json:
+              schema: *a2
+        "500":
+          description: Internal error
+          headers: *a10
+          content:
+            application/json:
+              schema: *a2
+x-removed-public-paths:
+  - /locations/search
+  - /config
+  - /version
+components:
+  securitySchemes:
+    WordPressSession:
+      type: apiKey
+      in: header
+      name: Cookie
+      description: Authenticated WordPress admin session; validate real WordPress
+        cookies, not arbitrary Cookie presence.
+    WordPressNonce:
+      type: apiKey
+      in: header
+      name: X-WP-Nonce
+      description: Valid wp_rest nonce bound to the authenticated user/session.

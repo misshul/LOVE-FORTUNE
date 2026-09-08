@@ -1,9 +1,12 @@
 # LOVE FORTUNE
 # 09_TASK_LIST.md
 
-Version: 1.0.0
-Status: FINAL
+Version: 1.3.0
+Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: Development Task / Implementation Plan
+
+Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
+Freeze Gate: [Freeze validation and readiness](contracts/README.md)
 
 ---
 
@@ -31,7 +34,7 @@ T09 Compatibility Feature Engine
 T10 LOVE SCORE Engine
 T11 Daily Fortune Engine
 T12 Weekly / Monthly / Yearly Engine
-T13 Reading Orchestrator
+T13 Core Calculation Orchestrator
 T14 REST API
 T15 Browser Privacy Storage
 T16 User Input UI
@@ -110,21 +113,17 @@ tests/
 
 # 5. T02 Version System
 
-관리:
+Task scope: version registry and immutable manifests.
 
-```text
-engine
-saju rule
-astrology rule
-score
-period rule
-ephemeris provider
-ephemeris data
-AI prompt
-AI interpretation rule
-```
+- [ ] serviceVersion / apiVersion
+- [ ] sajuEngineVersion / astrologyEngineVersion / scoreVersion / configVersion
+- [ ] locationReferenceVersion / timezoneDataVersion
+- [ ] ephemerisProviderVersion / ephemerisDataVersion
+- [ ] Interpretation-only aiPromptVersion and provider/model metadata
+- [ ] Exact canonical output under identical versions
+- [ ] No silent release-definition overwrite
 
-동일 Input + 동일 Version = 동일 계산.
+Use Final Decision v2 metadata/token projection; obey the current Freeze gate in contracts/README.md.
 
 ---
 
@@ -143,25 +142,26 @@ User Birth/Relationship/History table 생성 금지.
 
 # 7. T04 Location / Timezone
 
-- [ ] stable location ID
-- [ ] country/region/city
-- [ ] lat/lon
-- [ ] IANA timezone
-- [ ] historical timezone
-- [ ] search API
-- [ ] cache
+- [ ] birthLocationId-only calculation input and server reference resolution
+- [ ] /locations and /locations/{locationId}
+- [ ] targetTimezone required; Asia/Tokyo UI-only default
+- [ ] /service-config locale ko-KR/ja-JP/en-US
+- [ ] historical timezone and versioned data
+
+Normative contract: [Final Decision v2 SC-08](contracts/runtime-contract-v2.md#sc-08-public-api-wire).
 
 ---
 
 # 8. T05 Calendar / Saju Foundation
 
-- [ ] solar/lunar
+- [ ] Gregorian date range1900..2099
 - [ ] leap month
 - [ ] solar terms
 - [ ] 12 Jie
 - [ ] Julian Day
 - [ ] sexagenary cycle
-- [ ] golden references
+- [ ] golden references (synthetic/licensed/approved only)
+- [ ] BLOCKED_EXTERNAL: verified Day Pillar epoch / epoch identifier
 
 ---
 
@@ -191,6 +191,7 @@ KOREAN_LONGITUDE_2330
 - [ ] interface
 - [ ] provider adapter
 - [ ] UTC input
+- [ ] BLOCKED_EXTERNAL: ephemeris provider/license/data selection
 - [ ] geocentric longitude
 - [ ] tropical
 - [ ] metadata
@@ -217,21 +218,14 @@ KOREAN_LONGITUDE_2330
 
 # 12. T09 Compatibility Features
 
-공통 DTO:
+- [ ] Versioned Saju/Astrology feature catalogs
+- [ ] featureId, ruleId, source, subject, category, direction, rawValue, baseWeight, confidence, period, metadata
+- [ ] confidence means featureConfidence
+- [ ] Stable feature instances without tracking identifiers
+- [ ] Registered category/direction/MIXED signed values and weight factors
+- [ ] Candidate uncertainty propagation
 
-```text
-source
-rule
-categories
-direction
-strength
-confidence
-```
-
-- [ ] Saju adapter
-- [ ] Astrology adapter
-- [ ] validation
-- [ ] top positive/negative
+Follow v2 confidence/identity/candidate contracts and approved clarifications. Incomplete rule catalogs remain disabled and are tracked separately in contracts/README.md.
 
 ---
 
@@ -239,10 +233,10 @@ confidence
 
 - [ ] signed value
 - [ ] effective weight
-- [ ] source score
+- [ ] category raw R
 - [ ] evidence stabilization
 - [ ] missing source reweight
-- [ ] coverage/confidence
+- [ ] coverage/resultConfidence
 - [ ] category
 - [ ] lifetime
 - [ ] display
@@ -254,14 +248,13 @@ confidence
 
 # 14. T11 Daily
 
-- [ ] daily Saju
-- [ ] 00/06/12/18 transits
-- [ ] signal
-- [ ] delta
-- [ ] daily score
-- [ ] yesterday
-- [ ] category
-- [ ] actions
+- [ ] Samples06/12/18/23; deterministic DST earlier UTC instant
+- [ ] Missing samples and0.75mean+0.25peak
+- [ ] Source weights0.50/0.50, delta18, clamp0..100
+- [ ] Category-specific evidence
+- [ ] Delta status bands and lifetime-null propagation
+
+Normative contract: [Final Decision v2 SC-05](contracts/runtime-contract-v2.md#sc-05-daily-sampling-and-dst). Normative contract: [Final Decision v2 SC-06](contracts/runtime-contract-v2.md#sc-06-dates-periods-and-statuses).
 
 ---
 
@@ -277,33 +270,9 @@ confidence
 
 ---
 
-# 16. T13 Reading Orchestrator
+# 16. T13 Core Calculation Orchestrator
 
-Flow:
-
-```text
-Validate
-↓
-Resolve Location
-↓
-Normalize Birth
-↓
-Saju
-↓
-Astrology
-↓
-Features
-↓
-Lifetime
-↓
-Daily / Period
-↓
-Actions
-↓
-AI
-↓
-Response
-```
+Normalized Input -> Saju/Astrology -> Structured Feature Set -> Score -> Daily/Period -> Result DTO -> immediate Frontend display. The same features feed Score and approved AI evidence selection. Core must not call AI. A five-minute signed context supports the separate Interpretation request. Core and AI have independent API lifecycles.
 
 ---
 
@@ -325,20 +294,13 @@ Response
 
 # 18. T15 Browser Privacy Storage
 
-- [ ] IndexedDB adapter
-- [ ] schema version
-- [ ] my profile
-- [ ] partner profile
-- [ ] independent toggles
-- [ ] restore
-- [ ] update
-- [ ] delete
-- [ ] migration
-- [ ] corrupt data handling
-
-Default OFF.
-
-Auto-submit 금지.
+- [ ] One My Profile and one Partner Profile
+- [ ] Independent opt-in, default OFF
+- [ ] Memory when OFF; IndexedDB when ON
+- [ ] Explicit save/edit/replace/delete/delete-all
+- [ ] Client-only name/nickname labels
+- [ ] No automatic transmission on load/navigation/timer/prefetch/service worker/background sync/analytics/error reporting
+- [ ] Birth Data transmitted only after explicit calculation action
 
 ---
 
@@ -348,7 +310,7 @@ Auto-submit 금지.
 - [ ] partner info
 - [ ] birth date/time
 - [ ] unknown time
-- [ ] solar/lunar
+- [ ] Gregorian date range1900..2099
 - [ ] leap month
 - [ ] location
 - [ ] relationship type
@@ -402,17 +364,13 @@ Weekly / Monthly / Yearly 전체 구현.
 
 # 24. T21 AI
 
-- [ ] provider interface
-- [ ] prompt registry
-- [ ] prompt versions
-- [ ] dictionaries
-- [ ] ko/ja/en
-- [ ] structured output
-- [ ] validation
-- [ ] safety
-- [ ] retry
-- [ ] fallback
-- [ ] metrics
+- [ ] Separate /interpretation/generate and LFIC signed context
+- [ ] Key rotation, purpose/locale binding,300-second TTL
+- [ ] Provider6-second call/8-second total budget
+- [ ] Bounded retry/repair,200 fallback,503 only unavailable fallback
+- [ ] EvidenceRefs, scoreless output, privacy/safety
+
+Normative contract: [Final Decision v2 SC-09](contracts/runtime-contract-v2.md#sc-09-signed-context-and-ai-execution).
 
 ---
 
@@ -456,18 +414,14 @@ Birth Data 금지.
 
 # 28. T25 Security / Privacy
 
-- [ ] HTTPS
-- [ ] CSP
-- [ ] XSS
-- [ ] CSRF
-- [ ] SQL injection
-- [ ] validation
-- [ ] rate limit
-- [ ] capability
-- [ ] secret management
-- [ ] log redaction
-- [ ] WAF/CDN/APM audit
-- [ ] AI provider privacy
+- [ ] No personal DB/history/cache, stable IDs or fingerprints
+- [ ] Disable request/response/context/prompt/output capture throughout infrastructure
+- [ ] Retention: raw Birth0, operational30 days, security90 days, aggregate<=13 months, rate raw key<=1 hour
+- [ ] WordPress authentication + nonce + capability for Admin mutations
+- [ ] No destructive GET, arbitrary SQL/code execution or plaintext wp_options secrets
+- [ ] CORS does not replace CSRF protection; production Admin MFA recommended
+- [ ] no-store and body/limit/rate/error contract checks
+- [ ] Synthetic/licensed/approved-public fixture provenance; no real-user Golden data
 
 ---
 
@@ -544,7 +498,7 @@ Smoke:
 ```text
 Main
 Input
-Solar/Lunar
+Gregorian boundaries; rejected lunar/calendar flags
 Leap Month
 Unknown Time
 Location
@@ -656,5 +610,18 @@ Trend
 동일 Input+Version은 동일 deterministic output을 생성한다.
 
 Browser Storage 삭제 후 서버에서 profile 복구가 불가능해야 한다.
+
+---
+
+# 37. Freeze / Production Gates
+
+Apply Final Decision v3 and retained v2 decisions. Freeze requires SC-01..SC-10 resolved and successful Schema/OpenAPI/arithmetic/canonical/signing/period/DST/privacy checks; actual status is contracts/README.md. SAJU_DAY_PILLAR_EPOCH and EPHEMERIS_PROVIDER separately block production enablement, not Freeze by themselves. No code changes or commit/push in this task.
+
+---
+
+
+## Final v3 contract alignment
+
+[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (SAJU_DAY_PILLAR_EPOCH, EPHEMERIS_PROVIDER).
 
 END OF DOCUMENT

@@ -1,0 +1,247 @@
+{
+  "contractVersion": "3.0.0",
+  "status": "INCOMPLETE_DISABLED_INVENTORY",
+  "rules": [
+    {
+      "ruleId": "DAY_MASTER_RELATION",
+      "source": "SAJU",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 1.2,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 18
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    },
+    {
+      "ruleId": "DAY_BRANCH_RELATION",
+      "source": "SAJU",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 1.2,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 18
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    },
+    {
+      "ruleId": "STEM_COMBINATION",
+      "source": "SAJU",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 18
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    },
+    {
+      "ruleId": "BRANCH_COMBINATION",
+      "source": "SAJU",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 18
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    },
+    {
+      "ruleId": "BRANCH_CLASH",
+      "source": "SAJU",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 18
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    },
+    {
+      "ruleId": "ELEMENT_COMPLEMENT",
+      "source": "SAJU",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 18
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    },
+    {
+      "ruleId": "ELEMENT_SUPPORT",
+      "source": "SAJU",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 18
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    },
+    {
+      "ruleId": "ELEMENT_CONTROL",
+      "source": "SAJU",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 0.8,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 18
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    },
+    {
+      "ruleId": "TEN_GODS_RELATION",
+      "source": "SAJU",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 0.75,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 18
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    },
+    {
+      "ruleId": "YIN_YANG_BALANCE",
+      "source": "SAJU",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 0.45,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 18
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    },
+    {
+      "ruleId": "HIDDEN_STEM_RELATION",
+      "source": "SAJU",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 0.45,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 18
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    },
+    {
+      "ruleId": "PUNISHMENT",
+      "source": "SAJU",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 0.6,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 18
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    },
+    {
+      "ruleId": "HARM",
+      "source": "SAJU",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 0.5,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 18
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    },
+    {
+      "ruleId": "DESTRUCTION",
+      "source": "SAJU",
+      "enabled": false,
+      "categoryMappings": [],
+      "baseWeight": 0.45,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "requiresBirthTime": null,
+      "contextOnly": false,
+      "version": "2.0.0",
+      "provenance": {
+        "document": "03_SCORE_SPEC.md",
+        "section": 18
+      },
+      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+    }
+  ],
+  "contractStatus": "FROZEN",
+  "scoreEngineReadiness": "BLOCKED_CATALOG",
+  "blocker": "SCORING_RULE_CATALOG_APPROVAL"
+}

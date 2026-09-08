@@ -1,9 +1,12 @@
 # LOVE FORTUNE
 # 06_SCREEN_SPEC.md
 
-Version: 1.0.0
-Status: FINAL
+Version: 1.3.0
+Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: User Screen / UX Specification
+
+Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
+Freeze Gate: [Freeze validation and readiness](contracts/README.md)
 
 ---
 
@@ -131,12 +134,12 @@ CTA:
 
 - nickname
 - birth date
-- solar/lunar
+- Gregorian calendar (1900..2099)
 - leap month
 - birth time
 - birth time unknown
 - birth location
-- optional gender
+- gender is not collected by the current calculation flow
 - browser save toggle
 
 ---
@@ -151,14 +154,7 @@ Relationship Type 선택 포함 가능.
 
 # 9. Browser Save Toggle
 
-```text
-☐ 이 브라우저에 내 정보를 저장
-☐ 이 브라우저에 상대 정보를 저장
-```
-
-Default OFF.
-
-공용/공유 기기 주의 문구 제공.
+One My Profile and one Partner Profile; independent opt-in, default OFF. OFF uses memory, ON uses IndexedDB. Provide explicit save/edit/replace/delete/delete-all. Names and nicknames are client-side display labels only. Never automatically transmit stored Birth Data on load, navigation, timers, prefetch, service workers, background sync, analytics or error reporting.
 
 ---
 
@@ -174,32 +170,13 @@ Storage Management 화면의 직접 편집은
 
 # 11. Birth Time Unknown
 
-문구:
-
-```text
-출생시간을 몰라도 기본 궁합은 계산할 수 있습니다.
-다만 출생시간이 필요한 일부 세부 분석은 제외됩니다.
-```
-
-“부정확하다”를 과도하게 강조하지 않는다.
+Explain which evidence is unavailable. Hour Pillar, ASC and House are UNKNOWN. Do not invent noon/midnight or a representative time. Show candidate uncertainty and coverage/resultConfidence without treating missing evidence as a negative score. If all categories are insufficient, display overallScore=null and INSUFFICIENT_DATA clearly.
 
 ---
 
-# 12. Location Search
+# 12. Location / Target Timezone
 
-Free text만으로 제출하지 않는다.
-
-검색 결과에서 candidate를 선택해야 한다.
-
-Client가 얻는 값:
-
-```text
-locationId
-displayName
-timezoneId
-latitude
-longitude
-```
+Choose server reference location; send birthLocationId only. Core targetTimezone is REQUIRED. Browser timezone may prefill the UI; service default Asia/Tokyo is UI-only. Optional locale defaults ko-KR, supports ko-KR/ja-JP/en-US. Do not send gender or labels. Normative contract: [Final Decision v2 SC-08](contracts/runtime-contract-v2.md#sc-08-public-api-wire).
 
 ---
 
@@ -225,7 +202,7 @@ longitude
 
 ```text
 LOVE SCORE
-Summary
+Deterministic Summary / optional later AI summary
 Today CTA
 8 Categories
 Highlights
@@ -326,20 +303,7 @@ MC는 표시하지 않는다.
 
 # 21. Daily Action Labels
 
-```text
-CONTACT              연락하기
-CONVERSATION         대화하기
-DATE                 데이트
-CONFESSION           고백
-AFFECTION            애정표현
-GIFT                 선물
-IMPORTANT_DISCUSSION 중요한 이야기
-RECONCILIATION       화해
-```
-
-Relationship Type에 따라 visibility/priority는 조절 가능.
-
-Score formula는 변경하지 않는다.
+Daily flow labels map delta statuses VERY_LOW/LOW/STABLE/GOOD/VERY_GOOD. Missing period evidence is INSUFFICIENT_PERIOD_DATA; null lifetime is INSUFFICIENT_DATA. Actions are separate evidence-backed recommendations, never score modifiers. Normative contract: [Final Decision v2 SC-06](contracts/runtime-contract-v2.md#sc-06-dates-periods-and-statuses). Normative contract: [Final Decision v2 SC-07](contracts/runtime-contract-v2.md#sc-07-daily-category-actions-and-guardrail).
 
 ---
 
@@ -496,6 +460,7 @@ ERROR
 공식 정책:
 
 ```text
+My Profile: 1 + Partner Profile: 1
 Toggle OFF = JavaScript memory only
 Toggle ON  = IndexedDB
 ```
@@ -580,13 +545,7 @@ Score를 색상만으로 전달하지 않는다.
 
 # 38. Localization
 
-```text
-ko
-ja
-en
-```
-
-UI string은 locale resource로 분리한다.
+Locales ko-KR,ja-JP,en-US; default ko-KR. Do not send prior ko/ja/en aliases. Translation and formatting do not recalculate canonical scores/status. Signed AI context locale must match the interpretation request.
 
 ---
 
@@ -603,5 +562,18 @@ Browser storage는 선택적 convenience 기능이다.
 ```
 
 이다.
+
+---
+
+# 40. v1 Safety / AI Display
+
+Display canonical scores/statuses from Core. AI does not supply numeric scores, probabilities, percentages or ranks. Render strengths/challenges backed by approved evidenceRefs using localized explanations. Birth dates are not verified ages. All AI and fallback language must be safe for all ages; exclude sexual/adult/exploitative relationship content. Celebrity readings describe an entertainment model, never hidden feelings, private personality, attraction to the user, intent, meetings or private relationships. Notifications are Service Notices only; no personal Push/Web Push or birth-based background transmission.
+
+---
+
+
+## Final v3 contract alignment
+
+[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (SAJU_DAY_PILLAR_EPOCH, EPHEMERIS_PROVIDER).
 
 END OF DOCUMENT

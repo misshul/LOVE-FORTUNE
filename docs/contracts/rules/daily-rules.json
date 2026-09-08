@@ -1,0 +1,37 @@
+{
+  "contractVersion": "3.0.0",
+  "status": "INCOMPLETE_NO_REGISTERED_TRANSIT_RULES",
+  "rules": [],
+  "referenceTables": {
+    "dailyPlanetWeights": {
+      "MOON": 1,
+      "VENUS": 0.9,
+      "MERCURY": 0.75,
+      "MARS": 0.8,
+      "SUN": 0.6,
+      "JUPITER": 0.3,
+      "SATURN": 0.35,
+      "OUTER": 0
+    },
+    "sourceWeights": {
+      "SAJU": 0.5,
+      "ASTROLOGY": 0.5
+    },
+    "sampleLocalTimes": [
+      "06:00",
+      "12:00",
+      "18:00",
+      "23:00"
+    ],
+    "sourceAggregation": {
+      "meanWeight": 0.75,
+      "signedPeakWeight": 0.25
+    }
+  },
+  "contractStatus": "FROZEN",
+  "scoreEngineReadiness": "BLOCKED_CATALOG",
+  "blocker": "SCORING_RULE_CATALOG_APPROVAL",
+  "catalogApprovalRequirements": [
+    "The documents contain daily planet weights but no complete transit/Saju daily activation/category/direction catalog."
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/admin.schema.json",
+  "title": "LOVE FORTUNE admin v2",
+  "oneOf": [
+    {
+      "$ref": "admin.schema.json#/$defs/VersionRecord"
+    },
+    {
+      "$ref": "admin.schema.json#/$defs/VersionMutation"
+    },
+    {
+      "$ref": "admin.schema.json#/$defs/CelebrityRecord"
+    },
+    {
+      "$ref": "admin.schema.json#/$defs/CalculationTestRequest"
+    },
+    {
+      "$ref": "admin.schema.json#/$defs/CalculationTestResponse"
+    }
+  ],
+  "$defs": {
+    "VersionRecord": {
+      "type": "object",
+      "properties": {
+        "versionType": {
+          "enum": [
+            "FORTUNE_ENGINE",
+            "SAJU_RULE",
+            "ASTROLOGY_RULE",
+            "SCORE",
+            "PERIOD_RULE",
+            "EPHEMERIS_PROVIDER",
+            "EPHEMERIS_DATA",
+            "AI_PROMPT",
+            "AI_INTERPRETATION_RULE"
+          ]
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "DRAFT",
+            "TESTING",
+            "ACTIVE",
+            "DEPRECATED",
+            "DISABLED"
+          ]
+        }
+      },
+      "required": [
+        "versionType",
+        "version",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "VersionMutation": {
+      "type": "object",
+      "properties": {
+        "versionType": {
+          "enum": [
+            "FORTUNE_ENGINE",
+            "SAJU_RULE",
+            "ASTROLOGY_RULE",
+            "SCORE",
+            "PERIOD_RULE",
+            "EPHEMERIS_PROVIDER",
+            "EPHEMERIS_DATA",
+            "AI_PROMPT",
+            "AI_INTERPRETATION_RULE"
+          ]
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "action": {
+          "enum": [
+            "ACTIVATE",
+            "DEPRECATE",
+            "DISABLE"
+          ]
+        }
+      },
+      "required": [
+        "versionType",
+        "version",
+        "action"
+      ],
+      "additionalProperties": false
+    },
+    "CelebrityRecord": {
+      "type": "object",
+      "properties": {
+        "celebrityId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1
+        },
+        "displayNameLocalized": {
+          "type": "object",
+          "properties": {
+            "ko-KR": {
+              "type": "string",
+              "minLength": 1
+            },
+            "ja-JP": {
+              "type": "string",
+              "minLength": 1
+            },
+            "en-US": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "publicBirthPrecision": {
+          "enum": [
+            "UNKNOWN",
+            "DATE_ONLY",
+            "DATE_AND_TIME"
+          ]
+        },
+        "availableFeatures": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "imageReference": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sourceSummary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "birthReference": {
+          "$ref": "person-input.schema.json"
+        },
+        "sourceUrl": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "profileVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "DRAFT",
+            "ACTIVE",
+            "DISABLED"
+          ]
+        }
+      },
+      "required": [
+        "celebrityId",
+        "displayName",
+        "displayNameLocalized",
+        "publicBirthPrecision",
+        "availableFeatures",
+        "imageReference",
+        "sourceSummary",
+        "birthReference",
+        "sourceUrl",
+        "profileVersion",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "CalculationTestRequest": {
+      "type": "object",
+      "properties": {
+        "fixtureId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "versions": {
+          "$ref": "common.schema.json#/$defs/versions"
+        }
+      },
+      "required": [
+        "fixtureId",
+        "versions"
+      ],
+      "additionalProperties": false
+    },
+    "CalculationTestResponse": {
+      "type": "object",
+      "properties": {
+        "fixtureId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "versions": {
+          "$ref": "common.schema.json#/$defs/versions"
+        },
+        "status": {
+          "enum": [
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "failures": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "minLength": 1
+              },
+              "field": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "code"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "fixtureId",
+        "versions",
+        "status",
+        "failures"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate."
+}

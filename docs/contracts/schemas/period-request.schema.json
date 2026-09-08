@@ -1,0 +1,166 @@
+{
+  "oneOf": [
+    {
+      "$ref": "period-request.schema.json#/$defs/Weekly"
+    },
+    {
+      "$ref": "period-request.schema.json#/$defs/Monthly"
+    },
+    {
+      "$ref": "period-request.schema.json#/$defs/Yearly"
+    }
+  ],
+  "$defs": {
+    "Weekly": {
+      "type": "object",
+      "properties": {
+        "personA": {
+          "$ref": "person-input.schema.json"
+        },
+        "personB": {
+          "$ref": "person-input.schema.json"
+        },
+        "relationshipType": {
+          "enum": [
+            "COUPLE",
+            "MARRIED",
+            "DATING",
+            "CRUSH",
+            "FRIEND",
+            "UNKNOWN"
+          ]
+        },
+        "targetTimezone": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Required semantic IANA tzdb validation; no implicit default."
+        },
+        "locale": {
+          "enum": [
+            "ko-KR",
+            "ja-JP",
+            "en-US"
+          ],
+          "default": "ko-KR"
+        },
+        "weekStartDate": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$"
+        }
+      },
+      "required": [
+        "personA",
+        "personB",
+        "relationshipType",
+        "targetTimezone",
+        "weekStartDate"
+      ],
+      "additionalProperties": false
+    },
+    "Monthly": {
+      "type": "object",
+      "properties": {
+        "personA": {
+          "$ref": "person-input.schema.json"
+        },
+        "personB": {
+          "$ref": "person-input.schema.json"
+        },
+        "relationshipType": {
+          "enum": [
+            "COUPLE",
+            "MARRIED",
+            "DATING",
+            "CRUSH",
+            "FRIEND",
+            "UNKNOWN"
+          ]
+        },
+        "targetTimezone": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Required semantic IANA tzdb validation; no implicit default."
+        },
+        "locale": {
+          "enum": [
+            "ko-KR",
+            "ja-JP",
+            "en-US"
+          ],
+          "default": "ko-KR"
+        },
+        "year": {
+          "type": "integer",
+          "minimum": 1900,
+          "maximum": 2099
+        },
+        "month": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        }
+      },
+      "required": [
+        "personA",
+        "personB",
+        "relationshipType",
+        "targetTimezone",
+        "year",
+        "month"
+      ],
+      "additionalProperties": false
+    },
+    "Yearly": {
+      "type": "object",
+      "properties": {
+        "personA": {
+          "$ref": "person-input.schema.json"
+        },
+        "personB": {
+          "$ref": "person-input.schema.json"
+        },
+        "relationshipType": {
+          "enum": [
+            "COUPLE",
+            "MARRIED",
+            "DATING",
+            "CRUSH",
+            "FRIEND",
+            "UNKNOWN"
+          ]
+        },
+        "targetTimezone": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Required semantic IANA tzdb validation; no implicit default."
+        },
+        "locale": {
+          "enum": [
+            "ko-KR",
+            "ja-JP",
+            "en-US"
+          ],
+          "default": "ko-KR"
+        },
+        "year": {
+          "type": "integer",
+          "minimum": 1900,
+          "maximum": 2099
+        }
+      },
+      "required": [
+        "personA",
+        "personB",
+        "relationshipType",
+        "targetTimezone",
+        "year"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/period-request.schema.json",
+  "title": "LOVE FORTUNE period-request v2",
+  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate."
+}

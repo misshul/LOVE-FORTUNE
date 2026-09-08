@@ -1,0 +1,23 @@
+{
+  "ruleId": "SYNTHETIC_SCHEMA_ONLY",
+  "source": "SAJU",
+  "enabled": false,
+  "categoryMappings": [
+    {
+      "category": "EMOTION",
+      "direction": "MIXED",
+      "signedValue": 0.25
+    }
+  ],
+  "baseWeight": 1.2,
+  "ruleWeight": 1,
+  "pairWeight": 1,
+  "requiresBirthTime": null,
+  "contextOnly": false,
+  "version": "2.0.0",
+  "provenance": {
+    "document": "03_SCORE_SPEC.md",
+    "section": 18
+  },
+  "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+}

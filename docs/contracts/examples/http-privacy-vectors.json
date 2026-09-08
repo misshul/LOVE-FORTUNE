@@ -1,0 +1,135 @@
+{
+  "provenance": "Synthetic transport boundary and sanitized log examples only.",
+  "contentTypes": [
+    {
+      "value": "application/json",
+      "valid": true
+    },
+    {
+      "value": "application/json; charset=utf-8",
+      "valid": true
+    },
+    {
+      "value": "application/json; charset=UTF-8",
+      "valid": true
+    },
+    {
+      "value": "application/json; charset=shift_jis",
+      "valid": false
+    },
+    {
+      "value": "application/json; profile=x",
+      "valid": false
+    },
+    {
+      "value": "text/plain",
+      "valid": false
+    }
+  ],
+  "bodySizes": [
+    {
+      "bucket": "Core",
+      "bytes": 32768,
+      "valid": true
+    },
+    {
+      "bucket": "Core",
+      "bytes": 32769,
+      "valid": false
+    },
+    {
+      "bucket": "AI",
+      "bytes": 65536,
+      "valid": true
+    },
+    {
+      "bucket": "AI",
+      "bytes": 65537,
+      "valid": false
+    }
+  ],
+  "contentEncodings": [
+    {
+      "value": null,
+      "valid": true
+    },
+    {
+      "value": "gzip",
+      "valid": false
+    },
+    {
+      "value": "identity",
+      "valid": false
+    }
+  ],
+  "rate": [
+    {
+      "now": 600,
+      "windowStart": 600,
+      "retryAfter": 600
+    },
+    {
+      "now": 1199,
+      "windowStart": 600,
+      "retryAfter": 1
+    },
+    {
+      "now": 1199.5,
+      "windowStart": 600,
+      "retryAfter": 1
+    },
+    {
+      "now": 1200,
+      "windowStart": 1200,
+      "retryAfter": 600
+    }
+  ],
+  "logs": [
+    {
+      "kind": "operational",
+      "input": {
+        "timestamp": "2026-09-08T00:00:00Z",
+        "requestId": "synthetic-request",
+        "endpoint": "/fortune/daily",
+        "method": "POST",
+        "httpStatus": 200,
+        "durationMs": 10,
+        "birthDate": "1995-06-15",
+        "signedContext": "FORBIDDEN",
+        "rawOutput": "FORBIDDEN"
+      },
+      "expected": {
+        "timestamp": "2026-09-08T00:00:00Z",
+        "requestId": "synthetic-request",
+        "endpoint": "/fortune/daily",
+        "method": "POST",
+        "httpStatus": 200,
+        "durationMs": 10
+      }
+    },
+    {
+      "kind": "audit",
+      "input": {
+        "timestamp": "2026-09-08T00:00:00Z",
+        "adminUserId": 1,
+        "action": "UPDATE",
+        "resourceType": "synthetic-reference",
+        "resourceId": "fixture",
+        "result": "SUCCESS",
+        "requestId": "synthetic",
+        "payload": {
+          "birthDate": "1995-06-15"
+        }
+      },
+      "expected": {
+        "timestamp": "2026-09-08T00:00:00Z",
+        "adminUserId": 1,
+        "action": "UPDATE",
+        "resourceType": "synthetic-reference",
+        "resourceId": "fixture",
+        "result": "SUCCESS",
+        "requestId": "synthetic"
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "requestId": "synthetic-request-only",
+    "versions": {
+      "serviceVersion": "synthetic-fixture-v1",
+      "apiVersion": "v1",
+      "sajuEngineVersion": "synthetic-fixture-v1",
+      "astrologyEngineVersion": "synthetic-fixture-v1",
+      "scoreVersion": "synthetic-fixture-v1",
+      "configVersion": "synthetic-fixture-v1",
+      "locationReferenceVersion": "synthetic-fixture-v1",
+      "timezoneDataVersion": "synthetic-fixture-v1",
+      "ephemerisProviderVersion": "synthetic-fixture-v1",
+      "ephemerisDataVersion": "synthetic-fixture-v1"
+    }
+  },
+  "startDate": "2026-09-08",
+  "endDate": "2026-09-08",
+  "targetTimezone": "Asia/Tokyo",
+  "days": [
+    {
+      "meta": {
+        "requestId": "synthetic-request-only",
+        "versions": {
+          "serviceVersion": "synthetic-fixture-v1",
+          "apiVersion": "v1",
+          "sajuEngineVersion": "synthetic-fixture-v1",
+          "astrologyEngineVersion": "synthetic-fixture-v1",
+          "scoreVersion": "synthetic-fixture-v1",
+          "configVersion": "synthetic-fixture-v1",
+          "locationReferenceVersion": "synthetic-fixture-v1",
+          "timezoneDataVersion": "synthetic-fixture-v1",
+          "ephemerisProviderVersion": "synthetic-fixture-v1",
+          "ephemerisDataVersion": "synthetic-fixture-v1"
+        }
+      },
+      "date": "2026-09-08",
+      "targetTimezone": "Asia/Tokyo",
+      "lifetimeScore": 60,
+      "dailyScore": 60,
+      "dailyDelta": 0,
+      "dailyStatus": "INSUFFICIENT_PERIOD_DATA",
+      "resultConfidence": 0,
+      "coverage": 0,
+      "features": [],
+      "warnings": []
+    }
+  ]
+}
