@@ -1,0 +1,18 @@
+{
+  "ruleId": "DAY_MASTER_RELATION",
+  "source": "SAJU",
+  "subject": "PAIR",
+  "category": "SUPPORT",
+  "period": {
+    "type": "LIFETIME"
+  },
+  "metadata": {
+    "ruleVariant": "SAME"
+  },
+  "direction": "POSITIVE",
+  "signedValue": 0.4,
+  "featureId": "ft_7230af23daf6700cb88cdf842e48581d5e04ef0c06d3423e",
+  "rawValue": null,
+  "baseWeight": 1.2,
+  "confidence": 1
+}

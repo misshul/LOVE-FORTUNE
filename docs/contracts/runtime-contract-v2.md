@@ -1,6 +1,8 @@
 # LOVE FORTUNE runtime contract v2
 
-Status: CONTRACT FROZEN (v3 decisions)
+Status: CONTRACT FROZEN (v3 + approved Saju v1 / SC-07 v2)
+
+Current authority: [Saju application](saju-v1-application-approval.md), [Saju v1](saju-catalog-v1.md), [Guardrail v2](guardrail-v2.md). Historical Saju placeholders and guardrail search are superseded; other contracts remain unchanged.
 
 Authority: [Final Decision v3](final-decision-v3.md), then [Final Decision v2](final-decision-v2.md) and [approved clarifications](clarification-v2.md), superseding v1 where changed. Freeze and readiness: [register](README.md). Approved Astrology-specific additions are in [Astrology Catalog v1](astrology-catalog-v1.md); its final mapping/application approval supersedes prior Astrology placeholders.
 
@@ -24,7 +26,7 @@ eligibleEvidence is the evidence theoretically evaluable under the approved cata
 
 coverage=clamp(sum(available preConfidenceWeight)/sum(eligible preConfidenceWeight),0,1); a zero eligible-weight denominator gives0. Coverage measures structural availability, independently of confidence. A zero available numerator also gives0. Zero confidence does not force coverage to0.
 
-If usableEvidence is empty: categoryScore=50.0000, resultConfidence=0, status=INSUFFICIENT_DATA; retain computed coverage. Exclude insufficient categories from overall aggregation; all insufficient gives null overall. Do not use ambiguous E=0 as a coverage reset. The guardrail's zero final effective-weight RAW comparison remains50 and does not alter structural coverage.
+If usableEvidence is empty: categoryScore=50.0000, resultConfidence=0, status=INSUFFICIENT_DATA; retain computed coverage. Exclude insufficient categories from overall aggregation; all insufficient gives null overall. Do not use ambiguous E=0 as a coverage reset. SC-07 v2 never forces positive usable weight to zero and does not alter structural coverage.
 
 With usable evidence, categoryResultConfidence=sum(available preConfidenceWeight*featureConfidence)/sum(available preConfidenceWeight); the category wire resultConfidence=coverage*categoryResultConfidence. No available/usable evidence gives confidence0. Overall resultConfidence retains the literal v2 categoryWeight-weighted mean of pre-coverage categoryResultConfidence over categories not INSUFFICIENT_DATA.
 
@@ -34,9 +36,7 @@ Daily source confidence uses exactly four nominal samples06:00/12:00/18:00/23:00
 
 # SC-02 Rule catalog and candidates
 
-Only rules already present in docs/02 and docs/03 may be normalized. Catalog files are rules/saju-rules.json, astrology-rules.json, daily-rules.json and category-weights.json. Every rule has ruleId,source,enabled,categoryMappings,baseWeight,ruleWeight,pairWeight,requiresBirthTime,contextOnly,version. Legacy/Saju POSITIVE/NEGATIVE/NEUTRAL values remain1/-1/0; MIXED needs an explicit signedValue. Approved Astrology v1 uses decimal signed values with matching POSITIVE/NEGATIVE/NEUTRAL signs; MIXED is rule-level only.
-
-One existing weight maps to baseWeight with ruleWeight=pairWeight=1. Where tables distinguish aspects and pairs, retain those meanings explicitly. No invented category, direction, interpretation or numeric weight. Incomplete Saju rules remain disabled; Daily remains empty. Astrology v1 applies109 approved pair-aspect rules and preserves generic aspects as reference definitions. Empty catalogs remain valid frozen contracts. Current SC-02 is RESOLVED; Astrology READY; overall BLOCKED_CATALOG has SAJU_RULE_CATALOG_APPROVAL and DAILY_RULE_CATALOG_APPROVAL. It is not SPEC_CONFLICT and alone cannot fail Contract Freeze.
+Saju has14 family records,9 enabled scoring families with16 variants/37 decimal mappings and5 context-only families. See saju-catalog-v1.md. Astrology109/228 remains unchanged. Mapping signs match decimal signedValues. Daily remains empty and DAILY_RULE_CATALOG_APPROVAL is the sole catalog blocker. Candidate and canonical identity contracts are unchanged.
 
 Group candidates by ruleId+subject+category+period. Mean signedValue and numeric rawValue over present candidates. Non-numeric rawValue becomes null and metadata.candidates preserves present candidate scalar values. The user explicitly approved adding candidates to the allowlist. Availability ratio is present/total, combined with candidateAgreement.
 
@@ -54,7 +54,7 @@ Feature uses ruleId; subject is PERSON_A, PERSON_B or PAIR (pair compatibility d
 
 Period forms: LIFETIME{type}; DAY{type,date,timezone}; WEEK{type,startDate,endDate,timezone}; MONTH{type,year,month,timezone}; YEAR{type,year,timezone}. Dates are Gregorian and timezone is IANA.
 
-Metadata allowlist: planetA,planetB,aspect,orb,pillar,element,relation,candidateCount,availabilityRatio,sampleCount,referenceId,ruleVariant,candidates,orbCloseness. orbCloseness is optional numeric[0,1], active Astrology evidence only, non-identity, not a score/confidence multiplier or logging permission. candidates is a scalar array and is NOT identity-relevant. All other keys fail validation unless a later explicit decision amends this list. Identity-relevant subset: planetA,planetB,aspect,pillar,relation,referenceId,ruleVariant.
+Metadata allowlist: planetA,planetB,aspect,orb,pillar,element,relation,candidateCount,availabilityRatio,sampleCount,referenceId,ruleVariant,candidates,orbCloseness,transformationStatus. transformationStatus is non-identity and only UNASSESSED is accepted. orbCloseness is optional numeric[0,1], active Astrology evidence only, non-identity, not a score/confidence multiplier or logging permission. candidates is a scalar array and is NOT identity-relevant. All other keys fail validation unless a later explicit decision amends this list. Identity-relevant subset: planetA,planetB,aspect,pillar,relation,referenceId,ruleVariant.
 
 Canonical featureId input: ruleId,subject,category,period,source and the identity-relevant metadata subset. Exclude signedValue, confidence, input Birth Data, names, rawValue and other metadata. UTF-8, lexicographically sorted keys, no whitespace, NFC normalized strings, canonical JSON decimal numbers; preserve schema-present nulls. featureId='ft_'+first48 lowercase hex characters of SHA-256(canonical JSON). This is48 hex characters (24 digest bytes), not24 characters. Never use it for tracking. Canonical examples document bytes and expected digests; token serialization uses the same canonicalizer.
 
@@ -90,7 +90,7 @@ Action is a separate deterministic recommendation layer; Action adjustment=0 and
 
 Weekly slope is OLS sum((x-meanX)*(y-meanY))/sum((x-meanX)^2), units points/day, x is the calendar-day offset in the week (gaps are retained); fewer than2 valid days gives null.
 
-For every feature compare category RAW scoreWith versus RAW scoreWithout. Require abs(difference)<=20. Reduce the feature's effectiveWeight with binary search, max32 iterations, after individual caps, confidence and outer cap. Do not stabilize before this raw comparison. User-approved clarification: sort features by featureId ascending; reduce weights sequentially and recheck the entire resulting set after each pass. Treat zero-weight/empty evidence as Raw Score50. Binary search each violating feature with low=0 and high=current weight,32 iterations, retaining the largest known-safe low bound. Repeat at most32 full passes; after each pass every feature must satisfy the20-point condition. If not satisfied after32 passes, return a calculation error (500 SCORE_GUARDRAIL_UNSATISFIED), never a partially guarded score. Check the actual final set, not cached per-feature differences. See clarification-v2.md.
+SC-07 v2 freezes W0=sum(pre-guardrail usable effectiveWeight) after individual caps/confidence/outer cap. impact=50*effectiveWeight*abs(signedValue)/W0; above20 use adjustedWeight=min(effectiveWeight,0.4*W0/abs(signedValue)); zero signal retains weight. Raw=50+50*sum(adjustedWeight*signedValue)/W0, never adjustedWeight sum. No search, passes, exclusion or confidence/coverage change. Legacy SCORE_GUARDRAIL_UNSATISFIED is deprecated. See guardrail-v2.md.
 
 ---
 

@@ -1,0 +1,908 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/saju-rule.schema.json",
+  "title": "Saju family v1",
+  "type": "object",
+  "properties": {
+    "ruleId": {
+      "enum": [
+        "DAY_MASTER_RELATION",
+        "DAY_BRANCH_RELATION",
+        "STEM_COMBINATION",
+        "BRANCH_COMBINATION",
+        "BRANCH_CLASH",
+        "ELEMENT_COMPLEMENT",
+        "ELEMENT_SUPPORT",
+        "ELEMENT_CONTROL",
+        "TEN_GODS_RELATION",
+        "YIN_YANG_BALANCE",
+        "HIDDEN_STEM_RELATION",
+        "PUNISHMENT",
+        "HARM",
+        "DESTRUCTION"
+      ]
+    },
+    "family": {
+      "enum": [
+        "DAY_MASTER_RELATION",
+        "DAY_BRANCH_RELATION",
+        "STEM_COMBINATION",
+        "BRANCH_COMBINATION",
+        "BRANCH_CLASH",
+        "ELEMENT_COMPLEMENT",
+        "ELEMENT_SUPPORT",
+        "ELEMENT_CONTROL",
+        "TEN_GODS_RELATION",
+        "YIN_YANG_BALANCE",
+        "HIDDEN_STEM_RELATION",
+        "PUNISHMENT",
+        "HARM",
+        "DESTRUCTION"
+      ]
+    },
+    "source": {
+      "const": "SAJU"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "contextOnly": {
+      "type": "boolean"
+    },
+    "detectorStatus": {
+      "enum": [
+        "DEFINED",
+        "DEFERRED"
+      ]
+    },
+    "baseWeight": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "ruleWeight": {
+      "const": 1
+    },
+    "pairWeight": {
+      "const": 1
+    },
+    "requiresBirthTime": {
+      "const": false
+    },
+    "version": {
+      "const": "1.0.0"
+    },
+    "scope": {
+      "enum": [
+        "DAY_STEM_PAIR",
+        "DAY_BRANCH_PAIR",
+        "KNOWN_TOKEN_POOL",
+        "DEFERRED"
+      ]
+    },
+    "reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "precedence": {
+      "enum": [
+        "STEM_COMBINATION_ELSE_ELEMENT",
+        "LIUHE_CLASH_ELEMENT",
+        "INDEPENDENT"
+      ]
+    },
+    "variants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "variant": {
+            "enum": [
+              "SAME",
+              "GENERATION",
+              "CONTROL",
+              "COMB",
+              "LIUHE",
+              "CLASH",
+              "BSAME",
+              "BGENERATION",
+              "BCONTROL",
+              "EC1",
+              "EC2",
+              "EC3",
+              "YY0",
+              "YY1",
+              "YY2",
+              "YY3"
+            ]
+          },
+          "categoryMappings": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "category": {
+                  "$ref": "common.schema.json#/$defs/category"
+                },
+                "direction": {
+                  "enum": [
+                    "POSITIVE",
+                    "NEGATIVE",
+                    "NEUTRAL"
+                  ]
+                },
+                "signedValue": {
+                  "type": "number",
+                  "minimum": -1,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "category",
+                "direction",
+                "signedValue"
+              ],
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "direction": {
+                        "const": "POSITIVE"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "signedValue": {
+                        "exclusiveMinimum": 0
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "direction": {
+                        "const": "NEGATIVE"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "signedValue": {
+                        "exclusiveMaximum": 0
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "direction": {
+                        "const": "NEUTRAL"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "signedValue": {
+                        "const": 0
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "band": {
+            "type": "object",
+            "properties": {
+              "minimum": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "maximum": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "maximumInclusive": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "minimum",
+              "maximum",
+              "maximumInclusive"
+            ],
+            "additionalProperties": false
+          },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "transformationStatus": {
+                "const": "UNASSESSED"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "variant",
+          "categoryMappings",
+          "metadata"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "variant": {
+                  "const": "COMB"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "metadata": {
+                  "required": [
+                    "transformationStatus"
+                  ]
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "metadata": {
+                  "maxProperties": 0
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "ruleId",
+    "family",
+    "source",
+    "enabled",
+    "contextOnly",
+    "detectorStatus",
+    "baseWeight",
+    "ruleWeight",
+    "pairWeight",
+    "requiresBirthTime",
+    "version",
+    "scope",
+    "reference",
+    "precedence",
+    "variants"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "contextOnly": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "enabled": {
+            "const": false
+          },
+          "variants": {
+            "maxItems": 0
+          },
+          "family": {
+            "enum": [
+              "TEN_GODS_RELATION",
+              "HIDDEN_STEM_RELATION",
+              "PUNISHMENT",
+              "HARM",
+              "DESTRUCTION"
+            ]
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "enabled": {
+            "const": true
+          },
+          "variants": {
+            "minItems": 1
+          },
+          "detectorStatus": {
+            "const": "DEFINED"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "DAY_MASTER_RELATION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "ruleId": {
+            "const": "DAY_MASTER_RELATION"
+          },
+          "contextOnly": {
+            "const": false
+          },
+          "enabled": {
+            "const": true
+          },
+          "scope": {
+            "const": "DAY_STEM_PAIR"
+          },
+          "precedence": {
+            "const": "STEM_COMBINATION_ELSE_ELEMENT"
+          },
+          "detectorStatus": {
+            "const": "DEFINED"
+          },
+          "variants": {
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "properties": {
+                "variant": {
+                  "enum": [
+                    "SAME"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "DAY_BRANCH_RELATION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "ruleId": {
+            "const": "DAY_BRANCH_RELATION"
+          },
+          "contextOnly": {
+            "const": false
+          },
+          "enabled": {
+            "const": true
+          },
+          "scope": {
+            "const": "DAY_BRANCH_PAIR"
+          },
+          "precedence": {
+            "const": "LIUHE_CLASH_ELEMENT"
+          },
+          "detectorStatus": {
+            "const": "DEFINED"
+          },
+          "variants": {
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "properties": {
+                "variant": {
+                  "enum": [
+                    "BSAME",
+                    "BGENERATION",
+                    "BCONTROL"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "STEM_COMBINATION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "ruleId": {
+            "const": "STEM_COMBINATION"
+          },
+          "contextOnly": {
+            "const": false
+          },
+          "enabled": {
+            "const": true
+          },
+          "scope": {
+            "const": "DAY_STEM_PAIR"
+          },
+          "precedence": {
+            "const": "STEM_COMBINATION_ELSE_ELEMENT"
+          },
+          "detectorStatus": {
+            "const": "DEFINED"
+          },
+          "variants": {
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "properties": {
+                "variant": {
+                  "enum": [
+                    "COMB"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "BRANCH_COMBINATION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "ruleId": {
+            "const": "BRANCH_COMBINATION"
+          },
+          "contextOnly": {
+            "const": false
+          },
+          "enabled": {
+            "const": true
+          },
+          "scope": {
+            "const": "DAY_BRANCH_PAIR"
+          },
+          "precedence": {
+            "const": "LIUHE_CLASH_ELEMENT"
+          },
+          "detectorStatus": {
+            "const": "DEFINED"
+          },
+          "variants": {
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "properties": {
+                "variant": {
+                  "enum": [
+                    "LIUHE"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "BRANCH_CLASH"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "ruleId": {
+            "const": "BRANCH_CLASH"
+          },
+          "contextOnly": {
+            "const": false
+          },
+          "enabled": {
+            "const": true
+          },
+          "scope": {
+            "const": "DAY_BRANCH_PAIR"
+          },
+          "precedence": {
+            "const": "LIUHE_CLASH_ELEMENT"
+          },
+          "detectorStatus": {
+            "const": "DEFINED"
+          },
+          "variants": {
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "properties": {
+                "variant": {
+                  "enum": [
+                    "CLASH"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "ELEMENT_COMPLEMENT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "ruleId": {
+            "const": "ELEMENT_COMPLEMENT"
+          },
+          "contextOnly": {
+            "const": false
+          },
+          "enabled": {
+            "const": true
+          },
+          "scope": {
+            "const": "KNOWN_TOKEN_POOL"
+          },
+          "precedence": {
+            "const": "INDEPENDENT"
+          },
+          "detectorStatus": {
+            "const": "DEFINED"
+          },
+          "variants": {
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "properties": {
+                "variant": {
+                  "enum": [
+                    "EC1",
+                    "EC2",
+                    "EC3"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "ELEMENT_SUPPORT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "ruleId": {
+            "const": "ELEMENT_SUPPORT"
+          },
+          "contextOnly": {
+            "const": false
+          },
+          "enabled": {
+            "const": true
+          },
+          "scope": {
+            "const": "DAY_STEM_PAIR"
+          },
+          "precedence": {
+            "const": "STEM_COMBINATION_ELSE_ELEMENT"
+          },
+          "detectorStatus": {
+            "const": "DEFINED"
+          },
+          "variants": {
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "properties": {
+                "variant": {
+                  "enum": [
+                    "GENERATION"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "ELEMENT_CONTROL"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "ruleId": {
+            "const": "ELEMENT_CONTROL"
+          },
+          "contextOnly": {
+            "const": false
+          },
+          "enabled": {
+            "const": true
+          },
+          "scope": {
+            "const": "DAY_STEM_PAIR"
+          },
+          "precedence": {
+            "const": "STEM_COMBINATION_ELSE_ELEMENT"
+          },
+          "detectorStatus": {
+            "const": "DEFINED"
+          },
+          "variants": {
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "properties": {
+                "variant": {
+                  "enum": [
+                    "CONTROL"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "TEN_GODS_RELATION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "ruleId": {
+            "const": "TEN_GODS_RELATION"
+          },
+          "contextOnly": {
+            "const": true
+          },
+          "enabled": {
+            "const": false
+          },
+          "scope": {
+            "const": "DAY_STEM_PAIR"
+          },
+          "precedence": {
+            "const": "INDEPENDENT"
+          },
+          "detectorStatus": {
+            "const": "DEFINED"
+          },
+          "variants": {
+            "minItems": 0,
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "YIN_YANG_BALANCE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "ruleId": {
+            "const": "YIN_YANG_BALANCE"
+          },
+          "contextOnly": {
+            "const": false
+          },
+          "enabled": {
+            "const": true
+          },
+          "scope": {
+            "const": "KNOWN_TOKEN_POOL"
+          },
+          "precedence": {
+            "const": "INDEPENDENT"
+          },
+          "detectorStatus": {
+            "const": "DEFINED"
+          },
+          "variants": {
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "properties": {
+                "variant": {
+                  "enum": [
+                    "YY0",
+                    "YY1",
+                    "YY2",
+                    "YY3"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "HIDDEN_STEM_RELATION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "ruleId": {
+            "const": "HIDDEN_STEM_RELATION"
+          },
+          "contextOnly": {
+            "const": true
+          },
+          "enabled": {
+            "const": false
+          },
+          "scope": {
+            "const": "DEFERRED"
+          },
+          "precedence": {
+            "const": "INDEPENDENT"
+          },
+          "detectorStatus": {
+            "const": "DEFERRED"
+          },
+          "variants": {
+            "minItems": 0,
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "PUNISHMENT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "ruleId": {
+            "const": "PUNISHMENT"
+          },
+          "contextOnly": {
+            "const": true
+          },
+          "enabled": {
+            "const": false
+          },
+          "scope": {
+            "const": "DEFERRED"
+          },
+          "precedence": {
+            "const": "INDEPENDENT"
+          },
+          "detectorStatus": {
+            "const": "DEFERRED"
+          },
+          "variants": {
+            "minItems": 0,
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "HARM"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "ruleId": {
+            "const": "HARM"
+          },
+          "contextOnly": {
+            "const": true
+          },
+          "enabled": {
+            "const": false
+          },
+          "scope": {
+            "const": "DEFERRED"
+          },
+          "precedence": {
+            "const": "INDEPENDENT"
+          },
+          "detectorStatus": {
+            "const": "DEFERRED"
+          },
+          "variants": {
+            "minItems": 0,
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "family": {
+            "const": "DESTRUCTION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "ruleId": {
+            "const": "DESTRUCTION"
+          },
+          "contextOnly": {
+            "const": true
+          },
+          "enabled": {
+            "const": false
+          },
+          "scope": {
+            "const": "DEFERRED"
+          },
+          "precedence": {
+            "const": "INDEPENDENT"
+          },
+          "detectorStatus": {
+            "const": "DEFERRED"
+          },
+          "variants": {
+            "minItems": 0,
+            "maxItems": 0
+          }
+        }
+      }
+    }
+  ]
+}

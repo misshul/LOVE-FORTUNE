@@ -1,0 +1,10 @@
+{
+  "stemA": "甲",
+  "stemB": "己",
+  "branchA": "子",
+  "branchB": "丑",
+  "element": "INVALID",
+  "scope": "DAY_STEM_PAIR",
+  "knownTokensA": 8,
+  "knownTokensB": 6
+}

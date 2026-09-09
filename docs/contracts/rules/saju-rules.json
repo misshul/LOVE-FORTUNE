@@ -1,247 +1,733 @@
 {
-  "contractVersion": "3.0.0",
-  "status": "INCOMPLETE_DISABLED_INVENTORY",
+  "contractVersion": "1.0.0",
+  "status": "APPROVED_APPLIED",
+  "contractStatus": "FROZEN",
+  "catalogReadiness": "READY",
+  "scoreEngineReadiness": "BLOCKED_CATALOG",
+  "blocker": "DAILY_RULE_CATALOG_APPROVAL",
+  "referenceTables": {
+    "stems": [
+      "甲",
+      "乙",
+      "丙",
+      "丁",
+      "戊",
+      "己",
+      "庚",
+      "辛",
+      "壬",
+      "癸"
+    ],
+    "branches": [
+      "子",
+      "丑",
+      "寅",
+      "卯",
+      "辰",
+      "巳",
+      "午",
+      "未",
+      "申",
+      "酉",
+      "戌",
+      "亥"
+    ],
+    "elements": [
+      "WOOD",
+      "FIRE",
+      "EARTH",
+      "METAL",
+      "WATER"
+    ],
+    "stemElements": [
+      "WOOD",
+      "WOOD",
+      "FIRE",
+      "FIRE",
+      "EARTH",
+      "EARTH",
+      "METAL",
+      "METAL",
+      "WATER",
+      "WATER"
+    ],
+    "branchElements": [
+      "WATER",
+      "EARTH",
+      "WOOD",
+      "WOOD",
+      "EARTH",
+      "FIRE",
+      "FIRE",
+      "EARTH",
+      "METAL",
+      "METAL",
+      "EARTH",
+      "WATER"
+    ],
+    "stemCombinations": [
+      [
+        "甲",
+        "己"
+      ],
+      [
+        "乙",
+        "庚"
+      ],
+      [
+        "丙",
+        "辛"
+      ],
+      [
+        "丁",
+        "壬"
+      ],
+      [
+        "戊",
+        "癸"
+      ]
+    ],
+    "liuhe": [
+      [
+        "子",
+        "丑"
+      ],
+      [
+        "寅",
+        "亥"
+      ],
+      [
+        "卯",
+        "戌"
+      ],
+      [
+        "辰",
+        "酉"
+      ],
+      [
+        "巳",
+        "申"
+      ],
+      [
+        "午",
+        "未"
+      ]
+    ],
+    "clash": [
+      [
+        "子",
+        "午"
+      ],
+      [
+        "丑",
+        "未"
+      ],
+      [
+        "寅",
+        "申"
+      ],
+      [
+        "卯",
+        "酉"
+      ],
+      [
+        "辰",
+        "戌"
+      ],
+      [
+        "巳",
+        "亥"
+      ]
+    ],
+    "tenGods": {
+      "SAME": [
+        "BI_JIAN",
+        "JIE_CAI"
+      ],
+      "PRODUCES": [
+        "SHI_SHEN",
+        "SHANG_GUAN"
+      ],
+      "CONTROLS": [
+        "PIAN_CAI",
+        "ZHENG_CAI"
+      ],
+      "CONTROLLED_BY": [
+        "PIAN_GUAN",
+        "ZHENG_GUAN"
+      ],
+      "PRODUCED_BY": [
+        "PIAN_YIN",
+        "ZHENG_YIN"
+      ]
+    },
+    "reference": "saju-v1-final-decisions.md; basic element lookup verified against Bu Shi Zheng Zong, Qi Meng Jie Yao"
+  },
   "rules": [
     {
       "ruleId": "DAY_MASTER_RELATION",
+      "family": "DAY_MASTER_RELATION",
       "source": "SAJU",
-      "enabled": false,
-      "categoryMappings": [],
+      "enabled": true,
+      "contextOnly": false,
+      "detectorStatus": "DEFINED",
       "baseWeight": 1.2,
       "ruleWeight": 1,
       "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 18
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+      "requiresBirthTime": false,
+      "version": "1.0.0",
+      "scope": "DAY_STEM_PAIR",
+      "reference": "saju-v1-application-approval.md",
+      "precedence": "STEM_COMBINATION_ELSE_ELEMENT",
+      "variants": [
+        {
+          "variant": "SAME",
+          "categoryMappings": [
+            {
+              "category": "SUPPORT",
+              "direction": "POSITIVE",
+              "signedValue": 0.4
+            },
+            {
+              "category": "HARMONY",
+              "direction": "POSITIVE",
+              "signedValue": 0.3
+            }
+          ],
+          "metadata": {}
+        }
+      ]
     },
     {
       "ruleId": "DAY_BRANCH_RELATION",
+      "family": "DAY_BRANCH_RELATION",
       "source": "SAJU",
-      "enabled": false,
-      "categoryMappings": [],
+      "enabled": true,
+      "contextOnly": false,
+      "detectorStatus": "DEFINED",
       "baseWeight": 1.2,
       "ruleWeight": 1,
       "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 18
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+      "requiresBirthTime": false,
+      "version": "1.0.0",
+      "scope": "DAY_BRANCH_PAIR",
+      "reference": "saju-v1-application-approval.md",
+      "precedence": "LIUHE_CLASH_ELEMENT",
+      "variants": [
+        {
+          "variant": "BSAME",
+          "categoryMappings": [
+            {
+              "category": "EMOTION",
+              "direction": "POSITIVE",
+              "signedValue": 0.55
+            },
+            {
+              "category": "STABILITY",
+              "direction": "POSITIVE",
+              "signedValue": 0.35
+            }
+          ],
+          "metadata": {}
+        },
+        {
+          "variant": "BGENERATION",
+          "categoryMappings": [
+            {
+              "category": "EMOTION",
+              "direction": "POSITIVE",
+              "signedValue": 0.45
+            },
+            {
+              "category": "SUPPORT",
+              "direction": "POSITIVE",
+              "signedValue": 0.35
+            },
+            {
+              "category": "LONG_TERM",
+              "direction": "POSITIVE",
+              "signedValue": 0.25
+            }
+          ],
+          "metadata": {}
+        },
+        {
+          "variant": "BCONTROL",
+          "categoryMappings": [
+            {
+              "category": "EMOTION",
+              "direction": "NEGATIVE",
+              "signedValue": -0.35
+            },
+            {
+              "category": "STABILITY",
+              "direction": "NEGATIVE",
+              "signedValue": -0.3
+            },
+            {
+              "category": "HARMONY",
+              "direction": "NEGATIVE",
+              "signedValue": -0.2
+            }
+          ],
+          "metadata": {}
+        }
+      ]
     },
     {
       "ruleId": "STEM_COMBINATION",
+      "family": "STEM_COMBINATION",
       "source": "SAJU",
-      "enabled": false,
-      "categoryMappings": [],
+      "enabled": true,
+      "contextOnly": false,
+      "detectorStatus": "DEFINED",
       "baseWeight": 0.9,
       "ruleWeight": 1,
       "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 18
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+      "requiresBirthTime": false,
+      "version": "1.0.0",
+      "scope": "DAY_STEM_PAIR",
+      "reference": "saju-v1-application-approval.md",
+      "precedence": "STEM_COMBINATION_ELSE_ELEMENT",
+      "variants": [
+        {
+          "variant": "COMB",
+          "categoryMappings": [
+            {
+              "category": "ATTRACTION",
+              "direction": "POSITIVE",
+              "signedValue": 0.7
+            },
+            {
+              "category": "HARMONY",
+              "direction": "POSITIVE",
+              "signedValue": 0.45
+            },
+            {
+              "category": "LONG_TERM",
+              "direction": "POSITIVE",
+              "signedValue": 0.25
+            }
+          ],
+          "metadata": {
+            "transformationStatus": "UNASSESSED"
+          }
+        }
+      ]
     },
     {
       "ruleId": "BRANCH_COMBINATION",
+      "family": "BRANCH_COMBINATION",
       "source": "SAJU",
-      "enabled": false,
-      "categoryMappings": [],
+      "enabled": true,
+      "contextOnly": false,
+      "detectorStatus": "DEFINED",
       "baseWeight": 1,
       "ruleWeight": 1,
       "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 18
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+      "requiresBirthTime": false,
+      "version": "1.0.0",
+      "scope": "DAY_BRANCH_PAIR",
+      "reference": "saju-v1-application-approval.md",
+      "precedence": "LIUHE_CLASH_ELEMENT",
+      "variants": [
+        {
+          "variant": "LIUHE",
+          "categoryMappings": [
+            {
+              "category": "HARMONY",
+              "direction": "POSITIVE",
+              "signedValue": 0.75
+            },
+            {
+              "category": "EMOTION",
+              "direction": "POSITIVE",
+              "signedValue": 0.55
+            },
+            {
+              "category": "LONG_TERM",
+              "direction": "POSITIVE",
+              "signedValue": 0.45
+            }
+          ],
+          "metadata": {}
+        }
+      ]
     },
     {
       "ruleId": "BRANCH_CLASH",
+      "family": "BRANCH_CLASH",
       "source": "SAJU",
-      "enabled": false,
-      "categoryMappings": [],
+      "enabled": true,
+      "contextOnly": false,
+      "detectorStatus": "DEFINED",
       "baseWeight": 1,
       "ruleWeight": 1,
       "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 18
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+      "requiresBirthTime": false,
+      "version": "1.0.0",
+      "scope": "DAY_BRANCH_PAIR",
+      "reference": "saju-v1-application-approval.md",
+      "precedence": "LIUHE_CLASH_ELEMENT",
+      "variants": [
+        {
+          "variant": "CLASH",
+          "categoryMappings": [
+            {
+              "category": "PASSION",
+              "direction": "POSITIVE",
+              "signedValue": 0.2
+            },
+            {
+              "category": "HARMONY",
+              "direction": "NEGATIVE",
+              "signedValue": -0.7
+            },
+            {
+              "category": "STABILITY",
+              "direction": "NEGATIVE",
+              "signedValue": -0.6
+            }
+          ],
+          "metadata": {}
+        }
+      ]
     },
     {
       "ruleId": "ELEMENT_COMPLEMENT",
+      "family": "ELEMENT_COMPLEMENT",
       "source": "SAJU",
-      "enabled": false,
-      "categoryMappings": [],
+      "enabled": true,
+      "contextOnly": false,
+      "detectorStatus": "DEFINED",
       "baseWeight": 1,
       "ruleWeight": 1,
       "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 18
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+      "requiresBirthTime": false,
+      "version": "1.0.0",
+      "scope": "KNOWN_TOKEN_POOL",
+      "reference": "saju-v1-application-approval.md",
+      "precedence": "INDEPENDENT",
+      "variants": [
+        {
+          "variant": "EC1",
+          "categoryMappings": [
+            {
+              "category": "SUPPORT",
+              "direction": "POSITIVE",
+              "signedValue": 0.3
+            },
+            {
+              "category": "HARMONY",
+              "direction": "POSITIVE",
+              "signedValue": 0.2
+            }
+          ],
+          "band": {
+            "minimum": 0.05,
+            "maximum": 0.15,
+            "maximumInclusive": false
+          },
+          "metadata": {}
+        },
+        {
+          "variant": "EC2",
+          "categoryMappings": [
+            {
+              "category": "SUPPORT",
+              "direction": "POSITIVE",
+              "signedValue": 0.6
+            },
+            {
+              "category": "HARMONY",
+              "direction": "POSITIVE",
+              "signedValue": 0.4
+            }
+          ],
+          "band": {
+            "minimum": 0.15,
+            "maximum": 0.3,
+            "maximumInclusive": false
+          },
+          "metadata": {}
+        },
+        {
+          "variant": "EC3",
+          "categoryMappings": [
+            {
+              "category": "SUPPORT",
+              "direction": "POSITIVE",
+              "signedValue": 0.9
+            },
+            {
+              "category": "HARMONY",
+              "direction": "POSITIVE",
+              "signedValue": 0.6
+            }
+          ],
+          "band": {
+            "minimum": 0.3,
+            "maximum": 0.5,
+            "maximumInclusive": true
+          },
+          "metadata": {}
+        }
+      ]
     },
     {
       "ruleId": "ELEMENT_SUPPORT",
+      "family": "ELEMENT_SUPPORT",
       "source": "SAJU",
-      "enabled": false,
-      "categoryMappings": [],
+      "enabled": true,
+      "contextOnly": false,
+      "detectorStatus": "DEFINED",
       "baseWeight": 0.85,
       "ruleWeight": 1,
       "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 18
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+      "requiresBirthTime": false,
+      "version": "1.0.0",
+      "scope": "DAY_STEM_PAIR",
+      "reference": "saju-v1-application-approval.md",
+      "precedence": "STEM_COMBINATION_ELSE_ELEMENT",
+      "variants": [
+        {
+          "variant": "GENERATION",
+          "categoryMappings": [
+            {
+              "category": "SUPPORT",
+              "direction": "POSITIVE",
+              "signedValue": 0.7
+            },
+            {
+              "category": "HARMONY",
+              "direction": "POSITIVE",
+              "signedValue": 0.4
+            },
+            {
+              "category": "LONG_TERM",
+              "direction": "POSITIVE",
+              "signedValue": 0.25
+            }
+          ],
+          "metadata": {}
+        }
+      ]
     },
     {
       "ruleId": "ELEMENT_CONTROL",
+      "family": "ELEMENT_CONTROL",
       "source": "SAJU",
-      "enabled": false,
-      "categoryMappings": [],
+      "enabled": true,
+      "contextOnly": false,
+      "detectorStatus": "DEFINED",
       "baseWeight": 0.8,
       "ruleWeight": 1,
       "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 18
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+      "requiresBirthTime": false,
+      "version": "1.0.0",
+      "scope": "DAY_STEM_PAIR",
+      "reference": "saju-v1-application-approval.md",
+      "precedence": "STEM_COMBINATION_ELSE_ELEMENT",
+      "variants": [
+        {
+          "variant": "CONTROL",
+          "categoryMappings": [
+            {
+              "category": "PASSION",
+              "direction": "POSITIVE",
+              "signedValue": 0.15
+            },
+            {
+              "category": "HARMONY",
+              "direction": "NEGATIVE",
+              "signedValue": -0.45
+            },
+            {
+              "category": "STABILITY",
+              "direction": "NEGATIVE",
+              "signedValue": -0.35
+            }
+          ],
+          "metadata": {}
+        }
+      ]
     },
     {
       "ruleId": "TEN_GODS_RELATION",
+      "family": "TEN_GODS_RELATION",
       "source": "SAJU",
       "enabled": false,
-      "categoryMappings": [],
+      "contextOnly": true,
+      "detectorStatus": "DEFINED",
       "baseWeight": 0.75,
       "ruleWeight": 1,
       "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 18
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+      "requiresBirthTime": false,
+      "version": "1.0.0",
+      "scope": "DAY_STEM_PAIR",
+      "reference": "saju-v1-application-approval.md",
+      "precedence": "INDEPENDENT",
+      "variants": []
     },
     {
       "ruleId": "YIN_YANG_BALANCE",
+      "family": "YIN_YANG_BALANCE",
       "source": "SAJU",
-      "enabled": false,
-      "categoryMappings": [],
+      "enabled": true,
+      "contextOnly": false,
+      "detectorStatus": "DEFINED",
       "baseWeight": 0.45,
       "ruleWeight": 1,
       "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 18
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+      "requiresBirthTime": false,
+      "version": "1.0.0",
+      "scope": "KNOWN_TOKEN_POOL",
+      "reference": "saju-v1-application-approval.md",
+      "precedence": "INDEPENDENT",
+      "variants": [
+        {
+          "variant": "YY0",
+          "categoryMappings": [
+            {
+              "category": "HARMONY",
+              "direction": "NEGATIVE",
+              "signedValue": -0.35
+            },
+            {
+              "category": "STABILITY",
+              "direction": "NEGATIVE",
+              "signedValue": -0.2
+            }
+          ],
+          "band": {
+            "minimum": 0,
+            "maximum": 0.25,
+            "maximumInclusive": false
+          },
+          "metadata": {}
+        },
+        {
+          "variant": "YY1",
+          "categoryMappings": [
+            {
+              "category": "HARMONY",
+              "direction": "NEGATIVE",
+              "signedValue": -0.15
+            }
+          ],
+          "band": {
+            "minimum": 0.25,
+            "maximum": 0.5,
+            "maximumInclusive": false
+          },
+          "metadata": {}
+        },
+        {
+          "variant": "YY2",
+          "categoryMappings": [
+            {
+              "category": "HARMONY",
+              "direction": "POSITIVE",
+              "signedValue": 0.2
+            }
+          ],
+          "band": {
+            "minimum": 0.5,
+            "maximum": 0.75,
+            "maximumInclusive": false
+          },
+          "metadata": {}
+        },
+        {
+          "variant": "YY3",
+          "categoryMappings": [
+            {
+              "category": "HARMONY",
+              "direction": "POSITIVE",
+              "signedValue": 0.45
+            },
+            {
+              "category": "STABILITY",
+              "direction": "POSITIVE",
+              "signedValue": 0.25
+            }
+          ],
+          "band": {
+            "minimum": 0.75,
+            "maximum": 1,
+            "maximumInclusive": true
+          },
+          "metadata": {}
+        }
+      ]
     },
     {
       "ruleId": "HIDDEN_STEM_RELATION",
+      "family": "HIDDEN_STEM_RELATION",
       "source": "SAJU",
       "enabled": false,
-      "categoryMappings": [],
+      "contextOnly": true,
+      "detectorStatus": "DEFERRED",
       "baseWeight": 0.45,
       "ruleWeight": 1,
       "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 18
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+      "requiresBirthTime": false,
+      "version": "1.0.0",
+      "scope": "DEFERRED",
+      "reference": "saju-v1-application-approval.md",
+      "precedence": "INDEPENDENT",
+      "variants": []
     },
     {
       "ruleId": "PUNISHMENT",
+      "family": "PUNISHMENT",
       "source": "SAJU",
       "enabled": false,
-      "categoryMappings": [],
+      "contextOnly": true,
+      "detectorStatus": "DEFERRED",
       "baseWeight": 0.6,
       "ruleWeight": 1,
       "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 18
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+      "requiresBirthTime": false,
+      "version": "1.0.0",
+      "scope": "DEFERRED",
+      "reference": "saju-v1-application-approval.md",
+      "precedence": "INDEPENDENT",
+      "variants": []
     },
     {
       "ruleId": "HARM",
+      "family": "HARM",
       "source": "SAJU",
       "enabled": false,
-      "categoryMappings": [],
+      "contextOnly": true,
+      "detectorStatus": "DEFERRED",
       "baseWeight": 0.5,
       "ruleWeight": 1,
       "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 18
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+      "requiresBirthTime": false,
+      "version": "1.0.0",
+      "scope": "DEFERRED",
+      "reference": "saju-v1-application-approval.md",
+      "precedence": "INDEPENDENT",
+      "variants": []
     },
     {
       "ruleId": "DESTRUCTION",
+      "family": "DESTRUCTION",
       "source": "SAJU",
       "enabled": false,
-      "categoryMappings": [],
+      "contextOnly": true,
+      "detectorStatus": "DEFERRED",
       "baseWeight": 0.45,
       "ruleWeight": 1,
       "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 18
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
+      "requiresBirthTime": false,
+      "version": "1.0.0",
+      "scope": "DEFERRED",
+      "reference": "saju-v1-application-approval.md",
+      "precedence": "INDEPENDENT",
+      "variants": []
     }
-  ],
-  "contractStatus": "FROZEN",
-  "scoreEngineReadiness": "BLOCKED_CATALOG",
-  "blocker": "SAJU_RULE_CATALOG_APPROVAL"
+  ]
 }

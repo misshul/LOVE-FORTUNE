@@ -1,0 +1,39 @@
+{
+  "ruleId": "BRANCH_CLASH",
+  "family": "BRANCH_CLASH",
+  "source": "SAJU",
+  "enabled": true,
+  "contextOnly": false,
+  "detectorStatus": "DEFINED",
+  "baseWeight": 1,
+  "ruleWeight": 1,
+  "pairWeight": 1,
+  "requiresBirthTime": false,
+  "version": "1.0.0",
+  "scope": "DAY_BRANCH_PAIR",
+  "reference": "saju-v1-application-approval.md",
+  "precedence": "LIUHE_CLASH_ELEMENT",
+  "variants": [
+    {
+      "variant": "CLASH",
+      "categoryMappings": [
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.2
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.7
+        },
+        {
+          "category": "STABILITY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.6
+        }
+      ],
+      "metadata": {}
+    }
+  ]
+}

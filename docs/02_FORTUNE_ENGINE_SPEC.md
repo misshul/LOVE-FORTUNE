@@ -1,7 +1,7 @@
 # LOVE FORTUNE
 # 02_FORTUNE_ENGINE_SPEC.md
 
-Version: 3.3.0
+Version: 3.4.0
 Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: Fortune Engine Specification
 
@@ -421,3 +421,8 @@ Engine 구현은 다음을 만족해야 한다.
 See [Astrology Catalog v1](contracts/astrology-catalog-v1.md) for canonical planet order, deferred outer/Jupiter/Saturn scope, category Feature projection, orbCloseness allowlist and all-ages PASSION meaning. Existing outer caps, confidence/coverage/period/guardrail/privacy remain unchanged.
 
 END OF DOCUMENT
+
+
+## Approved Saju v1 / SC-07 v2 application
+
+Current authority: [Saju v1](contracts/saju-catalog-v1.md), [Guardrail v2](contracts/guardrail-v2.md), [ContextEvidence](contracts/context-evidence.md). These supersede historical Saju scoring placeholders, unit-sign restrictions and guardrail search. Saju14 families:9 scoring/5 context, APPLIED/READY. Only DAILY_RULE_CATALOG_APPROVAL remains. Other privacy/API/time contracts are unchanged.

@@ -1,0 +1,81 @@
+{
+  "ruleId": "ELEMENT_COMPLEMENT",
+  "family": "ELEMENT_COMPLEMENT",
+  "source": "SAJU",
+  "enabled": true,
+  "contextOnly": false,
+  "detectorStatus": "DEFINED",
+  "baseWeight": 1,
+  "ruleWeight": 1,
+  "pairWeight": 1,
+  "requiresBirthTime": false,
+  "version": "1.0.0",
+  "scope": "KNOWN_TOKEN_POOL",
+  "reference": "saju-v1-application-approval.md",
+  "precedence": "INDEPENDENT",
+  "variants": [
+    {
+      "variant": "EC1",
+      "categoryMappings": [
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.3
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.2
+        }
+      ],
+      "band": {
+        "minimum": 0.05,
+        "maximum": 0.15,
+        "maximumInclusive": false
+      },
+      "metadata": {}
+    },
+    {
+      "variant": "EC2",
+      "categoryMappings": [
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.6
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.4
+        }
+      ],
+      "band": {
+        "minimum": 0.15,
+        "maximum": 0.3,
+        "maximumInclusive": false
+      },
+      "metadata": {}
+    },
+    {
+      "variant": "EC3",
+      "categoryMappings": [
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.6
+        }
+      ],
+      "band": {
+        "minimum": 0.3,
+        "maximum": 0.5,
+        "maximumInclusive": true
+      },
+      "metadata": {}
+    }
+  ]
+}

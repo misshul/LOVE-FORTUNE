@@ -1,0 +1,16 @@
+{
+  "contextEvidenceId": "ce_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "ruleId": "TEN_GODS_RELATION",
+  "source": "SAJU",
+  "subject": "PERSON_A",
+  "period": {
+    "type": "LIFETIME"
+  },
+  "confidence": 1,
+  "metadata": {
+    "tenGod": "BI_JIAN",
+    "pillar": "DAY"
+  },
+  "category": "HARMONY",
+  "signedValue": 0.5
+}

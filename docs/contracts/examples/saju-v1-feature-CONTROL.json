@@ -1,0 +1,18 @@
+{
+  "ruleId": "ELEMENT_CONTROL",
+  "source": "SAJU",
+  "subject": "PAIR",
+  "category": "PASSION",
+  "period": {
+    "type": "LIFETIME"
+  },
+  "metadata": {
+    "ruleVariant": "CONTROL"
+  },
+  "direction": "POSITIVE",
+  "signedValue": 0.15,
+  "featureId": "ft_24f89ccb1e0be23012df52117a44ea32bfab26ad07c78015",
+  "rawValue": null,
+  "baseWeight": 0.8,
+  "confidence": 1
+}

@@ -1,0 +1,18 @@
+{
+  "ruleId": "BRANCH_COMBINATION",
+  "source": "SAJU",
+  "subject": "PAIR",
+  "category": "HARMONY",
+  "period": {
+    "type": "LIFETIME"
+  },
+  "metadata": {
+    "ruleVariant": "LIUHE"
+  },
+  "direction": "POSITIVE",
+  "signedValue": 0.75,
+  "featureId": "ft_88a33bd5cf5c10d7db7598ce8335b3db990003d8a05e5d4e",
+  "rawValue": null,
+  "baseWeight": 1,
+  "confidence": 1
+}

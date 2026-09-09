@@ -149,6 +149,9 @@
           "minimum": 0,
           "maximum": 1,
           "description": "Active aspect only; non-identity, request-local priority. Never a score/confidence multiplier or permission to log evidence."
+        },
+        "transformationStatus": {
+          "const": "UNASSESSED"
         }
       },
       "required": [],
@@ -178,5 +181,52 @@
     "metadata",
     "signedValue"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "source": {
+            "const": "SAJU"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "ruleId": {
+            "not": {
+              "enum": [
+                "TEN_GODS_RELATION",
+                "HIDDEN_STEM_RELATION",
+                "PUNISHMENT",
+                "HARM",
+                "DESTRUCTION"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "metadata": {
+            "required": [
+              "transformationStatus"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "ruleId": {
+            "const": "STEM_COMBINATION"
+          },
+          "source": {
+            "const": "SAJU"
+          }
+        }
+      }
+    }
+  ]
 }

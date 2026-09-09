@@ -1,7 +1,7 @@
 # LOVE FORTUNE
 # 08_AI_PROMPT_SPEC.md
 
-Version: 2.2.0
+Version: 1.4.0
 Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: AI Prompt / Interpretation Specification
 
@@ -415,3 +415,10 @@ Core calculates; AI interprets approved evidence. Frontend displays deterministi
 [Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (SAJU_DAY_PILLAR_EPOCH, EPHEMERIS_PROVIDER).
 
 END OF DOCUMENT
+
+
+## Approved Saju v1 / SC-07 v2 application
+
+Current authority: [Saju v1](contracts/saju-catalog-v1.md), [Guardrail v2](contracts/guardrail-v2.md), [ContextEvidence](contracts/context-evidence.md). These supersede historical Saju scoring placeholders, unit-sign restrictions and guardrail search. Saju14 families:9 scoring/5 context, APPLIED/READY. Only DAILY_RULE_CATALOG_APPROVAL remains. Other privacy/API/time contracts are unchanged.
+
+Internal context explanations use separate contextEvidenceRefs; no ce_ IDs in scoring evidenceRefs. The current public LFIC/API fields remain unchanged. No unsigned context extension, numeric score output or context scoring. See contracts/context-evidence.md.

@@ -655,6 +655,211 @@
       "file": "astro-v1-closeness-null-invalid.json",
       "schema": "../schemas/feature.schema.json",
       "valid": false
+    },
+    {
+      "file": "saju-v1-day_master_relation.json",
+      "schema": "../schemas/saju-rule.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-day_branch_relation.json",
+      "schema": "../schemas/saju-rule.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-stem_combination.json",
+      "schema": "../schemas/saju-rule.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-branch_combination.json",
+      "schema": "../schemas/saju-rule.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-branch_clash.json",
+      "schema": "../schemas/saju-rule.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-element_complement.json",
+      "schema": "../schemas/saju-rule.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-element_support.json",
+      "schema": "../schemas/saju-rule.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-element_control.json",
+      "schema": "../schemas/saju-rule.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-yin_yang_balance.json",
+      "schema": "../schemas/saju-rule.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-ten-gods.json",
+      "schema": "../schemas/context-evidence.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-context-interpretation.json",
+      "schema": "../schemas/context-interpretation.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-input.json",
+      "schema": "../schemas/saju-synthetic-input.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-invalid-stem.json",
+      "schema": "../schemas/saju-synthetic-input.schema.json",
+      "valid": false
+    },
+    {
+      "file": "saju-v1-invalid-branch.json",
+      "schema": "../schemas/saju-synthetic-input.schema.json",
+      "valid": false
+    },
+    {
+      "file": "saju-v1-invalid-element.json",
+      "schema": "../schemas/saju-synthetic-input.schema.json",
+      "valid": false
+    },
+    {
+      "file": "saju-v1-invalid-cross-product.json",
+      "schema": "../schemas/saju-synthetic-input.schema.json",
+      "valid": false
+    },
+    {
+      "file": "saju-v1-invalid-token-count.json",
+      "schema": "../schemas/saju-synthetic-input.schema.json",
+      "valid": false
+    },
+    {
+      "file": "saju-v1-invalid-sign.json",
+      "schema": "../schemas/saju-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "saju-v1-invalid-range.json",
+      "schema": "../schemas/saju-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "saju-v1-invalid-empty-mapping.json",
+      "schema": "../schemas/saju-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "saju-v1-invalid-time-null.json",
+      "schema": "../schemas/saju-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "saju-v1-invalid-transformation.json",
+      "schema": "../schemas/saju-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "saju-v1-invalid-ten-god.json",
+      "schema": "../schemas/context-evidence.schema.json",
+      "valid": false
+    },
+    {
+      "file": "saju-v1-invalid-context-score.json",
+      "schema": "../schemas/context-evidence.schema.json",
+      "valid": false
+    },
+    {
+      "file": "saju-v1-invalid-context-as-feature.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": false
+    },
+    {
+      "file": "saju-v1-feature-SAME.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-feature-BSAME.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-feature-BGENERATION.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-feature-BCONTROL.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-feature-COMB.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-feature-LIUHE.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-feature-CLASH.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-feature-EC1.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-feature-EC2.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-feature-EC3.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-feature-GENERATION.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-feature-CONTROL.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-feature-YY0.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-feature-YY1.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-feature-YY2.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
+    },
+    {
+      "file": "saju-v1-feature-YY3.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
     }
   ]
 }

@@ -1,59 +1,147 @@
-# ASTROLOGY CATALOG V1 APPLICATION REPORT
+# SC-07 V2 + SAJU CATALOG V1 APPLICATION REPORT
 
-Validation timestamp (UTC): 2026-09-09T02:04:49.484Z
-Scope: docs/02, docs/03 and docs/contracts/** only. No production implementation, commit or push.
+Scope: docs/02_FORTUNE_ENGINE_SPEC.md, docs/03_SCORE_SPEC.md, docs/08_AI_PROMPT_SPEC.md and docs/contracts/** only. No production implementation, commit or push.
+Authority: [Application approval](saju-v1-application-approval.md). Product distribution characteristics are APPROVED v1 behavior, not an outstanding product decision.
 
-| Item | Actual result |
+| Item | Actual validation result |
 |---|---|
-| B. Astrology scoring rules | 109; Personal75, Jupiter15, Saturn19 |
-| C. Category mappings | 228; exact comparison against preserved approval matrix |
-| D. Positive / Negative / Mixed | 170 / 58 / 26; neutral0 |
-| E. Pair weight | Override76, Generic33, unresolved0 |
-| F. Schema | PASS; 23 schemas; generic Saju schema unchanged |
-| G. Examples | PASS; 69 valid accepted, 61 invalid rejected (130 total) |
-| H. Orb | PASS; PLUS formula, 5 circular cases, 4 reference examples, 327 exact/boundary/inactive checks |
-| I. Unknown time | PASS; 4 candidate cases; all109 requiresBirthTime=false |
-| J. Feature metadata | PASS; orbCloseness[0,1], invalid values rejected, identity unchanged by closeness |
-| K. Regression | PASS; 80 existing semantic vectors, 6 canonical cases, 2+8 signed-context cases, 19 HTTP/privacy cases, 20 OpenAPI operations |
-| L. SPEC_CONFLICT | 0 in effective approved contracts |
-| M. Cross-spec contradictions | 0 in effective approved contracts |
-| N. Production code files changed | NONE; documentation validation scripts are in docs/contracts/validation only |
-| O. git diff --check | PASS |
-| P. Astrology Catalog v1 | APPLIED |
-| Q. Astrology Catalog readiness | READY |
-| R. Overall Score Engine readiness | BLOCKED_CATALOG |
-| S. Production Engine readiness | BLOCKED_EXTERNAL |
+| Contract Freeze | PASS |
+| SC-07 Guardrail | V2 APPLIED |
+| Saju Catalog | APPLIED |
+| Saju Catalog Readiness | READY |
+| Astrology Catalog Readiness | READY;109 rules /228 mappings unchanged |
+| Overall Score Engine Readiness | BLOCKED_CATALOG |
+| Remaining catalog blocker | DAILY_RULE_CATALOG_APPROVAL |
+| Production Engine Readiness | BLOCKED_EXTERNAL |
+| External blockers | SAJU_DAY_PILLAR_EPOCH, EPHEMERIS_PROVIDER |
 
-## T. Remaining catalog blockers
+## Validation against actual repository files
 
-- SAJU_RULE_CATALOG_APPROVAL
-- DAILY_RULE_CATALOG_APPROVAL
+| Check | Result |
+|---|---|
+| Family classification | 14 / scoring9 / context5;16 scoring variants /37 mappings |
+| Original family weights | 14 matched docs/03 section18 |
+| Decimal mapping / approved matrix | PASS; no invented signedValues |
+| Day Stem | 100 ordered cases: SAME20, GENERATION40, CONTROL30, COMB10 |
+| Day Branch | 144: SAME28, GENERATION50, CONTROL42, LIUHE12, CLASH12 |
+| Duplicate owner / Feature | 0 |
+| Complement | 497,025 count-distribution pairs; exact gain range0..0.50; boundaries PASS |
+| Yin-Yang | 45 count cases; valid bands and invalid-count rejection PASS |
+| Unknown-time | 1 / .875 / .75; candidate agreement and no double penalty PASS |
+| Context | Separate closed schema; Ten Gods valid; dangling/duplicate refs rejected; canonical context ID PASS |
+| Schema | 27 schemas PASS; OpenAPI PASS |
+| Structural examples | 171:97 valid accepted,74 invalid rejected |
+| Additional semantic invalid cases | 5 rejected (owner, coverage, token counts, context refs) |
+| Existing semantic regression | 80 vectors PASS; SC-07 vectors explicitly superseded by v2 |
+| Canonicalization | 6 cases PASS; existing Feature identity unchanged |
+| Signed context | 2 valid /8 invalid PASS; public wire/signing/TTL unchanged |
+| HTTP/privacy | 19 cases PASS |
+| DST | 4 cases PASS; local ICU78.2 / tzdb2025c |
+| Astrology | 109/228 exact catalog comparison PASS; v2 regression228 single fixtures +8 multi-category fixtures |
+| Saju population | 57,600 identical synthetic combinations;0 calculation failures |
+| Guardrail evaluated usable categories | 281,786 |
+| Guardrail activated categories / adjusted Features | 59,428 /59,428 |
+| Individual impact >20 / exclusion / unresolved / induced insufficient | 0 /0 /0 /0 |
+| Exact rational guardrail cross-check | 1,117 unique inputs /3,391 Features;0 violations |
+| SPEC_CONFLICT / effective cross-spec contradictions | 0 /0 |
+| Production code files changed | NONE |
+| git diff --check | PASS |
 
-SCORING_RULE_CATALOG_APPROVAL is the historical umbrella for these remaining approvals. Astrology109 enabled, Saju14 disabled, Daily0. No generic aspect definitions are counted as scoring rules.
+## Method and contract boundaries
 
-## U. Remaining external blockers
+[Actual execution results](validation-results-saju-v1.json) contain complete metrics and distributions, generated from command output. Validation commands:
+- node docs/contracts/validation/structural.cjs
+- node docs/contracts/validation/semantic-regression.cjs
+- node docs/contracts/validation/astrology.cjs
+- node docs/contracts/validation/saju-guardrail-v2.cjs
 
-- SAJU_DAY_PILLAR_EPOCH
-- EPHEMERIS_PROVIDER
+The Saju validator reads catalog families, mappings, reference tables and schema/semantic examples; it compares mappings to the approved matrix and weights to docs/03. Count/whole-chart fixtures are abstract synthetic data, not actual birth charts or real users. Population sampling matches the previously approved simulation. No external provider or epoch is used. No production engine, WordPress security or infrastructure behavior is certified.
 
-Contract Freeze remains PASS; SC-01..SC-10 remain RESOLVED. Readiness does not claim an implemented or production-validated engine.
+SC-07 v2 uses original W0 and direct marginal moderation. The old single-positive raw50 and same-sign raw100 regression expectations were superseded explicitly (now70 and90); original vectors remain in legacy-guardrail-v1-vectors.json as historical evidence. Other semantic expectations remain unchanged. Generic MIXED legacy fixtures are retained; Saju uses its own decimal-sign schema.
 
-## A. Changed files and authority
+ContextEvidence and contextEvidenceRefs are defined in a separate INTERNAL explanation envelope. Existing public API and signed LFIC schema are unchanged. The new envelope cannot be injected as unsigned context into existing requests. No public transport implementation is claimed. Four unapproved context detectors remain DEFERRED and have no invented tables.
 
-- docs/02_FORTUNE_ENGINE_SPEC.md and docs/03_SCORE_SPEC.md: approved Astrology mapping, decimal signs, PLUS orb, metadata and readiness references.
-- [Catalog](rules/astrology-rules.json), Saju/Daily blocker metadata, [closed Astrology schema](schemas/astrology-rule.schema.json), [Feature schema](schemas/feature.schema.json).
-- [Astrology contract](astrology-catalog-v1.md), [mapping approval](astrology-v1-mapping-approval.md), [application approval](astrology-v1-application-approval.md), README/runtime/readiness and current report/results.
-- examples/astro-v1-*.json, [semantic cases](examples/astrology-v1-semantic-vectors.json), manifest.json.
-- [Validation scripts](validation/README.md) reproduce checks against actual files.
+Historical approvals retain their original text with explicit supersession notices. Current runtime, score and catalog registers govern implementation. A stored legacy failure vector or former readiness report is not an active blocker.
 
-The two approval copies are preserved sources. Older v1/v2/v3 decisions and validation-results-v3.json describe historical approved states, superseded only where the current Astrology approval explicitly changes them.
+## Scope verification
 
-## Method and limits
+38 tracked files outside the allowed scope matched their initial clean Git blob hashes after normal Git line-ending filters. No tracked or untracked changed file is outside the allowed scope. Ignored local files are not part of the Git baseline; no operation wrote to them. Commit/push was not performed.
 
-[Actual execution output](validation-results-astrology-v1.json) supplies all counts. No expected counts were substituted for script output. Catalog is compared field-by-field to the approved mapping matrix; schema, semantic negative mutations (6) and positive file fixtures are separate checks.
+## Files changed
 
-Weight independence checks (327) verify exact/boundary closeness cannot change the proposed contribution weight/confidence. The raw floating multiplication example0.90*1.05 has binary representation noise; its canonical four-decimal expectation is0.9450. No global tolerance or intermediate rounding was introduced.
+See the complete list below. Validation scripts are documentation tooling, not production engine code.
 
-Feature projection validates one detected Venus-Mars square produces three distinct category Feature IDs, inactive detection produces none, and oriented Sun/Moon evidence is not merged. orbCloseness remains non-identity metadata. Passion remains all-ages-safe chemistry/energy/activation/mutual drive, not sexual/adult interpretation.
-
-Regression checks cover confidence,coverage,periods,guardrail,privacy and signed context. Synthetic fixtures and request-local test projections are not production engine output. DST uses local Intl/ICU78.2,tzdb2025c; four minute-aligned historical/transition examples do not certify every historical transition. Live WordPress, providers and infrastructure logging settings were not tested.
+- docs/02_FORTUNE_ENGINE_SPEC.md
+- docs/03_SCORE_SPEC.md
+- docs/08_AI_PROMPT_SPEC.md
+- docs/contracts/README.md
+- docs/contracts/astrology-catalog-v1.md
+- docs/contracts/clarification-v2.md
+- docs/contracts/context-evidence.md
+- docs/contracts/examples/arithmetic-period-dst-vectors.json
+- docs/contracts/examples/legacy-guardrail-v1-vectors.json
+- docs/contracts/examples/manifest.json
+- docs/contracts/examples/saju-v1-branch_clash.json
+- docs/contracts/examples/saju-v1-branch_combination.json
+- docs/contracts/examples/saju-v1-context-interpretation.json
+- docs/contracts/examples/saju-v1-day_branch_relation.json
+- docs/contracts/examples/saju-v1-day_master_relation.json
+- docs/contracts/examples/saju-v1-element_complement.json
+- docs/contracts/examples/saju-v1-element_control.json
+- docs/contracts/examples/saju-v1-element_support.json
+- docs/contracts/examples/saju-v1-feature-BCONTROL.json
+- docs/contracts/examples/saju-v1-feature-BGENERATION.json
+- docs/contracts/examples/saju-v1-feature-BSAME.json
+- docs/contracts/examples/saju-v1-feature-CLASH.json
+- docs/contracts/examples/saju-v1-feature-COMB.json
+- docs/contracts/examples/saju-v1-feature-CONTROL.json
+- docs/contracts/examples/saju-v1-feature-EC1.json
+- docs/contracts/examples/saju-v1-feature-EC2.json
+- docs/contracts/examples/saju-v1-feature-EC3.json
+- docs/contracts/examples/saju-v1-feature-GENERATION.json
+- docs/contracts/examples/saju-v1-feature-LIUHE.json
+- docs/contracts/examples/saju-v1-feature-SAME.json
+- docs/contracts/examples/saju-v1-feature-YY0.json
+- docs/contracts/examples/saju-v1-feature-YY1.json
+- docs/contracts/examples/saju-v1-feature-YY2.json
+- docs/contracts/examples/saju-v1-feature-YY3.json
+- docs/contracts/examples/saju-v1-input.json
+- docs/contracts/examples/saju-v1-invalid-branch.json
+- docs/contracts/examples/saju-v1-invalid-context-as-feature.json
+- docs/contracts/examples/saju-v1-invalid-context-score.json
+- docs/contracts/examples/saju-v1-invalid-cross-product.json
+- docs/contracts/examples/saju-v1-invalid-element.json
+- docs/contracts/examples/saju-v1-invalid-empty-mapping.json
+- docs/contracts/examples/saju-v1-invalid-range.json
+- docs/contracts/examples/saju-v1-invalid-sign.json
+- docs/contracts/examples/saju-v1-invalid-stem.json
+- docs/contracts/examples/saju-v1-invalid-ten-god.json
+- docs/contracts/examples/saju-v1-invalid-time-null.json
+- docs/contracts/examples/saju-v1-invalid-token-count.json
+- docs/contracts/examples/saju-v1-invalid-transformation.json
+- docs/contracts/examples/saju-v1-semantic-vectors.json
+- docs/contracts/examples/saju-v1-stem_combination.json
+- docs/contracts/examples/saju-v1-ten-gods.json
+- docs/contracts/examples/saju-v1-yin_yang_balance.json
+- docs/contracts/final-decision-v2.md
+- docs/contracts/final-decision-v3.md
+- docs/contracts/freeze-decision-v1.md
+- docs/contracts/guardrail-v2-approval.md
+- docs/contracts/guardrail-v2.md
+- docs/contracts/rules/saju-rules.json
+- docs/contracts/runtime-contract-v2.md
+- docs/contracts/saju-catalog-v1.md
+- docs/contracts/saju-v1-application-approval.md
+- docs/contracts/saju-v1-final-decisions.md
+- docs/contracts/schemas/context-evidence.schema.json
+- docs/contracts/schemas/context-interpretation.schema.json
+- docs/contracts/schemas/feature.schema.json
+- docs/contracts/schemas/rule.schema.json
+- docs/contracts/schemas/saju-rule.schema.json
+- docs/contracts/schemas/saju-synthetic-input.schema.json
+- docs/contracts/validation-report.md
+- docs/contracts/validation-results-saju-v1.json
+- docs/contracts/validation/README.md
+- docs/contracts/validation/saju-guardrail-v2.cjs
+- docs/contracts/validation/semantic-regression.cjs
+- docs/contracts/validation/structural.cjs

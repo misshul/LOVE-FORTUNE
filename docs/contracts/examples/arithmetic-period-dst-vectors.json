@@ -171,7 +171,7 @@
       "raw": 50
     },
     {
-      "name": "single-positive-removes-to-zero",
+      "name": "single-positive-fixed-denominator",
       "features": [
         {
           "id": "a",
@@ -180,7 +180,7 @@
         }
       ],
       "expected": "PASS",
-      "raw": 50
+      "raw": 70
     },
     {
       "name": "small-influence",
@@ -215,7 +215,7 @@
       "raw": 60
     },
     {
-      "name": "opposing-pair-non-convergence",
+      "name": "opposing-pair-direct-cap",
       "features": [
         {
           "id": "a",
@@ -228,7 +228,8 @@
           "w": 1
         }
       ],
-      "expected": "SCORE_GUARDRAIL_UNSATISFIED"
+      "expected": "PASS",
+      "raw": 50
     },
     {
       "name": "same-sign",
@@ -245,7 +246,7 @@
         }
       ],
       "expected": "PASS",
-      "raw": 100
+      "raw": 90
     }
   ],
   "periods": [

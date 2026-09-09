@@ -1,0 +1,39 @@
+{
+  "ruleId": "ELEMENT_CONTROL",
+  "family": "ELEMENT_CONTROL",
+  "source": "SAJU",
+  "enabled": true,
+  "contextOnly": false,
+  "detectorStatus": "DEFINED",
+  "baseWeight": 0.8,
+  "ruleWeight": 1,
+  "pairWeight": 1,
+  "requiresBirthTime": false,
+  "version": "1.0.0",
+  "scope": "DAY_STEM_PAIR",
+  "reference": "saju-v1-application-approval.md",
+  "precedence": "STEM_COMBINATION_ELSE_ELEMENT",
+  "variants": [
+    {
+      "variant": "CONTROL",
+      "categoryMappings": [
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.15
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.45
+        },
+        {
+          "category": "STABILITY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.35
+        }
+      ],
+      "metadata": {}
+    }
+  ]
+}

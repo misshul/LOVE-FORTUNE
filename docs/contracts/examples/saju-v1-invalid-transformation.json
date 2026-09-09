@@ -1,0 +1,41 @@
+{
+  "ruleId": "STEM_COMBINATION",
+  "family": "STEM_COMBINATION",
+  "source": "SAJU",
+  "enabled": true,
+  "contextOnly": false,
+  "detectorStatus": "DEFINED",
+  "baseWeight": 0.9,
+  "ruleWeight": 1,
+  "pairWeight": 1,
+  "requiresBirthTime": false,
+  "version": "1.0.0",
+  "scope": "DAY_STEM_PAIR",
+  "reference": "saju-v1-application-approval.md",
+  "precedence": "STEM_COMBINATION_ELSE_ELEMENT",
+  "variants": [
+    {
+      "variant": "COMB",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.45
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.25
+        }
+      ],
+      "metadata": {
+        "transformationStatus": "TRANSFORMED"
+      }
+    }
+  ]
+}

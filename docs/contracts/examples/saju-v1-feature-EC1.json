@@ -1,0 +1,18 @@
+{
+  "ruleId": "ELEMENT_COMPLEMENT",
+  "source": "SAJU",
+  "subject": "PAIR",
+  "category": "SUPPORT",
+  "period": {
+    "type": "LIFETIME"
+  },
+  "metadata": {
+    "ruleVariant": "EC1"
+  },
+  "direction": "POSITIVE",
+  "signedValue": 0.3,
+  "featureId": "ft_bdb238bd19c98247df1713a2239f8f83215fe8d677e02c59",
+  "rawValue": null,
+  "baseWeight": 1,
+  "confidence": 0.875
+}

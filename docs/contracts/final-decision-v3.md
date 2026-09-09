@@ -1,3 +1,5 @@
+> Historical decision record. Current Saju catalog and SC-07 guardrail are superseded by [Saju v1](saju-catalog-v1.md) and [Guardrail v2](guardrail-v2.md). Unrelated decisions remain active.
+
 # LOVE FORTUNE
 # FINAL REMAINING CONTRACT DECISIONS v3
 

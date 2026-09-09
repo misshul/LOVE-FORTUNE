@@ -1,0 +1,88 @@
+{
+  "status": "HISTORICAL_SUPERSEDED_BY_SC07_V2",
+  "guardrail": [
+    {
+      "name": "empty",
+      "features": [],
+      "expected": "PASS",
+      "raw": 50
+    },
+    {
+      "name": "single-positive-removes-to-zero",
+      "features": [
+        {
+          "id": "a",
+          "v": 1,
+          "w": 1
+        }
+      ],
+      "expected": "PASS",
+      "raw": 50
+    },
+    {
+      "name": "small-influence",
+      "features": [
+        {
+          "id": "a",
+          "v": 1,
+          "w": 1
+        },
+        {
+          "id": "b",
+          "v": 0,
+          "w": 1
+        },
+        {
+          "id": "c",
+          "v": 0,
+          "w": 1
+        },
+        {
+          "id": "d",
+          "v": 0,
+          "w": 1
+        },
+        {
+          "id": "e",
+          "v": 0,
+          "w": 1
+        }
+      ],
+      "expected": "PASS",
+      "raw": 60
+    },
+    {
+      "name": "opposing-pair-non-convergence",
+      "features": [
+        {
+          "id": "a",
+          "v": 1,
+          "w": 1
+        },
+        {
+          "id": "b",
+          "v": -1,
+          "w": 1
+        }
+      ],
+      "expected": "SCORE_GUARDRAIL_UNSATISFIED"
+    },
+    {
+      "name": "same-sign",
+      "features": [
+        {
+          "id": "a",
+          "v": 1,
+          "w": 1
+        },
+        {
+          "id": "b",
+          "v": 1,
+          "w": 1
+        }
+      ],
+      "expected": "PASS",
+      "raw": 100
+    }
+  ]
+}

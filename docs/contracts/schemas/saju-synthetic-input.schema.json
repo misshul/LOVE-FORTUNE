@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/saju-synthetic-input.schema.json",
+  "type": "object",
+  "properties": {
+    "stemA": {
+      "enum": [
+        "甲",
+        "乙",
+        "丙",
+        "丁",
+        "戊",
+        "己",
+        "庚",
+        "辛",
+        "壬",
+        "癸"
+      ]
+    },
+    "stemB": {
+      "enum": [
+        "甲",
+        "乙",
+        "丙",
+        "丁",
+        "戊",
+        "己",
+        "庚",
+        "辛",
+        "壬",
+        "癸"
+      ]
+    },
+    "branchA": {
+      "enum": [
+        "子",
+        "丑",
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥"
+      ]
+    },
+    "branchB": {
+      "enum": [
+        "子",
+        "丑",
+        "寅",
+        "卯",
+        "辰",
+        "巳",
+        "午",
+        "未",
+        "申",
+        "酉",
+        "戌",
+        "亥"
+      ]
+    },
+    "element": {
+      "enum": [
+        "WOOD",
+        "FIRE",
+        "EARTH",
+        "METAL",
+        "WATER"
+      ]
+    },
+    "scope": {
+      "enum": [
+        "DAY_STEM_PAIR",
+        "DAY_BRANCH_PAIR",
+        "KNOWN_TOKEN_POOL"
+      ]
+    },
+    "knownTokensA": {
+      "enum": [
+        6,
+        8
+      ]
+    },
+    "knownTokensB": {
+      "enum": [
+        6,
+        8
+      ]
+    }
+  },
+  "required": [
+    "stemA",
+    "stemB",
+    "branchA",
+    "branchB",
+    "element",
+    "scope",
+    "knownTokensA",
+    "knownTokensB"
+  ],
+  "additionalProperties": false
+}

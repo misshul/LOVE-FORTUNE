@@ -1,0 +1,18 @@
+{
+  "ruleId": "DAY_BRANCH_RELATION",
+  "source": "SAJU",
+  "subject": "PAIR",
+  "category": "EMOTION",
+  "period": {
+    "type": "LIFETIME"
+  },
+  "metadata": {
+    "ruleVariant": "BGENERATION"
+  },
+  "direction": "POSITIVE",
+  "signedValue": 0.45,
+  "featureId": "ft_2b1fac2903e71d825d4d50807c0f79aca034cb456b8f97a3",
+  "rawValue": null,
+  "baseWeight": 1.2,
+  "confidence": 1
+}

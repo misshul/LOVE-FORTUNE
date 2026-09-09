@@ -1,0 +1,39 @@
+{
+  "ruleId": "BRANCH_COMBINATION",
+  "family": "BRANCH_COMBINATION",
+  "source": "SAJU",
+  "enabled": true,
+  "contextOnly": false,
+  "detectorStatus": "DEFINED",
+  "baseWeight": 1,
+  "ruleWeight": 1,
+  "pairWeight": 1,
+  "requiresBirthTime": false,
+  "version": "1.0.0",
+  "scope": "DAY_BRANCH_PAIR",
+  "reference": "saju-v1-application-approval.md",
+  "precedence": "LIUHE_CLASH_ELEMENT",
+  "variants": [
+    {
+      "variant": "LIUHE",
+      "categoryMappings": [
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.75
+        },
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.55
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.45
+        }
+      ],
+      "metadata": {}
+    }
+  ]
+}

@@ -20,16 +20,7 @@
         "type": "object",
         "properties": {
           "category": {
-            "enum": [
-              "ATTRACTION",
-              "EMOTION",
-              "COMMUNICATION",
-              "PASSION",
-              "STABILITY",
-              "HARMONY",
-              "SUPPORT",
-              "LONG_TERM"
-            ]
+            "$ref": "common.schema.json#/$defs/category"
           },
           "direction": {
             "enum": [
@@ -63,7 +54,7 @@
             "then": {
               "properties": {
                 "signedValue": {
-                  "const": 1
+                  "exclusiveMinimum": 0
                 }
               }
             }
@@ -79,7 +70,7 @@
             "then": {
               "properties": {
                 "signedValue": {
-                  "const": -1
+                  "exclusiveMaximum": 0
                 }
               }
             }

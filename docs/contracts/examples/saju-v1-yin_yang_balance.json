@@ -1,0 +1,92 @@
+{
+  "ruleId": "YIN_YANG_BALANCE",
+  "family": "YIN_YANG_BALANCE",
+  "source": "SAJU",
+  "enabled": true,
+  "contextOnly": false,
+  "detectorStatus": "DEFINED",
+  "baseWeight": 0.45,
+  "ruleWeight": 1,
+  "pairWeight": 1,
+  "requiresBirthTime": false,
+  "version": "1.0.0",
+  "scope": "KNOWN_TOKEN_POOL",
+  "reference": "saju-v1-application-approval.md",
+  "precedence": "INDEPENDENT",
+  "variants": [
+    {
+      "variant": "YY0",
+      "categoryMappings": [
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.35
+        },
+        {
+          "category": "STABILITY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.2
+        }
+      ],
+      "band": {
+        "minimum": 0,
+        "maximum": 0.25,
+        "maximumInclusive": false
+      },
+      "metadata": {}
+    },
+    {
+      "variant": "YY1",
+      "categoryMappings": [
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.15
+        }
+      ],
+      "band": {
+        "minimum": 0.25,
+        "maximum": 0.5,
+        "maximumInclusive": false
+      },
+      "metadata": {}
+    },
+    {
+      "variant": "YY2",
+      "categoryMappings": [
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.2
+        }
+      ],
+      "band": {
+        "minimum": 0.5,
+        "maximum": 0.75,
+        "maximumInclusive": false
+      },
+      "metadata": {}
+    },
+    {
+      "variant": "YY3",
+      "categoryMappings": [
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.45
+        },
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.25
+        }
+      ],
+      "band": {
+        "minimum": 0.75,
+        "maximum": 1,
+        "maximumInclusive": true
+      },
+      "metadata": {}
+    }
+  ]
+}

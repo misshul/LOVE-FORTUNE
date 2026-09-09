@@ -1,3 +1,5 @@
+> Historical guardrail approval superseded by [SC-07 v2](guardrail-v2.md). The candidates clarification and unchanged SC-03 outer invariant remain active.
+
 # Final Decision v2 — 승인된 보완
 
 Date: 2026-09-08
@@ -30,4 +32,4 @@ Authority: 사용자가 이 대화에서 명시적으로 선택한 답변.
 
 ## Subsequent v3 authority
 
-[Final Decision v3](final-decision-v3.md) resolves SC-01, SC-06, Action confidence and the empty-catalog Freeze separation. The candidates and guardrail approvals above remain in effect. All SC-01..SC-10 are RESOLVED; readiness remains independently blocked as recorded in README.md.
+[Final Decision v3](final-decision-v3.md) resolves SC-01, SC-06, Action confidence and the empty-catalog Freeze separation. The candidates approval remains active; guardrail search is superseded by SC-07 v2. All SC-01..SC-10 are RESOLVED; readiness remains independently blocked as recorded in README.md.

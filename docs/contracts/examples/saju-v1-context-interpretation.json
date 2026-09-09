@@ -1,0 +1,26 @@
+{
+  "contextEvidence": [
+    {
+      "contextEvidenceId": "ce_d5c097dfabff465b18357f2080afaa6242ec843783931356",
+      "ruleId": "TEN_GODS_RELATION",
+      "source": "SAJU",
+      "subject": "PERSON_A",
+      "period": {
+        "type": "LIFETIME"
+      },
+      "confidence": 1,
+      "metadata": {
+        "tenGod": "BI_JIAN",
+        "pillar": "DAY"
+      }
+    }
+  ],
+  "interpretations": [
+    {
+      "text": "Synthetic all-ages context explanation.",
+      "contextEvidenceRefs": [
+        "ce_d5c097dfabff465b18357f2080afaa6242ec843783931356"
+      ]
+    }
+  ]
+}

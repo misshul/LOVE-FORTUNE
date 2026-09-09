@@ -1,0 +1,18 @@
+{
+  "ruleId": "YIN_YANG_BALANCE",
+  "source": "SAJU",
+  "subject": "PAIR",
+  "category": "HARMONY",
+  "period": {
+    "type": "LIFETIME"
+  },
+  "metadata": {
+    "ruleVariant": "YY1"
+  },
+  "direction": "NEGATIVE",
+  "signedValue": -0.15,
+  "featureId": "ft_531c22e85e369a602fc189b29ffe48be1b221e25388c0223",
+  "rawValue": null,
+  "baseWeight": 0.45,
+  "confidence": 0.875
+}

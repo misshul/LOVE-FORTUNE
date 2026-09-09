@@ -1,0 +1,76 @@
+{
+  "ruleId": "DAY_BRANCH_RELATION",
+  "family": "DAY_BRANCH_RELATION",
+  "source": "SAJU",
+  "enabled": true,
+  "contextOnly": false,
+  "detectorStatus": "DEFINED",
+  "baseWeight": 1.2,
+  "ruleWeight": 1,
+  "pairWeight": 1,
+  "requiresBirthTime": false,
+  "version": "1.0.0",
+  "scope": "DAY_BRANCH_PAIR",
+  "reference": "saju-v1-application-approval.md",
+  "precedence": "LIUHE_CLASH_ELEMENT",
+  "variants": [
+    {
+      "variant": "BSAME",
+      "categoryMappings": [
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.55
+        },
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.35
+        }
+      ],
+      "metadata": {}
+    },
+    {
+      "variant": "BGENERATION",
+      "categoryMappings": [
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.45
+        },
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.35
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.25
+        }
+      ],
+      "metadata": {}
+    },
+    {
+      "variant": "BCONTROL",
+      "categoryMappings": [
+        {
+          "category": "EMOTION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.35
+        },
+        {
+          "category": "STABILITY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.3
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.2
+        }
+      ],
+      "metadata": {}
+    }
+  ]
+}

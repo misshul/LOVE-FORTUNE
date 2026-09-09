@@ -1,0 +1,34 @@
+{
+  "ruleId": "DAY_MASTER_RELATION",
+  "family": "DAY_MASTER_RELATION",
+  "source": "SAJU",
+  "enabled": true,
+  "contextOnly": false,
+  "detectorStatus": "DEFINED",
+  "baseWeight": 1.2,
+  "ruleWeight": 1,
+  "pairWeight": 1,
+  "requiresBirthTime": false,
+  "version": "1.0.0",
+  "scope": "DAY_STEM_PAIR",
+  "reference": "saju-v1-application-approval.md",
+  "precedence": "STEM_COMBINATION_ELSE_ELEMENT",
+  "variants": [
+    {
+      "variant": "SAME",
+      "categoryMappings": [
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.4
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.3
+        }
+      ],
+      "metadata": {}
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "ruleId": "STEM_COMBINATION",
+  "source": "SAJU",
+  "subject": "PAIR",
+  "category": "ATTRACTION",
+  "period": {
+    "type": "LIFETIME"
+  },
+  "metadata": {
+    "ruleVariant": "COMB",
+    "transformationStatus": "UNASSESSED"
+  },
+  "direction": "POSITIVE",
+  "signedValue": 0.7,
+  "featureId": "ft_4006d7dc3e01f774181c861398feb1f3ccf78cf20cfbd8ea",
+  "rawValue": null,
+  "baseWeight": 0.9,
+  "confidence": 1
+}

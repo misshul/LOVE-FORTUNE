@@ -1,0 +1,119 @@
+{
+  "provenance": "SYNTHETIC_APPROVED_NO_PERSONAL_DATA",
+  "unknownConfidence": [
+    1,
+    0.875,
+    0.75
+  ],
+  "invalid": [
+    {
+      "name": "duplicate-owner",
+      "stemOwners": [
+        "STEM_COMBINATION",
+        "ELEMENT_CONTROL"
+      ],
+      "valid": false
+    },
+    {
+      "name": "coverage-double-penalty",
+      "eligible": 1,
+      "available": 1,
+      "observedTokenRatio": 0.875,
+      "coverage": 0.875,
+      "valid": false
+    },
+    {
+      "name": "invalid-yin-yang",
+      "yang": 2,
+      "yin": 3,
+      "total": 6,
+      "valid": false
+    }
+  ],
+  "complementBoundaries": [
+    0.05,
+    0.15,
+    0.3
+  ],
+  "yinYangBoundaries": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "contextInvalid": [
+    {
+      "name": "dangling-context-ref",
+      "envelope": {
+        "contextEvidence": [
+          {
+            "contextEvidenceId": "ce_d5c097dfabff465b18357f2080afaa6242ec843783931356",
+            "ruleId": "TEN_GODS_RELATION",
+            "source": "SAJU",
+            "subject": "PERSON_A",
+            "period": {
+              "type": "LIFETIME"
+            },
+            "confidence": 1,
+            "metadata": {
+              "tenGod": "BI_JIAN",
+              "pillar": "DAY"
+            }
+          }
+        ],
+        "interpretations": [
+          {
+            "text": "Synthetic",
+            "contextEvidenceRefs": [
+              "ce_bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            ]
+          }
+        ]
+      },
+      "valid": false
+    },
+    {
+      "name": "duplicate-context-id",
+      "envelope": {
+        "contextEvidence": [
+          {
+            "contextEvidenceId": "ce_d5c097dfabff465b18357f2080afaa6242ec843783931356",
+            "ruleId": "TEN_GODS_RELATION",
+            "source": "SAJU",
+            "subject": "PERSON_A",
+            "period": {
+              "type": "LIFETIME"
+            },
+            "confidence": 1,
+            "metadata": {
+              "tenGod": "BI_JIAN",
+              "pillar": "DAY"
+            }
+          },
+          {
+            "contextEvidenceId": "ce_d5c097dfabff465b18357f2080afaa6242ec843783931356",
+            "ruleId": "TEN_GODS_RELATION",
+            "source": "SAJU",
+            "subject": "PERSON_A",
+            "period": {
+              "type": "LIFETIME"
+            },
+            "confidence": 1,
+            "metadata": {
+              "tenGod": "BI_JIAN",
+              "pillar": "DAY"
+            }
+          }
+        ],
+        "interpretations": [
+          {
+            "text": "Synthetic all-ages context explanation.",
+            "contextEvidenceRefs": [
+              "ce_d5c097dfabff465b18357f2080afaa6242ec843783931356"
+            ]
+          }
+        ]
+      },
+      "valid": false
+    }
+  ]
+}

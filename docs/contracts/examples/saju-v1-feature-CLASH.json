@@ -1,0 +1,18 @@
+{
+  "ruleId": "BRANCH_CLASH",
+  "source": "SAJU",
+  "subject": "PAIR",
+  "category": "PASSION",
+  "period": {
+    "type": "LIFETIME"
+  },
+  "metadata": {
+    "ruleVariant": "CLASH"
+  },
+  "direction": "POSITIVE",
+  "signedValue": 0.2,
+  "featureId": "ft_b00cbe1ef2308ce3a52cf4c550edcd22c9c6bd52c92329d1",
+  "rawValue": null,
+  "baseWeight": 1,
+  "confidence": 1
+}

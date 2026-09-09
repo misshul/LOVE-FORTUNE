@@ -1,7 +1,7 @@
 # LOVE FORTUNE
 # 03_SCORE_SPEC.md
 
-Version: 2.3.0
+Version: 3.4.0
 Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: LOVE SCORE Specification
 
@@ -76,7 +76,7 @@ preConfidenceWeight=baseWeight*ruleWeight*pairWeight. For outer evidence cap tha
 
 # 8. Category Weighted Signal
 
-After individual caps, confidence, outer cap and single-feature guardrail: E=sum(effectiveWeight); weightedSignal=sum(signedValue*effectiveWeight)/E. NEUTRAL contributes denominator weight. R=50+50*weightedSignal. A zero final effective-weight sum uses Raw Score50; coverage still follows section10. Normative contract: [Final Decision v2 SC-07](contracts/runtime-contract-v2.md#sc-07-daily-category-actions-and-guardrail).
+Freeze W0=sum(pre-guardrail usable effectiveWeight) after caps/confidence. R=50+50*sum(adjustedWeight*signedValue)/W0. Never renormalize by adjustedWeight sum. See contracts/guardrail-v2.md; coverage stabilization is unchanged.
 
 ---
 
@@ -383,7 +383,7 @@ Not a numeric Score modifier in v1. Optional UI/context information only. No inv
 
 # 36. Single-feature Guardrail
 
-Apply to ALL features after individual caps -> confidence -> outer cap. For each feature compare raw category score with and without it; abs difference must be<=20. Reduce its effectiveWeight with binary search, max32 iterations. The user approved featureId ascending order, sequential binary search (32 iterations each), global revalidation for at most32 passes, empty raw score50, and a calculation error if the final global condition fails. See contracts/clarification-v2.md. Normative contract: [Final Decision v2 SC-07](contracts/runtime-contract-v2.md#sc-07-daily-category-actions-and-guardrail).
+SC-07 v2 freezes W0=sum(pre-guardrail usable effectiveWeight) after individual caps/confidence/outer cap. impact=50*effectiveWeight*abs(signedValue)/W0; above20 use adjustedWeight=min(effectiveWeight,0.4*W0/abs(signedValue)); zero signal retains weight. Raw=50+50*sum(adjustedWeight*signedValue)/W0, never adjustedWeight sum. No search, passes, exclusion or confidence/coverage change. Legacy SCORE_GUARDRAIL_UNSATISFIED is deprecated. See contracts/guardrail-v2.md.
 
 ---
 
@@ -427,7 +427,7 @@ Core returns overall/category canonical scores and statuses, coverage, resultCon
 
 # 41. Version
 
-This document update does not overwrite a released scoreVersion. Approved v3/v2 decisions and normalized catalogs are versioned separately. Astrology109 rules are APPLIED/READY. Overall BLOCKED_CATALOG retains SAJU_RULE_CATALOG_APPROVAL and DAILY_RULE_CATALOG_APPROVAL, not SPEC_CONFLICT. Freeze status and two independent external engine gates are in contracts/README.md.
+This document update does not overwrite a released scoreVersion. Approved v3/v2 decisions and normalized catalogs are versioned separately. Astrology109 rules are APPLIED/READY. Overall BLOCKED_CATALOG retains DAILY_RULE_CATALOG_APPROVAL, not SPEC_CONFLICT. Freeze status and two independent external engine gates are in contracts/README.md.
 
 ---
 
@@ -456,6 +456,11 @@ This document update does not overwrite a released scoreVersion. Approved v3/v2 
 
 Same provider/software/data/config/version and input require exact canonical output. A named floating regression tolerance is permitted only with an explicit justification; no global +/-0.01 allowance. Golden data must be synthetic, licensed or approved public reference, never real-user input.
 
-See [Astrology Catalog v1](contracts/astrology-catalog-v1.md) for canonical planet order, deferred outer/Jupiter/Saturn scope, category Feature projection, orbCloseness allowlist and all-ages PASSION meaning. Existing outer caps, confidence/coverage/period/guardrail/privacy remain unchanged.
+See [Astrology Catalog v1](contracts/astrology-catalog-v1.md) for canonical planet order, deferred outer/Jupiter/Saturn scope, category Feature projection, orbCloseness allowlist and all-ages PASSION meaning. Existing outer caps, confidence/coverage/period/privacy remain unchanged; guardrail is superseded by SC-07 v2.
 
 END OF DOCUMENT
+
+
+## Approved Saju v1 / SC-07 v2 application
+
+Current authority: [Saju v1](contracts/saju-catalog-v1.md), [Guardrail v2](contracts/guardrail-v2.md), [ContextEvidence](contracts/context-evidence.md). These supersede historical Saju scoring placeholders, unit-sign restrictions and guardrail search. Saju14 families:9 scoring/5 context, APPLIED/READY. Only DAILY_RULE_CATALOG_APPROVAL remains. Other privacy/API/time contracts are unchanged.

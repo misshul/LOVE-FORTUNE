@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/context-evidence.schema.json",
+  "type": "object",
+  "properties": {
+    "contextEvidenceId": {
+      "type": "string",
+      "pattern": "^ce_[0-9a-f]{48}$"
+    },
+    "ruleId": {
+      "enum": [
+        "TEN_GODS_RELATION",
+        "HIDDEN_STEM_RELATION",
+        "PUNISHMENT",
+        "HARM",
+        "DESTRUCTION"
+      ]
+    },
+    "source": {
+      "const": "SAJU"
+    },
+    "subject": {
+      "enum": [
+        "PERSON_A",
+        "PERSON_B",
+        "PAIR"
+      ]
+    },
+    "period": {
+      "$ref": "common.schema.json#/$defs/period"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "tenGod": {
+          "enum": [
+            "BI_JIAN",
+            "JIE_CAI",
+            "SHI_SHEN",
+            "SHANG_GUAN",
+            "PIAN_CAI",
+            "ZHENG_CAI",
+            "PIAN_GUAN",
+            "ZHENG_GUAN",
+            "PIAN_YIN",
+            "ZHENG_YIN"
+          ]
+        },
+        "pillar": {
+          "const": "DAY"
+        },
+        "referenceId": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "contextEvidenceId",
+    "ruleId",
+    "source",
+    "subject",
+    "period",
+    "confidence",
+    "metadata"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "ruleId": {
+            "const": "TEN_GODS_RELATION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "subject": {
+            "enum": [
+              "PERSON_A",
+              "PERSON_B"
+            ]
+          },
+          "metadata": {
+            "required": [
+              "tenGod",
+              "pillar"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
