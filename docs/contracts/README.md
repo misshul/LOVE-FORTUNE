@@ -3,6 +3,8 @@
 Version: 3.0.0
 Status: CONTRACT FROZEN
 
+Astrology authority: [Applied Catalog v1](astrology-catalog-v1.md), [mapping approval](astrology-v1-mapping-approval.md), [application approval](astrology-v1-application-approval.md).
+
 Authority: [Final Decision v3](final-decision-v3.md), then [Final Decision v2](final-decision-v2.md), superseding [v1](freeze-decision-v1.md) where changed. Explicit user clarifications are recorded in [clarification-v2.md](clarification-v2.md). Do not confuse external production dependencies with unresolved specification decisions.
 
 ## Decision register
@@ -10,9 +12,9 @@ Authority: [Final Decision v3](final-decision-v3.md), then [Final Decision v2](f
 | ID | Status | Applied decisions / remaining boundary |
 |---|---|---|
 | SC-01 | RESOLVED | Eligible/available/usable evidence, retained structural coverage, four-sample source confidence. |
-| SC-02 | RESOLVED | Empty active catalog approved independently of Freeze;19 disabled entries,0 active; BLOCKED_CATALOG / SCORING_RULE_CATALOG_APPROVAL. |
+| SC-02 | RESOLVED | Astrology109 enabled rules APPLIED/READY; Saju14 disabled,Daily0. Remaining: SAJU_RULE_CATALOG_APPROVAL and DAILY_RULE_CATALOG_APPROVAL. |
 | SC-03 | RESOLVED | Outer definition, product0.50 cap,15% aggregate cap. |
-| SC-04 | RESOLVED | PAIR/scalar/period/canonical identity; user approved metadata.candidates scalar array. |
+| SC-04 | RESOLVED | PAIR/scalar/period/canonical identity; approved metadata.candidates scalar array and active-only orbCloseness[0,1]. |
 | SC-05 | RESOLVED | Samples06/12/18/23, mean/peak, missing samples, earlier UTC instant and gaps. |
 | SC-06 | RESOLVED | Valid-day exclusion, Weekly arithmetic mean, lifetime bands, full-precision periodDelta, trendStatus/trendDirection. |
 | SC-07 | RESOLVED | Weighted referenced Feature.confidence; Action adjustment0; approved32-pass guardrail and failure handling. |
@@ -20,7 +22,7 @@ Authority: [Final Decision v3](final-decision-v3.md), then [Final Decision v2](f
 | SC-09 | RESOLVED | LFIC signing bytes/kid/binding/TTL/errors, retry/repair budget,200 fallback/503 contract. |
 | SC-10 | RESOLVED | Exact byte/media/encoding/rate/header/log/retention/backup rules. |
 
-The disabled inventory contains14 Saju weights and5 Astrology aspect weights. Daily contains existing planet/source/sample reference tables but no fully specified transit activation/category/direction rules. No interpretations were invented. A disabled inventory is not an implemented or usable fortune engine.
+Astrology contains109 enabled pair-aspect rules with228 mappings; five generic aspects are reference definitions. The disabled inventory contains14 Saju weights. Daily contains existing planet/source/sample reference tables but no fully specified transit activation/category/direction rules. No interpretations were invented. A disabled inventory is not an implemented or usable fortune engine.
 
 ## Artifacts
 
@@ -28,10 +30,10 @@ The disabled inventory contains14 Saju weights and5 Astrology aspect weights. Da
 - [API details](api-details-v2.md): endpoint/DTO/capability normalization.
 - [OpenAPI](openapi.yaml):6 principal Core POSTs,1 existing celebrity calculation,1 Interpretation POST,5 public reference GETs and Admin operations.
 - [Schemas](schemas/): JSON Schema2020-12. Structural validity is distinct from semantic validity.
-- [Rule catalogs](rules/): documented weights, provenance and disabled reasons only.
+- [Rule catalogs](rules/): approved Astrology v1 rules and references; disabled Saju and empty Daily catalogs.
 - [Schema example manifest](examples/manifest.json): synthetic valid/invalid cases.
 - [Canonicalization](examples/canonicalization-vectors.json), [LFIC signing](examples/signed-context-vectors.json), [arithmetic/period/DST](examples/arithmetic-period-dst-vectors.json), [HTTP/privacy](examples/http-privacy-vectors.json) vectors.
-- [Validation report](validation-report.md) and [execution results](validation-results-v3.json): actual checks and Freeze judgment.
+- [Validation report](validation-report.md) and [current execution results](validation-results-astrology-v1.json): actual checks and Freeze judgment.
 - [v3 arithmetic vectors](examples/arithmetic-v3-vectors.json): approved confidence, validity, Weekly, Action and trend boundaries.
 
 Example rules, versions, references and keys are synthetic documentation fixtures. They are not real-user data, production keys or engine Golden results. Never use the public fixture secrets in any environment. A structurally valid score fixture is not a computed engine result.
@@ -41,7 +43,7 @@ Example rules, versions, references and keys are synthetic documentation fixture
 - SAJU_DAY_PILLAR_EPOCH
 - EPHEMERIS_PROVIDER
 
-Do not enable production engines before verification. These are BLOCKED_EXTERNAL, not SPEC_CONFLICT; they alone must not fail Contract Freeze. Score Engine Readiness is BLOCKED_CATALOG: SCORING_RULE_CATALOG_APPROVAL (active scoring rules0). Empty active catalogs are valid frozen contracts, not SPEC_CONFLICT. Contract Freeze: PASS; Production Engine Readiness: BLOCKED_EXTERNAL.
+Do not enable production engines before verification. These are BLOCKED_EXTERNAL, not SPEC_CONFLICT; they alone must not fail Contract Freeze. Astrology Catalog v1 is APPLIED; Astrology Catalog Readiness READY. Overall Score Engine Readiness is BLOCKED_CATALOG: SAJU_RULE_CATALOG_APPROVAL and DAILY_RULE_CATALOG_APPROVAL. Empty active catalogs are valid frozen contracts, not SPEC_CONFLICT. Contract Freeze: PASS; Production Engine Readiness: BLOCKED_EXTERNAL.
 
 ## Privacy and verification limits
 

@@ -50,5 +50,7 @@
     "SCORING_RULE_CATALOG_APPROVAL",
     "SAJU_DAY_PILLAR_EPOCH",
     "EPHEMERIS_PROVIDER"
-  ]
+  ],
+  "recordStatus": "HISTORICAL_PRE_ASTROLOGY_APPLICATION",
+  "supersededBy": "validation-results-astrology-v1.json"
 }

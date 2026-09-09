@@ -1,0 +1,32 @@
+{
+  "ruleId": "ASTRO_MOON_SATURN_OPPOSITION",
+  "source": "ASTROLOGY",
+  "enabled": true,
+  "planetA": "MOON",
+  "planetB": "SATURN",
+  "aspect": "OPPOSITION",
+  "categoryMappings": [
+    {
+      "category": "STABILITY",
+      "direction": "POSITIVE",
+      "signedValue": 0.25
+    },
+    {
+      "category": "LONG_TERM",
+      "direction": "POSITIVE",
+      "signedValue": 0.25
+    },
+    {
+      "category": "EMOTION",
+      "direction": "NEGATIVE",
+      "signedValue": -0.8
+    }
+  ],
+  "baseWeight": 0.9,
+  "ruleWeight": 1,
+  "pairWeight": 1.1,
+  "pairWeightSource": "OVERRIDE",
+  "requiresBirthTime": false,
+  "contextOnly": false,
+  "version": "1.0.0"
+}

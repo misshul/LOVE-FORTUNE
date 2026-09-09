@@ -1,0 +1,32 @@
+{
+  "ruleId": "ASTRO_SUN_MOON_TRINE",
+  "source": "ASTROLOGY",
+  "enabled": true,
+  "planetA": "SUN",
+  "planetB": "JUPITER",
+  "aspect": "SQUARE",
+  "categoryMappings": [
+    {
+      "category": "HARMONY",
+      "direction": "POSITIVE",
+      "signedValue": 1
+    },
+    {
+      "category": "SUPPORT",
+      "direction": "POSITIVE",
+      "signedValue": 0.9
+    },
+    {
+      "category": "LONG_TERM",
+      "direction": "POSITIVE",
+      "signedValue": 0.75
+    }
+  ],
+  "baseWeight": 0.85,
+  "ruleWeight": 1,
+  "pairWeight": 1.2,
+  "pairWeightSource": "OVERRIDE",
+  "requiresBirthTime": false,
+  "contextOnly": false,
+  "version": "1.0.0"
+}

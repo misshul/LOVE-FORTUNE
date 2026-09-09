@@ -1,0 +1,27 @@
+{
+  "ruleId": "ASTRO_VENUS_JUPITER_SEXTILE",
+  "source": "ASTROLOGY",
+  "enabled": true,
+  "planetA": "VENUS",
+  "planetB": "JUPITER",
+  "aspect": "SEXTILE",
+  "categoryMappings": [
+    {
+      "category": "HARMONY",
+      "direction": "POSITIVE",
+      "signedValue": 0.7
+    },
+    {
+      "category": "SUPPORT",
+      "direction": "POSITIVE",
+      "signedValue": 0.65
+    }
+  ],
+  "baseWeight": 0.7,
+  "ruleWeight": 1,
+  "pairWeight": 0.9082951062292476,
+  "pairWeightSource": "GENERIC",
+  "requiresBirthTime": false,
+  "contextOnly": false,
+  "version": "1.0.0"
+}

@@ -1,0 +1,69 @@
+{
+  "timestamp": "2026-09-09T02:04:49.484Z",
+  "structural": {
+    "schemaFiles": 23,
+    "examples": 130,
+    "validExamples": 69,
+    "invalidExamples": 61,
+    "disabledRuleRecords": 14,
+    "enabledRules": 109,
+    "categoryWeights": 8,
+    "canonicalVectors": 6,
+    "signedValid": 2,
+    "signedInvalid": 8,
+    "httpPrivacyVectors": 19,
+    "openapiOperations": 20,
+    "adminOperations": 7,
+    "publicPostOperations": 8,
+    "openapi": "PASS"
+  },
+  "semantic": {
+    "existingSemanticVectors": 36,
+    "v3SemanticVectors": 44,
+    "totalSemanticVectors": 80,
+    "dstVectors": 4,
+    "tzdb": "2025c",
+    "icu": "78.2",
+    "result": "PASS",
+    "comparison": "exact; decimal rational confidence and HALF_UP rounding"
+  },
+  "astrology": {
+    "rules": 109,
+    "personal": 75,
+    "jupiter": 15,
+    "saturn": 19,
+    "mappings": 228,
+    "positive": 170,
+    "negative": 58,
+    "neutral": 0,
+    "mixed": 26,
+    "override": 76,
+    "generic": 33,
+    "approvedMatrixComparison": "EXACT",
+    "semanticNegativeMutations": 6,
+    "angularTests": 5,
+    "orbExamples": 4,
+    "detectionExamples": 3,
+    "boundaryTests": 327,
+    "unknownTimeTests": 4,
+    "weightIndependenceTests": 327,
+    "featureProjection": "PASS",
+    "featureIdentity": "PASS",
+    "result": "PASS"
+  },
+  "contractFreeze": "PASS",
+  "astrologyCatalog": "APPLIED",
+  "astrologyCatalogReadiness": "READY",
+  "scoreEngineReadiness": "BLOCKED_CATALOG",
+  "productionEngineReadiness": "BLOCKED_EXTERNAL",
+  "catalogBlockers": [
+    "SAJU_RULE_CATALOG_APPROVAL",
+    "DAILY_RULE_CATALOG_APPROVAL"
+  ],
+  "externalBlockers": [
+    "SAJU_DAY_PILLAR_EPOCH",
+    "EPHEMERIS_PROVIDER"
+  ],
+  "specConflictRemaining": 0,
+  "crossSpecContradictionsRemaining": 0
+}

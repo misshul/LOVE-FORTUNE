@@ -1,66 +1,59 @@
-# FINAL CONTRACT FREEZE REPORT
+# ASTROLOGY CATALOG V1 APPLICATION REPORT
 
-Validation timestamp (UTC): 2026-09-08T22:48:55.804Z
-Scope: docs/01..10 and docs/contracts/**; documentation and contract fixtures only.
+Validation timestamp (UTC): 2026-09-09T02:04:49.484Z
+Scope: docs/02, docs/03 and docs/contracts/** only. No production implementation, commit or push.
 
-| Item | Result |
+| Item | Actual result |
 |---|---|
-| A. SC-01..SC-10 | All RESOLVED |
-| B. SPEC_CONFLICT Remaining | 0 |
-| C. Cross-Spec Contradictions Remaining | 0 in the current effective contract |
-| D. OpenAPI | PASS; 20 operations (8 public POST,5 public GET,7 Admin) |
-| E. JSON Schema | PASS; 22 schemas, draft2020-12 |
-| F. Examples | PASS; 63 valid accepted, 40 invalid rejected; total 103 |
-| G. Score arithmetic | PASS; arithmetic/period/DST suite 80 vectors (36 retained,44 v3) |
-| H. Canonicalization | PASS; 6 vectors |
-| I. Signed context | PASS; 2 valid,8 expected failures |
-| J. Period/DST | PASS; period checks included in semantic suite; 4 DST examples |
-| K. Privacy/API | PASS for contracts; 19 HTTP/privacy vectors and operation security declarations |
-| L. Report synchronization | Current actual execution outputs; obsolete v1 report replaced |
-| M. Code files changed | NONE; 30 non-doc project SHA-256 hashes unchanged |
-| N. git diff --check | PASS; exit0 (LF/CRLF conversion notices only) |
-| O. Contract Freeze | PASS |
-| P. Score Engine Readiness | BLOCKED_CATALOG |
-| Q. Production Engine Readiness | BLOCKED_EXTERNAL |
+| B. Astrology scoring rules | 109; Personal75, Jupiter15, Saturn19 |
+| C. Category mappings | 228; exact comparison against preserved approval matrix |
+| D. Positive / Negative / Mixed | 170 / 58 / 26; neutral0 |
+| E. Pair weight | Override76, Generic33, unresolved0 |
+| F. Schema | PASS; 23 schemas; generic Saju schema unchanged |
+| G. Examples | PASS; 69 valid accepted, 61 invalid rejected (130 total) |
+| H. Orb | PASS; PLUS formula, 5 circular cases, 4 reference examples, 327 exact/boundary/inactive checks |
+| I. Unknown time | PASS; 4 candidate cases; all109 requiresBirthTime=false |
+| J. Feature metadata | PASS; orbCloseness[0,1], invalid values rejected, identity unchanged by closeness |
+| K. Regression | PASS; 80 existing semantic vectors, 6 canonical cases, 2+8 signed-context cases, 19 HTTP/privacy cases, 20 OpenAPI operations |
+| L. SPEC_CONFLICT | 0 in effective approved contracts |
+| M. Cross-spec contradictions | 0 in effective approved contracts |
+| N. Production code files changed | NONE; documentation validation scripts are in docs/contracts/validation only |
+| O. git diff --check | PASS |
+| P. Astrology Catalog v1 | APPLIED |
+| Q. Astrology Catalog readiness | READY |
+| R. Overall Score Engine readiness | BLOCKED_CATALOG |
+| S. Production Engine readiness | BLOCKED_EXTERNAL |
 
-## R. Remaining readiness blockers
+## T. Remaining catalog blockers
 
-- SCORING_RULE_CATALOG_APPROVAL
+- SAJU_RULE_CATALOG_APPROVAL
+- DAILY_RULE_CATALOG_APPROVAL
+
+SCORING_RULE_CATALOG_APPROVAL is the historical umbrella for these remaining approvals. Astrology109 enabled, Saju14 disabled, Daily0. No generic aspect definitions are counted as scoring rules.
+
+## U. Remaining external blockers
+
 - SAJU_DAY_PILLAR_EPOCH
 - EPHEMERIS_PROVIDER
 
-Active scoring rules: 0. Incomplete documented rule records disabled: 19. Missing mappings/activation and associated catalog parameters remain catalog approval requirements. No interpretations or rule combinations were invented. These independent readiness blockers are not SPEC_CONFLICT and do not fail Freeze.
+Contract Freeze remains PASS; SC-01..SC-10 remain RESOLVED. Readiness does not claim an implemented or production-validated engine.
 
-## Decision verification
+## A. Changed files and authority
 
-| ID | Status | Verified contract |
-|---|---|---|
-| SC-01 | RESOLVED | Eligible/available/usable distinction; coverage retained with zero usable confidence; four sample confidence denominator, missing=0 |
-| SC-02 | RESOLVED | Empty active catalog permitted; BLOCKED_CATALOG separated |
-| SC-03 | RESOLVED | Product0.50 cap, outer15% share and post-guardrail invariant failure |
-| SC-04 | RESOLVED | candidates scalar allowlist; canonical identity excludes candidates |
-| SC-05 | RESOLVED | Four sample times, missing signal exclusion, mean/peak and deterministic DST |
-| SC-06 | RESOLVED | Valid-day conditions, Weekly arithmetic mean, lifetime bands, periodDelta/trend magnitude/direction and null handling |
-| SC-07 | RESOLVED | Weighted referenced Feature.confidence; Action adjustment0; approved guardrail |
-| SC-08 | RESOLVED | Core/Interpretation/reference/Admin DTOs and security |
-| SC-09 | RESOLVED | LFIC signing, evidence/version binding, TTL/errors and independent fallback |
-| SC-10 | RESOLVED | Transport/rate/Retry-After/log/retention/backup rules |
+- docs/02_FORTUNE_ENGINE_SPEC.md and docs/03_SCORE_SPEC.md: approved Astrology mapping, decimal signs, PLUS orb, metadata and readiness references.
+- [Catalog](rules/astrology-rules.json), Saju/Daily blocker metadata, [closed Astrology schema](schemas/astrology-rule.schema.json), [Feature schema](schemas/feature.schema.json).
+- [Astrology contract](astrology-catalog-v1.md), [mapping approval](astrology-v1-mapping-approval.md), [application approval](astrology-v1-application-approval.md), README/runtime/readiness and current report/results.
+- examples/astro-v1-*.json, [semantic cases](examples/astrology-v1-semantic-vectors.json), manifest.json.
+- [Validation scripts](validation/README.md) reproduce checks against actual files.
 
-Guardrail covers32 binary-search iterations, maximum32 passes, sorted sequential updates, whole-set revalidation, empty/zero-weight Raw Score50, SCORE_GUARDRAIL_UNSATISFIED and SCORE_CAP_INVARIANT_FAILED. Action confidence uses Feature.confidence (semantic featureConfidence), not the superseded Feature.resultConfidence reference.
+The two approval copies are preserved sources. Older v1/v2/v3 decisions and validation-results-v3.json describe historical approved states, superseded only where the current Astrology approval explicitly changes them.
 
-## Inputs and validation method
+## Method and limits
 
-- Authority: [v3](final-decision-v3.md), retained [v2](final-decision-v2.md), [approved clarifications](clarification-v2.md). Historical approval copies remain verbatim; superseded passages are not current executable rules.
-- [Runtime contract](runtime-contract-v2.md), [API details](api-details-v2.md), [OpenAPI](openapi.yaml), schemas/ and rules/.
-- [Manifest](examples/manifest.json), [existing semantic vectors](examples/arithmetic-period-dst-vectors.json), [v3 vectors](examples/arithmetic-v3-vectors.json), [canonical vectors](examples/canonicalization-vectors.json), [signed context](examples/signed-context-vectors.json), [HTTP/privacy](examples/http-privacy-vectors.json).
-- [Machine-readable actual execution results](validation-results-v3.json).
-- Ajv2020 with ajv-formats validates schemas/examples; Swagger Parser validates OpenAPI. multipleOf uses exact decimal rational divisibility to avoid binary floating artifacts without accepting extra decimal precision.
-- Node assertions verify semantic vectors. Decimal rational confidence and integer HALF_UP avoid tolerance; canonical outputs, digests and signatures are exact comparisons.
-- DST uses local Intl/ICU 78.2, tzdb 2025c. The minute-grid oracle covers the supplied minute-aligned examples, not every historical timezone transition.
-- Effective-document audit checks superseded coverage resets, Weekly blend, unresolved Action/trend references and local file links.
+[Actual execution output](validation-results-astrology-v1.json) supplies all counts. No expected counts were substituted for script output. Catalog is compared field-by-field to the approved mapping matrix; schema, semantic negative mutations (6) and positive file fixtures are separate checks.
 
-## Scope and limits
+Weight independence checks (327) verify exact/boundary closeness cannot change the proposed contribution weight/confidence. The raw floating multiplication example0.90*1.05 has binary representation noise; its canonical four-decimal expectation is0.9450. No global tolerance or intermediate rounding was introduced.
 
-This is a contract freeze, not an implemented engine. Synthetic fixtures are not real-user data or production Golden engine results. Separate semantic checks supplement structural schemas. Live WordPress/Admin enforcement, provider settings and CDN/WAF/APM capture were not exercised.
+Feature projection validates one detected Venus-Mars square produces three distinct category Feature IDs, inactive detection produces none, and oriented Sun/Moon evidence is not merged. orbCloseness remains non-identity metadata. Passion remains all-ages-safe chemistry/energy/activation/mutual drive, not sexual/adult interpretation.
 
-Changed only docs/01..10 and contracts documentation, schemas, OpenAPI metadata, catalog readiness metadata and fixtures, plus the v3 approval/result artifacts. No PHP/WordPress/Frontend/DB application code changes. No commit or push.
+Regression checks cover confidence,coverage,periods,guardrail,privacy and signed context. Synthetic fixtures and request-local test projections are not production engine output. DST uses local Intl/ICU78.2,tzdb2025c; four minute-aligned historical/transition examples do not certify every historical transition. Live WordPress, providers and infrastructure logging settings were not tested.

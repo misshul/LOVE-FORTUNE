@@ -2,7 +2,7 @@
 
 Status: CONTRACT FROZEN (v3 decisions)
 
-Authority: [Final Decision v3](final-decision-v3.md), then [Final Decision v2](final-decision-v2.md) and [approved clarifications](clarification-v2.md), superseding v1 where changed. Freeze and readiness: [register](README.md). This document contains no new fortune interpretations.
+Authority: [Final Decision v3](final-decision-v3.md), then [Final Decision v2](final-decision-v2.md) and [approved clarifications](clarification-v2.md), superseding v1 where changed. Freeze and readiness: [register](README.md). Approved Astrology-specific additions are in [Astrology Catalog v1](astrology-catalog-v1.md); its final mapping/application approval supersedes prior Astrology placeholders.
 
 # SC-10 HTTP, security and retention
 
@@ -34,9 +34,9 @@ Daily source confidence uses exactly four nominal samples06:00/12:00/18:00/23:00
 
 # SC-02 Rule catalog and candidates
 
-Only rules already present in docs/02 and docs/03 may be normalized. Catalog files are rules/saju-rules.json, astrology-rules.json, daily-rules.json and category-weights.json. Every rule has ruleId,source,enabled,categoryMappings,baseWeight,ruleWeight,pairWeight,requiresBirthTime,contextOnly,version. POSITIVE/NEGATIVE/NEUTRAL signed values are1/-1/0; MIXED must explicitly provide a category-specific signedValue in[-1,1]. No default MIXED value.
+Only rules already present in docs/02 and docs/03 may be normalized. Catalog files are rules/saju-rules.json, astrology-rules.json, daily-rules.json and category-weights.json. Every rule has ruleId,source,enabled,categoryMappings,baseWeight,ruleWeight,pairWeight,requiresBirthTime,contextOnly,version. Legacy/Saju POSITIVE/NEGATIVE/NEUTRAL values remain1/-1/0; MIXED needs an explicit signedValue. Approved Astrology v1 uses decimal signed values with matching POSITIVE/NEGATIVE/NEUTRAL signs; MIXED is rule-level only.
 
-One existing weight maps to baseWeight with ruleWeight=pairWeight=1. Where tables distinguish aspects and pairs, retain those meanings explicitly. No invented category, direction, interpretation or numeric weight. Incomplete existing rules remain disabled with empty categoryMappings and an explicit reason; a disabled inventory is not an executable catalog. An empty active catalog is a valid frozen contract: SC-02 RESOLVED, active rules0, Score Engine Readiness BLOCKED_CATALOG, blocker SCORING_RULE_CATALOG_APPROVAL. It is not SPEC_CONFLICT and alone cannot fail Contract Freeze.
+One existing weight maps to baseWeight with ruleWeight=pairWeight=1. Where tables distinguish aspects and pairs, retain those meanings explicitly. No invented category, direction, interpretation or numeric weight. Incomplete Saju rules remain disabled; Daily remains empty. Astrology v1 applies109 approved pair-aspect rules and preserves generic aspects as reference definitions. Empty catalogs remain valid frozen contracts. Current SC-02 is RESOLVED; Astrology READY; overall BLOCKED_CATALOG has SAJU_RULE_CATALOG_APPROVAL and DAILY_RULE_CATALOG_APPROVAL. It is not SPEC_CONFLICT and alone cannot fail Contract Freeze.
 
 Group candidates by ruleId+subject+category+period. Mean signedValue and numeric rawValue over present candidates. Non-numeric rawValue becomes null and metadata.candidates preserves present candidate scalar values. The user explicitly approved adding candidates to the allowlist. Availability ratio is present/total, combined with candidateAgreement.
 
@@ -54,7 +54,7 @@ Feature uses ruleId; subject is PERSON_A, PERSON_B or PAIR (pair compatibility d
 
 Period forms: LIFETIME{type}; DAY{type,date,timezone}; WEEK{type,startDate,endDate,timezone}; MONTH{type,year,month,timezone}; YEAR{type,year,timezone}. Dates are Gregorian and timezone is IANA.
 
-Metadata allowlist: planetA,planetB,aspect,orb,pillar,element,relation,candidateCount,availabilityRatio,sampleCount,referenceId,ruleVariant,candidates. candidates is a scalar array and is NOT identity-relevant. All other keys fail validation unless a later explicit decision amends this list. Identity-relevant subset: planetA,planetB,aspect,pillar,relation,referenceId,ruleVariant.
+Metadata allowlist: planetA,planetB,aspect,orb,pillar,element,relation,candidateCount,availabilityRatio,sampleCount,referenceId,ruleVariant,candidates,orbCloseness. orbCloseness is optional numeric[0,1], active Astrology evidence only, non-identity, not a score/confidence multiplier or logging permission. candidates is a scalar array and is NOT identity-relevant. All other keys fail validation unless a later explicit decision amends this list. Identity-relevant subset: planetA,planetB,aspect,pillar,relation,referenceId,ruleVariant.
 
 Canonical featureId input: ruleId,subject,category,period,source and the identity-relevant metadata subset. Exclude signedValue, confidence, input Birth Data, names, rawValue and other metadata. UTF-8, lexicographically sorted keys, no whitespace, NFC normalized strings, canonical JSON decimal numbers; preserve schema-present nulls. featureId='ft_'+first48 lowercase hex characters of SHA-256(canonical JSON). This is48 hex characters (24 digest bytes), not24 characters. Never use it for tracking. Canonical examples document bytes and expected digests; token serialization uses the same canonicalizer.
 

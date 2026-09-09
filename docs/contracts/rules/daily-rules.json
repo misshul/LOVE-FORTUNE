@@ -30,7 +30,7 @@
   },
   "contractStatus": "FROZEN",
   "scoreEngineReadiness": "BLOCKED_CATALOG",
-  "blocker": "SCORING_RULE_CATALOG_APPROVAL",
+  "blocker": "DAILY_RULE_CATALOG_APPROVAL",
   "catalogApprovalRequirements": [
     "The documents contain daily planet weights but no complete transit/Saju daily activation/category/direction catalog."
   ]

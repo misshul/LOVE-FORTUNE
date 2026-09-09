@@ -1,93 +1,45 @@
 {
-  "contractVersion": "3.0.0",
-  "status": "INCOMPLETE_DISABLED_INVENTORY",
-  "rules": [
-    {
-      "ruleId": "CONJUNCTION",
-      "source": "ASTROLOGY",
-      "enabled": false,
-      "categoryMappings": [],
-      "baseWeight": 1,
-      "ruleWeight": 1,
-      "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 12
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
-    },
-    {
-      "ruleId": "OPPOSITION",
-      "source": "ASTROLOGY",
-      "enabled": false,
-      "categoryMappings": [],
-      "baseWeight": 0.9,
-      "ruleWeight": 1,
-      "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 12
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
-    },
-    {
-      "ruleId": "TRINE",
-      "source": "ASTROLOGY",
-      "enabled": false,
-      "categoryMappings": [],
-      "baseWeight": 0.9,
-      "ruleWeight": 1,
-      "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 12
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
-    },
-    {
-      "ruleId": "SQUARE",
-      "source": "ASTROLOGY",
-      "enabled": false,
-      "categoryMappings": [],
-      "baseWeight": 0.85,
-      "ruleWeight": 1,
-      "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 12
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
-    },
-    {
-      "ruleId": "SEXTILE",
-      "source": "ASTROLOGY",
-      "enabled": false,
-      "categoryMappings": [],
-      "baseWeight": 0.7,
-      "ruleWeight": 1,
-      "pairWeight": 1,
-      "requiresBirthTime": null,
-      "contextOnly": false,
-      "version": "2.0.0",
-      "provenance": {
-        "document": "03_SCORE_SPEC.md",
-        "section": 12
-      },
-      "disabledReason": "Existing weight only; activation predicate/category direction/signed mapping and birth-time requirement are not specified. Never execute."
-    }
+  "contractVersion": "1.0.0",
+  "status": "APPROVED_APPLIED",
+  "canonicalPlanetOrder": [
+    "SUN",
+    "MOON",
+    "MERCURY",
+    "VENUS",
+    "MARS",
+    "JUPITER",
+    "SATURN",
+    "URANUS",
+    "NEPTUNE",
+    "PLUTO"
   ],
+  "aspectDefinitions": {
+    "CONJUNCTION": {
+      "exactAngle": 0,
+      "baseWeight": 1,
+      "baseOrb": 8
+    },
+    "TRINE": {
+      "exactAngle": 120,
+      "baseWeight": 0.9,
+      "baseOrb": 7
+    },
+    "SEXTILE": {
+      "exactAngle": 60,
+      "baseWeight": 0.7,
+      "baseOrb": 5
+    },
+    "SQUARE": {
+      "exactAngle": 90,
+      "baseWeight": 0.85,
+      "baseOrb": 7
+    },
+    "OPPOSITION": {
+      "exactAngle": 180,
+      "baseWeight": 0.9,
+      "baseOrb": 8
+    }
+  },
   "referenceTables": {
     "planetWeights": {
       "SUN": 1,
@@ -140,12 +92,3047 @@
       "PLUTO": -2
     }
   },
+  "rules": [
+    {
+      "ruleId": "ASTRO_SUN_SUN_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "SUN",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_SUN_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "SUN",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_SUN_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "SUN",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_SUN_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "SUN",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.7
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_SUN_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "SUN",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.6
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_MOON_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "MOON",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.65
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 1.2,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_MOON_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "MOON",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 1
+        },
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.75
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.2,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_MOON_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "MOON",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        },
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.55
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 1.2,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_MOON_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "MOON",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.75
+        },
+        {
+          "category": "SUPPORT",
+          "direction": "NEGATIVE",
+          "signedValue": -0.55
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "NEGATIVE",
+          "signedValue": -0.45
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 1.2,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_MOON_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "MOON",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.65
+        },
+        {
+          "category": "SUPPORT",
+          "direction": "NEGATIVE",
+          "signedValue": -0.5
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "NEGATIVE",
+          "signedValue": -0.45
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.2,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_MERCURY_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "MERCURY",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.75
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 0.9486832980505138,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_MERCURY_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "MERCURY",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 0.9486832980505138,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_MERCURY_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "MERCURY",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 0.9486832980505138,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_MERCURY_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "MERCURY",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.65
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 0.9486832980505138,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_MERCURY_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "MERCURY",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.6
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 0.9486832980505138,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_VENUS_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "VENUS",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 1.05,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_VENUS_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "VENUS",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.85
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.05,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_VENUS_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "VENUS",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 1.05,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_VENUS_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "VENUS",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.2
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.55
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 1.05,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_VENUS_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "VENUS",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.25
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.5
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.05,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_MARS_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "MARS",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        },
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.15
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_MARS_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "MARS",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        },
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.45
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_MARS_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "MARS",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.65
+        },
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.65
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.3
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_MARS_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "MARS",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.5
+        },
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.7
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_MARS_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "MARS",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.55
+        },
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.6
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_MOON_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "MOON",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 1.25,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_MOON_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "MOON",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 1
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.25,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_MOON_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "MOON",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 1.25,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_MOON_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "MOON",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "EMOTION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.85
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.7
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 1.25,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_MOON_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "MOON",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "EMOTION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.75
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.65
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.25,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_MERCURY_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "MERCURY",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.85
+        },
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.75
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 1.15,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_MERCURY_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "MERCURY",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.15,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_MERCURY_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "MERCURY",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        },
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 1.15,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_MERCURY_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "MERCURY",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.7
+        },
+        {
+          "category": "EMOTION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.65
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 1.15,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_MERCURY_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "MERCURY",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.65
+        },
+        {
+          "category": "EMOTION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.6
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.15,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_VENUS_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "VENUS",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 1.2,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_VENUS_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "VENUS",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 1
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.95
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.2,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_VENUS_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "VENUS",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.85
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 1.2,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_VENUS_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "VENUS",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "EMOTION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.55
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.5
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 1.2,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_VENUS_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "VENUS",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "EMOTION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.45
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.4
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.2,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_MARS_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "MARS",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        },
+        {
+          "category": "EMOTION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.1
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 1.05,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_MARS_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "MARS",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.75
+        },
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.6
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.05,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_MARS_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "MARS",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.6
+        },
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.45
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 1.05,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_MARS_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "MARS",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.55
+        },
+        {
+          "category": "EMOTION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.75
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 1.05,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_MARS_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "MARS",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.55
+        },
+        {
+          "category": "EMOTION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.7
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.05,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_MERCURY_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "MERCURY",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 1.15,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_MERCURY_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "MERCURY",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 1
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.15,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_MERCURY_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "MERCURY",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 1.15,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_MERCURY_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "MERCURY",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.9
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 1.15,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_MERCURY_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "MERCURY",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.8
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.15,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_VENUS_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "VENUS",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.85
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 0.99498743710662,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_VENUS_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "VENUS",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 0.99498743710662,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_VENUS_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "VENUS",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.75
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.65
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 0.99498743710662,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_VENUS_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "VENUS",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.45
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.35
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 0.99498743710662,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_VENUS_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "VENUS",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.4
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.3
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 0.99498743710662,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_MARS_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "MARS",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.3
+        },
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.4
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 0.9486832980505138,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_MARS_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "MARS",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.75
+        },
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.5
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 0.9486832980505138,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_MARS_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "MARS",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.6
+        },
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.4
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 0.9486832980505138,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_MARS_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "MARS",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.85
+        },
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.3
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 0.9486832980505138,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_MARS_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "MARS",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.75
+        },
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.35
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 0.9486832980505138,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_VENUS_VENUS_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "VENUS",
+      "planetB": "VENUS",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.85
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 1.15,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_VENUS_VENUS_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "VENUS",
+      "planetB": "VENUS",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.95
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.95
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.15,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_VENUS_VENUS_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "VENUS",
+      "planetB": "VENUS",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 1.15,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_VENUS_VENUS_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "VENUS",
+      "planetB": "VENUS",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.45
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.55
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 1.15,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_VENUS_VENUS_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "VENUS",
+      "planetB": "VENUS",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.35
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.45
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.15,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_VENUS_MARS_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "VENUS",
+      "planetB": "MARS",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 1
+        },
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 1
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.2
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 1.25,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_VENUS_MARS_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "VENUS",
+      "planetB": "MARS",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.65
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.25,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_VENUS_MARS_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "VENUS",
+      "planetB": "MARS",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        },
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.55
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 1.25,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_VENUS_MARS_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "VENUS",
+      "planetB": "MARS",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 1
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.8
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 1.25,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_VENUS_MARS_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "VENUS",
+      "planetB": "MARS",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "ATTRACTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.95
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.65
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.25,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MARS_MARS_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MARS",
+      "planetB": "MARS",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.1
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 0.95,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MARS_MARS_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MARS",
+      "planetB": "MARS",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.85
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.55
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 0.95,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MARS_MARS_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MARS",
+      "planetB": "MARS",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.65
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.4
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 0.95,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MARS_MARS_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MARS",
+      "planetB": "MARS",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.55
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.8
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 0.95,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MARS_MARS_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MARS",
+      "planetB": "MARS",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "PASSION",
+          "direction": "POSITIVE",
+          "signedValue": 0.6
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.7
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 0.95,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_JUPITER_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "JUPITER",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 0.85,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_JUPITER_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "JUPITER",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 0.85,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_JUPITER_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "JUPITER",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 0.85,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_JUPITER_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "JUPITER",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.85
+        },
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.6
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 0.85,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_JUPITER_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "JUPITER",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 0.85,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_JUPITER_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "JUPITER",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        },
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.55
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 0.85,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_JUPITER_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "JUPITER",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 0.8215838362577492,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_JUPITER_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "JUPITER",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 0.8215838362577492,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_JUPITER_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "JUPITER",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.65
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 0.8215838362577492,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_VENUS_JUPITER_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "VENUS",
+      "planetB": "JUPITER",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.85
+        },
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.75
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 0.9082951062292476,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_VENUS_JUPITER_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "VENUS",
+      "planetB": "JUPITER",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.85
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 0.9082951062292476,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_VENUS_JUPITER_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "VENUS",
+      "planetB": "JUPITER",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        },
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.65
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 0.9082951062292476,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MARS_JUPITER_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MARS",
+      "planetB": "JUPITER",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.55
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 0.8660254037844386,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MARS_JUPITER_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MARS",
+      "planetB": "JUPITER",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.65
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 0.8660254037844386,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MARS_JUPITER_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MARS",
+      "planetB": "JUPITER",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.5
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 0.8660254037844386,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_SATURN_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "SATURN",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.75
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.75
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.25
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 0.9486832980505138,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_SATURN_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "SATURN",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.85
+        },
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.6
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 0.9486832980505138,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_SATURN_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "SATURN",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.75
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        },
+        {
+          "category": "SUPPORT",
+          "direction": "POSITIVE",
+          "signedValue": 0.5
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 0.9486832980505138,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_SATURN_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "SATURN",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.25
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.2
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.75
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 0.9486832980505138,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_SUN_SATURN_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "SUN",
+      "planetB": "SATURN",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.3
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.25
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.7
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 0.9486832980505138,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_SATURN_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "SATURN",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.6
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.65
+        },
+        {
+          "category": "EMOTION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.45
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 1.1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_SATURN_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "SATURN",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.8
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.75
+        },
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.45
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_SATURN_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "SATURN",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.7
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.65
+        },
+        {
+          "category": "EMOTION",
+          "direction": "POSITIVE",
+          "signedValue": 0.35
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 1.1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_SATURN_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "SATURN",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.2
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.2
+        },
+        {
+          "category": "EMOTION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.85
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 1.1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MOON_SATURN_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MOON",
+      "planetB": "SATURN",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.25
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.25
+        },
+        {
+          "category": "EMOTION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.8
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_SATURN_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "SATURN",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.55
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.45
+        },
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.65
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 0.9,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_SATURN_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "SATURN",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.45
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.35
+        },
+        {
+          "category": "COMMUNICATION",
+          "direction": "POSITIVE",
+          "signedValue": 0.5
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 0.9,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_SATURN_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "SATURN",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.15
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.1
+        },
+        {
+          "category": "COMMUNICATION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.8
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 0.9,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_MERCURY_SATURN_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "MERCURY",
+      "planetB": "SATURN",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.2
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.15
+        },
+        {
+          "category": "COMMUNICATION",
+          "direction": "NEGATIVE",
+          "signedValue": -0.7
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 0.9,
+      "pairWeightSource": "GENERIC",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_VENUS_SATURN_CONJUNCTION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "VENUS",
+      "planetB": "SATURN",
+      "aspect": "CONJUNCTION",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.75
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.85
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.2
+        }
+      ],
+      "baseWeight": 1,
+      "ruleWeight": 1,
+      "pairWeight": 1.1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_VENUS_SATURN_TRINE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "VENUS",
+      "planetB": "SATURN",
+      "aspect": "TRINE",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.9
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.55
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_VENUS_SATURN_SEXTILE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "VENUS",
+      "planetB": "SATURN",
+      "aspect": "SEXTILE",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.75
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.75
+        },
+        {
+          "category": "HARMONY",
+          "direction": "POSITIVE",
+          "signedValue": 0.45
+        }
+      ],
+      "baseWeight": 0.7,
+      "ruleWeight": 1,
+      "pairWeight": 1.1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_VENUS_SATURN_SQUARE",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "VENUS",
+      "planetB": "SATURN",
+      "aspect": "SQUARE",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.2
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.3
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.8
+        }
+      ],
+      "baseWeight": 0.85,
+      "ruleWeight": 1,
+      "pairWeight": 1.1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    },
+    {
+      "ruleId": "ASTRO_VENUS_SATURN_OPPOSITION",
+      "source": "ASTROLOGY",
+      "enabled": true,
+      "planetA": "VENUS",
+      "planetB": "SATURN",
+      "aspect": "OPPOSITION",
+      "categoryMappings": [
+        {
+          "category": "STABILITY",
+          "direction": "POSITIVE",
+          "signedValue": 0.25
+        },
+        {
+          "category": "LONG_TERM",
+          "direction": "POSITIVE",
+          "signedValue": 0.35
+        },
+        {
+          "category": "HARMONY",
+          "direction": "NEGATIVE",
+          "signedValue": -0.75
+        }
+      ],
+      "baseWeight": 0.9,
+      "ruleWeight": 1,
+      "pairWeight": 1.1,
+      "pairWeightSource": "OVERRIDE",
+      "requiresBirthTime": false,
+      "contextOnly": false,
+      "version": "1.0.0"
+    }
+  ],
+  "deferred": {
+    "personalJupiterAspects": [
+      "SQUARE",
+      "OPPOSITION"
+    ],
+    "mercurySaturnAspects": [
+      "CONJUNCTION"
+    ],
+    "allAspectPairs": [
+      [
+        "MARS",
+        "SATURN"
+      ],
+      [
+        "JUPITER",
+        "JUPITER"
+      ],
+      [
+        "SATURN",
+        "SATURN"
+      ],
+      [
+        "JUPITER",
+        "SATURN"
+      ]
+    ],
+    "outerPlanets": [
+      "URANUS",
+      "NEPTUNE",
+      "PLUTO"
+    ],
+    "contextOnly": [
+      "ASC",
+      "HOUSE"
+    ],
+    "excluded": [
+      "MC",
+      "NODES",
+      "CHIRON"
+    ]
+  },
   "contractStatus": "FROZEN",
+  "astrologyCatalogReadiness": "READY",
   "scoreEngineReadiness": "BLOCKED_CATALOG",
-  "blocker": "SCORING_RULE_CATALOG_APPROVAL",
-  "catalogApprovalRequirements": [
-    "Category/direction/activation catalogs are absent",
-    "Combination of two planet orb adjustments is unspecified",
-    "No invented synastry rule combinations"
+  "catalogBlockers": [
+    "SAJU_RULE_CATALOG_APPROVAL",
+    "DAILY_RULE_CATALOG_APPROVAL"
   ]
 }

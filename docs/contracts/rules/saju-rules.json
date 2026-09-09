@@ -243,5 +243,5 @@
   ],
   "contractStatus": "FROZEN",
   "scoreEngineReadiness": "BLOCKED_CATALOG",
-  "blocker": "SCORING_RULE_CATALOG_APPROVAL"
+  "blocker": "SAJU_RULE_CATALOG_APPROVAL"
 }

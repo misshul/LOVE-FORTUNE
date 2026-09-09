@@ -1,10 +1,11 @@
 # LOVE FORTUNE
 # 03_SCORE_SPEC.md
 
-Version: 2.2.0
+Version: 2.3.0
 Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: LOVE SCORE Specification
 
+Astrology Authority: [Applied Astrology Catalog v1](contracts/astrology-catalog-v1.md) supersedes older Astrology placeholders.
 Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
 Freeze Gate: [Freeze validation and readiness](contracts/README.md)
 
@@ -63,7 +64,7 @@ Use the unified category feature aggregation in decision v1 sections 11-14. The 
 
 # 6. Feature Value
 
-signedValue = +1 for POSITIVE, -1 for NEGATIVE, 0 for NEUTRAL. MIXED requires a registered category-specific value in [-1,1]. Unregistered rules cannot be scored. The former direction_sign times strength formula is superseded. rawValue is not an additional implicit multiplier.
+For approved Astrology v1 mappings: POSITIVE means0<signedValue<=1, NEGATIVE means-1<=signedValue<0, NEUTRAL means0. Mixed is rule-level positive/negative coexistence, not a mapping direction. Legacy/Saju inventory retains +1/-1/0 and explicitly defined MIXED values until its own approval. Unregistered rules cannot be scored. The former direction_sign times strength formula is superseded. rawValue is not an additional implicit multiplier.
 
 ---
 
@@ -157,7 +158,7 @@ sqrt(weightA × weightB)
 
 # 15. Astrology Weight Catalog
 
-Keep sections12-14 tables without inventing interpretations. Normalize existing weights only; a complete category/direction mapping is required before enabling a scoring rule. Missing mappings remain disabled and cannot contribute to production. See contracts/rules/astrology-rules.json and Normative contract: [Final Decision v2 SC-02](contracts/runtime-contract-v2.md#sc-02-rule-catalog-and-candidates).
+Sections12-14 reference tables are retained. Approved Astrology v1 contains109 enabled pair-aspect rules (75 Personal,15 Jupiter,19 Saturn) with228 mappings. Generic aspects are reference definitions only. Actual approved mappings and closed schema are in contracts/astrology-catalog-v1.md. See contracts/rules/astrology-rules.json and Normative contract: [Final Decision v2 SC-02](contracts/runtime-contract-v2.md#sc-02-rule-catalog-and-candidates).
 
 ---
 
@@ -426,7 +427,7 @@ Core returns overall/category canonical scores and statuses, coverage, resultCon
 
 # 41. Version
 
-This document update does not overwrite a released scoreVersion. Approved v3/v2 decisions and normalized catalogs are versioned separately. Active rules0 is BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL), not SPEC_CONFLICT. Freeze status and two independent external engine gates are in contracts/README.md.
+This document update does not overwrite a released scoreVersion. Approved v3/v2 decisions and normalized catalogs are versioned separately. Astrology109 rules are APPLIED/READY. Overall BLOCKED_CATALOG retains SAJU_RULE_CATALOG_APPROVAL and DAILY_RULE_CATALOG_APPROVAL, not SPEC_CONFLICT. Freeze status and two independent external engine gates are in contracts/README.md.
 
 ---
 
@@ -454,5 +455,7 @@ This document update does not overwrite a released scoreVersion. Approved v3/v2 
 - Daily/Period Regression
 
 Same provider/software/data/config/version and input require exact canonical output. A named floating regression tolerance is permitted only with an explicit justification; no global +/-0.01 allowance. Golden data must be synthetic, licensed or approved public reference, never real-user input.
+
+See [Astrology Catalog v1](contracts/astrology-catalog-v1.md) for canonical planet order, deferred outer/Jupiter/Saturn scope, category Feature projection, orbCloseness allowlist and all-ages PASSION meaning. Existing outer caps, confidence/coverage/period/guardrail/privacy remain unchanged.
 
 END OF DOCUMENT

@@ -1,10 +1,11 @@
 # LOVE FORTUNE
 # 02_FORTUNE_ENGINE_SPEC.md
 
-Version: 3.2.0
+Version: 3.3.0
 Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: Fortune Engine Specification
 
+Astrology Authority: [Applied Astrology Catalog v1](contracts/astrology-catalog-v1.md) supersedes older Astrology placeholders.
 Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
 Freeze Gate: [Freeze validation and readiness](contracts/README.md)
 
@@ -282,13 +283,13 @@ Jupiter / Saturn      -1°
 Uranus / Neptune / Pluto -2°
 ```
 
-The two planet orb adjustments require a specified combination rule (SC-02). Do not assume an unlisted versioned rule exists.
+Approved Astrology v1: effectiveOrb=min(10,baseAspectOrb+max(adjustmentA,adjustmentB)); PLUS. Normalize longitude to[0,360), use circular angularDistance=min(abs(a-b),360-abs(a-b)); aspectOrb=abs(angularDistance-exactAngle), active<=effectiveOrb. Exact angles: conjunction0,sextile60,square90,trine120,opposition180.
 
 ---
 
 # 16. Aspect Strength
 
-This geometric measure is not an additional score multiplier. Its mapping into the approved weight/feature catalog remains SC-02.
+Active only, orbCloseness=1-aspectOrb/effectiveOrb. It is not a score or confidence multiplier. Exact1,boundary0; inactive creates no closeness/Feature. Use optional metadata.orbCloseness for request-local priority only; no raw evidence logging.
 
 ```text
 strength =
@@ -416,5 +417,7 @@ Engine 구현은 다음을 만족해야 한다.
 ## Final v3 contract alignment
 
 [Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (SAJU_DAY_PILLAR_EPOCH, EPHEMERIS_PROVIDER).
+
+See [Astrology Catalog v1](contracts/astrology-catalog-v1.md) for canonical planet order, deferred outer/Jupiter/Saturn scope, category Feature projection, orbCloseness allowlist and all-ages PASSION meaning. Existing outer caps, confidence/coverage/period/guardrail/privacy remain unchanged.
 
 END OF DOCUMENT

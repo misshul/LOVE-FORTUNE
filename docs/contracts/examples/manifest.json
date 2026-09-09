@@ -520,6 +520,141 @@
       "file": "v3-period-delta-missing-invalid.json",
       "schema": "../schemas/period-response.schema.json",
       "valid": false
+    },
+    {
+      "file": "astro-v1-astro_sun_moon_trine.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": true
+    },
+    {
+      "file": "astro-v1-astro_venus_mars_square.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": true
+    },
+    {
+      "file": "astro-v1-astro_moon_saturn_opposition.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": true
+    },
+    {
+      "file": "astro-v1-astro_venus_jupiter_sextile.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": true
+    },
+    {
+      "file": "astro-v1-positive-negative-invalid.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-negative-positive-invalid.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-above-one-invalid.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-below-minus-one-invalid.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-empty-invalid.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-planet-invalid.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-aspect-invalid.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-noncanonical-invalid.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-null-time-invalid.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-mc-invalid.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-outer-invalid.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-jupiter-hard-invalid.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-mercury-saturn-conjunction-invalid.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-mars-saturn-invalid.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-jupiter-saturn-invalid.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-free-field-invalid.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-mixed-mapping-invalid.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-context-scoring-invalid.json",
+      "schema": "../schemas/astrology-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-closeness-boundary-valid.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
+    },
+    {
+      "file": "astro-v1-closeness-exact-valid.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": true
+    },
+    {
+      "file": "astro-v1-closeness--0.01-invalid.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-closeness-1.01-invalid.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": false
+    },
+    {
+      "file": "astro-v1-closeness-null-invalid.json",
+      "schema": "../schemas/feature.schema.json",
+      "valid": false
     }
   ]
 }

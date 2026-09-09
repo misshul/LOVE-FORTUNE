@@ -1,0 +1,32 @@
+{
+  "ruleId": "ASTRO_VENUS_MARS_SQUARE",
+  "source": "ASTROLOGY",
+  "enabled": true,
+  "planetA": "VENUS",
+  "planetB": "MARS",
+  "aspect": "SQUARE",
+  "categoryMappings": [
+    {
+      "category": "ATTRACTION",
+      "direction": "POSITIVE",
+      "signedValue": 0.9
+    },
+    {
+      "category": "PASSION",
+      "direction": "POSITIVE",
+      "signedValue": 1
+    },
+    {
+      "category": "HARMONY",
+      "direction": "NEGATIVE",
+      "signedValue": -0.8
+    }
+  ],
+  "baseWeight": 0.85,
+  "ruleWeight": 1,
+  "pairWeight": 1.25,
+  "pairWeightSource": "OVERRIDE",
+  "requiresBirthTime": false,
+  "contextOnly": false,
+  "version": "1.0.0"
+}

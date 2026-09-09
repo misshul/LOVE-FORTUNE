@@ -143,6 +143,12 @@
             ]
           },
           "description": "Explicit user clarification: candidate scalar values; never raw Birth/labels. Non-identity metadata."
+        },
+        "orbCloseness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Active aspect only; non-identity, request-local priority. Never a score/confidence multiplier or permission to log evidence."
         }
       },
       "required": [],

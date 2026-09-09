@@ -1,0 +1,122 @@
+{
+  "provenance": "Synthetic contract cases; no real-user data.",
+  "angles": [
+    {
+      "a": 359,
+      "b": 1,
+      "distance": 2
+    },
+    {
+      "a": -1,
+      "b": 361,
+      "distance": 2
+    },
+    {
+      "a": 0,
+      "b": 180,
+      "distance": 180
+    },
+    {
+      "a": 720,
+      "b": 0,
+      "distance": 0
+    },
+    {
+      "a": 10,
+      "b": 350,
+      "distance": 20
+    }
+  ],
+  "orbs": [
+    {
+      "planetA": "SUN",
+      "planetB": "MOON",
+      "aspect": "CONJUNCTION",
+      "expected": 9
+    },
+    {
+      "planetA": "SUN",
+      "planetB": "VENUS",
+      "aspect": "TRINE",
+      "expected": 8
+    },
+    {
+      "planetA": "MERCURY",
+      "planetB": "VENUS",
+      "aspect": "SEXTILE",
+      "expected": 5
+    },
+    {
+      "planetA": "JUPITER",
+      "planetB": "SATURN",
+      "aspect": "SEXTILE",
+      "expected": 4
+    }
+  ],
+  "unknownTime": [
+    {
+      "values": [
+        0.9,
+        0.9,
+        0.9,
+        0.9
+      ],
+      "total": 4,
+      "confidence": 1
+    },
+    {
+      "values": [
+        0.9,
+        0.9
+      ],
+      "total": 4,
+      "confidence": 0.5
+    },
+    {
+      "values": [
+        -1,
+        1
+      ],
+      "total": 2,
+      "confidence": 0
+    },
+    {
+      "values": [],
+      "total": 4,
+      "confidence": 0
+    }
+  ],
+  "detection": [
+    {
+      "name": "exact",
+      "ruleId": "ASTRO_SUN_MOON_TRINE",
+      "a": 0,
+      "b": 120,
+      "active": true,
+      "orbCloseness": 1
+    },
+    {
+      "name": "inclusive",
+      "ruleId": "ASTRO_SUN_MOON_TRINE",
+      "a": 0,
+      "b": 128,
+      "active": true,
+      "orbCloseness": 0
+    },
+    {
+      "name": "inactive",
+      "ruleId": "ASTRO_SUN_MOON_TRINE",
+      "a": 0,
+      "b": 128.01,
+      "active": false
+    }
+  ],
+  "negativeMutations": [
+    "wrong ruleId",
+    "wrong pairWeight",
+    "wrong pairWeightSource",
+    "duplicate ruleId",
+    "duplicate category",
+    "wrong approved signedValue"
+  ]
+}
