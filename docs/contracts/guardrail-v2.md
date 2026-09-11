@@ -14,3 +14,6 @@ No binary search, global passes or forced zero-weight exclusion. Evidence/covera
 Unchanged SC-03 final outer-share check remains; SCORE_CAP_INVARIANT_FAILED retains its meaning. Current Astrology109 has no active Outer scoring.
 
 Score contract: GUARDRAIL_V2. Future implementation must bump scoreVersion/configVersion; do not relabel historical results. This documentation does not change a production release version.
+
+
+Scope clarification: Lifetime category scoring only. Daily C21-R is NOT_APPLIED_TO_DAILY_V1 and uses signed signal -1..1 / delta ?18. The v2 formula above is unchanged. See [Daily contract](daily-catalog-v1.md).

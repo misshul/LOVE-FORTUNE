@@ -36,7 +36,7 @@ Daily source confidence uses exactly four nominal samples06:00/12:00/18:00/23:00
 
 # SC-02 Rule catalog and candidates
 
-Saju has14 family records,9 enabled scoring families with16 variants/37 decimal mappings and5 context-only families. See saju-catalog-v1.md. Astrology109/228 remains unchanged. Mapping signs match decimal signedValues. Daily remains empty and DAILY_RULE_CATALOG_APPROVAL is the sole catalog blocker. Candidate and canonical identity contracts are unchanged.
+Saju has14 family records,9 enabled scoring families with16 variants/37 decimal mappings and5 context-only families. See saju-catalog-v1.md. Astrology109/228 remains unchanged. Mapping signs match decimal signedValues. Daily C21-R contains134 enabled rules/285 mappings; catalog blockers NONE. Daily INTERNAL sample identity is defined in daily-catalog-v1.md; Lifetime/public identity remains unchanged.
 
 Group candidates by ruleId+subject+category+period. Mean signedValue and numeric rawValue over present candidates. Non-numeric rawValue becomes null and metadata.candidates preserves present candidate scalar values. The user explicitly approved adding candidates to the allowlist. Availability ratio is present/total, combined with candidateAgreement.
 
@@ -64,7 +64,7 @@ Canonical featureId input: ruleId,subject,category,period,source and the identit
 
 Nominal local samples are06:00,12:00,18:00,23:00 in targetTimezone. Evaluate each source per sample. Exclude unavailable samples; at least one sample makes a source available, zero makes it unavailable. Mean is arithmetic mean of valid signals. Peak has greatest absolute value; ties select the earlier nominal local sample time. sourceDailySignal=clamp(0.75*meanSignal+0.25*peakSignal,-1,1).
 
-If nominal local time does not exist, use the first valid instant after that nominal local time in the timezone. If it maps to two instants, choose the earlier UTC instant. The former 'earlier offset' terminology is superseded. Pin timezoneDataVersion. Overall daily signal uses available-source0.50/0.50 weights; delta=18*signal; clamp lifetime+delta to[0,100]. With no sources use lifetime/delta0/INSUFFICIENT_PERIOD_DATA.
+If nominal local time does not exist, use the first valid instant after that nominal local time in the timezone. If it maps to two instants, choose the earlier UTC instant. The former 'earlier offset' terminology is superseded. Pin timezoneDataVersion. Overall daily signal uses structurally eligible fixed source0.50/0.50 weights (M1-ELIGIBILITY-AWARE); runtime missing does not reweight the other source; delta=18*signal; clamp lifetime+delta to[0,100]. With no sources use lifetime/delta0/INSUFFICIENT_PERIOD_DATA.
 
 ---
 
@@ -74,7 +74,7 @@ Gregorian supported date range1900-01-01..2099-12-31, narrowed by verified provi
 
 Lifetime null propagates null scores and INSUFFICIENT_DATA to Daily/Weekly/Monthly/Yearly. Empty valid Daily set gives score null/status INSUFFICIENT_DATA/confidence0. A valid Daily has non-null dailyScore, no Core calculation error, non-null lifetimeScore, period status other than INSUFFICIENT_PERIOD_DATA, and a date within verified supported coverage. dailyPeriodStatus in v3 denotes the existing dailyStatus wire field; no duplicate field is introduced. Numeric lifetime fallback without period evidence can be displayed but is excluded from all period aggregates. Yearly aggregates valid Monthly results derived from these valid days; empty/null Monthly results are excluded.
 
-Daily status uses dailyDelta: <=-12 VERY_LOW; (-12,-6] LOW; (-6,6) STABLE; [6,12) GOOD; >=12 VERY_GOOD. Missing period data overrides with INSUFFICIENT_PERIOD_DATA; missing lifetime overrides with INSUFFICIENT_DATA. No old absolute daily-score bands.
+Daily status uses dailyDelta: <=-5 VERY_LOW; (-5,-2] LOW; (-2,2) STABLE; [2,5) GOOD; >=5 VERY_GOOD. Missing period data overrides with INSUFFICIENT_PERIOD_DATA; missing lifetime overrides with INSUFFICIENT_DATA. No old absolute daily-score bands.
 
 Weekly score is the arithmetic mean of valid full-precision Daily scores in the ISO week. Weekly/Monthly/Yearly score status uses lifetime canonical-score bands: [0,45) CAUTION; [45,60) BALANCED; [60,75) GOOD; [75,85) VERY_GOOD; [85,100] EXCELLENT; null INSUFFICIENT_DATA. Daily delta status is unchanged. periodDelta=periodScore-lifetimeScore using internal full precision. If either is null, periodDelta=null, trendStatus=INSUFFICIENT_DATA, trendDirection=UNKNOWN. Otherwise abs(delta)<3 gives STABLE, [3,8) NOTICEABLE, >=8 SIGNIFICANT. Direction is STABLE for abs(delta)<3, UP for delta>=3, DOWN for delta<=-3. These three fields are required on Weekly/Monthly/Yearly responses. Trend uses internal delta; it is not derived from rounded API score differences. OLS slope is secondary points/day context only and never determines trendStatus.
 
@@ -84,13 +84,13 @@ Selection maxima: Weekly best/caution2 each, Monthly5 each, Yearly3 each. Best s
 
 # SC-07 Daily category, Actions and guardrail
 
-Category daily signal uses category-specific evidence with the same source/sample pipeline. categoryDailyDelta=18*categoryDailySignal; categoryDailyScore=clamp(lifetimeCategoryScore+categoryDailyDelta,0,100). No category period evidence gives delta0 and periodStatus=INSUFFICIENT_PERIOD_DATA. Do not copy overall signal into categories.
+Category daily signal uses category-specific evidence with the same source/sample pipeline. categoryDailyDelta=18*categoryDailySignal; categoryDailyScore=clamp(lifetimeCategoryScore+categoryDailyDelta,0,100). No computable category period data gives delta0 and periodStatus=INSUFFICIENT_PERIOD_DATA. Do not copy overall signal into categories.
 
 Action is a separate deterministic recommendation layer; Action adjustment=0 and it never changes LOVE SCORE. Every Action has at least one evidenceRef to an actual Structured Feature featureId. Feature.confidence is the wire name of featureConfidence. Exclude referenced Features with preConfidenceWeight<=0. actionConfidence=sum(preConfidenceWeight*featureConfidence)/sum(preConfidenceWeight) over the remaining referenced Features; none means no Action. Zero confidence alone does not exclude a positive-weight Action reference. AI may explain the deterministic Action but cannot change its confidence. Existing category weight tables are retained only as recommendation reference, never score modifiers. Complexity is optional context only, not a numeric modifier.
 
 Weekly slope is OLS sum((x-meanX)*(y-meanY))/sum((x-meanX)^2), units points/day, x is the calendar-day offset in the week (gaps are retained); fewer than2 valid days gives null.
 
-SC-07 v2 freezes W0=sum(pre-guardrail usable effectiveWeight) after individual caps/confidence/outer cap. impact=50*effectiveWeight*abs(signedValue)/W0; above20 use adjustedWeight=min(effectiveWeight,0.4*W0/abs(signedValue)); zero signal retains weight. Raw=50+50*sum(adjustedWeight*signedValue)/W0, never adjustedWeight sum. No search, passes, exclusion or confidence/coverage change. Legacy SCORE_GUARDRAIL_UNSATISFIED is deprecated. See guardrail-v2.md.
+Lifetime-only SC-07 v2 freezes W0=sum(pre-guardrail usable effectiveWeight) after individual caps/confidence/outer cap. impact=50*effectiveWeight*abs(signedValue)/W0; above20 use adjustedWeight=min(effectiveWeight,0.4*W0/abs(signedValue)); zero signal retains weight. Raw=50+50*sum(adjustedWeight*signedValue)/W0, never adjustedWeight sum. No search, passes, exclusion or confidence/coverage change. Legacy SCORE_GUARDRAIL_UNSATISFIED is deprecated. See guardrail-v2.md.
 
 ---
 
@@ -115,3 +115,6 @@ Payload required: contextVersion,purpose,locale,issuedAt,expiresAt,engineVersion
 Provider total budget8 seconds, call timeout6 seconds. At most one network/5xx retry and one schema repair, all inside8 seconds. Retry/repair cannot reset the budget. On AI OFF/timeout/outage/schema/evidence/safety failure, return200 if deterministic fallback can be produced. Metadata interpretationMode=AI|FALLBACK. Only inability to produce interpretation/fallback returns503 INTERPRETATION_UNAVAILABLE. Core remains valid regardless.
 
 Deterministic comparison excludes requestId,generatedAt,issuedAt,expiresAt,signedInterpretationContext; exact-compare the remaining canonical calculation payload. Interpretation prose is not a Core deterministic output. AI outputs summary,strengths,challenges,advice with evidenceRefs; no numeric score fields, no raw prompt/output logging or personal cache.
+
+
+Current Daily authority: [Daily C21-R](daily-catalog-v1.md), superseding earlier Daily signal denominators/status boundaries. Structural eligibility is distinct from runtime unavailable and computed-no-event. STABILITY uses only Saju in its category source denominator; overall uses fixed .50/.50. Source internal signal uses fixed eligible category denominator. Confidence is unchanged. Daily SC-07: NOT_APPLIED_TO_DAILY_V1. Internal sample identity/candidate grouping uses sampleRef; public Feature and signed wire unchanged.

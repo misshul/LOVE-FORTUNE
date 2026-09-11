@@ -246,7 +246,7 @@ max 5
 
 # 23. Daily Score
 
-dailySignal=0.50*sajuDailySignal+0.50*astrologyDailySignal; delta=18*signal; score=clamp(lifetimeScore+delta,0,100). One source gets100%; neither gives lifetime/delta0/INSUFFICIENT_PERIOD_DATA. Lifetime null gives null dailyScore and INSUFFICIENT_DATA. Normative contract: [Final Decision v2 SC-05](contracts/runtime-contract-v2.md#sc-05-daily-sampling-and-dst). Normative contract: [Final Decision v2 SC-06](contracts/runtime-contract-v2.md#sc-06-dates-periods-and-statuses).
+dailySignal=0.50*sajuDailySignal+0.50*astrologyDailySignal; delta=18*signal; score=clamp(lifetimeScore+delta,0,100). One runtime available source retains its approved .50 signal weight; neither gives lifetime/delta0/INSUFFICIENT_PERIOD_DATA. Lifetime null gives null dailyScore and INSUFFICIENT_DATA. Normative contract: [Final Decision v2 SC-05](contracts/runtime-contract-v2.md#sc-05-daily-sampling-and-dst). Normative contract: [Final Decision v2 SC-06](contracts/runtime-contract-v2.md#sc-06-dates-periods-and-statuses).
 
 ---
 
@@ -273,13 +273,13 @@ Versioned samples06:00/12:00/18:00/23:00. For signal, each source excludes unava
 
 # 26. Daily Category
 
-categoryDailyDelta=18*categoryDailySignal from category-specific evidence; categoryDailyScore=clamp(lifetimeCategoryScore+categoryDailyDelta,0,100). No category period evidence gives delta0/periodStatus INSUFFICIENT_PERIOD_DATA. Full precision internally; serialize scores with4-decimal HALF_UP. Normative contract: [Final Decision v2 SC-07](contracts/runtime-contract-v2.md#sc-07-daily-category-actions-and-guardrail).
+categoryDailyDelta=18*categoryDailySignal from category-specific evidence; categoryDailyScore=clamp(lifetimeCategoryScore+categoryDailyDelta,0,100). No computable category period data gives delta0/periodStatus INSUFFICIENT_PERIOD_DATA. Full precision internally; serialize scores with4-decimal HALF_UP. Normative contract: [Final Decision v2 SC-07](contracts/runtime-contract-v2.md#sc-07-daily-category-actions-and-guardrail).
 
 ---
 
 # 27. Daily Status
 
-Use dailyDelta: <=-12 VERY_LOW; (-12,-6] LOW; (-6,6) STABLE; [6,12) GOOD; >=12 VERY_GOOD. Missing period source gives INSUFFICIENT_PERIOD_DATA; null lifetime gives INSUFFICIENT_DATA. No absolute daily-score status bands. Normative contract: [Final Decision v2 SC-06](contracts/runtime-contract-v2.md#sc-06-dates-periods-and-statuses).
+Use dailyDelta: <=-5 VERY_LOW; (-5,-2] LOW; (-2,2) STABLE; [2,5) GOOD; >=5 VERY_GOOD. No available period sources gives INSUFFICIENT_PERIOD_DATA; null lifetime gives INSUFFICIENT_DATA. No absolute daily-score status bands. Normative contract: [Final Decision v2 SC-06](contracts/runtime-contract-v2.md#sc-06-dates-periods-and-statuses).
 
 ---
 
@@ -427,7 +427,7 @@ Core returns overall/category canonical scores and statuses, coverage, resultCon
 
 # 41. Version
 
-This document update does not overwrite a released scoreVersion. Approved v3/v2 decisions and normalized catalogs are versioned separately. Astrology109 rules are APPLIED/READY. Overall BLOCKED_CATALOG retains DAILY_RULE_CATALOG_APPROVAL, not SPEC_CONFLICT. Freeze status and two independent external engine gates are in contracts/README.md.
+This document update does not overwrite a released scoreVersion. Approved v3/v2 decisions and normalized catalogs are versioned separately. Astrology109 rules are APPLIED/READY. Overall Score Engine catalog readiness is READY; catalog blockers NONE. Freeze status and two independent external engine gates are in contracts/README.md.
 
 ---
 
@@ -463,4 +463,7 @@ END OF DOCUMENT
 
 ## Approved Saju v1 / SC-07 v2 application
 
-Current authority: [Saju v1](contracts/saju-catalog-v1.md), [Guardrail v2](contracts/guardrail-v2.md), [ContextEvidence](contracts/context-evidence.md). These supersede historical Saju scoring placeholders, unit-sign restrictions and guardrail search. Saju14 families:9 scoring/5 context, APPLIED/READY. Only DAILY_RULE_CATALOG_APPROVAL remains. Other privacy/API/time contracts are unchanged.
+Current authority: [Saju v1](contracts/saju-catalog-v1.md), [Guardrail v2](contracts/guardrail-v2.md), [ContextEvidence](contracts/context-evidence.md). These supersede historical Saju scoring placeholders, unit-sign restrictions and guardrail search. Saju14 families:9 scoring/5 context, APPLIED/READY. Daily C21-R is APPLIED/READY; catalog blockers NONE. Other privacy/API/time contracts are unchanged.
+
+
+Current Daily authority: [Daily Catalog v1 C21-R](contracts/daily-catalog-v1.md). Daily134/285 APPLIED/READY; S2 thresholds +/-2 / +/-5; M1-ELIGIBILITY-AWARE signal aggregation. SC-07 applies to Lifetime only. Score Engine catalog readiness READY; catalog blockers NONE; Production BLOCKED_EXTERNAL (SAJU_DAY_PILLAR_EPOCH, EPHEMERIS_PROVIDER). Public/signed wire and privacy remain unchanged.

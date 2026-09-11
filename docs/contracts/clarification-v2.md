@@ -1,3 +1,4 @@
+<!-- Historical approval: Daily status/signal availability and readiness statements are superseded by daily-catalog-v1.md (C21-R). Lifetime, security and other unaffected approvals remain authoritative. -->
 > Historical guardrail approval superseded by [SC-07 v2](guardrail-v2.md). The candidates clarification and unchanged SC-03 outer invariant remain active.
 
 # Final Decision v2 — 승인된 보완

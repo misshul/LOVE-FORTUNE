@@ -1,0 +1,33 @@
+{
+  "ruleId": "DAILY_ASTRO_MOON_SUN_CONJUNCTION",
+  "source": "ASTROLOGY",
+  "enabled": true,
+  "requiresBirthTime": false,
+  "contextOnly": false,
+  "version": "1.0.0",
+  "pairWeight": 1,
+  "sampleIdentity": "NOMINAL_LOCAL_SLOT",
+  "transitPlanet": "MOON",
+  "natalPlanet": "SUN",
+  "aspect": "CONJUNCTION",
+  "orbPolicy": {
+    "degrees": 2,
+    "inclusive": true,
+    "planetAdjustment": "NONE",
+    "closenessUsage": "METADATA_ONLY"
+  },
+  "baseWeight": 1,
+  "ruleWeight": 1,
+  "categoryMappings": [
+    {
+      "category": "EMOTION",
+      "signedValue": 0.5,
+      "direction": "POSITIVE"
+    },
+    {
+      "category": "HARMONY",
+      "signedValue": 0.3,
+      "direction": "POSITIVE"
+    }
+  ]
+}

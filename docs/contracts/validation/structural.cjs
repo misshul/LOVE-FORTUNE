@@ -10,7 +10,7 @@ const files=fs.readdirSync(path.join(dir,'schemas'));
 for(const f of files){const s=read('schemas/'+f);assert(ajv.validateSchema(s),f);ajv.addSchema(s);}
 const validator=n=>ajv.getSchema('https://love-fortune.invalid/contracts/schemas/'+n+'.schema.json');for(const f of files)validator(f.replace('.schema.json',''));
 const cases=read('examples/manifest.json').cases;for(const c of cases){const v=read('examples/'+c.file),check=validator(path.basename(c.schema).replace('.schema.json',''));assert.equal(check(v),c.valid,c.file+' '+JSON.stringify(check.errors?.slice(0,2)));}
-let rules=0,enabled=0;for(const name of ['saju-rules','astrology-rules','daily-rules'])for(const r of read('rules/'+name+'.json').rules){const check=validator(name==='astrology-rules'?'astrology-rule':name==='saju-rules'?'saju-rule':'rule');assert(check(r),JSON.stringify(check.errors));if(r.enabled)enabled++;else rules++;}assert.equal(enabled,118);assert.equal(rules,5);
+let rules=0,enabled=0;for(const name of ['saju-rules','astrology-rules','daily-rules'])for(const r of read('rules/'+name+'.json').rules){const check=validator(name==='astrology-rules'?'astrology-rule':name==='saju-rules'?'saju-rule':'daily-rule');assert(check(r),JSON.stringify(check.errors));if(r.enabled)enabled++;else rules++;}assert.equal(enabled,252);assert.equal(rules,5);
 const weights=read('rules/category-weights.json').weights;assert.equal(Object.values(weights).reduce((s,x)=>s+Math.round(x*100),0),100);assert.equal(Object.keys(weights).length,8);
 const {canon,decimal}=vm.runInNewContext(fs.readFileSync(path.join(__dirname,'canonicalizer.cjs'),'utf8')+';({canon,decimal})');
 const identityKeys=['planetA','planetB','aspect','pillar','relation','referenceId','ruleVariant'];

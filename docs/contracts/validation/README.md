@@ -21,3 +21,11 @@ Exact decimal multipleOf avoids binary divisibility artifacts. Catalog generic w
 
 Run: node docs/contracts/validation/saju-guardrail-v2.cjs
 Reads actual catalog and verifies the approved matrix, references, counts,57,600 synthetic combinations and Astrology. Semantic regression uses current v2 vectors; legacy vectors are historical only. No production implementation or provider calls.
+
+## Daily C21-R application
+
+Run `node docs/contracts/validation/daily-application.cjs` for all current checks, or `node docs/contracts/validation/daily.cjs` for Daily only. The application gate executes structural, semantic, Astrology, Saju/guardrail and Daily regressions, checks current metadata, active Daily contracts, and unchanged protected files/Lifetime catalogs. It prints JSON and does not rewrite reports.
+
+Daily reads actual applied rules and compares all mappings to `daily-v1-approved-matrix.json`. Recovered longitude/pillar generators cover 128 x 1000 base pairs, plus a persisted three-way missing-source schedule: mode0 both sources; mode1 `(astroIndex+sajuIndex)%3` selects Saju only, Astrology only, or neither. Total256,000. The previous read-only run's in-memory availability selector was lost at interruption; identical overall old population/distribution is NOT claimed. No matrix/weight/fixture tuning was used to recover its statistics. Full-data108,000 cases and the six individually retained sample-missing deltas are checked exactly against the prior invariants/results.
+
+Daily identity is an internal evidence schema; public Feature and signed LFIC wire remain unchanged. Schema failures and semantic ID/period/lineage failures are separate. Tests use synthetic data; no actual epoch, ephemeris or user data. Test arithmetic is documentation tooling, not production implementation.

@@ -860,6 +860,166 @@
       "file": "saju-v1-feature-YY3.json",
       "schema": "../schemas/feature.schema.json",
       "valid": true
+    },
+    {
+      "file": "daily-s2--5.0001.json",
+      "schema": "daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-s2--5.json",
+      "schema": "daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-s2--4.9999.json",
+      "schema": "daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-s2--2.0001.json",
+      "schema": "daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-s2--2.json",
+      "schema": "daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-s2--1.9999.json",
+      "schema": "daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-s2-1.9999.json",
+      "schema": "daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-s2-2.json",
+      "schema": "daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-s2-2.0001.json",
+      "schema": "daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-s2-4.9999.json",
+      "schema": "daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-s2-5.json",
+      "schema": "daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-s2-5.0001.json",
+      "schema": "daily-response.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-rule-astro-valid.json",
+      "schema": "daily-rule.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-rule-saju-valid.json",
+      "schema": "daily-rule.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-rule-time-null-invalid.json",
+      "schema": "daily-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "daily-rule-orb-invalid.json",
+      "schema": "daily-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "daily-rule-outer-invalid.json",
+      "schema": "daily-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "daily-rule-jupiter-invalid.json",
+      "schema": "daily-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "daily-rule-mc-invalid.json",
+      "schema": "daily-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "daily-rule-pair-weight-invalid.json",
+      "schema": "daily-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "daily-rule-context-invalid.json",
+      "schema": "daily-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "daily-rule-empty-invalid.json",
+      "schema": "daily-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "daily-rule-range-invalid.json",
+      "schema": "daily-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "daily-rule-sign-invalid.json",
+      "schema": "daily-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "daily-rule-unknown-field-invalid.json",
+      "schema": "daily-rule.schema.json",
+      "valid": false
+    },
+    {
+      "file": "daily-evidence-valid.json",
+      "schema": "daily-evidence.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-evidence-missing-sample-invalid.json",
+      "schema": "daily-evidence.schema.json",
+      "valid": false
+    },
+    {
+      "file": "daily-evidence-time-invalid.json",
+      "schema": "daily-evidence.schema.json",
+      "valid": false
+    },
+    {
+      "file": "daily-evidence-public-wire-invalid.json",
+      "schema": "feature.schema.json",
+      "valid": false
+    },
+    {
+      "file": "daily-evidence-candidate-object-invalid.json",
+      "schema": "daily-evidence.schema.json",
+      "valid": false
+    },
+    {
+      "file": "daily-evidence-saju-valid.json",
+      "schema": "daily-evidence.schema.json",
+      "valid": true
+    },
+    {
+      "file": "daily-evidence-stem-invalid.json",
+      "schema": "daily-evidence.schema.json",
+      "valid": false
     }
   ]
 }

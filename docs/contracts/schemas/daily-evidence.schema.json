@@ -1,0 +1,413 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/daily-evidence.schema.json",
+  "title": "INTERNAL Daily evidence; not public Feature or LFIC wire",
+  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate.",
+  "type": "object",
+  "properties": {
+    "featureId": {
+      "type": "string",
+      "pattern": "^ft_[0-9a-f]{48}$"
+    },
+    "source": {
+      "enum": [
+        "SAJU",
+        "ASTROLOGY"
+      ]
+    },
+    "subject": {
+      "enum": [
+        "PERSON_A",
+        "PERSON_B"
+      ]
+    },
+    "category": {
+      "$ref": "common.schema.json#/$defs/category"
+    },
+    "direction": {
+      "enum": [
+        "POSITIVE",
+        "NEGATIVE",
+        "NEUTRAL",
+        "MIXED"
+      ]
+    },
+    "rawValue": {
+      "type": [
+        "number",
+        "string",
+        "boolean",
+        "null"
+      ]
+    },
+    "baseWeight": {
+      "type": "number",
+      "minimum": 0
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "featureConfidence, not resultConfidence."
+    },
+    "period": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "DAY"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "timezone": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "type",
+        "date",
+        "timezone"
+      ],
+      "additionalProperties": false
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "sampleRef": {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string",
+              "format": "date"
+            },
+            "time": {
+              "enum": [
+                "06:00",
+                "12:00",
+                "18:00",
+                "23:00"
+              ]
+            },
+            "timezone": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "date",
+            "time",
+            "timezone"
+          ],
+          "additionalProperties": false
+        },
+        "transitPlanet": {
+          "enum": [
+            "SUN",
+            "MOON",
+            "MERCURY",
+            "VENUS",
+            "MARS"
+          ]
+        },
+        "natalPlanet": {
+          "enum": [
+            "SUN",
+            "MOON",
+            "MERCURY",
+            "VENUS",
+            "MARS"
+          ]
+        },
+        "aspect": {
+          "enum": [
+            "CONJUNCTION",
+            "SEXTILE",
+            "SQUARE",
+            "TRINE",
+            "OPPOSITION"
+          ]
+        },
+        "orb": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "orbCloseness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "referenceId": {
+          "const": "DAILY_SAJU_REFERENCE_V1"
+        },
+        "relation": {
+          "enum": [
+            "COMBINATION",
+            "SAME",
+            "GENERATION",
+            "CONTROL",
+            "LIUHE",
+            "CLASH"
+          ]
+        },
+        "lineage": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "dailyStem": {
+                "enum": [
+                  "甲",
+                  "乙",
+                  "丙",
+                  "丁",
+                  "戊",
+                  "己",
+                  "庚",
+                  "辛",
+                  "壬",
+                  "癸"
+                ]
+              },
+              "natalDayStem": {
+                "enum": [
+                  "甲",
+                  "乙",
+                  "丙",
+                  "丁",
+                  "戊",
+                  "己",
+                  "庚",
+                  "辛",
+                  "壬",
+                  "癸"
+                ]
+              },
+              "dailyBranch": {
+                "enum": [
+                  "子",
+                  "丑",
+                  "寅",
+                  "卯",
+                  "辰",
+                  "巳",
+                  "午",
+                  "未",
+                  "申",
+                  "酉",
+                  "戌",
+                  "亥"
+                ]
+              },
+              "natalDayBranch": {
+                "enum": [
+                  "子",
+                  "丑",
+                  "寅",
+                  "卯",
+                  "辰",
+                  "巳",
+                  "午",
+                  "未",
+                  "申",
+                  "酉",
+                  "戌",
+                  "亥"
+                ]
+              },
+              "relationDirection": {
+                "enum": [
+                  "DAILY_TO_NATAL",
+                  "NATAL_TO_DAILY",
+                  "SYMMETRIC"
+                ]
+              }
+            },
+            "required": [
+              "relationDirection"
+            ],
+            "additionalProperties": false,
+            "oneOf": [
+              {
+                "required": [
+                  "dailyStem",
+                  "natalDayStem"
+                ],
+                "not": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "dailyBranch"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "natalDayBranch"
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "required": [
+                  "dailyBranch",
+                  "natalDayBranch"
+                ],
+                "not": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "dailyStem"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "natalDayStem"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "candidateCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "availabilityRatio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": [
+              "number",
+              "string",
+              "boolean",
+              "null"
+            ]
+          }
+        }
+      },
+      "required": [
+        "sampleRef"
+      ],
+      "additionalProperties": false
+    },
+    "ruleId": {
+      "type": "string",
+      "pattern": "^DAILY_(ASTRO|SAJU)_[A-Z_]+$"
+    },
+    "signedValue": {
+      "type": "number",
+      "minimum": -1,
+      "maximum": 1
+    }
+  },
+  "required": [
+    "featureId",
+    "ruleId",
+    "source",
+    "subject",
+    "category",
+    "direction",
+    "rawValue",
+    "baseWeight",
+    "confidence",
+    "period",
+    "metadata",
+    "signedValue"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "source": {
+            "const": "ASTROLOGY"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "metadata": {
+            "required": [
+              "transitPlanet",
+              "natalPlanet",
+              "aspect"
+            ],
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "lineage"
+                  ]
+                },
+                {
+                  "required": [
+                    "referenceId"
+                  ]
+                },
+                {
+                  "required": [
+                    "relation"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "source": {
+            "const": "SAJU"
+          },
+          "metadata": {
+            "required": [
+              "referenceId",
+              "relation",
+              "lineage"
+            ],
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "transitPlanet"
+                  ]
+                },
+                {
+                  "required": [
+                    "natalPlanet"
+                  ]
+                },
+                {
+                  "required": [
+                    "aspect"
+                  ]
+                },
+                {
+                  "required": [
+                    "orb"
+                  ]
+                },
+                {
+                  "required": [
+                    "orbCloseness"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

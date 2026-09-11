@@ -19,7 +19,7 @@
   "lifetimeScore": 50,
   "dailyScore": 44,
   "dailyDelta": -6,
-  "dailyStatus": "LOW",
+  "dailyStatus": "VERY_LOW",
   "resultConfidence": 1,
   "coverage": 1,
   "features": [],

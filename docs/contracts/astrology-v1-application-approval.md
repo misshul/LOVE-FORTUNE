@@ -1,3 +1,4 @@
+<!-- Historical approval: Daily status/signal availability and readiness statements are superseded by daily-catalog-v1.md (C21-R). Lifetime, security and other unaffected approvals remain authoritative. -->
 # LOVE FORTUNE
 # ASTROLOGY SCORING RULE CATALOG v1
 # REPOSITORY APPLICATION

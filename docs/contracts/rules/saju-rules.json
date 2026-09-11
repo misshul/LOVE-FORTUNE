@@ -3,8 +3,7 @@
   "status": "APPROVED_APPLIED",
   "contractStatus": "FROZEN",
   "catalogReadiness": "READY",
-  "scoreEngineReadiness": "BLOCKED_CATALOG",
-  "blocker": "DAILY_RULE_CATALOG_APPROVAL",
+  "scoreEngineReadiness": "READY",
   "referenceTables": {
     "stems": [
       "甲",
@@ -729,5 +728,6 @@
       "precedence": "INDEPENDENT",
       "variants": []
     }
-  ]
+  ],
+  "catalogBlockers": []
 }

@@ -1,0 +1,33 @@
+{
+  "featureId": "ft_3611bf6eb754fffde12458b0ed3c5c719c979bbd71cd382d",
+  "ruleId": "DAILY_SAJU_STEM_COMBINATION",
+  "source": "SAJU",
+  "subject": "PERSON_A",
+  "category": "HARMONY",
+  "direction": "POSITIVE",
+  "signedValue": 0.6,
+  "rawValue": 0,
+  "baseWeight": 0.9,
+  "confidence": 1,
+  "period": {
+    "type": "DAY",
+    "date": "2000-01-01",
+    "timezone": "Asia/Tokyo"
+  },
+  "metadata": {
+    "sampleRef": {
+      "date": "2000-01-01",
+      "time": "06:00",
+      "timezone": "Asia/Tokyo"
+    },
+    "referenceId": "DAILY_SAJU_REFERENCE_V1",
+    "relation": "COMBINATION",
+    "lineage": [
+      {
+        "dailyStem": "INVALID",
+        "natalDayStem": "己",
+        "relationDirection": "SYMMETRIC"
+      }
+    ]
+  }
+}

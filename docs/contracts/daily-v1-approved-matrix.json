@@ -1,0 +1,285 @@
+{
+  "authority": "C21-R application approval; retained approved proposal matrix, not calibrated",
+  "aspectOrder": [
+    "CONJUNCTION",
+    "SEXTILE",
+    "SQUARE",
+    "TRINE",
+    "OPPOSITION"
+  ],
+  "categoryCodes": {
+    "A": "ATTRACTION",
+    "E": "EMOTION",
+    "C": "COMMUNICATION",
+    "P": "PASSION",
+    "S": "STABILITY",
+    "H": "HARMONY",
+    "U": "SUPPORT",
+    "L": "LONG_TERM"
+  },
+  "core": [
+    [
+      "MOON",
+      "SUN",
+      "E+.5 H+.3",
+      "E+.3 H+.2",
+      "E-.5 H-.3",
+      "E+.5 H+.3",
+      "E-.4 H-.3"
+    ],
+    [
+      "MOON",
+      "MOON",
+      "E+.7 H+.3",
+      "E+.4 H+.2",
+      "E-.7 H-.3",
+      "E+.6 H+.3",
+      "E-.6 H-.4"
+    ],
+    [
+      "MOON",
+      "MERCURY",
+      "C+.4 E+.3",
+      "C+.3 E+.2",
+      "C-.5 E-.3",
+      "C+.5 E+.3",
+      "C-.4 E-.4"
+    ],
+    [
+      "MOON",
+      "VENUS",
+      "E+.6 A+.4",
+      "E+.4 H+.3",
+      "A+.2 E-.4 H-.3",
+      "E+.6 H+.4",
+      "A+.2 E-.5 H-.3"
+    ],
+    [
+      "MOON",
+      "MARS",
+      "P+.4 E-.3 H-.3",
+      "P+.3 E+.2",
+      "P+.4 E-.6 H-.5",
+      "P+.4 E+.3",
+      "P+.3 E-.6 H-.5"
+    ],
+    [
+      "MERCURY",
+      "SUN",
+      "C+.5 U+.3",
+      "C+.4 U+.2",
+      "C-.4 H-.2",
+      "C+.5 U+.3",
+      "C-.4 H-.3"
+    ],
+    [
+      "MERCURY",
+      "MOON",
+      "C+.4 E+.3",
+      "C+.3 E+.3",
+      "C-.5 E-.4",
+      "C+.4 E+.4",
+      "C-.5 E-.3"
+    ],
+    [
+      "MERCURY",
+      "MERCURY",
+      "C+.7",
+      "C+.5",
+      "C-.7",
+      "C+.6",
+      "C-.6 H-.2"
+    ],
+    [
+      "MERCURY",
+      "VENUS",
+      "C+.5 H+.4",
+      "C+.4 H+.3",
+      "C-.3 H-.3",
+      "C+.5 H+.4",
+      "C-.4 H-.3"
+    ],
+    [
+      "MERCURY",
+      "MARS",
+      "C+.2 P+.3 H-.3",
+      "C+.3 P+.2",
+      "C-.6 P+.2 H-.4",
+      "C+.4 P+.3",
+      "C-.6 P+.2 H-.4"
+    ],
+    [
+      "VENUS",
+      "SUN",
+      "A+.6 H+.4",
+      "A+.4 H+.3",
+      "A+.3 H-.3",
+      "A+.5 H+.4",
+      "A+.3 H-.4"
+    ],
+    [
+      "VENUS",
+      "MOON",
+      "E+.6 H+.4",
+      "E+.4 H+.3",
+      "A+.2 E-.3 H-.3",
+      "E+.5 H+.4",
+      "A+.2 E-.4 H-.3"
+    ],
+    [
+      "VENUS",
+      "MERCURY",
+      "C+.5 H+.4",
+      "C+.4 H+.3",
+      "C-.3 H-.2",
+      "C+.5 H+.3",
+      "C-.3 H-.3"
+    ],
+    [
+      "VENUS",
+      "VENUS",
+      "A+.7 H+.5",
+      "A+.5 H+.3",
+      "A+.3 H-.4",
+      "A+.6 H+.4",
+      "A+.3 H-.4"
+    ],
+    [
+      "VENUS",
+      "MARS",
+      "A+.6 P+.6",
+      "A+.4 P+.4",
+      "A+.5 P+.4 H-.5",
+      "A+.5 P+.5",
+      "A+.5 P+.4 H-.5"
+    ],
+    [
+      "SUN",
+      "SUN",
+      "U+.5 P+.3",
+      "U+.3 H+.2",
+      "P+.3 H-.4",
+      "U+.4 H+.3",
+      "P+.2 H-.4"
+    ],
+    [
+      "SUN",
+      "MOON",
+      "E+.4 U+.3",
+      "E+.3 H+.2",
+      "E-.4 H-.3",
+      "E+.4 H+.3",
+      "E-.4 H-.3"
+    ],
+    [
+      "SUN",
+      "MERCURY",
+      "C+.5 U+.2",
+      "C+.3 U+.2",
+      "C-.4 H-.2",
+      "C+.4 U+.3",
+      "C-.4 H-.3"
+    ],
+    [
+      "SUN",
+      "VENUS",
+      "A+.4 H+.4",
+      "A+.3 H+.3",
+      "A+.2 H-.3",
+      "A+.4 H+.3",
+      "A+.2 H-.3"
+    ],
+    [
+      "SUN",
+      "MARS",
+      "P+.5 H-.3",
+      "P+.3 U+.2",
+      "P+.4 H-.5",
+      "P+.4 U+.3",
+      "P+.3 H-.5"
+    ],
+    [
+      "MARS",
+      "SUN",
+      "P+.6 H-.3",
+      "P+.4 U+.3",
+      "P+.5 H-.6",
+      "P+.5 U+.3",
+      "P+.4 H-.6"
+    ],
+    [
+      "MARS",
+      "MOON",
+      "P+.4 E-.4 H-.3",
+      "P+.3 E+.2",
+      "P+.4 E-.6 H-.5",
+      "P+.4 E+.3",
+      "P+.3 E-.6 H-.5"
+    ],
+    [
+      "MARS",
+      "MERCURY",
+      "C+.2 P+.4 H-.3",
+      "C+.3 P+.3",
+      "C-.6 P+.3 H-.4",
+      "C+.4 P+.3",
+      "C-.6 P+.2 H-.4"
+    ],
+    [
+      "MARS",
+      "VENUS",
+      "A+.5 P+.6",
+      "A+.4 P+.4",
+      "A+.4 P+.5 H-.5",
+      "A+.4 P+.5",
+      "A+.4 P+.5 H-.5"
+    ],
+    [
+      "MARS",
+      "MARS",
+      "P+.7 H-.4",
+      "P+.5 U+.2",
+      "P+.5 H-.7",
+      "P+.6 U+.3",
+      "P+.5 H-.7"
+    ]
+  ],
+  "saju": [
+    [
+      "STEM_COMBINATION",
+      "H+.6 A+.3"
+    ],
+    [
+      "STEM_SAME",
+      "C+.3 S+.2"
+    ],
+    [
+      "STEM_GENERATION",
+      "U+.7 E+.3"
+    ],
+    [
+      "STEM_CONTROL",
+      "H-.5 P+.2"
+    ],
+    [
+      "BRANCH_LIUHE",
+      "H+.6 E+.4"
+    ],
+    [
+      "BRANCH_CLASH",
+      "H-.7 S-.2 P+.2"
+    ],
+    [
+      "BRANCH_SAME",
+      "E+.3 S+.2"
+    ],
+    [
+      "BRANCH_GENERATION",
+      "U+.5 E+.3"
+    ],
+    [
+      "BRANCH_CONTROL",
+      "H-.4 S-.2"
+    ]
+  ]
+}

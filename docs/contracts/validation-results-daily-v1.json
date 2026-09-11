@@ -1,0 +1,1160 @@
+{
+  "result": "PASS",
+  "contractFreeze": "PASS",
+  "specConflict": 0,
+  "activeCrossSpecContradictions": 0,
+  "scoreEngineReadiness": "READY",
+  "dailyCatalog": "APPLIED / READY",
+  "catalogBlockers": [],
+  "productionEngineReadiness": "BLOCKED_EXTERNAL",
+  "externalBlockers": [
+    "SAJU_DAY_PILLAR_EPOCH",
+    "EPHEMERIS_PROVIDER"
+  ],
+  "productionFilesChanged": "NONE",
+  "gitDiffCheck": "PASS",
+  "results": {
+    "structural": {
+      "schemaFiles": 29,
+      "examples": 203,
+      "validExamples": 113,
+      "invalidExamples": 90,
+      "disabledRuleRecords": 5,
+      "enabledRules": 252,
+      "categoryWeights": 8,
+      "canonicalVectors": 6,
+      "signedValid": 2,
+      "signedInvalid": 8,
+      "httpPrivacyVectors": 19,
+      "openapiOperations": 20,
+      "adminOperations": 7,
+      "publicPostOperations": 8,
+      "openapi": "PASS"
+    },
+    "semantic": {
+      "existingSemanticVectors": 36,
+      "v3SemanticVectors": 44,
+      "totalSemanticVectors": 80,
+      "dstVectors": 4,
+      "tzdb": "2025c",
+      "icu": "78.2",
+      "result": "PASS",
+      "comparison": "exact; decimal rational confidence and HALF_UP rounding"
+    },
+    "astrology": {
+      "rules": 109,
+      "personal": 75,
+      "jupiter": 15,
+      "saturn": 19,
+      "mappings": 228,
+      "positive": 170,
+      "negative": 58,
+      "neutral": 0,
+      "mixed": 26,
+      "override": 76,
+      "generic": 33,
+      "approvedMatrixComparison": "EXACT",
+      "semanticNegativeMutations": 6,
+      "angularTests": 5,
+      "orbExamples": 4,
+      "detectionExamples": 3,
+      "boundaryTests": 327,
+      "unknownTimeTests": 4,
+      "weightIndependenceTests": 327,
+      "featureProjection": "PASS",
+      "featureIdentity": "PASS",
+      "result": "PASS"
+    },
+    "saju": {
+      "stem": {
+        "cases": 100,
+        "counts": {
+          "SAME": 20,
+          "GENERATION": 40,
+          "CONTROL": 30,
+          "COMB": 10
+        },
+        "duplicates": 0,
+        "noOwner": 0,
+        "symmetry": 0
+      },
+      "branch": {
+        "cases": 144,
+        "counts": {
+          "BSAME": 28,
+          "LIUHE": 12,
+          "BGENERATION": 50,
+          "BCONTROL": 42,
+          "CLASH": 12
+        },
+        "duplicates": 0,
+        "noOwner": 0,
+        "symmetry": 0
+      },
+      "projection": {
+        "pairFeatureOccurrences": 684,
+        "templates": 16,
+        "mappings": 37,
+        "duplicateIds": 0,
+        "invalidInputRejections": 8
+      },
+      "complement": {
+        "8/8": {
+          "count": 245025,
+          "min": 0,
+          "max": 0.5,
+          "bands": {
+            "NONE": 39895,
+            "EC1": 77160,
+            "EC2": 106250,
+            "EC3": 21720
+          },
+          "generatedCases": 205130,
+          "featureOccurrences": 410260
+        },
+        "8/6": {
+          "count": 103950,
+          "min": 0,
+          "max": 0.5,
+          "bands": {
+            "NONE": 17900,
+            "EC1": 33670,
+            "EC2": 43260,
+            "EC3": 9120
+          },
+          "generatedCases": 86050,
+          "featureOccurrences": 172100
+        },
+        "6/8": {
+          "count": 103950,
+          "min": 0,
+          "max": 0.5,
+          "bands": {
+            "NONE": 17900,
+            "EC1": 33670,
+            "EC2": 43260,
+            "EC3": 9120
+          },
+          "generatedCases": 86050,
+          "featureOccurrences": 172100
+        },
+        "6/6": {
+          "count": 44100,
+          "min": 0,
+          "max": 0.5,
+          "bands": {
+            "NONE": 9290,
+            "EC1": 14630,
+            "EC2": 15660,
+            "EC3": 4520
+          },
+          "generatedCases": 34810,
+          "featureOccurrences": 69620
+        }
+      },
+      "yinYang": {
+        "12": {
+          "cases": 13,
+          "values": [
+            0,
+            0.16666666666666666,
+            0.3333333333333333,
+            0.5,
+            0.6666666666666666,
+            0.8333333333333334,
+            1
+          ],
+          "bands": {
+            "YY0": 4,
+            "YY1": 2,
+            "YY2": 4,
+            "YY3": 3
+          }
+        },
+        "14": {
+          "cases": 15,
+          "values": [
+            0,
+            0.14285714285714285,
+            0.2857142857142857,
+            0.42857142857142855,
+            0.5714285714285714,
+            0.7142857142857143,
+            0.8571428571428571,
+            1
+          ],
+          "bands": {
+            "YY0": 4,
+            "YY1": 4,
+            "YY2": 4,
+            "YY3": 3
+          }
+        },
+        "16": {
+          "cases": 17,
+          "values": [
+            0,
+            0.125,
+            0.25,
+            0.375,
+            0.5,
+            0.625,
+            0.75,
+            0.875,
+            1
+          ],
+          "bands": {
+            "YY0": 4,
+            "YY1": 4,
+            "YY2": 4,
+            "YY3": 5
+          }
+        }
+      },
+      "confidence": [
+        [
+          1,
+          0.75,
+          0.5,
+          0.25,
+          0
+        ],
+        [
+          0.875,
+          0.65625,
+          0.4375,
+          0.21875,
+          0
+        ],
+        [
+          0.75,
+          0.5625,
+          0.375,
+          0.1875,
+          0
+        ]
+      ],
+      "single": [
+        {
+          "v": 0.2,
+          "initial": 60,
+          "invocations": 0,
+          "finalWeight": 1,
+          "excluded": 0,
+          "raw": 60,
+          "status": "GOOD",
+          "ok": true
+        },
+        {
+          "v": 0.25,
+          "initial": 62.5,
+          "invocations": 0,
+          "finalWeight": 1,
+          "excluded": 0,
+          "raw": 62.5,
+          "status": "GOOD",
+          "ok": true
+        },
+        {
+          "v": 0.3,
+          "initial": 65,
+          "invocations": 0,
+          "finalWeight": 1,
+          "excluded": 0,
+          "raw": 65,
+          "status": "GOOD",
+          "ok": true
+        },
+        {
+          "v": 0.35,
+          "initial": 67.5,
+          "invocations": 0,
+          "finalWeight": 1,
+          "excluded": 0,
+          "raw": 67.5,
+          "status": "GOOD",
+          "ok": true
+        },
+        {
+          "v": 0.4,
+          "initial": 70,
+          "invocations": 0,
+          "finalWeight": 1,
+          "excluded": 0,
+          "raw": 70,
+          "status": "GOOD",
+          "ok": true
+        },
+        {
+          "v": 0.45,
+          "initial": 72.5,
+          "invocations": 1,
+          "finalWeight": 0.888888888888889,
+          "excluded": 0,
+          "raw": 70,
+          "status": "GOOD",
+          "ok": true
+        },
+        {
+          "v": 0.55,
+          "initial": 77.5,
+          "invocations": 1,
+          "finalWeight": 0.7272727272727273,
+          "excluded": 0,
+          "raw": 70,
+          "status": "GOOD",
+          "ok": true
+        },
+        {
+          "v": 0.6,
+          "initial": 80,
+          "invocations": 1,
+          "finalWeight": 0.6666666666666667,
+          "excluded": 0,
+          "raw": 70,
+          "status": "GOOD",
+          "ok": true
+        },
+        {
+          "v": 0.7,
+          "initial": 85,
+          "invocations": 1,
+          "finalWeight": 0.5714285714285715,
+          "excluded": 0,
+          "raw": 70,
+          "status": "GOOD",
+          "ok": true
+        },
+        {
+          "v": 0.75,
+          "initial": 87.5,
+          "invocations": 1,
+          "finalWeight": 0.5333333333333333,
+          "excluded": 0,
+          "raw": 70,
+          "status": "GOOD",
+          "ok": true
+        },
+        {
+          "v": 0.9,
+          "initial": 95,
+          "invocations": 1,
+          "finalWeight": 0.4444444444444445,
+          "excluded": 0,
+          "raw": 70,
+          "status": "GOOD",
+          "ok": true
+        },
+        {
+          "v": -0.2,
+          "initial": 40,
+          "invocations": 0,
+          "finalWeight": 1,
+          "excluded": 0,
+          "raw": 40,
+          "status": "CAUTION",
+          "ok": true
+        },
+        {
+          "v": -0.3,
+          "initial": 35,
+          "invocations": 0,
+          "finalWeight": 1,
+          "excluded": 0,
+          "raw": 35,
+          "status": "CAUTION",
+          "ok": true
+        },
+        {
+          "v": -0.35,
+          "initial": 32.5,
+          "invocations": 0,
+          "finalWeight": 1,
+          "excluded": 0,
+          "raw": 32.5,
+          "status": "CAUTION",
+          "ok": true
+        },
+        {
+          "v": -0.45,
+          "initial": 27.5,
+          "invocations": 1,
+          "finalWeight": 0.888888888888889,
+          "excluded": 0,
+          "raw": 30,
+          "status": "CAUTION",
+          "ok": true
+        },
+        {
+          "v": -0.6,
+          "initial": 20,
+          "invocations": 1,
+          "finalWeight": 0.6666666666666667,
+          "excluded": 0,
+          "raw": 30,
+          "status": "CAUTION",
+          "ok": true
+        },
+        {
+          "v": -0.7,
+          "initial": 15,
+          "invocations": 1,
+          "finalWeight": 0.5714285714285715,
+          "excluded": 0,
+          "raw": 30,
+          "status": "CAUTION",
+          "ok": true
+        }
+      ],
+      "multi": [
+        {
+          "name": "A",
+          "values": [
+            [
+              "ELEMENT_COMPLEMENT",
+              0.9,
+              1
+            ],
+            [
+              "DAY_MASTER_RELATION",
+              0.4,
+              1.2
+            ]
+          ],
+          "initial": 81.36363636363636,
+          "raw": 80.9090909090909,
+          "status": "VERY_GOOD",
+          "passes": 0,
+          "ok": true,
+          "events": [
+            {
+              "rule": "ELEMENT_COMPLEMENT",
+              "before": 1,
+              "after": 0.9777777777777779
+            }
+          ],
+          "excluded": 0
+        },
+        {
+          "name": "B",
+          "values": [
+            [
+              "BRANCH_COMBINATION",
+              0.75,
+              1
+            ],
+            [
+              "YIN_YANG_BALANCE",
+              -0.35,
+              0.45
+            ]
+          ],
+          "initial": 70.43103448275862,
+          "raw": 64.56896551724138,
+          "status": "GOOD",
+          "passes": 0,
+          "ok": true,
+          "events": [
+            {
+              "rule": "BRANCH_COMBINATION",
+              "before": 1,
+              "after": 0.7733333333333333
+            }
+          ],
+          "excluded": 0
+        },
+        {
+          "name": "C",
+          "values": [
+            [
+              "BRANCH_COMBINATION",
+              0.75,
+              1
+            ],
+            [
+              "STEM_COMBINATION",
+              0.45,
+              0.9
+            ],
+            [
+              "ELEMENT_COMPLEMENT",
+              0.6,
+              1
+            ]
+          ],
+          "initial": 80.25862068965517,
+          "raw": 80.25862068965517,
+          "status": "VERY_GOOD",
+          "passes": 0,
+          "ok": true,
+          "events": [],
+          "excluded": 0
+        },
+        {
+          "name": "D",
+          "values": [
+            [
+              "ELEMENT_CONTROL",
+              -0.45,
+              0.8
+            ],
+            [
+              "BRANCH_CLASH",
+              -0.7,
+              1
+            ],
+            [
+              "YIN_YANG_BALANCE",
+              -0.35,
+              0.45
+            ]
+          ],
+          "initial": 22.944444444444443,
+          "raw": 22.944444444444443,
+          "status": "CAUTION",
+          "passes": 0,
+          "ok": true,
+          "events": [],
+          "excluded": 0
+        },
+        {
+          "name": "E",
+          "values": [
+            [
+              "ELEMENT_SUPPORT",
+              0.4,
+              0.85
+            ],
+            [
+              "ELEMENT_COMPLEMENT",
+              0.4,
+              1
+            ],
+            [
+              "DAY_BRANCH_RELATION",
+              -0.2,
+              1.2
+            ],
+            [
+              "YIN_YANG_BALANCE",
+              -0.35,
+              0.45
+            ]
+          ],
+          "initial": 54.892857142857146,
+          "raw": 54.892857142857146,
+          "status": "BALANCED",
+          "passes": 0,
+          "ok": true,
+          "events": [],
+          "excluded": 0
+        },
+        {
+          "name": "F",
+          "values": [
+            [
+              "ELEMENT_COMPLEMENT",
+              0.9,
+              1
+            ],
+            [
+              "DAY_MASTER_RELATION",
+              0.4,
+              1.2
+            ],
+            [
+              "DAY_BRANCH_RELATION",
+              0.35,
+              1.2
+            ]
+          ],
+          "initial": 76.47058823529412,
+          "raw": 76.47058823529412,
+          "status": "VERY_GOOD",
+          "passes": 0,
+          "ok": true,
+          "events": [],
+          "excluded": 0
+        }
+      ],
+      "context": {
+        "cases": 3,
+        "differences": 0,
+        "note": "No deferred relation detector executed"
+      },
+      "combined": [
+        {
+          "name": "ASTRO_ONLY",
+          "astroRule": "ASTRO_SUN_SUN_CONJUNCTION",
+          "eligible": 1,
+          "available": 1,
+          "usable": 1,
+          "coverage": 1,
+          "confidence": 1,
+          "score": 70,
+          "status": "GOOD",
+          "ok": true
+        },
+        {
+          "name": "SAJU_ONLY",
+          "eligible": 1,
+          "available": 1,
+          "usable": 1,
+          "coverage": 1,
+          "confidence": 1,
+          "score": 65,
+          "status": "GOOD",
+          "ok": true
+        },
+        {
+          "name": "BOTH",
+          "astroRule": "ASTRO_SUN_SUN_CONJUNCTION",
+          "eligible": 2,
+          "available": 2,
+          "usable": 2,
+          "coverage": 1,
+          "confidence": 1,
+          "score": 74.0909090909091,
+          "status": "GOOD",
+          "ok": true
+        },
+        {
+          "name": "SAJU_CONFIDENCE_ZERO",
+          "astroRule": "ASTRO_SUN_SUN_CONJUNCTION",
+          "eligible": 2,
+          "available": 2,
+          "usable": 1,
+          "coverage": 1,
+          "confidence": 0.45454545454545453,
+          "score": 70,
+          "status": "GOOD",
+          "ok": true
+        },
+        {
+          "name": "SAJU_UNAVAILABLE",
+          "astroRule": "ASTRO_SUN_SUN_CONJUNCTION",
+          "eligible": 2,
+          "available": 1,
+          "usable": 1,
+          "coverage": 0.45454545454545453,
+          "confidence": 0.45454545454545453,
+          "score": 59.09090909090909,
+          "status": "BALANCED",
+          "ok": true
+        },
+        {
+          "name": "COMMUNICATION_ASTRO_ONLY",
+          "astroRule": "ASTRO_SUN_MERCURY_CONJUNCTION",
+          "eligible": 1,
+          "available": 1,
+          "usable": 1,
+          "coverage": 1,
+          "confidence": 1,
+          "score": 70,
+          "status": "GOOD",
+          "ok": true
+        },
+        {
+          "name": "NO_EVIDENCE",
+          "eligible": 0,
+          "available": 0,
+          "usable": 0,
+          "coverage": 0,
+          "confidence": 0,
+          "score": 50,
+          "status": "INSUFFICIENT_DATA",
+          "ok": true
+        }
+      ],
+      "combinedOverallCommunication": 70,
+      "population": {
+        "cases": 57600,
+        "method": "100 ordered stem pairs x 144 ordered branch pairs x 4 time states; token distributions indexed by deterministic modular schedule; abstract independent inputs, not birth charts",
+        "occ": {
+          "ATTRACTION": {
+            "features": 5760,
+            "positive": 5760,
+            "negative": 0,
+            "available": 5760,
+            "insufficient": 51840,
+            "zeroAfterGuard": 0,
+            "errors": 0
+          },
+          "EMOTION": {
+            "features": 52800,
+            "positive": 36000,
+            "negative": 16800,
+            "available": 52800,
+            "insufficient": 4800,
+            "zeroAfterGuard": 0,
+            "errors": 0
+          },
+          "COMMUNICATION": {
+            "features": 0,
+            "positive": 0,
+            "negative": 0,
+            "available": 0,
+            "insufficient": 57600,
+            "zeroAfterGuard": 0,
+            "errors": 0
+          },
+          "PASSION": {
+            "features": 22080,
+            "positive": 22080,
+            "negative": 0,
+            "available": 20640,
+            "insufficient": 36960,
+            "zeroAfterGuard": 0,
+            "errors": 0
+          },
+          "STABILITY": {
+            "features": 78895,
+            "positive": 24515,
+            "negative": 54380,
+            "available": 48925,
+            "insufficient": 8675,
+            "zeroAfterGuard": 0,
+            "errors": 0
+          },
+          "HARMONY": {
+            "features": 188728,
+            "positive": 121065,
+            "negative": 67663,
+            "available": 57600,
+            "insufficient": 0,
+            "zeroAfterGuard": 0,
+            "errors": 0
+          },
+          "SUPPORT": {
+            "features": 101688,
+            "positive": 101688,
+            "negative": 0,
+            "available": 54861,
+            "insufficient": 2739,
+            "zeroAfterGuard": 0,
+            "errors": 0
+          },
+          "LONG_TERM": {
+            "features": 53600,
+            "positive": 53600,
+            "negative": 0,
+            "available": 41200,
+            "insufficient": 16400,
+            "zeroAfterGuard": 0,
+            "errors": 0
+          }
+        },
+        "overall": {
+          "n": 57600,
+          "mean": 57.65264411221655,
+          "median": 58.73612121821403,
+          "p5": 43.435939060939056,
+          "p25": 49.409066166536626,
+          "p75": 66.78057822800585,
+          "p95": 69.4142561221479,
+          "min": 34.066698277224596,
+          "max": 74.32561817136283,
+          "lt20": 0,
+          "gt80": 0,
+          "lt10": 0,
+          "gt90": 0,
+          "at0or100": 0
+        },
+        "categories": {
+          "ATTRACTION": {
+            "n": 5760,
+            "mean": 70,
+            "median": 70,
+            "p5": 70,
+            "p25": 70,
+            "p75": 70,
+            "p95": 70,
+            "min": 70,
+            "max": 70,
+            "lt20": 0,
+            "gt80": 0,
+            "lt10": 0,
+            "gt90": 0,
+            "at0or100": 0
+          },
+          "EMOTION": {
+            "n": 52800,
+            "mean": 58.06818181818182,
+            "median": 70,
+            "p5": 32.5,
+            "p25": 32.5,
+            "p75": 70,
+            "p95": 70,
+            "min": 32.5,
+            "max": 70,
+            "lt20": 0,
+            "gt80": 0,
+            "lt10": 0,
+            "gt90": 0,
+            "at0or100": 0
+          },
+          "COMMUNICATION": {
+            "n": 0
+          },
+          "PASSION": {
+            "n": 20640,
+            "mean": 58.003875968991345,
+            "median": 57.5,
+            "p5": 57.5,
+            "p25": 57.5,
+            "p75": 57.5,
+            "p95": 60,
+            "min": 57.5,
+            "max": 60,
+            "lt20": 0,
+            "gt80": 0,
+            "lt10": 0,
+            "gt90": 0,
+            "at0or100": 0
+          },
+          "STABILITY": {
+            "n": 48925,
+            "mean": 43.86152366657303,
+            "median": 39.234693877551024,
+            "p5": 30,
+            "p25": 34.9738219895288,
+            "p75": 54.98041775456919,
+            "p95": 67.5,
+            "min": 25.55555555555556,
+            "max": 67.5,
+            "lt20": 0,
+            "gt80": 0,
+            "lt10": 0,
+            "gt90": 0,
+            "at0or100": 0
+          },
+          "HARMONY": {
+            "n": 57600,
+            "mean": 56.78393099834554,
+            "median": 57.86585365853659,
+            "p5": 39.07142857142857,
+            "p25": 49.388888888888886,
+            "p75": 64.61956521739131,
+            "p95": 71.5566037735849,
+            "min": 22.441520467836256,
+            "max": 79.40376569037657,
+            "lt20": 0,
+            "gt80": 0,
+            "lt10": 0,
+            "gt90": 0,
+            "at0or100": 0
+          },
+          "SUPPORT": {
+            "n": 54861,
+            "mean": 72.89277866817109,
+            "median": 71.83760683760684,
+            "p5": 65,
+            "p25": 70,
+            "p75": 75.625,
+            "p95": 82.46376811594203,
+            "min": 65,
+            "max": 88.59375,
+            "lt20": 0,
+            "gt80": 0.16049652758790398,
+            "lt10": 0,
+            "gt90": 0,
+            "at0or100": 0
+          },
+          "LONG_TERM": {
+            "n": 41200,
+            "mean": 63.25011393611582,
+            "median": 62.5,
+            "p5": 62.5,
+            "p25": 62.5,
+            "p75": 62.5,
+            "p95": 70,
+            "min": 62.5,
+            "max": 70,
+            "lt20": 0,
+            "gt80": 0,
+            "lt10": 0,
+            "gt90": 0,
+            "at0or100": 0
+          }
+        },
+        "metrics": {
+          "categoryCalls": 460800,
+          "usableCategoryCalls": 281786,
+          "invokedCategories": 59428,
+          "events": 59428,
+          "reduced": 59428,
+          "features": 503551,
+          "excluded": 0,
+          "zeroCategories": 0,
+          "insufficientTransitions": 0,
+          "unresolved": 0,
+          "maxPasses": 0,
+          "byRule": {
+            "DAY_BRANCH_RELATION": {
+              "features": 132800,
+              "invocations": 31200,
+              "reduced": 31200,
+              "excluded": 0
+            },
+            "YIN_YANG_BALANCE": {
+              "features": 86415,
+              "invocations": 0,
+              "reduced": 0,
+              "excluded": 0
+            },
+            "DAY_MASTER_RELATION": {
+              "features": 23040,
+              "invocations": 0,
+              "reduced": 0,
+              "excluded": 0
+            },
+            "ELEMENT_COMPLEMENT": {
+              "features": 94256,
+              "invocations": 9159,
+              "reduced": 9159,
+              "excluded": 0
+            },
+            "BRANCH_COMBINATION": {
+              "features": 14400,
+              "invocations": 7200,
+              "reduced": 7200,
+              "excluded": 0
+            },
+            "BRANCH_CLASH": {
+              "features": 14400,
+              "invocations": 3360,
+              "reduced": 3360,
+              "excluded": 0
+            },
+            "ELEMENT_SUPPORT": {
+              "features": 69120,
+              "invocations": 2749,
+              "reduced": 2749,
+              "excluded": 0
+            },
+            "ELEMENT_CONTROL": {
+              "features": 51840,
+              "invocations": 0,
+              "reduced": 0,
+              "excluded": 0
+            },
+            "STEM_COMBINATION": {
+              "features": 17280,
+              "invocations": 5760,
+              "reduced": 5760,
+              "excluded": 0
+            }
+          }
+        },
+        "swapViolations": 0,
+        "duplicates": 0,
+        "failedOverall": 0,
+        "failures": []
+      },
+      "scope": "read-only memory simulator; no production code or new scoring rules",
+      "astroAudit": {
+        "rules": 109,
+        "mappings": 228,
+        "adjusted": 190,
+        "excluded": 0,
+        "unresolved": 0,
+        "noGuard": 38,
+        "noGuardChanged": 0,
+        "confidenceChanges": 0,
+        "statusErrors": 0,
+        "multiCategories": 8
+      },
+      "exact": {
+        "uniqueInputs": 1117,
+        "features": 3391,
+        "capped": 192,
+        "violations": 0
+      },
+      "expandedSingles": [
+        {
+          "v": 0.2,
+          "weight": 1,
+          "score": 60
+        },
+        {
+          "v": 0.4,
+          "weight": 1,
+          "score": 70
+        },
+        {
+          "v": 0.45,
+          "weight": 0.888888888888889,
+          "score": 70
+        },
+        {
+          "v": 0.7,
+          "weight": 0.5714285714285715,
+          "score": 70
+        },
+        {
+          "v": 0.9,
+          "weight": 0.4444444444444445,
+          "score": 70
+        },
+        {
+          "v": -0.2,
+          "weight": 1,
+          "score": 40
+        },
+        {
+          "v": -0.4,
+          "weight": 1,
+          "score": 30
+        },
+        {
+          "v": -0.45,
+          "weight": 0.888888888888889,
+          "score": 30
+        },
+        {
+          "v": -0.7,
+          "weight": 0.5714285714285715,
+          "score": 30
+        },
+        {
+          "v": -0.9,
+          "weight": 0.4444444444444445,
+          "score": 30
+        }
+      ],
+      "confChecks": {
+        "cases": 7,
+        "changes": 0
+      },
+      "actualFileValidation": {
+        "familyWeights": 14,
+        "bands": 7,
+        "contextReferenceCases": 3,
+        "semanticInvalidCases": 5,
+        "contextCanonicalId": "PASS"
+      },
+      "v2Check": {
+        "calls": 563906,
+        "features": 1007916,
+        "impactViolations": 0,
+        "exclusions": 0,
+        "noGuardCalls": 444808,
+        "noGuardDifferences": 0,
+        "maxImpact": 20,
+        "rawOutside": 0,
+        "neutral": 2
+      }
+    },
+    "daily": {
+      "result": "PASS",
+      "rules": 134,
+      "astrologyRules": 125,
+      "astrologyMappings": 266,
+      "sajuRules": 9,
+      "sajuMappings": 19,
+      "mappings": 285,
+      "orbChecks": 750,
+      "stemCounts": [
+        10,
+        20,
+        40,
+        30
+      ],
+      "branchCounts": [
+        12,
+        12,
+        28,
+        50,
+        42
+      ],
+      "cases": 256000,
+      "fullDataCases": 108000,
+      "fullCategoryChecks": 864000,
+      "nonzeroStability": 101844,
+      "fullOverallDiff": 0,
+      "fullCategoryDiff": 0,
+      "stabilityAttenuation": 0,
+      "hardFailures": 0,
+      "repeat": 10000,
+      "swaps": 100,
+      "orderChecks": 100,
+      "semanticMutationsRejected": 8,
+      "structuralEligibility": {
+        "ASTROLOGY": [
+          "ATTRACTION",
+          "EMOTION",
+          "COMMUNICATION",
+          "PASSION",
+          "HARMONY",
+          "SUPPORT"
+        ],
+        "SAJU": [
+          "ATTRACTION",
+          "EMOTION",
+          "COMMUNICATION",
+          "PASSION",
+          "STABILITY",
+          "HARMONY",
+          "SUPPORT"
+        ]
+      },
+      "knownSix": [
+        {
+          "ai": 30,
+          "si": 14,
+          "delta": 5.053892422023684
+        },
+        {
+          "ai": 30,
+          "si": 120,
+          "delta": 5.023264501322234
+        },
+        {
+          "ai": 30,
+          "si": 233,
+          "delta": 5.034820730847214
+        },
+        {
+          "ai": 30,
+          "si": 554,
+          "delta": 5.085175844483577
+        },
+        {
+          "ai": 30,
+          "si": 665,
+          "delta": 5.086124966384403
+        },
+        {
+          "ai": 30,
+          "si": 785,
+          "delta": 5.091481584773692
+        }
+      ],
+      "delta": {
+        "n": 213001,
+        "mean": 1.464795523512044,
+        "median": 1.3645284505800146,
+        "p5": -0.0848303237858032,
+        "p95": 3.336192942360532,
+        "min": -1.877977922091247,
+        "max": 5.091481584773692
+      },
+      "statusCounts": {
+        "GOOD": 61573,
+        "STABLE": 151416,
+        "INSUFFICIENT_PERIOD_DATA": 42999,
+        "VERY_GOOD": 12
+      },
+      "unavailable": 42999,
+      "originalPopulationIdentity": "NOT_CLAIMED: prior in-memory availability selector unavailable; recovered base generators plus persisted availability schedule",
+      "fakeNeutral": 0,
+      "crossSampleMerge": 0,
+      "dailyGuardrail": 0,
+      "secondary": 0,
+      "outer": 0,
+      "mc": 0,
+      "catalogDigest": "174270dd7dbc59a1fb0865d587842f13bca00d094d68db1be45047a7bf597876",
+      "node": "v24.13.1"
+    }
+  }
+}

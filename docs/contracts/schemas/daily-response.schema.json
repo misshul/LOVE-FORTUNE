@@ -180,7 +180,7 @@
       "then": {
         "properties": {
           "dailyDelta": {
-            "maximum": -12
+            "maximum": -5
           }
         }
       }
@@ -196,8 +196,8 @@
       "then": {
         "properties": {
           "dailyDelta": {
-            "exclusiveMinimum": -12,
-            "maximum": -6
+            "exclusiveMinimum": -5,
+            "maximum": -2
           }
         }
       }
@@ -213,8 +213,8 @@
       "then": {
         "properties": {
           "dailyDelta": {
-            "exclusiveMinimum": -6,
-            "exclusiveMaximum": 6
+            "exclusiveMinimum": -2,
+            "exclusiveMaximum": 2
           }
         }
       }
@@ -230,8 +230,8 @@
       "then": {
         "properties": {
           "dailyDelta": {
-            "minimum": 6,
-            "exclusiveMaximum": 12
+            "minimum": 2,
+            "exclusiveMaximum": 5
           }
         }
       }
@@ -247,7 +247,7 @@
       "then": {
         "properties": {
           "dailyDelta": {
-            "minimum": 12
+            "minimum": 5
           }
         }
       }

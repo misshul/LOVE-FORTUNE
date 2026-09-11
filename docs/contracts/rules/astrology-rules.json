@@ -3130,9 +3130,6 @@
   },
   "contractStatus": "FROZEN",
   "astrologyCatalogReadiness": "READY",
-  "scoreEngineReadiness": "BLOCKED_CATALOG",
-  "catalogBlockers": [
-    "SAJU_RULE_CATALOG_APPROVAL",
-    "DAILY_RULE_CATALOG_APPROVAL"
-  ]
+  "scoreEngineReadiness": "READY",
+  "catalogBlockers": []
 }

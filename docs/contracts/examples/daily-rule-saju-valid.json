@@ -1,0 +1,28 @@
+{
+  "ruleId": "DAILY_SAJU_STEM_COMBINATION",
+  "source": "SAJU",
+  "enabled": true,
+  "requiresBirthTime": false,
+  "contextOnly": false,
+  "version": "1.0.0",
+  "pairWeight": 1,
+  "sampleIdentity": "NOMINAL_LOCAL_SLOT",
+  "relationOwner": "STEM",
+  "relation": "COMBINATION",
+  "referenceId": "DAILY_SAJU_REFERENCE_V1",
+  "baseWeight": 0.9,
+  "ruleWeight": 1,
+  "weightSource": "STEM_COMBINATION",
+  "categoryMappings": [
+    {
+      "category": "HARMONY",
+      "signedValue": 0.6,
+      "direction": "POSITIVE"
+    },
+    {
+      "category": "ATTRACTION",
+      "signedValue": 0.3,
+      "direction": "POSITIVE"
+    }
+  ]
+}
