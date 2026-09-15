@@ -1,0 +1,212 @@
+{
+  "dataClassification": "APPROVED_PUBLIC_CALENDAR_REFERENCE",
+  "evidenceVersion": "PHASE3_2026-09-15_APPROVED",
+  "evidence": {
+    "NAOJ": "https://eco.mtk.nao.ac.jp/koyomi/topics/html/topics2023_1.html",
+    "LIU": "https://ytliu0.github.io/ChineseCalendar/sexagenary.html",
+    "USNO": "https://aa.usno.navy.mil/faq/JD_formula",
+    "HKO": "https://www.hko.gov.hk/sc/gts/time/stemsandbranches.htm"
+  },
+  "dates": [
+    {
+      "date": "1900-01-01",
+      "expectedJDN": 2415021,
+      "expectedCycleIndex": 10,
+      "expectedStem": "甲",
+      "expectedBranch": "戌",
+      "expectedGanzhi": "甲戌",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://www.calc-site.com/search_dates/1/1/1900"
+    },
+    {
+      "date": "1900-02-28",
+      "expectedJDN": 2415079,
+      "expectedCycleIndex": 8,
+      "expectedStem": "壬",
+      "expectedBranch": "申",
+      "expectedGanzhi": "壬申",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://reki.gozaaru.com/wareki/明治/33/2"
+    },
+    {
+      "date": "1900-03-01",
+      "expectedJDN": 2415080,
+      "expectedCycleIndex": 9,
+      "expectedStem": "癸",
+      "expectedBranch": "酉",
+      "expectedGanzhi": "癸酉",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://reki.gozaaru.com/wareki/明治/33/3"
+    },
+    {
+      "date": "1960-01-01",
+      "expectedJDN": 2436935,
+      "expectedCycleIndex": 24,
+      "expectedStem": "戊",
+      "expectedBranch": "子",
+      "expectedGanzhi": "戊子",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://www.calc-site.com/search_dates/1/1/1960"
+    },
+    {
+      "date": "1969-12-31",
+      "expectedJDN": 2440587,
+      "expectedCycleIndex": 16,
+      "expectedStem": "庚",
+      "expectedBranch": "辰",
+      "expectedGanzhi": "庚辰",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://www.calc-site.com/search_dates/12/31/1969"
+    },
+    {
+      "date": "1970-01-01",
+      "expectedJDN": 2440588,
+      "expectedCycleIndex": 17,
+      "expectedStem": "辛",
+      "expectedBranch": "巳",
+      "expectedGanzhi": "辛巳",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://www.calc-site.com/search_dates/1/1/1970"
+    },
+    {
+      "date": "1999-12-31",
+      "expectedJDN": 2451544,
+      "expectedCycleIndex": 53,
+      "expectedStem": "丁",
+      "expectedBranch": "巳",
+      "expectedGanzhi": "丁巳",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://www.calc-site.com/search_dates/12/31/1999"
+    },
+    {
+      "date": "2000-01-01",
+      "expectedJDN": 2451545,
+      "expectedCycleIndex": 54,
+      "expectedStem": "戊",
+      "expectedBranch": "午",
+      "expectedGanzhi": "戊午",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://www.calc-site.com/search_dates/1/1/2000"
+    },
+    {
+      "date": "2000-02-28",
+      "expectedJDN": 2451603,
+      "expectedCycleIndex": 52,
+      "expectedStem": "丙",
+      "expectedBranch": "辰",
+      "expectedGanzhi": "丙辰",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://www.rili.com.cn/wannianli/2000/0228.html"
+    },
+    {
+      "date": "2000-02-29",
+      "expectedJDN": 2451604,
+      "expectedCycleIndex": 53,
+      "expectedStem": "丁",
+      "expectedBranch": "巳",
+      "expectedGanzhi": "丁巳",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://www.calc-site.com/search_dates/2/29/2000"
+    },
+    {
+      "date": "2000-03-01",
+      "expectedJDN": 2451605,
+      "expectedCycleIndex": 54,
+      "expectedStem": "戊",
+      "expectedBranch": "午",
+      "expectedGanzhi": "戊午",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://www.rili.com.cn/wannianli/2000/0301.html"
+    },
+    {
+      "date": "2001-01-15",
+      "expectedJDN": 2451925,
+      "expectedCycleIndex": 14,
+      "expectedStem": "戊",
+      "expectedBranch": "寅",
+      "expectedGanzhi": "戊寅",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://www.calc-site.com/search_dates/1/15/2001"
+    },
+    {
+      "date": "2010-06-15",
+      "expectedJDN": 2455363,
+      "expectedCycleIndex": 32,
+      "expectedStem": "丙",
+      "expectedBranch": "申",
+      "expectedGanzhi": "丙申",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://watashino.net/y2010m6d15/"
+    },
+    {
+      "date": "2019-01-27",
+      "expectedJDN": 2458511,
+      "expectedCycleIndex": 0,
+      "expectedStem": "甲",
+      "expectedBranch": "子",
+      "expectedGanzhi": "甲子",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://www.calc-site.com/search_dates/1/27/2019"
+    },
+    {
+      "date": "2020-02-29",
+      "expectedJDN": 2458909,
+      "expectedCycleIndex": 38,
+      "expectedStem": "壬",
+      "expectedBranch": "寅",
+      "expectedGanzhi": "壬寅",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://www.calc-site.com/search_dates/2/29/2020"
+    },
+    {
+      "date": "2024-12-31",
+      "expectedJDN": 2460676,
+      "expectedCycleIndex": 5,
+      "expectedStem": "己",
+      "expectedBranch": "巳",
+      "expectedGanzhi": "己巳",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://www.calc-site.com/search_dates/12/31/2024"
+    },
+    {
+      "date": "2026-04-30",
+      "expectedJDN": 2461161,
+      "expectedCycleIndex": 10,
+      "expectedStem": "甲",
+      "expectedBranch": "戌",
+      "expectedGanzhi": "甲戌",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://www.calc-site.com/search_dates/4/30/2026"
+    },
+    {
+      "date": "2026-05-01",
+      "expectedJDN": 2461162,
+      "expectedCycleIndex": 11,
+      "expectedStem": "乙",
+      "expectedBranch": "亥",
+      "expectedGanzhi": "乙亥",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://www.calc-site.com/search_dates/5/1/2026"
+    },
+    {
+      "date": "2026-09-11",
+      "expectedJDN": 2461295,
+      "expectedCycleIndex": 24,
+      "expectedStem": "戊",
+      "expectedBranch": "子",
+      "expectedGanzhi": "戊子",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://www.calc-site.com/search_dates/9/11/2026"
+    },
+    {
+      "date": "2099-12-31",
+      "expectedJDN": 2488069,
+      "expectedCycleIndex": 38,
+      "expectedStem": "壬",
+      "expectedBranch": "寅",
+      "expectedGanzhi": "壬寅",
+      "evidenceId": "NAOJ",
+      "corroborationRef": "https://www.calc-site.com/search_dates/12/31/2099"
+    }
+  ]
+}

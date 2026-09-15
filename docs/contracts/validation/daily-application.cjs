@@ -1,6 +1,9 @@
 // Read-only complete repository application gate. Run from repository root.
 const fs=require('fs'),assert=require('assert/strict'),cp=require('child_process');
 const dir='docs/contracts/',read=p=>JSON.parse(fs.readFileSync(dir+p,'utf8'));
+// Explicitly skip only the historical docs-only worktree restriction when a
+// later authorized implementation gate owns scope validation. All tests still run.
+const contractsOnly=process.argv.includes('--contracts-only');
 const run=p=>JSON.parse(cp.execFileSync(process.execPath,[dir+'validation/'+p+'.cjs'],{encoding:'utf8',maxBuffer:8*1024*1024}));
 const results={structural:run('structural'),semantic:run('semantic-regression'),astrology:run('astrology'),saju:run('saju-guardrail-v2'),daily:run('daily')};
 for(const name of ['astrology','saju','daily']){
@@ -13,10 +16,10 @@ for(const name of ['astrology','saju']){
 }
 const protectedPaths=['wp-content','docker-compose.yml','compose.yaml','compose.yml','Dockerfile','.env.example'];
 const gitArgs=['-c','core.safecrlf=false','diff','--name-only','HEAD','--',...protectedPaths];
-assert.equal(cp.execFileSync('git',gitArgs,{encoding:'utf8'}).trim(),'','Production files changed');
+if(!contractsOnly)assert.equal(cp.execFileSync('git',gitArgs,{encoding:'utf8'}).trim(),'','Production files changed');
 const changed=cp.execFileSync('git',['-c','core.safecrlf=false','diff','--name-only','HEAD'],{encoding:'utf8'}).trim().split('\n').filter(Boolean);
 const untracked=cp.execFileSync('git',['ls-files','--others','--exclude-standard'],{encoding:'utf8'}).trim().split('\n').filter(Boolean);
-assert([...changed,...untracked].every(p=>p.startsWith('docs/')),'Outside documentation scope');
+if(!contractsOnly)assert([...changed,...untracked].every(p=>p.startsWith('docs/')),'Outside documentation scope');
 // The signed/public Feature schemas are intentionally unchanged.
 for(const p of ['schemas/feature.schema.json','schemas/signed-context.schema.json','schemas/signed-header.schema.json','openapi.yaml']){
   const old=cp.execFileSync('git',['show','HEAD:'+dir+p],{encoding:'utf8',maxBuffer:4*1024*1024});
@@ -27,4 +30,4 @@ for(const p of active){const t=fs.readFileSync(p,'utf8');assert(!/<=-12 VERY_LOW
 const runtime=fs.readFileSync(dir+'runtime-contract-v2.md','utf8');assert(runtime.includes('<=-5 VERY_LOW; (-5,-2] LOW; (-2,2) STABLE; [2,5) GOOD; >=5 VERY_GOOD'));
 const reg=fs.readFileSync(dir+'README.md','utf8');for(let i=1;i<=10;i++)assert(new RegExp('SC-'+String(i).padStart(2,'0')+' \\| RESOLVED').test(reg),'Unresolved SC-'+i);
 cp.execFileSync('git',['-c','core.safecrlf=false','diff','--check'],{encoding:'utf8'});
-console.log(JSON.stringify({result:'PASS',contractFreeze:'PASS',specConflict:0,activeCrossSpecContradictions:0,scoreEngineReadiness:'READY',dailyCatalog:'APPLIED / READY',catalogBlockers:[],productionEngineReadiness:'BLOCKED_EXTERNAL',externalBlockers:['SAJU_DAY_PILLAR_EPOCH','EPHEMERIS_PROVIDER'],productionFilesChanged:'NONE',gitDiffCheck:'PASS',results},null,2));
+console.log(JSON.stringify({result:'PASS',contractFreeze:'PASS',specConflict:0,activeCrossSpecContradictions:0,scoreEngineReadiness:'READY',dailyCatalog:'APPLIED / READY',catalogBlockers:[],productionEngineReadiness:'BLOCKED_EXTERNAL',externalBlockers:read('rules/daily-rules.json').externalBlockers,productionFilesChanged:contractsOnly?'SCOPE_CHECK_DELEGATED':'NONE',gitDiffCheck:'PASS',results},null,2));

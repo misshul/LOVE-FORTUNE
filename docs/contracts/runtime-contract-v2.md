@@ -118,3 +118,7 @@ Deterministic comparison excludes requestId,generatedAt,issuedAt,expiresAt,signe
 
 
 Current Daily authority: [Daily C21-R](daily-catalog-v1.md), superseding earlier Daily signal denominators/status boundaries. Structural eligibility is distinct from runtime unavailable and computed-no-event. STABILITY uses only Saju in its category source denominator; overall uses fixed .50/.50. Source internal signal uses fixed eligible category denominator. Confidence is unchanged. Daily SC-07: NOT_APPLIED_TO_DAILY_V1. Internal sample identity/candidate grouping uses sampleRef; public Feature and signed wire unchanged.
+
+## Applied Day Pillar Epoch v1
+
+[SAJU_DAY_PILLAR_EPOCH_V1](saju-day-pillar-epoch-v1.md) is the current epoch authority. Gregorian calculation-date JDN plus49 modulo60 is normative. Corrections and23:30 precede the date-only calculator. Public1900..2099 is unchanged; internal1899-12-30..2100-01-02 is separate. Natal retains local reference and upstream ambiguity resolution; Daily retains DAILY_SAJU_REFERENCE_V1 and four nominal slots. Unknown-time candidate confidence is unchanged. No public/signed field, score rule, persistence or logging change. External blocker: EPHEMERIS_PROVIDER only; full production remains BLOCKED_EXTERNAL.

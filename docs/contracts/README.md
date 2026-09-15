@@ -35,14 +35,15 @@ Astrology contains109 enabled pair-aspect rules with228 mappings; five generic a
 - [Rule catalogs](rules/): approved Astrology v1 rules and references; approved Saju and Daily C21-R catalogs.
 - [Schema example manifest](examples/manifest.json): synthetic valid/invalid cases.
 - [Canonicalization](examples/canonicalization-vectors.json), [LFIC signing](examples/signed-context-vectors.json), [arithmetic/period/DST](examples/arithmetic-period-dst-vectors.json), [HTTP/privacy](examples/http-privacy-vectors.json) vectors.
-- [Validation report](validation-report.md) and [current execution results](validation-results-saju-v1.json): actual checks and Freeze judgment.
+- [Validation report](validation-report.md) and [current execution results](validation-results-epoch-v1.json): actual checks and Freeze judgment.
 - [v3 arithmetic vectors](examples/arithmetic-v3-vectors.json): approved confidence, validity, Weekly, Action and trend boundaries.
 
 Example rules, versions, references and keys are synthetic documentation fixtures. They are not real-user data, production keys or engine Golden results. Never use the public fixture secrets in any environment. A structurally valid score fixture is not a computed engine result.
 
 ## External production gates
 
-- SAJU_DAY_PILLAR_EPOCH
+SAJU_DAY_PILLAR_EPOCH_V1 is APPLIED / READY: [contract](saju-day-pillar-epoch-v1.md). Remaining external blocker:
+
 - EPHEMERIS_PROVIDER
 
 Do not enable production engines before verification. These are BLOCKED_EXTERNAL, not SPEC_CONFLICT; they alone must not fail Contract Freeze. Astrology Catalog v1 is APPLIED; Astrology Catalog Readiness READY. Overall Score Engine catalog readiness is READY; catalog blockers NONE. Empty active catalogs are valid frozen contracts, not SPEC_CONFLICT. Contract Freeze: PASS; Production Engine Readiness: BLOCKED_EXTERNAL.

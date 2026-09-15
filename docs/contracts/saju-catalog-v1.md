@@ -37,4 +37,4 @@ Low ATTRACTION availability/strong single signal, sparse all-ages PASSION, Saju 
 
 No Hidden Stem, Xing/Harm/Po,12-stage, Shinsal, Wonjin, Yongshin/Heeshin/Gishin, Geokguk or Daewoon scoring.
 
-Freeze PASS; Saju APPLIED/READY; Astrology READY; overall Score Engine catalog readiness READY; catalog blockers NONE. Production BLOCKED_EXTERNAL: SAJU_DAY_PILLAR_EPOCH and EPHEMERIS_PROVIDER. Catalog readiness is not implementation readiness.
+Freeze PASS; Saju APPLIED/READY; Astrology READY; overall Score Engine catalog readiness READY; catalog blockers NONE. Production BLOCKED_EXTERNAL: EPHEMERIS_PROVIDER. SAJU_DAY_PILLAR_EPOCH_V1 is APPLIED / READY. Catalog readiness is not implementation readiness.

@@ -1,6 +1,6 @@
 # Contract and engine readiness
 
-Current authority: [Daily C21-R application](daily-v1-application-approval.md), [Daily contract](daily-catalog-v1.md).
+Current authority: [Epoch v1 application](saju-day-pillar-epoch-v1-application-approval.md), [epoch contract](saju-day-pillar-epoch-v1.md), [Daily C21-R application](daily-v1-application-approval.md), [Daily contract](daily-catalog-v1.md).
 
 | Gate | Current state |
 |---|---|
@@ -13,8 +13,10 @@ Current authority: [Daily C21-R application](daily-v1-application-approval.md), 
 | Score Engine catalog readiness | READY |
 | Remaining catalog blockers | NONE |
 | Production Engine readiness | BLOCKED_EXTERNAL |
-| External blockers | SAJU_DAY_PILLAR_EPOCH, EPHEMERIS_PROVIDER |
+| SAJU_DAY_PILLAR_EPOCH | RESOLVED |
+| SAJU_DAY_PILLAR_EPOCH_V1 | APPLIED / READY |
+| External blockers | EPHEMERIS_PROVIDER |
 
-READY denotes approved, validated scoring contracts/catalogs, not implemented PHP engines. The Daily approval component is closed by this repository application. External epoch/provider verification remains required before production calculation. Daily context/export/public category fields remain deferred and non-blocking.
+Catalog READY denotes approved, validated scoring contracts, not implemented score engines. Epoch READY additionally covers the production Day Pillar calculator and resolved-date adapters. Location/reference lookup, full natal unknown-time candidate generation, complete four-pillar and score/API engines are not certified here. Ephemeris remains the sole external blocker. Daily context/export/public category fields remain deferred and non-blocking.
 
-Run `node docs/contracts/validation/daily-application.cjs` for the application gate. See [validation report](validation-report.md) for evidence and the interrupted simulation's reproducibility limit. Historical reports/approvals preserve their original readiness statements as history; this register and current catalogs govern implementation.
+Run `node docs/contracts/validation/epoch-application.cjs` for the current application gate (production PHPUnit plus all existing contracts). See [validation report](validation-report.md) for evidence and the interrupted Daily simulation's reproducibility limit. Historical reports/approvals preserve their original readiness statements as history; this register and current catalogs govern implementation.

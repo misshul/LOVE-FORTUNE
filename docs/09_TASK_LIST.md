@@ -154,14 +154,14 @@ Normative contract: [Final Decision v2 SC-08](contracts/runtime-contract-v2.md#s
 
 # 8. T05 Calendar / Saju Foundation
 
-- [ ] Gregorian date range1900..2099
+- [x] Gregorian date validator1900..2099; public controller integration remains T14
 - [ ] leap month
 - [ ] solar terms
 - [ ] 12 Jie
-- [ ] Julian Day
-- [ ] sexagenary cycle
-- [ ] golden references (synthetic/licensed/approved only)
-- [ ] BLOCKED_EXTERNAL: verified Day Pillar epoch / epoch identifier
+- [x] Gregorian integer Julian Day (SAJU_DAY_PILLAR_EPOCH_V1)
+- [x] Day-pillar sexagenary cycle
+- [x] Day-pillar20 approved public golden references and full internal range
+- [x] RESOLVED: SAJU_DAY_PILLAR_EPOCH_V1 production calculator and date adapters; see contracts/saju-day-pillar-epoch-v1.md
 
 ---
 
@@ -615,16 +615,16 @@ Browser Storage 삭제 후 서버에서 profile 복구가 불가능해야 한다
 
 # 37. Freeze / Production Gates
 
-Apply Final Decision v3 and retained v2 decisions. Freeze requires SC-01..SC-10 resolved and successful Schema/OpenAPI/arithmetic/canonical/signing/period/DST/privacy checks; actual status is contracts/README.md. SAJU_DAY_PILLAR_EPOCH and EPHEMERIS_PROVIDER separately block production enablement, not Freeze by themselves. No code changes or commit/push in this task.
+Apply Final Decision v3 and retained v2 decisions. Freeze requires SC-01..SC-10 resolved and successful Schema/OpenAPI/arithmetic/canonical/signing/period/DST/privacy checks; actual status is contracts/README.md. Current external blocker EPHEMERIS_PROVIDER blocks production enablement, not Freeze. SAJU_DAY_PILLAR_EPOCH_V1 is APPLIED / READY. No code changes or commit/push in this task.
 
 ---
 
 
 ## Final v3 contract alignment
 
-[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (SAJU_DAY_PILLAR_EPOCH, EPHEMERIS_PROVIDER).
+[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER; epoch resolved by SAJU_DAY_PILLAR_EPOCH_V1).
 
 END OF DOCUMENT
 
 
-Current Daily authority: [Daily Catalog v1 C21-R](contracts/daily-catalog-v1.md). Daily134/285 APPLIED/READY; S2 thresholds +/-2 / +/-5; M1-ELIGIBILITY-AWARE signal aggregation. SC-07 applies to Lifetime only. Score Engine catalog readiness READY; catalog blockers NONE; Production BLOCKED_EXTERNAL (SAJU_DAY_PILLAR_EPOCH, EPHEMERIS_PROVIDER). Public/signed wire and privacy remain unchanged.
+Current Daily authority: [Daily Catalog v1 C21-R](contracts/daily-catalog-v1.md). Daily134/285 APPLIED/READY; S2 thresholds +/-2 / +/-5; M1-ELIGIBILITY-AWARE signal aggregation. SC-07 applies to Lifetime only. Score Engine catalog readiness READY; catalog blockers NONE; Production BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER; epoch resolved by SAJU_DAY_PILLAR_EPOCH_V1). Public/signed wire and privacy remain unchanged.

@@ -1,3 +1,5 @@
+> Epoch status update: historical unresolved epoch statements are superseded by [SAJU_DAY_PILLAR_EPOCH_V1](saju-day-pillar-epoch-v1.md). Current readiness is in [readiness.md](readiness.md).
+
 <!-- Historical approval: Daily status/signal availability and readiness statements are superseded by daily-catalog-v1.md (C21-R). Lifetime, security and other unaffected approvals remain authoritative. -->
 > Historical decision record. Current Saju catalog and SC-07 guardrail are superseded by [Saju v1](saju-catalog-v1.md) and [Guardrail v2](guardrail-v2.md). Unrelated decisions remain active.
 

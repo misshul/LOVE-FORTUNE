@@ -4526,7 +4526,6 @@
   "catalogBlockers": [],
   "productionEngineReadiness": "BLOCKED_EXTERNAL",
   "externalBlockers": [
-    "SAJU_DAY_PILLAR_EPOCH",
     "EPHEMERIS_PROVIDER"
   ],
   "structuralEligibility": {

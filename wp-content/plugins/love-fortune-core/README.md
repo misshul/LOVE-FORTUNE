@@ -27,12 +27,19 @@ WordPress 초기 설치 후 `http://localhost:8080/wp-admin/plugins.php`에서
 
 `config/bootstrap.php`는 신뢰된 PHP 코드이며 사용자 입력으로 파일을 선택하거나 수정하지 않습니다.
 등록 객체는 각 loader/interface 계약을 따라 명시적으로 구성합니다.
-현재 등록 목록은 모두 비어 있습니다. 실제 엔진이나 버전 값을 임의로 등록하지 않습니다.
+`saju.day_pillar`와 `saju.day_pillar_service`가 등록되어 있으며 버전은 승인된 `SAJU_DAY_PILLAR_EPOCH_V1`입니다. Route/Admin/migration 등록은 비어 있습니다.
 플러그인 버전은 진입점 헤더에만 정의하며 서비스/계산 버전과 구분합니다.
 
 T02는 실제 버전 종류·설정·활성화 정책, T03은 실제 schema/migration,
 T14는 REST endpoint·오류 응답 계약, T23은 Admin 기능을 담당합니다.
-현재 API, Admin 메뉴, 계산, AI, 개인정보 저장, 외부 호출은 없습니다.
+현재 API, Admin 메뉴, AI, 개인정보 저장, 외부 호출은 없습니다. 일진 계산과 날짜 보정 adapter만 구현되어 있으며 전체 Saju/Score Engine은 후속 작업입니다.
+
+`src/Engine/Saju`는 Gregorian 정수 JDN, date-only 일진 계산, 보정/23:30 경계,
+Daily gap/fold 표본 해석과 Natal/Daily orchestration을 포함합니다.
+Natal은 location reference 및 ambiguity resolution이 완료된 local datetime을 받습니다.
+Unknown-time은 앞단의 calculation-date 후보를 보존합니다.
+자세한 입력 경계, 증거 및 제약은 [epoch 계약](../../../docs/contracts/saju-day-pillar-epoch-v1.md)을 참고하세요.
+`tests/fixtures/day-pillar-golden.json`은 승인된 공개 달력20개 날짜이며 일반 사용자 정보가 아닙니다.
 
 `src/Api`, `src/Application`, `src/Domain`, `src/Admin`, `src/Privacy`는
 후속 구현 경계를 표시하는 빈 폴더이며 `.gitkeep`으로 Git에서 유지합니다.
@@ -66,6 +73,9 @@ PHPUnit은 BSD-3-Clause 라이선스의 개발용 의존성이며 PHP 8.3과 호
 버전을 올릴 때 `scripts/test.ps1`의 버전과 공식 SHA256을 함께 검증·갱신하세요.
 
 `tests/Unit/BootstrapTest.php`는 WordPress 함수의 테스트 대역을 사용하며 실제 DB를 변경하지 않습니다.
+`tests/Unit/DayPillarTest.php`는 실제 production calculator와 adapter를 검증합니다.
+전체73053일과 독립 누적일수, Golden, 윤년, modulo, invalid/public/internal 범위,
+23:30/historical offset/Natal reference/Daily DST/unknown-time 후보를 검사합니다.
 테스트용 임시 파일은 OS 임시 폴더에 생성 후 제거합니다. 테스트 PHP의 HTTP 직접 호출은 404로 종료합니다.
 
 실제 WordPress 통합 검증은 다음과 같습니다. **첫 명령은 비활성화·활성화 후 활성 상태로 남깁니다.**

@@ -1,5 +1,11 @@
 # Contract validation
 
+## Current epoch implementation gate
+
+Run `node docs/contracts/validation/epoch-application.cjs` from the repository root with Docker Desktop and the existing WordPress container running. This executes all five existing contract validators and `scripts/test.ps1` (PHP lint and PHPUnit), then checks authorized file scope, unchanged catalogs/public wire, fixed Golden values, privacy-sensitive operations and current readiness. It prints JSON without rewriting reports. First PHPUnit setup uses the existing pinned/hash-verified tool script.
+
+`daily-application.cjs --contracts-only` retains all contract regressions while delegating the previous docs-only worktree scope check to this new application gate. Default mode retains the original restriction. Daily scoring simulations are still synthetic and are not replaced with the production epoch.
+
 Run from the repository root with Node.js. These are documentation validators, not production engine implementations.
 
 ```powershell

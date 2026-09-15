@@ -427,7 +427,7 @@ Core returns overall/category canonical scores and statuses, coverage, resultCon
 
 # 41. Version
 
-This document update does not overwrite a released scoreVersion. Approved v3/v2 decisions and normalized catalogs are versioned separately. Astrology109 rules are APPLIED/READY. Overall Score Engine catalog readiness is READY; catalog blockers NONE. Freeze status and two independent external engine gates are in contracts/README.md.
+This document update does not overwrite a released scoreVersion. Approved v3/v2 decisions and normalized catalogs are versioned separately. Astrology109 rules are APPLIED/READY. Overall Score Engine catalog readiness is READY; catalog blockers NONE. Freeze status and the remaining external ephemeris gate are in contracts/README.md.
 
 ---
 
@@ -466,4 +466,4 @@ END OF DOCUMENT
 Current authority: [Saju v1](contracts/saju-catalog-v1.md), [Guardrail v2](contracts/guardrail-v2.md), [ContextEvidence](contracts/context-evidence.md). These supersede historical Saju scoring placeholders, unit-sign restrictions and guardrail search. Saju14 families:9 scoring/5 context, APPLIED/READY. Daily C21-R is APPLIED/READY; catalog blockers NONE. Other privacy/API/time contracts are unchanged.
 
 
-Current Daily authority: [Daily Catalog v1 C21-R](contracts/daily-catalog-v1.md). Daily134/285 APPLIED/READY; S2 thresholds +/-2 / +/-5; M1-ELIGIBILITY-AWARE signal aggregation. SC-07 applies to Lifetime only. Score Engine catalog readiness READY; catalog blockers NONE; Production BLOCKED_EXTERNAL (SAJU_DAY_PILLAR_EPOCH, EPHEMERIS_PROVIDER). Public/signed wire and privacy remain unchanged.
+Current Daily authority: [Daily Catalog v1 C21-R](contracts/daily-catalog-v1.md). Daily134/285 APPLIED/READY; S2 thresholds +/-2 / +/-5; M1-ELIGIBILITY-AWARE signal aggregation. SC-07 applies to Lifetime only. Score Engine catalog readiness READY; catalog blockers NONE; Production BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER; epoch resolved by SAJU_DAY_PILLAR_EPOCH_V1). Public/signed wire and privacy remain unchanged.

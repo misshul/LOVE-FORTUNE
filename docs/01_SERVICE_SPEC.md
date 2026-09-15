@@ -294,7 +294,7 @@ Notifications mean non-personal Service Notices. Personal Push, Web Push subscri
 
 # 22. Implementation Gate / Versions
 
-Final Decision v3 supersedes v2/v1 where changed. Contract Freeze requires zero unresolved conflicts and successful contract tests. Separately, SAJU_DAY_PILLAR_EPOCH and EPHEMERIS_PROVIDER block production engines until verified; these two external dependencies alone do not fail Freeze. No guessed rules or code changes. See contracts/README.md for actual status.
+Final Decision v3 supersedes v2/v1 where changed. Contract Freeze requires zero unresolved conflicts and successful contract tests. Separately, EPHEMERIS_PROVIDER blocks production engines until verified; SAJU_DAY_PILLAR_EPOCH_V1 is APPLIED / READY. External dependencies alone do not fail Freeze. No guessed rules or code changes. See contracts/README.md for actual status.
 
 ---
 
@@ -338,6 +338,6 @@ Optional AI Interpretation
 
 ## Final v3 contract alignment
 
-[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (SAJU_DAY_PILLAR_EPOCH, EPHEMERIS_PROVIDER).
+[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER; epoch resolved by SAJU_DAY_PILLAR_EPOCH_V1).
 
 END OF DOCUMENT

@@ -45,7 +45,8 @@ final class BootstrapTest extends \PHPUnit\Framework\TestCase
             ($GLOBALS['hooks'][$hook][0])();
         }
         check($before === $GLOBALS['writes'], 'Empty bootstrap must not write options.');
-        check($plugin->versions->all() === [], 'No invented engine versions.');
+        check($plugin->versions->all() === ['saju.day_pillar' => 'SAJU_DAY_PILLAR_EPOCH_V1'], 'Approved epoch version.');
+        check($plugin->engines->get('saju.day_pillar')->calculate('2019-01-27')['ganzhi'] === '甲子', 'Registered production calculator.');
         check(!$plugin->engines->has('saju'), 'No fake engine.');
     }
 

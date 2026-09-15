@@ -1,4 +1,48 @@
-# DAILY CATALOG V1 REPOSITORY APPLICATION REPORT
+# SAJU DAY PILLAR EPOCH V1 APPLICATION AND IMPLEMENTATION
+
+Current result: PASS. SAJU_DAY_PILLAR_EPOCH_V1 APPLIED / READY; SAJU_DAY_PILLAR_EPOCH RESOLVED. Sole external blocker: EPHEMERIS_PROVIDER. Production Engine readiness remains BLOCKED_EXTERNAL. Authority: [application approval](saju-day-pillar-epoch-v1-application-approval.md), [contract](saju-day-pillar-epoch-v1.md). Historical Daily report below retains its original scope/results; its old epoch gate is superseded.
+
+## Current execution evidence
+
+Command: `node docs/contracts/validation/epoch-application.cjs`. Exit0. Runs all existing contract validators, PHP lint and actual PHPUnit through the existing pinned test script. Saved actual output: [validation-results-epoch-v1.json](validation-results-epoch-v1.json). Runtime PHP8.3.33,64-bit, PHP timezone data2026.1; Node24.21.0 timezone data2026c. Different runtime timezone releases are recorded, not silently claimed identical. Deployments must pin the applicable timezone release.
+
+| Check | Actual result |
+|---|---|
+| PHP lint / PHPUnit | PASS;15 tests,1,216,008 assertions |
+| Actual WordPress smoke | PASS; active plugin discovered/rendered, no table/option changes, no business REST routes |
+| Golden absolute dates / anchor | 20/20;2019-01-27 JDN2458511/index0/甲子 |
+| Internal range | 73,053 dates; independent cumulative ordinal comparison PASS |
+| Adjacent /60-day pairs | 73,052 /72,993 PASS |
+| Leap / modulo | 1900 and2100 non-leap;2000 leap; -10000..10000 PASS |
+| Production date adapters |23:29/30/31, historical offset, natal local reference, Daily gap/fold/skipped date PASS |
+| Unknown time | Supplied calculation-date candidate order/multiplicity retained; no fabricated time |
+| Public range | Validator and Daily entry reject outside1900..2099; internal boundaries accepted |
+| Lifetime Saju |14 families:9 scoring/5 context; existing population regression PASS |
+| Daily |134 rules/285 mappings;256,000 synthetic cases; hard failures0 |
+| Lifetime Astrology |109 rules/228 mappings; exact approved matrix PASS |
+| SC-07 v2 |Lifetime only; impact violations0/exclusions0; Daily unchanged |
+| Schemas / examples |29 schemas;203 examples:113 valid accepted/90 invalid rejected |
+| OpenAPI |PASS;20 operations; public/signed wire unchanged |
+| Arithmetic/period/DST |80 vectors including4 DST PASS |
+| Canonical / signed context |6 canonical;2 valid and8 invalid signed PASS |
+| HTTP/privacy |19 existing vectors PASS; new PHP has no persistence/cache/network/logging |
+| Contract Freeze / SPEC_CONFLICT |PASS /0 |
+| Effective cross-spec contradictions |0; active epoch gates updated; historical records retain context |
+| git diff --check |PASS |
+
+## Implementation review and limits
+
+Production adds GregorianDayNumber, DayPillarCalculator, CalculationDateResolver, DailySampleResolver and SajuDayPillarService under src/Engine/Saju, plus explicit bootstrap registrations. Domain logic has no WordPress dependency. Formula uses integer arithmetic and floorMod; strict date validation rejects normalization; immutable inputs are not mutated. Wall-clock correction/boundary is separate and applied once. Historical offset seconds are preserved. No overflow in JDN arithmetic; full timezone coverage is tested on64-bit PHP. No new public API field, frontend, DB schema, Docker or WordPress UI change.
+
+Natal integration starts after location/reference and gap/fold resolution. Unknown-time candidate generation remains upstream. API range tests exercise the real internal validator/entry, not an unimplemented HTTP controller. This is not certification of the complete four-pillar/score/API engines or deployed infrastructure capture settings. The previous synthetic Daily population remains unchanged and is not mixed with real epoch results.
+
+Initial PHPUnit run found one incorrect newly-authored Natal integration probe: New York23:29 plus the approved34-minute adjustment is already next date. The same-date contrast input was corrected to22:55 (+34=23:29). Production formula and all20 approved Golden expected values were untouched. Final suite passed.
+
+No commit/push. Current application file list is reported with the final Git status; the list below belongs only to the historical Daily application.
+
+---
+
+# Historical: DAILY CATALOG V1 REPOSITORY APPLICATION REPORT
 
 Status: PASS. Authority: [C21-R application approval](daily-v1-application-approval.md).
 Scope: documentation, catalogs, schemas, examples and documentation validators only. No PHP/WordPress/Frontend/DB/Docker implementation, commit or push.

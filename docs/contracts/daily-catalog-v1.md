@@ -34,7 +34,7 @@ Daily stem vs natal DAY stem: COMBINATION > SAME > GENERATION/CONTROL. Daily bra
 
 Saju ruleWeight=pairWeight=1; requiresBirthTime=false. Candidate uncertainty still applies.
 
-DAILY_SAJU_REFERENCE_V1 is Asia/Seoul, longitude 127.5E, not the user's current location. UI date stays in targetTimezone. Resolve nominal targetTimezone sample through DST to an actual instant; convert to reference local civil datetime; apply (540-historical_utc_offset_minutes)+round((longitude-127.5)*4) minutes once; then evaluate the 23:30 day boundary. Use the reference zone's historical offset at that instant. Day-pillar epoch remains an external verification gate. Same pillar/evaluation inputs may reuse request-local results; four logical sample slots remain distinct, without fourfold weight/confidence accumulation.
+DAILY_SAJU_REFERENCE_V1 is Asia/Seoul, longitude 127.5E, not the user's current location. UI date stays in targetTimezone. Resolve nominal targetTimezone sample through DST to an actual instant; convert to reference local civil datetime; apply (540-historical_utc_offset_minutes)+round((longitude-127.5)*4) minutes once; then evaluate the 23:30 day boundary. Use the reference zone's historical offset at that instant. Day-pillar epoch is resolved by the approved saju-day-pillar-epoch-v1.md contract and production calculator. Same pillar/evaluation inputs may reuse request-local results; four logical sample slots remain distinct, without fourfold weight/confidence accumulation.
 
 ## Person and sample pipeline
 
@@ -94,4 +94,4 @@ Birth logs, URL Birth data, derived user caches, Daily history DB, stable anonym
 
 ## Gates
 
-Daily APPLIED/READY is a catalog contract, not an implemented engine. [Readiness](readiness.md) distinguishes Score Engine catalog readiness from Production BLOCKED_EXTERNAL (SAJU_DAY_PILLAR_EPOCH, EPHEMERIS_PROVIDER). Validation commands and reproducibility limits are in [validation report](validation-report.md).
+Daily APPLIED/READY is a catalog contract, not an implemented engine. [Readiness](readiness.md) distinguishes Score Engine catalog readiness from Production BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER; epoch resolved by SAJU_DAY_PILLAR_EPOCH_V1). Validation commands and reproducibility limits are in [validation report](validation-report.md).

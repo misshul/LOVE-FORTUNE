@@ -2,7 +2,8 @@
 
 이번 구성은 `LF-BOOT-001`(T00 중 Docker 로컬 환경)에 해당합니다.
 WordPress, PHP 8.3/Apache, MySQL 8.4를 실행합니다. T01 플러그인 부트스트랩 코드가 포함되어 있으며 Composer, CI는 후속 작업입니다.
-일반 사용자 Birth Data 테이블, 계산 엔진, LOVE SCORE, REST 비즈니스 로직, AI, 사용자 UI, Admin 기능은 구현하지 않습니다.
+승인된 SAJU_DAY_PILLAR_EPOCH_V1 일진 계산기와 날짜 adapter가 추가되었습니다.
+일반 사용자 Birth Data 테이블, 전체 Saju/Score Engine, REST 비즈니스 로직, AI, 사용자 UI, Admin 기능은 후속 범위입니다.
 
 ## 준비
 
