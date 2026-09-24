@@ -88,102 +88,122 @@
     {
       "file": "core-insufficient-valid.json",
       "schema": "../schemas/compatibility-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "core-insufficient-invalid.json",
       "schema": "../schemas/compatibility-response.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "reject-core-interpretation.json",
       "schema": "../schemas/compatibility-response.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "core-boundary-0.json",
       "schema": "../schemas/compatibility-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "core-boundary-44_9999.json",
       "schema": "../schemas/compatibility-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "core-boundary-45.json",
       "schema": "../schemas/compatibility-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "core-boundary-59_9999.json",
       "schema": "../schemas/compatibility-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "core-boundary-60.json",
       "schema": "../schemas/compatibility-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "core-boundary-74_9999.json",
       "schema": "../schemas/compatibility-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "core-boundary-75.json",
       "schema": "../schemas/compatibility-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "core-wrong-status.json",
       "schema": "../schemas/compatibility-response.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "core-boundary-84_9999.json",
       "schema": "../schemas/compatibility-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "core-boundary-85.json",
       "schema": "../schemas/compatibility-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "core-boundary-100.json",
       "schema": "../schemas/compatibility-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "daily-fallback-valid.json",
       "schema": "../schemas/daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "daily-fallback-delta-invalid.json",
       "schema": "../schemas/daily-response.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "range-response-valid.json",
       "schema": "../schemas/daily-range-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "interpretation-fallback-valid.json",
       "schema": "../schemas/interpretation-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "interpretation-numeric-invalid.json",
       "schema": "../schemas/interpretation-response.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "interpretation-empty-evidence-invalid.json",
       "schema": "../schemas/interpretation-response.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "interpretation-request-valid.json",
@@ -203,52 +223,62 @@
     {
       "file": "feature-valid.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "feature-private-metadata-invalid.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "feature-tracking-field-invalid.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "context-payload-valid.json",
       "schema": "../schemas/signed-context.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "context-birth-invalid.json",
       "schema": "../schemas/signed-context.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "weekly-response-valid.json",
       "schema": "../schemas/period-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "monthly-response-valid.json",
       "schema": "../schemas/period-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "yearly-response-valid.json",
       "schema": "../schemas/period-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "interpretation-evidence-valid.json",
       "schema": "../schemas/interpretation-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "core-excess-precision-invalid.json",
       "schema": "../schemas/compatibility-response.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "timezone-required-invalid.json",
@@ -298,73 +328,87 @@
     {
       "file": "delta-neg18.json",
       "schema": "../schemas/daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "delta-neg12.json",
       "schema": "../schemas/daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "delta-neg11_9999.json",
       "schema": "../schemas/daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "delta-neg6.json",
       "schema": "../schemas/daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "delta-neg5_9999.json",
       "schema": "../schemas/daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "delta-0.json",
       "schema": "../schemas/daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "delta-5_9999.json",
       "schema": "../schemas/daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "delta-6.json",
       "schema": "../schemas/daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "delta-11_9999.json",
       "schema": "../schemas/daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "delta-12.json",
       "schema": "../schemas/daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "delta-18.json",
       "schema": "../schemas/daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "delta-wrong-status.json",
       "schema": "../schemas/daily-response.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "daily-lifetime-null.json",
       "schema": "../schemas/daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "feature-candidates-valid.json",
       "schema": "../schemas/feature.schema.json",
       "valid": true,
-      "note": "User-approved candidates allowlist clarification"
+      "note": "User-approved candidates allowlist clarification",
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "disabled-rule-valid.json",
@@ -419,12 +463,14 @@
     {
       "file": "feature-object-raw-invalid.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "feature-candidate-object-invalid.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "celebrity-calculation-valid.json",
@@ -439,87 +485,104 @@
     {
       "file": "admin-version-mutation-valid.json",
       "schema": "../schemas/admin.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "admin-version-code-invalid.json",
       "schema": "../schemas/admin.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "admin-celebrity-valid.json",
       "schema": "../schemas/admin.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "admin-fixture-test-valid.json",
       "schema": "../schemas/admin.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "v3-zero-confidence-coverage-valid.json",
       "schema": "../schemas/compatibility-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "v3-coverage-overflow-invalid.json",
       "schema": "../schemas/compatibility-response.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "v3-trend-null.json",
       "schema": "../schemas/period-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "v3-trend-null-invalid.json",
       "schema": "../schemas/period-response.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "v3-trend--8.json",
       "schema": "../schemas/period-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "v3-trend--3.json",
       "schema": "../schemas/period-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "v3-trend--2.99999.json",
       "schema": "../schemas/period-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "v3-trend-0.json",
       "schema": "../schemas/period-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "v3-trend-2.99999.json",
       "schema": "../schemas/period-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "v3-trend-3.json",
       "schema": "../schemas/period-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "v3-trend-3-invalid.json",
       "schema": "../schemas/period-response.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "v3-trend-8.json",
       "schema": "../schemas/period-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "v3-period-delta-missing-invalid.json",
       "schema": "../schemas/period-response.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "astro-v1-astro_sun_moon_trine.json",
@@ -634,27 +697,32 @@
     {
       "file": "astro-v1-closeness-boundary-valid.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "astro-v1-closeness-exact-valid.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "astro-v1-closeness--0.01-invalid.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "astro-v1-closeness-1.01-invalid.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "astro-v1-closeness-null-invalid.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "saju-v1-day_master_relation.json",
@@ -779,147 +847,176 @@
     {
       "file": "saju-v1-invalid-context-as-feature.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "saju-v1-feature-SAME.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "saju-v1-feature-BSAME.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "saju-v1-feature-BGENERATION.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "saju-v1-feature-BCONTROL.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "saju-v1-feature-COMB.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "saju-v1-feature-LIUHE.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "saju-v1-feature-CLASH.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "saju-v1-feature-EC1.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "saju-v1-feature-EC2.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "saju-v1-feature-EC3.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "saju-v1-feature-GENERATION.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "saju-v1-feature-CONTROL.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "saju-v1-feature-YY0.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "saju-v1-feature-YY1.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "saju-v1-feature-YY2.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "saju-v1-feature-YY3.json",
       "schema": "../schemas/feature.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "daily-s2--5.0001.json",
       "schema": "daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "daily-s2--5.json",
       "schema": "daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "daily-s2--4.9999.json",
       "schema": "daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "daily-s2--2.0001.json",
       "schema": "daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "daily-s2--2.json",
       "schema": "daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "daily-s2--1.9999.json",
       "schema": "daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "daily-s2-1.9999.json",
       "schema": "daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "daily-s2-2.json",
       "schema": "daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "daily-s2-2.0001.json",
       "schema": "daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "daily-s2-4.9999.json",
       "schema": "daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "daily-s2-5.json",
       "schema": "daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "daily-s2-5.0001.json",
       "schema": "daily-response.schema.json",
-      "valid": true
+      "valid": true,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "daily-rule-astro-valid.json",
@@ -1004,7 +1101,8 @@
     {
       "file": "daily-evidence-public-wire-invalid.json",
       "schema": "feature.schema.json",
-      "valid": false
+      "valid": false,
+      "contractScope": "ADVANCED_LEGACY"
     },
     {
       "file": "daily-evidence-candidate-object-invalid.json",

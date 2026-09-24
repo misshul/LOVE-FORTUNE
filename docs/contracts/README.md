@@ -1,11 +1,13 @@
-# LOVE FORTUNE Contract Freeze v3
+# LOVE FORTUNE Contract Freeze - Zodiac V1
 
-Version: 3.1.0
+Version: 4.0.0
 Status: CONTRACT FROZEN
+
+Current authority: [Zodiac V1](zodiac-catalog-v1.md). Active SAJU/ZODIAC, Saju-only Daily; Astrology is ADVANCED / DEFERRED. Current state is [readiness](readiness.md).
 
 Current Saju/Guardrail authority: [Saju v1](saju-catalog-v1.md), [Guardrail v2](guardrail-v2.md), [ContextEvidence](context-evidence.md), [approval](saju-v1-application-approval.md).
 
-Astrology authority: [Applied Catalog v1](astrology-catalog-v1.md), [mapping approval](astrology-v1-mapping-approval.md), [application approval](astrology-v1-application-approval.md).
+Advanced Astrology authority: [Applied Catalog v1](astrology-catalog-v1.md), [mapping approval](astrology-v1-mapping-approval.md), [application approval](astrology-v1-application-approval.md).
 
 Authority: [Final Decision v3](final-decision-v3.md), then [Final Decision v2](final-decision-v2.md), superseding [v1](freeze-decision-v1.md) where changed. Explicit user clarifications are recorded in [clarification-v2.md](clarification-v2.md). Do not confuse external production dependencies with unresolved specification decisions.
 
@@ -13,10 +15,10 @@ Authority: [Final Decision v3](final-decision-v3.md), then [Final Decision v2](f
 
 | ID | Status | Applied decisions / remaining boundary |
 |---|---|---|
-| SC-01 | RESOLVED | Eligible/available/usable evidence, retained structural coverage, four-sample source confidence. |
-| SC-02 | RESOLVED | Astrology109 APPLIED/READY; Saju14 families (9 scoring/5 context) APPLIED/READY; Daily134/285 APPLIED/READY. Catalog blockers NONE. |
-| SC-03 | RESOLVED | Outer definition, product0.50 cap,15% aggregate cap. |
-| SC-04 | RESOLVED | PAIR/scalar/period/canonical identity; approved metadata.candidates scalar array and active-only orbCloseness[0,1]. |
+| SC-01 | RESOLVED | Computable-category pre-confidence; wire=coverage*pre. M2 only source/category blend; Lifetime COMMUNICATION excluded. |
+| SC-02 | RESOLVED | V1 Saju9 scoring/5 context, Zodiac20 mappings, Daily Saju9/19. Advanced catalogs preserved. Catalog blockers NONE. |
+| SC-03 | RESOLVED | Outer caps preserved for Advanced only; Zodiac NO_SC07. |
+| SC-04 | RESOLVED | PAIR/scalar/period/canonical identity; SAJU candidates scalar array; Zodiac canonical pair/version metadata. Planetary fields Advanced-only. |
 | SC-05 | RESOLVED | Samples06/12/18/23, mean/peak, missing samples, earlier UTC instant and gaps. |
 | SC-06 | RESOLVED | Valid-day exclusion, Weekly arithmetic mean, lifetime bands, full-precision periodDelta, trendStatus/trendDirection. |
 | SC-07 | RESOLVED | Weighted referenced Feature.confidence; Action adjustment0; SC-07 v2 fixed-W0 direct20-point marginal cap; legacy search deprecated. |
@@ -24,7 +26,7 @@ Authority: [Final Decision v3](final-decision-v3.md), then [Final Decision v2](f
 | SC-09 | RESOLVED | LFIC signing bytes/kid/binding/TTL/errors, retry/repair budget,200 fallback/503 contract. |
 | SC-10 | RESOLVED | Exact byte/media/encoding/rate/header/log/retention/backup rules. |
 
-Astrology contains109 enabled pair-aspect rules with228 mappings; five generic aspects are reference definitions. Saju contains14 families:9 enabled scoring,5 context-only; historical weights retained. Daily contains134 approved rules/285 mappings under C21-R. No interpretations were invented. A disabled inventory is not an implemented or usable fortune engine.
+Advanced Astrology contains109 enabled pair-aspect rules with228 mappings; five generic aspects are reference definitions. Saju contains14 families:9 enabled scoring,5 context-only; historical weights retained. Daily contains134 approved rules/285 mappings under C21-R. No interpretations were invented. A disabled inventory is not an implemented or usable fortune engine.
 
 ## Artifacts
 
@@ -32,21 +34,18 @@ Astrology contains109 enabled pair-aspect rules with228 mappings; five generic a
 - [API details](api-details-v2.md): endpoint/DTO/capability normalization.
 - [OpenAPI](openapi.yaml):6 principal Core POSTs,1 existing celebrity calculation,1 Interpretation POST,5 public reference GETs and Admin operations.
 - [Schemas](schemas/): JSON Schema2020-12. Structural validity is distinct from semantic validity.
-- [Rule catalogs](rules/): approved Astrology v1 rules and references; approved Saju and Daily C21-R catalogs.
+- [Rule catalogs](rules/): Zodiac authoritative reference/mappings, retained Saju and Advanced catalogs. [Product scope](product-scope.json) is mandatory for activation.
+- [Zodiac V1 examples](examples/zodiac/manifest.json), [Zodiac validation](validation/zodiac.cjs), [active schema/signing verification](validation/zodiac-api.cjs).
 - [Schema example manifest](examples/manifest.json): synthetic valid/invalid cases.
 - [Canonicalization](examples/canonicalization-vectors.json), [LFIC signing](examples/signed-context-vectors.json), [arithmetic/period/DST](examples/arithmetic-period-dst-vectors.json), [HTTP/privacy](examples/http-privacy-vectors.json) vectors.
-- [Validation report](validation-report.md) and [current execution results](validation-results-epoch-v1.json): actual checks and Freeze judgment.
+- [Validation report](validation-report.md) and [historical epoch execution results](validation-results-epoch-v1.json): actual checks and Freeze judgment.
 - [v3 arithmetic vectors](examples/arithmetic-v3-vectors.json): approved confidence, validity, Weekly, Action and trend boundaries.
 
 Example rules, versions, references and keys are synthetic documentation fixtures. They are not real-user data, production keys or engine Golden results. Never use the public fixture secrets in any environment. A structurally valid score fixture is not a computed engine result.
 
-## External production gates
+## Readiness by product scope
 
-SAJU_DAY_PILLAR_EPOCH_V1 is APPLIED / READY: [contract](saju-day-pillar-epoch-v1.md). Remaining external blocker:
-
-- EPHEMERIS_PROVIDER
-
-Do not enable production engines before verification. These are BLOCKED_EXTERNAL, not SPEC_CONFLICT; they alone must not fail Contract Freeze. Astrology Catalog v1 is APPLIED; Astrology Catalog Readiness READY. Overall Score Engine catalog readiness is READY; catalog blockers NONE. Empty active catalogs are valid frozen contracts, not SPEC_CONFLICT. Contract Freeze: PASS; Production Engine Readiness: BLOCKED_EXTERNAL.
+V1_EXTERNAL_BLOCKERS=NONE. SAJU_DAY_PILLAR_EPOCH_V1 is APPLIED / READY. EPHEMERIS_PROVIDER is NOT_REQUIRED_FOR_V1 and DEFERRED_ADVANCED_BLOCKER. Zodiac date/pair/scoring is implemented; full Four Pillars, Score Engine and REST orchestration remain incomplete. Catalog readiness READY does not imply Production READY. See [readiness](readiness.md).
 
 ## Privacy and verification limits
 

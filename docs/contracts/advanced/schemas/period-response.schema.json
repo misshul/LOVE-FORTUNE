@@ -1,0 +1,1376 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/advanced/schemas/period-response.schema.json",
+  "title": "LOVE FORTUNE period-response v2",
+  "description": "ADVANCED / DEFERRED. Preserved pre-Zodiac contract; never selected by V1 OpenAPI.",
+  "oneOf": [
+    {
+      "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/period-response.schema.json#/$defs/Weekly"
+    },
+    {
+      "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/period-response.schema.json#/$defs/Monthly"
+    },
+    {
+      "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/period-response.schema.json#/$defs/Yearly"
+    }
+  ],
+  "$defs": {
+    "Weekly": {
+      "type": "object",
+      "properties": {
+        "meta": {
+          "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/common.schema.json#/$defs/meta"
+        },
+        "period": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "WEEK"
+            },
+            "startDate": {
+              "type": "string",
+              "format": "date",
+              "pattern": "^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$"
+            },
+            "endDate": {
+              "type": "string",
+              "format": "date",
+              "pattern": "^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$"
+            },
+            "timezone": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Required semantic IANA tzdb validation; no implicit default."
+            }
+          },
+          "required": [
+            "type",
+            "startDate",
+            "endDate",
+            "timezone"
+          ],
+          "additionalProperties": false
+        },
+        "targetTimezone": {
+          "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/common.schema.json#/$defs/timezone"
+        },
+        "resultConfidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "coverage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "warnings": {
+          "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/common.schema.json#/$defs/warnings"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/feature.schema.json"
+          }
+        },
+        "signedInterpretationContext": {
+          "type": "string",
+          "minLength": 1
+        },
+        "weeklyScore": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100,
+              "multipleOf": 0.0001
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bestDays": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$"
+              },
+              "score": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100,
+                "multipleOf": 0.0001
+              },
+              "resultConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "date",
+              "score",
+              "resultConfidence"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 2
+        },
+        "cautionDays": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$"
+              },
+              "score": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100,
+                "multipleOf": 0.0001
+              },
+              "resultConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "date",
+              "score",
+              "resultConfidence"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 2
+        },
+        "volatility": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "status": {
+          "enum": [
+            "CAUTION",
+            "BALANCED",
+            "GOOD",
+            "VERY_GOOD",
+            "EXCELLENT",
+            "INSUFFICIENT_DATA"
+          ]
+        },
+        "trendStatus": {
+          "enum": [
+            "STABLE",
+            "NOTICEABLE",
+            "SIGNIFICANT",
+            "INSUFFICIENT_DATA"
+          ]
+        },
+        "slope": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "periodDelta": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": -100,
+          "maximum": 100,
+          "description": "Internal full-precision periodScore minus lifetimeScore; not the difference of rounded wire scores."
+        },
+        "trendDirection": {
+          "enum": [
+            "STABLE",
+            "UP",
+            "DOWN",
+            "UNKNOWN"
+          ]
+        }
+      },
+      "required": [
+        "meta",
+        "period",
+        "targetTimezone",
+        "resultConfidence",
+        "coverage",
+        "warnings",
+        "features",
+        "weeklyScore",
+        "bestDays",
+        "cautionDays",
+        "volatility",
+        "status",
+        "periodDelta",
+        "trendStatus",
+        "trendDirection"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "weeklyScore": {
+                "type": "null"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "status": {
+                "const": "INSUFFICIENT_DATA"
+              },
+              "resultConfidence": {
+                "const": 0
+              },
+              "periodDelta": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "status": {
+                "not": {
+                  "const": "INSUFFICIENT_DATA"
+                }
+              },
+              "periodDelta": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "CAUTION"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "weeklyScore": {
+                "type": "number",
+                "minimum": 0,
+                "exclusiveMaximum": 45
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "BALANCED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "weeklyScore": {
+                "type": "number",
+                "minimum": 45,
+                "exclusiveMaximum": 60
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "GOOD"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "weeklyScore": {
+                "type": "number",
+                "minimum": 60,
+                "exclusiveMaximum": 75
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "VERY_GOOD"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "weeklyScore": {
+                "type": "number",
+                "minimum": 75,
+                "exclusiveMaximum": 85
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "EXCELLENT"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "weeklyScore": {
+                "type": "number",
+                "minimum": 85,
+                "maximum": 100
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "periodDelta": {
+                "type": "null"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "trendStatus": {
+                "const": "INSUFFICIENT_DATA"
+              },
+              "trendDirection": {
+                "const": "UNKNOWN"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "periodDelta": {
+                "type": "number",
+                "exclusiveMinimum": -3,
+                "exclusiveMaximum": 3
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "trendStatus": {
+                "const": "STABLE"
+              },
+              "trendDirection": {
+                "const": "STABLE"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "periodDelta": {
+                "type": "number",
+                "minimum": 3,
+                "exclusiveMaximum": 8
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "trendStatus": {
+                "const": "NOTICEABLE"
+              },
+              "trendDirection": {
+                "const": "UP"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "periodDelta": {
+                "type": "number",
+                "exclusiveMinimum": -8,
+                "maximum": -3
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "trendStatus": {
+                "const": "NOTICEABLE"
+              },
+              "trendDirection": {
+                "const": "DOWN"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "periodDelta": {
+                "type": "number",
+                "minimum": 8
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "trendStatus": {
+                "const": "SIGNIFICANT"
+              },
+              "trendDirection": {
+                "const": "UP"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "periodDelta": {
+                "type": "number",
+                "maximum": -8
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "trendStatus": {
+                "const": "SIGNIFICANT"
+              },
+              "trendDirection": {
+                "const": "DOWN"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Monthly": {
+      "type": "object",
+      "properties": {
+        "meta": {
+          "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/common.schema.json#/$defs/meta"
+        },
+        "period": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "MONTH"
+            },
+            "year": {
+              "type": "integer",
+              "minimum": 1900,
+              "maximum": 2099
+            },
+            "month": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 12
+            },
+            "timezone": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Required semantic IANA tzdb validation; no implicit default."
+            }
+          },
+          "required": [
+            "type",
+            "year",
+            "month",
+            "timezone"
+          ],
+          "additionalProperties": false
+        },
+        "targetTimezone": {
+          "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/common.schema.json#/$defs/timezone"
+        },
+        "resultConfidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "coverage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "warnings": {
+          "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/common.schema.json#/$defs/warnings"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/feature.schema.json"
+          }
+        },
+        "signedInterpretationContext": {
+          "type": "string",
+          "minLength": 1
+        },
+        "monthlyScore": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100,
+              "multipleOf": 0.0001
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bestDays": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$"
+              },
+              "score": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100,
+                "multipleOf": 0.0001
+              },
+              "resultConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "date",
+              "score",
+              "resultConfidence"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 5
+        },
+        "cautionDays": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$"
+              },
+              "score": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100,
+                "multipleOf": 0.0001
+              },
+              "resultConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "date",
+              "score",
+              "resultConfidence"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 5
+        },
+        "volatility": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "status": {
+          "enum": [
+            "CAUTION",
+            "BALANCED",
+            "GOOD",
+            "VERY_GOOD",
+            "EXCELLENT",
+            "INSUFFICIENT_DATA"
+          ]
+        },
+        "trendStatus": {
+          "enum": [
+            "STABLE",
+            "NOTICEABLE",
+            "SIGNIFICANT",
+            "INSUFFICIENT_DATA"
+          ]
+        },
+        "periodDelta": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": -100,
+          "maximum": 100,
+          "description": "Internal full-precision periodScore minus lifetimeScore; not the difference of rounded wire scores."
+        },
+        "trendDirection": {
+          "enum": [
+            "STABLE",
+            "UP",
+            "DOWN",
+            "UNKNOWN"
+          ]
+        }
+      },
+      "required": [
+        "meta",
+        "period",
+        "targetTimezone",
+        "resultConfidence",
+        "coverage",
+        "warnings",
+        "features",
+        "monthlyScore",
+        "bestDays",
+        "cautionDays",
+        "volatility",
+        "status",
+        "periodDelta",
+        "trendStatus",
+        "trendDirection"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "monthlyScore": {
+                "type": "null"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "status": {
+                "const": "INSUFFICIENT_DATA"
+              },
+              "resultConfidence": {
+                "const": 0
+              },
+              "periodDelta": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "status": {
+                "not": {
+                  "const": "INSUFFICIENT_DATA"
+                }
+              },
+              "periodDelta": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "CAUTION"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "monthlyScore": {
+                "type": "number",
+                "minimum": 0,
+                "exclusiveMaximum": 45
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "BALANCED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "monthlyScore": {
+                "type": "number",
+                "minimum": 45,
+                "exclusiveMaximum": 60
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "GOOD"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "monthlyScore": {
+                "type": "number",
+                "minimum": 60,
+                "exclusiveMaximum": 75
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "VERY_GOOD"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "monthlyScore": {
+                "type": "number",
+                "minimum": 75,
+                "exclusiveMaximum": 85
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "EXCELLENT"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "monthlyScore": {
+                "type": "number",
+                "minimum": 85,
+                "maximum": 100
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "periodDelta": {
+                "type": "null"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "trendStatus": {
+                "const": "INSUFFICIENT_DATA"
+              },
+              "trendDirection": {
+                "const": "UNKNOWN"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "periodDelta": {
+                "type": "number",
+                "exclusiveMinimum": -3,
+                "exclusiveMaximum": 3
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "trendStatus": {
+                "const": "STABLE"
+              },
+              "trendDirection": {
+                "const": "STABLE"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "periodDelta": {
+                "type": "number",
+                "minimum": 3,
+                "exclusiveMaximum": 8
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "trendStatus": {
+                "const": "NOTICEABLE"
+              },
+              "trendDirection": {
+                "const": "UP"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "periodDelta": {
+                "type": "number",
+                "exclusiveMinimum": -8,
+                "maximum": -3
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "trendStatus": {
+                "const": "NOTICEABLE"
+              },
+              "trendDirection": {
+                "const": "DOWN"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "periodDelta": {
+                "type": "number",
+                "minimum": 8
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "trendStatus": {
+                "const": "SIGNIFICANT"
+              },
+              "trendDirection": {
+                "const": "UP"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "periodDelta": {
+                "type": "number",
+                "maximum": -8
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "trendStatus": {
+                "const": "SIGNIFICANT"
+              },
+              "trendDirection": {
+                "const": "DOWN"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Yearly": {
+      "type": "object",
+      "properties": {
+        "meta": {
+          "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/common.schema.json#/$defs/meta"
+        },
+        "period": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "YEAR"
+            },
+            "year": {
+              "type": "integer",
+              "minimum": 1900,
+              "maximum": 2099
+            },
+            "timezone": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Required semantic IANA tzdb validation; no implicit default."
+            }
+          },
+          "required": [
+            "type",
+            "year",
+            "timezone"
+          ],
+          "additionalProperties": false
+        },
+        "targetTimezone": {
+          "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/common.schema.json#/$defs/timezone"
+        },
+        "resultConfidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "coverage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "warnings": {
+          "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/common.schema.json#/$defs/warnings"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/feature.schema.json"
+          }
+        },
+        "signedInterpretationContext": {
+          "type": "string",
+          "minLength": 1
+        },
+        "yearlyScore": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100,
+              "multipleOf": 0.0001
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bestMonths": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$"
+              },
+              "score": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100,
+                "multipleOf": 0.0001
+              },
+              "resultConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "date",
+              "score",
+              "resultConfidence"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 3
+        },
+        "cautionMonths": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$"
+              },
+              "score": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100,
+                "multipleOf": 0.0001
+              },
+              "resultConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "date",
+              "score",
+              "resultConfidence"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 3
+        },
+        "yearlyVolatility": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "status": {
+          "enum": [
+            "CAUTION",
+            "BALANCED",
+            "GOOD",
+            "VERY_GOOD",
+            "EXCELLENT",
+            "INSUFFICIENT_DATA"
+          ]
+        },
+        "trendStatus": {
+          "enum": [
+            "STABLE",
+            "NOTICEABLE",
+            "SIGNIFICANT",
+            "INSUFFICIENT_DATA"
+          ]
+        },
+        "periodDelta": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": -100,
+          "maximum": 100,
+          "description": "Internal full-precision periodScore minus lifetimeScore; not the difference of rounded wire scores."
+        },
+        "trendDirection": {
+          "enum": [
+            "STABLE",
+            "UP",
+            "DOWN",
+            "UNKNOWN"
+          ]
+        }
+      },
+      "required": [
+        "meta",
+        "period",
+        "targetTimezone",
+        "resultConfidence",
+        "coverage",
+        "warnings",
+        "features",
+        "yearlyScore",
+        "bestMonths",
+        "cautionMonths",
+        "yearlyVolatility",
+        "status",
+        "periodDelta",
+        "trendStatus",
+        "trendDirection"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "yearlyScore": {
+                "type": "null"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "status": {
+                "const": "INSUFFICIENT_DATA"
+              },
+              "resultConfidence": {
+                "const": 0
+              },
+              "periodDelta": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "status": {
+                "not": {
+                  "const": "INSUFFICIENT_DATA"
+                }
+              },
+              "periodDelta": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "CAUTION"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "yearlyScore": {
+                "type": "number",
+                "minimum": 0,
+                "exclusiveMaximum": 45
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "BALANCED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "yearlyScore": {
+                "type": "number",
+                "minimum": 45,
+                "exclusiveMaximum": 60
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "GOOD"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "yearlyScore": {
+                "type": "number",
+                "minimum": 60,
+                "exclusiveMaximum": 75
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "VERY_GOOD"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "yearlyScore": {
+                "type": "number",
+                "minimum": 75,
+                "exclusiveMaximum": 85
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "EXCELLENT"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "yearlyScore": {
+                "type": "number",
+                "minimum": 85,
+                "maximum": 100
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "periodDelta": {
+                "type": "null"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "trendStatus": {
+                "const": "INSUFFICIENT_DATA"
+              },
+              "trendDirection": {
+                "const": "UNKNOWN"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "periodDelta": {
+                "type": "number",
+                "exclusiveMinimum": -3,
+                "exclusiveMaximum": 3
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "trendStatus": {
+                "const": "STABLE"
+              },
+              "trendDirection": {
+                "const": "STABLE"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "periodDelta": {
+                "type": "number",
+                "minimum": 3,
+                "exclusiveMaximum": 8
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "trendStatus": {
+                "const": "NOTICEABLE"
+              },
+              "trendDirection": {
+                "const": "UP"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "periodDelta": {
+                "type": "number",
+                "exclusiveMinimum": -8,
+                "maximum": -3
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "trendStatus": {
+                "const": "NOTICEABLE"
+              },
+              "trendDirection": {
+                "const": "DOWN"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "periodDelta": {
+                "type": "number",
+                "minimum": 8
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "trendStatus": {
+                "const": "SIGNIFICANT"
+              },
+              "trendDirection": {
+                "const": "UP"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "periodDelta": {
+                "type": "number",
+                "maximum": -8
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "trendStatus": {
+                "const": "SIGNIFICANT"
+              },
+              "trendDirection": {
+                "const": "DOWN"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

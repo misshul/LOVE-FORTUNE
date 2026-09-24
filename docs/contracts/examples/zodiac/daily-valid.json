@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "requestId": "synthetic-zodiac-partial",
+    "versions": {
+      "serviceVersion": "synthetic-zodiac-v1",
+      "apiVersion": "v1",
+      "sajuEngineVersion": "synthetic-saju-v1",
+      "scoreVersion": "SCORE_ZODIAC_V1",
+      "configVersion": "synthetic-config-v1",
+      "locationReferenceVersion": "synthetic-location-v1",
+      "timezoneDataVersion": "synthetic-tz-v1",
+      "zodiacEngineVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+      "zodiacCatalogVersion": "ZODIAC_CATALOG_V1",
+      "zodiacDateRangeVersion": "ZODIAC_DATE_RANGE_V1"
+    }
+  },
+  "date": "2024-09-02",
+  "targetTimezone": "Asia/Seoul",
+  "lifetimeScore": 51.1863,
+  "dailyScore": 54.1325,
+  "dailyDelta": 2.9463,
+  "dailyStatus": "GOOD",
+  "resultConfidence": 0.5,
+  "coverage": 0.5,
+  "features": [],
+  "warnings": [],
+  "zodiacContext": {
+    "source": "ZODIAC",
+    "contextRole": "STATIC",
+    "signA": "ARIES",
+    "signB": "ARIES",
+    "pairId": "ZODIAC_PAIR_ARIES_ARIES",
+    "primaryRelation": "SAME_SIGN",
+    "elementRelation": "SAME_ELEMENT",
+    "modalityRelation": "SAME_MODALITY",
+    "polarityRelation": "SAME_POLARITY",
+    "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+    "dateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+    "contextEvidenceId": "ce_afc43c08fc850e1037e07bea986d1ac5f9ed5432f1815e35"
+  },
+  "categoryScores": {
+    "ATTRACTION": null,
+    "EMOTION": null,
+    "COMMUNICATION": null,
+    "PASSION": null,
+    "STABILITY": null,
+    "HARMONY": null,
+    "SUPPORT": null,
+    "LONG_TERM": null
+  }
+}

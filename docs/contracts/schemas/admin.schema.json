@@ -27,13 +27,12 @@
           "enum": [
             "FORTUNE_ENGINE",
             "SAJU_RULE",
-            "ASTROLOGY_RULE",
             "SCORE",
             "PERIOD_RULE",
-            "EPHEMERIS_PROVIDER",
-            "EPHEMERIS_DATA",
             "AI_PROMPT",
-            "AI_INTERPRETATION_RULE"
+            "AI_INTERPRETATION_RULE",
+            "ZODIAC_RULE",
+            "ZODIAC_DATE_RANGE"
           ]
         },
         "version": {
@@ -64,13 +63,12 @@
           "enum": [
             "FORTUNE_ENGINE",
             "SAJU_RULE",
-            "ASTROLOGY_RULE",
             "SCORE",
             "PERIOD_RULE",
-            "EPHEMERIS_PROVIDER",
-            "EPHEMERIS_DATA",
             "AI_PROMPT",
-            "AI_INTERPRETATION_RULE"
+            "AI_INTERPRETATION_RULE",
+            "ZODIAC_RULE",
+            "ZODIAC_DATE_RANGE"
           ]
         },
         "version": {

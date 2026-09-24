@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "requestId": "synthetic-request-only",
+    "versions": {
+      "serviceVersion": "synthetic-zodiac-v1",
+      "apiVersion": "v1",
+      "sajuEngineVersion": "synthetic-saju-v1",
+      "scoreVersion": "SCORE_ZODIAC_V1",
+      "configVersion": "synthetic-config-v1",
+      "locationReferenceVersion": "synthetic-location-v1",
+      "timezoneDataVersion": "synthetic-tz-v1",
+      "zodiacEngineVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+      "zodiacCatalogVersion": "ZODIAC_CATALOG_V1",
+      "zodiacDateRangeVersion": "ZODIAC_DATE_RANGE_V1"
+    }
+  },
+  "date": "2026-09-08",
+  "targetTimezone": "Asia/Tokyo",
+  "lifetimeScore": 50,
+  "dailyScore": 44.9999,
+  "dailyDelta": -5.0001,
+  "dailyStatus": "VERY_LOW",
+  "resultConfidence": 1,
+  "coverage": 1,
+  "features": [],
+  "warnings": []
+}

@@ -1,0 +1,745 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/zodiac-rule.schema.json",
+  "type": "object",
+  "properties": {
+    "ruleId": {
+      "type": "string"
+    },
+    "source": {
+      "const": "ZODIAC"
+    },
+    "period": {
+      "const": "LIFETIME"
+    },
+    "relation": {
+      "enum": [
+        "SAME_SIGN",
+        "OPPOSITE_SIGN",
+        "SAME_ELEMENT",
+        "COMPATIBLE_ELEMENT",
+        "CHALLENGING_ELEMENT"
+      ]
+    },
+    "category": {
+      "enum": [
+        "ATTRACTION",
+        "EMOTION",
+        "PASSION",
+        "HARMONY"
+      ]
+    },
+    "signedValue": {
+      "type": "number",
+      "minimum": -1,
+      "maximum": 1
+    },
+    "baseWeight": {
+      "const": 1
+    },
+    "ruleConfidence": {
+      "const": 0.75
+    },
+    "enabled": {
+      "const": true
+    },
+    "productScope": {
+      "const": "V1"
+    }
+  },
+  "required": [
+    "ruleId",
+    "source",
+    "period",
+    "relation",
+    "category",
+    "signedValue",
+    "baseWeight",
+    "ruleConfidence",
+    "enabled",
+    "productScope"
+  ],
+  "additionalProperties": false,
+  "oneOf": [
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_SAME_SIGN_ATTRACTION"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "SAME_SIGN"
+        },
+        "category": {
+          "const": "ATTRACTION"
+        },
+        "signedValue": {
+          "const": 0
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_SAME_SIGN_EMOTION"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "SAME_SIGN"
+        },
+        "category": {
+          "const": "EMOTION"
+        },
+        "signedValue": {
+          "const": 0.25
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_SAME_SIGN_PASSION"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "SAME_SIGN"
+        },
+        "category": {
+          "const": "PASSION"
+        },
+        "signedValue": {
+          "const": 0
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_SAME_SIGN_HARMONY"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "SAME_SIGN"
+        },
+        "category": {
+          "const": "HARMONY"
+        },
+        "signedValue": {
+          "const": 0.15
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_OPPOSITE_SIGN_ATTRACTION"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "OPPOSITE_SIGN"
+        },
+        "category": {
+          "const": "ATTRACTION"
+        },
+        "signedValue": {
+          "const": 0.5
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_OPPOSITE_SIGN_EMOTION"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "OPPOSITE_SIGN"
+        },
+        "category": {
+          "const": "EMOTION"
+        },
+        "signedValue": {
+          "const": -0.2
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_OPPOSITE_SIGN_PASSION"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "OPPOSITE_SIGN"
+        },
+        "category": {
+          "const": "PASSION"
+        },
+        "signedValue": {
+          "const": 0.4
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_OPPOSITE_SIGN_HARMONY"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "OPPOSITE_SIGN"
+        },
+        "category": {
+          "const": "HARMONY"
+        },
+        "signedValue": {
+          "const": -0.25
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_SAME_ELEMENT_ATTRACTION"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "SAME_ELEMENT"
+        },
+        "category": {
+          "const": "ATTRACTION"
+        },
+        "signedValue": {
+          "const": 0.25
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_SAME_ELEMENT_EMOTION"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "SAME_ELEMENT"
+        },
+        "category": {
+          "const": "EMOTION"
+        },
+        "signedValue": {
+          "const": 0.3
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_SAME_ELEMENT_PASSION"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "SAME_ELEMENT"
+        },
+        "category": {
+          "const": "PASSION"
+        },
+        "signedValue": {
+          "const": 0.15
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_SAME_ELEMENT_HARMONY"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "SAME_ELEMENT"
+        },
+        "category": {
+          "const": "HARMONY"
+        },
+        "signedValue": {
+          "const": 0.35
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_COMPATIBLE_ELEMENT_ATTRACTION"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "COMPATIBLE_ELEMENT"
+        },
+        "category": {
+          "const": "ATTRACTION"
+        },
+        "signedValue": {
+          "const": 0.35
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_COMPATIBLE_ELEMENT_EMOTION"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "COMPATIBLE_ELEMENT"
+        },
+        "category": {
+          "const": "EMOTION"
+        },
+        "signedValue": {
+          "const": 0.2
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_COMPATIBLE_ELEMENT_PASSION"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "COMPATIBLE_ELEMENT"
+        },
+        "category": {
+          "const": "PASSION"
+        },
+        "signedValue": {
+          "const": 0.25
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_COMPATIBLE_ELEMENT_HARMONY"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "COMPATIBLE_ELEMENT"
+        },
+        "category": {
+          "const": "HARMONY"
+        },
+        "signedValue": {
+          "const": 0.25
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_CHALLENGING_ELEMENT_ATTRACTION"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "CHALLENGING_ELEMENT"
+        },
+        "category": {
+          "const": "ATTRACTION"
+        },
+        "signedValue": {
+          "const": 0
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_CHALLENGING_ELEMENT_EMOTION"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "CHALLENGING_ELEMENT"
+        },
+        "category": {
+          "const": "EMOTION"
+        },
+        "signedValue": {
+          "const": -0.25
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_CHALLENGING_ELEMENT_PASSION"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "CHALLENGING_ELEMENT"
+        },
+        "category": {
+          "const": "PASSION"
+        },
+        "signedValue": {
+          "const": 0.05
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    },
+    {
+      "properties": {
+        "ruleId": {
+          "const": "ZODIAC_CHALLENGING_ELEMENT_HARMONY"
+        },
+        "source": {
+          "const": "ZODIAC"
+        },
+        "period": {
+          "const": "LIFETIME"
+        },
+        "relation": {
+          "const": "CHALLENGING_ELEMENT"
+        },
+        "category": {
+          "const": "HARMONY"
+        },
+        "signedValue": {
+          "const": -0.3
+        },
+        "baseWeight": {
+          "const": 1
+        },
+        "ruleConfidence": {
+          "const": 0.75
+        },
+        "enabled": {
+          "const": true
+        },
+        "productScope": {
+          "const": "V1"
+        }
+      }
+    }
+  ]
+}

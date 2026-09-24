@@ -45,7 +45,10 @@ final class BootstrapTest extends \PHPUnit\Framework\TestCase
             ($GLOBALS['hooks'][$hook][0])();
         }
         check($before === $GLOBALS['writes'], 'Empty bootstrap must not write options.');
-        check($plugin->versions->all() === ['saju.day_pillar' => 'SAJU_DAY_PILLAR_EPOCH_V1'], 'Approved epoch version.');
+        check($plugin->versions->get('saju.day_pillar') === 'SAJU_DAY_PILLAR_EPOCH_V1', 'Approved epoch version.');
+        check($plugin->versions->get('zodiacDateRangeVersion') === 'ZODIAC_DATE_RANGE_V1', 'Approved Zodiac version.');
+        check($plugin->engines->get('zodiac.date')->resolve('2000-02-29')['sign'] === 'PISCES', 'Registered Zodiac resolver.');
+        check(!$plugin->engines->has('astrology'), 'Advanced Astrology must not activate in V1.');
         check($plugin->engines->get('saju.day_pillar')->calculate('2019-01-27')['ganzhi'] === '甲子', 'Registered production calculator.');
         check(!$plugin->engines->has('saju'), 'No fake engine.');
     }

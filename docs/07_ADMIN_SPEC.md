@@ -1,9 +1,11 @@
 # LOVE FORTUNE
 # 07_ADMIN_SPEC.md
 
-Version: 1.3.0
+Version: 1.4.0
 Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: Admin / Operations Specification
+
+Current V1 authority: [Zodiac V1](contracts/zodiac-catalog-v1.md). SAJU + ZODIAC are active; planetary Astrology and ephemeris are ADVANCED / DEFERRED. This scope supersedes prior source/weight/version gates; preserved Advanced sections do not authorize V1 execution.
 
 Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
 Freeze Gate: [Freeze validation and readiness](contracts/README.md)
@@ -164,9 +166,8 @@ Allowlisted operational metadata only: per-request requestId, endpoint, HTTP sta
 ```text
 FORTUNE_ENGINE
 SAJU_RULE
-ASTROLOGY_RULE
-EPHEMERIS_PROVIDER
-EPHEMERIS_DATA
+ZODIAC_RULE
+ZODIAC_DATE_RANGE
 ```
 
 Status:
@@ -565,6 +566,8 @@ Admin이 답할 수 없어야 하는 질문:
 
 ## Final v3 contract alignment
 
-[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER; epoch resolved by SAJU_DAY_PILLAR_EPOCH_V1).
+[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and ADVANCED-only BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER); V1_EXTERNAL_BLOCKERS=NONE, epoch APPLIED.
 
 END OF DOCUMENT
+
+V1 version administration admits Zodiac rule/date versions; Astrology and ephemeris types remain Advanced-only and cannot activate through the V1 schema. No DB migration is introduced by this contract change.

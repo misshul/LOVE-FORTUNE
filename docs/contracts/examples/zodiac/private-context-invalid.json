@@ -1,0 +1,309 @@
+{
+  "purpose": "INTERPRETATION",
+  "locale": "ko-KR",
+  "issuedAt": "2024-09-02T00:00:00Z",
+  "expiresAt": "2024-09-02T00:05:00Z",
+  "engineVersions": {
+    "serviceVersion": "synthetic-zodiac-v1",
+    "apiVersion": "v1",
+    "sajuEngineVersion": "synthetic-saju-v1",
+    "locationReferenceVersion": "synthetic-location-v1",
+    "timezoneDataVersion": "synthetic-tz-v1",
+    "zodiacEngineVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+    "zodiacCatalogVersion": "ZODIAC_CATALOG_V1",
+    "zodiacDateRangeVersion": "ZODIAC_DATE_RANGE_V1"
+  },
+  "scoreVersion": "SCORE_ZODIAC_V1",
+  "configVersion": "synthetic-config-v1",
+  "result": {
+    "meta": {
+      "requestId": "synthetic-zodiac-partial",
+      "versions": {
+        "serviceVersion": "synthetic-zodiac-v1",
+        "apiVersion": "v1",
+        "sajuEngineVersion": "synthetic-saju-v1",
+        "scoreVersion": "SCORE_ZODIAC_V1",
+        "configVersion": "synthetic-config-v1",
+        "locationReferenceVersion": "synthetic-location-v1",
+        "timezoneDataVersion": "synthetic-tz-v1",
+        "zodiacEngineVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+        "zodiacCatalogVersion": "ZODIAC_CATALOG_V1",
+        "zodiacDateRangeVersion": "ZODIAC_DATE_RANGE_V1"
+      }
+    },
+    "overallScore": 51.1863,
+    "status": "BALANCED",
+    "resultConfidence": 0.089,
+    "coverage": 0.1186,
+    "categories": {
+      "ATTRACTION": {
+        "score": 50,
+        "status": "BALANCED",
+        "resultConfidence": 0.15,
+        "coverage": 0.2
+      },
+      "EMOTION": {
+        "score": 52.5,
+        "status": "BALANCED",
+        "resultConfidence": 0.15,
+        "coverage": 0.2
+      },
+      "COMMUNICATION": {
+        "score": null,
+        "status": "INSUFFICIENT_DATA",
+        "resultConfidence": 0,
+        "coverage": 0
+      },
+      "PASSION": {
+        "score": 50,
+        "status": "BALANCED",
+        "resultConfidence": 0.15,
+        "coverage": 0.2
+      },
+      "STABILITY": {
+        "score": null,
+        "status": "INSUFFICIENT_DATA",
+        "resultConfidence": 0,
+        "coverage": 0
+      },
+      "HARMONY": {
+        "score": 51.5,
+        "status": "BALANCED",
+        "resultConfidence": 0.15,
+        "coverage": 0.2
+      },
+      "SUPPORT": {
+        "score": null,
+        "status": "INSUFFICIENT_DATA",
+        "resultConfidence": 0,
+        "coverage": 0
+      },
+      "LONG_TERM": {
+        "score": null,
+        "status": "INSUFFICIENT_DATA",
+        "resultConfidence": 0,
+        "coverage": 0
+      }
+    },
+    "features": [
+      {
+        "ruleId": "ZODIAC_SAME_SIGN_ATTRACTION",
+        "source": "ZODIAC",
+        "subject": "PAIR",
+        "category": "ATTRACTION",
+        "direction": "NEUTRAL",
+        "signedValue": 0,
+        "rawValue": 0,
+        "baseWeight": 1,
+        "confidence": 0.75,
+        "period": {
+          "type": "LIFETIME"
+        },
+        "metadata": {
+          "signA": "ARIES",
+          "signB": "ARIES",
+          "pairId": "ZODIAC_PAIR_ARIES_ARIES",
+          "relation": "SAME_SIGN",
+          "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+          "dateRangeVersion": "ZODIAC_DATE_RANGE_V1"
+        },
+        "featureId": "ft_027a4110c05cbccf57f9dfade87ed5eca4d1fa4d4c83e90d"
+      },
+      {
+        "ruleId": "ZODIAC_SAME_SIGN_EMOTION",
+        "source": "ZODIAC",
+        "subject": "PAIR",
+        "category": "EMOTION",
+        "direction": "POSITIVE",
+        "signedValue": 0.25,
+        "rawValue": 0.25,
+        "baseWeight": 1,
+        "confidence": 0.75,
+        "period": {
+          "type": "LIFETIME"
+        },
+        "metadata": {
+          "signA": "ARIES",
+          "signB": "ARIES",
+          "pairId": "ZODIAC_PAIR_ARIES_ARIES",
+          "relation": "SAME_SIGN",
+          "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+          "dateRangeVersion": "ZODIAC_DATE_RANGE_V1"
+        },
+        "featureId": "ft_ba117297f433a54c109950a34961b058e20673136d21b96b"
+      },
+      {
+        "ruleId": "ZODIAC_SAME_SIGN_PASSION",
+        "source": "ZODIAC",
+        "subject": "PAIR",
+        "category": "PASSION",
+        "direction": "NEUTRAL",
+        "signedValue": 0,
+        "rawValue": 0,
+        "baseWeight": 1,
+        "confidence": 0.75,
+        "period": {
+          "type": "LIFETIME"
+        },
+        "metadata": {
+          "signA": "ARIES",
+          "signB": "ARIES",
+          "pairId": "ZODIAC_PAIR_ARIES_ARIES",
+          "relation": "SAME_SIGN",
+          "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+          "dateRangeVersion": "ZODIAC_DATE_RANGE_V1"
+        },
+        "featureId": "ft_d34fef08bb4fca6384aa78c53b8177ba016b9b9d97b5d434"
+      },
+      {
+        "ruleId": "ZODIAC_SAME_SIGN_HARMONY",
+        "source": "ZODIAC",
+        "subject": "PAIR",
+        "category": "HARMONY",
+        "direction": "POSITIVE",
+        "signedValue": 0.15,
+        "rawValue": 0.15,
+        "baseWeight": 1,
+        "confidence": 0.75,
+        "period": {
+          "type": "LIFETIME"
+        },
+        "metadata": {
+          "signA": "ARIES",
+          "signB": "ARIES",
+          "pairId": "ZODIAC_PAIR_ARIES_ARIES",
+          "relation": "SAME_SIGN",
+          "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+          "dateRangeVersion": "ZODIAC_DATE_RANGE_V1"
+        },
+        "featureId": "ft_e69cb3242fc773aa1c687a6e26042cd70e0a4fe8ff2b4969"
+      }
+    ],
+    "warnings": [],
+    "zodiacContext": {
+      "source": "ZODIAC",
+      "contextRole": "STATIC",
+      "signA": "ARIES",
+      "signB": "ARIES",
+      "pairId": "ZODIAC_PAIR_ARIES_ARIES",
+      "primaryRelation": "SAME_SIGN",
+      "elementRelation": "SAME_ELEMENT",
+      "modalityRelation": "SAME_MODALITY",
+      "polarityRelation": "SAME_POLARITY",
+      "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+      "dateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+      "contextEvidenceId": "ce_afc43c08fc850e1037e07bea986d1ac5f9ed5432f1815e35",
+      "birthDate": "2000-04-01"
+    }
+  },
+  "evidence": [
+    {
+      "ruleId": "ZODIAC_SAME_SIGN_ATTRACTION",
+      "source": "ZODIAC",
+      "subject": "PAIR",
+      "category": "ATTRACTION",
+      "direction": "NEUTRAL",
+      "signedValue": 0,
+      "rawValue": 0,
+      "baseWeight": 1,
+      "confidence": 0.75,
+      "period": {
+        "type": "LIFETIME"
+      },
+      "metadata": {
+        "signA": "ARIES",
+        "signB": "ARIES",
+        "pairId": "ZODIAC_PAIR_ARIES_ARIES",
+        "relation": "SAME_SIGN",
+        "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+        "dateRangeVersion": "ZODIAC_DATE_RANGE_V1"
+      },
+      "featureId": "ft_027a4110c05cbccf57f9dfade87ed5eca4d1fa4d4c83e90d"
+    },
+    {
+      "ruleId": "ZODIAC_SAME_SIGN_EMOTION",
+      "source": "ZODIAC",
+      "subject": "PAIR",
+      "category": "EMOTION",
+      "direction": "POSITIVE",
+      "signedValue": 0.25,
+      "rawValue": 0.25,
+      "baseWeight": 1,
+      "confidence": 0.75,
+      "period": {
+        "type": "LIFETIME"
+      },
+      "metadata": {
+        "signA": "ARIES",
+        "signB": "ARIES",
+        "pairId": "ZODIAC_PAIR_ARIES_ARIES",
+        "relation": "SAME_SIGN",
+        "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+        "dateRangeVersion": "ZODIAC_DATE_RANGE_V1"
+      },
+      "featureId": "ft_ba117297f433a54c109950a34961b058e20673136d21b96b"
+    },
+    {
+      "ruleId": "ZODIAC_SAME_SIGN_PASSION",
+      "source": "ZODIAC",
+      "subject": "PAIR",
+      "category": "PASSION",
+      "direction": "NEUTRAL",
+      "signedValue": 0,
+      "rawValue": 0,
+      "baseWeight": 1,
+      "confidence": 0.75,
+      "period": {
+        "type": "LIFETIME"
+      },
+      "metadata": {
+        "signA": "ARIES",
+        "signB": "ARIES",
+        "pairId": "ZODIAC_PAIR_ARIES_ARIES",
+        "relation": "SAME_SIGN",
+        "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+        "dateRangeVersion": "ZODIAC_DATE_RANGE_V1"
+      },
+      "featureId": "ft_d34fef08bb4fca6384aa78c53b8177ba016b9b9d97b5d434"
+    },
+    {
+      "ruleId": "ZODIAC_SAME_SIGN_HARMONY",
+      "source": "ZODIAC",
+      "subject": "PAIR",
+      "category": "HARMONY",
+      "direction": "POSITIVE",
+      "signedValue": 0.15,
+      "rawValue": 0.15,
+      "baseWeight": 1,
+      "confidence": 0.75,
+      "period": {
+        "type": "LIFETIME"
+      },
+      "metadata": {
+        "signA": "ARIES",
+        "signB": "ARIES",
+        "pairId": "ZODIAC_PAIR_ARIES_ARIES",
+        "relation": "SAME_SIGN",
+        "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+        "dateRangeVersion": "ZODIAC_DATE_RANGE_V1"
+      },
+      "featureId": "ft_e69cb3242fc773aa1c687a6e26042cd70e0a4fe8ff2b4969"
+    }
+  ],
+  "zodiacContext": {
+    "source": "ZODIAC",
+    "contextRole": "STATIC",
+    "signA": "ARIES",
+    "signB": "ARIES",
+    "pairId": "ZODIAC_PAIR_ARIES_ARIES",
+    "primaryRelation": "SAME_SIGN",
+    "elementRelation": "SAME_ELEMENT",
+    "modalityRelation": "SAME_MODALITY",
+    "polarityRelation": "SAME_POLARITY",
+    "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+    "dateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+    "contextEvidenceId": "ce_afc43c08fc850e1037e07bea986d1ac5f9ed5432f1815e35",
+    "birthDate": "2000-04-01"
+  },
+  "contextVersion": "ZODIAC_CONTEXT_V1"
+}

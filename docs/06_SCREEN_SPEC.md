@@ -1,9 +1,11 @@
 # LOVE FORTUNE
 # 06_SCREEN_SPEC.md
 
-Version: 1.3.0
+Version: 1.4.0
 Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: User Screen / UX Specification
+
+Current V1 authority: [Zodiac V1](contracts/zodiac-catalog-v1.md). SAJU + ZODIAC are active; planetary Astrology and ephemeris are ADVANCED / DEFERRED. This scope supersedes prior source/weight/version gates; preserved Advanced sections do not authorize V1 execution.
 
 Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
 Freeze Gate: [Freeze validation and readiness](contracts/README.md)
@@ -207,7 +209,7 @@ Today CTA
 8 Categories
 Highlights
 Details
-Saju / Astrology
+Saju / Zodiac
 Disclaimer
 ```
 
@@ -254,7 +256,7 @@ Raw rule code를 직접 노출하지 않는다.
 
 ---
 
-# 18. Optional Astrology
+# 18. Optional Astrology - ADVANCED / DEFERRED
 
 ASC/House는 상세 Context로만 표현.
 
@@ -432,7 +434,7 @@ INVALID_INPUT
 LOCATION_ERROR
 NETWORK_ERROR
 CALCULATION_ERROR
-EPHEMERIS_ERROR
+ADVANCED_ONLY_EPHEMERIS_ERROR
 AI_ONLY_ERROR
 RATE_LIMITED
 ```
@@ -574,6 +576,8 @@ Display canonical scores/statuses from Core. AI does not supply numeric scores, 
 
 ## Final v3 contract alignment
 
-[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER; epoch resolved by SAJU_DAY_PILLAR_EPOCH_V1).
+[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and ADVANCED-only BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER); V1_EXTERNAL_BLOCKERS=NONE, epoch APPLIED.
 
 END OF DOCUMENT
+
+V1 COMMUNICATION displays context/unavailable, never numeric0 or50. Daily may explain internal Saju communication evidence but final category score remains null. Frontend displays deterministic scores and cannot calculate or change them.

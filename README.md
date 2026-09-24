@@ -107,3 +107,9 @@ Docker Engine 연결 오류가 나면 Docker Desktop의 Linux Engine 실행 상�
 
 구성 참고: [WordPress 공식 이미지 설정](https://github.com/docker-library/wordpress/blob/master/wp-config-docker.php),
 [Compose 서비스 준비 상태 및 시작 순서](https://docs.docker.com/compose/how-tos/startup-order/).
+
+## Zodiac V1 development status
+
+Zodiac date/pair/source scoring and exact score primitives are implemented. Contracts/catalogs are applied; full Four Pillars, Core scoring orchestration and REST API remain incomplete. No V1 external ephemeris blocker. See [current readiness](docs/contracts/readiness.md) and [Zodiac contract](docs/contracts/zodiac-catalog-v1.md).
+
+Runtime config is generated from authoritative JSON: `node scripts/generate-zodiac-config.cjs --check`. With Docker running, use `node docs/contracts/validation/zodiac-application.cjs` for the complete application gate, including existing regressions and PHP/JS cross checks. Setup for documentation-only validator dependencies is in [validation instructions](docs/contracts/validation/README.md).

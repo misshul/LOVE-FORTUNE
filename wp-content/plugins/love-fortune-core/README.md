@@ -32,7 +32,7 @@ WordPress 초기 설치 후 `http://localhost:8080/wp-admin/plugins.php`에서
 
 T02는 실제 버전 종류·설정·활성화 정책, T03은 실제 schema/migration,
 T14는 REST endpoint·오류 응답 계약, T23은 Admin 기능을 담당합니다.
-현재 API, Admin 메뉴, AI, 개인정보 저장, 외부 호출은 없습니다. 일진 계산과 날짜 보정 adapter만 구현되어 있으며 전체 Saju/Score Engine은 후속 작업입니다.
+현재 API, Admin 메뉴, AI, 개인정보 저장, 외부 호출은 없습니다. 일진 계산과 날짜 보정 adapter, Zodiac 모듈과 exact score 기본 연산이 구현되어 있으며 전체 Saju/Score Engine은 후속 작업입니다.
 
 `src/Engine/Saju`는 Gregorian 정수 JDN, date-only 일진 계산, 보정/23:30 경계,
 Daily gap/fold 표본 해석과 Natal/Daily orchestration을 포함합니다.
@@ -41,7 +41,7 @@ Unknown-time은 앞단의 calculation-date 후보를 보존합니다.
 자세한 입력 경계, 증거 및 제약은 [epoch 계약](../../../docs/contracts/saju-day-pillar-epoch-v1.md)을 참고하세요.
 `tests/fixtures/day-pillar-golden.json`은 승인된 공개 달력20개 날짜이며 일반 사용자 정보가 아닙니다.
 
-`src/Api`, `src/Application`, `src/Domain`, `src/Admin`, `src/Privacy`는
+`src/Api`, `src/Application`, `src/Admin`, `src/Privacy`는
 후속 구현 경계를 표시하는 빈 폴더이며 `.gitkeep`으로 Git에서 유지합니다.
 Route/Admin 등록 동작은 공통 `src/Support/HookLoader.php`를 각 hook에 별도로 연결합니다.
 
@@ -97,3 +97,11 @@ PHP 구문 검사는 전체 정적 타입 분석을 대신하지 않습니다. P
 참고: [WordPress 헤더 규칙](https://developer.wordpress.org/plugins/plugin-basics/header-requirements/),
 [활성화 hook](https://developer.wordpress.org/plugins/plugin-basics/activation-deactivation-hooks/).
 테스트 도구 참고: [PHPUnit 설치](https://docs.phpunit.de/en/12.5/installation.html), [공식 PHAR 및 SHA256](https://phar.phpunit.de/).
+
+## Zodiac V1 modules
+
+`src/Engine/Zodiac` implements original-date resolution, canonical pair/static context and source scoring. `src/Domain/Score` implements exact source/category M2 blending, SC-01 confidence, Daily signed peak and ranking; `src/Support/Rational` uses decimal-string integer arithmetic without GMP/BCMath or binary floats. These are independent modules, not a completed Core API.
+
+Authoritative catalog: `docs/contracts/rules/zodiac-rules.json`. Generated runtime projection: `config/zodiac.php`; run `node scripts/generate-zodiac-config.cjs` from repository root after approved reference changes. `--check` detects drift. V1 scope admits SAJU/ZODIAC Lifetime and SAJU-only Daily; Advanced enabled flags cannot activate a V1 source.
+
+`ZodiacTest` and `tests/zodiac-cross.php` exercise frozen synthetic goldens, all73,049 public dates, pairs, M2, exact ranking and HALF_UP. Full regression: `node docs/contracts/validation/zodiac-application.cjs`. Routes/Admin/migrations remain empty; full Four Pillars, extraction and API/signing integration remain pending.

@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://love-fortune.invalid/contracts/schemas/compatibility-response.schema.json",
-  "title": "LOVE FORTUNE compatibility-response v2",
-  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate.",
+  "title": "LOVE FORTUNE compatibility-response Zodiac V1",
+  "description": "Active V1 SAJU + ZODIAC. Advanced Astrology is not part of this response.",
   "type": "object",
   "properties": {
     "meta": {
@@ -51,7 +51,7 @@
           "$ref": "common.schema.json#/$defs/categoryScore"
         },
         "COMMUNICATION": {
-          "$ref": "common.schema.json#/$defs/categoryScore"
+          "$ref": "common.schema.json#/$defs/contextCategory"
         },
         "PASSION": {
           "$ref": "common.schema.json#/$defs/categoryScore"
@@ -93,6 +93,9 @@
     "signedInterpretationContext": {
       "type": "string",
       "minLength": 1
+    },
+    "zodiacContext": {
+      "$ref": "zodiac-context.schema.json"
     }
   },
   "required": [

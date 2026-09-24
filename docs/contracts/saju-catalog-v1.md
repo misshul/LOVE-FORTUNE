@@ -3,7 +3,7 @@
 Version: 1.0.0
 Status: APPROVED / APPLIED / READY
 
-Authority: [Application approval](saju-v1-application-approval.md), [final decisions](saju-v1-final-decisions.md). Mapping numbers in rules/saju-rules.json reproduce these approvals. [Guardrail v2](guardrail-v2.md) applies to both sources.
+Authority: [Application approval](saju-v1-application-approval.md), [final decisions](saju-v1-final-decisions.md). Mapping numbers in rules/saju-rules.json reproduce these approvals. [Guardrail v2](guardrail-v2.md) applies to Saju Lifetime before source blending. Preserved Advanced Astrology retains its original guardrail; Zodiac V1 is NO_SC07. The later [Zodiac V1](zodiac-catalog-v1.md) application changes only source blending/wire availability, not this catalog matrix.
 
 ## Catalog and precedence
 

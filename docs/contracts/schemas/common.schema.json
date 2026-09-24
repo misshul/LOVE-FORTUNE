@@ -51,13 +51,8 @@
           "type": "string",
           "minLength": 1
         },
-        "astrologyEngineVersion": {
-          "type": "string",
-          "minLength": 1
-        },
         "scoreVersion": {
-          "type": "string",
-          "minLength": 1
+          "const": "SCORE_ZODIAC_V1"
         },
         "configVersion": {
           "type": "string",
@@ -71,26 +66,27 @@
           "type": "string",
           "minLength": 1
         },
-        "ephemerisProviderVersion": {
-          "type": "string",
-          "minLength": 1
+        "zodiacEngineVersion": {
+          "const": "FIXED_DATE_SINGLE_SIGN_V1"
         },
-        "ephemerisDataVersion": {
-          "type": "string",
-          "minLength": 1
+        "zodiacCatalogVersion": {
+          "const": "ZODIAC_CATALOG_V1"
+        },
+        "zodiacDateRangeVersion": {
+          "const": "ZODIAC_DATE_RANGE_V1"
         }
       },
       "required": [
         "serviceVersion",
         "apiVersion",
         "sajuEngineVersion",
-        "astrologyEngineVersion",
         "scoreVersion",
         "configVersion",
         "locationReferenceVersion",
         "timezoneDataVersion",
-        "ephemerisProviderVersion",
-        "ephemerisDataVersion"
+        "zodiacEngineVersion",
+        "zodiacCatalogVersion",
+        "zodiacDateRangeVersion"
       ],
       "additionalProperties": false
     },
@@ -246,7 +242,7 @@
           "type": "object",
           "properties": {
             "score": {
-              "const": 50
+              "type": "null"
             },
             "status": {
               "const": "INSUFFICIENT_DATA"
@@ -409,6 +405,30 @@
         "en-US"
       ],
       "default": "ko-KR"
+    },
+    "contextCategory": {
+      "type": "object",
+      "properties": {
+        "score": {
+          "type": "null"
+        },
+        "status": {
+          "const": "INSUFFICIENT_DATA"
+        },
+        "coverage": {
+          "const": 0
+        },
+        "resultConfidence": {
+          "const": 0
+        }
+      },
+      "required": [
+        "score",
+        "status",
+        "coverage",
+        "resultConfidence"
+      ],
+      "additionalProperties": false
     }
   }
 }

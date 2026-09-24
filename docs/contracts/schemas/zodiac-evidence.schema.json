@@ -1,0 +1,1929 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/zodiac-evidence.schema.json",
+  "type": "object",
+  "properties": {
+    "featureId": {
+      "type": "string",
+      "pattern": "^ft_[0-9a-f]{48}$"
+    },
+    "source": {
+      "const": "ZODIAC"
+    },
+    "subject": {
+      "const": "PAIR"
+    },
+    "category": {
+      "enum": [
+        "ATTRACTION",
+        "EMOTION",
+        "PASSION",
+        "HARMONY"
+      ]
+    },
+    "direction": {
+      "enum": [
+        "POSITIVE",
+        "NEGATIVE",
+        "NEUTRAL",
+        "MIXED"
+      ]
+    },
+    "rawValue": {
+      "type": [
+        "number",
+        "string",
+        "boolean",
+        "null"
+      ]
+    },
+    "baseWeight": {
+      "const": 1
+    },
+    "confidence": {
+      "const": 0.75
+    },
+    "period": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "LIFETIME"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "signA": {
+          "enum": [
+            "ARIES",
+            "TAURUS",
+            "GEMINI",
+            "CANCER",
+            "LEO",
+            "VIRGO",
+            "LIBRA",
+            "SCORPIO",
+            "SAGITTARIUS",
+            "CAPRICORN",
+            "AQUARIUS",
+            "PISCES"
+          ]
+        },
+        "signB": {
+          "enum": [
+            "ARIES",
+            "TAURUS",
+            "GEMINI",
+            "CANCER",
+            "LEO",
+            "VIRGO",
+            "LIBRA",
+            "SCORPIO",
+            "SAGITTARIUS",
+            "CAPRICORN",
+            "AQUARIUS",
+            "PISCES"
+          ]
+        },
+        "pairId": {
+          "type": "string"
+        },
+        "relation": {
+          "enum": [
+            "SAME_SIGN",
+            "OPPOSITE_SIGN",
+            "SAME_ELEMENT",
+            "COMPATIBLE_ELEMENT",
+            "CHALLENGING_ELEMENT"
+          ]
+        },
+        "modelVersion": {
+          "const": "FIXED_DATE_SINGLE_SIGN_V1"
+        },
+        "dateRangeVersion": {
+          "const": "ZODIAC_DATE_RANGE_V1"
+        }
+      },
+      "required": [
+        "signA",
+        "signB",
+        "pairId",
+        "relation",
+        "modelVersion",
+        "dateRangeVersion"
+      ],
+      "additionalProperties": false
+    },
+    "ruleId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "signedValue": {
+      "type": "number",
+      "minimum": -1,
+      "maximum": 1
+    }
+  },
+  "required": [
+    "featureId",
+    "source",
+    "subject",
+    "category",
+    "direction",
+    "rawValue",
+    "baseWeight",
+    "confidence",
+    "period",
+    "metadata",
+    "ruleId",
+    "signedValue"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "oneOf": [
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_SAME_SIGN_ATTRACTION"
+            },
+            "category": {
+              "const": "ATTRACTION"
+            },
+            "signedValue": {
+              "const": 0
+            },
+            "rawValue": {
+              "const": 0
+            },
+            "direction": {
+              "const": "NEUTRAL"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "SAME_SIGN"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_SAME_SIGN_EMOTION"
+            },
+            "category": {
+              "const": "EMOTION"
+            },
+            "signedValue": {
+              "const": 0.25
+            },
+            "rawValue": {
+              "const": 0.25
+            },
+            "direction": {
+              "const": "POSITIVE"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "SAME_SIGN"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_SAME_SIGN_PASSION"
+            },
+            "category": {
+              "const": "PASSION"
+            },
+            "signedValue": {
+              "const": 0
+            },
+            "rawValue": {
+              "const": 0
+            },
+            "direction": {
+              "const": "NEUTRAL"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "SAME_SIGN"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_SAME_SIGN_HARMONY"
+            },
+            "category": {
+              "const": "HARMONY"
+            },
+            "signedValue": {
+              "const": 0.15
+            },
+            "rawValue": {
+              "const": 0.15
+            },
+            "direction": {
+              "const": "POSITIVE"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "SAME_SIGN"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_OPPOSITE_SIGN_ATTRACTION"
+            },
+            "category": {
+              "const": "ATTRACTION"
+            },
+            "signedValue": {
+              "const": 0.5
+            },
+            "rawValue": {
+              "const": 0.5
+            },
+            "direction": {
+              "const": "POSITIVE"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "OPPOSITE_SIGN"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_OPPOSITE_SIGN_EMOTION"
+            },
+            "category": {
+              "const": "EMOTION"
+            },
+            "signedValue": {
+              "const": -0.2
+            },
+            "rawValue": {
+              "const": -0.2
+            },
+            "direction": {
+              "const": "NEGATIVE"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "OPPOSITE_SIGN"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_OPPOSITE_SIGN_PASSION"
+            },
+            "category": {
+              "const": "PASSION"
+            },
+            "signedValue": {
+              "const": 0.4
+            },
+            "rawValue": {
+              "const": 0.4
+            },
+            "direction": {
+              "const": "POSITIVE"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "OPPOSITE_SIGN"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_OPPOSITE_SIGN_HARMONY"
+            },
+            "category": {
+              "const": "HARMONY"
+            },
+            "signedValue": {
+              "const": -0.25
+            },
+            "rawValue": {
+              "const": -0.25
+            },
+            "direction": {
+              "const": "NEGATIVE"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "OPPOSITE_SIGN"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_SAME_ELEMENT_ATTRACTION"
+            },
+            "category": {
+              "const": "ATTRACTION"
+            },
+            "signedValue": {
+              "const": 0.25
+            },
+            "rawValue": {
+              "const": 0.25
+            },
+            "direction": {
+              "const": "POSITIVE"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "SAME_ELEMENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_SAME_ELEMENT_EMOTION"
+            },
+            "category": {
+              "const": "EMOTION"
+            },
+            "signedValue": {
+              "const": 0.3
+            },
+            "rawValue": {
+              "const": 0.3
+            },
+            "direction": {
+              "const": "POSITIVE"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "SAME_ELEMENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_SAME_ELEMENT_PASSION"
+            },
+            "category": {
+              "const": "PASSION"
+            },
+            "signedValue": {
+              "const": 0.15
+            },
+            "rawValue": {
+              "const": 0.15
+            },
+            "direction": {
+              "const": "POSITIVE"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "SAME_ELEMENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_SAME_ELEMENT_HARMONY"
+            },
+            "category": {
+              "const": "HARMONY"
+            },
+            "signedValue": {
+              "const": 0.35
+            },
+            "rawValue": {
+              "const": 0.35
+            },
+            "direction": {
+              "const": "POSITIVE"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "SAME_ELEMENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_COMPATIBLE_ELEMENT_ATTRACTION"
+            },
+            "category": {
+              "const": "ATTRACTION"
+            },
+            "signedValue": {
+              "const": 0.35
+            },
+            "rawValue": {
+              "const": 0.35
+            },
+            "direction": {
+              "const": "POSITIVE"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "COMPATIBLE_ELEMENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_COMPATIBLE_ELEMENT_EMOTION"
+            },
+            "category": {
+              "const": "EMOTION"
+            },
+            "signedValue": {
+              "const": 0.2
+            },
+            "rawValue": {
+              "const": 0.2
+            },
+            "direction": {
+              "const": "POSITIVE"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "COMPATIBLE_ELEMENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_COMPATIBLE_ELEMENT_PASSION"
+            },
+            "category": {
+              "const": "PASSION"
+            },
+            "signedValue": {
+              "const": 0.25
+            },
+            "rawValue": {
+              "const": 0.25
+            },
+            "direction": {
+              "const": "POSITIVE"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "COMPATIBLE_ELEMENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_COMPATIBLE_ELEMENT_HARMONY"
+            },
+            "category": {
+              "const": "HARMONY"
+            },
+            "signedValue": {
+              "const": 0.25
+            },
+            "rawValue": {
+              "const": 0.25
+            },
+            "direction": {
+              "const": "POSITIVE"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "COMPATIBLE_ELEMENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_CHALLENGING_ELEMENT_ATTRACTION"
+            },
+            "category": {
+              "const": "ATTRACTION"
+            },
+            "signedValue": {
+              "const": 0
+            },
+            "rawValue": {
+              "const": 0
+            },
+            "direction": {
+              "const": "NEUTRAL"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_CHALLENGING_ELEMENT_EMOTION"
+            },
+            "category": {
+              "const": "EMOTION"
+            },
+            "signedValue": {
+              "const": -0.25
+            },
+            "rawValue": {
+              "const": -0.25
+            },
+            "direction": {
+              "const": "NEGATIVE"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_CHALLENGING_ELEMENT_PASSION"
+            },
+            "category": {
+              "const": "PASSION"
+            },
+            "signedValue": {
+              "const": 0.05
+            },
+            "rawValue": {
+              "const": 0.05
+            },
+            "direction": {
+              "const": "POSITIVE"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "ruleId": {
+              "const": "ZODIAC_CHALLENGING_ELEMENT_HARMONY"
+            },
+            "category": {
+              "const": "HARMONY"
+            },
+            "signedValue": {
+              "const": -0.3
+            },
+            "rawValue": {
+              "const": -0.3
+            },
+            "direction": {
+              "const": "NEGATIVE"
+            },
+            "metadata": {
+              "properties": {
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "properties": {
+        "metadata": {
+          "oneOf": [
+            {
+              "properties": {
+                "signA": {
+                  "const": "ARIES"
+                },
+                "signB": {
+                  "const": "ARIES"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_ARIES_ARIES"
+                },
+                "relation": {
+                  "const": "SAME_SIGN"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "ARIES"
+                },
+                "signB": {
+                  "const": "TAURUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_ARIES_TAURUS"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "ARIES"
+                },
+                "signB": {
+                  "const": "GEMINI"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_ARIES_GEMINI"
+                },
+                "relation": {
+                  "const": "COMPATIBLE_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "ARIES"
+                },
+                "signB": {
+                  "const": "CANCER"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_ARIES_CANCER"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "ARIES"
+                },
+                "signB": {
+                  "const": "LEO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_ARIES_LEO"
+                },
+                "relation": {
+                  "const": "SAME_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "ARIES"
+                },
+                "signB": {
+                  "const": "VIRGO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_ARIES_VIRGO"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "ARIES"
+                },
+                "signB": {
+                  "const": "LIBRA"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_ARIES_LIBRA"
+                },
+                "relation": {
+                  "const": "OPPOSITE_SIGN"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "ARIES"
+                },
+                "signB": {
+                  "const": "SCORPIO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_ARIES_SCORPIO"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "ARIES"
+                },
+                "signB": {
+                  "const": "SAGITTARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_ARIES_SAGITTARIUS"
+                },
+                "relation": {
+                  "const": "SAME_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "ARIES"
+                },
+                "signB": {
+                  "const": "CAPRICORN"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_ARIES_CAPRICORN"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "ARIES"
+                },
+                "signB": {
+                  "const": "AQUARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_ARIES_AQUARIUS"
+                },
+                "relation": {
+                  "const": "COMPATIBLE_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "ARIES"
+                },
+                "signB": {
+                  "const": "PISCES"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_ARIES_PISCES"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "TAURUS"
+                },
+                "signB": {
+                  "const": "TAURUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_TAURUS_TAURUS"
+                },
+                "relation": {
+                  "const": "SAME_SIGN"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "TAURUS"
+                },
+                "signB": {
+                  "const": "GEMINI"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_TAURUS_GEMINI"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "TAURUS"
+                },
+                "signB": {
+                  "const": "CANCER"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_TAURUS_CANCER"
+                },
+                "relation": {
+                  "const": "COMPATIBLE_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "TAURUS"
+                },
+                "signB": {
+                  "const": "LEO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_TAURUS_LEO"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "TAURUS"
+                },
+                "signB": {
+                  "const": "VIRGO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_TAURUS_VIRGO"
+                },
+                "relation": {
+                  "const": "SAME_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "TAURUS"
+                },
+                "signB": {
+                  "const": "LIBRA"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_TAURUS_LIBRA"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "TAURUS"
+                },
+                "signB": {
+                  "const": "SCORPIO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_TAURUS_SCORPIO"
+                },
+                "relation": {
+                  "const": "OPPOSITE_SIGN"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "TAURUS"
+                },
+                "signB": {
+                  "const": "SAGITTARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_TAURUS_SAGITTARIUS"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "TAURUS"
+                },
+                "signB": {
+                  "const": "CAPRICORN"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_TAURUS_CAPRICORN"
+                },
+                "relation": {
+                  "const": "SAME_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "TAURUS"
+                },
+                "signB": {
+                  "const": "AQUARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_TAURUS_AQUARIUS"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "TAURUS"
+                },
+                "signB": {
+                  "const": "PISCES"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_TAURUS_PISCES"
+                },
+                "relation": {
+                  "const": "COMPATIBLE_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "GEMINI"
+                },
+                "signB": {
+                  "const": "GEMINI"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_GEMINI_GEMINI"
+                },
+                "relation": {
+                  "const": "SAME_SIGN"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "GEMINI"
+                },
+                "signB": {
+                  "const": "CANCER"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_GEMINI_CANCER"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "GEMINI"
+                },
+                "signB": {
+                  "const": "LEO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_GEMINI_LEO"
+                },
+                "relation": {
+                  "const": "COMPATIBLE_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "GEMINI"
+                },
+                "signB": {
+                  "const": "VIRGO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_GEMINI_VIRGO"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "GEMINI"
+                },
+                "signB": {
+                  "const": "LIBRA"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_GEMINI_LIBRA"
+                },
+                "relation": {
+                  "const": "SAME_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "GEMINI"
+                },
+                "signB": {
+                  "const": "SCORPIO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_GEMINI_SCORPIO"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "GEMINI"
+                },
+                "signB": {
+                  "const": "SAGITTARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_GEMINI_SAGITTARIUS"
+                },
+                "relation": {
+                  "const": "OPPOSITE_SIGN"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "GEMINI"
+                },
+                "signB": {
+                  "const": "CAPRICORN"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_GEMINI_CAPRICORN"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "GEMINI"
+                },
+                "signB": {
+                  "const": "AQUARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_GEMINI_AQUARIUS"
+                },
+                "relation": {
+                  "const": "SAME_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "GEMINI"
+                },
+                "signB": {
+                  "const": "PISCES"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_GEMINI_PISCES"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "CANCER"
+                },
+                "signB": {
+                  "const": "CANCER"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_CANCER_CANCER"
+                },
+                "relation": {
+                  "const": "SAME_SIGN"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "CANCER"
+                },
+                "signB": {
+                  "const": "LEO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_CANCER_LEO"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "CANCER"
+                },
+                "signB": {
+                  "const": "VIRGO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_CANCER_VIRGO"
+                },
+                "relation": {
+                  "const": "COMPATIBLE_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "CANCER"
+                },
+                "signB": {
+                  "const": "LIBRA"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_CANCER_LIBRA"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "CANCER"
+                },
+                "signB": {
+                  "const": "SCORPIO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_CANCER_SCORPIO"
+                },
+                "relation": {
+                  "const": "SAME_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "CANCER"
+                },
+                "signB": {
+                  "const": "SAGITTARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_CANCER_SAGITTARIUS"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "CANCER"
+                },
+                "signB": {
+                  "const": "CAPRICORN"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_CANCER_CAPRICORN"
+                },
+                "relation": {
+                  "const": "OPPOSITE_SIGN"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "CANCER"
+                },
+                "signB": {
+                  "const": "AQUARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_CANCER_AQUARIUS"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "CANCER"
+                },
+                "signB": {
+                  "const": "PISCES"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_CANCER_PISCES"
+                },
+                "relation": {
+                  "const": "SAME_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "LEO"
+                },
+                "signB": {
+                  "const": "LEO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_LEO_LEO"
+                },
+                "relation": {
+                  "const": "SAME_SIGN"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "LEO"
+                },
+                "signB": {
+                  "const": "VIRGO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_LEO_VIRGO"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "LEO"
+                },
+                "signB": {
+                  "const": "LIBRA"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_LEO_LIBRA"
+                },
+                "relation": {
+                  "const": "COMPATIBLE_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "LEO"
+                },
+                "signB": {
+                  "const": "SCORPIO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_LEO_SCORPIO"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "LEO"
+                },
+                "signB": {
+                  "const": "SAGITTARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_LEO_SAGITTARIUS"
+                },
+                "relation": {
+                  "const": "SAME_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "LEO"
+                },
+                "signB": {
+                  "const": "CAPRICORN"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_LEO_CAPRICORN"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "LEO"
+                },
+                "signB": {
+                  "const": "AQUARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_LEO_AQUARIUS"
+                },
+                "relation": {
+                  "const": "OPPOSITE_SIGN"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "LEO"
+                },
+                "signB": {
+                  "const": "PISCES"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_LEO_PISCES"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "VIRGO"
+                },
+                "signB": {
+                  "const": "VIRGO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_VIRGO_VIRGO"
+                },
+                "relation": {
+                  "const": "SAME_SIGN"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "VIRGO"
+                },
+                "signB": {
+                  "const": "LIBRA"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_VIRGO_LIBRA"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "VIRGO"
+                },
+                "signB": {
+                  "const": "SCORPIO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_VIRGO_SCORPIO"
+                },
+                "relation": {
+                  "const": "COMPATIBLE_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "VIRGO"
+                },
+                "signB": {
+                  "const": "SAGITTARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_VIRGO_SAGITTARIUS"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "VIRGO"
+                },
+                "signB": {
+                  "const": "CAPRICORN"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_VIRGO_CAPRICORN"
+                },
+                "relation": {
+                  "const": "SAME_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "VIRGO"
+                },
+                "signB": {
+                  "const": "AQUARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_VIRGO_AQUARIUS"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "VIRGO"
+                },
+                "signB": {
+                  "const": "PISCES"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_VIRGO_PISCES"
+                },
+                "relation": {
+                  "const": "OPPOSITE_SIGN"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "LIBRA"
+                },
+                "signB": {
+                  "const": "LIBRA"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_LIBRA_LIBRA"
+                },
+                "relation": {
+                  "const": "SAME_SIGN"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "LIBRA"
+                },
+                "signB": {
+                  "const": "SCORPIO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_LIBRA_SCORPIO"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "LIBRA"
+                },
+                "signB": {
+                  "const": "SAGITTARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_LIBRA_SAGITTARIUS"
+                },
+                "relation": {
+                  "const": "COMPATIBLE_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "LIBRA"
+                },
+                "signB": {
+                  "const": "CAPRICORN"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_LIBRA_CAPRICORN"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "LIBRA"
+                },
+                "signB": {
+                  "const": "AQUARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_LIBRA_AQUARIUS"
+                },
+                "relation": {
+                  "const": "SAME_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "LIBRA"
+                },
+                "signB": {
+                  "const": "PISCES"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_LIBRA_PISCES"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "SCORPIO"
+                },
+                "signB": {
+                  "const": "SCORPIO"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_SCORPIO_SCORPIO"
+                },
+                "relation": {
+                  "const": "SAME_SIGN"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "SCORPIO"
+                },
+                "signB": {
+                  "const": "SAGITTARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_SCORPIO_SAGITTARIUS"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "SCORPIO"
+                },
+                "signB": {
+                  "const": "CAPRICORN"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_SCORPIO_CAPRICORN"
+                },
+                "relation": {
+                  "const": "COMPATIBLE_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "SCORPIO"
+                },
+                "signB": {
+                  "const": "AQUARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_SCORPIO_AQUARIUS"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "SCORPIO"
+                },
+                "signB": {
+                  "const": "PISCES"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_SCORPIO_PISCES"
+                },
+                "relation": {
+                  "const": "SAME_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "SAGITTARIUS"
+                },
+                "signB": {
+                  "const": "SAGITTARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_SAGITTARIUS_SAGITTARIUS"
+                },
+                "relation": {
+                  "const": "SAME_SIGN"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "SAGITTARIUS"
+                },
+                "signB": {
+                  "const": "CAPRICORN"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_SAGITTARIUS_CAPRICORN"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "SAGITTARIUS"
+                },
+                "signB": {
+                  "const": "AQUARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_SAGITTARIUS_AQUARIUS"
+                },
+                "relation": {
+                  "const": "COMPATIBLE_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "SAGITTARIUS"
+                },
+                "signB": {
+                  "const": "PISCES"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_SAGITTARIUS_PISCES"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "CAPRICORN"
+                },
+                "signB": {
+                  "const": "CAPRICORN"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_CAPRICORN_CAPRICORN"
+                },
+                "relation": {
+                  "const": "SAME_SIGN"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "CAPRICORN"
+                },
+                "signB": {
+                  "const": "AQUARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_CAPRICORN_AQUARIUS"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "CAPRICORN"
+                },
+                "signB": {
+                  "const": "PISCES"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_CAPRICORN_PISCES"
+                },
+                "relation": {
+                  "const": "COMPATIBLE_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "AQUARIUS"
+                },
+                "signB": {
+                  "const": "AQUARIUS"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_AQUARIUS_AQUARIUS"
+                },
+                "relation": {
+                  "const": "SAME_SIGN"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "AQUARIUS"
+                },
+                "signB": {
+                  "const": "PISCES"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_AQUARIUS_PISCES"
+                },
+                "relation": {
+                  "const": "CHALLENGING_ELEMENT"
+                }
+              }
+            },
+            {
+              "properties": {
+                "signA": {
+                  "const": "PISCES"
+                },
+                "signB": {
+                  "const": "PISCES"
+                },
+                "pairId": {
+                  "const": "ZODIAC_PAIR_PISCES_PISCES"
+                },
+                "relation": {
+                  "const": "SAME_SIGN"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

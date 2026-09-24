@@ -1,0 +1,131 @@
+{
+  "type": "object",
+  "properties": {
+    "contextVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose": {
+      "const": "INTERPRETATION"
+    },
+    "locale": {
+      "enum": [
+        "ko-KR",
+        "ja-JP",
+        "en-US"
+      ]
+    },
+    "issuedAt": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "engineVersions": {
+      "type": "object",
+      "properties": {
+        "serviceVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apiVersion": {
+          "const": "v1"
+        },
+        "sajuEngineVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "astrologyEngineVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locationReferenceVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "timezoneDataVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ephemerisProviderVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ephemerisDataVersion": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "serviceVersion",
+        "apiVersion",
+        "sajuEngineVersion",
+        "astrologyEngineVersion",
+        "locationReferenceVersion",
+        "timezoneDataVersion",
+        "ephemerisProviderVersion",
+        "ephemerisDataVersion"
+      ],
+      "additionalProperties": false
+    },
+    "scoreVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "configVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "result": {
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/compatibility-response.schema.json"
+            },
+            {
+              "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/daily-response.schema.json"
+            },
+            {
+              "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/period-response.schema.json"
+            }
+          ]
+        },
+        {
+          "not": {
+            "required": [
+              "signedInterpretationContext"
+            ]
+          }
+        }
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/feature.schema.json"
+      }
+    }
+  },
+  "required": [
+    "contextVersion",
+    "purpose",
+    "locale",
+    "issuedAt",
+    "expiresAt",
+    "engineVersions",
+    "scoreVersion",
+    "configVersion",
+    "result",
+    "evidence"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/advanced/schemas/signed-context.schema.json",
+  "title": "LOVE FORTUNE signed-context v2",
+  "description": "ADVANCED / DEFERRED. Preserved pre-Zodiac contract; never selected by V1 OpenAPI."
+}

@@ -70,7 +70,18 @@
         "features": {
           "type": "array",
           "items": {
-            "$ref": "feature.schema.json"
+            "allOf": [
+              {
+                "$ref": "feature.schema.json"
+              },
+              {
+                "properties": {
+                  "source": {
+                    "const": "SAJU"
+                  }
+                }
+              }
+            ]
           }
         },
         "signedInterpretationContext": {
@@ -207,6 +218,9 @@
             "DOWN",
             "UNKNOWN"
           ]
+        },
+        "zodiacContext": {
+          "$ref": "zodiac-context.schema.json"
         }
       },
       "required": [
@@ -531,7 +545,18 @@
         "features": {
           "type": "array",
           "items": {
-            "$ref": "feature.schema.json"
+            "allOf": [
+              {
+                "$ref": "feature.schema.json"
+              },
+              {
+                "properties": {
+                  "source": {
+                    "const": "SAJU"
+                  }
+                }
+              }
+            ]
           }
         },
         "signedInterpretationContext": {
@@ -658,6 +683,9 @@
             "DOWN",
             "UNKNOWN"
           ]
+        },
+        "zodiacContext": {
+          "$ref": "zodiac-context.schema.json"
         }
       },
       "required": [
@@ -976,7 +1004,18 @@
         "features": {
           "type": "array",
           "items": {
-            "$ref": "feature.schema.json"
+            "allOf": [
+              {
+                "$ref": "feature.schema.json"
+              },
+              {
+                "properties": {
+                  "source": {
+                    "const": "SAJU"
+                  }
+                }
+              }
+            ]
           }
         },
         "signedInterpretationContext": {
@@ -1103,6 +1142,9 @@
             "DOWN",
             "UNKNOWN"
           ]
+        },
+        "zodiacContext": {
+          "$ref": "zodiac-context.schema.json"
         }
       },
       "required": [

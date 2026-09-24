@@ -1,7 +1,9 @@
 # Daily Catalog v1 — C21-R
 
 Version: 1.0.0
-Status: APPROVED / APPLIED
+Status: APPROVED / APPLIED; SAJU active V1, ASTROLOGY Advanced deferred
+
+Current scope: [Zodiac V1](zodiac-catalog-v1.md) supersedes this document's dual-source combination for V1. The Saju9/19 catalog, person/sample pipeline and source-internal M1 denominator remain unchanged. Planetary sections and .50/.50 examples below are preserved Advanced contract history, not active V1 requirements.
 Authority: [Application approval](daily-v1-application-approval.md). This decision supersedes earlier Daily status and signal missing-data semantics, including archived v1/v2/v3 decisions. Lifetime formulas are unchanged.
 
 ## Catalog and numeric authority
@@ -42,7 +44,7 @@ For each source/person/category/sample, aggregate usable active Features: signal
 
 Pair projection follows person aggregation: pairSignal=(signalA+signalB)/2; pairConfidence=(confidenceA+confidenceB)/2. Both persons must be computable (active or no-event), otherwise pair category/sample is unavailable. Different ruleIds can contribute on each side. No shared-direction bonus, conflict penalty, gender or relationship multiplier.
 
-## M1-ELIGIBILITY-AWARE
+## M1-ELIGIBILITY-AWARE (source-internal retained; dual-source examples ADVANCED)
 
 Structural sets are derived from enabled mappings, not detected events:
 
@@ -86,12 +88,12 @@ Missing period/lifetime overrides still apply. SC-07 v2 is Lifetime-only: NOT_AP
 
 ## Identity, wire and privacy
 
-[daily-evidence.schema.json](schemas/daily-evidence.schema.json) is INTERNAL. Keep public Feature and signed LFIC wire unchanged. Public categoryDailySignal/categoryDailyScore and Daily ContextEvidence export remain DEFERRED_NON_BLOCKING; internal metadata must not be silently injected into the existing wire.
+[daily-evidence.schema.json](schemas/daily-evidence.schema.json) is INTERNAL. The Zodiac V1 application explicitly updates public Feature/LFIC metadata and static zodiacContext. Optional final categoryScores is closed and COMMUNICATION=null; internal categoryDailySignal and sample lineage export remain deferred. Internal metadata must not be silently injected into public wire.
 
 Daily identity extends the canonical Feature identity with sampleRef={date,time,timezone} and source-specific lineage. Astrology: transitPlanet,natalPlanet,aspect. Saju: dailyStem/natalDayStem or dailyBranch/natalDayBranch, relation, relationDirection, referenceId. Group candidates by ruleId+subject+category+period+sampleRef; cross-sample merge is forbidden. For ambiguous Saju lineage, preserve sorted unique lineage tuples separately and use that stable set in identity; do not fabricate a single natal pillar. Same sample/semantic evidence yields the same ft_ digest; different nominal sample yields a different digest. Exclude values/confidence/orb/candidates from identity. No tracking use.
 
 Birth logs, URL Birth data, derived user caches, Daily history DB, stable anonymous fingerprinting and background Birth transmission remain prohibited. Cache-Control: no-store. Only request-local reuse and non-personal reference caches are permitted. AI remains scoreless and independent; numeric Daily results are deterministic.
 
-## Gates
+## Historical C21-R gates (current V1 state: readiness.md)
 
 Daily APPLIED/READY is a catalog contract, not an implemented engine. [Readiness](readiness.md) distinguishes Score Engine catalog readiness from Production BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER; epoch resolved by SAJU_DAY_PILLAR_EPOCH_V1). Validation commands and reproducibility limits are in [validation report](validation-report.md).

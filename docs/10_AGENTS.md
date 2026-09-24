@@ -1,9 +1,11 @@
 # LOVE FORTUNE
 # 10_AGENTS.md
 
-Version: 1.3.0
+Version: 1.4.0
 Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: Codex / AI Coding Agent Development Rules
+
+Current V1 authority: [Zodiac V1](contracts/zodiac-catalog-v1.md). SAJU + ZODIAC are active; planetary Astrology and ephemeris are ADVANCED / DEFERRED. This scope supersedes prior source/weight/version gates; preserved Advanced sections do not authorize V1 execution.
 
 Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
 Freeze Gate: [Freeze validation and readiness](contracts/README.md)
@@ -58,7 +60,7 @@ Codex의 역할은 새로운 사양을 만드는 것이 아니라
 
 # 4. Conflict Resolution
 
-Explicit approved Final Decision v3 supersedes v2/v1 where changed; the approved v2 clarifications remain valid. Never invent Saju/Astrology rules. Unregistered/incomplete rules are disabled. Freeze and readiness are separate: empty active catalog means BLOCKED_CATALOG/SCORING_RULE_CATALOG_APPROVAL; epoch/provider gates mean BLOCKED_EXTERNAL. Neither alone fails Freeze. Report actual conflicts, never invent approved rules.
+Zodiac V1 application supersedes active source/blend/confidence/version contracts. Retained Final Decision v3 supersedes v2/v1 where unchanged; the approved v2 clarifications remain valid. Never invent Saju/Astrology rules. Unregistered/incomplete rules are disabled. Freeze and readiness are separate: empty active catalog means BLOCKED_CATALOG/SCORING_RULE_CATALOG_APPROVAL; unresolved external gates mean BLOCKED_EXTERNAL only in their applicable product scope; EPHEMERIS_PROVIDER is Advanced-only. Neither alone fails Freeze. Report actual conflicts, never invent approved rules.
 
 ---
 
@@ -193,7 +195,7 @@ Do not invent birth times. UNKNOWN Hour/ASC/House and boundary candidates follow
 
 ---
 
-# 13. Astrology
+# 13. Astrology - ADVANCED / DEFERRED
 
 Core:
 
@@ -223,7 +225,7 @@ ASC/House score weight = 0.
 
 ---
 
-# 14. Ephemeris
+# 14. Ephemeris - ADVANCED / DEFERRED
 
 Domain은:
 
@@ -254,7 +256,7 @@ SUPPORT
 LONG_TERM
 ```
 
-Neutral = 50.
+Computed neutral =50; unavailable is null. COMMUNICATION is Lifetime context-only/null. Use exact rationals, M2 only for source/category blending, and SC-01 computable-category pre-confidence times overallCoverage for wire confidence.
 
 `03_SCORE_SPEC.md` 공식/가중치를 임의 수정하지 않는다.
 
@@ -741,4 +743,8 @@ REPORT
 END OF DOCUMENT
 
 
-Current Daily authority: [Daily Catalog v1 C21-R](contracts/daily-catalog-v1.md). Daily134/285 APPLIED/READY; S2 thresholds +/-2 / +/-5; M1-ELIGIBILITY-AWARE signal aggregation. SC-07 applies to Lifetime only. Score Engine catalog readiness READY; catalog blockers NONE; Production BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER; epoch resolved by SAJU_DAY_PILLAR_EPOCH_V1). Public/signed wire and privacy remain unchanged.
+Current V1 Daily: SAJU 9 rules / 19 mappings, K=18, exact signed-peak ties; Zodiac STATIC context. Lifetime COMMUNICATION and final Daily COMMUNICATION scores are null. Source eligibility and current readiness: [Zodiac V1](contracts/zodiac-catalog-v1.md), [readiness](contracts/readiness.md).
+
+## Zodiac V1 implementation rule
+
+Authoritative JSON: contracts/rules/zodiac-rules.json; generated PHP projection: config/zodiac.php. Regenerate using scripts/generate-zodiac-config.cjs; never edit the projection alone. Product scope must fail closed: SAJU/ZODIAC Lifetime, SAJU-only Daily, no planetary metadata in V1. Preserve Advanced catalogs/research. Original birthDate only for Zodiac; no UTC/Saju correction. No raw double or epsilon ranking; canonical HALF_UP happens after exact ranking. Current gate: contracts/validation/zodiac-application.cjs.

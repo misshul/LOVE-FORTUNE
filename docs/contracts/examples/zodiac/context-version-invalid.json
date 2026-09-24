@@ -1,0 +1,14 @@
+{
+  "source": "ZODIAC",
+  "contextRole": "STATIC",
+  "signA": "ARIES",
+  "signB": "ARIES",
+  "pairId": "ZODIAC_PAIR_ARIES_ARIES",
+  "primaryRelation": "SAME_SIGN",
+  "elementRelation": "SAME_ELEMENT",
+  "modalityRelation": "SAME_MODALITY",
+  "polarityRelation": "SAME_POLARITY",
+  "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+  "dateRangeVersion": "v2",
+  "contextEvidenceId": "ce_afc43c08fc850e1037e07bea986d1ac5f9ed5432f1815e35"
+}

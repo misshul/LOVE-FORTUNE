@@ -2,8 +2,7 @@
   "type": "object",
   "properties": {
     "contextVersion": {
-      "type": "string",
-      "minLength": 1
+      "const": "ZODIAC_CONTEXT_V1"
     },
     "purpose": {
       "const": "INTERPRETATION"
@@ -39,10 +38,6 @@
           "type": "string",
           "minLength": 1
         },
-        "astrologyEngineVersion": {
-          "type": "string",
-          "minLength": 1
-        },
         "locationReferenceVersion": {
           "type": "string",
           "minLength": 1
@@ -51,30 +46,30 @@
           "type": "string",
           "minLength": 1
         },
-        "ephemerisProviderVersion": {
-          "type": "string",
-          "minLength": 1
+        "zodiacEngineVersion": {
+          "const": "FIXED_DATE_SINGLE_SIGN_V1"
         },
-        "ephemerisDataVersion": {
-          "type": "string",
-          "minLength": 1
+        "zodiacCatalogVersion": {
+          "const": "ZODIAC_CATALOG_V1"
+        },
+        "zodiacDateRangeVersion": {
+          "const": "ZODIAC_DATE_RANGE_V1"
         }
       },
       "required": [
         "serviceVersion",
         "apiVersion",
         "sajuEngineVersion",
-        "astrologyEngineVersion",
         "locationReferenceVersion",
         "timezoneDataVersion",
-        "ephemerisProviderVersion",
-        "ephemerisDataVersion"
+        "zodiacEngineVersion",
+        "zodiacCatalogVersion",
+        "zodiacDateRangeVersion"
       ],
       "additionalProperties": false
     },
     "scoreVersion": {
-      "type": "string",
-      "minLength": 1
+      "const": "SCORE_ZODIAC_V1"
     },
     "configVersion": {
       "type": "string",
@@ -109,6 +104,9 @@
       "items": {
         "$ref": "feature.schema.json"
       }
+    },
+    "zodiacContext": {
+      "$ref": "zodiac-context.schema.json"
     }
   },
   "required": [

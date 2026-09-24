@@ -32,7 +32,7 @@
 
 위 capability는 기존 07_ADMIN_SPEC 목록에서 연결했다. DTO는 `admin.schema.json`의 `$defs`를 따른다. GET mutation, 임의 SQL/code, 임의 파일 실행을 제공하지 않는다.
 
-VersionMutation은 기존 등록 version의 ACTIVATE/DEPRECATE/DISABLE이다. code/config에 존재하지 않거나 검증되지 않은 version은 활성화할 수 없다. Production engine의 두 외부 검증 gate도 통과해야 한다. 검증 실패는422 `VERSION_NOT_READY`다. 이 API가 계산식이나 version 내용을 덮어쓰지는 않는다.
+VersionMutation은 기존 등록 version의 ACTIVATE/DEPRECATE/DISABLE이다. code/config에 존재하지 않거나 검증되지 않은 version은 활성화할 수 없다. 적용 product scope의 readiness gate도 통과해야 한다. V1은 ephemeris를 요구하지 않으며 Advanced 활성화는 별도다. 검증 실패는422 `VERSION_NOT_READY`다. 이 API가 계산식이나 version 내용을 덮어쓰지는 않는다.
 
 CelebrityRecord의 birthReference는 일반 사용자 profile이 아니라 관리자가 검증한 공개/라이선스 reference다. sourceUrl, profileVersion 및 상태 DRAFT/ACTIVE/DISABLED를 포함한다. sourceUrl은 http/https 출처 표기이며 서버가 임의로 fetch하는 명령이 아니다. POST의 기존 ID는422 `REFERENCE_EXISTS`; PUT path/body ID 불일치는422 `REFERENCE_ID_MISMATCH`; 없는 ID는404다. DELETE는 reference를 DISABLED로 만들어 공개 목록에서 제외하며, 검증된 과거 version의 내용을 수정하지 않는다. Raw body를 감사 로그에 저장하지 않는다.
 
@@ -46,4 +46,8 @@ Canonical numeric serialization은 유한 JSON 수의 불필요한 소수0과 ex
 
 ## Approved v3 response semantics
 
-Authority: [v3](final-decision-v3.md) and [runtime contract](runtime-contract-v2.md). No usable evidence yields category50/confidence0/INSUFFICIENT_DATA while retaining structural coverage. Period responses require periodDelta (full-precision internal difference), trendStatus and trendDirection. dailyPeriodStatus in the decision maps to the existing dailyStatus wire field. Numeric lifetime fallback days are displayable but excluded from period statistics. Weekly is the arithmetic mean, not the superseded mean/peak/low blend. Score status still uses canonical four-decimal score; trend uses full-precision delta. Action evidenceRefs must resolve to actual Features and confidence is their positive-preConfidenceWeight weighted Feature.confidence. AI cannot change it. Catalog approval is required before score-engine activation independently of contract validity and the two production external gates.
+Authority: [v3](final-decision-v3.md) and [runtime contract](runtime-contract-v2.md). No usable evidence yields category null/confidence0/INSUFFICIENT_DATA while retaining structural coverage. Period responses require periodDelta (full-precision internal difference), trendStatus and trendDirection. dailyPeriodStatus in the decision maps to the existing dailyStatus wire field. Numeric lifetime fallback days are displayable but excluded from period statistics. Weekly is the arithmetic mean, not the superseded mean/peak/low blend. Score status still uses canonical four-decimal score; trend uses full-precision delta. Action evidenceRefs must resolve to actual Features and confidence is their positive-preConfidenceWeight weighted Feature.confidence. AI cannot change it. Catalog approval is required before score-engine activation independently of contract validity and the applicable product-scope readiness gates.
+
+## Zodiac V1 wire update
+
+Authority: [Zodiac V1](zodiac-catalog-v1.md). Active Features are SAJU/ZODIAC only; planetary metadata is rejected. Version metadata requires zodiacEngineVersion, zodiacCatalogVersion, zodiacDateRangeVersion and SCORE_ZODIAC_V1; old ephemeris/Astrology versions remain Advanced-only. COMMUNICATION is null with zero confidence/coverage and excluded from all numeric denominators. Optional Daily categoryScores preserves null COMMUNICATION. zodiacContext is closed, static and bound identically into LFIC and its result; identities, pair/relation/version and evidence subset are semantically verified. No new routes. V1 external blockers NONE; full orchestration remains pending.

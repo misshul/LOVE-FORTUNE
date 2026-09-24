@@ -1,9 +1,11 @@
 # LOVE FORTUNE
 # 08_AI_PROMPT_SPEC.md
 
-Version: 1.4.0
+Version: 1.5.0
 Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: AI Prompt / Interpretation Specification
+
+Current V1 authority: [Zodiac V1](contracts/zodiac-catalog-v1.md). SAJU + ZODIAC are active; planetary Astrology and ephemeris are ADVANCED / DEFERRED. This scope supersedes prior source/weight/version gates; preserved Advanced sections do not authorize V1 execution.
 
 Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
 Freeze Gate: [Freeze validation and readiness](contracts/README.md)
@@ -128,7 +130,7 @@ Normative contract: [Final Decision v2 SC-01](contracts/runtime-contract-v2.md#s
 
 ---
 
-# 11. Moon Uncertainty
+# 11. Moon Uncertainty - ADVANCED / DEFERRED
 
 UNCERTAIN이면 possible signs 범위에 근거한
 제한적 설명만 한다.
@@ -412,7 +414,7 @@ Core calculates; AI interprets approved evidence. Frontend displays deterministi
 
 ## Final v3 contract alignment
 
-[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER; epoch resolved by SAJU_DAY_PILLAR_EPOCH_V1).
+[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and ADVANCED-only BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER); V1_EXTERNAL_BLOCKERS=NONE, epoch APPLIED.
 
 END OF DOCUMENT
 
@@ -424,4 +426,8 @@ Current authority: [Saju v1](contracts/saju-catalog-v1.md), [Guardrail v2](contr
 Internal context explanations use separate contextEvidenceRefs; no ce_ IDs in scoring evidenceRefs. The current public LFIC/API fields remain unchanged. No unsigned context extension, numeric score output or context scoring. See contracts/context-evidence.md.
 
 
-Current Daily authority: [Daily Catalog v1 C21-R](contracts/daily-catalog-v1.md). Daily134/285 APPLIED/READY; S2 thresholds +/-2 / +/-5; M1-ELIGIBILITY-AWARE signal aggregation. SC-07 applies to Lifetime only. Score Engine catalog readiness READY; catalog blockers NONE; Production BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER; epoch resolved by SAJU_DAY_PILLAR_EPOCH_V1). Public/signed wire and privacy remain unchanged.
+Current V1 Daily: SAJU 9 rules / 19 mappings, K=18, exact signed-peak ties; Zodiac STATIC context. Lifetime COMMUNICATION and final Daily COMMUNICATION scores are null. Source eligibility and current readiness: [Zodiac V1](contracts/zodiac-catalog-v1.md), [readiness](contracts/readiness.md).
+
+## Zodiac V1 interpretation scope
+
+Use [Zodiac V1](contracts/zodiac-catalog-v1.md#evidence-signed-context-and-ai). Allowed phrasing: “별자리 성향 기준으로”, “12별자리 궁합 모델에서는”. Do not claim actual planet positions, Venus/Mars/Moon transit, aspect/orb or actual Sun longitude in V1. zodiacContext is STATIC, closed, signed and bound to the deterministic result. No raw birthDate, name or location. COMMUNICATION may be explained as context only; no numeric score, confidence, dailyDelta or Action effect. ce_ references cannot replace scoring ft_ evidenceRefs. Existing scoreless output, fallback and safety rules remain.

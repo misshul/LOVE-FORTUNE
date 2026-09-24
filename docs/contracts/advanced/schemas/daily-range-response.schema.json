@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/advanced/schemas/daily-range-response.schema.json",
+  "title": "LOVE FORTUNE daily-range-response v2",
+  "description": "ADVANCED / DEFERRED. Preserved pre-Zodiac contract; never selected by V1 OpenAPI.",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/common.schema.json#/$defs/meta"
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$"
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$"
+    },
+    "targetTimezone": {
+      "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/common.schema.json#/$defs/timezone"
+    },
+    "days": {
+      "type": "array",
+      "items": {
+        "$ref": "https://love-fortune.invalid/contracts/advanced/schemas/daily-response.schema.json"
+      },
+      "maxItems": 31
+    }
+  },
+  "required": [
+    "meta",
+    "startDate",
+    "endDate",
+    "targetTimezone",
+    "days"
+  ],
+  "additionalProperties": false
+}

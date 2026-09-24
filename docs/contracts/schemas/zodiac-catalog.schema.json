@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/schemas/zodiac-catalog.schema.json",
+  "type": "object",
+  "properties": {
+    "catalogVersion": {
+      "const": "ZODIAC_CATALOG_V1"
+    },
+    "modelVersion": {
+      "const": "FIXED_DATE_SINGLE_SIGN_V1"
+    },
+    "dateRangeVersion": {
+      "const": "ZODIAC_DATE_RANGE_V1"
+    },
+    "scoreVersion": {
+      "const": "SCORE_ZODIAC_V1"
+    },
+    "source": {
+      "const": "ZODIAC"
+    },
+    "period": {
+      "const": "LIFETIME"
+    },
+    "productScope": {
+      "const": "V1"
+    },
+    "guardrail": {
+      "const": "NO_SC07"
+    },
+    "pairOverrides": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "referenceTables": {
+      "type": "object",
+      "properties": {
+        "signs": {
+          "type": "array",
+          "minItems": 12,
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "properties": {
+              "sign": {
+                "enum": [
+                  "ARIES",
+                  "TAURUS",
+                  "GEMINI",
+                  "CANCER",
+                  "LEO",
+                  "VIRGO",
+                  "LIBRA",
+                  "SCORPIO",
+                  "SAGITTARIUS",
+                  "CAPRICORN",
+                  "AQUARIUS",
+                  "PISCES"
+                ]
+              },
+              "start": {
+                "type": "string",
+                "pattern": "^[0-9]{2}-[0-9]{2}$"
+              },
+              "end": {
+                "type": "string",
+                "pattern": "^[0-9]{2}-[0-9]{2}$"
+              },
+              "element": {
+                "enum": [
+                  "FIRE",
+                  "EARTH",
+                  "AIR",
+                  "WATER"
+                ]
+              },
+              "modality": {
+                "enum": [
+                  "CARDINAL",
+                  "FIXED",
+                  "MUTABLE"
+                ]
+              },
+              "polarity": {
+                "enum": [
+                  "YANG",
+                  "YIN"
+                ]
+              },
+              "opposite": {
+                "enum": [
+                  "ARIES",
+                  "TAURUS",
+                  "GEMINI",
+                  "CANCER",
+                  "LEO",
+                  "VIRGO",
+                  "LIBRA",
+                  "SCORPIO",
+                  "SAGITTARIUS",
+                  "CAPRICORN",
+                  "AQUARIUS",
+                  "PISCES"
+                ]
+              }
+            },
+            "required": [
+              "sign",
+              "start",
+              "end",
+              "element",
+              "modality",
+              "polarity",
+              "opposite"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "signs"
+      ],
+      "additionalProperties": false
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20,
+      "items": {
+        "$ref": "zodiac-rule.schema.json"
+      }
+    }
+  },
+  "required": [
+    "catalogVersion",
+    "modelVersion",
+    "dateRangeVersion",
+    "scoreVersion",
+    "source",
+    "period",
+    "productScope",
+    "guardrail",
+    "pairOverrides",
+    "referenceTables",
+    "rules"
+  ],
+  "additionalProperties": false
+}

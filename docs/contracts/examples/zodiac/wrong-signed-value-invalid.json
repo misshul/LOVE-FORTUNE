@@ -1,0 +1,23 @@
+{
+  "ruleId": "ZODIAC_SAME_SIGN_ATTRACTION",
+  "source": "ZODIAC",
+  "subject": "PAIR",
+  "category": "ATTRACTION",
+  "direction": "NEUTRAL",
+  "signedValue": 0.5,
+  "rawValue": 0,
+  "baseWeight": 1,
+  "confidence": 0.75,
+  "period": {
+    "type": "LIFETIME"
+  },
+  "metadata": {
+    "signA": "ARIES",
+    "signB": "ARIES",
+    "pairId": "ZODIAC_PAIR_ARIES_ARIES",
+    "relation": "SAME_SIGN",
+    "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+    "dateRangeVersion": "ZODIAC_DATE_RANGE_V1"
+  },
+  "featureId": "ft_027a4110c05cbccf57f9dfade87ed5eca4d1fa4d4c83e90d"
+}

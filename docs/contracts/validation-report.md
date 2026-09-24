@@ -1,3 +1,76 @@
+# ZODIAC V1 FINAL REGRESSION REVIEW
+
+Date: 2026-09-24
+Result: REGRESSION_REVIEW_PASS_READY_TO_COMMIT
+
+Reviewed the 128 intended application files without resetting the working tree. No production defect requiring a code, numeric or catalog change was found. This review adds only this execution record. No unfinished implementation TODO/debug code, local absolute path, unintended runtime validation dependency, personal persistence, network astronomy call or raw birth logging was found in the new runtime code. The generated PHP configuration is a checked projection of the authoritative JSON, not a second editable catalog.
+
+Executed `node docs/contracts/validation/zodiac-application.cjs` in FULL_APPLICATION mode, including `scripts/test.ps1`: PASS. PHP lint PASS; PHPUnit 20 tests / 1,217,548 assertions; PHP/JS differences 0. OpenAPI 20 operations, 33 active/shared schemas plus 9 archived schemas, 203 retained and 54 active examples, 80 semantic vectors including 4 DST vectors, and signed-context/privacy checks all PASS. Zodiac 73,049 dates, 78 unordered / 144 ordered pairs, 20 numeric mappings / 0 COMMUNICATION mappings, 188 Lifetime and 150 Daily exact fixtures PASS. The retained 256,000-case Daily regression and Saju SC-07 checks PASS. Exact ranking, HALF_UP and the two representative precision-correction classes PASS; the prior 120 Daily differences remain EXPECTED_PRECISION_CORRECTION, not a claim of a new full-population replay.
+
+Executed `docker compose exec -T wordpress php wp-content/plugins/love-fortune-core/tests/wordpress-smoke.php`: PASS; plugin remains active and appears in the admin list; no table/plugin-option changes or business REST routes. Docker Engine was initially stopped; Docker Desktop was started and the complete gate was rerun successfully. That environment failure was not treated as a passing test.
+
+Protected Saju/Advanced Astrology/Daily catalog files, epoch production code/goldens and historical approvals are unchanged. All 9 archived schemas preserve original semantics after resolving relocated references; the 203 existing manifest cases differ only by explicit contract scope. Advanced Lifetime 109/228 and Daily 125/266 are preserved; V1 Daily Saju remains 9/19. `git diff --check` PASS. No new golden expectations were generated for this review.
+
+Readiness remains V1_EXTERNAL_BLOCKERS=NONE, Zodiac IMPLEMENTED, Advanced Astrology DEFERRED, Four Pillars PARTIAL, Score Engine PARTIAL, API NOT_IMPLEMENTED. Full extraction/candidate generation, orchestration, REST/signing, period services, AI, frontend and Admin remain subsequent work. Infrastructure privacy configuration is not certified by these local tests.
+
+Commit target: `feat: apply zodiac v1 contract and catalog`. This is the pre-commit review record; the containing Git commit and final task response identify the actual commit. Push is not authorized and will not be performed. Full included file list: [application files](zodiac-v1-files-changed.md).
+
+---
+
+# ZODIAC V1 APPLICATION VALIDATION REPORT (2026-09-18 snapshot)
+
+Result: ZODIAC_V1_APPLIED_READY_FOR_REGRESSION_REVIEW
+Date: 2026-09-18
+Authority: [Zodiac V1](zodiac-catalog-v1.md). Complete machine results: [validation-results-zodiac-v1.json](validation-results-zodiac-v1.json).
+
+Git: application changes remain in the working tree for review. No commit or push in this resumed phase.
+
+| Item | Verified result |
+|---|---|
+| A. Files Changed | [Complete application file list](zodiac-v1-files-changed.md); existing working tree preserved, no reset/revert |
+| B. Zodiac Contract Applied | APPLIED; authoritative catalog JSON and checked generated PHP projection |
+| C. Catalog Counts | Zodiac20 numeric, COMMUNICATION0; Saju Lifetime9 scoring/5 context; Daily Saju9/19 unchanged |
+| D. Schema Validation | PASS;33 active/shared schemas plus9 archived schema snapshots |
+| E. Date Exhaustive Validation | PASS;73,049 dates, gap0, overlap0,12 reachable signs |
+| F. Pair Validation | PASS;78 unordered/144 ordered; relation counts12/6/12/12/36; A/B symmetry |
+| G. Lifetime Regression | PASS;188 frozen exact source/blend fixtures; retained Saju/SC-07 and Advanced regressions |
+| H. M2 | PASS; missing Saju/Zodiac/both, zero confidence and partial coverage; fixed source denominator only |
+| I. Confidence | PASS; computable-category pre-confidence and wire=coverage*pre; COMMUNICATION excluded |
+| J. Daily Regression | PASS;150 exact application cases; retained256,000-case Daily suite; Saju9/19 and internal COMMUNICATION preserved; final COMMUNICATION null |
+| K. Precision Correction | EXPECTED_PRECISION_CORRECTION; two representative canonical classes retained for the prior120 changed results |
+| L. Exact Ranking | PASS; rational comparisons, confidence/date tie breaks; September2 before September8;4 rank groups |
+| M. HALF_UP | PASS;18 cases including negative ties, carry to100 and no negative zero |
+| N. PHP Tests | PASS; lint,20 PHPUnit tests /1,217,548 assertions; actual WordPress smoke PASS |
+| O. JS Validators | PASS; PHP/JS differences0 including dates, pairs,576 numeric Features, scores, coverage/confidence and rank |
+| P. OpenAPI | PASS;20 operations, existing paths retained; active SAJU/ZODIAC metadata |
+| Q. Privacy | PASS;19 retained HTTP/privacy vectors; active context private/unknown fields rejected; no new persistence/network/logging |
+| R. Advanced Astrology Preservation | PASS; Lifetime109/228 and Daily125/266 unchanged; historical examples/tokens retained in explicit scope |
+| S. Readiness | V1_EXTERNAL_BLOCKERS=NONE; Zodiac IMPLEMENTED; Four Pillars/Score Engine PARTIAL; API NOT_IMPLEMENTED |
+| T. Remaining Blockers | No V1 external/catalog blockers; pending global implementation. EPHEMERIS_PROVIDER is Advanced-only |
+| U. Git Diff Summary | git diff --check PASS; protected catalogs/Saju production/epoch goldens unchanged; file list above |
+
+## Execution and exactness
+
+Executed node docs/contracts/validation/zodiac-application.cjs (FULL_APPLICATION), including structural, semantic-regression, astrology, saju-guardrail-v2, daily, zodiac --php, zodiac-api and scripts/test.ps1. After the final canonicalizer reuse/mixed-source example, affected structural/API tests and PHP-JS cross checks were rerun; all passed. Actual WordPress smoke verified the already active plugin without cycling activation or changing DB/options. No business route was added.
+
+Schema examples: retained203 (113 accepted/90 expected rejection), active54 (35 accepted/19 expected rejection), total257. Signed-context tests: retained2 valid/8 invalid plus active1 valid/15 invalid. Active context matrix144 and Feature matrix576 also pass semantic identities. Existing80 arithmetic/period/DST vectors, including4 DST vectors, pass. Saju guardrail exact violations0, exclusions0; matrices were not tuned to fit expectations.
+
+The corrected final simulation population means are reference values: pre-coverage approximately0.691385; wire approximately0.573655. The application did not rerun the entire280,800 Lifetime/3,952,800 Daily population; it uses188/150 frozen exact application cases plus retained catalog population suites. These means are not constants in production code. M2 is not applied to the overall pre-confidence denominator.
+
+Old-double vs exact: the prior final simulation had514 peak-index differences,120 actual Daily signal differences, maximum signal difference0.03636363636 and delta18 difference0.654545455. Equal opposite-sign magnitude must choose the earlier nominal slot. Representative golden aggregate [4/55,-4/55,-4/55,-4/55]=-1/110; the second7/352 class also passes PHP/JS. Existing tie semantics are preserved; this is EXPECTED_PRECISION_CORRECTION, not a calibration or regression failure.
+
+## Implementation and verification limits
+
+Production modules implement Zodiac date/pair/static context/numeric Features/source scores, exact Rational arithmetic, M2 category blending, SC-01 overall confidence, signed-peak Daily aggregation and ranking. They accept already calculated Saju category/sample inputs; they do not implement complete Saju extraction, candidate generation, Core REST/signing orchestration, period services, AI, frontend or Admin features. No new DB migration, Docker change or WordPress Core edit.
+
+Schemas/signing vectors validate the future API contract; they do not claim a deployed signing/REST service. Privacy checks cover code/contracts and local WordPress behavior, not CDN/WAF/APM/AI-provider operational configuration. Current production is NOT_READY_IMPLEMENTATION, not READY_FOR_PRODUCTION. Historical application wrappers enforce their former scopes and are superseded by the Zodiac gate; underlying regressions remain active.
+
+The working tree was not reset and protected fixtures were not regenerated from production outputs. Golden JSON formatting was compacted without changing parsed content. Validation-only packages are confined to ignored .tools; no new runtime package or astronomy provider.
+
+---
+
+# Historical epoch and earlier application reports
+
 # SAJU DAY PILLAR EPOCH V1 APPLICATION AND IMPLEMENTATION
 
 Current result: PASS. SAJU_DAY_PILLAR_EPOCH_V1 APPLIED / READY; SAJU_DAY_PILLAR_EPOCH RESOLVED. Sole external blocker: EPHEMERIS_PROVIDER. Production Engine readiness remains BLOCKED_EXTERNAL. Authority: [application approval](saju-day-pillar-epoch-v1-application-approval.md), [contract](saju-day-pillar-epoch-v1.md). Historical Daily report below retains its original scope/results; its old epoch gate is superseded.

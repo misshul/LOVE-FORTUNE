@@ -1,6 +1,8 @@
 # Astrology Scoring Rule Catalog v1
 
 Status: APPROVED / APPLIED
+
+Product scope: ADVANCED / DEFERRED. Preserved approved catalog; current V1 uses [Zodiac V1](zodiac-catalog-v1.md). Existing enabled flags do not activate this source in V1.
 Version: 1.0.0
 
 Authority: [Final mapping approval](astrology-v1-mapping-approval.md) and [repository application approval](astrology-v1-application-approval.md). These supersede older Astrology mapping/direction/orb placeholders; Saju, confidence, coverage, periods, guardrail, privacy and signed context remain unchanged.

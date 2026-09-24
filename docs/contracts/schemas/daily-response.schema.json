@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://love-fortune.invalid/contracts/schemas/daily-response.schema.json",
-  "title": "LOVE FORTUNE daily-response v2",
-  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate.",
+  "title": "LOVE FORTUNE daily-response Zodiac V1",
+  "description": "Active V1 SAJU + ZODIAC. Advanced Astrology is not part of this response.",
   "type": "object",
   "properties": {
     "meta": {
@@ -74,7 +74,18 @@
     "features": {
       "type": "array",
       "items": {
-        "$ref": "feature.schema.json"
+        "allOf": [
+          {
+            "$ref": "feature.schema.json"
+          },
+          {
+            "properties": {
+              "source": {
+                "const": "SAJU"
+              }
+            }
+          }
+        ]
       }
     },
     "warnings": {
@@ -83,6 +94,99 @@
     "signedInterpretationContext": {
       "type": "string",
       "minLength": 1
+    },
+    "zodiacContext": {
+      "$ref": "zodiac-context.schema.json"
+    },
+    "categoryScores": {
+      "type": "object",
+      "properties": {
+        "ATTRACTION": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/score"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "EMOTION": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/score"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "COMMUNICATION": {
+          "type": "null"
+        },
+        "PASSION": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/score"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "STABILITY": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/score"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "HARMONY": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/score"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "SUPPORT": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/score"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "LONG_TERM": {
+          "anyOf": [
+            {
+              "$ref": "common.schema.json#/$defs/score"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "ATTRACTION",
+        "EMOTION",
+        "COMMUNICATION",
+        "PASSION",
+        "STABILITY",
+        "HARMONY",
+        "SUPPORT",
+        "LONG_TERM"
+      ],
+      "additionalProperties": false,
+      "description": "Optional final category scores. Internal Saju COMMUNICATION signal never becomes a public numeric score."
     }
   },
   "required": [

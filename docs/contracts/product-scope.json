@@ -1,0 +1,37 @@
+{
+  "contractVersion": "ZODIAC_V1",
+  "activeSources": [
+    "SAJU",
+    "ZODIAC"
+  ],
+  "lifetimeSources": [
+    "SAJU",
+    "ZODIAC"
+  ],
+  "dailySignalSources": [
+    "SAJU"
+  ],
+  "deferredSources": [
+    "ASTROLOGY"
+  ],
+  "sourceWeights": {
+    "SAJU": "4/5",
+    "ZODIAC": "1/5"
+  },
+  "dailyScale": "18",
+  "meanWeight": "3/4",
+  "peakWeight": "1/4",
+  "lifetimeContextCategories": [
+    "COMMUNICATION"
+  ],
+  "zodiacScoringCategories": [
+    "ATTRACTION",
+    "EMOTION",
+    "PASSION",
+    "HARMONY"
+  ],
+  "externalBlockers": [],
+  "advancedBlockers": [
+    "EPHEMERIS_PROVIDER"
+  ]
+}

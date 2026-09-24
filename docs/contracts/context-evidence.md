@@ -13,6 +13,6 @@ contextEvidenceId='ce_'+first48 SHA256 hex of existing canonical JSON {ruleId,so
 
 context-interpretation.schema.json defines a separate INTERNAL context explanation envelope, not the public request/response or LFIC payload. Each contextEvidenceRefs must uniquely resolve inside its trusted contextEvidence array; duplicate IDs and dangling refs are invalid. No ce_ ref in scoring ft_ evidenceRefs or Action dependencies.
 
-Current public API and signed-context schema/signing/TTL are unchanged. Do not send unsigned context alongside LFIC or inject this envelope into a closed wire DTO. A future public transport extension must explicitly version and bind context; this application defines the internal contract only.
+This Saju envelope remains internal. The later Zodiac V1 application separately defines a closed, signed zodiacContext; it does not expose this Saju envelope. Signing algorithm and TTL remain unchanged. Do not send unsigned context alongside LFIC or inject this envelope into a closed wire DTO. A future public transport extension must explicitly version and bind context; this application defines the internal contract only.
 
 Existing scoreless output, all-ages/celebrity safety, fallback, no prompt/output logging and no personal cache rules apply. Core remains AI-independent.

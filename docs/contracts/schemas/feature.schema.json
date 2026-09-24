@@ -1,232 +1,212 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://love-fortune.invalid/contracts/schemas/feature.schema.json",
-  "title": "LOVE FORTUNE feature v2",
-  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate.",
-  "type": "object",
-  "properties": {
-    "featureId": {
-      "type": "string",
-      "pattern": "^ft_[0-9a-f]{48}$"
-    },
-    "source": {
-      "enum": [
-        "SAJU",
-        "ASTROLOGY"
-      ]
-    },
-    "subject": {
-      "enum": [
-        "PERSON_A",
-        "PERSON_B",
-        "PAIR"
-      ]
-    },
-    "category": {
-      "$ref": "common.schema.json#/$defs/category"
-    },
-    "direction": {
-      "enum": [
-        "POSITIVE",
-        "NEGATIVE",
-        "NEUTRAL",
-        "MIXED"
-      ]
-    },
-    "rawValue": {
-      "type": [
-        "number",
-        "string",
-        "boolean",
-        "null"
-      ]
-    },
-    "baseWeight": {
-      "type": "number",
-      "minimum": 0
-    },
-    "confidence": {
-      "type": "number",
-      "minimum": 0,
-      "maximum": 1,
-      "description": "featureConfidence, not resultConfidence."
-    },
-    "period": {
-      "$ref": "common.schema.json#/$defs/period"
-    },
-    "metadata": {
+  "title": "V1 SAJU + ZODIAC scoring evidence",
+  "oneOf": [
+    {
+      "title": "LOVE FORTUNE feature v2",
+      "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate.",
       "type": "object",
       "properties": {
-        "planetA": {
+        "featureId": {
+          "type": "string",
+          "pattern": "^ft_[0-9a-f]{48}$"
+        },
+        "source": {
+          "const": "SAJU"
+        },
+        "subject": {
           "enum": [
-            "SUN",
-            "MOON",
-            "MERCURY",
-            "VENUS",
-            "MARS",
-            "JUPITER",
-            "SATURN",
-            "URANUS",
-            "NEPTUNE",
-            "PLUTO"
+            "PERSON_A",
+            "PERSON_B",
+            "PAIR"
           ]
         },
-        "planetB": {
+        "category": {
+          "$ref": "common.schema.json#/$defs/category"
+        },
+        "direction": {
           "enum": [
-            "SUN",
-            "MOON",
-            "MERCURY",
-            "VENUS",
-            "MARS",
-            "JUPITER",
-            "SATURN",
-            "URANUS",
-            "NEPTUNE",
-            "PLUTO"
+            "POSITIVE",
+            "NEGATIVE",
+            "NEUTRAL",
+            "MIXED"
           ]
         },
-        "aspect": {
-          "enum": [
-            "CONJUNCTION",
-            "OPPOSITION",
-            "TRINE",
-            "SQUARE",
-            "SEXTILE"
+        "rawValue": {
+          "type": [
+            "number",
+            "string",
+            "boolean",
+            "null"
           ]
         },
-        "orb": {
+        "baseWeight": {
           "type": "number",
           "minimum": 0
         },
-        "pillar": {
-          "type": "string",
-          "minLength": 1
-        },
-        "element": {
-          "type": "string",
-          "minLength": 1
-        },
-        "relation": {
-          "type": "string",
-          "minLength": 1
-        },
-        "candidateCount": {
-          "type": "integer",
-          "minimum": 1
-        },
-        "availabilityRatio": {
-          "type": "number",
-          "minimum": 0,
-          "maximum": 1
-        },
-        "sampleCount": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 4
-        },
-        "referenceId": {
-          "type": "string",
-          "minLength": 1
-        },
-        "ruleVariant": {
-          "type": "string",
-          "minLength": 1
-        },
-        "candidates": {
-          "type": "array",
-          "items": {
-            "type": [
-              "number",
-              "string",
-              "boolean",
-              "null"
-            ]
-          },
-          "description": "Explicit user clarification: candidate scalar values; never raw Birth/labels. Non-identity metadata."
-        },
-        "orbCloseness": {
+        "confidence": {
           "type": "number",
           "minimum": 0,
           "maximum": 1,
-          "description": "Active aspect only; non-identity, request-local priority. Never a score/confidence multiplier or permission to log evidence."
+          "description": "featureConfidence, not resultConfidence."
         },
-        "transformationStatus": {
-          "const": "UNASSESSED"
+        "period": {
+          "$ref": "common.schema.json#/$defs/period"
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "pillar": {
+              "type": "string",
+              "minLength": 1
+            },
+            "element": {
+              "type": "string",
+              "minLength": 1
+            },
+            "relation": {
+              "type": "string",
+              "minLength": 1
+            },
+            "candidateCount": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "availabilityRatio": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "sampleCount": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 4
+            },
+            "referenceId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "ruleVariant": {
+              "type": "string",
+              "minLength": 1
+            },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "number",
+                  "string",
+                  "boolean",
+                  "null"
+                ]
+              },
+              "description": "Explicit user clarification: candidate scalar values; never raw Birth/labels. Non-identity metadata."
+            },
+            "transformationStatus": {
+              "const": "UNASSESSED"
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "ruleId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "signedValue": {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1
         }
       },
-      "required": [],
-      "additionalProperties": false
-    },
-    "ruleId": {
-      "type": "string",
-      "minLength": 1
-    },
-    "signedValue": {
-      "type": "number",
-      "minimum": -1,
-      "maximum": 1
-    }
-  },
-  "required": [
-    "featureId",
-    "ruleId",
-    "source",
-    "subject",
-    "category",
-    "direction",
-    "rawValue",
-    "baseWeight",
-    "confidence",
-    "period",
-    "metadata",
-    "signedValue"
-  ],
-  "additionalProperties": false,
-  "allOf": [
-    {
-      "if": {
-        "properties": {
-          "source": {
-            "const": "SAJU"
+      "required": [
+        "featureId",
+        "ruleId",
+        "source",
+        "subject",
+        "category",
+        "direction",
+        "rawValue",
+        "baseWeight",
+        "confidence",
+        "period",
+        "metadata",
+        "signedValue"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "source": {
+                "const": "SAJU"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "ruleId": {
+                "not": {
+                  "enum": [
+                    "TEN_GODS_RELATION",
+                    "HIDDEN_STEM_RELATION",
+                    "PUNISHMENT",
+                    "HARM",
+                    "DESTRUCTION"
+                  ]
+                }
+              }
+            }
           }
-        }
-      },
-      "then": {
-        "properties": {
-          "ruleId": {
-            "not": {
-              "enum": [
-                "TEN_GODS_RELATION",
-                "HIDDEN_STEM_RELATION",
-                "PUNISHMENT",
-                "HARM",
-                "DESTRUCTION"
-              ]
+        },
+        {
+          "if": {
+            "properties": {
+              "metadata": {
+                "required": [
+                  "transformationStatus"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "ruleId": {
+                "const": "STEM_COMBINATION"
+              },
+              "source": {
+                "const": "SAJU"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "period": {
+                "properties": {
+                  "type": {
+                    "const": "LIFETIME"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "category": {
+                "not": {
+                  "const": "COMMUNICATION"
+                }
+              }
             }
           }
         }
-      }
+      ]
     },
     {
-      "if": {
-        "properties": {
-          "metadata": {
-            "required": [
-              "transformationStatus"
-            ]
-          }
-        }
-      },
-      "then": {
-        "properties": {
-          "ruleId": {
-            "const": "STEM_COMBINATION"
-          },
-          "source": {
-            "const": "SAJU"
-          }
-        }
-      }
+      "$ref": "zodiac-evidence.schema.json"
     }
   ]
 }

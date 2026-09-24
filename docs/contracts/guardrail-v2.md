@@ -1,5 +1,7 @@
 # SC-07 Guardrail v2
 
+Current product scope: Saju Lifetime uses this guardrail before the Zodiac V1 source blend. Zodiac is NO_SC07; never guard the combined result. Historical references to both sources mean Saju plus Advanced Astrology, which remains deferred. Daily remains excluded.
+
 Version: 2.0.0
 Status: APPROVED / APPLIED
 

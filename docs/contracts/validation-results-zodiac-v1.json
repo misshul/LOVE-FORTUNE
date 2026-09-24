@@ -1,0 +1,238 @@
+{
+  "result": "PASS",
+  "mode": "FULL_APPLICATION",
+  "v1ExternalBlockers": [],
+  "production": "NOT_READY_IMPLEMENTATION",
+  "protectedCatalogsAndEpoch": "UNCHANGED",
+  "privacyFilesChecked": 10,
+  "php": {
+    "lint": "PASS",
+    "tests": 20,
+    "assertions": 1217548
+  },
+  "structural": {
+    "schemaFiles": 33,
+    "examples": 203,
+    "validExamples": 113,
+    "invalidExamples": 90,
+    "disabledRuleRecords": 5,
+    "enabledRules": 252,
+    "categoryWeights": 8,
+    "canonicalVectors": 6,
+    "signedValid": 2,
+    "signedInvalid": 8,
+    "httpPrivacyVectors": 19,
+    "openapiOperations": 20,
+    "adminOperations": 7,
+    "publicPostOperations": 8,
+    "openapi": "PASS"
+  },
+  "semantic": {
+    "existingSemanticVectors": 36,
+    "v3SemanticVectors": 44,
+    "totalSemanticVectors": 80,
+    "dstVectors": 4,
+    "tzdb": "2026c",
+    "icu": "78.3",
+    "result": "PASS",
+    "comparison": "exact; decimal rational confidence and HALF_UP rounding"
+  },
+  "advancedAstrology": {
+    "rules": 109,
+    "personal": 75,
+    "jupiter": 15,
+    "saturn": 19,
+    "mappings": 228,
+    "positive": 170,
+    "negative": 58,
+    "neutral": 0,
+    "mixed": 26,
+    "override": 76,
+    "generic": 33,
+    "approvedMatrixComparison": "EXACT",
+    "semanticNegativeMutations": 6,
+    "angularTests": 5,
+    "orbExamples": 4,
+    "detectionExamples": 3,
+    "boundaryTests": 327,
+    "unknownTimeTests": 4,
+    "weightIndependenceTests": 327,
+    "featureProjection": "PASS",
+    "featureIdentity": "PASS",
+    "result": "PASS"
+  },
+  "saju": {
+    "failures": [],
+    "exact": {
+      "uniqueInputs": 1117,
+      "features": 3391,
+      "capped": 192,
+      "violations": 0
+    },
+    "guardrail": {
+      "calls": 563906,
+      "features": 1007916,
+      "impactViolations": 0,
+      "exclusions": 0,
+      "noGuardCalls": 444808,
+      "noGuardDifferences": 0,
+      "maxImpact": 20,
+      "rawOutside": 0,
+      "neutral": 2
+    }
+  },
+  "daily": {
+    "result": "PASS",
+    "rules": 134,
+    "astrologyRules": 125,
+    "astrologyMappings": 266,
+    "sajuRules": 9,
+    "sajuMappings": 19,
+    "mappings": 285,
+    "orbChecks": 750,
+    "stemCounts": [
+      10,
+      20,
+      40,
+      30
+    ],
+    "branchCounts": [
+      12,
+      12,
+      28,
+      50,
+      42
+    ],
+    "cases": 256000,
+    "fullDataCases": 108000,
+    "fullCategoryChecks": 864000,
+    "nonzeroStability": 101844,
+    "fullOverallDiff": 0,
+    "fullCategoryDiff": 0,
+    "stabilityAttenuation": 0,
+    "hardFailures": 0,
+    "repeat": 10000,
+    "swaps": 100,
+    "orderChecks": 100,
+    "semanticMutationsRejected": 8,
+    "structuralEligibility": {
+      "ASTROLOGY": [
+        "ATTRACTION",
+        "EMOTION",
+        "COMMUNICATION",
+        "PASSION",
+        "HARMONY",
+        "SUPPORT"
+      ],
+      "SAJU": [
+        "ATTRACTION",
+        "EMOTION",
+        "COMMUNICATION",
+        "PASSION",
+        "STABILITY",
+        "HARMONY",
+        "SUPPORT"
+      ]
+    },
+    "knownSix": [
+      {
+        "ai": 30,
+        "si": 14,
+        "delta": 5.053892422023684
+      },
+      {
+        "ai": 30,
+        "si": 120,
+        "delta": 5.023264501322234
+      },
+      {
+        "ai": 30,
+        "si": 233,
+        "delta": 5.034820730847214
+      },
+      {
+        "ai": 30,
+        "si": 554,
+        "delta": 5.085175844483577
+      },
+      {
+        "ai": 30,
+        "si": 665,
+        "delta": 5.086124966384403
+      },
+      {
+        "ai": 30,
+        "si": 785,
+        "delta": 5.091481584773692
+      }
+    ],
+    "delta": {
+      "n": 213001,
+      "mean": 1.464795523512044,
+      "median": 1.3645284505800146,
+      "p5": -0.0848303237858032,
+      "p95": 3.336192942360532,
+      "min": -1.877977922091247,
+      "max": 5.091481584773692
+    },
+    "statusCounts": {
+      "GOOD": 61573,
+      "STABLE": 151416,
+      "INSUFFICIENT_PERIOD_DATA": 42999,
+      "VERY_GOOD": 12
+    },
+    "unavailable": 42999,
+    "originalPopulationIdentity": "NOT_CLAIMED: prior in-memory availability selector unavailable; recovered base generators plus persisted availability schedule",
+    "fakeNeutral": 0,
+    "crossSampleMerge": 0,
+    "dailyGuardrail": 0,
+    "secondary": 0,
+    "outer": 0,
+    "mc": 0,
+    "catalogDigest": "48a0e54f2d2b55e708b5ccb8fa0b77b89af286ab76f5cdf623b7ffb1ee481caa",
+    "node": "v24.21.0"
+  },
+  "zodiac": {
+    "result": "PASS",
+    "dateCount": 73049,
+    "gaps": 0,
+    "overlaps": 0,
+    "reachableSigns": 12,
+    "unorderedPairs": 78,
+    "orderedPairs": 144,
+    "distribution": {
+      "SAME_SIGN": 12,
+      "CHALLENGING_ELEMENT": 36,
+      "COMPATIBLE_ELEMENT": 12,
+      "SAME_ELEMENT": 12,
+      "OPPOSITE_SIGN": 6
+    },
+    "mappings": 20,
+    "communicationMappings": 0,
+    "lifetime": 188,
+    "daily": 150,
+    "halfUp": 18,
+    "exactComparisons": 5,
+    "rankGroups": 4,
+    "precisionClasses": 2,
+    "classification": "EXPECTED_PRECISION_CORRECTION",
+    "crossRuntime": "PASS / differences=0"
+  },
+  "activeApi": {
+    "result": "PASS",
+    "activeExamples": 54,
+    "valid": 35,
+    "invalid": 19,
+    "contextCases": 144,
+    "featureCases": 576,
+    "catalogMappings": 20,
+    "signedValid": 1,
+    "signedInvalid": 15,
+    "privacy": "PASS",
+    "canonicalization": "PASS"
+  },
+  "gitDiffCheck": "PASS",
+  "verificationDate": "2026-09-18",
+  "executionScope": "Full application gate, followed by affected canonicalization/API/schema and PHP-JS rechecks after the mixed-source example was added.",
+  "wordPressSmoke": "PASS: existing active plugin discovered and rendered; no table/option changes; no business REST routes"
+}

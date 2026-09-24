@@ -1,9 +1,11 @@
 # LOVE FORTUNE
 # 03_SCORE_SPEC.md
 
-Version: 3.4.0
+Version: 3.5.0
 Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: LOVE SCORE Specification
+
+Current V1 authority: [Zodiac V1](contracts/zodiac-catalog-v1.md). SAJU + ZODIAC are active; planetary Astrology and ephemeris are ADVANCED / DEFERRED. This scope supersedes prior source/weight/version gates; preserved Advanced sections do not authorize V1 execution.
 
 Astrology Authority: [Applied Astrology Catalog v1](contracts/astrology-catalog-v1.md) supersedes older Astrology placeholders.
 Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
@@ -52,23 +54,23 @@ SUPPORT         0.08
 LONG_TERM       0.12
 ```
 
-Total = 1.00
+Reference total = 1.00; active V1 Lifetime numeric eligible total = 0.86 (COMMUNICATION .14 excluded).
 
 ---
 
 # 5. Source Weight Application
 
-Use the unified category feature aggregation in decision v1 sections 11-14. The previous lifetime Saju/Astrology percentage blend is superseded; do not add a separate source/category multiplier to effectiveWeight. Daily source weights remain 0.50/0.50 under section 23.
+V1 source/category blend: SAJU=4/5, ZODIAC=1/5. Apply Saju SC-07 v2 and evidence stabilization within Saju first. Zodiac primary relation maps directly to its source score (NO_SC07). Then blend deviations from50 using M2 fixed structurally eligible source denominator. Runtime missing retains denominator; ineligible source is excluded. Source weights apply exactly once. Full formulas: [Zodiac V1](contracts/zodiac-catalog-v1.md#lifetime-blending-and-m2).
 
 ---
 
 # 6. Feature Value
 
-For approved Astrology v1 mappings: POSITIVE means0<signedValue<=1, NEGATIVE means-1<=signedValue<0, NEUTRAL means0. Mixed is rule-level positive/negative coexistence, not a mapping direction. Legacy/Saju inventory retains +1/-1/0 and explicitly defined MIXED values until its own approval. Unregistered rules cannot be scored. The former direction_sign times strength formula is superseded. rawValue is not an additional implicit multiplier.
+For approved V1 Saju/Zodiac mappings: POSITIVE means0<signedValue<=1, NEGATIVE means-1<=signedValue<0, NEUTRAL means0. Mixed is rule-level positive/negative coexistence, not a mapping direction. Use exact signedValues from each approved catalog; Advanced Astrology retains its own approved matrix. Unregistered rules cannot be scored. The former direction_sign times strength formula is superseded. rawValue is not an additional implicit multiplier.
 
 ---
 
-# 7. Effective Weight
+# 7. Saju Effective Weight
 
 preConfidenceWeight=baseWeight*ruleWeight*pairWeight. For outer evidence cap that PRODUCT to0.50, then effectiveWeight=preConfidenceWeight*featureConfidence. categoryWeight applies only to overall. A single existing weight becomes baseWeight with the other factors1. Catalogs may only normalize documented values. Normative contract: [Final Decision v2 SC-02](contracts/runtime-contract-v2.md#sc-02-rule-catalog-and-candidates). Normative contract: [Final Decision v2 SC-03](contracts/runtime-contract-v2.md#sc-03-outer-cap).
 
@@ -76,17 +78,17 @@ preConfidenceWeight=baseWeight*ruleWeight*pairWeight. For outer evidence cap tha
 
 # 8. Category Weighted Signal
 
-Freeze W0=sum(pre-guardrail usable effectiveWeight) after caps/confidence. R=50+50*sum(adjustedWeight*signedValue)/W0. Never renormalize by adjustedWeight sum. See contracts/guardrail-v2.md; coverage stabilization is unchanged.
+For the Saju source only, freeze W0=sum(pre-guardrail usable effectiveWeight) after caps/confidence. R=50+50*sum(adjustedWeight*signedValue)/W0. Never renormalize by adjustedWeight sum. See contracts/guardrail-v2.md; coverage stabilization is unchanged.
 
 ---
 
-# 9. Category Raw Score
+# 9. Saju Category Raw Score
 
 R = 50 + 50 * weightedSignal, in [0,100]. Apply evidence stabilization exactly once after this step.
 
 ---
 
-# 10. Evidence Stabilization / Coverage
+# 10. Saju Evidence Stabilization / Coverage
 
 categoryScore=50+(R-50)*coverage. coverage=clamp(sum(available preConfidenceWeight)/sum(eligible preConfidenceWeight),0,1), with zero denominator giving0. Do not multiply confidence into coverage. Unsupported rules are ineligible; missing-time supported rules remain eligible. Normative contract: [Final Decision v2 SC-01](contracts/runtime-contract-v2.md#sc-01-confidence-and-coverage).
 
@@ -94,11 +96,11 @@ categoryScore=50+(R-50)*coverage. coverage=clamp(sum(available preConfidenceWeig
 
 # 11. Missing Data / Confidence
 
-No fixed missing-time penalty. Distinguish eligible, available and usable evidence. Only available Features with confidence>0 and preConfidenceWeight>0 are usable for scoring. No usable evidence gives category50/resultConfidence0/INSUFFICIENT_DATA while retaining structural coverage; exclude that category overall. All insufficient gives null overall. categoryResultConfidence is the preConfidenceWeight-weighted confidence over available evidence; category wire resultConfidence=coverage*categoryResultConfidence. Overall retains the v2 pre-coverage confidence formula. Normative contract: [SC-01 with v3 decisions](contracts/runtime-contract-v2.md#sc-01-confidence-and-coverage).
+No fixed missing-time penalty. Preserve eligible/available/usable evidence and structural coverage even at confidence0. An unavailable source/category is numeric null, confidence0, INSUFFICIENT_DATA; all insufficient gives null overall. Lifetime COMMUNICATION is always context-only/null and excluded from every overall denominator. Overall score is the weighted mean over computable categories. Overall coverage uses eligible structural weight .86. overallPreCoverageConfidence is the SC-01 category-weighted mean over computable categories; overallWireConfidence=overallCoverage*overallPreCoverageConfidence. M2 must not replace this confidence denominator. Reference means .691385 pre-coverage and .573655 wire are not constants.
 
 ---
 
-# 12. Astrology Aspect Base Weight
+# 12. Astrology Aspect Base Weight - ADVANCED / DEFERRED
 
 ```text
 Conjunction  1.00
@@ -110,7 +112,7 @@ Sextile      0.70
 
 ---
 
-# 13. Planet Weight
+# 13. Planet Weight - ADVANCED / DEFERRED
 
 ```text
 Sun      1.00
@@ -127,7 +129,7 @@ Pluto    0.50
 
 ---
 
-# 14. Planet Pair Override
+# 14. Planet Pair Override - ADVANCED / DEFERRED
 
 ```text
 Sun-Moon        1.20
@@ -156,13 +158,13 @@ sqrt(weightA × weightB)
 
 ---
 
-# 15. Astrology Weight Catalog
+# 15. Astrology Weight Catalog - ADVANCED / DEFERRED
 
 Sections12-14 reference tables are retained. Approved Astrology v1 contains109 enabled pair-aspect rules (75 Personal,15 Jupiter,19 Saturn) with228 mappings. Generic aspects are reference definitions only. Actual approved mappings and closed schema are in contracts/astrology-catalog-v1.md. See contracts/rules/astrology-rules.json and Normative contract: [Final Decision v2 SC-02](contracts/runtime-contract-v2.md#sc-02-rule-catalog-and-candidates).
 
 ---
 
-# 16. Outer Planet Cap
+# 16. Outer Planet Cap - ADVANCED / DEFERRED
 
 Uranus/Neptune/Pluto only; Jupiter/Saturn are excluded. preConfidenceWeight=min(0.50,baseWeight*ruleWeight*pairWeight) for outer evidence. Apply featureConfidence, then alpha=min(1,(0.15/0.85)*N/O) to all outer effective weights when O>0. N/O sum non-outer/outer Astrology weights. N=0 means outer context only; O=0 means no scaling. Apply the all-feature guardrail afterward. Normative contract: [Final Decision v2 SC-03](contracts/runtime-contract-v2.md#sc-03-outer-cap).
 
@@ -202,9 +204,9 @@ DESTRUCTION            0.45
 
 Use section 11 for usableEvidence and confidence. The previous optional E<0.50 insufficient-data threshold is superseded.
 
-overallScore = sum(available categoryScore * categoryWeight) / sum(available categoryWeight).
+overallScore = sum(computable categoryScore * categoryWeight) / sum(computable categoryWeight).
 
-With no available categories return null and INSUFFICIENT_DATA. Preserve section 4 category weights, whose full sum is 1.00. No additional resultConfidence penalty is permitted.
+With no computable categories return null and INSUFFICIENT_DATA. Preserve section 4 category weights, whose reference sum is1.00; V1 numeric eligible sum=.86, COMMUNICATION excluded. No additional resultConfidence penalty is permitted.
 
 ---
 
@@ -224,7 +226,7 @@ Determine status from the canonical score:
 - [75,85): VERY_GOOD
 - [85,100]: EXCELLENT
 
-A category with no usableEvidence uses INSUFFICIENT_DATA even though its neutral score is 50.
+A category with no computable source uses INSUFFICIENT_DATA with score=null; real computed neutral evidence scores50.
 
 ---
 
@@ -246,11 +248,11 @@ max 5
 
 # 23. Daily Score
 
-dailySignal=0.50*sajuDailySignal+0.50*astrologyDailySignal; delta=18*signal; score=clamp(lifetimeScore+delta,0,100). One runtime available source retains its approved .50 signal weight; neither gives lifetime/delta0/INSUFFICIENT_PERIOD_DATA. Lifetime null gives null dailyScore and INSUFFICIENT_DATA. Normative contract: [Final Decision v2 SC-05](contracts/runtime-contract-v2.md#sc-05-daily-sampling-and-dst). Normative contract: [Final Decision v2 SC-06](contracts/runtime-contract-v2.md#sc-06-dates-periods-and-statuses).
+V1 dailySignal=sajuDailySignal only; delta=18*signal; score=clamp(revisedCombinedLifetimeScore+delta,0,100). Zodiac is STATIC context. No valid Saju sample gives lifetime/delta0/INSUFFICIENT_PERIOD_DATA. Lifetime null gives null dailyScore and INSUFFICIENT_DATA. Preserve the approved Saju 9 rules/19 mappings and all status thresholds.
 
 ---
 
-# 24. Daily Planet Weight
+# 24. Daily Planet Weight - ADVANCED / DEFERRED
 
 ```text
 Moon      1.00
@@ -267,13 +269,13 @@ Outer     0 direct
 
 # 25. Daily Transit Aggregation / DST
 
-Versioned samples06:00/12:00/18:00/23:00. For signal, each source excludes unavailable samples; zero samples means unavailable. For confidence, sourceDailyConfidence=sum(four sample confidences)/4, counting unavailable samples as0. Both sources use0.50/0.50; one uses its confidence; none gives0. sourceDailySignal=clamp(0.75*mean+0.25*peak,-1,1), peak by absolute magnitude and earlier nominal local-time tie. Ambiguous time chooses earlier UTC instant; nonexistent time advances to first valid instant. Normative contract: [Final Decision v2 SC-05](contracts/runtime-contract-v2.md#sc-05-daily-sampling-and-dst).
+Versioned nominal samples06:00/12:00/18:00/23:00. Exclude unavailable samples from signal mean/peak; sourceDailyConfidence=sum(all four sample confidences, missing=0)/4. V1 Daily has only SAJU, so no .50 source attenuation. sourceDailySignal=3/4*mean+1/4*signedPeak; exact equal absolute peaks choose the earlier nominal slot. Ambiguous time chooses earlier UTC instant; nonexistent time advances to the first valid instant. Zodiac does not supply transit evidence.
 
 ---
 
 # 26. Daily Category
 
-categoryDailyDelta=18*categoryDailySignal from category-specific evidence; categoryDailyScore=clamp(lifetimeCategoryScore+categoryDailyDelta,0,100). No computable category period data gives delta0/periodStatus INSUFFICIENT_PERIOD_DATA. Full precision internally; serialize scores with4-decimal HALF_UP. Normative contract: [Final Decision v2 SC-07](contracts/runtime-contract-v2.md#sc-07-daily-category-actions-and-guardrail).
+categoryDailyDelta=18*category-specific Saju signal; categoryDailyScore=clamp(lifetimeCategoryScore+delta,0,100), propagating null Lifetime baseline. Internal Saju COMMUNICATION signal remains approved; final Daily COMMUNICATION score is null. Do not copy overall signal into categories. Optional categoryScores wire is closed and explicitly requires COMMUNICATION=null.
 
 ---
 
@@ -365,7 +367,7 @@ yearlyScore=mean(valid full-precision monthlyScore); yearlyVolatility=population
 
 # 33. Period Tie / Rounding
 
-Best: internal full-precision score DESC, then resultConfidence DESC, then chronological ASC. Caution: internal score ASC, confidence DESC, chronological ASC. Monthly averages unrounded Daily values; Yearly averages unrounded Monthly values. Round API scores only to4-decimal HALF_UP. Normative contract: [Final Decision v2 SC-06](contracts/runtime-contract-v2.md#sc-06-dates-periods-and-statuses).
+Best: exact rational/integer full-precision score DESC, then resultConfidence DESC, then chronological ASC. Caution: internal score ASC, confidence DESC, chronological ASC. Monthly averages unrounded Daily values; Yearly averages unrounded Monthly values. Round API scores only to4-decimal HALF_UP. Normative contract: [Final Decision v2 SC-06](contracts/runtime-contract-v2.md#sc-06-dates-periods-and-statuses).
 
 ---
 
@@ -427,7 +429,7 @@ Core returns overall/category canonical scores and statuses, coverage, resultCon
 
 # 41. Version
 
-This document update does not overwrite a released scoreVersion. Approved v3/v2 decisions and normalized catalogs are versioned separately. Astrology109 rules are APPLIED/READY. Overall Score Engine catalog readiness is READY; catalog blockers NONE. Freeze status and the remaining external ephemeris gate are in contracts/README.md.
+Active scoreVersion=SCORE_ZODIAC_V1. Zodiac model/date/catalog versions are in its authoritative JSON and V1 metadata. Catalog readiness READY is separate from partial score orchestration. EPHEMERIS_PROVIDER is deferred Advanced only; V1 external blockers NONE. See contracts/readiness.md.
 
 ---
 
@@ -466,4 +468,4 @@ END OF DOCUMENT
 Current authority: [Saju v1](contracts/saju-catalog-v1.md), [Guardrail v2](contracts/guardrail-v2.md), [ContextEvidence](contracts/context-evidence.md). These supersede historical Saju scoring placeholders, unit-sign restrictions and guardrail search. Saju14 families:9 scoring/5 context, APPLIED/READY. Daily C21-R is APPLIED/READY; catalog blockers NONE. Other privacy/API/time contracts are unchanged.
 
 
-Current Daily authority: [Daily Catalog v1 C21-R](contracts/daily-catalog-v1.md). Daily134/285 APPLIED/READY; S2 thresholds +/-2 / +/-5; M1-ELIGIBILITY-AWARE signal aggregation. SC-07 applies to Lifetime only. Score Engine catalog readiness READY; catalog blockers NONE; Production BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER; epoch resolved by SAJU_DAY_PILLAR_EPOCH_V1). Public/signed wire and privacy remain unchanged.
+Current V1 Daily: SAJU 9 rules / 19 mappings, K=18, exact signed-peak ties; Zodiac STATIC context. Lifetime COMMUNICATION and final Daily COMMUNICATION scores are null. Source eligibility and current readiness: [Zodiac V1](contracts/zodiac-catalog-v1.md), [readiness](contracts/readiness.md).

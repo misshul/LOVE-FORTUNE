@@ -1,9 +1,11 @@
 # LOVE FORTUNE
 # 05_API_SPEC.md
 
-Version: 3.2.0
+Version: 3.3.0
 Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: REST API Specification
+
+Current V1 authority: [Zodiac V1](contracts/zodiac-catalog-v1.md). SAJU + ZODIAC are active; planetary Astrology and ephemeris are ADVANCED / DEFERRED. This scope supersedes prior source/weight/version gates; preserved Advanced sections do not authorize V1 execution.
 
 Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
 Freeze Gate: [Freeze validation and readiness](contracts/README.md)
@@ -102,13 +104,13 @@ personA/personB use section5; retain required relationshipType. targetTimezone r
 
 # 11. Versions / Deterministic Projection
 
-Core meta versions: serviceVersion,apiVersion,sajuEngineVersion,astrologyEngineVersion,scoreVersion,configVersion,locationReferenceVersion,timezoneDataVersion,ephemerisProviderVersion,ephemerisDataVersion. No AI dependency in Core. Exact comparison excludes requestId,generatedAt,issuedAt,expiresAt,signedInterpretationContext. Normative contract: [Final Decision v2 SC-09](contracts/runtime-contract-v2.md#sc-09-signed-context-and-ai-execution).
+Core meta versions: serviceVersion,apiVersion,sajuEngineVersion,zodiacEngineVersion,zodiacCatalogVersion,zodiacDateRangeVersion,scoreVersion,configVersion,locationReferenceVersion,timezoneDataVersion. No AI dependency in Core. Exact comparison excludes requestId,generatedAt,issuedAt,expiresAt,signedInterpretationContext. Normative contract: [Final Decision v2 SC-09](contracts/runtime-contract-v2.md#sc-09-signed-context-and-ai-execution).
 
 ---
 
 # 12. Compatibility Response
 
-Core fields: meta,overallScore,status,resultConfidence,coverage,categories,features,warnings and optional signedInterpretationContext. No interpretation or raw input echoes. Features use ruleId and v2 identity/period wire. No usable evidence gives category50/confidence0/INSUFFICIENT_DATA with computed coverage retained; all insufficient gives null overall. Period responses require periodDelta, trendStatus and trendDirection per v3. Feature.confidence supplies weighted Action confidence, never Feature.resultConfidence. See schemas and runtime contract.
+Core fields: meta,overallScore,status,resultConfidence,coverage,categories,features,warnings and optional signedInterpretationContext. No interpretation or raw input echoes. Features use ruleId and v2 identity/period wire. No usable evidence gives category null/confidence0/INSUFFICIENT_DATA with computed coverage retained; all insufficient gives null overall. COMMUNICATION is context-only/null and excluded from all numeric denominators. Optional zodiacContext is a closed static projection bound into LFIC; optional Daily categoryScores requires COMMUNICATION=null. Period responses require periodDelta, trendStatus and trendDirection per v3. Feature.confidence supplies weighted Action confidence, never Feature.resultConfidence. See schemas and runtime contract.
 
 ---
 
@@ -124,7 +126,7 @@ HOUSE_UNAVAILABLE
 HOUSE_FALLBACK_POLAR
 LOCATION_APPROXIMATED
 TIMEZONE_RESOLVED
-LIMITED_ASTROLOGY_CONTEXT
+LIMITED_ASTROLOGY_CONTEXT (ADVANCED only)
 LIMITED_SAJU_HOUR_ANALYSIS
 ```
 
@@ -229,7 +231,7 @@ POST JSON Body only
 
 # 26. Cache
 
-Core, AI Interpretation and signed context responses require Cache-Control: no-store and no CDN shared cache. No user-derived calculation/AI cache. Only non-personal reference/rule/config/calendar/ephemeris data may be cached.
+Core, AI Interpretation and signed context responses require Cache-Control: no-store and no CDN shared cache. No user-derived calculation/AI cache. Only non-personal reference/rule/config/calendar (ephemeris Advanced only) data may be cached.
 
 ---
 
@@ -315,4 +317,4 @@ Persistent Resource
 END OF DOCUMENT
 
 
-Current Daily authority: [Daily Catalog v1 C21-R](contracts/daily-catalog-v1.md). Daily134/285 APPLIED/READY; S2 thresholds +/-2 / +/-5; M1-ELIGIBILITY-AWARE signal aggregation. SC-07 applies to Lifetime only. Score Engine catalog readiness READY; catalog blockers NONE; Production BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER; epoch resolved by SAJU_DAY_PILLAR_EPOCH_V1). Public/signed wire and privacy remain unchanged.
+Current V1 Daily: SAJU 9 rules / 19 mappings, K=18, exact signed-peak ties; Zodiac STATIC context. Lifetime COMMUNICATION and final Daily COMMUNICATION scores are null. Source eligibility and current readiness: [Zodiac V1](contracts/zodiac-catalog-v1.md), [readiness](contracts/readiness.md).

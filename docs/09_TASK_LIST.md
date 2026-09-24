@@ -1,9 +1,11 @@
 # LOVE FORTUNE
 # 09_TASK_LIST.md
 
-Version: 1.3.0
+Version: 1.4.0
 Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: Development Task / Implementation Plan
+
+Current V1 authority: [Zodiac V1](contracts/zodiac-catalog-v1.md). SAJU + ZODIAC are active; planetary Astrology and ephemeris are ADVANCED / DEFERRED. This scope supersedes prior source/weight/version gates; preserved Advanced sections do not authorize V1 execution.
 
 Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
 Freeze Gate: [Freeze validation and readiness](contracts/README.md)
@@ -28,8 +30,8 @@ T03 Database / Migration
 T04 Location / Timezone
 T05 Calendar / Saju Foundation
 T06 Saju Engine
-T07 Ephemeris Provider
-T08 Astrology Engine
+T07 Ephemeris Provider - ADVANCED / DEFERRED
+T08 Zodiac V1; Astrology Engine - ADVANCED / DEFERRED
 T09 Compatibility Feature Engine
 T10 LOVE SCORE Engine
 T11 Daily Fortune Engine
@@ -116,9 +118,9 @@ tests/
 Task scope: version registry and immutable manifests.
 
 - [ ] serviceVersion / apiVersion
-- [ ] sajuEngineVersion / astrologyEngineVersion / scoreVersion / configVersion
+- [ ] sajuEngineVersion / zodiacEngineVersion / zodiacCatalogVersion / zodiacDateRangeVersion / scoreVersion / configVersion
 - [ ] locationReferenceVersion / timezoneDataVersion
-- [ ] ephemerisProviderVersion / ephemerisDataVersion
+- [ ] Advanced only: astrologyEngineVersion / ephemerisProviderVersion / ephemerisDataVersion
 - [ ] Interpretation-only aiPromptVersion and provider/model metadata
 - [ ] Exact canonical output under identical versions
 - [ ] No silent release-definition overwrite
@@ -186,7 +188,7 @@ KOREAN_LONGITUDE_2330
 
 ---
 
-# 10. T07 Ephemeris
+# 10. T07 Ephemeris - ADVANCED / DEFERRED
 
 - [ ] interface
 - [ ] provider adapter
@@ -200,7 +202,7 @@ KOREAN_LONGITUDE_2330
 
 ---
 
-# 11. T08 Astrology
+# 11. T08 Astrology - ADVANCED / DEFERRED
 
 - [ ] planets
 - [ ] synastry
@@ -218,7 +220,7 @@ KOREAN_LONGITUDE_2330
 
 # 12. T09 Compatibility Features
 
-- [ ] Versioned Saju/Astrology feature catalogs
+- [ ] Versioned active Saju/Zodiac catalogs; preserved Advanced Astrology catalogs
 - [ ] featureId, ruleId, source, subject, category, direction, rawValue, baseWeight, confidence, period, metadata
 - [ ] confidence means featureConfidence
 - [ ] Stable feature instances without tracking identifiers
@@ -272,7 +274,7 @@ Normative contract: [Final Decision v2 SC-05](contracts/runtime-contract-v2.md#s
 
 # 16. T13 Core Calculation Orchestrator
 
-Normalized Input -> Saju/Astrology -> Structured Feature Set -> Score -> Daily/Period -> Result DTO -> immediate Frontend display. The same features feed Score and approved AI evidence selection. Core must not call AI. A five-minute signed context supports the separate Interpretation request. Core and AI have independent API lifecycles.
+Normalized Input -> Saju/Zodiac -> Structured Feature Set -> Score -> Daily/Period -> Result DTO -> immediate Frontend display. The same features feed Score and approved AI evidence selection. Core must not call AI. A five-minute signed context supports the separate Interpretation request. Core and AI have independent API lifecycles.
 
 ---
 
@@ -615,16 +617,20 @@ Browser Storage 삭제 후 서버에서 profile 복구가 불가능해야 한다
 
 # 37. Freeze / Production Gates
 
-Apply Final Decision v3 and retained v2 decisions. Freeze requires SC-01..SC-10 resolved and successful Schema/OpenAPI/arithmetic/canonical/signing/period/DST/privacy checks; actual status is contracts/README.md. Current external blocker EPHEMERIS_PROVIDER blocks production enablement, not Freeze. SAJU_DAY_PILLAR_EPOCH_V1 is APPLIED / READY. No code changes or commit/push in this task.
+Apply Final Decision v3 and retained v2 decisions. Freeze requires SC-01..SC-10 resolved and successful Schema/OpenAPI/arithmetic/canonical/signing/period/DST/privacy checks; actual status is contracts/README.md. EPHEMERIS_PROVIDER blocks Advanced only; V1 external blockers NONE. SAJU_DAY_PILLAR_EPOCH_V1 is APPLIED / READY. That historical reconciliation task was read-only; current Zodiac application authorizes implementation.
 
 ---
 
 
 ## Final v3 contract alignment
 
-[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER; epoch resolved by SAJU_DAY_PILLAR_EPOCH_V1).
+[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and ADVANCED-only BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER); V1_EXTERNAL_BLOCKERS=NONE, epoch APPLIED.
 
 END OF DOCUMENT
 
 
-Current Daily authority: [Daily Catalog v1 C21-R](contracts/daily-catalog-v1.md). Daily134/285 APPLIED/READY; S2 thresholds +/-2 / +/-5; M1-ELIGIBILITY-AWARE signal aggregation. SC-07 applies to Lifetime only. Score Engine catalog readiness READY; catalog blockers NONE; Production BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER; epoch resolved by SAJU_DAY_PILLAR_EPOCH_V1). Public/signed wire and privacy remain unchanged.
+Current V1 Daily: SAJU 9 rules / 19 mappings, K=18, exact signed-peak ties; Zodiac STATIC context. Lifetime COMMUNICATION and final Daily COMMUNICATION scores are null. Source eligibility and current readiness: [Zodiac V1](contracts/zodiac-catalog-v1.md), [readiness](contracts/readiness.md).
+
+## Zodiac application status
+
+Implemented: Zodiac date/pair/scoring, M2 source/category blend, exact arithmetic/ranking and Daily signed-peak aggregation. Partial: overall Score Engine pipeline. Not implemented: complete Four Pillars, candidate generation, production Core REST orchestration, frontend and AI. See contracts/readiness.md; this update does not complete T06/T10/T11/T14 globally.

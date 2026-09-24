@@ -1,9 +1,10 @@
 openapi: 3.1.1
 info:
   title: LOVE FORTUNE API contract
-  version: 3.0.0
-  description: Final Decision v3 and retained v2 contracts frozen. Catalog and external
-    engine readiness gates are separate. No implementation code is included.
+  version: 4.0.0
+  description: "Zodiac V1 contract: SAJU + ZODIAC Lifetime, SAJU-only Daily. Advanced Astrology is
+    preserved but deferred. Contract readiness is separate from incomplete production
+    orchestration."
 jsonSchemaDialect: https://json-schema.org/draft/2020-12/schema
 servers:
   - url: /wp-json/love-fortune/v1
@@ -17,8 +18,7 @@ paths:
       x-rate-limit:
         requests: 60
         windowSeconds: 600
-        scope: Trusted proxy validated source IP, else remote address; HMAC key, never
-          raw IP
+        scope: Trusted proxy validated source IP, else remote address; HMAC key, never raw IP
         rawKeyMaxRetentionSeconds: 3600
         algorithm: fixed-window
       requestBody:
@@ -41,6 +41,10 @@ paths:
             application/json:
               schema:
                 $ref: ./schemas/compatibility-response.schema.json
+              examples:
+                zodiacV1Partial:
+                  summary: Synthetic partial SAJU + ZODIAC result; COMMUNICATION null
+                  externalValue: ./examples/zodiac/compatibility-mixed-valid.json
         "400":
           description: Malformed request
           headers:
@@ -116,8 +120,7 @@ paths:
                 type: string
                 const: no-store
             Retry-After:
-              description: Integer seconds remaining until the current600-second fixed window
-                ends.
+              description: Integer seconds remaining until the current600-second fixed window ends.
               required: true
               schema:
                 type: string
@@ -153,10 +156,8 @@ paths:
               schema:
                 $ref: ./schemas/error.schema.json
       x-max-payload-bytes: 32768
-      x-content-encoding: Any Content-Encoding header is rejected with415
-        UNSUPPORTED_CONTENT_ENCODING
-      x-content-type: application/json or application/json; charset=utf-8 only;
-        charset case-insensitive
+      x-content-encoding: Any Content-Encoding header is rejected with415 UNSUPPORTED_CONTENT_ENCODING
+      x-content-type: application/json or application/json; charset=utf-8 only; charset case-insensitive
   /fortune/daily:
     post:
       operationId: calculateDaily
@@ -166,8 +167,7 @@ paths:
       x-rate-limit:
         requests: 60
         windowSeconds: 600
-        scope: Trusted proxy validated source IP, else remote address; HMAC key, never
-          raw IP
+        scope: Trusted proxy validated source IP, else remote address; HMAC key, never raw IP
         rawKeyMaxRetentionSeconds: 3600
         algorithm: fixed-window
       requestBody:
@@ -190,6 +190,10 @@ paths:
             application/json:
               schema:
                 $ref: ./schemas/daily-response.schema.json
+              examples:
+                zodiacV1:
+                  summary: Synthetic Saju Daily signal with static Zodiac context
+                  externalValue: ./examples/zodiac/daily-valid.json
         "400":
           description: Malformed request
           headers:
@@ -265,8 +269,7 @@ paths:
                 type: string
                 const: no-store
             Retry-After:
-              description: Integer seconds remaining until the current600-second fixed window
-                ends.
+              description: Integer seconds remaining until the current600-second fixed window ends.
               required: true
               schema:
                 type: string
@@ -302,10 +305,8 @@ paths:
               schema:
                 $ref: ./schemas/error.schema.json
       x-max-payload-bytes: 32768
-      x-content-encoding: Any Content-Encoding header is rejected with415
-        UNSUPPORTED_CONTENT_ENCODING
-      x-content-type: application/json or application/json; charset=utf-8 only;
-        charset case-insensitive
+      x-content-encoding: Any Content-Encoding header is rejected with415 UNSUPPORTED_CONTENT_ENCODING
+      x-content-type: application/json or application/json; charset=utf-8 only; charset case-insensitive
   /fortune/daily-range:
     post:
       operationId: calculateDailyRange
@@ -315,8 +316,7 @@ paths:
       x-rate-limit:
         requests: 60
         windowSeconds: 600
-        scope: Trusted proxy validated source IP, else remote address; HMAC key, never
-          raw IP
+        scope: Trusted proxy validated source IP, else remote address; HMAC key, never raw IP
         rawKeyMaxRetentionSeconds: 3600
         algorithm: fixed-window
       requestBody:
@@ -414,8 +414,7 @@ paths:
                 type: string
                 const: no-store
             Retry-After:
-              description: Integer seconds remaining until the current600-second fixed window
-                ends.
+              description: Integer seconds remaining until the current600-second fixed window ends.
               required: true
               schema:
                 type: string
@@ -451,10 +450,8 @@ paths:
               schema:
                 $ref: ./schemas/error.schema.json
       x-max-payload-bytes: 32768
-      x-content-encoding: Any Content-Encoding header is rejected with415
-        UNSUPPORTED_CONTENT_ENCODING
-      x-content-type: application/json or application/json; charset=utf-8 only;
-        charset case-insensitive
+      x-content-encoding: Any Content-Encoding header is rejected with415 UNSUPPORTED_CONTENT_ENCODING
+      x-content-type: application/json or application/json; charset=utf-8 only; charset case-insensitive
   /fortune/weekly:
     post:
       operationId: calculateWeekly
@@ -464,8 +461,7 @@ paths:
       x-rate-limit:
         requests: 60
         windowSeconds: 600
-        scope: Trusted proxy validated source IP, else remote address; HMAC key, never
-          raw IP
+        scope: Trusted proxy validated source IP, else remote address; HMAC key, never raw IP
         rawKeyMaxRetentionSeconds: 3600
         algorithm: fixed-window
       requestBody:
@@ -563,8 +559,7 @@ paths:
                 type: string
                 const: no-store
             Retry-After:
-              description: Integer seconds remaining until the current600-second fixed window
-                ends.
+              description: Integer seconds remaining until the current600-second fixed window ends.
               required: true
               schema:
                 type: string
@@ -600,10 +595,8 @@ paths:
               schema:
                 $ref: ./schemas/error.schema.json
       x-max-payload-bytes: 32768
-      x-content-encoding: Any Content-Encoding header is rejected with415
-        UNSUPPORTED_CONTENT_ENCODING
-      x-content-type: application/json or application/json; charset=utf-8 only;
-        charset case-insensitive
+      x-content-encoding: Any Content-Encoding header is rejected with415 UNSUPPORTED_CONTENT_ENCODING
+      x-content-type: application/json or application/json; charset=utf-8 only; charset case-insensitive
   /fortune/monthly:
     post:
       operationId: calculateMonthly
@@ -613,8 +606,7 @@ paths:
       x-rate-limit:
         requests: 60
         windowSeconds: 600
-        scope: Trusted proxy validated source IP, else remote address; HMAC key, never
-          raw IP
+        scope: Trusted proxy validated source IP, else remote address; HMAC key, never raw IP
         rawKeyMaxRetentionSeconds: 3600
         algorithm: fixed-window
       requestBody:
@@ -712,8 +704,7 @@ paths:
                 type: string
                 const: no-store
             Retry-After:
-              description: Integer seconds remaining until the current600-second fixed window
-                ends.
+              description: Integer seconds remaining until the current600-second fixed window ends.
               required: true
               schema:
                 type: string
@@ -749,10 +740,8 @@ paths:
               schema:
                 $ref: ./schemas/error.schema.json
       x-max-payload-bytes: 32768
-      x-content-encoding: Any Content-Encoding header is rejected with415
-        UNSUPPORTED_CONTENT_ENCODING
-      x-content-type: application/json or application/json; charset=utf-8 only;
-        charset case-insensitive
+      x-content-encoding: Any Content-Encoding header is rejected with415 UNSUPPORTED_CONTENT_ENCODING
+      x-content-type: application/json or application/json; charset=utf-8 only; charset case-insensitive
   /fortune/yearly:
     post:
       operationId: calculateYearly
@@ -762,8 +751,7 @@ paths:
       x-rate-limit:
         requests: 60
         windowSeconds: 600
-        scope: Trusted proxy validated source IP, else remote address; HMAC key, never
-          raw IP
+        scope: Trusted proxy validated source IP, else remote address; HMAC key, never raw IP
         rawKeyMaxRetentionSeconds: 3600
         algorithm: fixed-window
       requestBody:
@@ -861,8 +849,7 @@ paths:
                 type: string
                 const: no-store
             Retry-After:
-              description: Integer seconds remaining until the current600-second fixed window
-                ends.
+              description: Integer seconds remaining until the current600-second fixed window ends.
               required: true
               schema:
                 type: string
@@ -898,10 +885,8 @@ paths:
               schema:
                 $ref: ./schemas/error.schema.json
       x-max-payload-bytes: 32768
-      x-content-encoding: Any Content-Encoding header is rejected with415
-        UNSUPPORTED_CONTENT_ENCODING
-      x-content-type: application/json or application/json; charset=utf-8 only;
-        charset case-insensitive
+      x-content-encoding: Any Content-Encoding header is rejected with415 UNSUPPORTED_CONTENT_ENCODING
+      x-content-type: application/json or application/json; charset=utf-8 only; charset case-insensitive
   /interpretation/generate:
     post:
       operationId: generateInterpretation
@@ -911,8 +896,7 @@ paths:
       x-rate-limit:
         requests: 10
         windowSeconds: 600
-        scope: Trusted proxy validated source IP, else remote address; HMAC key, never
-          raw IP
+        scope: Trusted proxy validated source IP, else remote address; HMAC key, never raw IP
         rawKeyMaxRetentionSeconds: 3600
         algorithm: fixed-window
       requestBody:
@@ -923,8 +907,7 @@ paths:
               $ref: ./schemas/interpretation-request.schema.json
       responses:
         "200":
-          description: AI interpretation or deterministic fallback;
-            meta.interpretationMode=AI|FALLBACK
+          description: AI interpretation or deterministic fallback; meta.interpretationMode=AI|FALLBACK
           headers:
             Cache-Control:
               description: "Required: no-store"
@@ -1011,8 +994,7 @@ paths:
                 type: string
                 const: no-store
             Retry-After:
-              description: Integer seconds remaining until the current600-second fixed window
-                ends.
+              description: Integer seconds remaining until the current600-second fixed window ends.
               required: true
               schema:
                 type: string
@@ -1035,8 +1017,8 @@ paths:
               schema:
                 $ref: ./schemas/error.schema.json
         "503":
-          description: "INTERPRETATION_UNAVAILABLE: neither AI interpretation nor
-            deterministic fallback can be returned"
+          description: "INTERPRETATION_UNAVAILABLE: neither AI interpretation nor deterministic fallback can
+            be returned"
           headers:
             Cache-Control:
               description: "Required: no-store"
@@ -1049,10 +1031,8 @@ paths:
               schema:
                 $ref: ./schemas/error.schema.json
       x-max-payload-bytes: 65536
-      x-content-encoding: Any Content-Encoding header is rejected with415
-        UNSUPPORTED_CONTENT_ENCODING
-      x-content-type: application/json or application/json; charset=utf-8 only;
-        charset case-insensitive
+      x-content-encoding: Any Content-Encoding header is rejected with415 UNSUPPORTED_CONTENT_ENCODING
+      x-content-type: application/json or application/json; charset=utf-8 only; charset case-insensitive
   /celebrities:
     get:
       summary: Public read-only reference
@@ -1080,8 +1060,8 @@ paths:
           schema:
             type: string
             maxLength: 128
-          description: Optional NFC case-insensitive substring of reference ID or display
-            name; never echoed or logged.
+          description: Optional NFC case-insensitive substring of reference ID or display name; never echoed
+            or logged.
         - name: limit
           in: query
           schema:
@@ -1490,8 +1470,8 @@ paths:
           schema:
             type: string
             maxLength: 128
-          description: Optional NFC case-insensitive substring of reference ID or display
-            name; never echoed or logged.
+          description: Optional NFC case-insensitive substring of reference ID or display name; never echoed
+            or logged.
         - name: limit
           in: query
           schema:
@@ -1586,8 +1566,7 @@ paths:
       x-rate-limit:
         requests: 60
         windowSeconds: 600
-        scope: Trusted proxy validated source IP, else remote address; HMAC key, never
-          raw IP
+        scope: Trusted proxy validated source IP, else remote address; HMAC key, never raw IP
         rawKeyMaxRetentionSeconds: 3600
         algorithm: fixed-window
       requestBody:
@@ -1685,8 +1664,7 @@ paths:
                 type: string
                 const: no-store
             Retry-After:
-              description: Integer seconds remaining until the current600-second fixed window
-                ends.
+              description: Integer seconds remaining until the current600-second fixed window ends.
               required: true
               schema:
                 type: string
@@ -1722,10 +1700,8 @@ paths:
               schema:
                 $ref: ./schemas/error.schema.json
       x-max-payload-bytes: 32768
-      x-content-encoding: Any Content-Encoding header is rejected with415
-        UNSUPPORTED_CONTENT_ENCODING
-      x-content-type: application/json or application/json; charset=utf-8 only;
-        charset case-insensitive
+      x-content-encoding: Any Content-Encoding header is rejected with415 UNSUPPORTED_CONTENT_ENCODING
+      x-content-type: application/json or application/json; charset=utf-8 only; charset case-insensitive
   /admin/celebrities/{celebrityId}:
     summary: Admin resource contract; no arbitrary SQL/code
     put:
@@ -1881,10 +1857,19 @@ components:
       type: apiKey
       in: header
       name: Cookie
-      description: Authenticated WordPress admin session; validate real WordPress
-        cookies, not arbitrary Cookie presence.
+      description: Authenticated WordPress admin session; validate real WordPress cookies, not arbitrary
+        Cookie presence.
     WordPressNonce:
       type: apiKey
       in: header
       name: X-WP-Nonce
       description: Valid wp_rest nonce bound to the authenticated user/session.
+x-product-scope:
+  active:
+    - SAJU
+    - ZODIAC
+  dailySignal:
+    - SAJU
+  deferred:
+    - ASTROLOGY
+  ephemeris: NOT_REQUIRED_FOR_V1

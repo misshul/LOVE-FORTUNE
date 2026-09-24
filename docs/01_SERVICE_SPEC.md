@@ -1,9 +1,11 @@
 # LOVE FORTUNE
 # 01_SERVICE_SPEC.md
 
-Version: 2.3.0
+Version: 2.4.0
 Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: Service Specification
+
+Current V1 authority: [Zodiac V1](contracts/zodiac-catalog-v1.md). SAJU + ZODIAC are active; planetary Astrology and ephemeris are ADVANCED / DEFERRED. This scope supersedes prior source/weight/version gates; preserved Advanced sections do not authorize V1 execution.
 
 Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
 Freeze Gate: [Freeze validation and readiness](contracts/README.md)
@@ -13,7 +15,7 @@ Freeze Gate: [Freeze validation and readiness](contracts/README.md)
 # 1. 서비스 개요
 
 LOVE FORTUNE은 두 사람의 생년월일시를 기반으로
-한국식 궁합(사주)과 서양 점성술을 결합하여
+한국식 궁합(사주)과 고정 날짜 기반 12별자리 모델을 결합하여
 평생 궁합과 매일 변하는 사랑운을 제공하는 서비스다.
 
 핵심 질문:
@@ -31,7 +33,7 @@ LOVE FORTUNE은 두 사람의 생년월일시를 기반으로
 - Gregorian birth dates1900..2099; Public lunar/leap flags are excluded in v2.
 - 출생시간 모름 지원
 - 한국식 사주 궁합
-- Western Astrology Synastry
+- Zodiac V1 fixed-date compatibility; Western Astrology Synastry is ADVANCED / DEFERRED
 - LOVE SCORE
 - 8개 궁합 카테고리
 - 평생 궁합
@@ -64,7 +66,7 @@ LOVE FORTUNE은 두 사람의 생년월일시를 기반으로
 - 서버 Fortune History 저장
 
 MVP라는 이유로 기능을 제외하지 않는다.
-전체 사양이 구현 범위이며 개발 순서만 단계적으로 관리한다.
+V1 구현 범위는 현재 product-scope를 따른다. Advanced Astrology는 보존된 후속 범위다.
 
 ---
 
@@ -120,7 +122,7 @@ Person requires birthDate and birthLocationId; birthTime defaults to null. Publi
 
 # 9. Calculation Pipeline
 
-Normalized input -> Saju/Astrology -> Structured Features -> Score/Period -> Deterministic Result -> Frontend. The same feature set feeds score calculation and approved AI evidence selection. Do not invent evidence after scoring. Core calculation does not depend on AI. Interpretation is a separate signed-context request.
+Normalized input -> Saju + original-birthDate Zodiac -> source category results -> M2 source/category blend -> Score/Period -> Deterministic Result -> Frontend. The same feature set feeds score calculation and approved AI evidence selection. Do not invent evidence after scoring. Core calculation does not depend on AI. Interpretation is a separate signed-context request.
 
 ---
 
@@ -143,8 +145,8 @@ LONG_TERM       장기 궁합
 
 # 11. LOVE SCORE
 
-LOVE SCORE는 Saju와 Astrology Feature를
-카테고리별로 결합해 산출한다.
+LOVE SCORE는 Saju와 Zodiac source category score를 4/5와 1/5로 결합한다.
+COMMUNICATION은 context-only이며 overall의 score/coverage/confidence 분모에서 제외한다.
 
 AI가 점수를 만들거나 수정하지 않는다.
 
@@ -294,7 +296,7 @@ Notifications mean non-personal Service Notices. Personal Push, Web Push subscri
 
 # 22. Implementation Gate / Versions
 
-Final Decision v3 supersedes v2/v1 where changed. Contract Freeze requires zero unresolved conflicts and successful contract tests. Separately, EPHEMERIS_PROVIDER blocks production engines until verified; SAJU_DAY_PILLAR_EPOCH_V1 is APPLIED / READY. External dependencies alone do not fail Freeze. No guessed rules or code changes. See contracts/README.md for actual status.
+Zodiac V1 supersedes the prior active source model. V1_EXTERNAL_BLOCKERS=NONE; SAJU_DAY_PILLAR_EPOCH_V1 is APPLIED / READY. EPHEMERIS_PROVIDER remains an Advanced-only blocker. Full Four Pillars, score orchestration and API implementation are still incomplete. Contract Freeze does not certify production readiness. See contracts/readiness.md.
 
 ---
 
@@ -338,6 +340,6 @@ Optional AI Interpretation
 
 ## Final v3 contract alignment
 
-[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER; epoch resolved by SAJU_DAY_PILLAR_EPOCH_V1).
+[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and ADVANCED-only BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER); V1_EXTERNAL_BLOCKERS=NONE, epoch APPLIED.
 
 END OF DOCUMENT

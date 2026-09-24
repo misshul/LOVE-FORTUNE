@@ -1,9 +1,11 @@
 # LOVE FORTUNE
 # 02_FORTUNE_ENGINE_SPEC.md
 
-Version: 3.5.0
+Version: 3.6.0
 Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: Fortune Engine Specification
+
+Current V1 authority: [Zodiac V1](contracts/zodiac-catalog-v1.md). SAJU + ZODIAC are active; planetary Astrology and ephemeris are ADVANCED / DEFERRED. This scope supersedes prior source/weight/version gates; preserved Advanced sections do not authorize V1 execution.
 
 Astrology Authority: [Applied Astrology Catalog v1](contracts/astrology-catalog-v1.md) supersedes older Astrology placeholders.
 Decision Authority: [Final Decision v3](contracts/final-decision-v3.md), then [v2](contracts/final-decision-v2.md) and [approved clarifications](contracts/clarification-v2.md)
@@ -13,7 +15,7 @@ Freeze Gate: [Freeze validation and readiness](contracts/README.md)
 
 # 1. 목적
 
-본 문서는 LOVE FORTUNE의 Saju 및 Western Astrology 계산 규칙을 정의한다.
+본 문서는 V1 Saju/Zodiac과 별도 Advanced Astrology 계산 규칙을 정의한다.
 
 AI는 본 계산에 참여하지 않는다.
 
@@ -21,7 +23,7 @@ AI는 본 계산에 참여하지 않는다.
 
 # 2. Engine Pipeline
 
-Normalized input -> Saju/Astrology -> Structured Features -> Score/Period -> deterministic result. Structured Features feed both Score Engine and AI evidence selection. AI runs through a separate API and is not a Core dependency.
+Normalized input -> Saju and original-Gregorian-birthDate Zodiac -> source category scores -> M2 blend -> Score/Period -> deterministic result. Structured Features feed both Score Engine and AI evidence selection. AI runs through a separate API and is not a Core dependency.
 
 ---
 
@@ -169,7 +171,11 @@ Hap/Samhap are primary supportive relations; Chung/Hyeong/Hae require contextual
 
 ---
 
-# 11. Astrology 기본
+## V1 Zodiac engine
+
+Use [Zodiac V1](contracts/zodiac-catalog-v1.md): original Gregorian birthDate only, one canonical sign, one primary pair relation, 20 numeric mappings, confidence3/4. No birth-time/location correction or ephemeris. Date and pair resolvers are implemented; full Four Pillars remains separate.
+
+# 11. Astrology 기본 - ADVANCED / DEFERRED
 
 - Tropical Zodiac
 - Geocentric ecliptic longitude
@@ -177,7 +183,7 @@ Hap/Samhap are primary supportive relations; Chung/Hyeong/Hae require contextual
 
 ---
 
-# 12. Planet Scope
+# 12. Planet Scope - ADVANCED / DEFERRED
 
 Core:
 
@@ -214,7 +220,7 @@ Chiron
 
 ---
 
-# 13. ASC / House
+# 13. ASC / House - ADVANCED / DEFERRED
 
 ASC와 House는 optional context다.
 
@@ -240,7 +246,7 @@ Warning을 반환한다.
 
 ---
 
-# 14. MC
+# 14. MC - ADVANCED / DEFERRED
 
 MC는 다음 모든 영역에서 제외한다.
 
@@ -254,7 +260,7 @@ MC는 다음 모든 영역에서 제외한다.
 
 ---
 
-# 15. Aspects
+# 15. Aspects - ADVANCED / DEFERRED
 
 지원:
 
@@ -289,7 +295,7 @@ Approved Astrology v1: effectiveOrb=min(10,baseAspectOrb+max(adjustmentA,adjustm
 
 ---
 
-# 16. Aspect Strength
+# 16. Aspect Strength - ADVANCED / DEFERRED
 
 Active only, orbCloseness=1-aspectOrb/effectiveOrb. It is not a score or confidence multiplier. Exact1,boundary0; inactive creates no closeness/Feature. Use optional metadata.orbCloseness for request-local priority only; no raw evidence logging.
 
@@ -306,13 +312,13 @@ Clamp:
 
 ---
 
-# 17. Birth Time Unknown - Astrology
+# 17. Birth Time Unknown - Astrology - ADVANCED / DEFERRED
 
 ASC/House are UNKNOWN with zero score weight. Evaluate possible Moon positions across the unknown interval without inventing a representative time. Candidate grouping/agreement/availability follows v2. Normative contract: [Final Decision v2 SC-01](contracts/runtime-contract-v2.md#sc-01-confidence-and-coverage). Normative contract: [Final Decision v2 SC-02](contracts/runtime-contract-v2.md#sc-02-rule-catalog-and-candidates).
 
 ---
 
-# 18. Moon Uncertainty
+# 18. Moon Uncertainty - ADVANCED / DEFERRED
 
 임의 noon Moon sign을 사용하지 않는다.
 
@@ -334,7 +340,7 @@ UNCERTAIN:
 
 ---
 
-# 19. Ephemeris Provider
+# 19. Ephemeris Provider - ADVANCED / DEFERRED
 
 Domain은 특정 Provider에 고정하지 않는다.
 
@@ -361,7 +367,7 @@ ephemerisDataVersion
 
 ---
 
-# 20. Daily Astrology / DST
+# 20. Daily Astrology / DST - ADVANCED / DEFERRED
 
 Four nominal samples:06:00,12:00,18:00,23:00 in targetTimezone. Exclude missing samples; source signal=clamp(0.75*mean+0.25*signedPeak,-1,1). Peak ties select earlier local sample. Nonexistent local time moves to first valid instant afterward; ambiguous local time selects earlier UTC instant. Record pinned timezoneDataVersion. Outer daily direct influence remains0. Normative contract: [Final Decision v2 SC-05](contracts/runtime-contract-v2.md#sc-05-daily-sampling-and-dst).
 
@@ -381,7 +387,7 @@ Fields: featureId,ruleId,source,subject,category,direction,signedValue,rawValue,
 
 # 23. Confidence
 
-Normative contract: [Final Decision v2 SC-01](contracts/runtime-contract-v2.md#sc-01-confidence-and-coverage). feature confidence wire field is confidence. coverage is available/eligible pre-confidence weight, not feature count. Category resultConfidence is coverage times weighted feature confidence; overall uses the v2 pre-coverage categoryResultConfidence formula. Missing-input supported rules remain eligible; unsupported/disabled rules do not.
+Normative contract: [Final Decision v2 SC-01](contracts/runtime-contract-v2.md#sc-01-confidence-and-coverage). feature confidence wire field is confidence. coverage is available/eligible pre-confidence weight, not feature count. Category resultConfidence is coverage times weighted feature confidence; overallPreCoverageConfidence uses the SC-01 computable-category mean, and wire resultConfidence=overallCoverage*overallPreCoverageConfidence. M2 applies only at source/category blend. Missing-input supported rules remain eligible; unsupported/disabled rules do not.
 
 ---
 
@@ -418,7 +424,7 @@ Engine 구현은 다음을 만족해야 한다.
 
 ## Final v3 contract alignment
 
-[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER; epoch resolved by SAJU_DAY_PILLAR_EPOCH_V1).
+[Runtime contract](contracts/runtime-contract-v2.md) applies the approved v3 decisions: structural coverage is retained with zero usable confidence; Daily source confidence includes all four samples with missing=0; Weekly is the valid-Daily arithmetic mean; period fallback days are excluded; periodDelta and trend magnitude/direction are separate; Actions use weighted Feature.confidence and cannot alter scores. UI displays deterministic fields; AI cannot alter Action confidence. No storage or new engine rules are introduced. Contract Freeze is independent of BLOCKED_CATALOG (SCORING_RULE_CATALOG_APPROVAL) and ADVANCED-only BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER); V1_EXTERNAL_BLOCKERS=NONE, epoch APPLIED.
 
 See [Astrology Catalog v1](contracts/astrology-catalog-v1.md) for canonical planet order, deferred outer/Jupiter/Saturn scope, category Feature projection, orbCloseness allowlist and all-ages PASSION meaning. Existing outer caps, confidence/coverage/period/guardrail/privacy remain unchanged.
 
@@ -430,4 +436,4 @@ END OF DOCUMENT
 Current authority: [Saju v1](contracts/saju-catalog-v1.md), [Guardrail v2](contracts/guardrail-v2.md), [ContextEvidence](contracts/context-evidence.md). These supersede historical Saju scoring placeholders, unit-sign restrictions and guardrail search. Saju14 families:9 scoring/5 context, APPLIED/READY. Daily C21-R is APPLIED/READY; catalog blockers NONE. Other privacy/API/time contracts are unchanged.
 
 
-Current Daily authority: [Daily Catalog v1 C21-R](contracts/daily-catalog-v1.md). Daily134/285 APPLIED/READY; S2 thresholds +/-2 / +/-5; M1-ELIGIBILITY-AWARE signal aggregation. SC-07 applies to Lifetime only. Score Engine catalog readiness READY; catalog blockers NONE; Production BLOCKED_EXTERNAL (EPHEMERIS_PROVIDER; epoch resolved by SAJU_DAY_PILLAR_EPOCH_V1). Public/signed wire and privacy remain unchanged.
+Current V1 Daily: SAJU 9 rules / 19 mappings, K=18, exact signed-peak ties; Zodiac STATIC context. Lifetime COMMUNICATION and final Daily COMMUNICATION scores are null. Source eligibility and current readiness: [Zodiac V1](contracts/zodiac-catalog-v1.md), [readiness](contracts/readiness.md).

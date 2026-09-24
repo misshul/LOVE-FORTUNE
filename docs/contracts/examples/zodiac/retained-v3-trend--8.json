@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "requestId": "synthetic-request-only",
+    "versions": {
+      "serviceVersion": "synthetic-zodiac-v1",
+      "apiVersion": "v1",
+      "sajuEngineVersion": "synthetic-saju-v1",
+      "scoreVersion": "SCORE_ZODIAC_V1",
+      "configVersion": "synthetic-config-v1",
+      "locationReferenceVersion": "synthetic-location-v1",
+      "timezoneDataVersion": "synthetic-tz-v1",
+      "zodiacEngineVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+      "zodiacCatalogVersion": "ZODIAC_CATALOG_V1",
+      "zodiacDateRangeVersion": "ZODIAC_DATE_RANGE_V1"
+    }
+  },
+  "period": {
+    "type": "WEEK",
+    "startDate": "2026-09-07",
+    "endDate": "2026-09-13",
+    "timezone": "Asia/Tokyo"
+  },
+  "targetTimezone": "Asia/Tokyo",
+  "resultConfidence": 0.8,
+  "coverage": 1,
+  "warnings": [],
+  "features": [],
+  "weeklyScore": 60,
+  "bestDays": [],
+  "cautionDays": [],
+  "volatility": 0,
+  "status": "GOOD",
+  "periodDelta": -8,
+  "trendStatus": "SIGNIFICANT",
+  "trendDirection": "DOWN"
+}

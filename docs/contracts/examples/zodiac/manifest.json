@@ -1,0 +1,275 @@
+{
+  "provenance": "SYNTHETIC_ONLY. Zodiac V1 wire cases; no user data.",
+  "cases": [
+    {
+      "file": "compatibility-valid.json",
+      "schema": "compatibility-response",
+      "valid": true
+    },
+    {
+      "file": "daily-valid.json",
+      "schema": "daily-response",
+      "valid": true
+    },
+    {
+      "file": "signed-valid.json",
+      "schema": "signed-context",
+      "valid": true
+    },
+    {
+      "file": "communication-50-invalid.json",
+      "schema": "compatibility-response",
+      "valid": false
+    },
+    {
+      "file": "communication-zero-invalid.json",
+      "schema": "compatibility-response",
+      "valid": false
+    },
+    {
+      "file": "daily-communication-invalid.json",
+      "schema": "daily-response",
+      "valid": false
+    },
+    {
+      "file": "old-versions-invalid.json",
+      "schema": "compatibility-response",
+      "valid": false
+    },
+    {
+      "file": "planetary-evidence-invalid.json",
+      "schema": "compatibility-response",
+      "valid": false
+    },
+    {
+      "file": "astrology-source-invalid.json",
+      "schema": "compatibility-response",
+      "valid": false
+    },
+    {
+      "file": "private-context-invalid.json",
+      "schema": "signed-context",
+      "valid": false
+    },
+    {
+      "file": "pair-id-invalid.json",
+      "schema": "zodiac-context",
+      "valid": false
+    },
+    {
+      "file": "relation-invalid.json",
+      "schema": "zodiac-context",
+      "valid": false
+    },
+    {
+      "file": "context-version-invalid.json",
+      "schema": "zodiac-context",
+      "valid": false
+    },
+    {
+      "file": "context-unknown-invalid.json",
+      "schema": "zodiac-context",
+      "valid": false
+    },
+    {
+      "file": "zodiac-long-term-invalid.json",
+      "schema": "zodiac-evidence",
+      "valid": false
+    },
+    {
+      "file": "zodiac-daily-invalid.json",
+      "schema": "zodiac-evidence",
+      "valid": false
+    },
+    {
+      "file": "wrong-signed-value-invalid.json",
+      "schema": "zodiac-evidence",
+      "valid": false
+    },
+    {
+      "file": "retained-core-insufficient-valid.json",
+      "schema": "compatibility-response",
+      "valid": true
+    },
+    {
+      "file": "retained-core-insufficient-invalid.json",
+      "schema": "compatibility-response",
+      "valid": false
+    },
+    {
+      "file": "retained-core-boundary-0.json",
+      "schema": "compatibility-response",
+      "valid": true
+    },
+    {
+      "file": "retained-core-boundary-44_9999.json",
+      "schema": "compatibility-response",
+      "valid": true
+    },
+    {
+      "file": "retained-core-boundary-45.json",
+      "schema": "compatibility-response",
+      "valid": true
+    },
+    {
+      "file": "retained-core-boundary-59_9999.json",
+      "schema": "compatibility-response",
+      "valid": true
+    },
+    {
+      "file": "retained-core-boundary-60.json",
+      "schema": "compatibility-response",
+      "valid": true
+    },
+    {
+      "file": "retained-core-boundary-74_9999.json",
+      "schema": "compatibility-response",
+      "valid": true
+    },
+    {
+      "file": "retained-core-boundary-75.json",
+      "schema": "compatibility-response",
+      "valid": true
+    },
+    {
+      "file": "retained-core-wrong-status.json",
+      "schema": "compatibility-response",
+      "valid": false
+    },
+    {
+      "file": "retained-core-boundary-84_9999.json",
+      "schema": "compatibility-response",
+      "valid": true
+    },
+    {
+      "file": "retained-core-boundary-85.json",
+      "schema": "compatibility-response",
+      "valid": true
+    },
+    {
+      "file": "retained-core-boundary-100.json",
+      "schema": "compatibility-response",
+      "valid": true
+    },
+    {
+      "file": "retained-v3-trend-null.json",
+      "schema": "period-response",
+      "valid": true
+    },
+    {
+      "file": "retained-v3-trend-null-invalid.json",
+      "schema": "period-response",
+      "valid": false
+    },
+    {
+      "file": "retained-v3-trend--8.json",
+      "schema": "period-response",
+      "valid": true
+    },
+    {
+      "file": "retained-v3-trend--3.json",
+      "schema": "period-response",
+      "valid": true
+    },
+    {
+      "file": "retained-v3-trend--2.99999.json",
+      "schema": "period-response",
+      "valid": true
+    },
+    {
+      "file": "retained-v3-trend-0.json",
+      "schema": "period-response",
+      "valid": true
+    },
+    {
+      "file": "retained-v3-trend-2.99999.json",
+      "schema": "period-response",
+      "valid": true
+    },
+    {
+      "file": "retained-v3-trend-3.json",
+      "schema": "period-response",
+      "valid": true
+    },
+    {
+      "file": "retained-v3-trend-3-invalid.json",
+      "schema": "period-response",
+      "valid": false
+    },
+    {
+      "file": "retained-v3-trend-8.json",
+      "schema": "period-response",
+      "valid": true
+    },
+    {
+      "file": "retained-v3-period-delta-missing-invalid.json",
+      "schema": "period-response",
+      "valid": false
+    },
+    {
+      "file": "retained-daily-s2--5.0001.json",
+      "schema": "daily-response",
+      "valid": true
+    },
+    {
+      "file": "retained-daily-s2--5.json",
+      "schema": "daily-response",
+      "valid": true
+    },
+    {
+      "file": "retained-daily-s2--4.9999.json",
+      "schema": "daily-response",
+      "valid": true
+    },
+    {
+      "file": "retained-daily-s2--2.0001.json",
+      "schema": "daily-response",
+      "valid": true
+    },
+    {
+      "file": "retained-daily-s2--2.json",
+      "schema": "daily-response",
+      "valid": true
+    },
+    {
+      "file": "retained-daily-s2--1.9999.json",
+      "schema": "daily-response",
+      "valid": true
+    },
+    {
+      "file": "retained-daily-s2-1.9999.json",
+      "schema": "daily-response",
+      "valid": true
+    },
+    {
+      "file": "retained-daily-s2-2.json",
+      "schema": "daily-response",
+      "valid": true
+    },
+    {
+      "file": "retained-daily-s2-2.0001.json",
+      "schema": "daily-response",
+      "valid": true
+    },
+    {
+      "file": "retained-daily-s2-4.9999.json",
+      "schema": "daily-response",
+      "valid": true
+    },
+    {
+      "file": "retained-daily-s2-5.json",
+      "schema": "daily-response",
+      "valid": true
+    },
+    {
+      "file": "retained-daily-s2-5.0001.json",
+      "schema": "daily-response",
+      "valid": true
+    },
+    {
+      "file": "compatibility-mixed-valid.json",
+      "schema": "compatibility-response",
+      "valid": true
+    }
+  ]
+}
