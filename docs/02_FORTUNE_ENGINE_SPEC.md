@@ -1,7 +1,7 @@
 # LOVE FORTUNE
 # 02_FORTUNE_ENGINE_SPEC.md
 
-Version: 3.6.0
+Version: 3.6.2
 Status: CONTRACT FROZEN / IMPLEMENTATION READINESS SEPARATE
 Document Type: Fortune Engine Specification
 
@@ -65,6 +65,8 @@ Normalized input -> Saju and original-Gregorian-birthDate Zodiac -> source categ
 ---
 
 # 5. Year / Month Pillar
+
+Solar-Term reference authority: [FP-01 reference/bridge v1](contracts/fp01-solar-reference-v1.md). The approved local reference covers1899..2100 with4,848 frozen boundaries on SERVICE_PROLEPTIC_POSIX_V1. Year/Month comparison uses resolved natal instants, never Day Pillar adjusted civil time. [Approved FP-02/FP-03](contracts/fp02-fp03-year-month-v1.md) implements pure Year/Month calculators on resolved coordinates: Lichun year, 1984 Jia-Zi anchor, twelve Jie months and Five Tiger stems. Hour and full Natal resolution remain separate.
 
 연주/월주는 절기 기준으로 계산한다.
 

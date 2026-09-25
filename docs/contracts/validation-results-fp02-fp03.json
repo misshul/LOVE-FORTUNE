@@ -1,0 +1,47 @@
+{
+  "result": "PASS",
+  "date": "2026-09-25",
+  "artifactByteIdentity": "PASS",
+  "sha256": "948f243c049ede8519b8e998d191d6e2a9a49c837120836d101e38b67f332943",
+  "protectedPaths": [
+    "wp-content/plugins/love-fortune-core/src/Engine/Saju/GregorianDayNumber.php",
+    "wp-content/plugins/love-fortune-core/src/Engine/Saju/DayPillarCalculator.php",
+    "wp-content/plugins/love-fortune-core/src/Engine/Saju/CalculationDateResolver.php",
+    "wp-content/plugins/love-fortune-core/src/Engine/Saju/DailySampleResolver.php",
+    "wp-content/plugins/love-fortune-core/src/Engine/Saju/SajuDayPillarService.php",
+    "wp-content/plugins/love-fortune-core/tests/fixtures/day-pillar-golden.json",
+    "docs/contracts/rules/saju-rules.json",
+    "docs/contracts/rules/daily-rules.json",
+    "docs/contracts/rules/astrology-rules.json",
+    "docs/contracts/rules/zodiac-rules.json"
+  ],
+  "protectedComparedToHead": "UNCHANGED",
+  "structural": {
+    "schemaFiles": 33,
+    "examples": 203,
+    "validExamples": 113,
+    "invalidExamples": 90,
+    "disabledRuleRecords": 5,
+    "enabledRules": 252,
+    "categoryWeights": 8,
+    "canonicalVectors": 6,
+    "signedValid": 2,
+    "signedInvalid": 8,
+    "httpPrivacyVectors": 19,
+    "openapiOperations": 20,
+    "adminOperations": 7,
+    "publicPostOperations": 8,
+    "openapi": "PASS"
+  },
+  "executedEarlierThisTask": {
+    "fp01": "PASS / 4848 events",
+    "contractsGate": "PASS / zodiac-application.cjs --contracts-only",
+    "phpunit": {
+      "tests": 27,
+      "assertions": 1256915,
+      "php": "8.3.33",
+      "lint": "PASS"
+    },
+    "zodiacCrossRuntime": "PASS / differences=0"
+  }
+}

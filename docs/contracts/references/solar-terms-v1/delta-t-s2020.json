@@ -1,0 +1,1824 @@
+{
+  "values": [
+    {
+      "checksum": "e2f8dd3892dac4205e52071808247c0758059927eb006d210e7f13bdd5ec86c3",
+      "deltaTSeconds": "-3.0",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:31.045666+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1899
+    },
+    {
+      "checksum": "551374f4388d29e9983233ba1e86a33e1ca56354ede23339dd59d7c985587d58",
+      "deltaTSeconds": "-1.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:32.284447+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1900
+    },
+    {
+      "checksum": "5e4324633c41f8a59212a19526c08a852b35ecc59d3f27100dea296dbef50d88",
+      "deltaTSeconds": "-0.7",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:33.649292+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1901
+    },
+    {
+      "checksum": "04fdfb93e42dfaf31ea924620aec2d6df1c5891feeeb299a80c156ae56af0a5e",
+      "deltaTSeconds": "0.6",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:34.992650+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1902
+    },
+    {
+      "checksum": "42da852fa56dd6889aeff40fc466a1b4e4967ba8099a2d5dc264c309d691942e",
+      "deltaTSeconds": "2.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:36.313321+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1903
+    },
+    {
+      "checksum": "ac750f8af4d5eac91494b55345513d5d895f7a65df2aa743b9bd25084a712bcd",
+      "deltaTSeconds": "3.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:37.608339+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1904
+    },
+    {
+      "checksum": "1e6d46d6453e3de5804c69ff4573d590140f90a97b5e22bc887a96dac5d81945",
+      "deltaTSeconds": "4.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:38.881697+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1905
+    },
+    {
+      "checksum": "d9d062826d6fe694d598fa745173ad232aa6348f8c53ad867c0403278fb3a36b",
+      "deltaTSeconds": "6.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:40.225768+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1906
+    },
+    {
+      "checksum": "5d2d64fcecb6a1f40501311c9567c2633d3ee1579357ebd411db99598210cbd8",
+      "deltaTSeconds": "7.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:41.597749+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1907
+    },
+    {
+      "checksum": "72c8127663035bf065e86fe60e82ac313d550b120d57281074329f0eee36cfce",
+      "deltaTSeconds": "8.7",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:42.912214+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1908
+    },
+    {
+      "checksum": "ec0cc23074f8a20c31e1195e8096352f10e8f409c73ca9875e48839f6f1e599a",
+      "deltaTSeconds": "9.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:44.269465+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1909
+    },
+    {
+      "checksum": "3e12b2cc0b8e25e73fcc859bd009301d4ad7fbfd9187b734108f6099d044955f",
+      "deltaTSeconds": "11.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:45.556902+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1910
+    },
+    {
+      "checksum": "ba587fe4356f6ac940e56f340d46523fd1297e38b9c8f21efb5f19af86f67480",
+      "deltaTSeconds": "12.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:46.908578+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1911
+    },
+    {
+      "checksum": "238350c074e2905e2ab89adc0852c11f9a9af44caf4f88920db98d6f6d3440ab",
+      "deltaTSeconds": "13.8",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:48.282665+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1912
+    },
+    {
+      "checksum": "7b8ebaef6b058d9a461b755fad9de9d337ffc7f5269513dd70cae1a86b04cdc2",
+      "deltaTSeconds": "15.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:49.595584+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1913
+    },
+    {
+      "checksum": "b88e6d405c1abf4220fcdcdc951936bad85b85407993e33c4b31f6b3e84ecd13",
+      "deltaTSeconds": "16.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:50.908916+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1914
+    },
+    {
+      "checksum": "559865887da6bcd1df31a16137cde0c83964930a8dd738a9fe7a9200d37c7f29",
+      "deltaTSeconds": "17.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:52.248834+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1915
+    },
+    {
+      "checksum": "aaec8b259c464ea30248171eb50baa751f354ed48fdc70b91929b30869d1f60e",
+      "deltaTSeconds": "18.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:53.604676+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1916
+    },
+    {
+      "checksum": "98582551a5cf20a14edeb74f52e89bb320c4648f6c539f09ea1eb7b902160983",
+      "deltaTSeconds": "19.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:54.813662+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1917
+    },
+    {
+      "checksum": "b475084af1d1c1d118aacde66515c756c99a3eec2949af90031337a80332c00c",
+      "deltaTSeconds": "20.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:56.233162+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1918
+    },
+    {
+      "checksum": "7403001c29b57b0fc389e671986b9053f02e22fb9dad00a7b57e67374f96aada",
+      "deltaTSeconds": "21.0",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:57.567698+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1919
+    },
+    {
+      "checksum": "6528ffe219fbc2aa95f1088ca0fd870ca2695a0caa59a862888a725f0a67f9b5",
+      "deltaTSeconds": "21.6",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:08:58.891604+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1920
+    },
+    {
+      "checksum": "5f027d529af4ac3a5eabc088772f8e5685566d757a1647cb6b9d88dd718679b6",
+      "deltaTSeconds": "22.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:00.258046+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1921
+    },
+    {
+      "checksum": "8053142a62106f3137072bc64110a6652e0989f8ba536e1afbb7642a6dea836d",
+      "deltaTSeconds": "22.7",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:01.598018+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1922
+    },
+    {
+      "checksum": "e40f974bcc6cc8a71a2855081413ea822a822c702178027ae4ee75536832d9e3",
+      "deltaTSeconds": "23.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:02.889141+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1923
+    },
+    {
+      "checksum": "a4ed0de56cf428c55d254ed4463a0367b5129b7f14061b22ee7d0d3fac9698e2",
+      "deltaTSeconds": "23.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:04.221004+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1924
+    },
+    {
+      "checksum": "167273fea8153d1aaf699ec4421b393c73e643dfca168931bd44d3c5b765e264",
+      "deltaTSeconds": "23.8",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:05.522172+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1925
+    },
+    {
+      "checksum": "c3d0196672fdca18956fa242e2ec794cb612a25588a4de28d025a90bf9891c3d",
+      "deltaTSeconds": "24.0",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:06.951144+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1926
+    },
+    {
+      "checksum": "f411dee248ab1f7a9706ad551a916c2f4eade7314a2e7d4ce5b687877f1a53dd",
+      "deltaTSeconds": "24.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:08.283706+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1927
+    },
+    {
+      "checksum": "37a6dc2ae71258d76170f7cce123f17fb45774d74f5e293725b43be3b943e6cf",
+      "deltaTSeconds": "24.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:09.618644+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1928
+    },
+    {
+      "checksum": "ed7505ffbbc29d1ec7eb82bed191ddb70057fb8cfd048131cf2303d5206fec90",
+      "deltaTSeconds": "24.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:10.949084+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1929
+    },
+    {
+      "checksum": "54cdf4349220d4d3f7bd0bf16f8142853586cb6a12ba7ef8d48b2849beda91a3",
+      "deltaTSeconds": "24.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:12.299300+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1930
+    },
+    {
+      "checksum": "9582efe60512b284e12b811dcc0c7a69942e0ab5e3b10801cdea9213dd635fbe",
+      "deltaTSeconds": "24.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:13.685341+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1931
+    },
+    {
+      "checksum": "4c95b89223c8d33019fb93968cdc5869f5bdd81287379a716f579a0fdedd08a0",
+      "deltaTSeconds": "24.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:15.022008+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1932
+    },
+    {
+      "checksum": "d29f24e6ae9c56d65d17329471d6587850783bdeed07775f8fdc092a784e200b",
+      "deltaTSeconds": "24.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:16.386547+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1933
+    },
+    {
+      "checksum": "299c0b79dfeafd652bdaa25b27e901ac524bbdb9dd7bf6df3ee21dc272be49d2",
+      "deltaTSeconds": "24.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:17.742869+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1934
+    },
+    {
+      "checksum": "1c78ba36f35857b2989050ecf7b99598d3153cf9e26f07d419d88ba0ebc362c1",
+      "deltaTSeconds": "24.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:19.078049+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1935
+    },
+    {
+      "checksum": "7f183b838ff9da283a84de2d6825bec1810c8a840a2098004d9e0f4a4ec08cef",
+      "deltaTSeconds": "24.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:20.356269+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1936
+    },
+    {
+      "checksum": "3007710f0a8323ce8444a8ccf877b4f9a9b2799354c60bbfcffa97e63330e767",
+      "deltaTSeconds": "24.0",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:21.655457+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1937
+    },
+    {
+      "checksum": "2f4013bbfecf32f14760071711688b79f73b56eba0805ad940030f4b4943fcc3",
+      "deltaTSeconds": "24.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:23.055735+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1938
+    },
+    {
+      "checksum": "9e806fe0671090d98126864053ed0f9b76ebf053b67ef735ef735549e66c18fc",
+      "deltaTSeconds": "24.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:24.400433+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1939
+    },
+    {
+      "checksum": "6a43e379c43b895864d8511a650554689f979d0dd28d47f7ba7e141e1aeb32b9",
+      "deltaTSeconds": "24.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:25.653599+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1940
+    },
+    {
+      "checksum": "66f36b8578d7232cf6e7e100cb7eb426b95449406ddbf45c27354153e8ccfb17",
+      "deltaTSeconds": "24.8",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:27.085116+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1941
+    },
+    {
+      "checksum": "461faf847aacb7fb2d0beb2f2d47524b1a16efda2de3d9d0c86addaa15ff845b",
+      "deltaTSeconds": "25.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:28.411018+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1942
+    },
+    {
+      "checksum": "af23dbeb698c9c68ad7f440a4415b2f16df2bb5ea57272e0ef39552948154575",
+      "deltaTSeconds": "25.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:29.726078+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1943
+    },
+    {
+      "checksum": "cd27b434d49f30aa29b23f7c92fbe93429efbab1de174b11d81c2d06beb9d14e",
+      "deltaTSeconds": "26.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:31.058001+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1944
+    },
+    {
+      "checksum": "b3e6158e5cb4d821e6e060222ad9a9ba7c9012ba6c1b2579e931e0ac40c2bf77",
+      "deltaTSeconds": "27.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:32.367574+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1945
+    },
+    {
+      "checksum": "5a27126cb1c4a5a2d05910a6a713958e3db18991d4f324c3ac40601de2f3e139",
+      "deltaTSeconds": "27.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:33.729835+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1946
+    },
+    {
+      "checksum": "71a2301a82aa945bd32523989d1662be55593530cac5287132a4054f8f2c87d7",
+      "deltaTSeconds": "27.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:35.082246+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1947
+    },
+    {
+      "checksum": "feb51e965d68622ff58923c717dfaa7f86e86fb58df8031a79c5bb54a1640b0c",
+      "deltaTSeconds": "28.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:36.560873+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1948
+    },
+    {
+      "checksum": "416b6a6ed7bffc41ca8e05c4becf698d8bb513c9e4d3ea5a30b332c8cb36cb75",
+      "deltaTSeconds": "28.6",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:37.927648+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1949
+    },
+    {
+      "checksum": "4f782a05ca9939b60894c444700a3f1ab4d7b7155c773bf55bb55d56df5a75e8",
+      "deltaTSeconds": "28.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:39.310898+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1950
+    },
+    {
+      "checksum": "97644af1d71a56fd9c28295bd22c72665a771ef6f7b87023f41c90b22a4fa38e",
+      "deltaTSeconds": "29.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:40.651628+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1951
+    },
+    {
+      "checksum": "2d03e1fd1d3986f536f4920b2d7574d271efe99704630297cae15d7fdfd5e6ff",
+      "deltaTSeconds": "29.7",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:41.973278+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1952
+    },
+    {
+      "checksum": "8bce1fedc20c82494f6b338dccf2a4aee65c92754ace6887c4ba90d139ba7cd0",
+      "deltaTSeconds": "30.0",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:43.305479+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1953
+    },
+    {
+      "checksum": "249baed1342dd07b5d748412caf8a440899925f0703befaa7a279e24f56ef143",
+      "deltaTSeconds": "30.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:44.737596+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1954
+    },
+    {
+      "checksum": "504dff19016876471b03fbdf956857fff502fbb3c4ce67fbef23fdfcc1a893f7",
+      "deltaTSeconds": "30.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:46.069343+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1955
+    },
+    {
+      "checksum": "eff3920218629fc233e2087010fff0999cde0fd11d59f167d2841110c7599d77",
+      "deltaTSeconds": "30.8",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:47.418549+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1956
+    },
+    {
+      "checksum": "c1fc459742338646212736d0ff372bc2fcab38aac653dbaedc775ce5764f81ce",
+      "deltaTSeconds": "31.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:48.733952+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1957
+    },
+    {
+      "checksum": "07a8d74824e32bd06e9712842c34dd1135be22062704f928b2f46318bdf74db1",
+      "deltaTSeconds": "32.0",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:50.137998+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1958
+    },
+    {
+      "checksum": "408b2194d380880e53ab9ce898cce11bf0c54035755b1a0307773a7e1274d627",
+      "deltaTSeconds": "32.7",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:51.381539+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1959
+    },
+    {
+      "checksum": "f2cdf5d1be95ab3117ad4f45a81f7e30970972e51b55c08e2fe19760a78b8e5f",
+      "deltaTSeconds": "33.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:52.748970+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1960
+    },
+    {
+      "checksum": "9df3b86e419d2e9caecbd7323607ef392ec6f5b03176d5e95eba5831e46da505",
+      "deltaTSeconds": "33.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:54.149367+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1961
+    },
+    {
+      "checksum": "0fefe5ffb1f0164b0d363788bfda91ed8b65a5f709b68530b25e553b403d4bf6",
+      "deltaTSeconds": "33.6",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:55.473108+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1962
+    },
+    {
+      "checksum": "52066b58e30bc187ef34c8d640b86295f4178d4aa7a192aaa390f00b143cb10a",
+      "deltaTSeconds": "34.0",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:56.811056+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1963
+    },
+    {
+      "checksum": "dc3a9425b3e13f24d78bf9c0afc158bac035d2e1d5cb0aa185970b73f9e7baef",
+      "deltaTSeconds": "34.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:58.156825+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1964
+    },
+    {
+      "checksum": "aa2299e0b38921b4b3b4fa1e8bab72aa1364c4d1d0236d904ce7b39390054121",
+      "deltaTSeconds": "35.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:09:59.518596+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1965
+    },
+    {
+      "checksum": "ce2361e3ec76309e8cc70279a7507afd6df57b7034fc331e4a7b99e24ff795e3",
+      "deltaTSeconds": "35.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:00.866375+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1966
+    },
+    {
+      "checksum": "0f1818069cb692f0bb5008c85244c20c29887b55ae7ee359b290f46b4f1bbf33",
+      "deltaTSeconds": "36.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:02.188557+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1967
+    },
+    {
+      "checksum": "7a5c85b0e5cf35e9daaa205ead318cbe441120bcf7f8f7a3ab1bd14ed4e6a945",
+      "deltaTSeconds": "38.0",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:03.705774+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1968
+    },
+    {
+      "checksum": "057f4003565acdf2578589b707e07d2cd415f6f26477d050052598a134a69c42",
+      "deltaTSeconds": "38.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:05.087595+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1969
+    },
+    {
+      "checksum": "73218401c03e9c743f3fa1d4526b043f748acff91b849f286b17cb66ec0e71d4",
+      "deltaTSeconds": "39.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:06.502840+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1970
+    },
+    {
+      "checksum": "fb0462dc6a27d4faae2ef2847f4c2f9ea59770c87724eaba6768ede6a0200eb6",
+      "deltaTSeconds": "41.0",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:07.857964+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1971
+    },
+    {
+      "checksum": "54c990525260da6e3bda83d0c1c22afcbb9c73100e6d81cd9dc27993dadf2412",
+      "deltaTSeconds": "42.0",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:09.243100+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1972
+    },
+    {
+      "checksum": "4a98daa255f16ef0d2f82ee5f370cc9654980ff5abb4ebb22528d6b0ec21a8c1",
+      "deltaTSeconds": "43.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:10.646665+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1973
+    },
+    {
+      "checksum": "5dfa40ea46fc4e43a55f6bae4703b1deaffa967ed2d3dd4f23360773d2029891",
+      "deltaTSeconds": "44.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:11.884917+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1974
+    },
+    {
+      "checksum": "70cb33a76a9a2ba6187a942c99e90df535b59195d16047d0fec863e78df25aa6",
+      "deltaTSeconds": "45.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:13.243435+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1975
+    },
+    {
+      "checksum": "a280c1bc90e06b610f0aa785910553e7c79ae276802dbdbdcb2aca2145981f1f",
+      "deltaTSeconds": "46.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:14.543419+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1976
+    },
+    {
+      "checksum": "ed03ff5c05c4575905ffda7deb6529cc437ee43ef718331d27c370b951e60b2e",
+      "deltaTSeconds": "47.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:15.864447+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1977
+    },
+    {
+      "checksum": "91c93ff77833d83071553e6eb02afd036d7e553706d73ccc541af990eab28068",
+      "deltaTSeconds": "48.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:17.266537+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1978
+    },
+    {
+      "checksum": "c400de519586193a48c011a3835a4b54fe4908f2cfca1578cc7093924e6ad6f7",
+      "deltaTSeconds": "49.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:18.600405+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1979
+    },
+    {
+      "checksum": "509064b168fbe12b2aa33e804ceecd137aa82b658c7a9c57740e429aff572dc1",
+      "deltaTSeconds": "50.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:19.910255+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1980
+    },
+    {
+      "checksum": "6f6651f20f67cbf8bce09593b7507015a35425a6c1c1352eaaa2c31edd48f318",
+      "deltaTSeconds": "51.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:21.258235+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1981
+    },
+    {
+      "checksum": "c446194f53ce9aea27d4b23b87591e1af46efd5b11c023f99b6c18d0d51e60b3",
+      "deltaTSeconds": "52.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:22.596431+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1982
+    },
+    {
+      "checksum": "1c9f329c8b392e07973c1c0fdd095bea0fa118502e038d2a63ddc8c71a615191",
+      "deltaTSeconds": "52.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:23.933004+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1983
+    },
+    {
+      "checksum": "fb1515720a66340ba601ab5427301066b635c4261a76c12c70b9640aed61c2d9",
+      "deltaTSeconds": "53.7",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:25.337640+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1984
+    },
+    {
+      "checksum": "3e31b018fe0763fa965325caacd7904630b21dc47c559436d7e24531d81b8b3d",
+      "deltaTSeconds": "54.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:26.712383+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1985
+    },
+    {
+      "checksum": "b49bce91dd2a719b454c04ddff26a24c6c3e74d8085acaab72aaed371cd535ec",
+      "deltaTSeconds": "55.0",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:28.041599+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1986
+    },
+    {
+      "checksum": "2a1f17717c4a39ca43cad55979dc315b4e01dda04e9b10b32f8e2456e0fdacdc",
+      "deltaTSeconds": "55.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:29.400525+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1987
+    },
+    {
+      "checksum": "b037efc3d47f9014c5ef7978b3f509241f3cbc955903ccd874c408d15541eab1",
+      "deltaTSeconds": "55.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:30.740984+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1988
+    },
+    {
+      "checksum": "6a6aa966fad2c2877a1ead6050cb46bd4792e61ac8d43eb8b47b8d08a0decd44",
+      "deltaTSeconds": "56.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:32.167493+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1989
+    },
+    {
+      "checksum": "3e5aed8e654ba8faffb7bc3152b1ce63fae9a4b7b55dbfce51f0fed4dcb41bb9",
+      "deltaTSeconds": "57.0",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:33.464316+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1990
+    },
+    {
+      "checksum": "053f49d39bb1202ef14b5464212911ef7b87ddc163ceb65d16e9fd415d79089e",
+      "deltaTSeconds": "57.7",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:34.890638+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1991
+    },
+    {
+      "checksum": "aa9aff9eff1d2b2c41480d001a077cfd43d9e866cbce6cab654f28e58aacc6ca",
+      "deltaTSeconds": "58.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:36.219752+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1992
+    },
+    {
+      "checksum": "7e4e1261192521c699174e374eac393add4f71baf1906bc34ec3e185b76d163e",
+      "deltaTSeconds": "59.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:37.560601+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1993
+    },
+    {
+      "checksum": "cb8cfc0ea0bf34ab7c3c4ad731c2222efa80cf8faf45f455bf9f76321eb7d569",
+      "deltaTSeconds": "59.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:38.942634+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1994
+    },
+    {
+      "checksum": "341ef697db84cf3a5da8fc02443aaddbdd521447be8cfa70f1cfae22ea9a99c5",
+      "deltaTSeconds": "60.7",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:40.258868+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1995
+    },
+    {
+      "checksum": "bb5cf5e9f6b2a0073bec02e2b05c86c213f14a4cc7805a094489d427cc702b9f",
+      "deltaTSeconds": "61.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:41.656505+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1996
+    },
+    {
+      "checksum": "f9bde896989594bb8eb07f6e424814b3bcce140c53091878f25a2efa32bdc9f4",
+      "deltaTSeconds": "62.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:42.998825+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1997
+    },
+    {
+      "checksum": "31f1fa04598da345ab84959fff5d95221be97bae4203cd7675fd7b5a4e12b2da",
+      "deltaTSeconds": "62.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:44.326377+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1998
+    },
+    {
+      "checksum": "a4212130f6df1aef746929a3be49bf88ff077612755ed882a70ebf2253bdc031",
+      "deltaTSeconds": "63.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:45.737737+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 1999
+    },
+    {
+      "checksum": "9ac58faebbaa0077e88ffbcc63a2b29f47aaace83a83619084b427dac889f036",
+      "deltaTSeconds": "63.8",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:47.161007+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2000
+    },
+    {
+      "checksum": "102f3240c7f3a9078d1de13c1f5c76d949bbadbb5272b798948bfdf12399e36f",
+      "deltaTSeconds": "64.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:48.494342+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2001
+    },
+    {
+      "checksum": "fd3f814e4bae17a24aea4da64de519a7902915fcc0401da873c67c684c730218",
+      "deltaTSeconds": "64.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:49.849712+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2002
+    },
+    {
+      "checksum": "6b5f19f7dd9b691bfc0594a0c316809928e5c1f48f1a68b016b5681316a74d67",
+      "deltaTSeconds": "64.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:51.145657+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2003
+    },
+    {
+      "checksum": "fcc5fc8dcf35088a1ca541c723865872b7eeb8ee1367cb0c6a4a47609de0cb87",
+      "deltaTSeconds": "64.6",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:52.559294+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2004
+    },
+    {
+      "checksum": "d2d841691ce3928c89a3d95f78581cba46672990068c1be1749d9d77b6da3cec",
+      "deltaTSeconds": "64.7",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:53.982596+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2005
+    },
+    {
+      "checksum": "0ff3b210f92cc5d56c1cdb7c3f5dea723b1c453cb7c18d6549795498424df1bb",
+      "deltaTSeconds": "64.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:55.322002+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2006
+    },
+    {
+      "checksum": "773b6939fd3fe4cce535aa4866112d87db6537dffab67ca4691e5e88bbc03d1f",
+      "deltaTSeconds": "65.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:56.668050+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2007
+    },
+    {
+      "checksum": "6b2f1d6fd95c8f6e269d4b489e2b8fd7251b82be4971d2e26fa13896e91d8e6b",
+      "deltaTSeconds": "65.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:58.067114+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2008
+    },
+    {
+      "checksum": "894d4ffd703028d9f2056211aa5a3514d9908abf21772ec2b4279f07f21aa254",
+      "deltaTSeconds": "65.8",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:10:59.406511+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2009
+    },
+    {
+      "checksum": "0e4ec50f3e7ad5a198241df15fef9f9ebb8aab449feffd6b5a0c250c57d3e2c4",
+      "deltaTSeconds": "66.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:00.760160+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2010
+    },
+    {
+      "checksum": "f69b7bcbce9269b1a1f31bc756eed67aa01f7b19b8da5d403193aaac6d980648",
+      "deltaTSeconds": "66.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:02.099343+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2011
+    },
+    {
+      "checksum": "82dc9912b16733d74520d5dae7dff941d4955ce032a8ef44d8663533ce2e8ddd",
+      "deltaTSeconds": "66.6",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:03.483925+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2012
+    },
+    {
+      "checksum": "8f82d1d17c5eb2542638fe83bfe3e6227ec4d364dca02e33ab37f8e13e30091d",
+      "deltaTSeconds": "66.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:04.870944+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2013
+    },
+    {
+      "checksum": "20db72c4e58e8d814ffeeee16203c45d77a6431ae2e0079a11d38594ec94df90",
+      "deltaTSeconds": "67.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:06.276134+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2014
+    },
+    {
+      "checksum": "438f7941f6ddbb4e6e8b7d35d510862f7bb2a1189a66b9b84573884be808bd7f",
+      "deltaTSeconds": "67.7",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:07.676234+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2015
+    },
+    {
+      "checksum": "e4d70967af9231db996ecd67720839d372f89eaab7f32de600347e28c605bb72",
+      "deltaTSeconds": "68.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:09.030277+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2016
+    },
+    {
+      "checksum": "af13fb0703b72dff4484d192c2a74984ce96e590695867a66b359baa80ac3449",
+      "deltaTSeconds": "68.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:10.321271+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2017
+    },
+    {
+      "checksum": "821a0cddb0973b5d66be13a3fdce81fa3c2f158ed6808de781a5c25388539b68",
+      "deltaTSeconds": "68.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:11.663625+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2018
+    },
+    {
+      "checksum": "a1749b4abc5ff8e7faecf48e6a100ea9952acd3529e99bc460877b69d4baed21",
+      "deltaTSeconds": "69.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:13.030012+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2019
+    },
+    {
+      "checksum": "02e23b1fbae405996ff0cfba1697a2a1192a78d688c736aee34d9f1f8639edca",
+      "deltaTSeconds": "69.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:14.312671+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2020
+    },
+    {
+      "checksum": "4ee3ae13e61a01ad02eca511eb94a04d485df27ed927d9720f7ba2190698e339",
+      "deltaTSeconds": "69.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:15.620276+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2021
+    },
+    {
+      "checksum": "06c7f2ff1fed82609fa5843c725b3923290f8dba81536bcd9284d8097297f0a9",
+      "deltaTSeconds": "69.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:16.976167+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2022
+    },
+    {
+      "checksum": "5398494f1b62a2282b917b57cbebad4bb0ec18ca2215ee2d9366263ca602dd12",
+      "deltaTSeconds": "69.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:18.276045+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2023
+    },
+    {
+      "checksum": "11de180d70f008b804d4f6c412ef01e616f3060cd00f48c807acae98e5e4bcb3",
+      "deltaTSeconds": "69.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:19.585152+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2024
+    },
+    {
+      "checksum": "507c918b3e1e9210b7460a28e77505502e743d6330807cffd56083877cac55ae",
+      "deltaTSeconds": "69.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:20.877376+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2025
+    },
+    {
+      "checksum": "e568a28213039eccf006c0e75782863978e00786375afc34ff2fc9c702bbea74",
+      "deltaTSeconds": "69.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:22.192853+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2026
+    },
+    {
+      "checksum": "b7c4cf10967a17b7329e403a11d5ebaa4cb90651497994250ad9731144897434",
+      "deltaTSeconds": "69.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:23.473525+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2027
+    },
+    {
+      "checksum": "02b948ffc80899b5d2e481306c85a8338eece137f9019c68f0626d1947a1db81",
+      "deltaTSeconds": "69.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:24.772291+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2028
+    },
+    {
+      "checksum": "9b646b196842e0a7cfb619fd6aa627c9cefdcb7e689dd2828d4b5c2185256da0",
+      "deltaTSeconds": "69.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:26.072288+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2029
+    },
+    {
+      "checksum": "a91b2e5e7a87c5b4486747c683c545abd9f57a66179947c393585023f12265f6",
+      "deltaTSeconds": "69.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:27.338417+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2030
+    },
+    {
+      "checksum": "d3fb369e6aaddd2221727285a84a629306c697a715ba35dfa054ae53bea37d81",
+      "deltaTSeconds": "69.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:28.640859+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2031
+    },
+    {
+      "checksum": "81034a2495a34da83e824aa0d32914b8aa045d62289c3f8f149132c3766da96a",
+      "deltaTSeconds": "69.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:29.918988+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2032
+    },
+    {
+      "checksum": "a9633941e522de6eac8a210c6510859c6ece84c2075a8bac963021af16b7a778",
+      "deltaTSeconds": "69.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:31.188770+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2033
+    },
+    {
+      "checksum": "41a37244d146ddde9fbe1fa9ef4998d5c19d90125385b59bdcada81c776c1cae",
+      "deltaTSeconds": "69.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:32.518974+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2034
+    },
+    {
+      "checksum": "39dd79b27c353e9660e377311b5b0cae5b3965fedcbd3a98e6c7d080e69ef701",
+      "deltaTSeconds": "69.6",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:33.798472+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2035
+    },
+    {
+      "checksum": "c4311555752d633a1b1d87cb42812f60f9a7a46ff7364b277e3288a7f7eb8fa0",
+      "deltaTSeconds": "69.7",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:35.089130+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2036
+    },
+    {
+      "checksum": "d1c8aca168627cdd70ca15c6c5df306c7197afef81ea3044de99bd21bfc309e4",
+      "deltaTSeconds": "69.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:36.414245+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2037
+    },
+    {
+      "checksum": "2a5f8f34c1fb84675f40589eed5e3b353b125583731f54fb30eacfa327045946",
+      "deltaTSeconds": "70.0",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:37.725756+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2038
+    },
+    {
+      "checksum": "1c8a66e81fb01b10bb78a2c39f7e3e996b59eda30e77016f38eb3e02773a03b3",
+      "deltaTSeconds": "70.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:39.021899+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2039
+    },
+    {
+      "checksum": "ac8661b1e80475492c95a04934d062e352df7ae066411a9edcf5f7e0cdbfb8f0",
+      "deltaTSeconds": "70.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:40.292579+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2040
+    },
+    {
+      "checksum": "c48ccc1eb2ac8b457f177a096745c86f0149b7ce2f5e1fe192c35067b148eace",
+      "deltaTSeconds": "70.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:41.583147+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2041
+    },
+    {
+      "checksum": "a740902b7a1d794d544579c4013003a5507600e15f132381bcc7903b96d4ad8c",
+      "deltaTSeconds": "70.7",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:42.860319+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2042
+    },
+    {
+      "checksum": "eedf6ea3a0e12eb88e8c46a84d3dca8bee80f8a50558b9e3a9cd77ce90ac9dc5",
+      "deltaTSeconds": "70.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:44.115247+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2043
+    },
+    {
+      "checksum": "2230d96022fd029e3672df0fec6c16acc3bcf5646e59b2d2710f3da327c353e4",
+      "deltaTSeconds": "71.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:45.486835+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2044
+    },
+    {
+      "checksum": "5ce9123c0f85505039fcaac030d56b0b0c73a93242301bd4d413f41c8eb8a8aa",
+      "deltaTSeconds": "71.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:46.819827+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2045
+    },
+    {
+      "checksum": "8167ed7cc988711a093be9272446882ef04ec1c7903829cda5ca060293e5a24f",
+      "deltaTSeconds": "71.6",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:48.130123+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2046
+    },
+    {
+      "checksum": "409121a70b81c8056724a1af35e23bc32b9bdf3e300d90cf999ab319c266fcee",
+      "deltaTSeconds": "71.8",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:49.450187+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2047
+    },
+    {
+      "checksum": "9781de26b7922559728348512d097a7472a22b2af272e2238e7d5e7acfb31aec",
+      "deltaTSeconds": "72.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:50.737887+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2048
+    },
+    {
+      "checksum": "59f708a9a941298a6e85bb8a4c3e70f97a32f947a8a810814d5c781f93a3c248",
+      "deltaTSeconds": "72.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:52.078730+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2049
+    },
+    {
+      "checksum": "072e970ce9d098f7e2eeeddf516ebe5527309d749ce7874a1ed38abce7815921",
+      "deltaTSeconds": "72.6",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:53.410918+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2050
+    },
+    {
+      "checksum": "9d517a7d2282a1b0edb6d916d1c1af7a7bfdb5a0441cbf1e746e5648237fb3b1",
+      "deltaTSeconds": "72.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:54.736342+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2051
+    },
+    {
+      "checksum": "bd267442630e8efab333f67e2d6d83af0b73359b0001b9994ca09dcbaa11ea54",
+      "deltaTSeconds": "73.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:56.028983+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2052
+    },
+    {
+      "checksum": "3b98b24da1e8e7e03d3d250c09080ebdcb75eaed4ba9ca2d621d50c60b47e9b1",
+      "deltaTSeconds": "73.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:57.336778+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2053
+    },
+    {
+      "checksum": "cedd413f2e9e53b4e9543f54086c4b7969674f8d3855fd655526f30c3be32fe9",
+      "deltaTSeconds": "73.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:11:58.649412+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2054
+    },
+    {
+      "checksum": "2174faaba8700e0f9cde41d9baa9ba06d9335ae61b04baf62527bb114bfb0b83",
+      "deltaTSeconds": "74.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:00.023457+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2055
+    },
+    {
+      "checksum": "ee77b022867d93117fce0f145649b296d9b5b87b135d20ae75c0ad698aa5554e",
+      "deltaTSeconds": "74.6",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:01.302782+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2056
+    },
+    {
+      "checksum": "a85ba33ec45d841a0a1f9715e076e80f34cf797e3342bec5f9926789fe193a93",
+      "deltaTSeconds": "74.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:02.559080+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2057
+    },
+    {
+      "checksum": "c97fc14ffc7a569f51ab5a7fd2c0bbf36dae4b4ceb795f93e4f0a81f7ffeba37",
+      "deltaTSeconds": "75.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:03.875943+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2058
+    },
+    {
+      "checksum": "2d72f80fb6ae0b849270de3977b25d5fcc5c1047fe1e4a685dfa1b34f484f28a",
+      "deltaTSeconds": "75.7",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:05.166702+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2059
+    },
+    {
+      "checksum": "8a8b76c94e7a2ad1cfed616bd81a245ecc89cbac93c2aebb14765f02698d8624",
+      "deltaTSeconds": "76.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:06.412445+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2060
+    },
+    {
+      "checksum": "a0cac3a5f2b06ac3f2bb1d156663ee8e434d00b55cea69727941d371e8e3ada0",
+      "deltaTSeconds": "76.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:07.716464+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2061
+    },
+    {
+      "checksum": "dc4d4aa2d04d54e4feda32fb5a89be1454ecb35d497519cb125172d36eb8aa7f",
+      "deltaTSeconds": "77.0",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:09.056422+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2062
+    },
+    {
+      "checksum": "ea7887897d3650a703debb086bd90cf5e53e9b3d937acfe74a767d311876c6ba",
+      "deltaTSeconds": "77.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:10.399390+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2063
+    },
+    {
+      "checksum": "76930a039dc8a775e41a25e3821c4b44dbcf300fd640220e4140c5f38cc7ef87",
+      "deltaTSeconds": "77.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:11.766501+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2064
+    },
+    {
+      "checksum": "82f9b88598859645fc8e0cbf59299c96843b78454033e056b491281bfe8a780c",
+      "deltaTSeconds": "78.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:13.144733+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2065
+    },
+    {
+      "checksum": "e67293acb57b5d6e33838dc37e090f9a85f13aba3deca1e62d28e76a673cbd21",
+      "deltaTSeconds": "78.8",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:14.455649+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2066
+    },
+    {
+      "checksum": "9aa1cf9f43dad9f11826c29cfcb0e0770d30ba269a0eab0cfaf0533a2f7a7d3b",
+      "deltaTSeconds": "79.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:15.772765+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2067
+    },
+    {
+      "checksum": "41a2d646d2f095bbd180e777a732432c750071208cff2632b037d81dae4a8723",
+      "deltaTSeconds": "79.8",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:17.079262+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2068
+    },
+    {
+      "checksum": "10621e940c58e80afbe00f9171eb59b8feba7e7aa6f0e5dd268fbc3d999cfa17",
+      "deltaTSeconds": "80.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:18.422679+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2069
+    },
+    {
+      "checksum": "c4f26fc74a86ec371a2ab2826faad11679cf5879b9569f92b9888d4d731e6f63",
+      "deltaTSeconds": "80.8",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:19.714942+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2070
+    },
+    {
+      "checksum": "02da89ca4b2bb3dcc94009ddba3dff2637cef84a5b5156d747600852592211fa",
+      "deltaTSeconds": "81.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:21.016582+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2071
+    },
+    {
+      "checksum": "fc7218d7487eac3d7821535ba75a522ee147f661d55d36c5ddc7ceb96e29f6d0",
+      "deltaTSeconds": "81.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:22.291667+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2072
+    },
+    {
+      "checksum": "4fc96cab7159fdad0c89c1d2c3b9dfcf27ed5f0087e776f474e98cc28c58e52d",
+      "deltaTSeconds": "82.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:23.629577+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2073
+    },
+    {
+      "checksum": "77a0f767d1065a0042fe75f62fbcf582d8ae1d34cfffa1e4bcdaf292f72bfa9f",
+      "deltaTSeconds": "83.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:24.910982+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2074
+    },
+    {
+      "checksum": "abb0e13d51cec23fc1a18c01acfe940ec6390dd3a21ad286fcf4981e55802bd5",
+      "deltaTSeconds": "83.6",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:26.194460+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2075
+    },
+    {
+      "checksum": "f8e362c4dde96244e874fe04fa7f1ac8ee0f9b57461c58a9dcbd4dfaad177b38",
+      "deltaTSeconds": "84.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:27.468705+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2076
+    },
+    {
+      "checksum": "9afe4041f450933d557b9fc4b9a01d49549d806f1cc320bff793daf7adba5c8e",
+      "deltaTSeconds": "84.8",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:28.802027+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2077
+    },
+    {
+      "checksum": "602814df8c84141bd0b8fac2dc1cdd17decebabc6ba231a94a32125e912e5b1c",
+      "deltaTSeconds": "85.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:30.148281+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2078
+    },
+    {
+      "checksum": "fcbc026b3ad8242fe03e80581243ff89d1055f6580dfcc43774fcfc51fef8033",
+      "deltaTSeconds": "86.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:31.473797+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2079
+    },
+    {
+      "checksum": "1ce6a3fa6ef34b5677b16f955526935adca15909ac31ed071f2e70a4bd4ce65d",
+      "deltaTSeconds": "86.7",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:32.822832+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2080
+    },
+    {
+      "checksum": "9cfb684d80a40fc73f85367cd6db9c6bad00788ad3bc1b0e8730f0ab47426636",
+      "deltaTSeconds": "87.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:34.125349+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2081
+    },
+    {
+      "checksum": "9e47acf7bf8aa8a150bd059d6b3d5d6bfd9135fe3311ef27bdc434e5ac30aad0",
+      "deltaTSeconds": "88.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:35.436272+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2082
+    },
+    {
+      "checksum": "897254ef0ca382eaad5a21cdc96243707780177ee77815df3367fd68143d51cd",
+      "deltaTSeconds": "88.8",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:36.781432+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2083
+    },
+    {
+      "checksum": "907fef0f1938f9179dc9aeaf77b0c211c4c6a21c95ca5caa2bd72b77c7402896",
+      "deltaTSeconds": "89.5",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:38.114737+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2084
+    },
+    {
+      "checksum": "afe487e15ad7894feae867c05235bfd38fb0b88f119bef2280b4073f4490093a",
+      "deltaTSeconds": "90.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:39.350939+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2085
+    },
+    {
+      "checksum": "cf45a2b92e8d2be30768d2f57c3d425489926d8d57ed47df49aa831e3dca2b17",
+      "deltaTSeconds": "90.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:40.716930+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2086
+    },
+    {
+      "checksum": "f67052a8cd5b98b09590b86e313f9234a9067728276289436c911e37584cb0df",
+      "deltaTSeconds": "91.6",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:42.047421+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2087
+    },
+    {
+      "checksum": "4169cc2f96cc56dde7da345aea992cf040c24b56a1204340a31fe786c21910e3",
+      "deltaTSeconds": "92.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:43.249901+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2088
+    },
+    {
+      "checksum": "c90595d8ba3b9f8f7dd0be6557b990ce9736672309c2a91a95ef1575026b96c6",
+      "deltaTSeconds": "93.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:44.528318+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2089
+    },
+    {
+      "checksum": "464fda5b7c05868e328f427bd76f6e0fbbd77dfad63bd6f22cda20ee71c4a311",
+      "deltaTSeconds": "93.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:45.796945+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2090
+    },
+    {
+      "checksum": "74e1938d05a525db2aabe39c98cb3db5b1058181e05d734e287d329fd820a755",
+      "deltaTSeconds": "94.6",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:47.087353+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2091
+    },
+    {
+      "checksum": "2475ce67a6221e265030aa4b207e67200af9b7985ecd9893cc35a4473eb043d2",
+      "deltaTSeconds": "95.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:48.445244+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2092
+    },
+    {
+      "checksum": "d4c7c17e6e31597c0591c89eaae0c87eeff1b2eef53e5601c1d677953295ee9e",
+      "deltaTSeconds": "96.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:49.800626+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2093
+    },
+    {
+      "checksum": "a23d52c5dbe5a6661ed346a62644d02f80b7b3299aa6d3eb24c8f6cab29f2896",
+      "deltaTSeconds": "97.1",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:51.109115+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2094
+    },
+    {
+      "checksum": "1919aa563f6f40b942ec0ac72cd2484d9180e8eaaf209733424c7d7536f92162",
+      "deltaTSeconds": "97.9",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:52.496696+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2095
+    },
+    {
+      "checksum": "f242bdadcf1d6592a5c4b02a83184cdb6307d7831ae1f8312998cb4e25e46dc7",
+      "deltaTSeconds": "98.7",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:53.849422+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2096
+    },
+    {
+      "checksum": "37e5d0f81530d932920fb0e046e27de8c32d36d70b00f95714b9fe3b5d9bdece",
+      "deltaTSeconds": "99.6",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:55.160837+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2097
+    },
+    {
+      "checksum": "74e851f8d2626dd9a32a0dfc0ae4d48d5d865e7df23f53028f20428b5152026d",
+      "deltaTSeconds": "100.4",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:56.518582+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2098
+    },
+    {
+      "checksum": "334e8463ed3148a3fa104f2d7d16ca3b5268e9548d8fc327379ea74bf0a10bfc",
+      "deltaTSeconds": "101.3",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:57.880060+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2099
+    },
+    {
+      "checksum": "774388bd05110d62a321c5a5e712942fd1c8bbc6ca2bfdccaaede3c264d9b4db",
+      "deltaTSeconds": "102.2",
+      "model": "S2020",
+      "retrievalDate": "2026-09-24T08:12:59.159437+00:00",
+      "source": "https://eco.mtk.nao.ac.jp/cgi-bin/koyomi/cande/phenomena_sy_en.cgi",
+      "sourceVersion": "2.1i",
+      "year": 2100
+    }
+  ],
+  "version": "NAOJ_S2020_ANNUAL_20260924_V1",
+  "yearSelection": "NORMALIZED_SOURCE_TT_YEAR"
+}

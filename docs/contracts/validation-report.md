@@ -1,3 +1,31 @@
+# FP-01~04 FINAL CORE REGRESSION REVIEW
+
+Result: FOUR_PILLARS_CORE_REGRESSION_PASS_READY_TO_COMMIT. [Final review](four-pillars-core-final-review.md), [actual machine results](validation-results-four-pillars-core.json). Re-executed full gate: lint and34 PHPUnit tests /1,257,453 assertions PASS; FP01 reference4,848 events PASS; reference PHP/JS coordinate digest identical; Zodiac PHP/JS differences0; OpenAPI/privacy and actual WordPress smoke PASS. No formula/numeric/Golden changes. CORE_CALCULATORS IMPLEMENTED; END_TO_END NOT_COMPLETE. This checkpoint is authorized for one local commit; push prohibited. Prior no-commit statements below describe their earlier phases.
+
+---
+
+# FP-04 HOUR PILLAR IMPLEMENTATION
+
+Result: HOUR_PILLAR_IMPLEMENTATION_PASS. [Full A-U report](fp04-implementation-report.md), [approved contract and implementation boundary](fp04-hour-pillar-v1.md). PHP lint and34 tests /1,257,453 assertions PASS; approved23:00/23:30 Goldens,120 combinations and microsecond boundaries PASS. FULL_APPLICATION, FP01 reference and actual WordPress smoke PASS. Existing eight Saju production files unchanged; no external runtime dependency or commit/push. Full FOUR_PILLARS remains PARTIAL; candidate lineage binding/Natal/aggregate integration is upstream.
+
+---
+
+# FP-02 / FP-03 YEAR + MONTH PILLAR IMPLEMENTATION
+
+Date: 2026-09-25. Result: YEAR_MONTH_IMPLEMENTATION_PASS. [Complete A-V implementation report](fp02-fp03-implementation-report.md), [contract](fp02-fp03-year-month-v1.md), [machine evidence](validation-results-fp02-fp03.json).
+
+Pure production Year/Month calculators consume the unchanged, pinned FP-01 artifact. Fixed approved Goldens and exhaustive Jie/Zhongqi boundary tests PASS. PHP8.3.33 lint and27 PHPUnit tests /1,256,915 assertions PASS. FP01, Day Pillar, Zodiac PHP/JS (differences0), Saju/Daily, OpenAPI/privacy and actual WordPress smoke PASS. Day Pillar files and catalogs unchanged. No external runtime dependency; no commit/push. FOUR_PILLARS remains PARTIAL: Hour/Natal/candidate integration is separate. Earlier reports below retain their historical scopes.
+
+---
+
+# FP-01 SOLAR-TERM REFERENCE + TIME-SCALE BRIDGE BUILD
+
+Date:2026-09-24. Result: REFERENCE_BUILD_VALIDATED_READY_FOR_APPLICATION; repository application APPLIED. [Full FP-01 report](fp01-build-report.md), [machine results](validation-results-fp01-v1.json), [contract](fp01-solar-reference-v1.md).
+
+Outside-repository validation passed before application.4,848 boundaries,202 years,202 explicit S2020 values,13 drift intervals,28 known TAI-UTC entries. Missing/duplicate/order/identity/unresolved-event failures0;24 goldens;123 transition probes;7 exact ceil cases; PHP/JS coordinate differences0; deterministic replay byte-identical. Existing FULL_APPLICATION regression PASS: PHPUnit20 tests /1,217,548 assertions, lint and contract/privacy checks PASS. No production or Day Pillar changes, no commit/push. Complete Four Pillars remains PARTIAL; FP-02/03 formula decisions and FP-06 resolver integration remain separate.
+
+---
+
 # ZODIAC V1 FINAL REGRESSION REVIEW
 
 Date: 2026-09-24

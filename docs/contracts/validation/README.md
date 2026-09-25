@@ -1,5 +1,15 @@
 # Contract validation
 
+## FP-01 Solar-Term reference
+
+Run `node docs/contracts/validation/solar-reference.cjs` from the repository root. Node built-ins only, offline, read-only. Checks every frozen source hash, original TT row and S2020 value, official drift/leap coefficients, independent exact BigInt inversion of4,848 boundaries, unique routing, all transition intervals, mathematical ceil,24 frozen goldens/all12 Jie and boundary predicates. Expected TT-domain gaps/overlaps at historical clock steps are rejection cases, not missing service intervals.
+
+Rebuild offline with Python3.12.11 standard library: `python docs/contracts/validation/solar-reference-build.py docs/contracts/references/solar-terms-v1 <outside-repository-output.json>`. Run twice into separate temporary outputs; compare both byte hashes with the committed artifact. This command never regenerates goldens. Input timestamps are frozen. The original research Skyfield/JPL dependency is not required.
+
+PHP cross-check in the existing container: `docker compose exec -T wordpress php /var/www/html/docs/contracts/validation/solar-reference-php.php /var/www/html/docs/contracts/references/solar-terms-v1 /var/www/html/wp-content/plugins/love-fortune-core` if docs are mounted. Otherwise use an ephemeral WordPress image with the repository mounted read-only and those paths adjusted. This documentation harness uses existing exact Rational arithmetic, with no WordPress bootstrap or new production code. Compare its coordinateDigest against SHA256(eventId + space + serviceBoundaryUs + LF for all events). It checks all4,848 coordinates/order and14,544 predicates. The normal Zodiac application gate remains required for existing regressions.
+
+Timezone identity is informational for the reference-only transform and a required compatibility input for future natal integration. PHP embedded DB and OS tzdata are recorded separately. Public calendar fixtures contain no user data.
+
 ## Current Zodiac V1 application gate
 
 From repository root, with Docker and the WordPress service running:

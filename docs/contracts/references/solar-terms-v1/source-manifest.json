@@ -1,0 +1,1447 @@
+{
+  "deltaTQuery": {
+    "Go": "Go",
+    "cal": "0",
+    "dtm": "4",
+    "jg": "1",
+    "lst": "0",
+    "phenom": "50",
+    "year": "1899..2100"
+  },
+  "entries": [
+    {
+      "deltaTRawSha256": "e2f8dd3892dac4205e52071808247c0758059927eb006d210e7f13bdd5ec86c3",
+      "deltaTRetrievedAt": "2026-09-24T08:08:31.045666+00:00",
+      "ttRawSha256": "b4dfd4f11582f5114fc994e4feb8297f2c1aed80ab7fd1779f6f81a5e702d058",
+      "ttRetrievedAt": "2026-09-24T04:50:03.724323+00:00",
+      "year": 1899
+    },
+    {
+      "deltaTRawSha256": "551374f4388d29e9983233ba1e86a33e1ca56354ede23339dd59d7c985587d58",
+      "deltaTRetrievedAt": "2026-09-24T08:08:32.284447+00:00",
+      "ttRawSha256": "e7129e0d740d396bcfcda1eb1fbb15992d1401c585c86ac99b75260fa03a33eb",
+      "ttRetrievedAt": "2026-09-24T04:50:05.041869+00:00",
+      "year": 1900
+    },
+    {
+      "deltaTRawSha256": "5e4324633c41f8a59212a19526c08a852b35ecc59d3f27100dea296dbef50d88",
+      "deltaTRetrievedAt": "2026-09-24T08:08:33.649292+00:00",
+      "ttRawSha256": "4a3ca4c13a675d296310be66130a3fd19ad069d5b32cc5af4fa2079d18a58b82",
+      "ttRetrievedAt": "2026-09-24T04:50:06.337398+00:00",
+      "year": 1901
+    },
+    {
+      "deltaTRawSha256": "04fdfb93e42dfaf31ea924620aec2d6df1c5891feeeb299a80c156ae56af0a5e",
+      "deltaTRetrievedAt": "2026-09-24T08:08:34.992650+00:00",
+      "ttRawSha256": "7f252dd83e1434a9f81768e4b2a14ee4d08f76bad0d0348b96e81bf2c98f3bf7",
+      "ttRetrievedAt": "2026-09-24T04:50:07.585497+00:00",
+      "year": 1902
+    },
+    {
+      "deltaTRawSha256": "42da852fa56dd6889aeff40fc466a1b4e4967ba8099a2d5dc264c309d691942e",
+      "deltaTRetrievedAt": "2026-09-24T08:08:36.313321+00:00",
+      "ttRawSha256": "aac52ca4a7f557fca0d9b0ee5d66abe4c03d1ae3d08ac89ef57510f710c2c466",
+      "ttRetrievedAt": "2026-09-24T04:50:08.887094+00:00",
+      "year": 1903
+    },
+    {
+      "deltaTRawSha256": "ac750f8af4d5eac91494b55345513d5d895f7a65df2aa743b9bd25084a712bcd",
+      "deltaTRetrievedAt": "2026-09-24T08:08:37.608339+00:00",
+      "ttRawSha256": "939aa5856da1bc8434417114a47496a1f53e37f029c24dd1207939f5f658305e",
+      "ttRetrievedAt": "2026-09-24T04:50:10.101368+00:00",
+      "year": 1904
+    },
+    {
+      "deltaTRawSha256": "1e6d46d6453e3de5804c69ff4573d590140f90a97b5e22bc887a96dac5d81945",
+      "deltaTRetrievedAt": "2026-09-24T08:08:38.881697+00:00",
+      "ttRawSha256": "8d3fc9d3c7370c20a42c59c2cb27c3dadf815ff2d7a9d0e08a982b5b5df5e23b",
+      "ttRetrievedAt": "2026-09-24T04:50:11.300659+00:00",
+      "year": 1905
+    },
+    {
+      "deltaTRawSha256": "d9d062826d6fe694d598fa745173ad232aa6348f8c53ad867c0403278fb3a36b",
+      "deltaTRetrievedAt": "2026-09-24T08:08:40.225768+00:00",
+      "ttRawSha256": "5fca70075a71df994a65e6ccbb09ff585e9b6b0dcb137921730ef3fef8ac4022",
+      "ttRetrievedAt": "2026-09-24T04:50:12.517097+00:00",
+      "year": 1906
+    },
+    {
+      "deltaTRawSha256": "5d2d64fcecb6a1f40501311c9567c2633d3ee1579357ebd411db99598210cbd8",
+      "deltaTRetrievedAt": "2026-09-24T08:08:41.597749+00:00",
+      "ttRawSha256": "84627389af3202e563e157904cca6a6d70ac1d68370baeddfe6f598a92dd52c5",
+      "ttRetrievedAt": "2026-09-24T04:50:13.719595+00:00",
+      "year": 1907
+    },
+    {
+      "deltaTRawSha256": "72c8127663035bf065e86fe60e82ac313d550b120d57281074329f0eee36cfce",
+      "deltaTRetrievedAt": "2026-09-24T08:08:42.912214+00:00",
+      "ttRawSha256": "8b4163fc99821abbfc545acb1b1350a7bc0a425ffeb2a640f192009ca535bcf1",
+      "ttRetrievedAt": "2026-09-24T04:50:14.913812+00:00",
+      "year": 1908
+    },
+    {
+      "deltaTRawSha256": "ec0cc23074f8a20c31e1195e8096352f10e8f409c73ca9875e48839f6f1e599a",
+      "deltaTRetrievedAt": "2026-09-24T08:08:44.269465+00:00",
+      "ttRawSha256": "563dde45ba0cfdd1cc748505f578ee7f5d847be945e4d7458b1cca3845400a4e",
+      "ttRetrievedAt": "2026-09-24T04:50:16.117002+00:00",
+      "year": 1909
+    },
+    {
+      "deltaTRawSha256": "3e12b2cc0b8e25e73fcc859bd009301d4ad7fbfd9187b734108f6099d044955f",
+      "deltaTRetrievedAt": "2026-09-24T08:08:45.556902+00:00",
+      "ttRawSha256": "4529fa946e3783428e3665534b817c9ada7dfb40266eac58165f32f92b17759e",
+      "ttRetrievedAt": "2026-09-24T04:50:17.314308+00:00",
+      "year": 1910
+    },
+    {
+      "deltaTRawSha256": "ba587fe4356f6ac940e56f340d46523fd1297e38b9c8f21efb5f19af86f67480",
+      "deltaTRetrievedAt": "2026-09-24T08:08:46.908578+00:00",
+      "ttRawSha256": "ceb4150f765c702ea78437d3b54ac242a9528863f7d684e7e8e5465cd00d5a03",
+      "ttRetrievedAt": "2026-09-24T04:50:18.530330+00:00",
+      "year": 1911
+    },
+    {
+      "deltaTRawSha256": "238350c074e2905e2ab89adc0852c11f9a9af44caf4f88920db98d6f6d3440ab",
+      "deltaTRetrievedAt": "2026-09-24T08:08:48.282665+00:00",
+      "ttRawSha256": "e6651b77064c7d85907541e8ad57d0542e291ffc3c64873ef93ffec416cf4771",
+      "ttRetrievedAt": "2026-09-24T04:50:19.732797+00:00",
+      "year": 1912
+    },
+    {
+      "deltaTRawSha256": "7b8ebaef6b058d9a461b755fad9de9d337ffc7f5269513dd70cae1a86b04cdc2",
+      "deltaTRetrievedAt": "2026-09-24T08:08:49.595584+00:00",
+      "ttRawSha256": "25585b29d131b47fed7b6ebae058d62042eee775487d5c6f7b84e6f250702461",
+      "ttRetrievedAt": "2026-09-24T04:50:20.925010+00:00",
+      "year": 1913
+    },
+    {
+      "deltaTRawSha256": "b88e6d405c1abf4220fcdcdc951936bad85b85407993e33c4b31f6b3e84ecd13",
+      "deltaTRetrievedAt": "2026-09-24T08:08:50.908916+00:00",
+      "ttRawSha256": "80aad9407907c1ef4c490fa8fb6fa82d3cb32860dc258a7f9d1675ea2c7214c5",
+      "ttRetrievedAt": "2026-09-24T04:50:22.137284+00:00",
+      "year": 1914
+    },
+    {
+      "deltaTRawSha256": "559865887da6bcd1df31a16137cde0c83964930a8dd738a9fe7a9200d37c7f29",
+      "deltaTRetrievedAt": "2026-09-24T08:08:52.248834+00:00",
+      "ttRawSha256": "ec7e0f500973c229afdfa06201834f8a18ec8ffcf90dd002eadb6880b91c4c34",
+      "ttRetrievedAt": "2026-09-24T04:50:23.356042+00:00",
+      "year": 1915
+    },
+    {
+      "deltaTRawSha256": "aaec8b259c464ea30248171eb50baa751f354ed48fdc70b91929b30869d1f60e",
+      "deltaTRetrievedAt": "2026-09-24T08:08:53.604676+00:00",
+      "ttRawSha256": "9da57aa0ff9f2d2d2471cbd96f03698f2eff8a5ab863a12038c53a964dde3d93",
+      "ttRetrievedAt": "2026-09-24T04:50:24.574836+00:00",
+      "year": 1916
+    },
+    {
+      "deltaTRawSha256": "98582551a5cf20a14edeb74f52e89bb320c4648f6c539f09ea1eb7b902160983",
+      "deltaTRetrievedAt": "2026-09-24T08:08:54.813662+00:00",
+      "ttRawSha256": "034fcb6e43132f1786db8be2572fe10662b7a269a950157559a761e8487f3b39",
+      "ttRetrievedAt": "2026-09-24T04:50:25.830602+00:00",
+      "year": 1917
+    },
+    {
+      "deltaTRawSha256": "b475084af1d1c1d118aacde66515c756c99a3eec2949af90031337a80332c00c",
+      "deltaTRetrievedAt": "2026-09-24T08:08:56.233162+00:00",
+      "ttRawSha256": "4e09c9bd99d376ef071da1e663d84bb4adab75f0bd9a5f25898876bcd36f2bd9",
+      "ttRetrievedAt": "2026-09-24T04:50:27.070161+00:00",
+      "year": 1918
+    },
+    {
+      "deltaTRawSha256": "7403001c29b57b0fc389e671986b9053f02e22fb9dad00a7b57e67374f96aada",
+      "deltaTRetrievedAt": "2026-09-24T08:08:57.567698+00:00",
+      "ttRawSha256": "a018ba925b01bcd2b93da39b5889f4ba881a11ae6d3d8ce775b29e0b7c704e3d",
+      "ttRetrievedAt": "2026-09-24T04:50:28.320520+00:00",
+      "year": 1919
+    },
+    {
+      "deltaTRawSha256": "6528ffe219fbc2aa95f1088ca0fd870ca2695a0caa59a862888a725f0a67f9b5",
+      "deltaTRetrievedAt": "2026-09-24T08:08:58.891604+00:00",
+      "ttRawSha256": "82137f3d21bf11194129cc3baf4e17a013c9cdc40cc31d03f005fb14fb77680e",
+      "ttRetrievedAt": "2026-09-24T04:50:29.571429+00:00",
+      "year": 1920
+    },
+    {
+      "deltaTRawSha256": "5f027d529af4ac3a5eabc088772f8e5685566d757a1647cb6b9d88dd718679b6",
+      "deltaTRetrievedAt": "2026-09-24T08:09:00.258046+00:00",
+      "ttRawSha256": "1fbf6b00687c4aaf9c5e5770d8684de1b4b3852955f1396cfb1a1b712087bc62",
+      "ttRetrievedAt": "2026-09-24T04:50:30.811731+00:00",
+      "year": 1921
+    },
+    {
+      "deltaTRawSha256": "8053142a62106f3137072bc64110a6652e0989f8ba536e1afbb7642a6dea836d",
+      "deltaTRetrievedAt": "2026-09-24T08:09:01.598018+00:00",
+      "ttRawSha256": "a77b71acdda98b8ec2ab1f1e24270223f51cb513aa7f9eb3d8b2b555787279a9",
+      "ttRetrievedAt": "2026-09-24T04:50:32.065589+00:00",
+      "year": 1922
+    },
+    {
+      "deltaTRawSha256": "e40f974bcc6cc8a71a2855081413ea822a822c702178027ae4ee75536832d9e3",
+      "deltaTRetrievedAt": "2026-09-24T08:09:02.889141+00:00",
+      "ttRawSha256": "10b89469a6084ee3474cb07a8c74cbf7b383a1f3e6968ac5ec171c52322784fd",
+      "ttRetrievedAt": "2026-09-24T04:50:33.332375+00:00",
+      "year": 1923
+    },
+    {
+      "deltaTRawSha256": "a4ed0de56cf428c55d254ed4463a0367b5129b7f14061b22ee7d0d3fac9698e2",
+      "deltaTRetrievedAt": "2026-09-24T08:09:04.221004+00:00",
+      "ttRawSha256": "ec2879d2b5593bcf2c4cca5c3d5354bf269ff484af86b8beb358552c865c8b5e",
+      "ttRetrievedAt": "2026-09-24T04:50:34.559910+00:00",
+      "year": 1924
+    },
+    {
+      "deltaTRawSha256": "167273fea8153d1aaf699ec4421b393c73e643dfca168931bd44d3c5b765e264",
+      "deltaTRetrievedAt": "2026-09-24T08:09:05.522172+00:00",
+      "ttRawSha256": "aa684b8f3365befe9cf9709f7424f4749bbb75febf299b6aceabd5ca0c90ba9c",
+      "ttRetrievedAt": "2026-09-24T04:50:35.851904+00:00",
+      "year": 1925
+    },
+    {
+      "deltaTRawSha256": "c3d0196672fdca18956fa242e2ec794cb612a25588a4de28d025a90bf9891c3d",
+      "deltaTRetrievedAt": "2026-09-24T08:09:06.951144+00:00",
+      "ttRawSha256": "1cd850c3ed1279a7a1551c4f269cb9cf0c27c2de065a56cd324ee74823e4354f",
+      "ttRetrievedAt": "2026-09-24T04:50:37.036947+00:00",
+      "year": 1926
+    },
+    {
+      "deltaTRawSha256": "f411dee248ab1f7a9706ad551a916c2f4eade7314a2e7d4ce5b687877f1a53dd",
+      "deltaTRetrievedAt": "2026-09-24T08:09:08.283706+00:00",
+      "ttRawSha256": "8ef1d18a9fae6eeb44d97a27aa26e7a3762984bf518b38dc1f0702736a2e0d7f",
+      "ttRetrievedAt": "2026-09-24T04:50:38.266081+00:00",
+      "year": 1927
+    },
+    {
+      "deltaTRawSha256": "37a6dc2ae71258d76170f7cce123f17fb45774d74f5e293725b43be3b943e6cf",
+      "deltaTRetrievedAt": "2026-09-24T08:09:09.618644+00:00",
+      "ttRawSha256": "ad7886db7330f68735e54ab4e9849e8f46a3df997f17c5c549d4c37ed3aa3334",
+      "ttRetrievedAt": "2026-09-24T04:50:39.476577+00:00",
+      "year": 1928
+    },
+    {
+      "deltaTRawSha256": "ed7505ffbbc29d1ec7eb82bed191ddb70057fb8cfd048131cf2303d5206fec90",
+      "deltaTRetrievedAt": "2026-09-24T08:09:10.949084+00:00",
+      "ttRawSha256": "c72a3330814be2493cf604fe3b7b671abbf4bbf533d0bcf9c47dfdec4f8b2ee1",
+      "ttRetrievedAt": "2026-09-24T04:50:40.680418+00:00",
+      "year": 1929
+    },
+    {
+      "deltaTRawSha256": "54cdf4349220d4d3f7bd0bf16f8142853586cb6a12ba7ef8d48b2849beda91a3",
+      "deltaTRetrievedAt": "2026-09-24T08:09:12.299300+00:00",
+      "ttRawSha256": "417a2991bdd7fa7144eb25bb84f1bb1c551f87b2f47402e68ff8fef88c6e645a",
+      "ttRetrievedAt": "2026-09-24T04:50:41.971817+00:00",
+      "year": 1930
+    },
+    {
+      "deltaTRawSha256": "9582efe60512b284e12b811dcc0c7a69942e0ab5e3b10801cdea9213dd635fbe",
+      "deltaTRetrievedAt": "2026-09-24T08:09:13.685341+00:00",
+      "ttRawSha256": "6285772848f297ef7363a83784e5ced45e9e27bd19e7a04c23faa8e23db8bae9",
+      "ttRetrievedAt": "2026-09-24T04:50:43.248682+00:00",
+      "year": 1931
+    },
+    {
+      "deltaTRawSha256": "4c95b89223c8d33019fb93968cdc5869f5bdd81287379a716f579a0fdedd08a0",
+      "deltaTRetrievedAt": "2026-09-24T08:09:15.022008+00:00",
+      "ttRawSha256": "b7072dd5792050c738dc31cf98d573cac8ab6e97133de4225b8b4f3498ab449b",
+      "ttRetrievedAt": "2026-09-24T04:50:44.516307+00:00",
+      "year": 1932
+    },
+    {
+      "deltaTRawSha256": "d29f24e6ae9c56d65d17329471d6587850783bdeed07775f8fdc092a784e200b",
+      "deltaTRetrievedAt": "2026-09-24T08:09:16.386547+00:00",
+      "ttRawSha256": "552d05073afd9f7309980cf40717ff6229d76d964eacfd9034773e9241fbc7f5",
+      "ttRetrievedAt": "2026-09-24T04:50:45.724576+00:00",
+      "year": 1933
+    },
+    {
+      "deltaTRawSha256": "299c0b79dfeafd652bdaa25b27e901ac524bbdb9dd7bf6df3ee21dc272be49d2",
+      "deltaTRetrievedAt": "2026-09-24T08:09:17.742869+00:00",
+      "ttRawSha256": "4be42e6ec9a2e516b4a9011f6d67a4dd6429d9341d30102acb572508cffb8c96",
+      "ttRetrievedAt": "2026-09-24T04:50:46.941794+00:00",
+      "year": 1934
+    },
+    {
+      "deltaTRawSha256": "1c78ba36f35857b2989050ecf7b99598d3153cf9e26f07d419d88ba0ebc362c1",
+      "deltaTRetrievedAt": "2026-09-24T08:09:19.078049+00:00",
+      "ttRawSha256": "2f6806fc3f40fb5365b754878f820099721b891cefdae611442ace186652151d",
+      "ttRetrievedAt": "2026-09-24T04:50:48.172410+00:00",
+      "year": 1935
+    },
+    {
+      "deltaTRawSha256": "7f183b838ff9da283a84de2d6825bec1810c8a840a2098004d9e0f4a4ec08cef",
+      "deltaTRetrievedAt": "2026-09-24T08:09:20.356269+00:00",
+      "ttRawSha256": "44f8da17c8dfb0647bd7ef299a11f41a5d22d03373a9217c1b72d65e1bbafb98",
+      "ttRetrievedAt": "2026-09-24T04:50:49.385144+00:00",
+      "year": 1936
+    },
+    {
+      "deltaTRawSha256": "3007710f0a8323ce8444a8ccf877b4f9a9b2799354c60bbfcffa97e63330e767",
+      "deltaTRetrievedAt": "2026-09-24T08:09:21.655457+00:00",
+      "ttRawSha256": "9d072e8df234875984fe142ffa324a6436d28b8adfe23e479e3cb0a58d018a67",
+      "ttRetrievedAt": "2026-09-24T04:50:50.607991+00:00",
+      "year": 1937
+    },
+    {
+      "deltaTRawSha256": "2f4013bbfecf32f14760071711688b79f73b56eba0805ad940030f4b4943fcc3",
+      "deltaTRetrievedAt": "2026-09-24T08:09:23.055735+00:00",
+      "ttRawSha256": "39a0b3a7c7ddb49b4d758afcd10687320d4a579321e93005f0f1e266e516a9a6",
+      "ttRetrievedAt": "2026-09-24T04:50:51.832549+00:00",
+      "year": 1938
+    },
+    {
+      "deltaTRawSha256": "9e806fe0671090d98126864053ed0f9b76ebf053b67ef735ef735549e66c18fc",
+      "deltaTRetrievedAt": "2026-09-24T08:09:24.400433+00:00",
+      "ttRawSha256": "b645880d82c6ecd2bbf15d05a4accd91c8758e7b9513018c9b6c4164ec199709",
+      "ttRetrievedAt": "2026-09-24T04:50:53.049503+00:00",
+      "year": 1939
+    },
+    {
+      "deltaTRawSha256": "6a43e379c43b895864d8511a650554689f979d0dd28d47f7ba7e141e1aeb32b9",
+      "deltaTRetrievedAt": "2026-09-24T08:09:25.653599+00:00",
+      "ttRawSha256": "358856af54a2c2de0e789163bedfa4645fbc7419185409346786c428dc41d82b",
+      "ttRetrievedAt": "2026-09-24T04:50:54.250658+00:00",
+      "year": 1940
+    },
+    {
+      "deltaTRawSha256": "66f36b8578d7232cf6e7e100cb7eb426b95449406ddbf45c27354153e8ccfb17",
+      "deltaTRetrievedAt": "2026-09-24T08:09:27.085116+00:00",
+      "ttRawSha256": "9807015b0caf592264725c19bd59266bd70580484e5781e371735bfdb6cc9d84",
+      "ttRetrievedAt": "2026-09-24T04:50:55.494967+00:00",
+      "year": 1941
+    },
+    {
+      "deltaTRawSha256": "461faf847aacb7fb2d0beb2f2d47524b1a16efda2de3d9d0c86addaa15ff845b",
+      "deltaTRetrievedAt": "2026-09-24T08:09:28.411018+00:00",
+      "ttRawSha256": "1866e86a1470070c9ea86b5231954f67508a8da1843b85cf9dcad35fe549cdcf",
+      "ttRetrievedAt": "2026-09-24T04:50:56.728990+00:00",
+      "year": 1942
+    },
+    {
+      "deltaTRawSha256": "af23dbeb698c9c68ad7f440a4415b2f16df2bb5ea57272e0ef39552948154575",
+      "deltaTRetrievedAt": "2026-09-24T08:09:29.726078+00:00",
+      "ttRawSha256": "1f605cc8d65026fd7c54329e363673be70e59575d49fbb97798b243b09c1d89d",
+      "ttRetrievedAt": "2026-09-24T04:50:57.960916+00:00",
+      "year": 1943
+    },
+    {
+      "deltaTRawSha256": "cd27b434d49f30aa29b23f7c92fbe93429efbab1de174b11d81c2d06beb9d14e",
+      "deltaTRetrievedAt": "2026-09-24T08:09:31.058001+00:00",
+      "ttRawSha256": "477b8d0ffbb8398f6042b500cc2ea4046234424f57e36df78dfa1b94b912a10f",
+      "ttRetrievedAt": "2026-09-24T04:50:59.208668+00:00",
+      "year": 1944
+    },
+    {
+      "deltaTRawSha256": "b3e6158e5cb4d821e6e060222ad9a9ba7c9012ba6c1b2579e931e0ac40c2bf77",
+      "deltaTRetrievedAt": "2026-09-24T08:09:32.367574+00:00",
+      "ttRawSha256": "928d90d3f0d291f2fb0320552aa9c794e357a85a50ac2922fa41d2bf5f229f88",
+      "ttRetrievedAt": "2026-09-24T04:51:00.475420+00:00",
+      "year": 1945
+    },
+    {
+      "deltaTRawSha256": "5a27126cb1c4a5a2d05910a6a713958e3db18991d4f324c3ac40601de2f3e139",
+      "deltaTRetrievedAt": "2026-09-24T08:09:33.729835+00:00",
+      "ttRawSha256": "61ad6295f7304522f0ad126f833b0a8d23af4bd5e2befa6140c40534fe67047d",
+      "ttRetrievedAt": "2026-09-24T04:51:01.711429+00:00",
+      "year": 1946
+    },
+    {
+      "deltaTRawSha256": "71a2301a82aa945bd32523989d1662be55593530cac5287132a4054f8f2c87d7",
+      "deltaTRetrievedAt": "2026-09-24T08:09:35.082246+00:00",
+      "ttRawSha256": "c139a44fad01fb162a84ea579f4d7323a4f27bb207f0bd8b99adc1cc7a8ecf75",
+      "ttRetrievedAt": "2026-09-24T04:51:02.942251+00:00",
+      "year": 1947
+    },
+    {
+      "deltaTRawSha256": "feb51e965d68622ff58923c717dfaa7f86e86fb58df8031a79c5bb54a1640b0c",
+      "deltaTRetrievedAt": "2026-09-24T08:09:36.560873+00:00",
+      "ttRawSha256": "3956cde5f1392d7cbacdb1d17b9923a932c88017260a0429fa9c41e81e1707e2",
+      "ttRetrievedAt": "2026-09-24T04:51:04.189260+00:00",
+      "year": 1948
+    },
+    {
+      "deltaTRawSha256": "416b6a6ed7bffc41ca8e05c4becf698d8bb513c9e4d3ea5a30b332c8cb36cb75",
+      "deltaTRetrievedAt": "2026-09-24T08:09:37.927648+00:00",
+      "ttRawSha256": "526c92f6e9f178544291f6efccdc54f390558d4834762330b1efac13e19aa010",
+      "ttRetrievedAt": "2026-09-24T04:51:05.403301+00:00",
+      "year": 1949
+    },
+    {
+      "deltaTRawSha256": "4f782a05ca9939b60894c444700a3f1ab4d7b7155c773bf55bb55d56df5a75e8",
+      "deltaTRetrievedAt": "2026-09-24T08:09:39.310898+00:00",
+      "ttRawSha256": "e2b8a37886ffba960c7be2ff77591457501c669a1b55ca0a7a304c9ab1f414bb",
+      "ttRetrievedAt": "2026-09-24T04:51:06.650740+00:00",
+      "year": 1950
+    },
+    {
+      "deltaTRawSha256": "97644af1d71a56fd9c28295bd22c72665a771ef6f7b87023f41c90b22a4fa38e",
+      "deltaTRetrievedAt": "2026-09-24T08:09:40.651628+00:00",
+      "ttRawSha256": "6e1cfbd67cf04685f30d40bd0e809b03d13fcfb5ef7533a5982579e2e39a3fa9",
+      "ttRetrievedAt": "2026-09-24T04:51:07.970397+00:00",
+      "year": 1951
+    },
+    {
+      "deltaTRawSha256": "2d03e1fd1d3986f536f4920b2d7574d271efe99704630297cae15d7fdfd5e6ff",
+      "deltaTRetrievedAt": "2026-09-24T08:09:41.973278+00:00",
+      "ttRawSha256": "61165fb1662a960db2e05f5db8e31878c696337ae725981f9ebf4e9e7b70db2f",
+      "ttRetrievedAt": "2026-09-24T04:51:09.190200+00:00",
+      "year": 1952
+    },
+    {
+      "deltaTRawSha256": "8bce1fedc20c82494f6b338dccf2a4aee65c92754ace6887c4ba90d139ba7cd0",
+      "deltaTRetrievedAt": "2026-09-24T08:09:43.305479+00:00",
+      "ttRawSha256": "d565789003d05b7c0c9bc648593c906bd6ac2a792f1ba1394e7646439cfff1ca",
+      "ttRetrievedAt": "2026-09-24T04:51:10.422766+00:00",
+      "year": 1953
+    },
+    {
+      "deltaTRawSha256": "249baed1342dd07b5d748412caf8a440899925f0703befaa7a279e24f56ef143",
+      "deltaTRetrievedAt": "2026-09-24T08:09:44.737596+00:00",
+      "ttRawSha256": "0242c3ecc01f429f01d76d7097b6b847e7ea6e01816a6877189c766a9b8e1d3a",
+      "ttRetrievedAt": "2026-09-24T04:51:11.642847+00:00",
+      "year": 1954
+    },
+    {
+      "deltaTRawSha256": "504dff19016876471b03fbdf956857fff502fbb3c4ce67fbef23fdfcc1a893f7",
+      "deltaTRetrievedAt": "2026-09-24T08:09:46.069343+00:00",
+      "ttRawSha256": "7932be36ff7ed919db5e101f8f8de6a2dc0c488382d999a27a994817891a1869",
+      "ttRetrievedAt": "2026-09-24T04:51:12.922263+00:00",
+      "year": 1955
+    },
+    {
+      "deltaTRawSha256": "eff3920218629fc233e2087010fff0999cde0fd11d59f167d2841110c7599d77",
+      "deltaTRetrievedAt": "2026-09-24T08:09:47.418549+00:00",
+      "ttRawSha256": "1714e5cd8c831258add6299b42c7370d26c77e00b7cad17e279ecd73288702d4",
+      "ttRetrievedAt": "2026-09-24T04:51:14.125016+00:00",
+      "year": 1956
+    },
+    {
+      "deltaTRawSha256": "c1fc459742338646212736d0ff372bc2fcab38aac653dbaedc775ce5764f81ce",
+      "deltaTRetrievedAt": "2026-09-24T08:09:48.733952+00:00",
+      "ttRawSha256": "4cc8b527fc710e6801b595b81daa02caf4d0368f600d626cfccf8a7ef81484a8",
+      "ttRetrievedAt": "2026-09-24T04:51:15.416710+00:00",
+      "year": 1957
+    },
+    {
+      "deltaTRawSha256": "07a8d74824e32bd06e9712842c34dd1135be22062704f928b2f46318bdf74db1",
+      "deltaTRetrievedAt": "2026-09-24T08:09:50.137998+00:00",
+      "ttRawSha256": "78ef74076f6169583c1e212726cac4b371838bc0c10f19d914a775dd8dac2bc5",
+      "ttRetrievedAt": "2026-09-24T04:51:16.679484+00:00",
+      "year": 1958
+    },
+    {
+      "deltaTRawSha256": "408b2194d380880e53ab9ce898cce11bf0c54035755b1a0307773a7e1274d627",
+      "deltaTRetrievedAt": "2026-09-24T08:09:51.381539+00:00",
+      "ttRawSha256": "20c1787322bfc742f33c16375f2d9aa8151a07fdb372f8c1f662acad82dbc4ae",
+      "ttRetrievedAt": "2026-09-24T04:51:17.895778+00:00",
+      "year": 1959
+    },
+    {
+      "deltaTRawSha256": "f2cdf5d1be95ab3117ad4f45a81f7e30970972e51b55c08e2fe19760a78b8e5f",
+      "deltaTRetrievedAt": "2026-09-24T08:09:52.748970+00:00",
+      "ttRawSha256": "d0560834c6e80df1aef4337c39a6a5f81b7dfb2d3c53595f1a159c9ddebe09c9",
+      "ttRetrievedAt": "2026-09-24T04:51:19.134256+00:00",
+      "year": 1960
+    },
+    {
+      "deltaTRawSha256": "9df3b86e419d2e9caecbd7323607ef392ec6f5b03176d5e95eba5831e46da505",
+      "deltaTRetrievedAt": "2026-09-24T08:09:54.149367+00:00",
+      "ttRawSha256": "23b80123b7866f518a5653214241b9ee6f9102a9700f6a63bd264bed52e10b77",
+      "ttRetrievedAt": "2026-09-24T04:51:20.402240+00:00",
+      "year": 1961
+    },
+    {
+      "deltaTRawSha256": "0fefe5ffb1f0164b0d363788bfda91ed8b65a5f709b68530b25e553b403d4bf6",
+      "deltaTRetrievedAt": "2026-09-24T08:09:55.473108+00:00",
+      "ttRawSha256": "d027d4ed1ff5247c25781bd3012f0e4e9827ec9462be2d64ea49401c5b6e369b",
+      "ttRetrievedAt": "2026-09-24T04:51:21.649448+00:00",
+      "year": 1962
+    },
+    {
+      "deltaTRawSha256": "52066b58e30bc187ef34c8d640b86295f4178d4aa7a192aaa390f00b143cb10a",
+      "deltaTRetrievedAt": "2026-09-24T08:09:56.811056+00:00",
+      "ttRawSha256": "c2b6637287691e8e2e347e23662ea36d6850ed7023cde30e0706f18e238ebe07",
+      "ttRetrievedAt": "2026-09-24T04:51:22.900851+00:00",
+      "year": 1963
+    },
+    {
+      "deltaTRawSha256": "dc3a9425b3e13f24d78bf9c0afc158bac035d2e1d5cb0aa185970b73f9e7baef",
+      "deltaTRetrievedAt": "2026-09-24T08:09:58.156825+00:00",
+      "ttRawSha256": "ebdbf9474d5517ebb30603198607bc1c94d4f7ff6fa44cd6fed27f2cfd54e0f8",
+      "ttRetrievedAt": "2026-09-24T04:51:24.145228+00:00",
+      "year": 1964
+    },
+    {
+      "deltaTRawSha256": "aa2299e0b38921b4b3b4fa1e8bab72aa1364c4d1d0236d904ce7b39390054121",
+      "deltaTRetrievedAt": "2026-09-24T08:09:59.518596+00:00",
+      "ttRawSha256": "97ef3220bc3845fb5b00e3f230b17869a5627a0e90d8e9a68d65bf63723a5d86",
+      "ttRetrievedAt": "2026-09-24T04:51:25.362633+00:00",
+      "year": 1965
+    },
+    {
+      "deltaTRawSha256": "ce2361e3ec76309e8cc70279a7507afd6df57b7034fc331e4a7b99e24ff795e3",
+      "deltaTRetrievedAt": "2026-09-24T08:10:00.866375+00:00",
+      "ttRawSha256": "1f5be72ee415a520fc965b2f7786398ea5f468b8dbe7b53bda357473e63de768",
+      "ttRetrievedAt": "2026-09-24T04:51:26.625366+00:00",
+      "year": 1966
+    },
+    {
+      "deltaTRawSha256": "0f1818069cb692f0bb5008c85244c20c29887b55ae7ee359b290f46b4f1bbf33",
+      "deltaTRetrievedAt": "2026-09-24T08:10:02.188557+00:00",
+      "ttRawSha256": "72c685d6339bef6faa30de3d03c829b17f5020dc00a1d5a13d92f7e35c57bbe7",
+      "ttRetrievedAt": "2026-09-24T04:51:27.852586+00:00",
+      "year": 1967
+    },
+    {
+      "deltaTRawSha256": "7a5c85b0e5cf35e9daaa205ead318cbe441120bcf7f8f7a3ab1bd14ed4e6a945",
+      "deltaTRetrievedAt": "2026-09-24T08:10:03.705774+00:00",
+      "ttRawSha256": "a7869a569aef984d24294e3fdc8080c30727a68f150a538650b73a274b5edd1e",
+      "ttRetrievedAt": "2026-09-24T04:51:29.143846+00:00",
+      "year": 1968
+    },
+    {
+      "deltaTRawSha256": "057f4003565acdf2578589b707e07d2cd415f6f26477d050052598a134a69c42",
+      "deltaTRetrievedAt": "2026-09-24T08:10:05.087595+00:00",
+      "ttRawSha256": "f070bd77bdbdbba7ca9f8e043c3f9d1764bff8d5f2a2d6369822b74927c30a93",
+      "ttRetrievedAt": "2026-09-24T04:51:30.373524+00:00",
+      "year": 1969
+    },
+    {
+      "deltaTRawSha256": "73218401c03e9c743f3fa1d4526b043f748acff91b849f286b17cb66ec0e71d4",
+      "deltaTRetrievedAt": "2026-09-24T08:10:06.502840+00:00",
+      "ttRawSha256": "13ae098a1b065ac24b9103d4fa0fcec8825d7f79828ff147db1ad168906f2b8e",
+      "ttRetrievedAt": "2026-09-24T04:51:31.562113+00:00",
+      "year": 1970
+    },
+    {
+      "deltaTRawSha256": "fb0462dc6a27d4faae2ef2847f4c2f9ea59770c87724eaba6768ede6a0200eb6",
+      "deltaTRetrievedAt": "2026-09-24T08:10:07.857964+00:00",
+      "ttRawSha256": "f0da1ae36714377368b18ee6e19ec319833ad892f9748c54f4aaa0d8f868307b",
+      "ttRetrievedAt": "2026-09-24T04:51:32.806065+00:00",
+      "year": 1971
+    },
+    {
+      "deltaTRawSha256": "54c990525260da6e3bda83d0c1c22afcbb9c73100e6d81cd9dc27993dadf2412",
+      "deltaTRetrievedAt": "2026-09-24T08:10:09.243100+00:00",
+      "ttRawSha256": "711d4ef9c91181049f9036a72b9e27fca385cbca98161e37e4798a02c842b187",
+      "ttRetrievedAt": "2026-09-24T04:51:34.034887+00:00",
+      "year": 1972
+    },
+    {
+      "deltaTRawSha256": "4a98daa255f16ef0d2f82ee5f370cc9654980ff5abb4ebb22528d6b0ec21a8c1",
+      "deltaTRetrievedAt": "2026-09-24T08:10:10.646665+00:00",
+      "ttRawSha256": "d4b167113b4e3eb6f65b710a35ba34bedd76aa404ca2ed5e82efe2ef0e455891",
+      "ttRetrievedAt": "2026-09-24T04:51:35.279485+00:00",
+      "year": 1973
+    },
+    {
+      "deltaTRawSha256": "5dfa40ea46fc4e43a55f6bae4703b1deaffa967ed2d3dd4f23360773d2029891",
+      "deltaTRetrievedAt": "2026-09-24T08:10:11.884917+00:00",
+      "ttRawSha256": "33526cd001eaac7c0dfa7f77496049f054dd56427006482ba812778fdfc81a9b",
+      "ttRetrievedAt": "2026-09-24T04:51:36.521343+00:00",
+      "year": 1974
+    },
+    {
+      "deltaTRawSha256": "70cb33a76a9a2ba6187a942c99e90df535b59195d16047d0fec863e78df25aa6",
+      "deltaTRetrievedAt": "2026-09-24T08:10:13.243435+00:00",
+      "ttRawSha256": "013505f8c13692857aaea3dbcd21e12f4a43d107a4fb3e1be5ba0573ec25b677",
+      "ttRetrievedAt": "2026-09-24T04:51:37.723687+00:00",
+      "year": 1975
+    },
+    {
+      "deltaTRawSha256": "a280c1bc90e06b610f0aa785910553e7c79ae276802dbdbdcb2aca2145981f1f",
+      "deltaTRetrievedAt": "2026-09-24T08:10:14.543419+00:00",
+      "ttRawSha256": "f6f57cd5f7af555810549e51888b8d3ffb4eab9435b675022e0cb491eee5091c",
+      "ttRetrievedAt": "2026-09-24T04:51:38.944463+00:00",
+      "year": 1976
+    },
+    {
+      "deltaTRawSha256": "ed03ff5c05c4575905ffda7deb6529cc437ee43ef718331d27c370b951e60b2e",
+      "deltaTRetrievedAt": "2026-09-24T08:10:15.864447+00:00",
+      "ttRawSha256": "8472e26b609469bef1ce2e59e935fce7ac597af93ec0cbf08004f3203471f081",
+      "ttRetrievedAt": "2026-09-24T04:51:40.180953+00:00",
+      "year": 1977
+    },
+    {
+      "deltaTRawSha256": "91c93ff77833d83071553e6eb02afd036d7e553706d73ccc541af990eab28068",
+      "deltaTRetrievedAt": "2026-09-24T08:10:17.266537+00:00",
+      "ttRawSha256": "43477abff4a56f7b40ae07cce9f8695a74f9485ca3314b69cece152427fe1741",
+      "ttRetrievedAt": "2026-09-24T04:51:41.419681+00:00",
+      "year": 1978
+    },
+    {
+      "deltaTRawSha256": "c400de519586193a48c011a3835a4b54fe4908f2cfca1578cc7093924e6ad6f7",
+      "deltaTRetrievedAt": "2026-09-24T08:10:18.600405+00:00",
+      "ttRawSha256": "ca424811d0c3173fe49f6f65f17ae5d5eb2b40d98ff125bb2f48b3862c53eeca",
+      "ttRetrievedAt": "2026-09-24T04:51:42.640102+00:00",
+      "year": 1979
+    },
+    {
+      "deltaTRawSha256": "509064b168fbe12b2aa33e804ceecd137aa82b658c7a9c57740e429aff572dc1",
+      "deltaTRetrievedAt": "2026-09-24T08:10:19.910255+00:00",
+      "ttRawSha256": "992b567643a3af21dcb4dedea2b8f35296ee0844a0864b13b6f6928789611159",
+      "ttRetrievedAt": "2026-09-24T04:51:43.893351+00:00",
+      "year": 1980
+    },
+    {
+      "deltaTRawSha256": "6f6651f20f67cbf8bce09593b7507015a35425a6c1c1352eaaa2c31edd48f318",
+      "deltaTRetrievedAt": "2026-09-24T08:10:21.258235+00:00",
+      "ttRawSha256": "5962ea58d3841f545067b691ce6c36a9ff78cbdbdb5299c1ec5b1d37cc171cc4",
+      "ttRetrievedAt": "2026-09-24T04:51:45.151456+00:00",
+      "year": 1981
+    },
+    {
+      "deltaTRawSha256": "c446194f53ce9aea27d4b23b87591e1af46efd5b11c023f99b6c18d0d51e60b3",
+      "deltaTRetrievedAt": "2026-09-24T08:10:22.596431+00:00",
+      "ttRawSha256": "52dc2a90c96d76b885da34dd381b59ed4ace58c086fe554322d65123ca97bad7",
+      "ttRetrievedAt": "2026-09-24T04:51:46.411035+00:00",
+      "year": 1982
+    },
+    {
+      "deltaTRawSha256": "1c9f329c8b392e07973c1c0fdd095bea0fa118502e038d2a63ddc8c71a615191",
+      "deltaTRetrievedAt": "2026-09-24T08:10:23.933004+00:00",
+      "ttRawSha256": "461bfee3603876de7278bdbb56aafd89002f90d281e6b96e00aa8ad2b1e73657",
+      "ttRetrievedAt": "2026-09-24T04:51:47.638123+00:00",
+      "year": 1983
+    },
+    {
+      "deltaTRawSha256": "fb1515720a66340ba601ab5427301066b635c4261a76c12c70b9640aed61c2d9",
+      "deltaTRetrievedAt": "2026-09-24T08:10:25.337640+00:00",
+      "ttRawSha256": "f652018b0a41d40129295b9b4185ebd8f4db98f7549dcb7e091fbdd2a63c85dd",
+      "ttRetrievedAt": "2026-09-24T04:51:48.855837+00:00",
+      "year": 1984
+    },
+    {
+      "deltaTRawSha256": "3e31b018fe0763fa965325caacd7904630b21dc47c559436d7e24531d81b8b3d",
+      "deltaTRetrievedAt": "2026-09-24T08:10:26.712383+00:00",
+      "ttRawSha256": "8ef58e81ecdb52185f8a391a4a7b8afc0c497ab93e163d1ab1821c61b322a8e2",
+      "ttRetrievedAt": "2026-09-24T04:51:50.116127+00:00",
+      "year": 1985
+    },
+    {
+      "deltaTRawSha256": "b49bce91dd2a719b454c04ddff26a24c6c3e74d8085acaab72aaed371cd535ec",
+      "deltaTRetrievedAt": "2026-09-24T08:10:28.041599+00:00",
+      "ttRawSha256": "7486c869df66591548493e38e6fbf8602160ca9f74b114d22edb5d10afab6458",
+      "ttRetrievedAt": "2026-09-24T04:51:51.343180+00:00",
+      "year": 1986
+    },
+    {
+      "deltaTRawSha256": "2a1f17717c4a39ca43cad55979dc315b4e01dda04e9b10b32f8e2456e0fdacdc",
+      "deltaTRetrievedAt": "2026-09-24T08:10:29.400525+00:00",
+      "ttRawSha256": "bfd6b7159f2c9b85b28bf1a8cb00d1d45248baaf5e8b13fb8cd61c02e0fb5554",
+      "ttRetrievedAt": "2026-09-24T04:51:52.543583+00:00",
+      "year": 1987
+    },
+    {
+      "deltaTRawSha256": "b037efc3d47f9014c5ef7978b3f509241f3cbc955903ccd874c408d15541eab1",
+      "deltaTRetrievedAt": "2026-09-24T08:10:30.740984+00:00",
+      "ttRawSha256": "0412a61ca0c97b1e76e312bb518246b43c9a266d1748d8de826507ce44b1d80f",
+      "ttRetrievedAt": "2026-09-24T04:51:53.797973+00:00",
+      "year": 1988
+    },
+    {
+      "deltaTRawSha256": "6a6aa966fad2c2877a1ead6050cb46bd4792e61ac8d43eb8b47b8d08a0decd44",
+      "deltaTRetrievedAt": "2026-09-24T08:10:32.167493+00:00",
+      "ttRawSha256": "514eca873e3d9c56bae184ad720657423cd74278a6f1f4360ac96f5bfe71872b",
+      "ttRetrievedAt": "2026-09-24T04:51:55.089287+00:00",
+      "year": 1989
+    },
+    {
+      "deltaTRawSha256": "3e5aed8e654ba8faffb7bc3152b1ce63fae9a4b7b55dbfce51f0fed4dcb41bb9",
+      "deltaTRetrievedAt": "2026-09-24T08:10:33.464316+00:00",
+      "ttRawSha256": "88a04b44d23d218917628bbc9725014e31a3c00fc6fca831534d8b10175ee1e6",
+      "ttRetrievedAt": "2026-09-24T04:51:56.322590+00:00",
+      "year": 1990
+    },
+    {
+      "deltaTRawSha256": "053f49d39bb1202ef14b5464212911ef7b87ddc163ceb65d16e9fd415d79089e",
+      "deltaTRetrievedAt": "2026-09-24T08:10:34.890638+00:00",
+      "ttRawSha256": "a32804445e9146ff41f50a67ac417449fa89bbf8fdf73c19d419e053d9e61726",
+      "ttRetrievedAt": "2026-09-24T04:51:57.564634+00:00",
+      "year": 1991
+    },
+    {
+      "deltaTRawSha256": "aa9aff9eff1d2b2c41480d001a077cfd43d9e866cbce6cab654f28e58aacc6ca",
+      "deltaTRetrievedAt": "2026-09-24T08:10:36.219752+00:00",
+      "ttRawSha256": "14ddd62ed6b254ba61f5dfcc2771f836041e1ed7f6ed36b667c08bb58ec9ab51",
+      "ttRetrievedAt": "2026-09-24T04:51:58.769779+00:00",
+      "year": 1992
+    },
+    {
+      "deltaTRawSha256": "7e4e1261192521c699174e374eac393add4f71baf1906bc34ec3e185b76d163e",
+      "deltaTRetrievedAt": "2026-09-24T08:10:37.560601+00:00",
+      "ttRawSha256": "99d1bbf234caf9093adc98a4e591184d55db4f0ff816ce2e4da8e3cb864bf6f8",
+      "ttRetrievedAt": "2026-09-24T04:51:59.968316+00:00",
+      "year": 1993
+    },
+    {
+      "deltaTRawSha256": "cb8cfc0ea0bf34ab7c3c4ad731c2222efa80cf8faf45f455bf9f76321eb7d569",
+      "deltaTRetrievedAt": "2026-09-24T08:10:38.942634+00:00",
+      "ttRawSha256": "9d5f5a7f205eb577cd6447d572b1d1f776e3a6753bd78214b952cefa4b7d87f1",
+      "ttRetrievedAt": "2026-09-24T04:52:01.256333+00:00",
+      "year": 1994
+    },
+    {
+      "deltaTRawSha256": "341ef697db84cf3a5da8fc02443aaddbdd521447be8cfa70f1cfae22ea9a99c5",
+      "deltaTRetrievedAt": "2026-09-24T08:10:40.258868+00:00",
+      "ttRawSha256": "0227be52b300cff7c013f3e4744d6c20044a47c7f02087d6934b65b603d80681",
+      "ttRetrievedAt": "2026-09-24T04:52:02.480363+00:00",
+      "year": 1995
+    },
+    {
+      "deltaTRawSha256": "bb5cf5e9f6b2a0073bec02e2b05c86c213f14a4cc7805a094489d427cc702b9f",
+      "deltaTRetrievedAt": "2026-09-24T08:10:41.656505+00:00",
+      "ttRawSha256": "09fec9c84744253dcb83d25e6b6597b00fac6895d7eb0c07b623c881ad03e400",
+      "ttRetrievedAt": "2026-09-24T04:52:03.700582+00:00",
+      "year": 1996
+    },
+    {
+      "deltaTRawSha256": "f9bde896989594bb8eb07f6e424814b3bcce140c53091878f25a2efa32bdc9f4",
+      "deltaTRetrievedAt": "2026-09-24T08:10:42.998825+00:00",
+      "ttRawSha256": "b39f6ef1e48267d3f0b030d390e535dc563ede5f674fd5d9c87dd253a9f56754",
+      "ttRetrievedAt": "2026-09-24T04:52:04.962210+00:00",
+      "year": 1997
+    },
+    {
+      "deltaTRawSha256": "31f1fa04598da345ab84959fff5d95221be97bae4203cd7675fd7b5a4e12b2da",
+      "deltaTRetrievedAt": "2026-09-24T08:10:44.326377+00:00",
+      "ttRawSha256": "939e85d3a1d4150b2d0c3cce041b8d5cf4fb34447abce6d317cf6d445202ed44",
+      "ttRetrievedAt": "2026-09-24T04:52:06.193576+00:00",
+      "year": 1998
+    },
+    {
+      "deltaTRawSha256": "a4212130f6df1aef746929a3be49bf88ff077612755ed882a70ebf2253bdc031",
+      "deltaTRetrievedAt": "2026-09-24T08:10:45.737737+00:00",
+      "ttRawSha256": "41cc821f222d6c3edefff5097d529beabd9e1a27fc42d57216934c5b2f75a2d3",
+      "ttRetrievedAt": "2026-09-24T04:52:07.440570+00:00",
+      "year": 1999
+    },
+    {
+      "deltaTRawSha256": "9ac58faebbaa0077e88ffbcc63a2b29f47aaace83a83619084b427dac889f036",
+      "deltaTRetrievedAt": "2026-09-24T08:10:47.161007+00:00",
+      "ttRawSha256": "a504090f9b2e1865ddedf79ee5d00c1c5238c277fb1ef075ca6c1af20f7d845c",
+      "ttRetrievedAt": "2026-09-24T04:52:08.714063+00:00",
+      "year": 2000
+    },
+    {
+      "deltaTRawSha256": "102f3240c7f3a9078d1de13c1f5c76d949bbadbb5272b798948bfdf12399e36f",
+      "deltaTRetrievedAt": "2026-09-24T08:10:48.494342+00:00",
+      "ttRawSha256": "08d96efa7ff4ac41c86f15c304f71425604f1822d3335b13e15fbe378605d5e6",
+      "ttRetrievedAt": "2026-09-24T04:52:09.974669+00:00",
+      "year": 2001
+    },
+    {
+      "deltaTRawSha256": "fd3f814e4bae17a24aea4da64de519a7902915fcc0401da873c67c684c730218",
+      "deltaTRetrievedAt": "2026-09-24T08:10:49.849712+00:00",
+      "ttRawSha256": "e0d65185365f244d39106fe6ccadfcddbb09d2972081effe29e36ca94c884365",
+      "ttRetrievedAt": "2026-09-24T04:52:11.230888+00:00",
+      "year": 2002
+    },
+    {
+      "deltaTRawSha256": "6b5f19f7dd9b691bfc0594a0c316809928e5c1f48f1a68b016b5681316a74d67",
+      "deltaTRetrievedAt": "2026-09-24T08:10:51.145657+00:00",
+      "ttRawSha256": "912187ca4186c61ee96af61fa4f1d0324a9e2f4463c03158d26e402280f2267e",
+      "ttRetrievedAt": "2026-09-24T04:52:12.521111+00:00",
+      "year": 2003
+    },
+    {
+      "deltaTRawSha256": "fcc5fc8dcf35088a1ca541c723865872b7eeb8ee1367cb0c6a4a47609de0cb87",
+      "deltaTRetrievedAt": "2026-09-24T08:10:52.559294+00:00",
+      "ttRawSha256": "972926d1ae9c84663b968c0d962eb9dc91ec75b7eab4398611461430e858e07f",
+      "ttRetrievedAt": "2026-09-24T04:52:13.786928+00:00",
+      "year": 2004
+    },
+    {
+      "deltaTRawSha256": "d2d841691ce3928c89a3d95f78581cba46672990068c1be1749d9d77b6da3cec",
+      "deltaTRetrievedAt": "2026-09-24T08:10:53.982596+00:00",
+      "ttRawSha256": "af00cf125919a0f40034e954d2d366464ec5d964aa44c241b83e0d625e859e49",
+      "ttRetrievedAt": "2026-09-24T04:52:15.014500+00:00",
+      "year": 2005
+    },
+    {
+      "deltaTRawSha256": "0ff3b210f92cc5d56c1cdb7c3f5dea723b1c453cb7c18d6549795498424df1bb",
+      "deltaTRetrievedAt": "2026-09-24T08:10:55.322002+00:00",
+      "ttRawSha256": "a626772d34365528271646427365ddae636ac4942bc1306f21c55443e2d8c045",
+      "ttRetrievedAt": "2026-09-24T04:52:16.250422+00:00",
+      "year": 2006
+    },
+    {
+      "deltaTRawSha256": "773b6939fd3fe4cce535aa4866112d87db6537dffab67ca4691e5e88bbc03d1f",
+      "deltaTRetrievedAt": "2026-09-24T08:10:56.668050+00:00",
+      "ttRawSha256": "25072614a476177636c9ea89cb7d4a1cb8de9901c8d5424ef8a972641d14bb39",
+      "ttRetrievedAt": "2026-09-24T04:52:17.514069+00:00",
+      "year": 2007
+    },
+    {
+      "deltaTRawSha256": "6b2f1d6fd95c8f6e269d4b489e2b8fd7251b82be4971d2e26fa13896e91d8e6b",
+      "deltaTRetrievedAt": "2026-09-24T08:10:58.067114+00:00",
+      "ttRawSha256": "6147df3441851c962f0119c127222898101ab96b2f06dc40d10f7c0c5d96f362",
+      "ttRetrievedAt": "2026-09-24T04:52:18.809119+00:00",
+      "year": 2008
+    },
+    {
+      "deltaTRawSha256": "894d4ffd703028d9f2056211aa5a3514d9908abf21772ec2b4279f07f21aa254",
+      "deltaTRetrievedAt": "2026-09-24T08:10:59.406511+00:00",
+      "ttRawSha256": "dbf3a8e7fdc72db259e5ea22c1dc981dcefd58e077461f441bd87ac6925a7fa4",
+      "ttRetrievedAt": "2026-09-24T04:52:20.045531+00:00",
+      "year": 2009
+    },
+    {
+      "deltaTRawSha256": "0e4ec50f3e7ad5a198241df15fef9f9ebb8aab449feffd6b5a0c250c57d3e2c4",
+      "deltaTRetrievedAt": "2026-09-24T08:11:00.760160+00:00",
+      "ttRawSha256": "552ec3d7ed5520da830a583eede4c14c4e8c6ec49e21d6d38e6f4610f816a85d",
+      "ttRetrievedAt": "2026-09-24T04:52:21.279217+00:00",
+      "year": 2010
+    },
+    {
+      "deltaTRawSha256": "f69b7bcbce9269b1a1f31bc756eed67aa01f7b19b8da5d403193aaac6d980648",
+      "deltaTRetrievedAt": "2026-09-24T08:11:02.099343+00:00",
+      "ttRawSha256": "4978567e3a011e518e8873c0571c5d73a123784dd6843d5540edd11411cd56b4",
+      "ttRetrievedAt": "2026-09-24T04:52:22.476187+00:00",
+      "year": 2011
+    },
+    {
+      "deltaTRawSha256": "82dc9912b16733d74520d5dae7dff941d4955ce032a8ef44d8663533ce2e8ddd",
+      "deltaTRetrievedAt": "2026-09-24T08:11:03.483925+00:00",
+      "ttRawSha256": "1024228dcf1375f4222db5a20279d1154abd4f8846ee3bfa875f8a420613b97f",
+      "ttRetrievedAt": "2026-09-24T04:52:23.686290+00:00",
+      "year": 2012
+    },
+    {
+      "deltaTRawSha256": "8f82d1d17c5eb2542638fe83bfe3e6227ec4d364dca02e33ab37f8e13e30091d",
+      "deltaTRetrievedAt": "2026-09-24T08:11:04.870944+00:00",
+      "ttRawSha256": "fdcf1d1026d918afc1f5084916b1129c9388f7af570d827e9876fec1665dfc8c",
+      "ttRetrievedAt": "2026-09-24T04:52:24.923247+00:00",
+      "year": 2013
+    },
+    {
+      "deltaTRawSha256": "20db72c4e58e8d814ffeeee16203c45d77a6431ae2e0079a11d38594ec94df90",
+      "deltaTRetrievedAt": "2026-09-24T08:11:06.276134+00:00",
+      "ttRawSha256": "face80d2671bc049e8501cbb2092fa3315a4dda964fb502c2c42e3378c539bfb",
+      "ttRetrievedAt": "2026-09-24T04:52:26.177272+00:00",
+      "year": 2014
+    },
+    {
+      "deltaTRawSha256": "438f7941f6ddbb4e6e8b7d35d510862f7bb2a1189a66b9b84573884be808bd7f",
+      "deltaTRetrievedAt": "2026-09-24T08:11:07.676234+00:00",
+      "ttRawSha256": "5c38c2c97b6f11564b7f9039836d6a2ac92805b2a29b4916a20d428c0376fd79",
+      "ttRetrievedAt": "2026-09-24T04:52:27.380499+00:00",
+      "year": 2015
+    },
+    {
+      "deltaTRawSha256": "e4d70967af9231db996ecd67720839d372f89eaab7f32de600347e28c605bb72",
+      "deltaTRetrievedAt": "2026-09-24T08:11:09.030277+00:00",
+      "ttRawSha256": "162bdc26559a4d8b866270e4a59d8101cc1b0af73453d4335fbeb7bad3d637d6",
+      "ttRetrievedAt": "2026-09-24T04:52:28.622424+00:00",
+      "year": 2016
+    },
+    {
+      "deltaTRawSha256": "af13fb0703b72dff4484d192c2a74984ce96e590695867a66b359baa80ac3449",
+      "deltaTRetrievedAt": "2026-09-24T08:11:10.321271+00:00",
+      "ttRawSha256": "2f3b2129eb00d30322e600ac93d5305a0bc0e17bfec02bf5058098090392589f",
+      "ttRetrievedAt": "2026-09-24T04:52:29.832633+00:00",
+      "year": 2017
+    },
+    {
+      "deltaTRawSha256": "821a0cddb0973b5d66be13a3fdce81fa3c2f158ed6808de781a5c25388539b68",
+      "deltaTRetrievedAt": "2026-09-24T08:11:11.663625+00:00",
+      "ttRawSha256": "9800619f016d68efd2e45b081c4d82065c6f8202f965cdfb8db51d7315813148",
+      "ttRetrievedAt": "2026-09-24T04:52:31.097864+00:00",
+      "year": 2018
+    },
+    {
+      "deltaTRawSha256": "a1749b4abc5ff8e7faecf48e6a100ea9952acd3529e99bc460877b69d4baed21",
+      "deltaTRetrievedAt": "2026-09-24T08:11:13.030012+00:00",
+      "ttRawSha256": "02ba23ced4e828c62fe80f362875cac8bb488cb53941bdd7caff3d053ba94644",
+      "ttRetrievedAt": "2026-09-24T04:52:32.335256+00:00",
+      "year": 2019
+    },
+    {
+      "deltaTRawSha256": "02e23b1fbae405996ff0cfba1697a2a1192a78d688c736aee34d9f1f8639edca",
+      "deltaTRetrievedAt": "2026-09-24T08:11:14.312671+00:00",
+      "ttRawSha256": "902fe5f46460aad9e02936fe48fb9a53ed120e82883cf4294f8ba8dfa345be50",
+      "ttRetrievedAt": "2026-09-24T04:52:33.540782+00:00",
+      "year": 2020
+    },
+    {
+      "deltaTRawSha256": "4ee3ae13e61a01ad02eca511eb94a04d485df27ed927d9720f7ba2190698e339",
+      "deltaTRetrievedAt": "2026-09-24T08:11:15.620276+00:00",
+      "ttRawSha256": "d487d04c7d6973d6df9485c465dd048fa7b93e404f80d02f7e6c6cf4a9693c81",
+      "ttRetrievedAt": "2026-09-24T04:52:34.777879+00:00",
+      "year": 2021
+    },
+    {
+      "deltaTRawSha256": "06c7f2ff1fed82609fa5843c725b3923290f8dba81536bcd9284d8097297f0a9",
+      "deltaTRetrievedAt": "2026-09-24T08:11:16.976167+00:00",
+      "ttRawSha256": "45ece659a4a6fc1c4c8544173cb1e7ebad9f3fffbbf5aab8d19568250d1d78a3",
+      "ttRetrievedAt": "2026-09-24T04:52:36.032335+00:00",
+      "year": 2022
+    },
+    {
+      "deltaTRawSha256": "5398494f1b62a2282b917b57cbebad4bb0ec18ca2215ee2d9366263ca602dd12",
+      "deltaTRetrievedAt": "2026-09-24T08:11:18.276045+00:00",
+      "ttRawSha256": "f1f8b4e33c344147e9736de5570491339a93b93bacfacf6859b8c0f0600f0745",
+      "ttRetrievedAt": "2026-09-24T04:52:37.266087+00:00",
+      "year": 2023
+    },
+    {
+      "deltaTRawSha256": "11de180d70f008b804d4f6c412ef01e616f3060cd00f48c807acae98e5e4bcb3",
+      "deltaTRetrievedAt": "2026-09-24T08:11:19.585152+00:00",
+      "ttRawSha256": "826939b199430fccee5903bc68eac6a93be93eedd976511f6d5746979a34c640",
+      "ttRetrievedAt": "2026-09-24T04:52:38.519339+00:00",
+      "year": 2024
+    },
+    {
+      "deltaTRawSha256": "507c918b3e1e9210b7460a28e77505502e743d6330807cffd56083877cac55ae",
+      "deltaTRetrievedAt": "2026-09-24T08:11:20.877376+00:00",
+      "ttRawSha256": "0b75fd28d4b796152ae69794a084c80e8205774d419a1f28047d0662c3ba830d",
+      "ttRetrievedAt": "2026-09-24T04:52:39.737979+00:00",
+      "year": 2025
+    },
+    {
+      "deltaTRawSha256": "e568a28213039eccf006c0e75782863978e00786375afc34ff2fc9c702bbea74",
+      "deltaTRetrievedAt": "2026-09-24T08:11:22.192853+00:00",
+      "ttRawSha256": "c1818162ef435bc93167654ce7067bffc8d1899fe18ccba5583d90ea7f6f157b",
+      "ttRetrievedAt": "2026-09-24T04:52:40.951818+00:00",
+      "year": 2026
+    },
+    {
+      "deltaTRawSha256": "b7c4cf10967a17b7329e403a11d5ebaa4cb90651497994250ad9731144897434",
+      "deltaTRetrievedAt": "2026-09-24T08:11:23.473525+00:00",
+      "ttRawSha256": "9adc16df5dfbc969c0dd13deeccc4c19a2b437c6b480e5e4ccd44ab748d47662",
+      "ttRetrievedAt": "2026-09-24T04:52:42.210617+00:00",
+      "year": 2027
+    },
+    {
+      "deltaTRawSha256": "02b948ffc80899b5d2e481306c85a8338eece137f9019c68f0626d1947a1db81",
+      "deltaTRetrievedAt": "2026-09-24T08:11:24.772291+00:00",
+      "ttRawSha256": "fb12cf662cc84e969937485727d77e168e9b4a199ee6fb835871bd50422b48fa",
+      "ttRetrievedAt": "2026-09-24T04:52:43.480726+00:00",
+      "year": 2028
+    },
+    {
+      "deltaTRawSha256": "9b646b196842e0a7cfb619fd6aa627c9cefdcb7e689dd2828d4b5c2185256da0",
+      "deltaTRetrievedAt": "2026-09-24T08:11:26.072288+00:00",
+      "ttRawSha256": "5b7f8abaf9ffda76c77a05a5a38366682bbad055616a9e92baf246ef100d775e",
+      "ttRetrievedAt": "2026-09-24T04:52:44.762486+00:00",
+      "year": 2029
+    },
+    {
+      "deltaTRawSha256": "a91b2e5e7a87c5b4486747c683c545abd9f57a66179947c393585023f12265f6",
+      "deltaTRetrievedAt": "2026-09-24T08:11:27.338417+00:00",
+      "ttRawSha256": "82d2bdf184b365021fd9e451e6fa160002b5f1228a242d62619db95c02728354",
+      "ttRetrievedAt": "2026-09-24T04:52:45.982027+00:00",
+      "year": 2030
+    },
+    {
+      "deltaTRawSha256": "d3fb369e6aaddd2221727285a84a629306c697a715ba35dfa054ae53bea37d81",
+      "deltaTRetrievedAt": "2026-09-24T08:11:28.640859+00:00",
+      "ttRawSha256": "696856615aa8db2e68976254916331923b7e8fe49c0653c06a341033a844d7e6",
+      "ttRetrievedAt": "2026-09-24T04:52:47.222128+00:00",
+      "year": 2031
+    },
+    {
+      "deltaTRawSha256": "81034a2495a34da83e824aa0d32914b8aa045d62289c3f8f149132c3766da96a",
+      "deltaTRetrievedAt": "2026-09-24T08:11:29.918988+00:00",
+      "ttRawSha256": "7bfce1ea51bef033ab516dacd31a9326509c1dc26a009bddaee261d538dd4306",
+      "ttRetrievedAt": "2026-09-24T04:52:48.502686+00:00",
+      "year": 2032
+    },
+    {
+      "deltaTRawSha256": "a9633941e522de6eac8a210c6510859c6ece84c2075a8bac963021af16b7a778",
+      "deltaTRetrievedAt": "2026-09-24T08:11:31.188770+00:00",
+      "ttRawSha256": "18e5a2d5f36d165b4612dc35c45f30b54fd2c339562530986594df5a741fe14c",
+      "ttRetrievedAt": "2026-09-24T04:52:49.805546+00:00",
+      "year": 2033
+    },
+    {
+      "deltaTRawSha256": "41a37244d146ddde9fbe1fa9ef4998d5c19d90125385b59bdcada81c776c1cae",
+      "deltaTRetrievedAt": "2026-09-24T08:11:32.518974+00:00",
+      "ttRawSha256": "1a1aacdb58226e00593f29ff0c528a54c5bdf47c0be1da2191ab7c1555e76669",
+      "ttRetrievedAt": "2026-09-24T04:52:51.102986+00:00",
+      "year": 2034
+    },
+    {
+      "deltaTRawSha256": "39dd79b27c353e9660e377311b5b0cae5b3965fedcbd3a98e6c7d080e69ef701",
+      "deltaTRetrievedAt": "2026-09-24T08:11:33.798472+00:00",
+      "ttRawSha256": "d03656c300fcc019ddcd74e25b19cf965531fa4c3faea4a99214e0e6349c025a",
+      "ttRetrievedAt": "2026-09-24T04:52:52.331075+00:00",
+      "year": 2035
+    },
+    {
+      "deltaTRawSha256": "c4311555752d633a1b1d87cb42812f60f9a7a46ff7364b277e3288a7f7eb8fa0",
+      "deltaTRetrievedAt": "2026-09-24T08:11:35.089130+00:00",
+      "ttRawSha256": "7ad704ec4c049bd489b602358f61fe4d3fb1e639e6be1aa97b462ff437efccfd",
+      "ttRetrievedAt": "2026-09-24T04:52:53.554135+00:00",
+      "year": 2036
+    },
+    {
+      "deltaTRawSha256": "d1c8aca168627cdd70ca15c6c5df306c7197afef81ea3044de99bd21bfc309e4",
+      "deltaTRetrievedAt": "2026-09-24T08:11:36.414245+00:00",
+      "ttRawSha256": "9bad45398e8fd94ab112da6baf60de163d9ac6526bf048a96e65ae5ecf2bacee",
+      "ttRetrievedAt": "2026-09-24T04:52:54.866429+00:00",
+      "year": 2037
+    },
+    {
+      "deltaTRawSha256": "2a5f8f34c1fb84675f40589eed5e3b353b125583731f54fb30eacfa327045946",
+      "deltaTRetrievedAt": "2026-09-24T08:11:37.725756+00:00",
+      "ttRawSha256": "1bb34063412919d866b646a5b0111605acb9301b1761563027408902b542e7c9",
+      "ttRetrievedAt": "2026-09-24T04:52:56.086858+00:00",
+      "year": 2038
+    },
+    {
+      "deltaTRawSha256": "1c8a66e81fb01b10bb78a2c39f7e3e996b59eda30e77016f38eb3e02773a03b3",
+      "deltaTRetrievedAt": "2026-09-24T08:11:39.021899+00:00",
+      "ttRawSha256": "f274cbd5d7832f025168a9de2166a386f55404cf94ba6ed1f5eae1ca0092cae3",
+      "ttRetrievedAt": "2026-09-24T04:52:57.311054+00:00",
+      "year": 2039
+    },
+    {
+      "deltaTRawSha256": "ac8661b1e80475492c95a04934d062e352df7ae066411a9edcf5f7e0cdbfb8f0",
+      "deltaTRetrievedAt": "2026-09-24T08:11:40.292579+00:00",
+      "ttRawSha256": "5e4c3f6dd82bf3a720447726394f53fbe7b4124477ed3b598b178a149742a151",
+      "ttRetrievedAt": "2026-09-24T04:52:58.529800+00:00",
+      "year": 2040
+    },
+    {
+      "deltaTRawSha256": "c48ccc1eb2ac8b457f177a096745c86f0149b7ce2f5e1fe192c35067b148eace",
+      "deltaTRetrievedAt": "2026-09-24T08:11:41.583147+00:00",
+      "ttRawSha256": "ef87fde13720655b198276e24a17c4ebede9b4f1545c6a316a13d1da88cd4159",
+      "ttRetrievedAt": "2026-09-24T04:52:59.805404+00:00",
+      "year": 2041
+    },
+    {
+      "deltaTRawSha256": "a740902b7a1d794d544579c4013003a5507600e15f132381bcc7903b96d4ad8c",
+      "deltaTRetrievedAt": "2026-09-24T08:11:42.860319+00:00",
+      "ttRawSha256": "6e40556244d3696951cb69c5bd2fb01a5a2c53690deedc22872d59bf071bd5a3",
+      "ttRetrievedAt": "2026-09-24T04:53:01.039147+00:00",
+      "year": 2042
+    },
+    {
+      "deltaTRawSha256": "eedf6ea3a0e12eb88e8c46a84d3dca8bee80f8a50558b9e3a9cd77ce90ac9dc5",
+      "deltaTRetrievedAt": "2026-09-24T08:11:44.115247+00:00",
+      "ttRawSha256": "4e0b86fc9694c8fc5bf5db29e491c67ebd0f308dedca57ef64f0b8160a96e762",
+      "ttRetrievedAt": "2026-09-24T04:53:02.267245+00:00",
+      "year": 2043
+    },
+    {
+      "deltaTRawSha256": "2230d96022fd029e3672df0fec6c16acc3bcf5646e59b2d2710f3da327c353e4",
+      "deltaTRetrievedAt": "2026-09-24T08:11:45.486835+00:00",
+      "ttRawSha256": "0f5033428c92dd382aeb575cfdbead9c3c472e3bce3569304e0b18a82396f295",
+      "ttRetrievedAt": "2026-09-24T04:53:03.527560+00:00",
+      "year": 2044
+    },
+    {
+      "deltaTRawSha256": "5ce9123c0f85505039fcaac030d56b0b0c73a93242301bd4d413f41c8eb8a8aa",
+      "deltaTRetrievedAt": "2026-09-24T08:11:46.819827+00:00",
+      "ttRawSha256": "440cb4ec0530707be7905ca6d981884878ae986c3c31f5179a2602db791cd57b",
+      "ttRetrievedAt": "2026-09-24T04:53:04.859056+00:00",
+      "year": 2045
+    },
+    {
+      "deltaTRawSha256": "8167ed7cc988711a093be9272446882ef04ec1c7903829cda5ca060293e5a24f",
+      "deltaTRetrievedAt": "2026-09-24T08:11:48.130123+00:00",
+      "ttRawSha256": "b73d429820ec60bdf56ef212c40fff82ac449ab69756ee621bcbfbaa2372b284",
+      "ttRetrievedAt": "2026-09-24T04:53:06.085545+00:00",
+      "year": 2046
+    },
+    {
+      "deltaTRawSha256": "409121a70b81c8056724a1af35e23bc32b9bdf3e300d90cf999ab319c266fcee",
+      "deltaTRetrievedAt": "2026-09-24T08:11:49.450187+00:00",
+      "ttRawSha256": "dd209ba61f6fefa50f12fd4fcb980f6061d7f11857be1563a2352c068ae054d7",
+      "ttRetrievedAt": "2026-09-24T04:53:07.350198+00:00",
+      "year": 2047
+    },
+    {
+      "deltaTRawSha256": "9781de26b7922559728348512d097a7472a22b2af272e2238e7d5e7acfb31aec",
+      "deltaTRetrievedAt": "2026-09-24T08:11:50.737887+00:00",
+      "ttRawSha256": "29d2148d5fb6dad8eecdda048b079bfb57f61db662679264554db7efadd7aa2a",
+      "ttRetrievedAt": "2026-09-24T04:53:08.605644+00:00",
+      "year": 2048
+    },
+    {
+      "deltaTRawSha256": "59f708a9a941298a6e85bb8a4c3e70f97a32f947a8a810814d5c781f93a3c248",
+      "deltaTRetrievedAt": "2026-09-24T08:11:52.078730+00:00",
+      "ttRawSha256": "560c79bd336d927b38518fe0cb0a47b7afefc96f25898851aecba63295e3631a",
+      "ttRetrievedAt": "2026-09-24T04:53:09.904464+00:00",
+      "year": 2049
+    },
+    {
+      "deltaTRawSha256": "072e970ce9d098f7e2eeeddf516ebe5527309d749ce7874a1ed38abce7815921",
+      "deltaTRetrievedAt": "2026-09-24T08:11:53.410918+00:00",
+      "ttRawSha256": "be3976811de712be73cf0bb8c946134717c54c076bd439319d0bb329d5805bde",
+      "ttRetrievedAt": "2026-09-24T04:53:11.217652+00:00",
+      "year": 2050
+    },
+    {
+      "deltaTRawSha256": "9d517a7d2282a1b0edb6d916d1c1af7a7bfdb5a0441cbf1e746e5648237fb3b1",
+      "deltaTRetrievedAt": "2026-09-24T08:11:54.736342+00:00",
+      "ttRawSha256": "829e57656fdbe7b1c568c0ebba5ee4c43bbf1c42d4660fe16c1943d938c0b9b0",
+      "ttRetrievedAt": "2026-09-24T04:53:12.453004+00:00",
+      "year": 2051
+    },
+    {
+      "deltaTRawSha256": "bd267442630e8efab333f67e2d6d83af0b73359b0001b9994ca09dcbaa11ea54",
+      "deltaTRetrievedAt": "2026-09-24T08:11:56.028983+00:00",
+      "ttRawSha256": "3b00f42077ddaae4851a3dccbf1047a501fd6d7cc65e1d3f5d1d91b5ccada814",
+      "ttRetrievedAt": "2026-09-24T04:53:13.695834+00:00",
+      "year": 2052
+    },
+    {
+      "deltaTRawSha256": "3b98b24da1e8e7e03d3d250c09080ebdcb75eaed4ba9ca2d621d50c60b47e9b1",
+      "deltaTRetrievedAt": "2026-09-24T08:11:57.336778+00:00",
+      "ttRawSha256": "986dfc2a7c64dab8d1f287fb67a78a1c137ab9cfa0ea72fd4bea2a4ca3275efb",
+      "ttRetrievedAt": "2026-09-24T04:53:14.937443+00:00",
+      "year": 2053
+    },
+    {
+      "deltaTRawSha256": "cedd413f2e9e53b4e9543f54086c4b7969674f8d3855fd655526f30c3be32fe9",
+      "deltaTRetrievedAt": "2026-09-24T08:11:58.649412+00:00",
+      "ttRawSha256": "2fea4727e426b65d76d18738056696727d7e79fd4e559937c94fc39ac3b16c0b",
+      "ttRetrievedAt": "2026-09-24T04:53:16.187096+00:00",
+      "year": 2054
+    },
+    {
+      "deltaTRawSha256": "2174faaba8700e0f9cde41d9baa9ba06d9335ae61b04baf62527bb114bfb0b83",
+      "deltaTRetrievedAt": "2026-09-24T08:12:00.023457+00:00",
+      "ttRawSha256": "1f5cb4ea6c4a28befad979f2afb5522a9175591d09e8ed74a3c853d812eca090",
+      "ttRetrievedAt": "2026-09-24T04:53:17.450518+00:00",
+      "year": 2055
+    },
+    {
+      "deltaTRawSha256": "ee77b022867d93117fce0f145649b296d9b5b87b135d20ae75c0ad698aa5554e",
+      "deltaTRetrievedAt": "2026-09-24T08:12:01.302782+00:00",
+      "ttRawSha256": "48358b53f0d4456f262269d6d71e0416ed5548187aacf2411d06d942e266c841",
+      "ttRetrievedAt": "2026-09-24T04:53:18.743506+00:00",
+      "year": 2056
+    },
+    {
+      "deltaTRawSha256": "a85ba33ec45d841a0a1f9715e076e80f34cf797e3342bec5f9926789fe193a93",
+      "deltaTRetrievedAt": "2026-09-24T08:12:02.559080+00:00",
+      "ttRawSha256": "c587f2adfb4550f61da7b4135d2f3d1cd8cfb2f1179bf2c3f4964a70df49d9af",
+      "ttRetrievedAt": "2026-09-24T04:53:20.011429+00:00",
+      "year": 2057
+    },
+    {
+      "deltaTRawSha256": "c97fc14ffc7a569f51ab5a7fd2c0bbf36dae4b4ceb795f93e4f0a81f7ffeba37",
+      "deltaTRetrievedAt": "2026-09-24T08:12:03.875943+00:00",
+      "ttRawSha256": "8de9f030285343f95893267a471d9a1b9d60249be03439e6a63f8d766510082b",
+      "ttRetrievedAt": "2026-09-24T04:53:21.224362+00:00",
+      "year": 2058
+    },
+    {
+      "deltaTRawSha256": "2d72f80fb6ae0b849270de3977b25d5fcc5c1047fe1e4a685dfa1b34f484f28a",
+      "deltaTRetrievedAt": "2026-09-24T08:12:05.166702+00:00",
+      "ttRawSha256": "9d63ae6e4ab0c702f285d460a9f50e5f44b62fba00148cf0094a62f93aa20ab2",
+      "ttRetrievedAt": "2026-09-24T04:53:22.486101+00:00",
+      "year": 2059
+    },
+    {
+      "deltaTRawSha256": "8a8b76c94e7a2ad1cfed616bd81a245ecc89cbac93c2aebb14765f02698d8624",
+      "deltaTRetrievedAt": "2026-09-24T08:12:06.412445+00:00",
+      "ttRawSha256": "54ff7b90fffa040cf139b7e6bd0c3a3340b5903760580a6457ffb5229664027b",
+      "ttRetrievedAt": "2026-09-24T04:53:23.742652+00:00",
+      "year": 2060
+    },
+    {
+      "deltaTRawSha256": "a0cac3a5f2b06ac3f2bb1d156663ee8e434d00b55cea69727941d371e8e3ada0",
+      "deltaTRetrievedAt": "2026-09-24T08:12:07.716464+00:00",
+      "ttRawSha256": "60c05f1f2a2463e967a48bc65cb3cba12e69d82ae23d3b2f67c7f84ec4760c57",
+      "ttRetrievedAt": "2026-09-24T04:53:24.993663+00:00",
+      "year": 2061
+    },
+    {
+      "deltaTRawSha256": "dc4d4aa2d04d54e4feda32fb5a89be1454ecb35d497519cb125172d36eb8aa7f",
+      "deltaTRetrievedAt": "2026-09-24T08:12:09.056422+00:00",
+      "ttRawSha256": "b4a355dfc9998a410c3e0cf7764974982afadf6f312020fe1a29776740658ca0",
+      "ttRetrievedAt": "2026-09-24T04:53:26.217507+00:00",
+      "year": 2062
+    },
+    {
+      "deltaTRawSha256": "ea7887897d3650a703debb086bd90cf5e53e9b3d937acfe74a767d311876c6ba",
+      "deltaTRetrievedAt": "2026-09-24T08:12:10.399390+00:00",
+      "ttRawSha256": "54e5d76bf9da1b3d7b0ce067af36c21a386432b1e76237429105c0bb5b225980",
+      "ttRetrievedAt": "2026-09-24T04:53:27.442689+00:00",
+      "year": 2063
+    },
+    {
+      "deltaTRawSha256": "76930a039dc8a775e41a25e3821c4b44dbcf300fd640220e4140c5f38cc7ef87",
+      "deltaTRetrievedAt": "2026-09-24T08:12:11.766501+00:00",
+      "ttRawSha256": "0d7af3312117af015985eb83f27c23688bef982980fa8edf81b425563b3ab811",
+      "ttRetrievedAt": "2026-09-24T04:53:28.686538+00:00",
+      "year": 2064
+    },
+    {
+      "deltaTRawSha256": "82f9b88598859645fc8e0cbf59299c96843b78454033e056b491281bfe8a780c",
+      "deltaTRetrievedAt": "2026-09-24T08:12:13.144733+00:00",
+      "ttRawSha256": "8de6f04a86473cc151a343f45e323f4381bd122abab8acaaa52432f7840068ae",
+      "ttRetrievedAt": "2026-09-24T04:53:29.902100+00:00",
+      "year": 2065
+    },
+    {
+      "deltaTRawSha256": "e67293acb57b5d6e33838dc37e090f9a85f13aba3deca1e62d28e76a673cbd21",
+      "deltaTRetrievedAt": "2026-09-24T08:12:14.455649+00:00",
+      "ttRawSha256": "92bd410c4fdd4827a8957be82102f663eba8d13ee414af0db718dbf01c279326",
+      "ttRetrievedAt": "2026-09-24T04:53:31.113887+00:00",
+      "year": 2066
+    },
+    {
+      "deltaTRawSha256": "9aa1cf9f43dad9f11826c29cfcb0e0770d30ba269a0eab0cfaf0533a2f7a7d3b",
+      "deltaTRetrievedAt": "2026-09-24T08:12:15.772765+00:00",
+      "ttRawSha256": "81c183aba822c938d773ab3cc2ec288f6ed0ba174029ac1691d5b2c23b913446",
+      "ttRetrievedAt": "2026-09-24T04:53:32.352154+00:00",
+      "year": 2067
+    },
+    {
+      "deltaTRawSha256": "41a2d646d2f095bbd180e777a732432c750071208cff2632b037d81dae4a8723",
+      "deltaTRetrievedAt": "2026-09-24T08:12:17.079262+00:00",
+      "ttRawSha256": "d817846045d6705f4a0985c9925d6341f538cc5e355ab3cf002a8d1c78932c78",
+      "ttRetrievedAt": "2026-09-24T04:53:33.591194+00:00",
+      "year": 2068
+    },
+    {
+      "deltaTRawSha256": "10621e940c58e80afbe00f9171eb59b8feba7e7aa6f0e5dd268fbc3d999cfa17",
+      "deltaTRetrievedAt": "2026-09-24T08:12:18.422679+00:00",
+      "ttRawSha256": "5b5da035641e49ac623f2d00b00df2b61136b4941998c43a4289dab54249a39b",
+      "ttRetrievedAt": "2026-09-24T04:53:34.830806+00:00",
+      "year": 2069
+    },
+    {
+      "deltaTRawSha256": "c4f26fc74a86ec371a2ab2826faad11679cf5879b9569f92b9888d4d731e6f63",
+      "deltaTRetrievedAt": "2026-09-24T08:12:19.714942+00:00",
+      "ttRawSha256": "5cc7805b130fc7486c3798f176b4d222fc10994805e1a8db78e427401b70d553",
+      "ttRetrievedAt": "2026-09-24T04:53:36.041914+00:00",
+      "year": 2070
+    },
+    {
+      "deltaTRawSha256": "02da89ca4b2bb3dcc94009ddba3dff2637cef84a5b5156d747600852592211fa",
+      "deltaTRetrievedAt": "2026-09-24T08:12:21.016582+00:00",
+      "ttRawSha256": "7fd9c805ab50e1f79bf1fd954adb9e3e7f652cc3e3ab6fa9382994fc8cba5663",
+      "ttRetrievedAt": "2026-09-24T04:53:37.324558+00:00",
+      "year": 2071
+    },
+    {
+      "deltaTRawSha256": "fc7218d7487eac3d7821535ba75a522ee147f661d55d36c5ddc7ceb96e29f6d0",
+      "deltaTRetrievedAt": "2026-09-24T08:12:22.291667+00:00",
+      "ttRawSha256": "cdb8eb3bbc75bde1455f7335c71fb4dc1e5dcb445a8a7744a26f34773d2201ee",
+      "ttRetrievedAt": "2026-09-24T04:53:38.574839+00:00",
+      "year": 2072
+    },
+    {
+      "deltaTRawSha256": "4fc96cab7159fdad0c89c1d2c3b9dfcf27ed5f0087e776f474e98cc28c58e52d",
+      "deltaTRetrievedAt": "2026-09-24T08:12:23.629577+00:00",
+      "ttRawSha256": "a7ef2b248c9ebc6edcd2d8ab40009c81184f6f644f13861e6f58a97dfdbaa369",
+      "ttRetrievedAt": "2026-09-24T04:53:39.809826+00:00",
+      "year": 2073
+    },
+    {
+      "deltaTRawSha256": "77a0f767d1065a0042fe75f62fbcf582d8ae1d34cfffa1e4bcdaf292f72bfa9f",
+      "deltaTRetrievedAt": "2026-09-24T08:12:24.910982+00:00",
+      "ttRawSha256": "092b3c7912430ac80da5248bf41742868ac78ab05e2d506fa29f173eb6262be4",
+      "ttRetrievedAt": "2026-09-24T04:53:41.018080+00:00",
+      "year": 2074
+    },
+    {
+      "deltaTRawSha256": "abb0e13d51cec23fc1a18c01acfe940ec6390dd3a21ad286fcf4981e55802bd5",
+      "deltaTRetrievedAt": "2026-09-24T08:12:26.194460+00:00",
+      "ttRawSha256": "d7d6dc448f6aff2a85eb428a0a15ebed2e34a414b049c2dea3b3500c27aa34aa",
+      "ttRetrievedAt": "2026-09-24T04:53:42.234163+00:00",
+      "year": 2075
+    },
+    {
+      "deltaTRawSha256": "f8e362c4dde96244e874fe04fa7f1ac8ee0f9b57461c58a9dcbd4dfaad177b38",
+      "deltaTRetrievedAt": "2026-09-24T08:12:27.468705+00:00",
+      "ttRawSha256": "2abd627dc5cdb1693bf90042a48d14f43a07e9e1a7fba7c890dcf9127c00c68d",
+      "ttRetrievedAt": "2026-09-24T04:53:43.452867+00:00",
+      "year": 2076
+    },
+    {
+      "deltaTRawSha256": "9afe4041f450933d557b9fc4b9a01d49549d806f1cc320bff793daf7adba5c8e",
+      "deltaTRetrievedAt": "2026-09-24T08:12:28.802027+00:00",
+      "ttRawSha256": "53774e307a0b201e63e1525231641343780d8964de0488791bbba1b67d59b235",
+      "ttRetrievedAt": "2026-09-24T04:53:44.687464+00:00",
+      "year": 2077
+    },
+    {
+      "deltaTRawSha256": "602814df8c84141bd0b8fac2dc1cdd17decebabc6ba231a94a32125e912e5b1c",
+      "deltaTRetrievedAt": "2026-09-24T08:12:30.148281+00:00",
+      "ttRawSha256": "19b7cb72c31c7fc289cb2baee27b86cedc68b52300de17fb6827db604b39d0e7",
+      "ttRetrievedAt": "2026-09-24T04:53:45.934796+00:00",
+      "year": 2078
+    },
+    {
+      "deltaTRawSha256": "fcbc026b3ad8242fe03e80581243ff89d1055f6580dfcc43774fcfc51fef8033",
+      "deltaTRetrievedAt": "2026-09-24T08:12:31.473797+00:00",
+      "ttRawSha256": "d474e0839938ae9ae552561f8e216b15af02ca560a77779a3fe4d5d77b8ff628",
+      "ttRetrievedAt": "2026-09-24T04:53:47.150378+00:00",
+      "year": 2079
+    },
+    {
+      "deltaTRawSha256": "1ce6a3fa6ef34b5677b16f955526935adca15909ac31ed071f2e70a4bd4ce65d",
+      "deltaTRetrievedAt": "2026-09-24T08:12:32.822832+00:00",
+      "ttRawSha256": "cebdad89d957b988e2c8981ca9389ff734c0eb69f1ee11d5eaea4bf734edeb2b",
+      "ttRetrievedAt": "2026-09-24T04:53:48.405422+00:00",
+      "year": 2080
+    },
+    {
+      "deltaTRawSha256": "9cfb684d80a40fc73f85367cd6db9c6bad00788ad3bc1b0e8730f0ab47426636",
+      "deltaTRetrievedAt": "2026-09-24T08:12:34.125349+00:00",
+      "ttRawSha256": "3c048ab9dc935b004dbd76119989b4160ad77911dc5a92d6551fcc74a6f2232d",
+      "ttRetrievedAt": "2026-09-24T04:53:49.687477+00:00",
+      "year": 2081
+    },
+    {
+      "deltaTRawSha256": "9e47acf7bf8aa8a150bd059d6b3d5d6bfd9135fe3311ef27bdc434e5ac30aad0",
+      "deltaTRetrievedAt": "2026-09-24T08:12:35.436272+00:00",
+      "ttRawSha256": "15895a0fe0830d7e3f977c0c0860529c61960e3e49129cd3f54b82425c058c02",
+      "ttRetrievedAt": "2026-09-24T04:53:50.867893+00:00",
+      "year": 2082
+    },
+    {
+      "deltaTRawSha256": "897254ef0ca382eaad5a21cdc96243707780177ee77815df3367fd68143d51cd",
+      "deltaTRetrievedAt": "2026-09-24T08:12:36.781432+00:00",
+      "ttRawSha256": "6d01b84e96ed0b44e476baaafa8620df5b5f7970204a918abe6c1195bd0107fb",
+      "ttRetrievedAt": "2026-09-24T04:53:52.093888+00:00",
+      "year": 2083
+    },
+    {
+      "deltaTRawSha256": "907fef0f1938f9179dc9aeaf77b0c211c4c6a21c95ca5caa2bd72b77c7402896",
+      "deltaTRetrievedAt": "2026-09-24T08:12:38.114737+00:00",
+      "ttRawSha256": "db9f196152a18745b085c96e959c1d8d049ab093c5878fd48517b23251842987",
+      "ttRetrievedAt": "2026-09-24T04:53:53.320003+00:00",
+      "year": 2084
+    },
+    {
+      "deltaTRawSha256": "afe487e15ad7894feae867c05235bfd38fb0b88f119bef2280b4073f4490093a",
+      "deltaTRetrievedAt": "2026-09-24T08:12:39.350939+00:00",
+      "ttRawSha256": "124ca39b4a40d10c327b0022fe3f1693226265f03149b094c926e02f465ba933",
+      "ttRetrievedAt": "2026-09-24T04:53:54.537074+00:00",
+      "year": 2085
+    },
+    {
+      "deltaTRawSha256": "cf45a2b92e8d2be30768d2f57c3d425489926d8d57ed47df49aa831e3dca2b17",
+      "deltaTRetrievedAt": "2026-09-24T08:12:40.716930+00:00",
+      "ttRawSha256": "656f2f94aeb4b01da0e109440dfd3f4491a48e709b40d15f408d43ceac407308",
+      "ttRetrievedAt": "2026-09-24T04:53:55.742963+00:00",
+      "year": 2086
+    },
+    {
+      "deltaTRawSha256": "f67052a8cd5b98b09590b86e313f9234a9067728276289436c911e37584cb0df",
+      "deltaTRetrievedAt": "2026-09-24T08:12:42.047421+00:00",
+      "ttRawSha256": "4e03be2e234eba9beacb3fee6bc5e3d1a81aff783987844791a34ea51a86de4c",
+      "ttRetrievedAt": "2026-09-24T04:53:57.030236+00:00",
+      "year": 2087
+    },
+    {
+      "deltaTRawSha256": "4169cc2f96cc56dde7da345aea992cf040c24b56a1204340a31fe786c21910e3",
+      "deltaTRetrievedAt": "2026-09-24T08:12:43.249901+00:00",
+      "ttRawSha256": "aaa163ed1358db14b18b30828b94c4b2e172e60e7f65c0107f74702e9237bb6f",
+      "ttRetrievedAt": "2026-09-24T04:53:58.283597+00:00",
+      "year": 2088
+    },
+    {
+      "deltaTRawSha256": "c90595d8ba3b9f8f7dd0be6557b990ce9736672309c2a91a95ef1575026b96c6",
+      "deltaTRetrievedAt": "2026-09-24T08:12:44.528318+00:00",
+      "ttRawSha256": "aad2424eb5f028ce1b46a1d15389942399015f0ce77eeb6c3e9352dc89446971",
+      "ttRetrievedAt": "2026-09-24T04:53:59.510254+00:00",
+      "year": 2089
+    },
+    {
+      "deltaTRawSha256": "464fda5b7c05868e328f427bd76f6e0fbbd77dfad63bd6f22cda20ee71c4a311",
+      "deltaTRetrievedAt": "2026-09-24T08:12:45.796945+00:00",
+      "ttRawSha256": "75703ab535dc14fe5258680bafcd3f08dc36202f936545fd3af5e57808fea10d",
+      "ttRetrievedAt": "2026-09-24T04:54:00.754059+00:00",
+      "year": 2090
+    },
+    {
+      "deltaTRawSha256": "74e1938d05a525db2aabe39c98cb3db5b1058181e05d734e287d329fd820a755",
+      "deltaTRetrievedAt": "2026-09-24T08:12:47.087353+00:00",
+      "ttRawSha256": "5121645736488b4bb9ccb89d325d525c382b3b973d98546601d3bef4be692e25",
+      "ttRetrievedAt": "2026-09-24T04:54:01.961225+00:00",
+      "year": 2091
+    },
+    {
+      "deltaTRawSha256": "2475ce67a6221e265030aa4b207e67200af9b7985ecd9893cc35a4473eb043d2",
+      "deltaTRetrievedAt": "2026-09-24T08:12:48.445244+00:00",
+      "ttRawSha256": "770b975120f05f1ac6fcba65651d32a8c546dcc21c0f752459fac19d63a36543",
+      "ttRetrievedAt": "2026-09-24T04:54:03.229743+00:00",
+      "year": 2092
+    },
+    {
+      "deltaTRawSha256": "d4c7c17e6e31597c0591c89eaae0c87eeff1b2eef53e5601c1d677953295ee9e",
+      "deltaTRetrievedAt": "2026-09-24T08:12:49.800626+00:00",
+      "ttRawSha256": "d7ddd2db0a4fe6ba210328f06aedeeaf5c532409a65fe4caec9716e3e0a4cdef",
+      "ttRetrievedAt": "2026-09-24T04:54:04.461854+00:00",
+      "year": 2093
+    },
+    {
+      "deltaTRawSha256": "a23d52c5dbe5a6661ed346a62644d02f80b7b3299aa6d3eb24c8f6cab29f2896",
+      "deltaTRetrievedAt": "2026-09-24T08:12:51.109115+00:00",
+      "ttRawSha256": "7b27e5cea0d911bb36908b681bccffc8f33c2675b0070a18d3ed9090b9651493",
+      "ttRetrievedAt": "2026-09-24T04:54:05.707115+00:00",
+      "year": 2094
+    },
+    {
+      "deltaTRawSha256": "1919aa563f6f40b942ec0ac72cd2484d9180e8eaaf209733424c7d7536f92162",
+      "deltaTRetrievedAt": "2026-09-24T08:12:52.496696+00:00",
+      "ttRawSha256": "9ca1d2f7d65f26548371ce6d1dee20f1b812417fcf5a55f0854271afe9139f05",
+      "ttRetrievedAt": "2026-09-24T04:54:06.920732+00:00",
+      "year": 2095
+    },
+    {
+      "deltaTRawSha256": "f242bdadcf1d6592a5c4b02a83184cdb6307d7831ae1f8312998cb4e25e46dc7",
+      "deltaTRetrievedAt": "2026-09-24T08:12:53.849422+00:00",
+      "ttRawSha256": "89cf157815b2b4538bc4a74909ea3c99b56ce0302650968120f4110b310d5a26",
+      "ttRetrievedAt": "2026-09-24T04:54:08.176581+00:00",
+      "year": 2096
+    },
+    {
+      "deltaTRawSha256": "37e5d0f81530d932920fb0e046e27de8c32d36d70b00f95714b9fe3b5d9bdece",
+      "deltaTRetrievedAt": "2026-09-24T08:12:55.160837+00:00",
+      "ttRawSha256": "ab2a2b7a2c01ee78034dc904596db8c50237347dbfd8ea70a6c1b8dcfe6efd3f",
+      "ttRetrievedAt": "2026-09-24T04:54:09.396438+00:00",
+      "year": 2097
+    },
+    {
+      "deltaTRawSha256": "74e851f8d2626dd9a32a0dfc0ae4d48d5d865e7df23f53028f20428b5152026d",
+      "deltaTRetrievedAt": "2026-09-24T08:12:56.518582+00:00",
+      "ttRawSha256": "5648662a47e51605fdcd8b1f0cb3334eff52392e8596f0d4277c3d8caf8d67d7",
+      "ttRetrievedAt": "2026-09-24T04:54:10.652625+00:00",
+      "year": 2098
+    },
+    {
+      "deltaTRawSha256": "334e8463ed3148a3fa104f2d7d16ca3b5268e9548d8fc327379ea74bf0a10bfc",
+      "deltaTRetrievedAt": "2026-09-24T08:12:57.880060+00:00",
+      "ttRawSha256": "cd7c6b092e3c8261e7f67b377bd3e06d8f9977c48ece4e1d9dfda6f91959b51c",
+      "ttRetrievedAt": "2026-09-24T04:54:11.942875+00:00",
+      "year": 2099
+    },
+    {
+      "deltaTRawSha256": "774388bd05110d62a321c5a5e712942fd1c8bbc6ca2bfdccaaede3c264d9b4db",
+      "deltaTRetrievedAt": "2026-09-24T08:12:59.159437+00:00",
+      "ttRawSha256": "0e97251c75079571330f082468e8075e676fd47e30484d660cda6ec142cd4783",
+      "ttRetrievedAt": "2026-09-24T04:54:13.204507+00:00",
+      "year": 2100
+    }
+  ],
+  "files": {
+    "naoj-s2020.json.gz": "e96f80b3b8fe14502b9946da8bcc1fd90bd400e18dc14955eaca4bd5191e9245",
+    "naoj-tt0.json.gz": "9b2373c3e15075b4018c80701d59aecc0284f56e0e4ab958c52226cfd16c7c0d",
+    "tai-utc.dat": "3524e1ae34d67e858873a89e59983bbc5bd100221da898e796c1b36036a310c3",
+    "tt-raw-manifest.txt": "12af0c28a1c8f72ac1ced8deadd0fd3cff66d76eeb364664c18f314a1bae7744"
+  },
+  "primaryAuthority": "NAOJ",
+  "rawManifestChecksum": "12af0c28a1c8f72ac1ced8deadd0fd3cff66d76eeb364664c18f314a1bae7744",
+  "retrievalTimestamp": "2026-09-24T04:54:13.204507+00:00",
+  "sourceVersion": "2.1i",
+  "ttQuery": {
+    "Go": "Go",
+    "cal": "0",
+    "dt": "0",
+    "dtm": "99",
+    "jg": "1",
+    "lst": "0",
+    "phenom": "50",
+    "year": "1899..2100"
+  }
+}

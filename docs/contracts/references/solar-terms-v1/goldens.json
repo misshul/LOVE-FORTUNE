@@ -1,0 +1,197 @@
+{
+  "provenance": "Frozen once from independent JS inversion of official coefficients and original TT rows, checked against Python Fraction build; public reference/synthetic comparisons only. Never regenerate to accommodate production changes.",
+  "events": [
+    {
+      "eventId": "SOLAR_1900_LICHUN",
+      "normalizedTT": "1900-02-04T05:51:00",
+      "serviceBoundaryUs": "-2206030138100000",
+      "eraConversionType": "PRE_1961_S2020",
+      "conversionIntervalKey": "1900",
+      "exactServiceCoordinateSeconds": "-22060301381/10"
+    },
+    {
+      "eventId": "SOLAR_1950_LICHUN",
+      "normalizedTT": "1950-02-04T09:21:00",
+      "serviceBoundaryUs": "-628180768900000",
+      "eraConversionType": "PRE_1961_S2020",
+      "conversionIntervalKey": "1950",
+      "exactServiceCoordinateSeconds": "-6281807689/10"
+    },
+    {
+      "eventId": "SOLAR_1961_LICHUN",
+      "normalizedTT": "1961-02-04T01:23:00",
+      "serviceBoundaryUs": "-281054253650956",
+      "eraConversionType": "UTC_1961_1971_DRIFT",
+      "conversionIntervalKey": "1961-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "-56210851573354000/200000003"
+    },
+    {
+      "eventId": "SOLAR_1965_LICHUN",
+      "normalizedTT": "1965-02-04T00:47:00",
+      "serviceBoundaryUs": "-154826015768235",
+      "eraConversionType": "UTC_1961_1971_DRIFT",
+      "conversionIntervalKey": "1965-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "-30965203618125200/200000003"
+    },
+    {
+      "eventId": "SOLAR_1969_LICHUN",
+      "normalizedTT": "1969-02-04T00:00:00",
+      "serviceBoundaryUs": "-28598439326128",
+      "eraConversionType": "UTC_1961_1971_DRIFT",
+      "conversionIntervalKey": "1968-02-01T00:00:00",
+      "exactServiceCoordinateSeconds": "-2859844018408200/100000003"
+    },
+    {
+      "eventId": "SOLAR_1971_LICHUN",
+      "normalizedTT": "1971-02-04T11:26:00",
+      "serviceBoundaryUs": "34514718780477",
+      "eraConversionType": "UTC_1961_1971_DRIFT",
+      "conversionIntervalKey": "1968-02-01T00:00:00",
+      "exactServiceCoordinateSeconds": "3451471981591800/100000003"
+    },
+    {
+      "eventId": "SOLAR_1972_LICHUN",
+      "normalizedTT": "1972-02-04T17:21:00",
+      "serviceBoundaryUs": "66072017816000",
+      "eraConversionType": "KNOWN_TAI_UTC",
+      "conversionIntervalKey": "1972-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "8259002227/125"
+    },
+    {
+      "eventId": "SOLAR_1980_LICHUN",
+      "normalizedTT": "1980-02-04T16:10:00",
+      "serviceBoundaryUs": "318528548816000",
+      "eraConversionType": "KNOWN_TAI_UTC",
+      "conversionIntervalKey": "1980-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "39816068602/125"
+    },
+    {
+      "eventId": "SOLAR_2000_XIAOHAN",
+      "normalizedTT": "2000-01-06T01:02:00",
+      "serviceBoundaryUs": "947120455816000",
+      "eraConversionType": "KNOWN_TAI_UTC",
+      "conversionIntervalKey": "1999-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "118390056977/125"
+    },
+    {
+      "eventId": "SOLAR_2000_LICHUN",
+      "normalizedTT": "2000-02-04T12:41:00",
+      "serviceBoundaryUs": "949667995816000",
+      "eraConversionType": "KNOWN_TAI_UTC",
+      "conversionIntervalKey": "1999-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "118708499477/125"
+    },
+    {
+      "eventId": "SOLAR_2000_JINGZHE",
+      "normalizedTT": "2000-03-05T06:44:00",
+      "serviceBoundaryUs": "952238575816000",
+      "eraConversionType": "KNOWN_TAI_UTC",
+      "conversionIntervalKey": "1999-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "119029821977/125"
+    },
+    {
+      "eventId": "SOLAR_2000_QINGMING",
+      "normalizedTT": "2000-04-04T11:33:00",
+      "serviceBoundaryUs": "954847915816000",
+      "eraConversionType": "KNOWN_TAI_UTC",
+      "conversionIntervalKey": "1999-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "119355989477/125"
+    },
+    {
+      "eventId": "SOLAR_2000_LIXIA",
+      "normalizedTT": "2000-05-05T04:51:00",
+      "serviceBoundaryUs": "957502195816000",
+      "eraConversionType": "KNOWN_TAI_UTC",
+      "conversionIntervalKey": "1999-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "119687774477/125"
+    },
+    {
+      "eventId": "SOLAR_2000_MANGZHONG",
+      "normalizedTT": "2000-06-05T09:00:00",
+      "serviceBoundaryUs": "960195535816000",
+      "eraConversionType": "KNOWN_TAI_UTC",
+      "conversionIntervalKey": "1999-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "120024441977/125"
+    },
+    {
+      "eventId": "SOLAR_2000_XIAOSHU",
+      "normalizedTT": "2000-07-06T19:15:00",
+      "serviceBoundaryUs": "962910835816000",
+      "eraConversionType": "KNOWN_TAI_UTC",
+      "conversionIntervalKey": "1999-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "120363854477/125"
+    },
+    {
+      "eventId": "SOLAR_2000_LIQIU",
+      "normalizedTT": "2000-08-07T05:04:00",
+      "serviceBoundaryUs": "965624575816000",
+      "eraConversionType": "KNOWN_TAI_UTC",
+      "conversionIntervalKey": "1999-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "120703071977/125"
+    },
+    {
+      "eventId": "SOLAR_2000_BAILU",
+      "normalizedTT": "2000-09-07T08:00:00",
+      "serviceBoundaryUs": "968313535816000",
+      "eraConversionType": "KNOWN_TAI_UTC",
+      "conversionIntervalKey": "1999-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "121039191977/125"
+    },
+    {
+      "eventId": "SOLAR_2000_HANLU",
+      "normalizedTT": "2000-10-07T23:39:00",
+      "serviceBoundaryUs": "970961875816000",
+      "eraConversionType": "KNOWN_TAI_UTC",
+      "conversionIntervalKey": "1999-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "121370234477/125"
+    },
+    {
+      "eventId": "SOLAR_2000_LIDONG",
+      "normalizedTT": "2000-11-07T02:49:00",
+      "serviceBoundaryUs": "973565275816000",
+      "eraConversionType": "KNOWN_TAI_UTC",
+      "conversionIntervalKey": "1999-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "121695659477/125"
+    },
+    {
+      "eventId": "SOLAR_2000_DAXUE",
+      "normalizedTT": "2000-12-06T19:38:00",
+      "serviceBoundaryUs": "976131415816000",
+      "eraConversionType": "KNOWN_TAI_UTC",
+      "conversionIntervalKey": "1999-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "122016426977/125"
+    },
+    {
+      "eventId": "SOLAR_2017_LICHUN",
+      "normalizedTT": "2017-02-03T15:35:00",
+      "serviceBoundaryUs": "1486136030816000",
+      "eraConversionType": "KNOWN_TAI_UTC",
+      "conversionIntervalKey": "2017-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "185767003852/125"
+    },
+    {
+      "eventId": "SOLAR_2050_LICHUN",
+      "normalizedTT": "2050-02-03T15:45:00",
+      "serviceBoundaryUs": "2527515830816000",
+      "eraConversionType": "FROZEN_FUTURE_37",
+      "conversionIntervalKey": "2017-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "315939478852/125"
+    },
+    {
+      "eventId": "SOLAR_2096_XIAOSHU",
+      "normalizedTT": "2096-07-06T00:00:00",
+      "serviceBoundaryUs": "3992371130816000",
+      "eraConversionType": "FROZEN_FUTURE_37",
+      "conversionIntervalKey": "2017-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "499046391352/125"
+    },
+    {
+      "eventId": "SOLAR_2099_LICHUN",
+      "normalizedTT": "2099-02-03T13:13:00",
+      "serviceBoundaryUs": "4073807510816000",
+      "eraConversionType": "FROZEN_FUTURE_37",
+      "conversionIntervalKey": "2017-01-01T00:00:00",
+      "exactServiceCoordinateSeconds": "509225938852/125"
+    }
+  ]
+}

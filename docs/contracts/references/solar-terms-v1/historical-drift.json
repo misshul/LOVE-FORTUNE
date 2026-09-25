@@ -1,0 +1,143 @@
+{
+  "checksum": "3524e1ae34d67e858873a89e59983bbc5bd100221da898e796c1b36036a310c3",
+  "intervals": [
+    {
+      "baseOffset": "1.4228180",
+      "dailyDrift": "0.001296",
+      "effectiveEnd": "1961-08-01T00:00:00",
+      "effectiveStart": "1961-01-01T00:00:00",
+      "referenceMJD": "37300.",
+      "sourceJD": "2437300.5",
+      "sourceRow": " 1961 JAN  1 =JD 2437300.5  TAI-UTC=   1.4228180 S + (MJD - 37300.) X 0.001296 S",
+      "sourceRowHash": "f3c11954c1cadde1de02ebc0dc25d333f8eaa05acb6f9ae845de1dcf47eee530"
+    },
+    {
+      "baseOffset": "1.3728180",
+      "dailyDrift": "0.001296",
+      "effectiveEnd": "1962-01-01T00:00:00",
+      "effectiveStart": "1961-08-01T00:00:00",
+      "referenceMJD": "37300.",
+      "sourceJD": "2437512.5",
+      "sourceRow": " 1961 AUG  1 =JD 2437512.5  TAI-UTC=   1.3728180 S + (MJD - 37300.) X 0.001296 S",
+      "sourceRowHash": "4281a9df7607edf5fb31120c779275567dc024f517b990e642fce36ebe0d01a7"
+    },
+    {
+      "baseOffset": "1.8458580",
+      "dailyDrift": "0.0011232",
+      "effectiveEnd": "1963-11-01T00:00:00",
+      "effectiveStart": "1962-01-01T00:00:00",
+      "referenceMJD": "37665.",
+      "sourceJD": "2437665.5",
+      "sourceRow": " 1962 JAN  1 =JD 2437665.5  TAI-UTC=   1.8458580 S + (MJD - 37665.) X 0.0011232S",
+      "sourceRowHash": "1fd3444f96fa0fabc573b8769e39b5cfb852d9474c02eaeeb981d5246d254dd9"
+    },
+    {
+      "baseOffset": "1.9458580",
+      "dailyDrift": "0.0011232",
+      "effectiveEnd": "1964-01-01T00:00:00",
+      "effectiveStart": "1963-11-01T00:00:00",
+      "referenceMJD": "37665.",
+      "sourceJD": "2438334.5",
+      "sourceRow": " 1963 NOV  1 =JD 2438334.5  TAI-UTC=   1.9458580 S + (MJD - 37665.) X 0.0011232S",
+      "sourceRowHash": "7d684658315e1fb2b4dd8614655439da40eeee4549c5c13ab241586239cbdb6c"
+    },
+    {
+      "baseOffset": "3.2401300",
+      "dailyDrift": "0.001296",
+      "effectiveEnd": "1964-04-01T00:00:00",
+      "effectiveStart": "1964-01-01T00:00:00",
+      "referenceMJD": "38761.",
+      "sourceJD": "2438395.5",
+      "sourceRow": " 1964 JAN  1 =JD 2438395.5  TAI-UTC=   3.2401300 S + (MJD - 38761.) X 0.001296 S",
+      "sourceRowHash": "416f2ef44b37e47672d43bf4cc12e14e0f27af45a3864ba139c048c4ea9a7c37"
+    },
+    {
+      "baseOffset": "3.3401300",
+      "dailyDrift": "0.001296",
+      "effectiveEnd": "1964-09-01T00:00:00",
+      "effectiveStart": "1964-04-01T00:00:00",
+      "referenceMJD": "38761.",
+      "sourceJD": "2438486.5",
+      "sourceRow": " 1964 APR  1 =JD 2438486.5  TAI-UTC=   3.3401300 S + (MJD - 38761.) X 0.001296 S",
+      "sourceRowHash": "065666a01dfd962078ca58d328b3b7b8388e091b34d2afb66e9c447e06f724e8"
+    },
+    {
+      "baseOffset": "3.4401300",
+      "dailyDrift": "0.001296",
+      "effectiveEnd": "1965-01-01T00:00:00",
+      "effectiveStart": "1964-09-01T00:00:00",
+      "referenceMJD": "38761.",
+      "sourceJD": "2438639.5",
+      "sourceRow": " 1964 SEP  1 =JD 2438639.5  TAI-UTC=   3.4401300 S + (MJD - 38761.) X 0.001296 S",
+      "sourceRowHash": "436e16753e562696decdb3884a28233abe4370ecc89c6471a5693f561fb27047"
+    },
+    {
+      "baseOffset": "3.5401300",
+      "dailyDrift": "0.001296",
+      "effectiveEnd": "1965-03-01T00:00:00",
+      "effectiveStart": "1965-01-01T00:00:00",
+      "referenceMJD": "38761.",
+      "sourceJD": "2438761.5",
+      "sourceRow": " 1965 JAN  1 =JD 2438761.5  TAI-UTC=   3.5401300 S + (MJD - 38761.) X 0.001296 S",
+      "sourceRowHash": "bf6460d730465a29d717e67f9a3e173aec6879830465033b1d3f33fb05194e59"
+    },
+    {
+      "baseOffset": "3.6401300",
+      "dailyDrift": "0.001296",
+      "effectiveEnd": "1965-07-01T00:00:00",
+      "effectiveStart": "1965-03-01T00:00:00",
+      "referenceMJD": "38761.",
+      "sourceJD": "2438820.5",
+      "sourceRow": " 1965 MAR  1 =JD 2438820.5  TAI-UTC=   3.6401300 S + (MJD - 38761.) X 0.001296 S",
+      "sourceRowHash": "fc767031f64de37092a9a1ef46451c63e972bb7e8afe5421b563de4441b69690"
+    },
+    {
+      "baseOffset": "3.7401300",
+      "dailyDrift": "0.001296",
+      "effectiveEnd": "1965-09-01T00:00:00",
+      "effectiveStart": "1965-07-01T00:00:00",
+      "referenceMJD": "38761.",
+      "sourceJD": "2438942.5",
+      "sourceRow": " 1965 JUL  1 =JD 2438942.5  TAI-UTC=   3.7401300 S + (MJD - 38761.) X 0.001296 S",
+      "sourceRowHash": "ebd8b007217723e49f3dc2a0d5cfd7e34103e0fd8310a1368c62ee51b12914d0"
+    },
+    {
+      "baseOffset": "3.8401300",
+      "dailyDrift": "0.001296",
+      "effectiveEnd": "1966-01-01T00:00:00",
+      "effectiveStart": "1965-09-01T00:00:00",
+      "referenceMJD": "38761.",
+      "sourceJD": "2439004.5",
+      "sourceRow": " 1965 SEP  1 =JD 2439004.5  TAI-UTC=   3.8401300 S + (MJD - 38761.) X 0.001296 S",
+      "sourceRowHash": "407d12dc9ef60a4035792b94faf6f7acba07d97fe9c01a6764477e2e10e19d8b"
+    },
+    {
+      "baseOffset": "4.3131700",
+      "dailyDrift": "0.002592",
+      "effectiveEnd": "1968-02-01T00:00:00",
+      "effectiveStart": "1966-01-01T00:00:00",
+      "referenceMJD": "39126.",
+      "sourceJD": "2439126.5",
+      "sourceRow": " 1966 JAN  1 =JD 2439126.5  TAI-UTC=   4.3131700 S + (MJD - 39126.) X 0.002592 S",
+      "sourceRowHash": "f6a17bf61bc7b3bfad4293976f2b79b1dee9a036463189d9427738191d6be99e"
+    },
+    {
+      "baseOffset": "4.2131700",
+      "dailyDrift": "0.002592",
+      "effectiveEnd": "1972-01-01T00:00:00",
+      "effectiveStart": "1968-02-01T00:00:00",
+      "referenceMJD": "39126.",
+      "sourceJD": "2439887.5",
+      "sourceRow": " 1968 FEB  1 =JD 2439887.5  TAI-UTC=   4.2131700 S + (MJD - 39126.) X 0.002592 S",
+      "sourceRowHash": "a56cafaec575e2facc0d13f72607a9c3a9c0dcb25ef8152f4a5e1988c5bba046"
+    }
+  ],
+  "snapshotDate": "2026-09-24T08:13:01.890204+00:00",
+  "source": "https://maia.usno.navy.mil/ser7/tai-utc.dat",
+  "units": {
+    "baseOffset": "seconds",
+    "dailyDrift": "seconds/nominal_day",
+    "referenceMJD": "days"
+  },
+  "version": "USNO_DRIFT_20260924_V1"
+}

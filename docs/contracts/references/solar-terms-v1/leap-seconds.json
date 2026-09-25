@@ -1,0 +1,184 @@
+{
+  "checksum": "3524e1ae34d67e858873a89e59983bbc5bd100221da898e796c1b36036a310c3",
+  "futureConvention": "FROZEN_LAST_KNOWN_TAI_MINUS_UTC_V1",
+  "futureTaiMinusUtcSeconds": "37",
+  "intervals": [
+    {
+      "effectiveDate": "1972-01-01T00:00:00",
+      "effectiveEnd": "1972-07-01T00:00:00",
+      "sourceRowHash": "7ec5784309da2fdd4cbcbd028b68ec4a931ffd16b52fcd873d46422d46ef52da",
+      "taiMinusUtcSeconds": "10.0"
+    },
+    {
+      "effectiveDate": "1972-07-01T00:00:00",
+      "effectiveEnd": "1973-01-01T00:00:00",
+      "sourceRowHash": "6f57e469e34ad94b387b16f5d82364ec6e871069571b0954e11a4008df916786",
+      "taiMinusUtcSeconds": "11.0"
+    },
+    {
+      "effectiveDate": "1973-01-01T00:00:00",
+      "effectiveEnd": "1974-01-01T00:00:00",
+      "sourceRowHash": "60062b51f8c58f49ff56c11f99ac8f8281378d7ec7dd0a95f79c01c8e5d6a0e0",
+      "taiMinusUtcSeconds": "12.0"
+    },
+    {
+      "effectiveDate": "1974-01-01T00:00:00",
+      "effectiveEnd": "1975-01-01T00:00:00",
+      "sourceRowHash": "ce8e1d8bc38e696b1d5148c9367b21fa526ece32d80160a3595c2f9aa79b2a38",
+      "taiMinusUtcSeconds": "13.0"
+    },
+    {
+      "effectiveDate": "1975-01-01T00:00:00",
+      "effectiveEnd": "1976-01-01T00:00:00",
+      "sourceRowHash": "9ad4eb351435e4e9f41fac6bcccb2f8b18cd34d0ad4a4cf00694fb76ea5dad56",
+      "taiMinusUtcSeconds": "14.0"
+    },
+    {
+      "effectiveDate": "1976-01-01T00:00:00",
+      "effectiveEnd": "1977-01-01T00:00:00",
+      "sourceRowHash": "a29c097a6e72d25940ba1c55dd7511350c80a4f33ae3875bacbc2745c2648293",
+      "taiMinusUtcSeconds": "15.0"
+    },
+    {
+      "effectiveDate": "1977-01-01T00:00:00",
+      "effectiveEnd": "1978-01-01T00:00:00",
+      "sourceRowHash": "8c2f458ad51c087c334e3c2a792bd08121456dfc888a4cf8f78565b3f1041e5c",
+      "taiMinusUtcSeconds": "16.0"
+    },
+    {
+      "effectiveDate": "1978-01-01T00:00:00",
+      "effectiveEnd": "1979-01-01T00:00:00",
+      "sourceRowHash": "f1d9506059e3e52fa3a6f88103505971f2e5575995d4b9f5439fb3810f2ede7d",
+      "taiMinusUtcSeconds": "17.0"
+    },
+    {
+      "effectiveDate": "1979-01-01T00:00:00",
+      "effectiveEnd": "1980-01-01T00:00:00",
+      "sourceRowHash": "d23c4b94b202362bed3dcd763f6f9364fdf34f9ed5bcd7eb4dd46baa404fc49e",
+      "taiMinusUtcSeconds": "18.0"
+    },
+    {
+      "effectiveDate": "1980-01-01T00:00:00",
+      "effectiveEnd": "1981-07-01T00:00:00",
+      "sourceRowHash": "69a3bb7bde079a56fbc3065ccb8e93269f2af3b79c7d626ea969e1d4cf045aaf",
+      "taiMinusUtcSeconds": "19.0"
+    },
+    {
+      "effectiveDate": "1981-07-01T00:00:00",
+      "effectiveEnd": "1982-07-01T00:00:00",
+      "sourceRowHash": "5c84372f52cef0aa197cdc2952f7138754a6e9776707612e7a1a688972589b3d",
+      "taiMinusUtcSeconds": "20.0"
+    },
+    {
+      "effectiveDate": "1982-07-01T00:00:00",
+      "effectiveEnd": "1983-07-01T00:00:00",
+      "sourceRowHash": "70c227100842608f9446218d9bdf2704fbb4d66f065d6a485ca3b2e397cae63e",
+      "taiMinusUtcSeconds": "21.0"
+    },
+    {
+      "effectiveDate": "1983-07-01T00:00:00",
+      "effectiveEnd": "1985-07-01T00:00:00",
+      "sourceRowHash": "4fe6432fb9fda44647c5342e0ba16b18ea9253654a46731a3640b91d6dc4bf19",
+      "taiMinusUtcSeconds": "22.0"
+    },
+    {
+      "effectiveDate": "1985-07-01T00:00:00",
+      "effectiveEnd": "1988-01-01T00:00:00",
+      "sourceRowHash": "52ebf8f1ac4f556e4af69c767b5d74f587212ce9d01e5e482581b9bc8a11d8b8",
+      "taiMinusUtcSeconds": "23.0"
+    },
+    {
+      "effectiveDate": "1988-01-01T00:00:00",
+      "effectiveEnd": "1990-01-01T00:00:00",
+      "sourceRowHash": "35e94510bdb11c86ca5663939a3cb0dba53aeeb75a18faaa215482c84c22a580",
+      "taiMinusUtcSeconds": "24.0"
+    },
+    {
+      "effectiveDate": "1990-01-01T00:00:00",
+      "effectiveEnd": "1991-01-01T00:00:00",
+      "sourceRowHash": "b3862976bdbdf5ab79b8db7eddc318e99689daf01d34952e8135edf4d604e8c2",
+      "taiMinusUtcSeconds": "25.0"
+    },
+    {
+      "effectiveDate": "1991-01-01T00:00:00",
+      "effectiveEnd": "1992-07-01T00:00:00",
+      "sourceRowHash": "a543578b0a2ae1e679a1d1b3df3afeeb6bdc60a123520a60766c1429f44ac126",
+      "taiMinusUtcSeconds": "26.0"
+    },
+    {
+      "effectiveDate": "1992-07-01T00:00:00",
+      "effectiveEnd": "1993-07-01T00:00:00",
+      "sourceRowHash": "e628c88c4d7e59d39efc12604e6f7d402f0efcc0675a43d1a95d6e95931fc3d2",
+      "taiMinusUtcSeconds": "27.0"
+    },
+    {
+      "effectiveDate": "1993-07-01T00:00:00",
+      "effectiveEnd": "1994-07-01T00:00:00",
+      "sourceRowHash": "55b02f55417816bee46b992eefc1d5f09a2f6e9c06130483d15d4eb9a11c341e",
+      "taiMinusUtcSeconds": "28.0"
+    },
+    {
+      "effectiveDate": "1994-07-01T00:00:00",
+      "effectiveEnd": "1996-01-01T00:00:00",
+      "sourceRowHash": "28eab5ca793363d2a155ef3b973ebfd122de94b340ac0b9d0f2afb749cb4a88d",
+      "taiMinusUtcSeconds": "29.0"
+    },
+    {
+      "effectiveDate": "1996-01-01T00:00:00",
+      "effectiveEnd": "1997-07-01T00:00:00",
+      "sourceRowHash": "db70e606b00ff546dd39ca9aa789a70bc4e2b504b59623b893c5ef18c76afff8",
+      "taiMinusUtcSeconds": "30.0"
+    },
+    {
+      "effectiveDate": "1997-07-01T00:00:00",
+      "effectiveEnd": "1999-01-01T00:00:00",
+      "sourceRowHash": "81d526583de9b7e301ff72d2e10ca8ff13d8dc2b335acc6145d63c3613b123a6",
+      "taiMinusUtcSeconds": "31.0"
+    },
+    {
+      "effectiveDate": "1999-01-01T00:00:00",
+      "effectiveEnd": "2006-01-01T00:00:00",
+      "sourceRowHash": "8e9d581d09487017c31091b4fb3e8f9e23ede6a22c1ed5751f074ec9e2e5a428",
+      "taiMinusUtcSeconds": "32.0"
+    },
+    {
+      "effectiveDate": "2006-01-01T00:00:00",
+      "effectiveEnd": "2009-01-01T00:00:00",
+      "sourceRowHash": "abb2e880fdca3734c35fa1e1833399bc061093bb55d3350d08556b4c6a456211",
+      "taiMinusUtcSeconds": "33.0"
+    },
+    {
+      "effectiveDate": "2009-01-01T00:00:00",
+      "effectiveEnd": "2012-07-01T00:00:00",
+      "sourceRowHash": "bf22e18b68762323325a9a632847b01cba37eb60223edfcf67496bbca410b097",
+      "taiMinusUtcSeconds": "34.0"
+    },
+    {
+      "effectiveDate": "2012-07-01T00:00:00",
+      "effectiveEnd": "2015-07-01T00:00:00",
+      "sourceRowHash": "e9270593c7bec3edb100f69ddbe401db202c07f6f2a20c021af19ba4671da459",
+      "taiMinusUtcSeconds": "35.0"
+    },
+    {
+      "effectiveDate": "2015-07-01T00:00:00",
+      "effectiveEnd": "2017-01-01T00:00:00",
+      "sourceRowHash": "e86f4be8d7978ad372005dc55e12aa1049b17176af1268ac074512adb81cc427",
+      "taiMinusUtcSeconds": "36.0"
+    },
+    {
+      "effectiveDate": "2017-01-01T00:00:00",
+      "effectiveEnd": "2101-01-01T00:00:00",
+      "sourceRowHash": "9e3078162dbfd9eedbcf7232b7e8402765a89e5c615d5fe4c1c1cd58fadc6e41",
+      "taiMinusUtcSeconds": "37.0"
+    }
+  ],
+  "knownSnapshotBoundary": "2026-09-24T00:00:00",
+  "snapshotDate": "2026-09-24T08:13:01.890204+00:00",
+  "source": "https://maia.usno.navy.mil/ser7/tai-utc.dat",
+  "units": {
+    "baseOffset": "seconds",
+    "dailyDrift": "seconds/nominal_day",
+    "referenceMJD": "days"
+  },
+  "version": "USNO_TAI_UTC_20260924_V1"
+}

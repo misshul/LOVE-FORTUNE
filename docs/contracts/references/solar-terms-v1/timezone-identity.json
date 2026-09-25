@@ -1,0 +1,18 @@
+{
+  "locationReferenceVersion": "NOT_IMPLEMENTED_NOT_USED_BY_REFERENCE_BUILD",
+  "normalizationUsesTimezone": false,
+  "osNewYorkSha256": "e9ed07d7bee0c76a9d442d091ef1f01668fee7c4f26014c0a868b19fe6c18a95",
+  "osSeoulSha256": "2c8f4bb15dd77090b497e2a841ff3323ecbbae4f9dbb9edead2f8dd8fb5d8bb4",
+  "osTzdataHeader": "# version 2026b",
+  "osTzdataSha256": "d5c5a95d9af0dadb52a22bd3dab806462f7b5f95dc5924694256da6fe5366c5c",
+  "phpBinarySha256": "899c9e53198d377b61c9d47935d29f94095a160fc830857b65c2094ec287bc09",
+  "phpTimezoneDataVersion": "2026.1",
+  "phpVersion": "8.3.33",
+  "transitionDigestAlgorithm": "SHA256(sorted ALL_WITH_BC [name,getTransitions] JSON_UNESCAPED_SLASHES + LF)",
+  "transitionRange": {
+    "end": 4133980800,
+    "start": -2240524800
+  },
+  "transitionSha256": "1d3baba8884ad51284b26833e1eef5a1e3e3ca2e8c654610bfcebe98a18ef019",
+  "zoneCount": 598
+}

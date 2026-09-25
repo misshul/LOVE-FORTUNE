@@ -5,6 +5,10 @@ Status: CONTRACT FROZEN
 
 Current authority: [Zodiac V1](zodiac-catalog-v1.md). Active SAJU/ZODIAC, Saju-only Daily; Astrology is ADVANCED / DEFERRED. Current state is [readiness](readiness.md).
 
+Year/Month implementation: [FP-02/FP-03 contract](fp02-fp03-year-month-v1.md), [implementation report](fp02-fp03-implementation-report.md). Uses the frozen FP-01 artifact; full Four Pillars remains PARTIAL.
+
+Hour implementation: [FP-04 contract](fp04-hour-pillar-v1.md), [implementation report](fp04-implementation-report.md). Approved adjusted-civil23:00/23:30 policy; no Natal resolver or aggregate service is implied.
+
 Current Saju/Guardrail authority: [Saju v1](saju-catalog-v1.md), [Guardrail v2](guardrail-v2.md), [ContextEvidence](context-evidence.md), [approval](saju-v1-application-approval.md).
 
 Advanced Astrology authority: [Applied Catalog v1](astrology-catalog-v1.md), [mapping approval](astrology-v1-mapping-approval.md), [application approval](astrology-v1-application-approval.md).
@@ -30,6 +34,7 @@ Advanced Astrology contains109 enabled pair-aspect rules with228 mappings; five 
 
 ## Artifacts
 
+- [FP-01 approved Solar-Term reference and bridge](fp01-solar-reference-v1.md), [local artifacts](references/solar-terms-v1/), [build report](fp01-build-report.md). Reference readiness is separate from Year/Month/Hour production implementation.
 - [Runtime contract](runtime-contract-v2.md): calculation, time, Feature, token and HTTP rules.
 - [API details](api-details-v2.md): endpoint/DTO/capability normalization.
 - [OpenAPI](openapi.yaml):6 principal Core POSTs,1 existing celebrity calculation,1 Interpretation POST,5 public reference GETs and Admin operations.
