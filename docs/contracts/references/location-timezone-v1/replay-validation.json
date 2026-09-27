@@ -1,0 +1,26 @@
+﻿{
+    "result":  "PASS",
+    "builds":  2,
+    "canonicalBytesIdentical":  true,
+    "files":  {
+                  "locations.json":  "5261b7cd37776a6d6b25aea4d32e0dd8c5c073e9bcde29b6daec08800049b152",
+                  "timezones.json":  "ee74cc16f926c0076ff0de5acf3df72070681e0422cdcf25076e141c5fc8a79f",
+                  "validation-only-locations.json":  "a064204dfd3eefcfeafdf20af48718bfd2d0f3794d29279026390ef9f79a5496",
+                  "longitude-goldens.json":  "9620b3ede6a3be1a3000d20f3b78be0c85d21e8328360094b00f258d159c22c6",
+                  "timezone-manifest.json":  "c751802aebef889286e763f4c2340b25c68ada79b7bc61f8c8d2edfa3d554c72",
+                  "build-validation.json":  "707f2ebf9710e63b512f40b4f999c7ef707655d61900c09ee6488c7bf79c8d4c"
+              },
+    "builderImage":  "python@sha256:47ae396f09c1303b8653019811a8498470603d7ffefc29cb07c88f1f8cb3d19f",
+    "phpJs":  {
+                  "productionCases":  129,
+                  "differences":  0,
+                  "negativeCases":  6,
+                  "boundaryCases":  8
+              },
+    "inputFiles":  {
+                       "build-reference.py":  "94fb6f08997981d1e74cd0190ef8a7c0bf9559322128e258f1c98c03e09032e4",
+                       "location-manifest.json":  "3b980a1f11fc29029322273dcda1c38db837311b8e3d3ab861c77e4936e15cbb",
+                       "source-manifest.json":  "0c3bfdf15598df632092462ea6986de895bf724861035fac1abd87390aeeac45",
+                       "location-registry.json":  "64011ce682e7f088e228781653a0f359c742dbe346942749d43e0240975e4fab"
+                   }
+}

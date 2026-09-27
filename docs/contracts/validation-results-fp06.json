@@ -1,0 +1,319 @@
+{
+    "result":  "NATAL_RESOLVER_IMPLEMENTATION_PASS",
+    "initialHead":  "f363fbbe197ff7a8a8da2d6737b333009c06f3bf",
+    "initialState":  "31 existing uncommitted reference application files preserved",
+    "fullRegression":  {
+                           "result":  "PASS",
+                           "mode":  "FULL_APPLICATION",
+                           "v1ExternalBlockers":  [
+
+                                                  ],
+                           "production":  "NOT_READY_IMPLEMENTATION",
+                           "protectedCatalogsAndEpoch":  "UNCHANGED",
+                           "privacyFilesChecked":  10,
+                           "php":  {
+                                       "lint":  "PASS",
+                                       "tests":  48,
+                                       "assertions":  1259575
+                                   },
+                           "structural":  {
+                                              "schemaFiles":  33,
+                                              "examples":  203,
+                                              "validExamples":  113,
+                                              "invalidExamples":  90,
+                                              "disabledRuleRecords":  5,
+                                              "enabledRules":  252,
+                                              "categoryWeights":  8,
+                                              "canonicalVectors":  6,
+                                              "signedValid":  2,
+                                              "signedInvalid":  8,
+                                              "httpPrivacyVectors":  19,
+                                              "openapiOperations":  20,
+                                              "adminOperations":  7,
+                                              "publicPostOperations":  8,
+                                              "openapi":  "PASS"
+                                          },
+                           "semantic":  {
+                                            "existingSemanticVectors":  36,
+                                            "v3SemanticVectors":  44,
+                                            "totalSemanticVectors":  80,
+                                            "dstVectors":  4,
+                                            "tzdb":  "2026c",
+                                            "icu":  "78.3",
+                                            "result":  "PASS",
+                                            "comparison":  "exact; decimal rational confidence and HALF_UP rounding"
+                                        },
+                           "advancedAstrology":  {
+                                                     "rules":  109,
+                                                     "personal":  75,
+                                                     "jupiter":  15,
+                                                     "saturn":  19,
+                                                     "mappings":  228,
+                                                     "positive":  170,
+                                                     "negative":  58,
+                                                     "neutral":  0,
+                                                     "mixed":  26,
+                                                     "override":  76,
+                                                     "generic":  33,
+                                                     "approvedMatrixComparison":  "EXACT",
+                                                     "semanticNegativeMutations":  6,
+                                                     "angularTests":  5,
+                                                     "orbExamples":  4,
+                                                     "detectionExamples":  3,
+                                                     "boundaryTests":  327,
+                                                     "unknownTimeTests":  4,
+                                                     "weightIndependenceTests":  327,
+                                                     "featureProjection":  "PASS",
+                                                     "featureIdentity":  "PASS",
+                                                     "result":  "PASS"
+                                                 },
+                           "saju":  {
+                                        "failures":  [
+
+                                                     ],
+                                        "exact":  {
+                                                      "uniqueInputs":  1117,
+                                                      "features":  3391,
+                                                      "capped":  192,
+                                                      "violations":  0
+                                                  },
+                                        "guardrail":  {
+                                                          "calls":  563906,
+                                                          "features":  1007916,
+                                                          "impactViolations":  0,
+                                                          "exclusions":  0,
+                                                          "noGuardCalls":  444808,
+                                                          "noGuardDifferences":  0,
+                                                          "maxImpact":  20,
+                                                          "rawOutside":  0,
+                                                          "neutral":  2
+                                                      }
+                                    },
+                           "daily":  {
+                                         "result":  "PASS",
+                                         "rules":  134,
+                                         "astrologyRules":  125,
+                                         "astrologyMappings":  266,
+                                         "sajuRules":  9,
+                                         "sajuMappings":  19,
+                                         "mappings":  285,
+                                         "orbChecks":  750,
+                                         "stemCounts":  [
+                                                            10,
+                                                            20,
+                                                            40,
+                                                            30
+                                                        ],
+                                         "branchCounts":  [
+                                                              12,
+                                                              12,
+                                                              28,
+                                                              50,
+                                                              42
+                                                          ],
+                                         "cases":  256000,
+                                         "fullDataCases":  108000,
+                                         "fullCategoryChecks":  864000,
+                                         "nonzeroStability":  101844,
+                                         "fullOverallDiff":  0,
+                                         "fullCategoryDiff":  0,
+                                         "stabilityAttenuation":  0,
+                                         "hardFailures":  0,
+                                         "repeat":  10000,
+                                         "swaps":  100,
+                                         "orderChecks":  100,
+                                         "semanticMutationsRejected":  8,
+                                         "structuralEligibility":  {
+                                                                       "ASTROLOGY":  [
+                                                                                         "ATTRACTION",
+                                                                                         "EMOTION",
+                                                                                         "COMMUNICATION",
+                                                                                         "PASSION",
+                                                                                         "HARMONY",
+                                                                                         "SUPPORT"
+                                                                                     ],
+                                                                       "SAJU":  [
+                                                                                    "ATTRACTION",
+                                                                                    "EMOTION",
+                                                                                    "COMMUNICATION",
+                                                                                    "PASSION",
+                                                                                    "STABILITY",
+                                                                                    "HARMONY",
+                                                                                    "SUPPORT"
+                                                                                ]
+                                                                   },
+                                         "knownSix":  [
+                                                          {
+                                                              "ai":  30,
+                                                              "si":  14,
+                                                              "delta":  5.053892422023684
+                                                          },
+                                                          {
+                                                              "ai":  30,
+                                                              "si":  120,
+                                                              "delta":  5.023264501322234
+                                                          },
+                                                          {
+                                                              "ai":  30,
+                                                              "si":  233,
+                                                              "delta":  5.034820730847214
+                                                          },
+                                                          {
+                                                              "ai":  30,
+                                                              "si":  554,
+                                                              "delta":  5.085175844483577
+                                                          },
+                                                          {
+                                                              "ai":  30,
+                                                              "si":  665,
+                                                              "delta":  5.086124966384403
+                                                          },
+                                                          {
+                                                              "ai":  30,
+                                                              "si":  785,
+                                                              "delta":  5.091481584773692
+                                                          }
+                                                      ],
+                                         "delta":  {
+                                                       "n":  213001,
+                                                       "mean":  1.464795523512044,
+                                                       "median":  1.3645284505800146,
+                                                       "p5":  -0.0848303237858032,
+                                                       "p95":  3.336192942360532,
+                                                       "min":  -1.877977922091247,
+                                                       "max":  5.091481584773692
+                                                   },
+                                         "statusCounts":  {
+                                                              "GOOD":  61573,
+                                                              "STABLE":  151416,
+                                                              "INSUFFICIENT_PERIOD_DATA":  42999,
+                                                              "VERY_GOOD":  12
+                                                          },
+                                         "unavailable":  42999,
+                                         "originalPopulationIdentity":  "NOT_CLAIMED: prior in-memory availability selector unavailable; recovered base generators plus persisted availability schedule",
+                                         "fakeNeutral":  0,
+                                         "crossSampleMerge":  0,
+                                         "dailyGuardrail":  0,
+                                         "secondary":  0,
+                                         "outer":  0,
+                                         "mc":  0,
+                                         "catalogDigest":  "48a0e54f2d2b55e708b5ccb8fa0b77b89af286ab76f5cdf623b7ffb1ee481caa",
+                                         "node":  "v24.21.0"
+                                     },
+                           "zodiac":  {
+                                          "result":  "PASS",
+                                          "dateCount":  73049,
+                                          "gaps":  0,
+                                          "overlaps":  0,
+                                          "reachableSigns":  12,
+                                          "unorderedPairs":  78,
+                                          "orderedPairs":  144,
+                                          "distribution":  {
+                                                               "SAME_SIGN":  12,
+                                                               "CHALLENGING_ELEMENT":  36,
+                                                               "COMPATIBLE_ELEMENT":  12,
+                                                               "SAME_ELEMENT":  12,
+                                                               "OPPOSITE_SIGN":  6
+                                                           },
+                                          "mappings":  20,
+                                          "communicationMappings":  0,
+                                          "lifetime":  188,
+                                          "daily":  150,
+                                          "halfUp":  18,
+                                          "exactComparisons":  5,
+                                          "rankGroups":  4,
+                                          "precisionClasses":  2,
+                                          "classification":  "EXPECTED_PRECISION_CORRECTION",
+                                          "crossRuntime":  "PASS / differences=0"
+                                      },
+                           "activeApi":  {
+                                             "result":  "PASS",
+                                             "activeExamples":  54,
+                                             "valid":  35,
+                                             "invalid":  19,
+                                             "contextCases":  144,
+                                             "featureCases":  576,
+                                             "catalogMappings":  20,
+                                             "signedValid":  1,
+                                             "signedInvalid":  15,
+                                             "privacy":  "PASS",
+                                             "canonicalization":  "PASS"
+                                         },
+                           "gitDiffCheck":  "PASS"
+                       },
+    "reference":  {
+                      "result":  "PASS",
+                      "locations":  129,
+                      "countryCounts":  {
+                                            "JP":  47,
+                                            "KR":  17,
+                                            "US":  36,
+                                            "GB":  7,
+                                            "AU":  8,
+                                            "CA":  12,
+                                            "NZ":  2
+                                        },
+                      "productionZones":  21,
+                      "totalZones":  23,
+                      "transitionRows":  5041,
+                      "pointGoldens":  12,
+                      "skippedDates":  1,
+                      "longitudeCases":  129,
+                      "negativeLongitudeCases":  6,
+                      "scope":  "REFERENCE_ONLY_NOT_NATAL_E2E"
+                  },
+    "solarReference":  {
+                           "result":  "PASS",
+                           "events":  4848,
+                           "years":  202,
+                           "missing":  0,
+                           "duplicate":  0,
+                           "orderingAnomaly":  0,
+                           "identityMismatch":  0,
+                           "raw2400":  2,
+                           "eraCounts":  {
+                                             "PRE_1961_S2020":  1488,
+                                             "UTC_1961_1971_DRIFT":  264,
+                                             "KNOWN_TAI_UTC":  1314,
+                                             "FROZEN_FUTURE_37":  1782
+                                         },
+                           "roundingCases":  7,
+                           "transitionProbes":  123,
+                           "expectedTtGaps":  35,
+                           "expectedTtOverlaps":  2,
+                           "pre1961Seam":  "GAP",
+                           "goldenCount":  24,
+                           "checksum":  "6fc6165b76951a0267d46fe2a7e7d4da190c7e2119dc8d1ffdef12fed399848c"
+                       },
+    "solarPhp":  {
+                     "events":  4848,
+                     "result":  "PASS",
+                     "coordinateDigest":  "7db5a988655c2534d4a9b9d8a1e149adc9175e036f425117d9fa490e7d092c6a"
+                 },
+    "referencePhp":  {
+                         "productionCases":  129,
+                         "result":  "PASS",
+                         "negativeCases":  6,
+                         "boundaryCases":  8,
+                         "differences":  0
+                     },
+    "wordPressSmoke":  {
+                           "optionChanges":  0,
+                           "result":  "PASS",
+                           "businessRoutes":  0,
+                           "activationCycle":  false,
+                           "tableChanges":  0
+                       },
+    "newPhpunitTests":  14,
+    "initialFailure":  "One new static test matched DateTimeZone in a comment; comment tokens excluded; all calculation expectations unchanged",
+    "externalRuntimeDependencies":  [
+
+                                    ],
+    "commit":  "NONE",
+    "push":  "NONE",
+    "limits":  [
+                   "Natal pipeline complete; no score/feature/API/frontend/AI orchestration",
+                   "Golden-only fixture locations are available only through test dependency injection",
+                   "Array results are internal sensitive contexts, not public API DTOs"
+               ]
+}

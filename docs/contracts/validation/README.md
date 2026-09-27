@@ -1,5 +1,13 @@
 # Contract validation
 
+## FP06 production Natal resolver
+
+Run `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/test.ps1` for actual production NatalResolverTest and all existing pillar tests. Then run the existing Zodiac application gate, location/timezone/solar reference JS and PHP checks and actual WordPress smoke. [FP06 report](../fp06-implementation-report.md) records48 tests/1,259,575 assertions. These tests now cover birth-input-to-atomic-Natal-candidates; they do not certify feature/scoring/API orchestration.
+
+## Location/timezone V1 reference
+
+Run `node docs/contracts/validation/location-timezone.cjs` for read-only source/hash/scope/registry/alias/coverage/Golden checks. PHP longitude cross-check and two-build offline replay instructions are in [reference README](../references/location-timezone-v1/README.md).129 production locations and2 validation-only locations are separate; P3 is deferred. This gate validates frozen static references, not production Natal candidate generation. Keep the existing FP01, Zodiac/PHP and actual WordPress smoke regressions active after changes.
+
 ## FP-01 Solar-Term reference
 
 Run `node docs/contracts/validation/solar-reference.cjs` from the repository root. Node built-ins only, offline, read-only. Checks every frozen source hash, original TT row and S2020 value, official drift/leap coefficients, independent exact BigInt inversion of4,848 boundaries, unique routing, all transition intervals, mathematical ceil,24 frozen goldens/all12 Jie and boundary predicates. Expected TT-domain gaps/overlaps at historical clock steps are rejection cases, not missing service intervals.

@@ -3,6 +3,8 @@
 Version: 4.0.0
 Status: CONTRACT FROZEN
 
+Location/timezone V1 reference: [approved contract](location-timezone-reference-v1.md), [full build/application report](location-timezone-build-report.md), [offline artifacts and replay](references/location-timezone-v1/README.md).129 selectable locations,21 production zones plus2 Golden zones. FP06 reference prerequisite is resolved; [Natal runtime reader/resolver](fp06-natal-resolver-v1.md) is implemented. [FP06 execution report](fp06-implementation-report.md). Score/API orchestration remains separate.
+
 Current authority: [Zodiac V1](zodiac-catalog-v1.md). Active SAJU/ZODIAC, Saju-only Daily; Astrology is ADVANCED / DEFERRED. Current state is [readiness](readiness.md).
 
 Year/Month implementation: [FP-02/FP-03 contract](fp02-fp03-year-month-v1.md), [implementation report](fp02-fp03-implementation-report.md). Uses the frozen FP-01 artifact; full Four Pillars remains PARTIAL.

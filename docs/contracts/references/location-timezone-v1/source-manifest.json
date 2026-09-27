@@ -1,0 +1,19 @@
+{
+  "files": {
+    "AU.zip": "d08fe63df4921d9490aeed67ed5b46f28c20c5965a79d18b41b00bbf5190d6fe",
+    "admin1CodesASCII.txt": "1da92a6323a5fec3176f3f743bf4cf4040fd56a876da55e46fbca23c863aa60a",
+    "cities500.zip": "8d07609da318268df79d96c163ff1b6a81f14318c0cb77c3e5799119463ed713",
+    "geonames-readme.txt": "b1957379b6c1242c700c98ac9a8aa0a09f56c3c0a50ee72175527005f48ef2c5",
+    "tzdata2026b.tar.gz": "114543d9f19a6bfeb5bca43686aea173d38755a3db1f2eec112647ae92c6f544"
+  },
+  "license": "GeoNames CC BY 4.0; IANA public-domain data with original LICENSE retained",
+  "retrievalDate": "2026-09-25",
+  "retrievalMetadataExcludedFromArtifactPayload": true,
+  "urls": {
+    "AU.zip": "https://download.geonames.org/export/dump/AU.zip",
+    "admin1CodesASCII.txt": "https://download.geonames.org/export/dump/admin1CodesASCII.txt",
+    "cities500.zip": "https://download.geonames.org/export/dump/cities500.zip",
+    "geonames-readme.txt": "https://download.geonames.org/export/dump/readme.txt",
+    "tzdata2026b.tar.gz": "https://data.iana.org/time-zones/releases/tzdata2026b.tar.gz"
+  }
+}

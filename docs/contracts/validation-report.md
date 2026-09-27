@@ -1,3 +1,28 @@
+# FP-01~FP-06 NATAL PIPELINE FINAL CHECKPOINT REVIEW
+
+Result: FP01_FP06_NATAL_PIPELINE_REGRESSION_PASS_READY_TO_COMMIT. [Final review](natal-pipeline-final-review.md), [fresh execution evidence and categorized inventory](validation-results-natal-checkpoint.json). All accumulated reference/FP06 changes reviewed;48 tests/1,259,575 assertions PASS, existing expectations unchanged. Fresh offline reference rebuild byte-identical; all reference PHP/JS/FP01/Zodiac/Saju/OpenAPI/privacy and actual WordPress smoke PASS. One local checkpoint commit is authorized; push is prohibited. Earlier no-commit reports below retain their historical scopes.
+
+Core calculators, location/timezone reference, Natal resolver and birth-input-to-Four-Pillars are IMPLEMENTED. Feature extraction remains NOT_IMPLEMENTED; scoring orchestration PARTIAL; API NOT_IMPLEMENTED. Full product is not production ready.
+
+---
+# FP-06 NATAL RESOLVER PRODUCTION IMPLEMENTATION
+
+Result: NATAL_RESOLVER_IMPLEMENTATION_PASS. [Implementation report](fp06-implementation-report.md), [approved behavior](fp06-natal-resolver-v1.md), [execution evidence](validation-results-fp06.json), [task files](fp06-files-changed.md).
+
+Pinned production Location/Timezone readers and birth-input-to-atomic-Natal-candidate orchestration are implemented. UNIQUE/FOLD/GAP/UNKNOWN, exact correction once, interval partitioning/normalization, ordering/lineage and existing Year/Month/Day/Hour integration PASS. Full regression: PHP lint and48 PHPUnit tests /1,259,575 assertions; reference JS/PHP, FP01, Zodiac/Saju/Daily/OpenAPI/privacy and actual WordPress smoke PASS. Existing protected calculators, artifacts and Goldens are unchanged. No API/frontend/scoring/feature/AI implementation, commit or push. Pre-existing reference working tree preserved.
+
+Prior reports below describe their original implementation scopes; their previous Natal NOT_IMPLEMENTED statements are superseded by FP06. Full product remains NOT_READY_IMPLEMENTATION.
+
+---
+# LOCATION + TIMEZONE REFERENCE V1 APPLICATION
+
+Result: LOCATION_TIMEZONE_REFERENCE_BUILD_VALIDATED_READY_FOR_APPLICATION; APPLIED. Full review 2026-09-28. [Complete build report](location-timezone-build-report.md), [machine execution results](validation-results-location-timezone-v1.json), [files](location-timezone-files-changed.md).
+
+129 selectable records (KR17/JP47/P2 65), two validation-only Golden locations,23 timezone zones,5,041 rows. Two outside-repository builds byte-identical;1,706,953 TZif cross-check probes per build; all fixed fold/gap/non-1h/skipped-date/historical Goldens PASS. PHP/JS129 longitude cases plus8 boundary and6 invalid cases PASS, differences0. Applied reference gate PASS. Existing full application regression PASS:34 PHPUnit tests/1,257,453 assertions, FP01 JS/PHP, Zodiac/Saju/Daily/OpenAPI/privacy and actual WordPress smoke. No production code or existing Golden changes. No commit/push.
+
+Static reference prerequisite for FP06 is resolved; production runtime reader/Natal resolver/candidate generation remain implementation work. Full engine readiness remains NOT_READY_IMPLEMENTATION. Prior reports below retain their historical scopes.
+
+---
 # FP-01~04 FINAL CORE REGRESSION REVIEW
 
 Result: FOUR_PILLARS_CORE_REGRESSION_PASS_READY_TO_COMMIT. [Final review](four-pillars-core-final-review.md), [actual machine results](validation-results-four-pillars-core.json). Re-executed full gate: lint and34 PHPUnit tests /1,257,453 assertions PASS; FP01 reference4,848 events PASS; reference PHP/JS coordinate digest identical; Zodiac PHP/JS differences0; OpenAPI/privacy and actual WordPress smoke PASS. No formula/numeric/Golden changes. CORE_CALCULATORS IMPLEMENTED; END_TO_END NOT_COMPLETE. This checkpoint is authorized for one local commit; push prohibited. Prior no-commit statements below describe their earlier phases.

@@ -1,0 +1,163 @@
+{
+  "authority": "Retained six-location goldens; explicit expected instants and historical offsets, not derived from final transition output",
+  "longitudeBoundaries": [
+    {
+      "correctionMinutes": -1,
+      "longitudeDecimal": "127.375"
+    },
+    {
+      "correctionMinutes": 1,
+      "longitudeDecimal": "127.625"
+    },
+    {
+      "correctionMinutes": -1,
+      "longitudeDecimal": "127.374999"
+    },
+    {
+      "correctionMinutes": 0,
+      "longitudeDecimal": "127.375001"
+    },
+    {
+      "correctionMinutes": 0,
+      "longitudeDecimal": "127.624999"
+    },
+    {
+      "correctionMinutes": 1,
+      "longitudeDecimal": "127.625001"
+    },
+    {
+      "correctionMinutes": -1230,
+      "longitudeDecimal": "-180"
+    },
+    {
+      "correctionMinutes": 210,
+      "longitudeDecimal": "180"
+    }
+  ],
+  "pointMappings": [
+    {
+      "expected": [
+        {
+          "offsetSeconds": -14400,
+          "serviceStartUs": "1604208600000000"
+        },
+        {
+          "offsetSeconds": -18000,
+          "serviceStartUs": "1604212200000000"
+        }
+      ],
+      "local": "2020-11-01T01:30:00",
+      "zone": "America/New_York"
+    },
+    {
+      "expected": [],
+      "local": "2020-03-08T02:30:00",
+      "zone": "America/New_York"
+    },
+    {
+      "expected": [
+        {
+          "offsetSeconds": 39600,
+          "serviceStartUs": "1586011500000000"
+        },
+        {
+          "offsetSeconds": 37800,
+          "serviceStartUs": "1586013300000000"
+        }
+      ],
+      "local": "2020-04-05T01:45:00",
+      "zone": "Australia/Lord_Howe"
+    },
+    {
+      "expected": [],
+      "local": "2020-10-04T02:15:00",
+      "zone": "Australia/Lord_Howe"
+    },
+    {
+      "expected": [
+        {
+          "offsetSeconds": 32400,
+          "serviceStartUs": "-2208978000000000"
+        }
+      ],
+      "local": "1900-01-01T12:00:00",
+      "zone": "Asia/Tokyo"
+    },
+    {
+      "expected": [
+        {
+          "offsetSeconds": 32400,
+          "serviceStartUs": "-631141200000000"
+        }
+      ],
+      "local": "1950-01-01T12:00:00",
+      "zone": "Asia/Tokyo"
+    },
+    {
+      "expected": [
+        {
+          "offsetSeconds": 32400,
+          "serviceStartUs": "946695600000000"
+        }
+      ],
+      "local": "2000-01-01T12:00:00",
+      "zone": "Asia/Tokyo"
+    },
+    {
+      "expected": [
+        {
+          "offsetSeconds": 32400,
+          "serviceStartUs": "1767236400000000"
+        }
+      ],
+      "local": "2026-01-01T12:00:00",
+      "zone": "Asia/Tokyo"
+    },
+    {
+      "expected": [
+        {
+          "offsetSeconds": 30472,
+          "serviceStartUs": "-2208976072000000"
+        }
+      ],
+      "local": "1900-01-01T12:00:00",
+      "zone": "Asia/Seoul"
+    },
+    {
+      "expected": [
+        {
+          "offsetSeconds": 32400,
+          "serviceStartUs": "-631141200000000"
+        }
+      ],
+      "local": "1950-01-01T12:00:00",
+      "zone": "Asia/Seoul"
+    },
+    {
+      "expected": [
+        {
+          "offsetSeconds": 32400,
+          "serviceStartUs": "946695600000000"
+        }
+      ],
+      "local": "2000-01-01T12:00:00",
+      "zone": "Asia/Seoul"
+    },
+    {
+      "expected": [
+        {
+          "offsetSeconds": 32400,
+          "serviceStartUs": "1767236400000000"
+        }
+      ],
+      "local": "2026-01-01T12:00:00",
+      "zone": "Asia/Seoul"
+    }
+  ],
+  "skippedDates": [
+    {
+      "date": "2011-12-30",
+      "zone": "Pacific/Apia"
+    }
+  ]
+}

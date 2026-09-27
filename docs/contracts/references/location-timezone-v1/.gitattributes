@@ -1,0 +1,8 @@
+# Frozen byte hashes must survive Windows checkout. No newline normalization.
+* -text
+sources/** -text
+# Preserve hashed original bytes; recognize CRLF in the frozen build evidence.
+build-reference.py whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+replay-validation.json whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Upstream notice includes trailing spaces/blank lines. Never edit licensed source bytes.
+sources/geonames-readme.txt whitespace=-blank-at-eol,-blank-at-eof
