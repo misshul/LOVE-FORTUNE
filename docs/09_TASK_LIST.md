@@ -634,3 +634,6 @@ Current V1 Daily: SAJU 9 rules / 19 mappings, K=18, exact signed-peak ties; Zodi
 ## Zodiac application status
 
 Implemented: Zodiac date/pair/scoring, M2 source/category blend, exact arithmetic/ranking and Daily signed-peak aggregation. Partial: overall Score Engine pipeline. Not implemented: complete Four Pillars, candidate generation, production Core REST orchestration, frontend and AI. See contracts/readiness.md; this update does not complete T06/T10/T11/T14 globally.
+
+
+Lifetime Saju Feature Extraction is implemented as SAJU_FEATURE_EXTRACTOR_V1: [contract](contracts/saju-feature-extraction-v1.md). This completes Natal-to-pre-SC07 evidence and coverage projection only. Saju source category scoring, full scoring/Daily orchestration and Core REST remain separate tasks.

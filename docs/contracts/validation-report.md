@@ -1,3 +1,15 @@
+# SAJU FEATURE EXTRACTION FINAL CHECKPOINT REVIEW
+
+Result: **FEATURE_EXTRACTION_REGRESSION_PASS_READY_TO_COMMIT**. [Final review](saju-feature-extraction-final-review.md) and [fresh execution evidence](validation-results-saju-feature-checkpoint.json). Full regression PASS: 61 tests / 1,260,853 assertions; catalog/fixture changes 0. One local checkpoint commit is authorized after staged checks; DO NOT PUSH. Earlier no-commit reports below describe their original implementation phases.
+
+---
+
+# SAJU FEATURE EXTRACTION V1 IMPLEMENTATION VALIDATION
+
+Current result: **SAJU_FEATURE_EXTRACTION_IMPLEMENTATION_PASS**. Full PHP lint/regression: 61 tests / 1,260,853 assertions; existing baseline preserved. FE-01..06, FE-COV-01, 16 legacy identities and Natal-to-Feature E2E PASS. [Complete implementation report and 26-file inventory](saju-feature-extraction-implementation-report.md); [actual execution JSON](validation-results-saju-feature-extraction-v1.json); [applied contract](saju-feature-extraction-v1.md). No commit or push. Saju source scoring/full orchestration remains separate; entire service NOT_READY_IMPLEMENTATION. Reports below retain their historical scopes.
+
+---
+
 # FP-01~FP-06 NATAL PIPELINE FINAL CHECKPOINT REVIEW
 
 Result: FP01_FP06_NATAL_PIPELINE_REGRESSION_PASS_READY_TO_COMMIT. [Final review](natal-pipeline-final-review.md), [fresh execution evidence and categorized inventory](validation-results-natal-checkpoint.json). All accumulated reference/FP06 changes reviewed;48 tests/1,259,575 assertions PASS, existing expectations unchanged. Fresh offline reference rebuild byte-identical; all reference PHP/JS/FP01/Zodiac/Saju/OpenAPI/privacy and actual WordPress smoke PASS. One local checkpoint commit is authorized; push is prohibited. Earlier no-commit reports below retain their historical scopes.

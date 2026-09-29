@@ -64,3 +64,6 @@ OpenAPI uses [3.1.1](https://spec.openapis.org/oas/v3.1.1.html), schemas use [20
 
 
 Current Daily authority: [C21-R](daily-catalog-v1.md). Current gates: [readiness](readiness.md). Validation: [report](validation-report.md). Historical approvals remain archived; current S2/M1 semantics supersede their Daily thresholds and signal reweighting.
+
+
+Current Lifetime Saju extraction: [SAJU_FEATURE_EXTRACTOR_V1](saju-feature-extraction-v1.md). FE-01..06 and FE-COV-01 are applied; ledger-projected coverage and internal MULTI identity take precedence for this scope. Public wire and numeric catalogs are unchanged.

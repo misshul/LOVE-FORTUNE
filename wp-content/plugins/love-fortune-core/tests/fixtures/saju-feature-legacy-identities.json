@@ -1,0 +1,291 @@
+[
+  {
+    "ruleId": "DAY_BRANCH_RELATION",
+    "source": "SAJU",
+    "subject": "PAIR",
+    "category": "EMOTION",
+    "period": {
+      "type": "LIFETIME"
+    },
+    "metadata": {
+      "ruleVariant": "BCONTROL"
+    },
+    "direction": "NEGATIVE",
+    "signedValue": -0.35,
+    "featureId": "ft_d7d6f4da3c63a8df30e6ba1389426d963b4c7094fe876c54",
+    "rawValue": null,
+    "baseWeight": 1.2,
+    "confidence": 1
+  },
+  {
+    "ruleId": "DAY_BRANCH_RELATION",
+    "source": "SAJU",
+    "subject": "PAIR",
+    "category": "EMOTION",
+    "period": {
+      "type": "LIFETIME"
+    },
+    "metadata": {
+      "ruleVariant": "BGENERATION"
+    },
+    "direction": "POSITIVE",
+    "signedValue": 0.45,
+    "featureId": "ft_2b1fac2903e71d825d4d50807c0f79aca034cb456b8f97a3",
+    "rawValue": null,
+    "baseWeight": 1.2,
+    "confidence": 1
+  },
+  {
+    "ruleId": "DAY_BRANCH_RELATION",
+    "source": "SAJU",
+    "subject": "PAIR",
+    "category": "EMOTION",
+    "period": {
+      "type": "LIFETIME"
+    },
+    "metadata": {
+      "ruleVariant": "BSAME"
+    },
+    "direction": "POSITIVE",
+    "signedValue": 0.55,
+    "featureId": "ft_11fea1b16e53a593714ed8e86907c7a1c4649639d249b2b3",
+    "rawValue": null,
+    "baseWeight": 1.2,
+    "confidence": 1
+  },
+  {
+    "ruleId": "BRANCH_CLASH",
+    "source": "SAJU",
+    "subject": "PAIR",
+    "category": "PASSION",
+    "period": {
+      "type": "LIFETIME"
+    },
+    "metadata": {
+      "ruleVariant": "CLASH"
+    },
+    "direction": "POSITIVE",
+    "signedValue": 0.2,
+    "featureId": "ft_b00cbe1ef2308ce3a52cf4c550edcd22c9c6bd52c92329d1",
+    "rawValue": null,
+    "baseWeight": 1,
+    "confidence": 1
+  },
+  {
+    "ruleId": "STEM_COMBINATION",
+    "source": "SAJU",
+    "subject": "PAIR",
+    "category": "ATTRACTION",
+    "period": {
+      "type": "LIFETIME"
+    },
+    "metadata": {
+      "ruleVariant": "COMB",
+      "transformationStatus": "UNASSESSED"
+    },
+    "direction": "POSITIVE",
+    "signedValue": 0.7,
+    "featureId": "ft_4006d7dc3e01f774181c861398feb1f3ccf78cf20cfbd8ea",
+    "rawValue": null,
+    "baseWeight": 0.9,
+    "confidence": 1
+  },
+  {
+    "ruleId": "ELEMENT_CONTROL",
+    "source": "SAJU",
+    "subject": "PAIR",
+    "category": "PASSION",
+    "period": {
+      "type": "LIFETIME"
+    },
+    "metadata": {
+      "ruleVariant": "CONTROL"
+    },
+    "direction": "POSITIVE",
+    "signedValue": 0.15,
+    "featureId": "ft_24f89ccb1e0be23012df52117a44ea32bfab26ad07c78015",
+    "rawValue": null,
+    "baseWeight": 0.8,
+    "confidence": 1
+  },
+  {
+    "ruleId": "ELEMENT_COMPLEMENT",
+    "source": "SAJU",
+    "subject": "PAIR",
+    "category": "SUPPORT",
+    "period": {
+      "type": "LIFETIME"
+    },
+    "metadata": {
+      "ruleVariant": "EC1"
+    },
+    "direction": "POSITIVE",
+    "signedValue": 0.3,
+    "featureId": "ft_bdb238bd19c98247df1713a2239f8f83215fe8d677e02c59",
+    "rawValue": null,
+    "baseWeight": 1,
+    "confidence": 0.875
+  },
+  {
+    "ruleId": "ELEMENT_COMPLEMENT",
+    "source": "SAJU",
+    "subject": "PAIR",
+    "category": "SUPPORT",
+    "period": {
+      "type": "LIFETIME"
+    },
+    "metadata": {
+      "ruleVariant": "EC2"
+    },
+    "direction": "POSITIVE",
+    "signedValue": 0.6,
+    "featureId": "ft_366abe2cc7130c05aa0af8c48de7659cb41987ffa8bcb705",
+    "rawValue": null,
+    "baseWeight": 1,
+    "confidence": 0.875
+  },
+  {
+    "ruleId": "ELEMENT_COMPLEMENT",
+    "source": "SAJU",
+    "subject": "PAIR",
+    "category": "SUPPORT",
+    "period": {
+      "type": "LIFETIME"
+    },
+    "metadata": {
+      "ruleVariant": "EC3"
+    },
+    "direction": "POSITIVE",
+    "signedValue": 0.9,
+    "featureId": "ft_513d2d93d70226547316c503b2119d354a7edaddd61c2497",
+    "rawValue": null,
+    "baseWeight": 1,
+    "confidence": 0.875
+  },
+  {
+    "ruleId": "ELEMENT_SUPPORT",
+    "source": "SAJU",
+    "subject": "PAIR",
+    "category": "SUPPORT",
+    "period": {
+      "type": "LIFETIME"
+    },
+    "metadata": {
+      "ruleVariant": "GENERATION"
+    },
+    "direction": "POSITIVE",
+    "signedValue": 0.7,
+    "featureId": "ft_bed0c9a46847b36729ffc03ecdbca23608fc3642d329327a",
+    "rawValue": null,
+    "baseWeight": 0.85,
+    "confidence": 1
+  },
+  {
+    "ruleId": "BRANCH_COMBINATION",
+    "source": "SAJU",
+    "subject": "PAIR",
+    "category": "HARMONY",
+    "period": {
+      "type": "LIFETIME"
+    },
+    "metadata": {
+      "ruleVariant": "LIUHE"
+    },
+    "direction": "POSITIVE",
+    "signedValue": 0.75,
+    "featureId": "ft_88a33bd5cf5c10d7db7598ce8335b3db990003d8a05e5d4e",
+    "rawValue": null,
+    "baseWeight": 1,
+    "confidence": 1
+  },
+  {
+    "ruleId": "DAY_MASTER_RELATION",
+    "source": "SAJU",
+    "subject": "PAIR",
+    "category": "SUPPORT",
+    "period": {
+      "type": "LIFETIME"
+    },
+    "metadata": {
+      "ruleVariant": "SAME"
+    },
+    "direction": "POSITIVE",
+    "signedValue": 0.4,
+    "featureId": "ft_7230af23daf6700cb88cdf842e48581d5e04ef0c06d3423e",
+    "rawValue": null,
+    "baseWeight": 1.2,
+    "confidence": 1
+  },
+  {
+    "ruleId": "YIN_YANG_BALANCE",
+    "source": "SAJU",
+    "subject": "PAIR",
+    "category": "HARMONY",
+    "period": {
+      "type": "LIFETIME"
+    },
+    "metadata": {
+      "ruleVariant": "YY0"
+    },
+    "direction": "NEGATIVE",
+    "signedValue": -0.35,
+    "featureId": "ft_42d87c5218ed125b116fc2f5ae2375d9b4bcb5545dcb83b8",
+    "rawValue": null,
+    "baseWeight": 0.45,
+    "confidence": 0.875
+  },
+  {
+    "ruleId": "YIN_YANG_BALANCE",
+    "source": "SAJU",
+    "subject": "PAIR",
+    "category": "HARMONY",
+    "period": {
+      "type": "LIFETIME"
+    },
+    "metadata": {
+      "ruleVariant": "YY1"
+    },
+    "direction": "NEGATIVE",
+    "signedValue": -0.15,
+    "featureId": "ft_531c22e85e369a602fc189b29ffe48be1b221e25388c0223",
+    "rawValue": null,
+    "baseWeight": 0.45,
+    "confidence": 0.875
+  },
+  {
+    "ruleId": "YIN_YANG_BALANCE",
+    "source": "SAJU",
+    "subject": "PAIR",
+    "category": "HARMONY",
+    "period": {
+      "type": "LIFETIME"
+    },
+    "metadata": {
+      "ruleVariant": "YY2"
+    },
+    "direction": "POSITIVE",
+    "signedValue": 0.2,
+    "featureId": "ft_a78daa8b0689c0a8b3436b0321d80f91a15d8bb60c4cf3c0",
+    "rawValue": null,
+    "baseWeight": 0.45,
+    "confidence": 0.875
+  },
+  {
+    "ruleId": "YIN_YANG_BALANCE",
+    "source": "SAJU",
+    "subject": "PAIR",
+    "category": "HARMONY",
+    "period": {
+      "type": "LIFETIME"
+    },
+    "metadata": {
+      "ruleVariant": "YY3"
+    },
+    "direction": "POSITIVE",
+    "signedValue": 0.45,
+    "featureId": "ft_cdb45576b72fc1c4b96a4b37faeac74cbcbc97ce3d8a76d3",
+    "rawValue": null,
+    "baseWeight": 0.45,
+    "confidence": 0.875
+  }
+]

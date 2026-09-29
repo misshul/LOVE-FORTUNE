@@ -439,3 +439,6 @@ Current authority: [Saju v1](contracts/saju-catalog-v1.md), [Guardrail v2](contr
 
 
 Current V1 Daily: SAJU 9 rules / 19 mappings, K=18, exact signed-peak ties; Zodiac STATIC context. Lifetime COMMUNICATION and final Daily COMMUNICATION scores are null. Source eligibility and current readiness: [Zodiac V1](contracts/zodiac-catalog-v1.md), [readiness](contracts/readiness.md).
+
+
+Lifetime Saju Natal-to-evidence implementation: [FE-01..06 / FE-COV-01](contracts/saju-feature-extraction-v1.md). Complete atomic candidate pairs, visible tokens, approved Day relations and Ten Gods only. No time/location recalculation or new traditional rules.

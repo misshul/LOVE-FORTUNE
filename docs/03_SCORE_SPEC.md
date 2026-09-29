@@ -469,3 +469,6 @@ Current authority: [Saju v1](contracts/saju-catalog-v1.md), [Guardrail v2](contr
 
 
 Current V1 Daily: SAJU 9 rules / 19 mappings, K=18, exact signed-peak ties; Zodiac STATIC context. Lifetime COMMUNICATION and final Daily COMMUNICATION scores are null. Source eligibility and current readiness: [Zodiac V1](contracts/zodiac-catalog-v1.md), [readiness](contracts/readiness.md).
+
+
+Lifetime Saju evidence contract: [FE-01..06 / FE-COV-01](contracts/saju-feature-extraction-v1.md). Feature presence uses computable candidate pairs; coverage uses projected available weight from the ledger, including computable NOT_MATCHED without a Feature. Static group weight is counted once. SC-01 formula and SC-07 remain unchanged; category scoring integration is separate.

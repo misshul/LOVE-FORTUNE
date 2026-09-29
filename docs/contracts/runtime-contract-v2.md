@@ -22,6 +22,8 @@ Operational allowlist: timestamp,requestId,endpoint,method,httpStatus,durationMs
 
 # SC-01 Confidence and coverage
 
+Lifetime Saju extraction clarification: [FE-01..06 / FE-COV-01](saju-feature-extraction-v1.md) takes precedence over the object-only availableEvidence wording below. Its ledger projects coverageAvailableWeight=w*computableCount/eligibleCount while retaining one static eligible w per rule/subject/category/period. All NOT_MATCHED can have full coverage without a Feature; all UNAVAILABLE has none. Feature presence denominator is computableCount, not eligibleCount. The SC-01 weighted coverage formula is unchanged. Whole-chart token completeness is applied once to baseConfidence only. MULTI identities are internal and do not extend SC-04 public wire schemas. Other sources and Daily retain their contracts.
+
 featureConfidence = baseConfidence * candidateAgreement; baseConfidence defaults to1. candidateAgreement=1-(max(candidate signedValue)-min(candidate signedValue))/2; one candidate gives1. Where feature existence differs, multiply candidateAgreement by availabilityRatio=presentCount/totalCount (default baseConfidence1).
 
 eligibleEvidence is the evidence theoretically evaluable under the approved catalog and input conditions. Supported missing-time rules remain eligible; unsupported/disabled rules are excluded. availableEvidence is eligible evidence with an actual calculated Feature object, including confidence=0. usableEvidence is available evidence with featureConfidence>0 AND preConfidenceWeight>0. Only usableEvidence enters score aggregation. preConfidenceWeight=baseWeight*ruleWeight*pairWeight, subject to the individual outer cap.
