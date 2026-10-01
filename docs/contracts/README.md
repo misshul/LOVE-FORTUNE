@@ -67,3 +67,6 @@ Current Daily authority: [C21-R](daily-catalog-v1.md). Current gates: [readiness
 
 
 Current Lifetime Saju extraction: [SAJU_FEATURE_EXTRACTOR_V1](saju-feature-extraction-v1.md). FE-01..06 and FE-COV-01 are applied; ledger-projected coverage and internal MULTI identity take precedence for this scope. Public wire and numeric catalogs are unchanged.
+
+
+Current Lifetime Saju source implementation: [approved contract](saju-lifetime-scoring-v1.md). Internal SAJU_LIFETIME_SCORING_V1; public version/schema unchanged. Combined orchestration/public MULTI/REST remain separate.

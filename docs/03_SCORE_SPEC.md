@@ -472,3 +472,6 @@ Current V1 Daily: SAJU 9 rules / 19 mappings, K=18, exact signed-peak ties; Zodi
 
 
 Lifetime Saju evidence contract: [FE-01..06 / FE-COV-01](contracts/saju-feature-extraction-v1.md). Feature presence uses computable candidate pairs; coverage uses projected available weight from the ledger, including computable NOT_MATCHED without a Feature. Static group weight is counted once. SC-01 formula and SC-07 remain unchanged; category scoring integration is separate.
+
+
+Saju-only category orchestration is implemented under [SAJU_LIFETIME_SCORING_V1](contracts/saju-lifetime-scoring-v1.md): existing formulas unchanged, actual available Features define confidence normalization, FE-COV-01 defines coverage, SC-07 precedes stabilization. No Saju-only overall or source blending. Internal version registration does not change public SCORE_ZODIAC_V1/configVersion.

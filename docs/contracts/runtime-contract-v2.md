@@ -126,3 +126,6 @@ Current V1 Daily authority: Zodiac V1 scope selects SAJU9/19, K=18, exact signed
 ## Applied Day Pillar Epoch v1
 
 [SAJU_DAY_PILLAR_EPOCH_V1](saju-day-pillar-epoch-v1.md) is the current epoch authority. Gregorian calculation-date JDN plus49 modulo60 is normative. Corrections and23:30 precede the date-only calculator. Public1900..2099 is unchanged; internal1899-12-30..2100-01-02 is separate. Natal retains local reference and upstream ambiguity resolution; Daily retains DAILY_SAJU_REFERENCE_V1 and four nominal slots. Unknown-time candidate confidence is unchanged. No public/signed field, score rule, persistence or logging change. V1 external blockers NONE; EPHEMERIS_PROVIDER is a deferred Advanced blocker. Full production remains incomplete due to implementation work.
+
+
+Lifetime Saju source orchestration: [SAJU_LIFETIME_SCORING_V1](saju-lifetime-scoring-v1.md) applies FE-COV coverage, actual-Feature pre-confidence denominator (including confidence=0), fixed-W0 SC-07 and one stabilization step. Internal dependency metadata is separate from unchanged public SCORE_ZODIAC_V1/configVersion; public version transition is deferred to Combined/API. No Saju-only overall.

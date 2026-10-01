@@ -73,3 +73,6 @@ Daily identity is an internal evidence schema; public Feature and signed LFIC wi
 
 
 Current Feature Extraction gate: `node docs/contracts/validation/saju-feature-extraction.cjs`. Runs the full Zodiac gate (including PHP lint/all PHPUnit), reference validators and actual WordPress smoke; checks the unchanged numeric catalogs, runtime catalog bytes, legacy IDs and new source privacy boundaries. Prints results without rewriting reports.
+
+
+Lifetime Saju scoring gate: `node docs/contracts/validation/saju-lifetime-scoring.cjs`. Delegates the existing full extractor gate and adds source-scorer privacy/scope checks and HEAD protection for public schemas, numeric catalogs and prior production dependencies. New production tests live in SajuLifetimeScoringTest.php; no fixture regeneration.

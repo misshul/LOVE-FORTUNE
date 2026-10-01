@@ -637,3 +637,6 @@ Implemented: Zodiac date/pair/scoring, M2 source/category blend, exact arithmeti
 
 
 Lifetime Saju Feature Extraction is implemented as SAJU_FEATURE_EXTRACTOR_V1: [contract](contracts/saju-feature-extraction-v1.md). This completes Natal-to-pre-SC07 evidence and coverage projection only. Saju source category scoring, full scoring/Daily orchestration and Core REST remain separate tasks.
+
+
+Lifetime Saju source scoring now connects extractor evidence to seven CategoryResults with exact SC-07/stabilization/confidence: [contract](contracts/saju-lifetime-scoring-v1.md). This is not global T10/T11/Core completion. Combined orchestration, public MULTI projection, Daily orchestration and REST remain separate.

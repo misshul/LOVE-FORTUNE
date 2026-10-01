@@ -15,7 +15,7 @@ No binary search, global passes or forced zero-weight exclusion. Evidence/covera
 
 Unchanged SC-03 final outer-share check remains; SCORE_CAP_INVARIANT_FAILED retains its meaning. Current Astrology109 has no active Outer scoring.
 
-Score contract: GUARDRAIL_V2. Future implementation must bump scoreVersion/configVersion; do not relabel historical results. This documentation does not change a production release version.
+Score contract: GUARDRAIL_V2. Approved version timing: Saju-only internal production implementation registers SAJU_LIFETIME_SCORING_V1 and preserves dependency identities. Public scoreVersion/configVersion increase when the public combined contract actually changes in the later Combined/API phase; current SCORE_ZODIAC_V1 and public configVersion remain unchanged. Do not relabel historical results. This explicit boundary supersedes the earlier undifferentiated production-version-bump wording. See [Lifetime Saju scoring V1](saju-lifetime-scoring-v1.md).
 
 
 Scope clarification: Lifetime category scoring only. Daily C21-R is NOT_APPLIED_TO_DAILY_V1 and uses signed signal -1..1 / delta ?18. The v2 formula above is unchanged. See [Daily contract](daily-catalog-v1.md).
