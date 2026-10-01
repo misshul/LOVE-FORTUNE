@@ -129,3 +129,6 @@ Current V1 Daily authority: Zodiac V1 scope selects SAJU9/19, K=18, exact signed
 
 
 Lifetime Saju source orchestration: [SAJU_LIFETIME_SCORING_V1](saju-lifetime-scoring-v1.md) applies FE-COV coverage, actual-Feature pre-confidence denominator (including confidence=0), fixed-W0 SC-07 and one stabilization step. Internal dependency metadata is separate from unchanged public SCORE_ZODIAC_V1/configVersion; public version transition is deferred to Combined/API. No Saju-only overall.
+
+
+Combined Lifetime source/result binding: [CL-01..CL-05](combined-lifetime-v1.md). Missing eligible category keys are errors; explicit null CategoryResult preserves actual coverage. Structural ineligible slots normalize without adding score evidence. Source numeric rules and SC-01/M2 are unchanged.

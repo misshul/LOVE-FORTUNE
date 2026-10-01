@@ -10,6 +10,7 @@ use LoveFortune\Core\Engine\Saju\HourPillarCalculator;
 use LoveFortune\Core\Engine\Saju\NatalResolutionService;
 use LoveFortune\Core\Engine\Saju\SajuFeatureExtractionService;
 use LoveFortune\Core\Engine\Saju\SajuLifetimeScoringService;
+use LoveFortune\Core\Application\Score\CombinedLifetimeService;
 use LoveFortune\Core\Engine\Saju\LocationReferenceRepository;
 use LoveFortune\Core\Engine\Saju\TimezoneReferenceRepository;
 use LoveFortune\Core\Engine\Zodiac\ZodiacCatalog;
@@ -37,6 +38,7 @@ return [
         'saju.natal_resolver' => new NatalResolutionService(solar: $solarReference),
         'saju.feature_extraction' => new SajuFeatureExtractionService(),
         'saju.lifetime_scoring' => new SajuLifetimeScoringService(),
+        'score.lifetime_combined' => new CombinedLifetimeService(),
         'zodiac.date' => new ZodiacDateResolver(),
         'zodiac.pair' => new ZodiacPairResolver(),
         'zodiac.score' => new ZodiacScorer(),
@@ -52,6 +54,7 @@ return [
         'saju.natal_resolver' => NatalResolutionService::VERSION,
         'saju.feature_extractor' => SajuFeatureExtractionService::VERSION,
         'saju.lifetime_scoring' => SajuLifetimeScoringService::VERSION,
+        'score.lifetime_combined' => CombinedLifetimeService::VERSION,
         'saju.location_reference' => LocationReferenceRepository::VERSION,
         'saju.timezone_reference' => TimezoneReferenceRepository::VERSION,
         'saju.solar_reference' => SolarTermReference::VERSION,

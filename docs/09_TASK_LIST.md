@@ -640,3 +640,6 @@ Lifetime Saju Feature Extraction is implemented as SAJU_FEATURE_EXTRACTOR_V1: [c
 
 
 Lifetime Saju source scoring now connects extractor evidence to seven CategoryResults with exact SC-07/stabilization/confidence: [contract](contracts/saju-lifetime-scoring-v1.md). This is not global T10/T11/Core completion. Combined orchestration, public MULTI projection, Daily orchestration and REST remain separate.
+
+
+Combined Lifetime internal orchestration is implemented: [LIFETIME_COMBINED_SCORING_V1](contracts/combined-lifetime-v1.md). Typed versioned sources,8-category normalization and existing blender reuse are complete. Public MULTI, REST and Daily orchestration remain separate.

@@ -34,16 +34,17 @@ Current authority: [Zodiac V1 application](zodiac-catalog-v1.md), retained [Saju
 | LIFETIME_SAJU_SCORING_ORCHESTRATION | IMPLEMENTED; SAJU_LIFETIME_SCORING_V1; [contract](saju-lifetime-scoring-v1.md) |
 | NATAL_TO_SAJU_CATEGORY_RESULTS | IMPLEMENTED; internal seven-category source result, no overall |
 | PUBLIC_MULTI_FEATURE_PROJECTION | NOT_IMPLEMENTED |
-| SCORING_ORCHESTRATION | PARTIAL; combined/application integration remains |
+| COMBINED_LIFETIME_ORCHESTRATION | IMPLEMENTED; LIFETIME_COMBINED_SCORING_V1; [contract](combined-lifetime-v1.md) |
+| SCORING_ORCHESTRATION | PARTIAL; Combined Lifetime implemented; Daily/period/public application integration remains |
 | CANDIDATE_GENERATION | IMPLEMENTED_FOR_NATAL; UNIQUE/FOLD/GAP/UNKNOWN; ordered atomic contexts |
-| SCORE_ENGINE | PARTIAL; exact M2 blend, confidence, Daily aggregation/ranking implemented; combined/application orchestration pending |
+| SCORE_ENGINE | PARTIAL; exact M2 and versioned Combined Lifetime implemented; Daily/period/public application orchestration pending |
 | API | NOT_IMPLEMENTED; route registry empty; schemas/OpenAPI are contracts |
 | Production Engine readiness | NOT_READY_IMPLEMENTATION |
 | Lifetime Advanced Astrology | PRESERVED / DEFERRED; 109 rules / 228 mappings |
 | Daily Advanced Astrology | PRESERVED / DEFERRED; 125 rules / 266 mappings |
 | EPHEMERIS_PROVIDER | NOT_REQUIRED_FOR_V1 / DEFERRED_ADVANCED_BLOCKER |
 
-An approved catalog is not a complete production engine. Natal location/reference integration and atomic Four Pillars candidate generation are implemented by FP06. V1 still requires combined/Daily/period/Core orchestration, REST validation/signing, AI/fallback integration and application/security/privacy deployment work. Those are implementation dependencies, not unresolved Zodiac numeric decisions or V1 ephemeris blockers.
+An approved catalog is not a complete production engine. Natal location/reference integration and atomic Four Pillars candidate generation are implemented by FP06. Versioned Combined Lifetime now reuses the existing blender. V1 still requires Daily/period/Core public orchestration, REST validation/signing, AI/fallback integration and application/security/privacy deployment work. Those are implementation dependencies, not unresolved Zodiac numeric decisions or V1 ephemeris blockers.
 
 FP-01 removes the Solar-Term reference/bridge build prerequisite. Subsequent [FP-02/03 approval and implementation](fp02-fp03-year-month-v1.md) supplies Year/Month calculators. [Location/timezone reference V1](location-timezone-reference-v1.md) supplies the validated FP06 static reference prerequisite. [FP06](fp06-natal-resolver-v1.md) now integrates pinned runtime readers and Natal candidate generation; no API is deployed. SAJU_LOCATION_REFERENCE_V1 is an actual artifact version, not yet a deployed API version field. Day Pillar is unchanged. Offline reference gates: node docs/contracts/validation/solar-reference.cjs and node docs/contracts/validation/location-timezone.cjs. [Solar build evidence](fp01-build-report.md). All production tests run through scripts/test.ps1.
 

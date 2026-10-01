@@ -475,3 +475,6 @@ Lifetime Saju evidence contract: [FE-01..06 / FE-COV-01](contracts/saju-feature-
 
 
 Saju-only category orchestration is implemented under [SAJU_LIFETIME_SCORING_V1](contracts/saju-lifetime-scoring-v1.md): existing formulas unchanged, actual available Features define confidence normalization, FE-COV-01 defines coverage, SC-07 precedes stabilization. No Saju-only overall or source blending. Internal version registration does not change public SCORE_ZODIAC_V1/configVersion.
+
+
+Combined Lifetime orchestration applies [CL-01..CL-05](contracts/combined-lifetime-v1.md) with unchanged LifetimeBlender formulas. Overall score/pre-confidence use computable category weights; overall coverage uses43/50. Internal version only; public versions/schema unchanged.

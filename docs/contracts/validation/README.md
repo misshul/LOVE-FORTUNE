@@ -76,3 +76,6 @@ Current Feature Extraction gate: `node docs/contracts/validation/saju-feature-ex
 
 
 Lifetime Saju scoring gate: `node docs/contracts/validation/saju-lifetime-scoring.cjs`. Delegates the existing full extractor gate and adds source-scorer privacy/scope checks and HEAD protection for public schemas, numeric catalogs and prior production dependencies. New production tests live in SajuLifetimeScoringTest.php; no fixture regeneration.
+
+
+Combined gate: `node docs/contracts/validation/combined-lifetime.cjs`. Protects prior Domain/Engine/catalog/schema/fixtures, checks the deployment projection and category-weight version, scans the two orchestration files, and runs the existing full Saju scoring gate. Prints execution JSON without regenerating fixtures.

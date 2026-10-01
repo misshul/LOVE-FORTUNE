@@ -70,3 +70,6 @@ Current Lifetime Saju extraction: [SAJU_FEATURE_EXTRACTOR_V1](saju-feature-extra
 
 
 Current Lifetime Saju source implementation: [approved contract](saju-lifetime-scoring-v1.md). Internal SAJU_LIFETIME_SCORING_V1; public version/schema unchanged. Combined orchestration/public MULTI/REST remain separate.
+
+
+Current Combined Lifetime: [approved CL-01..CL-05 and implementation](combined-lifetime-v1.md). Versioned source/result envelopes reuse existing numeric formulas; public projection/version activation is deferred.
