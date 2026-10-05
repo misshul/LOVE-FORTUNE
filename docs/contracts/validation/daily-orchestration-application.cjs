@@ -1,0 +1,14 @@
+'use strict';
+const fs=require('node:fs'),cp=require('node:child_process'),assert=require('node:assert/strict');
+const exec=(cmd,args)=>cp.execFileSync(cmd,args,{encoding:'utf8',maxBuffer:64*1024*1024});
+const root='docs/contracts/';
+process.stderr.write('Running retained full engine, PHP, reference and Compatibility API gate\n');
+const retained=JSON.parse(exec(process.execPath,[root+'validation/public-combined-application.cjs']));
+assert.equal(retained.result,'PUBLIC_COMBINED_API_IMPLEMENTATION_PASS');
+process.stderr.write('Running Daily production wire and WordPress dispatcher checks\n');
+const current=JSON.parse(exec(process.execPath,[root+'validation/daily-orchestration.cjs']));
+const rest=exec('docker',['compose','exec','-T','wordpress','php','/var/www/html/wp-content/plugins/love-fortune-core/tests/wordpress-daily-api.php']);
+assert(rest.includes('DAILY_WORDPRESS_E2E_PASS'));exec('git',['diff','--check']);
+const result={result:'DAILY_ORCHESTRATION_IMPLEMENTATION_PASS',retained,current,wordpressDaily:rest.trim().split(/\r?\n/),gitDiffCheck:'PASS',commit:'NOT_COMMITTED',push:'NOT_PUSHED',limits:['Retained wrapper readiness statements describe historical scope; this gate adds single-date Daily.','Null/fallback and fault responses use injected results through the real dispatcher; numeric success uses the complete production calculation.','Synthetic process-local test secrets; deployment secrets and infrastructure body capture require operational configuration.','Range/weekly/monthly/yearly and interpretation remain unimplemented.']};
+if(process.argv.includes('--write-report'))fs.writeFileSync(root+'validation-results-daily-orchestration-v1.json',JSON.stringify(result,null,2)+'\n');
+console.log(JSON.stringify(result,null,2));

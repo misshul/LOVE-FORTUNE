@@ -1,3 +1,5 @@
+Current single-date Daily authority: [DO-01..DO-09](daily-orchestration-v1.md). SAJU_DAILY_ORCHESTRATION_V1 / CONFIG_DAILY_V1 implement POST fortune/daily alongside compatibility/calculate; other period and interpretation routes remain pending. Earlier pending statements are historical scope.
+
 # LOVE FORTUNE Contract Freeze - Zodiac V1
 
 Current public compatibility authority: [Public Combined API V1](public-combined-api-v1.md). PC-01..PC-08 approve SCORE_COMBINED_LIFETIME_V1 / CONFIG_COMBINED_LIFETIME_V1; internal calculation math is unchanged. Historical statements retaining public versions describe their original phase.

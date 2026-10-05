@@ -71,7 +71,10 @@
       "const": "SCORE_COMBINED_LIFETIME_V1"
     },
     "configVersion": {
-      "const": "CONFIG_COMBINED_LIFETIME_V1"
+      "enum": [
+        "CONFIG_COMBINED_LIFETIME_V1",
+        "CONFIG_DAILY_V1"
+      ]
     },
     "result": {
       "allOf": [
@@ -81,7 +84,7 @@
               "$ref": "compatibility-result.schema.json"
             },
             {
-              "$ref": "daily-response.schema.json"
+              "$ref": "daily-result.schema.json"
             },
             {
               "$ref": "period-response.schema.json"
@@ -123,5 +126,50 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://love-fortune.invalid/contracts/schemas/signed-context.schema.json",
   "title": "LOVE FORTUNE signed-context v2",
-  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate."
+  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate.",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "result": {
+            "required": [
+              "dailyScore"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "configVersion": {
+            "const": "CONFIG_DAILY_V1"
+          },
+          "evidence": {
+            "maxItems": 0
+          },
+          "result": {
+            "properties": {
+              "dailyScore": {
+                "type": "number"
+              },
+              "dailyStatus": {
+                "not": {
+                  "enum": [
+                    "INSUFFICIENT_PERIOD_DATA",
+                    "INSUFFICIENT_DATA"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "configVersion": {
+            "const": "CONFIG_COMBINED_LIFETIME_V1"
+          }
+        }
+      }
+    }
+  ]
 }

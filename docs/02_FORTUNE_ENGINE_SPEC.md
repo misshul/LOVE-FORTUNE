@@ -1,3 +1,5 @@
+Current single-date Daily authority: [DO-01..DO-09](contracts/daily-orchestration-v1.md). SAJU_DAILY_ORCHESTRATION_V1 / CONFIG_DAILY_V1 implement POST fortune/daily alongside compatibility/calculate; other period and interpretation routes remain pending. Earlier pending statements are historical scope.
+
 # LOVE FORTUNE
 # 02_FORTUNE_ENGINE_SPEC.md
 

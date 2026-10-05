@@ -389,6 +389,21 @@
           }
         }
       }
+    },
+    {
+      "properties": {
+        "meta": {
+          "properties": {
+            "versions": {
+              "properties": {
+                "configVersion": {
+                  "const": "CONFIG_COMBINED_LIFETIME_V1"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   ]
 }

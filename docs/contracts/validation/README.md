@@ -1,3 +1,5 @@
+Current Daily implementation: [production report](../daily-orchestration-implementation-report.md). DAILY_ORCHESTRATION_IMPLEMENTATION_PASS;97 PHP tests /1,262,399 assertions. Full gate: node docs/contracts/validation/daily-orchestration-application.cjs. No commit/push. Earlier reports retain historical scope.
+
 # Contract validation
 
 ## FP06 production Natal resolver

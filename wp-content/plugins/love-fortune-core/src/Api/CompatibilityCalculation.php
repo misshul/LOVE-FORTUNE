@@ -15,6 +15,13 @@ final class CompatibilityCalculation
 {
     public function calculate(array $input,string $requestId): array
     {
+        $r=$this->internal($input);
+        return (new CompatibilityProjection())->project($r['combined'],$r['features'],$requestId);
+    }
+
+    /** One exact Lifetime calculation shared by the two public application flows. */
+    public function internal(array $input): array
+    {
         $natal=new NatalResolutionService();$people=[];$signs=[];
         foreach(['personA','personB'] as $side){
             $p=$input[$side];$people[]=$natal->resolve($p['birthDate'],$p['birthLocationId'],$p['birthTime']);
@@ -24,6 +31,6 @@ final class CompatibilityCalculation
         $saju=(new SajuLifetimeScoringService())->score($extraction);
         $zodiac=new ZodiacScorer();$context=(new ZodiacPairResolver())->resolve(...$signs);
         $combined=(new CombinedLifetimeService())->score([E::fromSaju($saju),E::fromEligible('ZODIAC',E::IDENTITIES['ZODIAC'],$zodiac->score(...$signs),$context)]);
-        return (new CompatibilityProjection())->project($combined,[...$extraction['features'],...$zodiac->features(...$signs)],$requestId);
+        return ['combined'=>$combined,'natal'=>$people,'features'=>[...$extraction['features'],...$zodiac->features(...$signs)]];
     }
 }

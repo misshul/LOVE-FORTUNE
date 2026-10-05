@@ -6,17 +6,23 @@ use LoveFortune\Core\Engine\Saju\LocationReferenceRepository;
 
 final class CompatibilityInput
 {
-    public static function parse(string $body, string $contentType, ?string $encoding): array
+    public static function parse(string $body, string $contentType, ?string $encoding, bool $daily=false): array
     {
         if($encoding!==null){throw new PublicError(415,'UNSUPPORTED_CONTENT_ENCODING');}
         if(!preg_match('/^application\/json(?:;\s*charset=utf-8)?$/i',$contentType)){throw new PublicError(415,'UNSUPPORTED_MEDIA_TYPE');}
         if(strlen($body)>32768){throw new PublicError(413,'PAYLOAD_TOO_LARGE');}
         try{$object=json_decode($body,false,32,JSON_THROW_ON_ERROR);}catch(\JsonException){throw new PublicError(400,'INVALID_REQUEST');}
         if(!$object instanceof \stdClass){throw new PublicError(400,'INVALID_REQUEST');}
-        self::keys($object,['personA','personB','relationshipType','targetTimezone'],['locale']);
+        self::keys($object,$daily?['personA','personB','relationshipType','targetTimezone','date']:['personA','personB','relationshipType','targetTimezone'],['locale']);
         $input=(array)$object;
         if(!in_array($input['relationshipType'],['COUPLE','MARRIED','DATING','CRUSH','FRIEND','UNKNOWN'],true)){throw new PublicError(422,'INVALID_REQUEST_SEMANTICS');}
-        if(!is_string($input['targetTimezone']) || !in_array($input['targetTimezone'],\DateTimeZone::listIdentifiers(\DateTimeZone::ALL_WITH_BC),true)){throw new PublicError(422,'INVALID_REQUEST_SEMANTICS');}
+        if(!is_string($input['targetTimezone']) || (!$daily && !in_array($input['targetTimezone'],\DateTimeZone::listIdentifiers(\DateTimeZone::ALL_WITH_BC),true))){throw new PublicError(422,'INVALID_REQUEST_SEMANTICS');}
+        if($daily){
+            if(!is_string($input['date'])){throw new PublicError(422,'INVALID_REQUEST_SEMANTICS');}
+            try{\LoveFortune\Core\Engine\Saju\NatalCivilTime::input($input['date'],'00:00');
+                $input['targetTimezone']=(new \LoveFortune\Core\Engine\Saju\FrozenDailySampleResolver())->canonicalize($input['targetTimezone']);
+            }catch(\InvalidArgumentException $e){throw new PublicError(422,$e->getMessage()==='UNSUPPORTED_DATE'?'UNSUPPORTED_DATE':'INVALID_REQUEST_SEMANTICS');}
+        }
         if(!array_key_exists('locale',$input)){$input['locale']='ko-KR';}
         if(!in_array($input['locale'],['ko-KR','ja-JP','en-US'],true)){throw new PublicError(422,'UNSUPPORTED_LOCALE');}
         $locations=new LocationReferenceRepository();

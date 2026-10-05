@@ -26,7 +26,7 @@ $dayPillar = new DayPillarCalculator();
 $solarReference = new SolarTermReference();
 $zodiac = ZodiacCatalog::configuration()['catalog'];
 return [
-    'routes' => [new \LoveFortune\Core\Api\CompatibilityEndpoint()],
+    'routes' => [new \LoveFortune\Core\Api\CompatibilityEndpoint(), new \LoveFortune\Core\Api\DailyEndpoint()],
     'admin' => [],
     'migrations' => [],
     'engines' => [

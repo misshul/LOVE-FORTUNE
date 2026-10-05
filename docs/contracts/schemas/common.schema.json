@@ -54,7 +54,10 @@
           "const": "SCORE_COMBINED_LIFETIME_V1"
         },
         "configVersion": {
-          "const": "CONFIG_COMBINED_LIFETIME_V1"
+          "enum": [
+            "CONFIG_COMBINED_LIFETIME_V1",
+            "CONFIG_DAILY_V1"
+          ]
         },
         "locationReferenceVersion": {
           "type": "string",

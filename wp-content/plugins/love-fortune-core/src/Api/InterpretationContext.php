@@ -13,6 +13,14 @@ final class InterpretationContext
         try{$keys=json_decode((string)getenv('LOVE_FORTUNE_SIGNING_KEYS'),true,8,JSON_THROW_ON_ERROR);}catch(\Throwable){$keys=[];}
         return new self($id,is_array($keys)?$keys:[],$previous===false||$previous===''?null:$previous);
     }
+    private static function validateResult(array $r): void
+    {
+        if(array_key_exists('dailyScore',$r)){DailyResultValidation::validate($r);}else{PublicResultValidation::validate($r);}
+    }
+    private static function signable(array $r): bool
+    {
+        return array_key_exists('dailyScore',$r)?DailyResultValidation::needsSignature($r):($r['overallScore']??null)!==null;
+    }
     private function key(string $id): string
     {
         if($id==='' || !in_array($id,[$this->currentId,$this->previousId],true) || !is_string($this->keys[$id]??null) || strlen($this->keys[$id])<32){throw new PublicError(503,'SERVICE_UNAVAILABLE');}
@@ -21,13 +29,13 @@ final class InterpretationContext
     private static function encode(mixed $v): string{return rtrim(strtr(base64_encode(CanonicalJson::encode($v)),'+/','-_'),'=');}
     public function issue(array $result,string $locale,int $now): string
     {
-        if($result['overallScore']===null || isset($result['signedInterpretationContext'])){throw new PublicError(503,'SERVICE_UNAVAILABLE');}
-        PublicResultValidation::validate($result);
+        if(!self::signable($result) || isset($result['signedInterpretationContext'])){throw new PublicError(503,'SERVICE_UNAVAILABLE');}
+        self::validateResult($result);
         $key=$this->key($this->currentId);$versions=$result['meta']['versions'];
         $engines=$versions;unset($engines['scoreVersion'],$engines['configVersion']);
         $payload=['contextVersion'=>'ZODIAC_CONTEXT_V1','purpose'=>'INTERPRETATION','locale'=>$locale,
             'issuedAt'=>gmdate('Y-m-d\TH:i:s\Z',$now),'expiresAt'=>gmdate('Y-m-d\TH:i:s\Z',$now+300),
-            'engineVersions'=>$engines,'scoreVersion'=>PublicRelease::SCORE,'configVersion'=>PublicRelease::CONFIG,
+            'engineVersions'=>$engines,'scoreVersion'=>PublicRelease::SCORE,'configVersion'=>$versions['configVersion'],
             'result'=>$result,'evidence'=>$result['features']];
         if(isset($result['zodiacContext'])){$payload['zodiacContext']=$result['zodiacContext'];}
         $message=self::encode(['alg'=>'HS256','typ'=>'LFIC','kid'=>$this->currentId,'v'=>1]).'.'.self::encode($payload);
@@ -53,11 +61,12 @@ final class InterpretationContext
             $issued=strtotime($p['issuedAt']);$expires=strtotime($p['expiresAt']);
             if($issued===false||$expires===false||gmdate('Y-m-d\TH:i:s\Z',$issued)!==$p['issuedAt']||gmdate('Y-m-d\TH:i:s\Z',$expires)!==$p['expiresAt']||$expires-$issued!==300||$now<$issued){throw new \RuntimeException();}
             if($now>=$expires){throw new PublicError(422,'INTERPRETATION_CONTEXT_EXPIRED');}
-            if(($p['contextVersion']??null)!=='ZODIAC_CONTEXT_V1'||($p['scoreVersion']??null)!==PublicRelease::SCORE||($p['configVersion']??null)!==PublicRelease::CONFIG){throw new \RuntimeException();}
+            if(($p['contextVersion']??null)!=='ZODIAC_CONTEXT_V1'||($p['scoreVersion']??null)!==PublicRelease::SCORE||!in_array($p['configVersion']??null,[PublicRelease::CONFIG,DailyRelease::CONFIG],true)){throw new \RuntimeException();}
             $allowed=['contextVersion','purpose','locale','issuedAt','expiresAt','engineVersions','scoreVersion','configVersion','result','evidence','zodiacContext'];
             if(array_diff(array_keys($p),$allowed)!==[]){throw new \RuntimeException();}
-            PublicResultValidation::validate($p['result']);
-            if($p['result']['overallScore']===null){throw new \RuntimeException();}
+            self::validateResult($p['result']);
+            if($p['configVersion']!==$p['result']['meta']['versions']['configVersion']){throw new \RuntimeException();}
+            if(!self::signable($p['result'])){throw new \RuntimeException();}
             if(CanonicalJson::encode(($p['engineVersions']??[])+['scoreVersion'=>$p['scoreVersion'],'configVersion'=>$p['configVersion']])!==CanonicalJson::encode($p['result']['meta']['versions'])){throw new \RuntimeException();}
             if(CanonicalJson::encode($p['zodiacContext']??null)!==CanonicalJson::encode($p['result']['zodiacContext']??null)){throw new \RuntimeException();}
             if(!is_array($p['evidence'])||!array_is_list($p['evidence'])){throw new \RuntimeException();}

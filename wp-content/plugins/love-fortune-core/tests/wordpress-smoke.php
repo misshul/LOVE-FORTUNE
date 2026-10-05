@@ -75,5 +75,5 @@ verify(str_contains($match[0], 'LOVE FORTUNE Core') && str_contains($match[0], '
 
 $routes = rest_get_server()->get_routes();
 verify(isset($routes['/love-fortune/v1/compatibility/calculate']), 'Approved compatibility REST route');
-verify(!isset($routes['/love-fortune/v1/fortune/daily']), 'Daily remains unimplemented');
+verify(isset($routes['/love-fortune/v1/fortune/daily']), 'Approved single-date Daily REST route');
 echo 'WordPress smoke check completed.', PHP_EOL;

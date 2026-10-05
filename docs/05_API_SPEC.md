@@ -1,3 +1,5 @@
+Current single-date Daily authority: [DO-01..DO-09](contracts/daily-orchestration-v1.md). SAJU_DAILY_ORCHESTRATION_V1 / CONFIG_DAILY_V1 implement POST fortune/daily alongside compatibility/calculate; other period and interpretation routes remain pending. Earlier pending statements are historical scope.
+
 # LOVE FORTUNE
 
 Public compatibility release: [PC-01..PC-08 / Public Combined API](contracts/public-combined-api-v1.md). Only POST compatibility/calculate is implemented in this release; other public business routes remain pending.
