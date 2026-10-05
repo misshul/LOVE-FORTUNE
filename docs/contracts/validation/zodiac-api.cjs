@@ -9,7 +9,8 @@ const ajv = new Ajv({ strict: false, allErrors: true }); formats(ajv);
 ajv.removeKeyword('multipleOf'); ajv.addKeyword({ keyword: 'multipleOf', type: 'number', schemaType: 'number', validate: (s, v) => { const x = M.div(M.parse(v), M.parse(s)); return x[1] === 1n; } });
 const read = p => JSON.parse(fs.readFileSync('docs/contracts/' + p, 'utf8'));
 for (const name of fs.readdirSync('docs/contracts/schemas')) ajv.addSchema(read('schemas/' + name));
-const schema = n => ajv.getSchema('https://love-fortune.invalid/contracts/schemas/' + n + '.schema.json');
+for (const name of fs.readdirSync('docs/contracts/historical/zodiac-v1/schemas')) ajv.addSchema(read('historical/zodiac-v1/schemas/' + name));
+const schema = n => ajv.getSchema('https://love-fortune.invalid/contracts/historical/zodiac-v1/schemas/' + n + '.schema.json');
 const cases = read('examples/zodiac/manifest.json').cases;
 for (const c of cases) { const check = schema(c.schema); assert.equal(check(read('examples/zodiac/' + c.file)), c.valid, c.file + ' ' + JSON.stringify(check.errors?.slice(0, 3))); }
 let contexts = 0, features = 0;

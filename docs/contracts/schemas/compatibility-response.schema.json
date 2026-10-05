@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://love-fortune.invalid/contracts/schemas/compatibility-response.schema.json",
-  "title": "LOVE FORTUNE compatibility-response Zodiac V1",
+  "title": "External Combined Lifetime response",
   "description": "Active V1 SAJU + ZODIAC. Advanced Astrology is not part of this response.",
   "type": "object",
   "properties": {
@@ -34,12 +34,14 @@
     "resultConfidence": {
       "type": "number",
       "minimum": 0,
-      "maximum": 1
+      "maximum": 1,
+      "multipleOf": 0.0001
     },
     "coverage": {
       "type": "number",
       "minimum": 0,
-      "maximum": 1
+      "maximum": 1,
+      "multipleOf": 0.0001
     },
     "categories": {
       "type": "object",
@@ -85,17 +87,18 @@
       "type": "array",
       "items": {
         "$ref": "feature.schema.json"
-      }
+      },
+      "description": "Approved public evidence subset, not the complete scoring ledger. MULTI is excluded."
     },
     "warnings": {
       "$ref": "common.schema.json#/$defs/warnings"
     },
+    "zodiacContext": {
+      "$ref": "zodiac-context.schema.json"
+    },
     "signedInterpretationContext": {
       "type": "string",
       "minLength": 1
-    },
-    "zodiacContext": {
-      "$ref": "zodiac-context.schema.json"
     }
   },
   "required": [
@@ -372,6 +375,43 @@
             "minimum": 85,
             "maximum": 100
           }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "overallScore": {
+            "type": "null"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "resultConfidence": {
+            "const": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "overallScore": {
+            "type": "number"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "signedInterpretationContext"
+        ]
+      },
+      "else": {
+        "not": {
+          "required": [
+            "signedInterpretationContext"
+          ]
         }
       }
     }

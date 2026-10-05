@@ -123,7 +123,7 @@ final class SajuLifetimeScoringTest extends TestCase
         foreach(array_keys(SajuLifetimeScoringService::DEPENDENCIES) as $key){$deps=SajuLifetimeScoringService::DEPENDENCIES;$deps[$key]='WRONG';$this->error(fn()=>new SajuLifetimeScoringService(dependencies:$deps),'SCORING_CONTRACT_MISMATCH');}
         $input=$this->extraction();$input['scoreVersion']='SCORE_ZODIAC_V1';self::assertSame(SajuLifetimeScoringService::VERSION,(new SajuLifetimeScoringService())->score($input)['scoringVersion']);
         foreach(['version','catalogVersion'] as $key){$bad=$input;$bad[$key]='WRONG';$this->error(fn()=>(new SajuLifetimeScoringService())->score($bad),'SCORING_CONTRACT_MISMATCH');}
-        $config=require dirname(__DIR__,2).'/config/bootstrap.php';self::assertSame('SCORE_ZODIAC_V1',$config['versions']['scoreVersion']);self::assertInstanceOf(SajuLifetimeScoringService::class,$config['engines']['saju.lifetime_scoring']);
+        $config=require dirname(__DIR__,2).'/config/bootstrap.php';self::assertSame('SCORE_COMBINED_LIFETIME_V1',$config['versions']['scoreVersion']);self::assertInstanceOf(SajuLifetimeScoringService::class,$config['engines']['saju.lifetime_scoring']);
     }
 
     public function testInvalidEvidenceFailsClosed(): void

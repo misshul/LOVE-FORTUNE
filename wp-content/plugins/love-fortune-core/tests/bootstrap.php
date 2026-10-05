@@ -71,3 +71,28 @@ function expectException(callable $operation, string $type): void
 
 require dirname(__DIR__) . '/autoload.php';
 
+
+// Minimal transport doubles; actual WordPress registration is covered by wordpress-public-api.php.
+class WP_HTTP_Response {
+    public function __construct(private mixed $data=null,private int $status=200,private array $headers=[]) {}
+    public function get_data(): mixed { return $this->data; }
+    public function get_status(): int { return $this->status; }
+    public function get_headers(): array { return $this->headers; }
+}
+class WP_REST_Response extends WP_HTTP_Response {}
+class WP_REST_Server {}
+class WP_REST_Request {
+    private array $headers=[];private string $body='';private array $query=[];
+    public function __construct(private string $method='POST',private string $route='/love-fortune/v1/compatibility/calculate') {}
+    public function get_method(): string{return $this->method;}
+    public function get_route(): string{return $this->route;}
+    public function set_body(string $body): void{$this->body=$body;}
+    public function get_body(): string{return $this->body;}
+    public function set_header(string $key,string $value): void{$this->headers[strtolower($key)]=$value;}
+    public function get_header(string $key): string{return $this->headers[strtolower($key)]??'';}
+    public function get_headers(): array{return $this->headers;}
+    public function set_query_params(array $query): void{$this->query=$query;}
+    public function get_query_params(): array{return $this->query;}
+}
+function register_rest_route(string $namespace,string $route,array $args): void{$GLOBALS['public_routes'][$namespace.$route]=$args;}
+function add_filter(string $name,callable $callback,int $priority=10,int $args=1): void{$GLOBALS['public_filters'][$name][]=$callback;}

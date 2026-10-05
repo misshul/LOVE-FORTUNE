@@ -1,5 +1,7 @@
 # LOVE FORTUNE runtime contract v2
 
+Current public compatibility authority: [Public Combined API V1](public-combined-api-v1.md). PC-01..PC-08 approve SCORE_COMBINED_LIFETIME_V1 / CONFIG_COMBINED_LIFETIME_V1; internal calculation math is unchanged. Historical statements retaining public versions describe their original phase.
+
 Status: CONTRACT FROZEN (Zodiac V1 + retained Saju v1 / SC-07 v2)
 
 Current V1 authority: [Zodiac V1](zodiac-catalog-v1.md). Active SAJU/ZODIAC, Advanced Astrology deferred. Explicit current formulas below supersede older source and confidence text.

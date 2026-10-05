@@ -1,3 +1,11 @@
+Current checkpoint: [Final regression review](public-combined-final-review.md). Full regression PASS: 88 tests / 1,262,236 assertions; 31 required historical snapshots retained. Earlier implementation-phase counts and no-commit statements below are historical.
+
+# Public Combined API implementation
+
+Current result: PUBLIC_COMBINED_API_IMPLEMENTATION_PASS. Final PHP88 tests /1,262,233 assertions; actual WordPress REST E2E and retained full regressions PASS. [Report](public-combined-implementation-report.md), [execution evidence](validation-results-public-combined-v1.json). No commit/push. Deployment secrets/physical rate-key cleanup/infrastructure privacy configuration remain operational prerequisites; this is not whole-service production readiness.
+
+---
+
 # COMBINED LIFETIME FINAL CHECKPOINT REVIEW
 
 Result: **COMBINED_LIFETIME_REGRESSION_PASS_READY_TO_COMMIT**. [Final review](combined-lifetime-final-review.md) and [fresh execution evidence](validation-results-combined-checkpoint.json). Full regression PASS:81 tests /1,262,058 assertions; existing blender, public versions/schema, catalogs and fixtures unchanged. One local checkpoint commit is authorized after staged checks; DO NOT PUSH. Earlier no-commit statements below describe their original implementation phase.

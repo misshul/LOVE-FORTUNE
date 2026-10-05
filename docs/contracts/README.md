@@ -1,5 +1,7 @@
 # LOVE FORTUNE Contract Freeze - Zodiac V1
 
+Current public compatibility authority: [Public Combined API V1](public-combined-api-v1.md). PC-01..PC-08 approve SCORE_COMBINED_LIFETIME_V1 / CONFIG_COMBINED_LIFETIME_V1; internal calculation math is unchanged. Historical statements retaining public versions describe their original phase.
+
 Version: 4.0.0
 Status: CONTRACT FROZEN
 

@@ -1,0 +1,15 @@
+{
+  "locale": "ko-KR",
+  "personA": {
+    "birthDate": "2020-01-15",
+    "birthLocationId": "LOC000001",
+    "birthTime": "12:00"
+  },
+  "personB": {
+    "birthDate": "2000-02-04",
+    "birthLocationId": "LOC000001",
+    "birthTime": null
+  },
+  "relationshipType": "UNKNOWN",
+  "targetTimezone": "Asia/Tokyo"
+}

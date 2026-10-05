@@ -1,5 +1,7 @@
 # Combined Lifetime Orchestration V1
 
+Current public compatibility authority: [Public Combined API V1](public-combined-api-v1.md). PC-01..PC-08 approve SCORE_COMBINED_LIFETIME_V1 / CONFIG_COMBINED_LIFETIME_V1; internal calculation math is unchanged. Historical statements retaining public versions describe their original phase.
+
 Status: **COMBINED_LIFETIME_CONTRACT_APPROVED / APPLIED**.
 Authority: CL-01..CL-05 final decision `9775706d-ff65-4569-9e70-e7f765b19888` and implementation request `1c8156a7-1b02-4ab9-88f4-1eecfa408af6`.
 Internal version: `LIFETIME_COMBINED_SCORING_V1`. No numeric catalog, public version or schema change.

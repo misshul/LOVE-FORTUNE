@@ -1,4 +1,6 @@
 # LOVE FORTUNE
+
+Public compatibility release: [PC-01..PC-08 / Public Combined API](contracts/public-combined-api-v1.md). Only POST compatibility/calculate is implemented in this release; other public business routes remain pending.
 # 05_API_SPEC.md
 
 Version: 3.3.0

@@ -1,0 +1,87 @@
+{
+  "categories": {
+    "ATTRACTION": {
+      "coverage": 1,
+      "resultConfidence": 0,
+      "score": null,
+      "status": "INSUFFICIENT_DATA"
+    },
+    "COMMUNICATION": {
+      "coverage": 0,
+      "resultConfidence": 0,
+      "score": null,
+      "status": "INSUFFICIENT_DATA"
+    },
+    "EMOTION": {
+      "coverage": 1,
+      "resultConfidence": 0,
+      "score": null,
+      "status": "INSUFFICIENT_DATA"
+    },
+    "HARMONY": {
+      "coverage": 1,
+      "resultConfidence": 0,
+      "score": null,
+      "status": "INSUFFICIENT_DATA"
+    },
+    "LONG_TERM": {
+      "coverage": 1,
+      "resultConfidence": 0,
+      "score": null,
+      "status": "INSUFFICIENT_DATA"
+    },
+    "PASSION": {
+      "coverage": 1,
+      "resultConfidence": 0,
+      "score": null,
+      "status": "INSUFFICIENT_DATA"
+    },
+    "STABILITY": {
+      "coverage": 1,
+      "resultConfidence": 0,
+      "score": null,
+      "status": "INSUFFICIENT_DATA"
+    },
+    "SUPPORT": {
+      "coverage": 1,
+      "resultConfidence": 0,
+      "score": null,
+      "status": "INSUFFICIENT_DATA"
+    }
+  },
+  "coverage": 1,
+  "features": [],
+  "meta": {
+    "requestId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "versions": {
+      "apiVersion": "v1",
+      "configVersion": "CONFIG_COMBINED_LIFETIME_V1",
+      "locationReferenceVersion": "SAJU_LOCATION_REFERENCE_V1",
+      "sajuEngineVersion": "SAJU_LIFETIME_SCORING_V1",
+      "scoreVersion": "SCORE_COMBINED_LIFETIME_V1",
+      "serviceVersion": "0.1.0",
+      "timezoneDataVersion": "SAJU_TIMEZONE_REFERENCE_V1",
+      "zodiacCatalogVersion": "ZODIAC_CATALOG_V1",
+      "zodiacDateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+      "zodiacEngineVersion": "FIXED_DATE_SINGLE_SIGN_V1"
+    }
+  },
+  "overallScore": null,
+  "resultConfidence": 0,
+  "status": "INSUFFICIENT_DATA",
+  "warnings": [],
+  "zodiacContext": {
+    "contextEvidenceId": "ce_3970ae00a9c815d1d7b69a631c9c4d2f65ee8ec4ef8c047b",
+    "contextRole": "STATIC",
+    "dateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+    "elementRelation": "CHALLENGING_ELEMENT",
+    "modalityRelation": "DIFFERENT_MODALITY",
+    "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+    "pairId": "ZODIAC_PAIR_CAPRICORN_AQUARIUS",
+    "polarityRelation": "DIFFERENT_POLARITY",
+    "primaryRelation": "CHALLENGING_ELEMENT",
+    "signA": "CAPRICORN",
+    "signB": "AQUARIUS",
+    "source": "ZODIAC"
+  }
+}

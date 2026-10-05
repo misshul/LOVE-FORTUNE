@@ -35,8 +35,7 @@
           "const": "v1"
         },
         "sajuEngineVersion": {
-          "type": "string",
-          "minLength": 1
+          "const": "SAJU_LIFETIME_SCORING_V1"
         },
         "locationReferenceVersion": {
           "type": "string",
@@ -69,18 +68,17 @@
       "additionalProperties": false
     },
     "scoreVersion": {
-      "const": "SCORE_ZODIAC_V1"
+      "const": "SCORE_COMBINED_LIFETIME_V1"
     },
     "configVersion": {
-      "type": "string",
-      "minLength": 1
+      "const": "CONFIG_COMBINED_LIFETIME_V1"
     },
     "result": {
       "allOf": [
         {
           "oneOf": [
             {
-              "$ref": "compatibility-response.schema.json"
+              "$ref": "compatibility-result.schema.json"
             },
             {
               "$ref": "daily-response.schema.json"

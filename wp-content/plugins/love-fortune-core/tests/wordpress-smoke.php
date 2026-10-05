@@ -74,5 +74,6 @@ verify(preg_match($pattern, $html, $match) === 1, 'Plugin row rendered in admin 
 verify(str_contains($match[0], 'LOVE FORTUNE Core') && str_contains($match[0], 'action=deactivate'), 'Admin row shows active plugin');
 
 $routes = rest_get_server()->get_routes();
-verify(array_filter(array_keys($routes), static fn (string $route): bool => str_starts_with($route, '/love-fortune/')) === [], 'No business REST routes');
+verify(isset($routes['/love-fortune/v1/compatibility/calculate']), 'Approved compatibility REST route');
+verify(!isset($routes['/love-fortune/v1/fortune/daily']), 'Daily remains unimplemented');
 echo 'WordPress smoke check completed.', PHP_EOL;

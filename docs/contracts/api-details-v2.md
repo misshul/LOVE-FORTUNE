@@ -1,5 +1,7 @@
 # API v2 wire normalization
 
+Current public compatibility authority: [Public Combined API V1](public-combined-api-v1.md). PC-01..PC-08 approve SCORE_COMBINED_LIFETIME_V1 / CONFIG_COMBINED_LIFETIME_V1; internal calculation math is unchanged. Historical statements retaining public versions describe their original phase.
+
 이 문서는 Final Decision v2를 기존 endpoint 및 관리 기능에 연결하는 DTO·method 명세다. 새 Saju/Astrology 해석 규칙이나 구현 코드를 포함하지 않는다. 정확한 object 구조는 `schemas/`와 `openapi.yaml`을 따른다.
 
 ## Public calculation

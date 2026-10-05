@@ -144,6 +144,6 @@ final class CombinedLifetimeTest extends TestCase
             }
         }
         $config=require dirname(__DIR__,2).'/config/bootstrap.php';self::assertInstanceOf(CombinedLifetimeService::class,$config['engines']['score.lifetime_combined']);
-        self::assertSame(CombinedLifetimeService::VERSION,$config['versions']['score.lifetime_combined']);self::assertSame('SCORE_ZODIAC_V1',$config['versions']['scoreVersion']);
+        self::assertSame(CombinedLifetimeService::VERSION,$config['versions']['score.lifetime_combined']);self::assertSame('SCORE_COMBINED_LIFETIME_V1',$config['versions']['scoreVersion']);
     }
 }

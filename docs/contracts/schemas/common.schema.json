@@ -48,15 +48,13 @@
           "const": "v1"
         },
         "sajuEngineVersion": {
-          "type": "string",
-          "minLength": 1
+          "const": "SAJU_LIFETIME_SCORING_V1"
         },
         "scoreVersion": {
-          "const": "SCORE_ZODIAC_V1"
+          "const": "SCORE_COMBINED_LIFETIME_V1"
         },
         "configVersion": {
-          "type": "string",
-          "minLength": 1
+          "const": "CONFIG_COMBINED_LIFETIME_V1"
         },
         "locationReferenceVersion": {
           "type": "string",
@@ -130,12 +128,14 @@
             "resultConfidence": {
               "type": "number",
               "minimum": 0,
-              "maximum": 1
+              "maximum": 1,
+              "multipleOf": 0.0001
             },
             "coverage": {
               "type": "number",
               "minimum": 0,
-              "maximum": 1
+              "maximum": 1,
+              "multipleOf": 0.0001
             }
           },
           "required": [
@@ -254,7 +254,8 @@
               "type": "number",
               "minimum": 0,
               "maximum": 1,
-              "description": "Structural available/eligible weight ratio retained even with no usable evidence."
+              "description": "Structural available/eligible weight ratio retained even with no usable evidence.",
+              "multipleOf": 0.0001
             }
           },
           "required": [

@@ -1,0 +1,129 @@
+{
+  "type": "object",
+  "properties": {
+    "contextVersion": {
+      "const": "ZODIAC_CONTEXT_V1"
+    },
+    "purpose": {
+      "const": "INTERPRETATION"
+    },
+    "locale": {
+      "enum": [
+        "ko-KR",
+        "ja-JP",
+        "en-US"
+      ]
+    },
+    "issuedAt": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "engineVersions": {
+      "type": "object",
+      "properties": {
+        "serviceVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "apiVersion": {
+          "const": "v1"
+        },
+        "sajuEngineVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locationReferenceVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "timezoneDataVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "zodiacEngineVersion": {
+          "const": "FIXED_DATE_SINGLE_SIGN_V1"
+        },
+        "zodiacCatalogVersion": {
+          "const": "ZODIAC_CATALOG_V1"
+        },
+        "zodiacDateRangeVersion": {
+          "const": "ZODIAC_DATE_RANGE_V1"
+        }
+      },
+      "required": [
+        "serviceVersion",
+        "apiVersion",
+        "sajuEngineVersion",
+        "locationReferenceVersion",
+        "timezoneDataVersion",
+        "zodiacEngineVersion",
+        "zodiacCatalogVersion",
+        "zodiacDateRangeVersion"
+      ],
+      "additionalProperties": false
+    },
+    "scoreVersion": {
+      "const": "SCORE_ZODIAC_V1"
+    },
+    "configVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "result": {
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "$ref": "compatibility-response.schema.json"
+            },
+            {
+              "$ref": "daily-response.schema.json"
+            },
+            {
+              "$ref": "period-response.schema.json"
+            }
+          ]
+        },
+        {
+          "not": {
+            "required": [
+              "signedInterpretationContext"
+            ]
+          }
+        }
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "feature.schema.json"
+      }
+    },
+    "zodiacContext": {
+      "$ref": "zodiac-context.schema.json"
+    }
+  },
+  "required": [
+    "contextVersion",
+    "purpose",
+    "locale",
+    "issuedAt",
+    "expiresAt",
+    "engineVersions",
+    "scoreVersion",
+    "configVersion",
+    "result",
+    "evidence"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://love-fortune.invalid/contracts/historical/zodiac-v1/schemas/signed-context.schema.json",
+  "title": "LOVE FORTUNE signed-context v2",
+  "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate."
+}

@@ -1,0 +1,45 @@
+{
+  "provenance": "Synthetic illustrative API examples; engine regression expectations are independently preserved.",
+  "cases": [
+    {
+      "file": "request-valid.json",
+      "schema": "compatibility-request",
+      "valid": true
+    },
+    {
+      "file": "compatibility-valid.json",
+      "schema": "compatibility-response",
+      "valid": true
+    },
+    {
+      "file": "signed-valid.json",
+      "schema": "signed-context",
+      "valid": true
+    },
+    {
+      "file": "unsigned-valid.json",
+      "schema": "compatibility-result",
+      "valid": true
+    },
+    {
+      "file": "insufficient-valid.json",
+      "schema": "compatibility-response",
+      "valid": true
+    },
+    {
+      "file": "numeric-unsigned-invalid.json",
+      "schema": "compatibility-response",
+      "valid": false
+    },
+    {
+      "file": "old-version-invalid.json",
+      "schema": "compatibility-response",
+      "valid": false
+    },
+    {
+      "file": "lineage-invalid.json",
+      "schema": "compatibility-response",
+      "valid": false
+    }
+  ]
+}

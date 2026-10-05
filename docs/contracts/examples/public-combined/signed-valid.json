@@ -1,0 +1,307 @@
+{
+  "configVersion": "CONFIG_COMBINED_LIFETIME_V1",
+  "contextVersion": "ZODIAC_CONTEXT_V1",
+  "engineVersions": {
+    "apiVersion": "v1",
+    "locationReferenceVersion": "SAJU_LOCATION_REFERENCE_V1",
+    "sajuEngineVersion": "SAJU_LIFETIME_SCORING_V1",
+    "serviceVersion": "0.1.0",
+    "timezoneDataVersion": "SAJU_TIMEZONE_REFERENCE_V1",
+    "zodiacCatalogVersion": "ZODIAC_CATALOG_V1",
+    "zodiacDateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+    "zodiacEngineVersion": "FIXED_DATE_SINGLE_SIGN_V1"
+  },
+  "evidence": [
+    {
+      "baseWeight": 1,
+      "category": "ATTRACTION",
+      "confidence": 0.75,
+      "direction": "NEUTRAL",
+      "featureId": "ft_0348cd6f8f02fe58e9559567b90ab585f1be01a582704b46",
+      "metadata": {
+        "dateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+        "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+        "pairId": "ZODIAC_PAIR_CAPRICORN_AQUARIUS",
+        "relation": "CHALLENGING_ELEMENT",
+        "signA": "CAPRICORN",
+        "signB": "AQUARIUS"
+      },
+      "period": {
+        "type": "LIFETIME"
+      },
+      "rawValue": 0,
+      "ruleId": "ZODIAC_CHALLENGING_ELEMENT_ATTRACTION",
+      "signedValue": 0,
+      "source": "ZODIAC",
+      "subject": "PAIR"
+    },
+    {
+      "baseWeight": 1,
+      "category": "HARMONY",
+      "confidence": 0.75,
+      "direction": "NEGATIVE",
+      "featureId": "ft_1bc7eda81ecadcd90de396ea0085a68ed1ac5eac02d09d98",
+      "metadata": {
+        "dateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+        "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+        "pairId": "ZODIAC_PAIR_CAPRICORN_AQUARIUS",
+        "relation": "CHALLENGING_ELEMENT",
+        "signA": "CAPRICORN",
+        "signB": "AQUARIUS"
+      },
+      "period": {
+        "type": "LIFETIME"
+      },
+      "rawValue": -0.3,
+      "ruleId": "ZODIAC_CHALLENGING_ELEMENT_HARMONY",
+      "signedValue": -0.3,
+      "source": "ZODIAC",
+      "subject": "PAIR"
+    },
+    {
+      "baseWeight": 1,
+      "category": "EMOTION",
+      "confidence": 0.75,
+      "direction": "NEGATIVE",
+      "featureId": "ft_340666310c9546c11af16415f6d96f5517c6f016d3c74363",
+      "metadata": {
+        "dateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+        "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+        "pairId": "ZODIAC_PAIR_CAPRICORN_AQUARIUS",
+        "relation": "CHALLENGING_ELEMENT",
+        "signA": "CAPRICORN",
+        "signB": "AQUARIUS"
+      },
+      "period": {
+        "type": "LIFETIME"
+      },
+      "rawValue": -0.25,
+      "ruleId": "ZODIAC_CHALLENGING_ELEMENT_EMOTION",
+      "signedValue": -0.25,
+      "source": "ZODIAC",
+      "subject": "PAIR"
+    },
+    {
+      "baseWeight": 1,
+      "category": "PASSION",
+      "confidence": 0.75,
+      "direction": "POSITIVE",
+      "featureId": "ft_b60204ef3e7ec81def329f5cf11050d553be2a53f65a914b",
+      "metadata": {
+        "dateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+        "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+        "pairId": "ZODIAC_PAIR_CAPRICORN_AQUARIUS",
+        "relation": "CHALLENGING_ELEMENT",
+        "signA": "CAPRICORN",
+        "signB": "AQUARIUS"
+      },
+      "period": {
+        "type": "LIFETIME"
+      },
+      "rawValue": 0.05,
+      "ruleId": "ZODIAC_CHALLENGING_ELEMENT_PASSION",
+      "signedValue": 0.05,
+      "source": "ZODIAC",
+      "subject": "PAIR"
+    }
+  ],
+  "expiresAt": "2027-01-15T08:05:00Z",
+  "issuedAt": "2027-01-15T08:00:00Z",
+  "locale": "ko-KR",
+  "purpose": "INTERPRETATION",
+  "result": {
+    "categories": {
+      "ATTRACTION": {
+        "coverage": 1,
+        "resultConfidence": 0.6833,
+        "score": 66,
+        "status": "GOOD"
+      },
+      "COMMUNICATION": {
+        "coverage": 0,
+        "resultConfidence": 0,
+        "score": null,
+        "status": "INSUFFICIENT_DATA"
+      },
+      "EMOTION": {
+        "coverage": 1,
+        "resultConfidence": 0.91,
+        "score": 63.5,
+        "status": "GOOD"
+      },
+      "HARMONY": {
+        "coverage": 1,
+        "resultConfidence": 0.5317,
+        "score": 55.9073,
+        "status": "BALANCED"
+      },
+      "LONG_TERM": {
+        "coverage": 1,
+        "resultConfidence": 0.6667,
+        "score": 62.5,
+        "status": "GOOD"
+      },
+      "PASSION": {
+        "coverage": 1,
+        "resultConfidence": 0.4167,
+        "score": 56.5,
+        "status": "BALANCED"
+      },
+      "STABILITY": {
+        "coverage": 1,
+        "resultConfidence": 0.3793,
+        "score": 56.0426,
+        "status": "BALANCED"
+      },
+      "SUPPORT": {
+        "coverage": 1,
+        "resultConfidence": 0.4962,
+        "score": 66.8321,
+        "status": "GOOD"
+      }
+    },
+    "coverage": 1,
+    "features": [
+      {
+        "baseWeight": 1,
+        "category": "ATTRACTION",
+        "confidence": 0.75,
+        "direction": "NEUTRAL",
+        "featureId": "ft_0348cd6f8f02fe58e9559567b90ab585f1be01a582704b46",
+        "metadata": {
+          "dateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+          "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+          "pairId": "ZODIAC_PAIR_CAPRICORN_AQUARIUS",
+          "relation": "CHALLENGING_ELEMENT",
+          "signA": "CAPRICORN",
+          "signB": "AQUARIUS"
+        },
+        "period": {
+          "type": "LIFETIME"
+        },
+        "rawValue": 0,
+        "ruleId": "ZODIAC_CHALLENGING_ELEMENT_ATTRACTION",
+        "signedValue": 0,
+        "source": "ZODIAC",
+        "subject": "PAIR"
+      },
+      {
+        "baseWeight": 1,
+        "category": "HARMONY",
+        "confidence": 0.75,
+        "direction": "NEGATIVE",
+        "featureId": "ft_1bc7eda81ecadcd90de396ea0085a68ed1ac5eac02d09d98",
+        "metadata": {
+          "dateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+          "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+          "pairId": "ZODIAC_PAIR_CAPRICORN_AQUARIUS",
+          "relation": "CHALLENGING_ELEMENT",
+          "signA": "CAPRICORN",
+          "signB": "AQUARIUS"
+        },
+        "period": {
+          "type": "LIFETIME"
+        },
+        "rawValue": -0.3,
+        "ruleId": "ZODIAC_CHALLENGING_ELEMENT_HARMONY",
+        "signedValue": -0.3,
+        "source": "ZODIAC",
+        "subject": "PAIR"
+      },
+      {
+        "baseWeight": 1,
+        "category": "EMOTION",
+        "confidence": 0.75,
+        "direction": "NEGATIVE",
+        "featureId": "ft_340666310c9546c11af16415f6d96f5517c6f016d3c74363",
+        "metadata": {
+          "dateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+          "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+          "pairId": "ZODIAC_PAIR_CAPRICORN_AQUARIUS",
+          "relation": "CHALLENGING_ELEMENT",
+          "signA": "CAPRICORN",
+          "signB": "AQUARIUS"
+        },
+        "period": {
+          "type": "LIFETIME"
+        },
+        "rawValue": -0.25,
+        "ruleId": "ZODIAC_CHALLENGING_ELEMENT_EMOTION",
+        "signedValue": -0.25,
+        "source": "ZODIAC",
+        "subject": "PAIR"
+      },
+      {
+        "baseWeight": 1,
+        "category": "PASSION",
+        "confidence": 0.75,
+        "direction": "POSITIVE",
+        "featureId": "ft_b60204ef3e7ec81def329f5cf11050d553be2a53f65a914b",
+        "metadata": {
+          "dateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+          "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+          "pairId": "ZODIAC_PAIR_CAPRICORN_AQUARIUS",
+          "relation": "CHALLENGING_ELEMENT",
+          "signA": "CAPRICORN",
+          "signB": "AQUARIUS"
+        },
+        "period": {
+          "type": "LIFETIME"
+        },
+        "rawValue": 0.05,
+        "ruleId": "ZODIAC_CHALLENGING_ELEMENT_PASSION",
+        "signedValue": 0.05,
+        "source": "ZODIAC",
+        "subject": "PAIR"
+      }
+    ],
+    "meta": {
+      "requestId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "versions": {
+        "apiVersion": "v1",
+        "configVersion": "CONFIG_COMBINED_LIFETIME_V1",
+        "locationReferenceVersion": "SAJU_LOCATION_REFERENCE_V1",
+        "sajuEngineVersion": "SAJU_LIFETIME_SCORING_V1",
+        "scoreVersion": "SCORE_COMBINED_LIFETIME_V1",
+        "serviceVersion": "0.1.0",
+        "timezoneDataVersion": "SAJU_TIMEZONE_REFERENCE_V1",
+        "zodiacCatalogVersion": "ZODIAC_CATALOG_V1",
+        "zodiacDateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+        "zodiacEngineVersion": "FIXED_DATE_SINGLE_SIGN_V1"
+      }
+    },
+    "overallScore": 60.8452,
+    "resultConfidence": 0.6032,
+    "status": "GOOD",
+    "warnings": [],
+    "zodiacContext": {
+      "contextEvidenceId": "ce_3970ae00a9c815d1d7b69a631c9c4d2f65ee8ec4ef8c047b",
+      "contextRole": "STATIC",
+      "dateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+      "elementRelation": "CHALLENGING_ELEMENT",
+      "modalityRelation": "DIFFERENT_MODALITY",
+      "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+      "pairId": "ZODIAC_PAIR_CAPRICORN_AQUARIUS",
+      "polarityRelation": "DIFFERENT_POLARITY",
+      "primaryRelation": "CHALLENGING_ELEMENT",
+      "signA": "CAPRICORN",
+      "signB": "AQUARIUS",
+      "source": "ZODIAC"
+    }
+  },
+  "scoreVersion": "SCORE_COMBINED_LIFETIME_V1",
+  "zodiacContext": {
+    "contextEvidenceId": "ce_3970ae00a9c815d1d7b69a631c9c4d2f65ee8ec4ef8c047b",
+    "contextRole": "STATIC",
+    "dateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+    "elementRelation": "CHALLENGING_ELEMENT",
+    "modalityRelation": "DIFFERENT_MODALITY",
+    "modelVersion": "FIXED_DATE_SINGLE_SIGN_V1",
+    "pairId": "ZODIAC_PAIR_CAPRICORN_AQUARIUS",
+    "polarityRelation": "DIFFERENT_POLARITY",
+    "primaryRelation": "CHALLENGING_ELEMENT",
+    "signA": "CAPRICORN",
+    "signB": "AQUARIUS",
+    "source": "ZODIAC"
+  }
+}

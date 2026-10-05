@@ -12,7 +12,7 @@ for (const p of protectedPaths) assert.deepEqual(JSON.parse(fs.readFileSync(p, '
 const versions = JSON.parse(fs.readFileSync(root + 'product-scope.json', 'utf8'));
 assert.deepEqual(versions.externalBlockers, []); assert.deepEqual(versions.advancedBlockers, ['EPHEMERIS_PROVIDER']);
 const readiness = fs.readFileSync(root + 'readiness.md', 'utf8');
-for (const marker of ['| V1_EXTERNAL_BLOCKERS | NONE |', '| FOUR_PILLARS | PARTIAL;', '| SCORE_ENGINE | PARTIAL;', '| API | NOT_IMPLEMENTED;', 'NOT_READY_IMPLEMENTATION']) assert(readiness.includes(marker));
+for (const marker of ['| V1_EXTERNAL_BLOCKERS | NONE |', '| FOUR_PILLARS | PARTIAL;', '| SCORE_ENGINE | PARTIAL;', '| API | PARTIAL;', 'NOT_READY_IMPLEMENTATION']) assert(readiness.includes(marker));
 // New production calculation code has no persistence, remote calls or raw logging.
 const paths = [plugin + 'src/Engine/Zodiac', plugin + 'src/Domain/Score', plugin + 'src/Support/Rational.php', plugin + 'src/Support/DecimalInteger.php'];
 let checked = 0;
