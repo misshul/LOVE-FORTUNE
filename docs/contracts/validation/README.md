@@ -1,3 +1,5 @@
+Current Period gate: `node docs/contracts/validation/period-application.cjs --write-report`. Runs the retained full engine/API suite, current Period schemas/exact statistics/signing checks and actual WordPress dispatcher/performance cases. New examples are synthetic release-specific data under examples/period-v1; historical examples remain unchanged. See [Period contract](../period-orchestration-v1.md) and [implementation report](../period-implementation-report.md).
+
 Current Daily implementation: [production report](../daily-orchestration-implementation-report.md). DAILY_ORCHESTRATION_IMPLEMENTATION_PASS;97 PHP tests /1,262,399 assertions. Full gate: node docs/contracts/validation/daily-orchestration-application.cjs. No commit/push. Earlier reports retain historical scope.
 
 # Contract validation

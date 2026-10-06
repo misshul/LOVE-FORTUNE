@@ -1,3 +1,5 @@
+Current Period authority: [Period V1](period-orchestration-v1.md). SAJU_PERIOD_ORCHESTRATION_V1 / CONFIG_PERIOD_V1 adds daily-range, weekly, monthly and yearly to the existing Compatibility/Daily operations. Interpretation remains pending. Earlier release-specific pending statements below are historical. Validation and deployment limits are reported separately.
+
 Current single-date Daily authority: [DO-01..DO-09](daily-orchestration-v1.md). SAJU_DAILY_ORCHESTRATION_V1 / CONFIG_DAILY_V1 implement POST fortune/daily alongside compatibility/calculate; other period and interpretation routes remain pending. Earlier pending statements are historical scope.
 
 # Contract and engine readiness
@@ -25,7 +27,7 @@ Current authority: [Zodiac V1 application](zodiac-catalog-v1.md), retained [Saju
 | FP04_HOUR_PILLAR | IMPLEMENTED; adjusted-civil pure calculator, same-candidate Day result; [contract](fp04-hour-pillar-v1.md) |
 | FOUR_PILLARS | PARTIAL; Natal Year/Month/Day/Hour candidate pipeline implemented; non-Natal/period application orchestration remains separate |
 | FOUR_PILLARS_CORE_CALCULATORS | IMPLEMENTED |
-| FOUR_PILLARS_END_TO_END | IMPLEMENTED_FOR_NATAL; birth input to ordered atomic candidates; Combined Lifetime compatibility application implemented; single-date Daily implemented; other period application remains pending |
+| FOUR_PILLARS_END_TO_END | IMPLEMENTED_FOR_NATAL; birth input to ordered atomic candidates; Combined Lifetime compatibility application implemented; single-date Daily and Period application implemented |
 | SAJU_LOCATION_REFERENCE_V1 | APPLIED / BUILD VALIDATED; 129 curated selectable records; [contract](location-timezone-reference-v1.md) |
 | SAJU_TIMEZONE_REFERENCE_V1 | APPLIED / BUILD VALIDATED; IANA2026b; 23 zones including two Golden-only zones |
 | FP06_REFERENCE_PREREQUISITE | RESOLVED; pinned production readers implemented |
@@ -37,10 +39,10 @@ Current authority: [Zodiac V1 application](zodiac-catalog-v1.md), retained [Saju
 | NATAL_TO_SAJU_CATEGORY_RESULTS | IMPLEMENTED; internal seven-category source result, no overall |
 | PUBLIC_MULTI_FEATURE_PROJECTION | NOT_IMPLEMENTED |
 | COMBINED_LIFETIME_ORCHESTRATION | IMPLEMENTED; LIFETIME_COMBINED_SCORING_V1; [contract](combined-lifetime-v1.md) |
-| SCORING_ORCHESTRATION | PARTIAL; Combined Lifetime implemented; single-date Daily implemented; other period integration remains |
+| SCORING_ORCHESTRATION | IMPLEMENTED_FOR_CURRENT_V1; Combined Lifetime, single-date Daily and Period orchestration implemented; public evidence/context and interpretation remain separately scoped |
 | CANDIDATE_GENERATION | IMPLEMENTED_FOR_NATAL; UNIQUE/FOLD/GAP/UNKNOWN; ordered atomic contexts |
-| SCORE_ENGINE | PARTIAL; exact M2 and versioned Combined Lifetime implemented; single-date Daily implemented; other period orchestration pending |
-| API | PARTIAL; compatibility/calculate implemented; public release regression PASS; deployment secrets required; Daily implemented; interpretation/other period routes remain pending |
+| SCORE_ENGINE | PARTIAL; exact M2 and versioned Combined Lifetime implemented; single-date Daily and Period orchestration implemented |
+| API | PARTIAL; compatibility/calculate implemented; public release regression PASS; deployment secrets required; Daily and Period implemented; interpretation remains pending |
 | Production Engine readiness | NOT_READY_IMPLEMENTATION |
 | Lifetime Advanced Astrology | PRESERVED / DEFERRED; 109 rules / 228 mappings |
 | Daily Advanced Astrology | PRESERVED / DEFERRED; 125 rules / 266 mappings |

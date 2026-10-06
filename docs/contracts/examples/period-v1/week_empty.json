@@ -1,0 +1,76 @@
+{
+  "external": {
+    "bestDays": [],
+    "cautionDays": [],
+    "coverage": 0.5,
+    "features": [],
+    "meta": {
+      "requestId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "versions": {
+        "apiVersion": "v1",
+        "configVersion": "CONFIG_PERIOD_V1",
+        "locationReferenceVersion": "SAJU_LOCATION_REFERENCE_V1",
+        "sajuEngineVersion": "SAJU_LIFETIME_SCORING_V1",
+        "scoreVersion": "SCORE_COMBINED_LIFETIME_V1",
+        "serviceVersion": "0.1.0",
+        "timezoneDataVersion": "SAJU_TIMEZONE_REFERENCE_V1",
+        "zodiacCatalogVersion": "ZODIAC_CATALOG_V1",
+        "zodiacDateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+        "zodiacEngineVersion": "FIXED_DATE_SINGLE_SIGN_V1"
+      }
+    },
+    "period": {
+      "endDate": "2024-09-08",
+      "startDate": "2024-09-02",
+      "timezone": "Asia/Tokyo",
+      "type": "WEEK"
+    },
+    "periodDelta": null,
+    "resultConfidence": 0,
+    "slope": null,
+    "status": "INSUFFICIENT_DATA",
+    "targetTimezone": "Asia/Tokyo",
+    "trendDirection": "UNKNOWN",
+    "trendStatus": "INSUFFICIENT_DATA",
+    "volatility": null,
+    "warnings": [],
+    "weeklyScore": null
+  },
+  "unsigned": {
+    "bestDays": [],
+    "cautionDays": [],
+    "coverage": 0.5,
+    "features": [],
+    "meta": {
+      "requestId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "versions": {
+        "apiVersion": "v1",
+        "configVersion": "CONFIG_PERIOD_V1",
+        "locationReferenceVersion": "SAJU_LOCATION_REFERENCE_V1",
+        "sajuEngineVersion": "SAJU_LIFETIME_SCORING_V1",
+        "scoreVersion": "SCORE_COMBINED_LIFETIME_V1",
+        "serviceVersion": "0.1.0",
+        "timezoneDataVersion": "SAJU_TIMEZONE_REFERENCE_V1",
+        "zodiacCatalogVersion": "ZODIAC_CATALOG_V1",
+        "zodiacDateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+        "zodiacEngineVersion": "FIXED_DATE_SINGLE_SIGN_V1"
+      }
+    },
+    "period": {
+      "endDate": "2024-09-08",
+      "startDate": "2024-09-02",
+      "timezone": "Asia/Tokyo",
+      "type": "WEEK"
+    },
+    "periodDelta": null,
+    "resultConfidence": 0,
+    "slope": null,
+    "status": "INSUFFICIENT_DATA",
+    "targetTimezone": "Asia/Tokyo",
+    "trendDirection": "UNKNOWN",
+    "trendStatus": "INSUFFICIENT_DATA",
+    "volatility": null,
+    "warnings": [],
+    "weeklyScore": null
+  }
+}

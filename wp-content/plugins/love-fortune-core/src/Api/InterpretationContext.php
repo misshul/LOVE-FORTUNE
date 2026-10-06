@@ -15,11 +15,11 @@ final class InterpretationContext
     }
     private static function validateResult(array $r): void
     {
-        if(array_key_exists('dailyScore',$r)){DailyResultValidation::validate($r);}else{PublicResultValidation::validate($r);}
+        if(array_key_exists('period',$r)){PeriodResultValidation::validate($r);}elseif(array_key_exists('dailyScore',$r)){DailyResultValidation::validate($r);}else{PublicResultValidation::validate($r);}
     }
     private static function signable(array $r): bool
     {
-        return array_key_exists('dailyScore',$r)?DailyResultValidation::needsSignature($r):($r['overallScore']??null)!==null;
+        return array_key_exists('period',$r)?PeriodResultValidation::needsSignature($r):(array_key_exists('dailyScore',$r)?DailyResultValidation::needsSignature($r):($r['overallScore']??null)!==null);
     }
     private function key(string $id): string
     {
@@ -61,7 +61,7 @@ final class InterpretationContext
             $issued=strtotime($p['issuedAt']);$expires=strtotime($p['expiresAt']);
             if($issued===false||$expires===false||gmdate('Y-m-d\TH:i:s\Z',$issued)!==$p['issuedAt']||gmdate('Y-m-d\TH:i:s\Z',$expires)!==$p['expiresAt']||$expires-$issued!==300||$now<$issued){throw new \RuntimeException();}
             if($now>=$expires){throw new PublicError(422,'INTERPRETATION_CONTEXT_EXPIRED');}
-            if(($p['contextVersion']??null)!=='ZODIAC_CONTEXT_V1'||($p['scoreVersion']??null)!==PublicRelease::SCORE||!in_array($p['configVersion']??null,[PublicRelease::CONFIG,DailyRelease::CONFIG],true)){throw new \RuntimeException();}
+            if(($p['contextVersion']??null)!=='ZODIAC_CONTEXT_V1'||($p['scoreVersion']??null)!==PublicRelease::SCORE||!in_array($p['configVersion']??null,[PublicRelease::CONFIG,DailyRelease::CONFIG,PeriodRelease::CONFIG],true)){throw new \RuntimeException();}
             $allowed=['contextVersion','purpose','locale','issuedAt','expiresAt','engineVersions','scoreVersion','configVersion','result','evidence','zodiacContext'];
             if(array_diff(array_keys($p),$allowed)!==[]){throw new \RuntimeException();}
             self::validateResult($p['result']);

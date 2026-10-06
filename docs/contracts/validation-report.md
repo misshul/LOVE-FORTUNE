@@ -1,3 +1,11 @@
+Current Period checkpoint: [final regression review](period-final-review.md). Full regression PASS; final PHP105 tests /1,262,490 assertions. One local checkpoint commit authorized after staged gates; DO NOT PUSH. Prior no-commit statements below describe earlier phases.
+
+# Current Period application
+
+PERIOD_ORCHESTRATION_IMPLEMENTATION_PASS. [Complete report](period-implementation-report.md) and [execution evidence](validation-results-period-v1.json).105 PHP tests /1,262,488 assertions;36 schemas /20 operations; real Period dispatcher PASS. No commit/push. Previous reports below preserve their historical scopes.
+
+---
+
 Current Daily implementation: [production report](daily-orchestration-implementation-report.md). DAILY_ORCHESTRATION_IMPLEMENTATION_PASS;97 PHP tests /1,262,399 assertions. Full gate: node docs/contracts/validation/daily-orchestration-application.cjs. No commit/push. Earlier reports retain historical scope.
 
 Current checkpoint: [Final regression review](public-combined-final-review.md). Full regression PASS: 88 tests / 1,262,236 assertions; 31 required historical snapshots retained. Earlier implementation-phase counts and no-commit statements below are historical.

@@ -1,0 +1,72 @@
+{
+  "external": {
+    "bestMonths": [],
+    "cautionMonths": [],
+    "coverage": 0.5,
+    "features": [],
+    "meta": {
+      "requestId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "versions": {
+        "apiVersion": "v1",
+        "configVersion": "CONFIG_PERIOD_V1",
+        "locationReferenceVersion": "SAJU_LOCATION_REFERENCE_V1",
+        "sajuEngineVersion": "SAJU_LIFETIME_SCORING_V1",
+        "scoreVersion": "SCORE_COMBINED_LIFETIME_V1",
+        "serviceVersion": "0.1.0",
+        "timezoneDataVersion": "SAJU_TIMEZONE_REFERENCE_V1",
+        "zodiacCatalogVersion": "ZODIAC_CATALOG_V1",
+        "zodiacDateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+        "zodiacEngineVersion": "FIXED_DATE_SINGLE_SIGN_V1"
+      }
+    },
+    "period": {
+      "timezone": "Asia/Tokyo",
+      "type": "YEAR",
+      "year": 2024
+    },
+    "periodDelta": null,
+    "resultConfidence": 0,
+    "status": "INSUFFICIENT_DATA",
+    "targetTimezone": "Asia/Tokyo",
+    "trendDirection": "UNKNOWN",
+    "trendStatus": "INSUFFICIENT_DATA",
+    "warnings": [],
+    "yearlyScore": null,
+    "yearlyVolatility": null
+  },
+  "unsigned": {
+    "bestMonths": [],
+    "cautionMonths": [],
+    "coverage": 0.5,
+    "features": [],
+    "meta": {
+      "requestId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "versions": {
+        "apiVersion": "v1",
+        "configVersion": "CONFIG_PERIOD_V1",
+        "locationReferenceVersion": "SAJU_LOCATION_REFERENCE_V1",
+        "sajuEngineVersion": "SAJU_LIFETIME_SCORING_V1",
+        "scoreVersion": "SCORE_COMBINED_LIFETIME_V1",
+        "serviceVersion": "0.1.0",
+        "timezoneDataVersion": "SAJU_TIMEZONE_REFERENCE_V1",
+        "zodiacCatalogVersion": "ZODIAC_CATALOG_V1",
+        "zodiacDateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+        "zodiacEngineVersion": "FIXED_DATE_SINGLE_SIGN_V1"
+      }
+    },
+    "period": {
+      "timezone": "Asia/Tokyo",
+      "type": "YEAR",
+      "year": 2024
+    },
+    "periodDelta": null,
+    "resultConfidence": 0,
+    "status": "INSUFFICIENT_DATA",
+    "targetTimezone": "Asia/Tokyo",
+    "trendDirection": "UNKNOWN",
+    "trendStatus": "INSUFFICIENT_DATA",
+    "warnings": [],
+    "yearlyScore": null,
+    "yearlyVolatility": null
+  }
+}

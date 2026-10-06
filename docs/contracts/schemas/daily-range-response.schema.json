@@ -6,7 +6,22 @@
   "type": "object",
   "properties": {
     "meta": {
-      "$ref": "common.schema.json#/$defs/meta"
+      "allOf": [
+        {
+          "$ref": "common.schema.json#/$defs/meta"
+        },
+        {
+          "properties": {
+            "versions": {
+              "properties": {
+                "configVersion": {
+                  "const": "CONFIG_PERIOD_V1"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "startDate": {
       "type": "string",
@@ -24,9 +39,10 @@
     "days": {
       "type": "array",
       "items": {
-        "$ref": "daily-response.schema.json"
+        "$ref": "daily-result.schema.json"
       },
-      "maxItems": 31
+      "maxItems": 31,
+      "minItems": 1
     }
   },
   "required": [

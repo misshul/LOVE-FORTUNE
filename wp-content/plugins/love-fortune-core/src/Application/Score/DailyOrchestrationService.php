@@ -8,6 +8,9 @@ use LoveFortune\Core\Support\Rational as R;
 
 final class DailyOrchestrationService
 {
+    // Immutable reference readers are reused only by this request-local service instance.
+    private ?FrozenDailySampleResolver $resolver=null;
+    private ?SajuDailyEvaluator $evaluator=null;
     public const VERSION='SAJU_DAILY_ORCHESTRATION_V1';
     public const WEIGHTS=['ATTRACTION'=>'0.12','EMOTION'=>'0.17','COMMUNICATION'=>'0.14','PASSION'=>'0.10','STABILITY'=>'0.15','HARMONY'=>'0.12','SUPPORT'=>'0.08'];
     public static function dependencies(): array
@@ -44,7 +47,7 @@ final class DailyOrchestrationService
             || !($combined['overall']??null) instanceof CategoryResult
             || count($slots)!==4 || !array_is_list($slots)) { throw new \InvalidArgumentException('DAILY_DEPENDENCY_MISMATCH'); }
         \LoveFortune\Core\Engine\Saju\NatalCivilTime::input($date,'00:00');
-        $timezone=(new FrozenDailySampleResolver())->canonicalize($timezone);
+        $timezone=($this->resolver??=new FrozenDailySampleResolver())->canonicalize($timezone);
         if (array_diff(LifetimeSourceEnvelope::CATEGORIES,array_keys($combined['categories']??[]))!==[] || count($combined['categories'])!==8) { throw new \InvalidArgumentException('DAILY_DEPENDENCY_MISMATCH'); }
         $overall=[]; $coverage=R::of(0);
         foreach ($slots as $slot) {
@@ -70,7 +73,7 @@ final class DailyOrchestrationService
     }
     public function calculate(array $combined,array $a,array $b,string $date,string $timezone): array
     {
-        $resolver=new FrozenDailySampleResolver(); $samples=$resolver->samples($date,$timezone);
-        return $this->aggregate($combined,(new SajuDailyEvaluator())->evaluate($a,$b,$samples),$date,$timezone);
+        $resolver=$this->resolver??=new FrozenDailySampleResolver(); $samples=$resolver->samples($date,$timezone);
+        return $this->aggregate($combined,($this->evaluator??=new SajuDailyEvaluator())->evaluate($a,$b,$samples),$date,$timezone);
     }
 }

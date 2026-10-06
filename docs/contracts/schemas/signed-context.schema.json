@@ -73,7 +73,8 @@
     "configVersion": {
       "enum": [
         "CONFIG_COMBINED_LIFETIME_V1",
-        "CONFIG_DAILY_V1"
+        "CONFIG_DAILY_V1",
+        "CONFIG_PERIOD_V1"
       ]
     },
     "result": {
@@ -87,7 +88,7 @@
               "$ref": "daily-result.schema.json"
             },
             {
-              "$ref": "period-response.schema.json"
+              "$ref": "period-result.schema.json"
             }
           ]
         },
@@ -164,9 +165,64 @@
         }
       },
       "else": {
-        "properties": {
-          "configVersion": {
-            "const": "CONFIG_COMBINED_LIFETIME_V1"
+        "if": {
+          "properties": {
+            "result": {
+              "required": [
+                "period"
+              ]
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "configVersion": {
+              "const": "CONFIG_PERIOD_V1"
+            },
+            "evidence": {
+              "maxItems": 0
+            },
+            "result": {
+              "oneOf": [
+                {
+                  "required": [
+                    "weeklyScore"
+                  ],
+                  "properties": {
+                    "weeklyScore": {
+                      "type": "number"
+                    }
+                  }
+                },
+                {
+                  "required": [
+                    "monthlyScore"
+                  ],
+                  "properties": {
+                    "monthlyScore": {
+                      "type": "number"
+                    }
+                  }
+                },
+                {
+                  "required": [
+                    "yearlyScore"
+                  ],
+                  "properties": {
+                    "yearlyScore": {
+                      "type": "number"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "else": {
+          "properties": {
+            "configVersion": {
+              "const": "CONFIG_COMBINED_LIFETIME_V1"
+            }
           }
         }
       }

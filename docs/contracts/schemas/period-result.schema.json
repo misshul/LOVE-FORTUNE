@@ -1,17 +1,17 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://love-fortune.invalid/contracts/schemas/period-response.schema.json",
-  "title": "External Period V1 response",
+  "$id": "https://love-fortune.invalid/contracts/schemas/period-result.schema.json",
+  "title": "Unsigned Period V1 result",
   "description": "Contract frozen under Final Decision v3, v2 and approved clarifications. Structural validation is supplemented by semantic vectors; engine readiness is separate.",
   "oneOf": [
     {
-      "$ref": "period-response.schema.json#/$defs/Weekly"
+      "$ref": "period-result.schema.json#/$defs/Weekly"
     },
     {
-      "$ref": "period-response.schema.json#/$defs/Monthly"
+      "$ref": "period-result.schema.json#/$defs/Monthly"
     },
     {
-      "$ref": "period-response.schema.json#/$defs/Yearly"
+      "$ref": "period-result.schema.json#/$defs/Yearly"
     }
   ],
   "$defs": {
@@ -101,10 +101,6 @@
             ]
           },
           "maxItems": 0
-        },
-        "signedInterpretationContext": {
-          "type": "string",
-          "minLength": 1
         },
         "weeklyScore": {
           "anyOf": [
@@ -408,27 +404,6 @@
               }
             }
           }
-        },
-        {
-          "if": {
-            "properties": {
-              "weeklyScore": {
-                "type": "number"
-              }
-            }
-          },
-          "then": {
-            "required": [
-              "signedInterpretationContext"
-            ]
-          },
-          "else": {
-            "not": {
-              "required": [
-                "signedInterpretationContext"
-              ]
-            }
-          }
         }
       ]
     },
@@ -518,10 +493,6 @@
             ]
           },
           "maxItems": 0
-        },
-        "signedInterpretationContext": {
-          "type": "string",
-          "minLength": 1
         },
         "monthlyScore": {
           "anyOf": [
@@ -814,27 +785,6 @@
               }
             }
           }
-        },
-        {
-          "if": {
-            "properties": {
-              "monthlyScore": {
-                "type": "number"
-              }
-            }
-          },
-          "then": {
-            "required": [
-              "signedInterpretationContext"
-            ]
-          },
-          "else": {
-            "not": {
-              "required": [
-                "signedInterpretationContext"
-              ]
-            }
-          }
         }
       ]
     },
@@ -918,10 +868,6 @@
             ]
           },
           "maxItems": 0
-        },
-        "signedInterpretationContext": {
-          "type": "string",
-          "minLength": 1
         },
         "yearlyScore": {
           "anyOf": [
@@ -1212,27 +1158,6 @@
               "trendDirection": {
                 "const": "UNKNOWN"
               }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "yearlyScore": {
-                "type": "number"
-              }
-            }
-          },
-          "then": {
-            "required": [
-              "signedInterpretationContext"
-            ]
-          },
-          "else": {
-            "not": {
-              "required": [
-                "signedInterpretationContext"
-              ]
             }
           }
         }

@@ -1,0 +1,149 @@
+{
+  "external": {
+    "bestDays": [
+      {
+        "date": "2024-02-01",
+        "resultConfidence": 0.8,
+        "score": 69
+      }
+    ],
+    "cautionDays": [],
+    "coverage": 0.5,
+    "features": [],
+    "meta": {
+      "requestId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "versions": {
+        "apiVersion": "v1",
+        "configVersion": "CONFIG_PERIOD_V1",
+        "locationReferenceVersion": "SAJU_LOCATION_REFERENCE_V1",
+        "sajuEngineVersion": "SAJU_LIFETIME_SCORING_V1",
+        "scoreVersion": "SCORE_COMBINED_LIFETIME_V1",
+        "serviceVersion": "0.1.0",
+        "timezoneDataVersion": "SAJU_TIMEZONE_REFERENCE_V1",
+        "zodiacCatalogVersion": "ZODIAC_CATALOG_V1",
+        "zodiacDateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+        "zodiacEngineVersion": "FIXED_DATE_SINGLE_SIGN_V1"
+      }
+    },
+    "monthlyScore": 69,
+    "period": {
+      "month": 2,
+      "timezone": "Asia/Tokyo",
+      "type": "MONTH",
+      "year": 2024
+    },
+    "periodDelta": 19,
+    "resultConfidence": 0.8,
+    "signedInterpretationContext": "eyJhbGciOiJIUzI1NiIsImtpZCI6InBlcmlvZC1maXh0dXJlIiwidHlwIjoiTEZJQyIsInYiOjF9.eyJjb25maWdWZXJzaW9uIjoiQ09ORklHX1BFUklPRF9WMSIsImNvbnRleHRWZXJzaW9uIjoiWk9ESUFDX0NPTlRFWFRfVjEiLCJlbmdpbmVWZXJzaW9ucyI6eyJhcGlWZXJzaW9uIjoidjEiLCJsb2NhdGlvblJlZmVyZW5jZVZlcnNpb24iOiJTQUpVX0xPQ0FUSU9OX1JFRkVSRU5DRV9WMSIsInNhanVFbmdpbmVWZXJzaW9uIjoiU0FKVV9MSUZFVElNRV9TQ09SSU5HX1YxIiwic2VydmljZVZlcnNpb24iOiIwLjEuMCIsInRpbWV6b25lRGF0YVZlcnNpb24iOiJTQUpVX1RJTUVaT05FX1JFRkVSRU5DRV9WMSIsInpvZGlhY0NhdGFsb2dWZXJzaW9uIjoiWk9ESUFDX0NBVEFMT0dfVjEiLCJ6b2RpYWNEYXRlUmFuZ2VWZXJzaW9uIjoiWk9ESUFDX0RBVEVfUkFOR0VfVjEiLCJ6b2RpYWNFbmdpbmVWZXJzaW9uIjoiRklYRURfREFURV9TSU5HTEVfU0lHTl9WMSJ9LCJldmlkZW5jZSI6W10sImV4cGlyZXNBdCI6IjIwMjctMDEtMTVUMDg6MDU6MDBaIiwiaXNzdWVkQXQiOiIyMDI3LTAxLTE1VDA4OjAwOjAwWiIsImxvY2FsZSI6ImtvLUtSIiwicHVycG9zZSI6IklOVEVSUFJFVEFUSU9OIiwicmVzdWx0Ijp7ImJlc3REYXlzIjpbeyJkYXRlIjoiMjAyNC0wMi0wMSIsInJlc3VsdENvbmZpZGVuY2UiOjAuOCwic2NvcmUiOjY5fV0sImNhdXRpb25EYXlzIjpbXSwiY292ZXJhZ2UiOjAuNSwiZmVhdHVyZXMiOltdLCJtZXRhIjp7InJlcXVlc3RJZCI6ImFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhIiwidmVyc2lvbnMiOnsiYXBpVmVyc2lvbiI6InYxIiwiY29uZmlnVmVyc2lvbiI6IkNPTkZJR19QRVJJT0RfVjEiLCJsb2NhdGlvblJlZmVyZW5jZVZlcnNpb24iOiJTQUpVX0xPQ0FUSU9OX1JFRkVSRU5DRV9WMSIsInNhanVFbmdpbmVWZXJzaW9uIjoiU0FKVV9MSUZFVElNRV9TQ09SSU5HX1YxIiwic2NvcmVWZXJzaW9uIjoiU0NPUkVfQ09NQklORURfTElGRVRJTUVfVjEiLCJzZXJ2aWNlVmVyc2lvbiI6IjAuMS4wIiwidGltZXpvbmVEYXRhVmVyc2lvbiI6IlNBSlVfVElNRVpPTkVfUkVGRVJFTkNFX1YxIiwiem9kaWFjQ2F0YWxvZ1ZlcnNpb24iOiJaT0RJQUNfQ0FUQUxPR19WMSIsInpvZGlhY0RhdGVSYW5nZVZlcnNpb24iOiJaT0RJQUNfREFURV9SQU5HRV9WMSIsInpvZGlhY0VuZ2luZVZlcnNpb24iOiJGSVhFRF9EQVRFX1NJTkdMRV9TSUdOX1YxIn19LCJtb250aGx5U2NvcmUiOjY5LCJwZXJpb2QiOnsibW9udGgiOjIsInRpbWV6b25lIjoiQXNpYS9Ub2t5byIsInR5cGUiOiJNT05USCIsInllYXIiOjIwMjR9LCJwZXJpb2REZWx0YSI6MTksInJlc3VsdENvbmZpZGVuY2UiOjAuOCwic3RhdHVzIjoiR09PRCIsInRhcmdldFRpbWV6b25lIjoiQXNpYS9Ub2t5byIsInRyZW5kRGlyZWN0aW9uIjoiVVAiLCJ0cmVuZFN0YXR1cyI6IlNJR05JRklDQU5UIiwidm9sYXRpbGl0eSI6MCwid2FybmluZ3MiOltdfSwic2NvcmVWZXJzaW9uIjoiU0NPUkVfQ09NQklORURfTElGRVRJTUVfVjEifQ.fQ5NMzKPJD5XPHapdBCHNH-sc_etMk84T2yfoGdxYlk",
+    "status": "GOOD",
+    "targetTimezone": "Asia/Tokyo",
+    "trendDirection": "UP",
+    "trendStatus": "SIGNIFICANT",
+    "volatility": 0,
+    "warnings": []
+  },
+  "payload": {
+    "configVersion": "CONFIG_PERIOD_V1",
+    "contextVersion": "ZODIAC_CONTEXT_V1",
+    "engineVersions": {
+      "apiVersion": "v1",
+      "locationReferenceVersion": "SAJU_LOCATION_REFERENCE_V1",
+      "sajuEngineVersion": "SAJU_LIFETIME_SCORING_V1",
+      "serviceVersion": "0.1.0",
+      "timezoneDataVersion": "SAJU_TIMEZONE_REFERENCE_V1",
+      "zodiacCatalogVersion": "ZODIAC_CATALOG_V1",
+      "zodiacDateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+      "zodiacEngineVersion": "FIXED_DATE_SINGLE_SIGN_V1"
+    },
+    "evidence": [],
+    "expiresAt": "2027-01-15T08:05:00Z",
+    "issuedAt": "2027-01-15T08:00:00Z",
+    "locale": "ko-KR",
+    "purpose": "INTERPRETATION",
+    "result": {
+      "bestDays": [
+        {
+          "date": "2024-02-01",
+          "resultConfidence": 0.8,
+          "score": 69
+        }
+      ],
+      "cautionDays": [],
+      "coverage": 0.5,
+      "features": [],
+      "meta": {
+        "requestId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "versions": {
+          "apiVersion": "v1",
+          "configVersion": "CONFIG_PERIOD_V1",
+          "locationReferenceVersion": "SAJU_LOCATION_REFERENCE_V1",
+          "sajuEngineVersion": "SAJU_LIFETIME_SCORING_V1",
+          "scoreVersion": "SCORE_COMBINED_LIFETIME_V1",
+          "serviceVersion": "0.1.0",
+          "timezoneDataVersion": "SAJU_TIMEZONE_REFERENCE_V1",
+          "zodiacCatalogVersion": "ZODIAC_CATALOG_V1",
+          "zodiacDateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+          "zodiacEngineVersion": "FIXED_DATE_SINGLE_SIGN_V1"
+        }
+      },
+      "monthlyScore": 69,
+      "period": {
+        "month": 2,
+        "timezone": "Asia/Tokyo",
+        "type": "MONTH",
+        "year": 2024
+      },
+      "periodDelta": 19,
+      "resultConfidence": 0.8,
+      "status": "GOOD",
+      "targetTimezone": "Asia/Tokyo",
+      "trendDirection": "UP",
+      "trendStatus": "SIGNIFICANT",
+      "volatility": 0,
+      "warnings": []
+    },
+    "scoreVersion": "SCORE_COMBINED_LIFETIME_V1"
+  },
+  "unsigned": {
+    "bestDays": [
+      {
+        "date": "2024-02-01",
+        "resultConfidence": 0.8,
+        "score": 69
+      }
+    ],
+    "cautionDays": [],
+    "coverage": 0.5,
+    "features": [],
+    "meta": {
+      "requestId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "versions": {
+        "apiVersion": "v1",
+        "configVersion": "CONFIG_PERIOD_V1",
+        "locationReferenceVersion": "SAJU_LOCATION_REFERENCE_V1",
+        "sajuEngineVersion": "SAJU_LIFETIME_SCORING_V1",
+        "scoreVersion": "SCORE_COMBINED_LIFETIME_V1",
+        "serviceVersion": "0.1.0",
+        "timezoneDataVersion": "SAJU_TIMEZONE_REFERENCE_V1",
+        "zodiacCatalogVersion": "ZODIAC_CATALOG_V1",
+        "zodiacDateRangeVersion": "ZODIAC_DATE_RANGE_V1",
+        "zodiacEngineVersion": "FIXED_DATE_SINGLE_SIGN_V1"
+      }
+    },
+    "monthlyScore": 69,
+    "period": {
+      "month": 2,
+      "timezone": "Asia/Tokyo",
+      "type": "MONTH",
+      "year": 2024
+    },
+    "periodDelta": 19,
+    "resultConfidence": 0.8,
+    "status": "GOOD",
+    "targetTimezone": "Asia/Tokyo",
+    "trendDirection": "UP",
+    "trendStatus": "SIGNIFICANT",
+    "volatility": 0,
+    "warnings": []
+  }
+}

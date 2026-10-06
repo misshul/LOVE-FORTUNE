@@ -26,7 +26,7 @@ $dayPillar = new DayPillarCalculator();
 $solarReference = new SolarTermReference();
 $zodiac = ZodiacCatalog::configuration()['catalog'];
 return [
-    'routes' => [new \LoveFortune\Core\Api\CompatibilityEndpoint(), new \LoveFortune\Core\Api\DailyEndpoint()],
+    'routes' => [new \LoveFortune\Core\Api\CompatibilityEndpoint(), new \LoveFortune\Core\Api\DailyEndpoint(), new \LoveFortune\Core\Api\DailyRangeEndpoint(), new \LoveFortune\Core\Api\WeeklyEndpoint(), new \LoveFortune\Core\Api\MonthlyEndpoint(), new \LoveFortune\Core\Api\YearlyEndpoint()],
     'admin' => [],
     'migrations' => [],
     'engines' => [
@@ -44,6 +44,7 @@ return [
         'zodiac.score' => new ZodiacScorer(),
         'score.lifetime_blend' => new LifetimeBlender(),
         'score.daily_aggregate' => new DailyAggregator(),
+        'score.period_orchestration' => new \LoveFortune\Core\Application\Score\PeriodOrchestrationService(),
         'score.ranking' => new ExactRanking(),
     ],
     'versions' => [
@@ -55,6 +56,8 @@ return [
         'saju.feature_extractor' => SajuFeatureExtractionService::VERSION,
         'saju.lifetime_scoring' => SajuLifetimeScoringService::VERSION,
         'score.lifetime_combined' => CombinedLifetimeService::VERSION,
+        'score.period_orchestration' => \LoveFortune\Core\Application\Score\PeriodOrchestrationService::VERSION,
+        'config.period' => \LoveFortune\Core\Api\PeriodRelease::CONFIG,
         'saju.location_reference' => LocationReferenceRepository::VERSION,
         'saju.timezone_reference' => TimezoneReferenceRepository::VERSION,
         'saju.solar_reference' => SolarTermReference::VERSION,

@@ -1,3 +1,5 @@
+Current Period authority: [Period V1](period-orchestration-v1.md). SAJU_PERIOD_ORCHESTRATION_V1 / CONFIG_PERIOD_V1 adds daily-range, weekly, monthly and yearly to the existing Compatibility/Daily operations. Interpretation remains pending. Earlier release-specific pending statements below are historical. Validation and deployment limits are reported separately.
+
 Current single-date Daily authority: [DO-01..DO-09](daily-orchestration-v1.md). SAJU_DAILY_ORCHESTRATION_V1 / CONFIG_DAILY_V1 implement POST fortune/daily alongside compatibility/calculate; other period and interpretation routes remain pending. Earlier pending statements are historical scope.
 
 # LOVE FORTUNE Contract Freeze - Zodiac V1

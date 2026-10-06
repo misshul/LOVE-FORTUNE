@@ -1,9 +1,9 @@
 openapi: 3.1.1
 info:
   title: LOVE FORTUNE API contract
-  version: 5.1.0
-  description: Compatibility and single-date Daily implemented. Other period and interpretation
-    business routes remain pending.
+  version: 5.2.0
+  description: Compatibility, Daily, Daily-range and Weekly/Monthly/Yearly
+    implemented. Interpretation business route remains pending.
 jsonSchemaDialect: https://json-schema.org/draft/2020-12/schema
 servers:
   - url: /wp-json/love-fortune/v1
@@ -184,7 +184,8 @@ paths:
       x-rate-limit:
         requests: 60
         windowSeconds: 600
-        scope: Trusted proxy validated source IP, else remote address; HMAC key, never raw IP
+        scope: Trusted proxy validated source IP, else remote address; HMAC key, never
+          raw IP
         rawKeyMaxRetentionSeconds: 3600
         algorithm: fixed-window
       requestBody:
@@ -282,7 +283,8 @@ paths:
                 type: string
                 const: no-store
             Retry-After:
-              description: Integer seconds remaining until the current600-second fixed window ends.
+              description: Integer seconds remaining until the current600-second fixed window
+                ends.
               required: true
               schema:
                 type: string
@@ -305,8 +307,8 @@ paths:
               schema:
                 $ref: ./schemas/error.schema.json
         "503":
-          description: "SERVICE_UNAVAILABLE: required signing or infrastructure unavailable; no unsigned valid
-            numeric fallback."
+          description: "SERVICE_UNAVAILABLE: required signing or infrastructure
+            unavailable; no unsigned valid numeric fallback."
           headers:
             Cache-Control:
               description: "Required: no-store"
@@ -319,18 +321,20 @@ paths:
               schema:
                 $ref: ./schemas/error.schema.json
       x-max-payload-bytes: 32768
-      x-content-encoding: Any Content-Encoding header is rejected with415 UNSUPPORTED_CONTENT_ENCODING
-      x-content-type: application/json or application/json; charset=utf-8 only; charset case-insensitive
-      description: SCORE_COMBINED_LIFETIME_V1 / CONFIG_DAILY_V1. Frozen artifact zones/aliases only,
-        canonical targetTimezone. Valid numeric period requires token; null or
-        INSUFFICIENT_PERIOD_DATA fallback omits token. features=[]; no-store. Fallback retains
-        Lifetime baseline and delta0.
+      x-content-encoding: Any Content-Encoding header is rejected with415
+        UNSUPPORTED_CONTENT_ENCODING
+      x-content-type: application/json or application/json; charset=utf-8 only;
+        charset case-insensitive
+      description: SCORE_COMBINED_LIFETIME_V1 / CONFIG_DAILY_V1. Frozen artifact
+        zones/aliases only, canonical targetTimezone. Valid numeric period
+        requires token; null or INSUFFICIENT_PERIOD_DATA fallback omits token.
+        features=[]; no-store. Fallback retains Lifetime baseline and delta0.
   /fortune/daily-range:
     post:
       operationId: calculateDailyRange
       summary: /fortune/daily-range
       security: []
-      x-contract-status: FROZEN_READINESS_SEPARATE
+      x-contract-status: APPROVED_IMPLEMENTATION
       x-rate-limit:
         requests: 60
         windowSeconds: 600
@@ -457,7 +461,7 @@ paths:
               schema:
                 $ref: ./schemas/error.schema.json
         "503":
-          description: Temporary calculation provider unavailable
+          description: Infrastructure unavailable; range does not depend on signing.
           headers:
             Cache-Control:
               description: "Required: no-store"
@@ -474,12 +478,15 @@ paths:
         UNSUPPORTED_CONTENT_ENCODING
       x-content-type: application/json or application/json; charset=utf-8 only;
         charset case-insensitive
+      description: SCORE_COMBINED_LIFETIME_V1 / CONFIG_PERIOD_V1. Frozen timezone only.
+        Inclusive1..31 dates; unsigned Daily items; no top-level or nested
+        token; signing key not required. All success/errors no-store.
   /fortune/weekly:
     post:
       operationId: calculateWeekly
       summary: /fortune/weekly
       security: []
-      x-contract-status: FROZEN_READINESS_SEPARATE
+      x-contract-status: APPROVED_IMPLEMENTATION
       x-rate-limit:
         requests: 60
         windowSeconds: 600
@@ -606,7 +613,8 @@ paths:
               schema:
                 $ref: ./schemas/error.schema.json
         "503":
-          description: Temporary calculation provider unavailable
+          description: Required signing or infrastructure unavailable; never unsigned
+            numeric success.
           headers:
             Cache-Control:
               description: "Required: no-store"
@@ -623,12 +631,16 @@ paths:
         UNSUPPORTED_CONTENT_ENCODING
       x-content-type: application/json or application/json; charset=utf-8 only;
         charset case-insensitive
+      description: SCORE_COMBINED_LIFETIME_V1 / CONFIG_PERIOD_V1. Frozen timezone only.
+        Exact valid-child aggregation. Numeric including partial requires token;
+        null omits token. Exact trend precedes HALF_UP4 wire; features/evidence
+        empty. All success/errors no-store.
   /fortune/monthly:
     post:
       operationId: calculateMonthly
       summary: /fortune/monthly
       security: []
-      x-contract-status: FROZEN_READINESS_SEPARATE
+      x-contract-status: APPROVED_IMPLEMENTATION
       x-rate-limit:
         requests: 60
         windowSeconds: 600
@@ -755,7 +767,8 @@ paths:
               schema:
                 $ref: ./schemas/error.schema.json
         "503":
-          description: Temporary calculation provider unavailable
+          description: Required signing or infrastructure unavailable; never unsigned
+            numeric success.
           headers:
             Cache-Control:
               description: "Required: no-store"
@@ -772,12 +785,16 @@ paths:
         UNSUPPORTED_CONTENT_ENCODING
       x-content-type: application/json or application/json; charset=utf-8 only;
         charset case-insensitive
+      description: SCORE_COMBINED_LIFETIME_V1 / CONFIG_PERIOD_V1. Frozen timezone only.
+        Exact valid-child aggregation. Numeric including partial requires token;
+        null omits token. Exact trend precedes HALF_UP4 wire; features/evidence
+        empty. All success/errors no-store.
   /fortune/yearly:
     post:
       operationId: calculateYearly
       summary: /fortune/yearly
       security: []
-      x-contract-status: FROZEN_READINESS_SEPARATE
+      x-contract-status: APPROVED_IMPLEMENTATION
       x-rate-limit:
         requests: 60
         windowSeconds: 600
@@ -904,7 +921,8 @@ paths:
               schema:
                 $ref: ./schemas/error.schema.json
         "503":
-          description: Temporary calculation provider unavailable
+          description: Required signing or infrastructure unavailable; never unsigned
+            numeric success.
           headers:
             Cache-Control:
               description: "Required: no-store"
@@ -921,6 +939,10 @@ paths:
         UNSUPPORTED_CONTENT_ENCODING
       x-content-type: application/json or application/json; charset=utf-8 only;
         charset case-insensitive
+      description: SCORE_COMBINED_LIFETIME_V1 / CONFIG_PERIOD_V1. Frozen timezone only.
+        Exact valid-child aggregation. Numeric including partial requires token;
+        null omits token. Exact trend precedes HALF_UP4 wire; features/evidence
+        empty. All success/errors no-store.
   /interpretation/generate:
     post:
       operationId: generateInterpretation
@@ -1072,10 +1094,11 @@ paths:
         UNSUPPORTED_CONTENT_ENCODING
       x-content-type: application/json or application/json; charset=utf-8 only;
         charset case-insensitive
-      description: "When activated, only current Combined or Daily route-bound score/config semantics are
-        accepted. Old contexts: 422 INVALID_INTERPRETATION_CONTEXT.
-        Current/previous HMAC keys do not allow old semantic versions. AI
-        provider route is not implemented in this release."
+      description: "When activated, only current Combined or Daily route-bound
+        score/config semantics are accepted. Old contexts: 422
+        INVALID_INTERPRETATION_CONTEXT. Current/previous HMAC keys do not allow
+        old semantic versions. AI provider route is not implemented in this
+        release."
   /celebrities:
     get:
       summary: Public read-only reference

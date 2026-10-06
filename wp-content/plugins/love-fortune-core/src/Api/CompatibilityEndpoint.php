@@ -27,11 +27,11 @@ class CompatibilityEndpoint implements RegistrationInterface
         $headers=['Cache-Control'=>'no-store'];
         try{
             $now=$this->clock===null?time():($this->clock)();
-            if($this->rate!==null){($this->rate)();}else{(new CoreRateLimit((string)getenv('LOVE_FORTUNE_RATE_SECRET'),sys_get_temp_dir().'/love-fortune-rate'))->consume((string)($_SERVER['REMOTE_ADDR']??''),$now);}
+            if($this->rate!==null){($this->rate)();}else{(new CoreRateLimit((string)getenv('LOVE_FORTUNE_RATE_SECRET'),sys_get_temp_dir().$this->rateDirectory()))->consume((string)($_SERVER['REMOTE_ADDR']??''),$now);}
             if($request->get_query_params()!==[]){throw new PublicError(400,'INVALID_REQUEST');}
             $requestHeaders=$request->get_headers();
             $hasEncoding=array_key_exists('content_encoding',$requestHeaders)||array_key_exists('content-encoding',$requestHeaders);
-            $input=CompatibilityInput::parse((string)$request->get_body(),(string)$request->get_header('content-type'),$hasEncoding?(string)$request->get_header('content-encoding'):null,static::ROUTE!==self::ROUTE);
+            $input=$this->parseInput((string)$request->get_body(),(string)$request->get_header('content-type'),$hasEncoding?(string)$request->get_header('content-encoding'):null);
             $id=bin2hex(random_bytes(16));
             $result=$this->calculate===null?$this->calculateResult($input,$id):($this->calculate)($input,$id);
             $this->validateResult($result);
@@ -44,6 +44,8 @@ class CompatibilityEndpoint implements RegistrationInterface
         catch(\Throwable){$e=new PublicError(500,'CALCULATION_FAILED');return new \WP_REST_Response($e->body(),500,$headers);}
     }
     protected function calculateResult(array $input,string $id): array { return (new CompatibilityCalculation())->calculate($input,$id); }
+    protected function rateDirectory(): string { return '/love-fortune-rate'; }
+    protected function parseInput(string $body,string $type,?string $encoding): array { return CompatibilityInput::parse($body,$type,$encoding,static::ROUTE!==self::ROUTE); }
     protected function validateResult(array $result): void { PublicResultValidation::validate($result); }
     protected function needsSignature(array $result): bool { return $result['overallScore']!==null; }
     public function serve(bool $served,\WP_HTTP_Response $response,\WP_REST_Request $request,\WP_REST_Server $server): bool

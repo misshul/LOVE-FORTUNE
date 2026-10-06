@@ -13,7 +13,7 @@ use LoveFortune\Core\Domain\Score\CategoryResult;
 function checkDaily(bool $ok,string $label):void{if(!$ok){throw new RuntimeException($label);}echo 'PASS: '.$label.PHP_EOL;}
 $tables=$wpdb->get_col('SHOW TABLES');$options=$wpdb->get_results("SELECT option_name,option_value FROM {$wpdb->options} WHERE option_name LIKE 'love_fortune_%' ORDER BY option_name",ARRAY_A);
 $routes=rest_get_server()->get_routes();checkDaily(isset($routes[DailyEndpoint::ROUTE]),'Daily registered');
-foreach(['daily-range','weekly','monthly','yearly'] as $p){checkDaily(!isset($routes['/love-fortune/v1/fortune/'.$p]),$p.' remains unimplemented');}
+foreach(['daily-range','weekly','monthly','yearly'] as $p){checkDaily(isset($routes['/love-fortune/v1/fortune/'.$p]),$p.' registered by Period release');}
 $body=['personA'=>['birthDate'=>'2020-01-15','birthLocationId'=>'LOC000001','birthTime'=>'12:00'],'personB'=>['birthDate'=>'2000-02-04','birthLocationId'=>'LOC000001'],'relationshipType'=>'UNKNOWN','date'=>'2024-09-02','targetTimezone'=>'Japan'];
 function callDaily(string $b,string $type='application/json',?string $encoding=null):WP_REST_Response{$q=new WP_REST_Request('POST',DailyEndpoint::ROUTE);$q->set_header('content-type',$type);if($encoding!==null){$q->set_header('content-encoding',$encoding);}$q->set_body($b);return rest_get_server()->dispatch($q);}
 function expectDaily(WP_REST_Response $r,int $status):void{checkDaily($r->get_status()===$status,'Dispatcher '.$status);checkDaily($r->get_headers()['Cache-Control']==='no-store','No-store '.$status);}
