@@ -26,7 +26,7 @@ $dayPillar = new DayPillarCalculator();
 $solarReference = new SolarTermReference();
 $zodiac = ZodiacCatalog::configuration()['catalog'];
 return [
-    'routes' => [new \LoveFortune\Core\Api\CompatibilityEndpoint(), new \LoveFortune\Core\Api\DailyEndpoint(), new \LoveFortune\Core\Api\DailyRangeEndpoint(), new \LoveFortune\Core\Api\WeeklyEndpoint(), new \LoveFortune\Core\Api\MonthlyEndpoint(), new \LoveFortune\Core\Api\YearlyEndpoint()],
+    'routes' => [new \LoveFortune\Core\Api\CompatibilityEndpoint(), new \LoveFortune\Core\Api\DailyEndpoint(), new \LoveFortune\Core\Api\DailyRangeEndpoint(), new \LoveFortune\Core\Api\WeeklyEndpoint(), new \LoveFortune\Core\Api\MonthlyEndpoint(), new \LoveFortune\Core\Api\YearlyEndpoint(), new \LoveFortune\Core\Api\InterpretationEndpoint()],
     'admin' => [],
     'migrations' => [],
     'engines' => [
@@ -48,6 +48,7 @@ return [
         'score.ranking' => new ExactRanking(),
     ],
     'versions' => [
+        'aiPromptVersion' => \LoveFortune\Core\Application\Interpretation\InterpretationText::VERSION,
         'saju.day_pillar' => DayPillarCalculator::IDENTIFIER,
         'saju.year_pillar' => YearPillarCalculator::FORMULA_VERSION,
         'saju.month_pillar' => MonthPillarCalculator::FORMULA_VERSION,

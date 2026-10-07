@@ -1,3 +1,5 @@
+Current Interpretation authority: [Interpretation business route V1](contracts/interpretation-route-v1.md). Approved five signed result types, AI_PROMPT_V1, empty-evidence interpretation, closed provider DTO, output limits and deterministic fallback supersede earlier placeholders. Relationship personalization is deferred.
+
 Current Period authority: [Period V1](contracts/period-orchestration-v1.md). SAJU_PERIOD_ORCHESTRATION_V1 / CONFIG_PERIOD_V1 adds daily-range, weekly, monthly and yearly to the existing Compatibility/Daily operations. Interpretation remains pending. Earlier release-specific pending statements below are historical. Validation and deployment limits are reported separately.
 
 Current single-date Daily authority: [DO-01..DO-09](contracts/daily-orchestration-v1.md). SAJU_DAILY_ORCHESTRATION_V1 / CONFIG_DAILY_V1 implement POST fortune/daily alongside compatibility/calculate; other period and interpretation routes remain pending. Earlier pending statements are historical scope.
@@ -127,7 +129,7 @@ Task scope: version registry and immutable manifests.
 - [ ] sajuEngineVersion / zodiacEngineVersion / zodiacCatalogVersion / zodiacDateRangeVersion / scoreVersion / configVersion
 - [ ] locationReferenceVersion / timezoneDataVersion
 - [ ] Advanced only: astrologyEngineVersion / ephemerisProviderVersion / ephemerisDataVersion
-- [ ] Interpretation-only aiPromptVersion and provider/model metadata
+- [x] Interpretation-only aiPromptVersion and provider/model metadata
 - [ ] Exact canonical output under identical versions
 - [ ] No silent release-definition overwrite
 
@@ -372,7 +374,7 @@ Weekly / Monthly / Yearly 전체 구현.
 
 # 24. T21 AI
 
-- [ ] Separate /interpretation/generate and LFIC signed context
+- [x] Separate /interpretation/generate and LFIC signed context
 - [ ] Key rotation, purpose/locale binding,300-second TTL
 - [ ] Provider6-second call/8-second total budget
 - [ ] Bounded retry/repair,200 fallback,503 only unavailable fallback

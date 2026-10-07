@@ -1094,11 +1094,12 @@ paths:
         UNSUPPORTED_CONTENT_ENCODING
       x-content-type: application/json or application/json; charset=utf-8 only;
         charset case-insensitive
-      description: "When activated, only current Combined or Daily route-bound
+      description: "Only current Compatibility, Daily, Weekly, Monthly or Yearly route-bound
         score/config semantics are accepted. Old contexts: 422
         INVALID_INTERPRETATION_CONTEXT. Current/previous HMAC keys do not allow
-        old semantic versions. AI provider route is not implemented in this
-        release."
+        old semantic versions. AI_PROMPT_V1 uses allowlisted provider input and
+        deterministic fallback. Public token maxLength is 65499; full body max is
+        65536 bytes. Daily-range is unsupported."
   /celebrities:
     get:
       summary: Public read-only reference

@@ -1,3 +1,5 @@
+Current Interpretation authority: [Interpretation business route V1](contracts/interpretation-route-v1.md). Approved five signed result types, AI_PROMPT_V1, empty-evidence interpretation, closed provider DTO, output limits and deterministic fallback supersede earlier placeholders. Relationship personalization is deferred.
+
 # LOVE FORTUNE
 # 08_AI_PROMPT_SPEC.md
 
@@ -399,7 +401,7 @@ Core version metadata is independent of AI; interpretation adds aiPromptVersion/
 - Correct locale
 - Correct category focus
 - Unknown birth time handling
-- Relationship type tone
+- Neutral relationship language; personalization deferred
 
 문장 완전 일치는 요구하지 않는다.
 

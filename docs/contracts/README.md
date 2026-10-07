@@ -1,3 +1,5 @@
+Current Interpretation authority: [Interpretation V1](interpretation-route-v1.md). INTERPRETATION_ROUTE_CONTRACT_APPROVED / AI_PROMPT_V1; business route IMPLEMENTED. See [execution report](interpretation-implementation-report.md) for regression evidence and limits. Earlier interpretation-pending statements describe historical release scopes. Live provider activation and infrastructure privacy remain separate deployment gates.
+
 Current Period authority: [Period V1](period-orchestration-v1.md). SAJU_PERIOD_ORCHESTRATION_V1 / CONFIG_PERIOD_V1 adds daily-range, weekly, monthly and yearly to the existing Compatibility/Daily operations. Interpretation remains pending. Earlier release-specific pending statements below are historical. Validation and deployment limits are reported separately.
 
 Current single-date Daily authority: [DO-01..DO-09](daily-orchestration-v1.md). SAJU_DAILY_ORCHESTRATION_V1 / CONFIG_DAILY_V1 implement POST fortune/daily alongside compatibility/calculate; other period and interpretation routes remain pending. Earlier pending statements are historical scope.

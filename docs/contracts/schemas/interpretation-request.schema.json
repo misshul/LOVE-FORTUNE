@@ -3,7 +3,8 @@
   "properties": {
     "signedContext": {
       "type": "string",
-      "pattern": "^[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]{43}$"
+      "pattern": "^[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]{43}$",
+      "maxLength": 65499
     },
     "locale": {
       "enum": [
