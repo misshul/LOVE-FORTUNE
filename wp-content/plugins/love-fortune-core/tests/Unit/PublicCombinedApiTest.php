@@ -89,7 +89,7 @@ final class PublicCombinedApiTest extends \PHPUnit\Framework\TestCase
     }
     public function testRateWindowAtomicStorageAndNoRawAddress(): void
     {
-        $dir=sys_get_temp_dir().'/lf-api-test-'.bin2hex(random_bytes(8));$rate=new CoreRateLimit(self::KEY,$dir);
+        $dir=sys_get_temp_dir().'/lf-api-test-'.bin2hex(random_bytes(8));mkdir($dir,0700);$rate=new CoreRateLimit(self::KEY,$dir);
         try{for($i=0;$i<60;$i++){$rate->consume('192.0.2.10',self::NOW);}try{$rate->consume('::ffff:192.0.2.10',self::NOW);self::fail('Rate exceeded');}catch(PublicError $e){self::assertSame(429,$e->status);self::assertSame('600',$e->headers['Retry-After']);}
             $files=glob($dir.'/*.rate');self::assertCount(1,$files);self::assertSame('60',file_get_contents($files[0]));self::assertStringNotContainsString('192.0.2.10',$files[0]);$rate->consume('192.0.2.10',self::NOW+600);
         }finally{foreach(glob($dir.'/*')?:[] as $file){unlink($file);}rmdir($dir);}

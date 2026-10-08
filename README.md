@@ -110,6 +110,10 @@ Docker Engine 연결 오류가 나면 Docker Desktop의 Linux Engine 실행 상�
 
 ## Zodiac V1 development status
 
-Zodiac date/pair/source scoring and exact score primitives are implemented. Contracts/catalogs are applied; full Four Pillars, Core scoring orchestration and REST API remain incomplete. No V1 external ephemeris blocker. See [current readiness](docs/contracts/readiness.md) and [Zodiac contract](docs/contracts/zodiac-catalog-v1.md).
+The current V1 numeric pipeline and seven business REST routes are implemented. This does not approve production deployment or a live AI provider. See [current readiness](docs/contracts/readiness.md) and [Zodiac contract](docs/contracts/zodiac-catalog-v1.md).
 
 Runtime config is generated from authoritative JSON: `node scripts/generate-zodiac-config.cjs --check`. With Docker running, use `node docs/contracts/validation/zodiac-application.cjs` for the complete application gate, including existing regressions and PHP/JS cross checks. Setup for documentation-only validator dependencies is in [validation instructions](docs/contracts/validation/README.md).
+
+## Local hosting compatibility
+
+WordPress 6.6/PHP 8.3 validation uses the isolated `compose.compatibility.yaml`; the original development volumes are preserved. Rate limiting now requires an explicit private `LOVE_FORTUNE_RATE_ROOT` and environment/site `LOVE_FORTUNE_RATE_SITE`, in addition to the existing rate secret. Missing/unsafe configuration fails closed; there is no implicit temporary-directory fallback. Tests provision synthetic private storage automatically. Independent CLI cleanup and runtime-only packaging are described in [local pre-deployment instructions](docs/contracts/lolipop-local-predeployment.md). Do not deploy these changes until the separate staging/server gates pass.

@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+require __DIR__.'/rate-environment.php';
 if(PHP_SAPI!=='cli'){exit;}
 // Synthetic secrets are process-local, never injected into the production bootstrap or DB.
 putenv('LOVE_FORTUNE_SIGNING_KID=daily-fixture');

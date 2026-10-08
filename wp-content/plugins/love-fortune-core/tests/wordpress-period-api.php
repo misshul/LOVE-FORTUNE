@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+require __DIR__.'/rate-environment.php';
 if(PHP_SAPI!=='cli'){exit;}
 putenv('LOVE_FORTUNE_SIGNING_KID=period-fixture');putenv('LOVE_FORTUNE_SIGNING_KEYS={"period-fixture":"SYNTHETIC_PERIOD_KEY_NOT_FOR_PRODUCTION_0001"}');putenv('LOVE_FORTUNE_RATE_SECRET=SYNTHETIC_PERIOD_RATE_NOT_FOR_PRODUCTION_0001');$_SERVER['REMOTE_ADDR']='198.51.100.'.random_int(1,254);
 require '/var/www/html/wp-load.php';

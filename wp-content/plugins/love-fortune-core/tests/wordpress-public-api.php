@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+require __DIR__.'/rate-environment.php';
 if(PHP_SAPI!=='cli'){exit;}
 // Synthetic process-local test keys; no config/DB secret changes.
 putenv('LOVE_FORTUNE_SIGNING_KID=fixture');

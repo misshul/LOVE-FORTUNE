@@ -110,10 +110,10 @@ final class InterpretationTest extends \PHPUnit\Framework\TestCase
     }
     public function testRateTenAndIsolation(): void
     {
-        $dir=sys_get_temp_dir().'/lf-interpretation-test-'.bin2hex(random_bytes(6));$lim=new CoreRateLimit(self::KEY,$dir,10,'Interpretation');
+        $dir=sys_get_temp_dir().'/lf-interpretation-test-'.bin2hex(random_bytes(6));mkdir($dir,0700);$lim=new CoreRateLimit(self::KEY,$dir,10,'Interpretation');
         try{for($i=0;$i<10;$i++){$lim->consume('198.51.100.42',self::NOW);}try{$lim->consume('198.51.100.42',self::NOW);self::fail();}catch(PublicError $e){self::assertSame(429,$e->status);self::assertSame('600',$e->headers['Retry-After']);}
             (new CoreRateLimit(self::KEY,$dir))->consume('198.51.100.42',self::NOW);$lim->consume('198.51.100.42',self::NOW+600);self::assertTrue(true);
-        }finally{foreach(glob($dir.'/*.rate')?:[] as $f){unlink($f);}rmdir($dir);}
+        }finally{foreach(glob($dir.'/*')?:[] as $f){unlink($f);}rmdir($dir);}
     }
     public function testProviderUnconfiguredAndCodeOwnedPrompt(): void
     {

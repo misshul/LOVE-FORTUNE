@@ -1,0 +1,43 @@
+# Isolated LOCAL ONLY WordPress 6.6 compatibility environment. No production secrets.
+name: love-fortune-compatibility
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+      MYSQL_DATABASE: compatibility
+      MYSQL_USER: compatibility
+      MYSQL_PASSWORD_FILE: /run/secrets/compatibility_db_password
+    secrets: [compatibility_db_password]
+    volumes:
+      - compatibility_mysql:/var/lib/mysql
+    healthcheck:
+      test: [CMD, mysqladmin, ping, --silent]
+      interval: 5s
+      retries: 30
+  wordpress:
+    image: wordpress:6.6.2-php8.3-apache
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports: ['127.0.0.1:8086:80']
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: compatibility
+      WORDPRESS_DB_USER: compatibility
+      WORDPRESS_DB_PASSWORD_FILE: /run/secrets/compatibility_db_password
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_ENVIRONMENT_TYPE', 'local');
+        define('WP_DEBUG_DISPLAY', false);
+        define('WP_DEBUG_LOG', false);
+      LOVE_FORTUNE_AI_ENABLED: '0'
+    secrets: [compatibility_db_password]
+    volumes:
+      - compatibility_wordpress:/var/www/html
+      - ./wp-content/plugins/love-fortune-core:/var/www/html/wp-content/plugins/love-fortune-core
+volumes:
+  compatibility_mysql:
+  compatibility_wordpress:
+secrets:
+  compatibility_db_password:
+    file: .tools/compatibility-db-password

@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+require __DIR__.'/rate-environment.php';
 if(PHP_SAPI!=='cli'){exit;}
 putenv('LOVE_FORTUNE_SIGNING_KID=interpretation-fixture');putenv('LOVE_FORTUNE_SIGNING_KEYS={"interpretation-fixture":"SYNTHETIC_INTERPRETATION_KEY_NOT_FOR_DEPLOYMENT"}');
 // Each execution has an isolated rate key. Never print it or request content.

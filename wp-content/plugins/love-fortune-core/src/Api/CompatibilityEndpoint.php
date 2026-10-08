@@ -27,7 +27,7 @@ class CompatibilityEndpoint implements RegistrationInterface
         $headers=['Cache-Control'=>'no-store'];
         try{
             $now=$this->clock===null?time():($this->clock)();
-            if($this->rate!==null){($this->rate)();}else{(new CoreRateLimit((string)getenv('LOVE_FORTUNE_RATE_SECRET'),sys_get_temp_dir().$this->rateDirectory()))->consume((string)($_SERVER['REMOTE_ADDR']??''),$now);}
+            if($this->rate!==null){($this->rate)();}else{(new CoreRateLimit((string)getenv('LOVE_FORTUNE_RATE_SECRET'),\LoveFortune\Core\Infrastructure\Rate\PrivateRateStorage::configured($this->rateDirectory())->directory))->consume((string)($_SERVER['REMOTE_ADDR']??''),$now);}
             if($request->get_query_params()!==[]){throw new PublicError(400,'INVALID_REQUEST');}
             $requestHeaders=$request->get_headers();
             $hasEncoding=array_key_exists('content_encoding',$requestHeaders)||array_key_exists('content-encoding',$requestHeaders);
@@ -44,7 +44,7 @@ class CompatibilityEndpoint implements RegistrationInterface
         catch(\Throwable){$e=new PublicError(500,'CALCULATION_FAILED');return new \WP_REST_Response($e->body(),500,$headers);}
     }
     protected function calculateResult(array $input,string $id): array { return (new CompatibilityCalculation())->calculate($input,$id); }
-    protected function rateDirectory(): string { return '/love-fortune-rate'; }
+    protected function rateDirectory(): string { return 'core'; }
     protected function parseInput(string $body,string $type,?string $encoding): array { return CompatibilityInput::parse($body,$type,$encoding,static::ROUTE!==self::ROUTE); }
     protected function validateResult(array $result): void { PublicResultValidation::validate($result); }
     protected function needsSignature(array $result): bool { return $result['overallScore']!==null; }

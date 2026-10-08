@@ -18,7 +18,7 @@ final class InterpretationEndpoint extends CompatibilityEndpoint
             $input=InterpretationInput::parse((string)$request->get_body(),(string)$request->get_header('content-type'),$encoding?(string)$request->get_header('content-encoding'):null);
             $now=$this->clock===null?time():($this->clock)();
             if($this->rate!==null){($this->rate)();}else{
-                try{(new CoreRateLimit((string)getenv('LOVE_FORTUNE_RATE_SECRET'),sys_get_temp_dir().'/love-fortune-interpretation-rate',10,'Interpretation'))->consume((string)($_SERVER['REMOTE_ADDR']??''),$now);}
+                try{(new CoreRateLimit((string)getenv('LOVE_FORTUNE_RATE_SECRET'),\LoveFortune\Core\Infrastructure\Rate\PrivateRateStorage::configured('interpretation')->directory,10,'Interpretation'))->consume((string)($_SERVER['REMOTE_ADDR']??''),$now);}
                 catch(PublicError $e){if($e->status===429){throw $e;}throw new PublicError(503,'INTERPRETATION_UNAVAILABLE');}
             }
             $verified=($this->verifier??InterpretationContext::environment())->verify($input['signedContext'],$input['locale'],$now);
