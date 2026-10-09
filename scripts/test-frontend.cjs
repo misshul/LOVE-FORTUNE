@@ -1,0 +1,50 @@
+'use strict';
+const {chromium}=require('../.tools/frontend-tests/node_modules/playwright');
+const assert=require('node:assert/strict');
+(async()=>{
+ const browser=await chromium.launch({headless:true});const context=await browser.newContext();const page=await context.newPage();const requests=[];const errors=[];let leak=false;let navigations=0;
+ page.on('framenavigated',frame=>{if(frame===page.mainFrame())navigations++;});
+ page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(/1990-01-01|1992-02-02|signedContext/.test(m.text()))leak=true;});
+ page.on('request',r=>{if(r.url().includes('/love-fortune/v1/'))requests.push({url:r.url(),method:r.method(),body:r.postDataJSON()});});
+ await page.goto('http://localhost:8080/love-fortune-local-test/');const app=page.locator('.love-fortune-app');await app.locator('[type=submit]').waitFor({state:'visible'});
+ assert.equal(await app.locator('[data-person=personA] select option').count(),130);
+ const reference=require('../wp-content/plugins/love-fortune-core/config/references/locations-v1.json');
+ for(const who of ['personA','personB'])assert.deepEqual(await app.locator(`[data-person=${who}] [data-field=birthLocationId] option`).evaluateAll(options=>options.map(o=>o.value).filter(Boolean)),reference.records.map(r=>r.locationId));
+ const date=app.locator('[data-person=personA] [data-field=birthDate]');
+ for(const invalid of ['','1899-12-31','2100-01-01','1900-02-29','2001-02-29'])assert.equal(await date.evaluate((el,value)=>{el.value=value;return el.checkValidity();},invalid),false);
+ for(const valid of ['1900-01-01','2000-02-29','2099-12-31'])assert.equal(await date.evaluate((el,value)=>{el.value=value;return el.checkValidity();},valid),true);
+ assert.equal(await app.locator('input,select').evaluateAll(elements=>elements.every(el=>el.labels?.length>0)),true);
+ await app.locator('[data-person=personA] [data-field=birthDate]').focus();await page.keyboard.press('Tab');
+ assert.equal(await page.evaluate(()=>!!document.activeElement.closest('.love-fortune-app')),true);
+ assert.equal(await page.evaluate(()=>getComputedStyle(document.activeElement).outlineStyle),'solid');
+ assert.equal(await app.locator('[data-view=loading]').getAttribute('aria-live'),'polite');
+ assert.equal(await app.locator('[data-view=error]').getAttribute('role'),'alert');
+ const storageSnapshot=()=>page.evaluate(()=>({local:{...localStorage},session:Object.fromEntries(Object.entries(sessionStorage).filter(([key])=>key!=='wpEmojiSettingsSupports'))}));const baselineStorage=await storageSnapshot();const baselineCookies=await context.cookies();const original=page.url();const initialNavigations=navigations;for(const [p,d] of [['personA','1990-01-01'],['personB','1992-02-02']]){await app.locator(`[data-person=${p}] [data-field=birthDate]`).fill(d);await app.locator(`[data-person=${p}] select`).selectOption('LOC000002');}
+ await app.locator('[data-person=personA] [data-field=unknown]').uncheck();await app.locator('[data-person=personA] [data-field=birthTime]').fill('10:30');
+ const response=page.waitForResponse(r=>r.url().includes('/compatibility/calculate')&&r.request().method()==='POST');await app.locator('[type=submit]').click();const rr=await response;assert.equal(rr.status(),200);const result=await rr.json();
+ await app.locator('[data-view=result]').waitFor({state:'visible'});assert.equal(await app.locator('[data-view=score]').textContent(),String(result.overallScore)+' / 100');assert.equal(await app.locator('.lf-categories article').count(),8);assert.match(await app.locator('.lf-categories article').nth(2).textContent(),/계산 정보 없음/);
+ assert.equal(requests.length,1);assert.equal(requests[0].body.personB.birthTime,null);assert.equal(requests[0].body.personA.birthTime,'10:30');
+ assert.deepEqual(Object.keys(requests[0].body).sort(),['locale','personA','personB','relationshipType','targetTimezone']);
+ for(const person of ['personA','personB'])assert.deepEqual(Object.keys(requests[0].body[person]).sort(),['birthDate','birthLocationId','birthTime']);
+ assert.equal(new URL(requests[0].url).origin,new URL(original).origin);assert.equal(rr.request().headers()['content-type'],'application/json');
+ assert.equal(navigations,initialNavigations);assert.deepEqual(await app.locator('.lf-categories h4').allTextContents(),['끌림','감정','소통','열정','안정감','조화','서포트','장기적 관계']);
+ const ir=page.waitForResponse(r=>r.url().includes('/interpretation/generate'));await app.locator('[data-action=interpret]').click();const responseI=await ir;assert.equal(responseI.status(),200);const interpretation=await responseI.json();assert.equal(interpretation.meta.interpretationMode,'FALLBACK');await app.locator('[data-view=interpretation]').waitFor({state:'visible'});assert.ok((await app.locator('[data-view=interpretation]').textContent()).includes(interpretation.summary));assert.deepEqual(Object.keys(requests[1].body).sort(),['locale','signedContext']);
+ assert.equal(page.url(),original);assert.deepEqual(await storageSnapshot(),baselineStorage);assert.deepEqual(await context.cookies(),baselineCookies);assert.ok(!(await page.content()).includes(result.signedInterpretationContext));assert.equal(leak,false);assert.deepEqual(errors,[]);
+ for(const width of [320,375,768,1280]){await page.setViewportSize({width,height:900});assert.ok(await app.evaluate(el=>el.scrollWidth<=el.clientWidth));assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));if(width<640){const a=await app.locator('[data-person=personA]').boundingBox(),b=await app.locator('[data-person=personB]').boundingBox();assert.ok(b.y>a.y+a.height-1);}}
+ await page.setViewportSize({width:320,height:800});await page.screenshot({path:'.tools/frontend-mobile.png',fullPage:true});
+ await page.setViewportSize({width:1280,height:1000});await page.screenshot({path:'.tools/frontend-desktop.png',fullPage:true});
+ await app.locator('[data-action=reset]').click();assert.equal(await app.locator('[data-view=result]').isVisible(),false);assert.equal(await app.locator('[data-action=interpret]').isVisible(),false);
+ await page.route('**/compatibility/calculate',async route=>{await new Promise(r=>setTimeout(r,300));await route.fulfill({status:429,contentType:'application/json',headers:{'Retry-After':'30'},body:JSON.stringify({error:{code:'RATE_LIMITED'}})});});
+ const beforeDuplicate=requests.length;await app.locator('[type=submit]').click();assert.equal(await app.locator('[type=submit]').isDisabled(),true);await app.locator('form').dispatchEvent('submit');await app.locator('[data-view=error]').waitFor({state:'visible'});assert.equal(requests.length-beforeDuplicate,1);assert.match(await app.locator('[data-view=error]').textContent(),/30초/);
+ await page.unroute('**/compatibility/calculate');
+ for(const [status,code,phrase] of [[400,'INVALID_REQUEST','입력 내용'],[413,'PAYLOAD_TOO_LARGE','너무 큽니다'],[415,'UNSUPPORTED_MEDIA_TYPE','요청 형식'],[422,'INVALID_REQUEST_SEMANTICS','생년월일'],[503,'SERVICE_UNAVAILABLE','현재 결과']]){await page.route('**/compatibility/calculate',route=>route.fulfill({status,contentType:'application/json',body:JSON.stringify({error:{code}})}));await app.locator('[type=submit]').click();await app.locator('[data-view=error]').waitFor({state:'visible'});assert.ok((await app.locator('[data-view=error]').textContent()).includes(phrase));await page.unroute('**/compatibility/calculate');}
+ await page.route('**/compatibility/calculate',route=>route.abort());await app.locator('[type=submit]').click();await app.locator('[data-view=error]').waitFor({state:'visible'});assert.match(await app.locator('[data-view=error]').textContent(),/서버와 연결/);await page.unroute('**/compatibility/calculate');
+ await page.route('**/compatibility/calculate',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(result)}));
+ await app.locator('[type=submit]').click();await app.locator('[data-view=result]').waitFor({state:'visible'});
+ await page.route('**/interpretation/generate',async route=>{await new Promise(resolve=>setTimeout(resolve,300));await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({...interpretation,summary:'<img src=x onerror=alert(1)>',strengths:[],challenges:[]})});});
+ const beforeInterpret=requests.length;await app.locator('[data-action=interpret]').click();assert.equal(await app.locator('[data-action=interpret]').isDisabled(),true);assert.match(await app.locator('[data-view=loading]').textContent(),/해석을 준비/);await app.locator('[data-action=interpret]').dispatchEvent('click');await app.locator('[data-view=interpretation]').waitFor({state:'visible'});assert.equal(requests.length-beforeInterpret,1);assert.equal(await app.locator('[data-view=interpretation] img').count(),0);assert.ok((await app.locator('[data-view=interpretation]').textContent()).includes('<img'));assert.equal(await app.locator('[data-view=interpretation] h4').count(),1);
+ await app.locator('[data-person=personA] [data-field=unknown]').check();assert.equal(await app.locator('[data-person=personA] [data-field=birthTime]').inputValue(),'');assert.equal(await app.locator('[data-action=interpret]').isVisible(),false);
+ assert.equal(await app.locator('[data-action=interpret]').isVisible(),false);const beforeReset=requests.length;await app.locator('[data-action=interpret]').dispatchEvent('click');assert.equal(requests.length,beforeReset);
+ assert.equal(await app.evaluate(el=>Array.from(el.querySelectorAll('*')).flatMap(e=>Array.from(e.attributes).filter(a=>a.name.startsWith('data-')).map(a=>a.value)).some(v=>/1990-01-01|1992-02-02/.test(v))),false);
+ console.log('FRONTEND_BROWSER_PASS: real HTTP, date boundaries, 129 exact options, known/null, schema mapping, 8 categories, manual fallback, privacy, 320/375/768/1280, keyboard/labels, duplicate guard, 400/413/415/422/429/503/network, safe text, reset');await browser.close();
+})().catch(e=>{console.error('FRONTEND_BROWSER_FAIL (payloads and tokens suppressed)');console.error((e.stack||'').split('\n').filter(line=>/^\s+at /.test(line)).join('\n'));process.exit(1);});

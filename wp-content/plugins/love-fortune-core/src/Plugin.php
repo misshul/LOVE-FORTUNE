@@ -29,6 +29,7 @@ final class Plugin
         }
         add_action('rest_api_init', fn () => ErrorHandler::run([$this->routes, 'load']));
         add_action('admin_menu', fn () => ErrorHandler::run([$this->admin, 'load']));
+        add_action('init', static fn () => (new \LoveFortune\Core\Frontend\FrontendShortcode())->register());
         $this->booted = true;
     }
 

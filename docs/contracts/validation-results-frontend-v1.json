@@ -1,0 +1,60 @@
+{
+  "result": "LOCAL_FRONTEND_V1_IMPLEMENTATION_PASS",
+  "baseline": "3c372bf8ff1213f2a447b4a4dbd56e7900352293",
+  "fullGate": "INTERPRETATION_ROUTE_IMPLEMENTATION_PASS",
+  "php": {
+    "lint": "PASS",
+    "tests": 138,
+    "assertions": 1263112
+  },
+  "structural": {
+    "schemaFiles": 36,
+    "examples": 203,
+    "validExamples": 113,
+    "invalidExamples": 90,
+    "disabledRuleRecords": 5,
+    "enabledRules": 252,
+    "categoryWeights": 8,
+    "canonicalVectors": 6,
+    "signedValid": 2,
+    "signedInvalid": 8,
+    "httpPrivacyVectors": 19,
+    "openapiOperations": 20,
+    "adminOperations": 7,
+    "publicPostOperations": 8,
+    "openapi": "PASS"
+  },
+  "engineGate": "PASS",
+  "reference": "PASS",
+  "solar": "PASS",
+  "interpretation": {
+    "wordpress": "INTERPRETATION_WORDPRESS_E2E_PASS",
+    "signedTypes": 5,
+    "responseExamples": [
+      "Compatibility_ai",
+      "Compatibility_fallback",
+      "Daily_ai",
+      "Daily_fallback",
+      "Monthly_ai",
+      "Monthly_fallback",
+      "Weekly_ai",
+      "Weekly_fallback",
+      "Yearly_ai",
+      "Yearly_fallback"
+    ],
+    "schemaAccepted": 17,
+    "schemaExpectedRejections": 18,
+    "rate": "10/600 PASS",
+    "privacy": "PASS",
+    "noStore": "PASS",
+    "providerCalls": 13,
+    "liveProvider": "NOT_CONFIGURED_TEST_HTTP_INTERCEPTED"
+  },
+  "frontendBrowser": "PASS: actual local HTTP plus intercepted error/plain-text cases",
+  "browserWordPress": "7.1.0",
+  "regressionWordPress": "6.6.2",
+  "privacy": "No app storage/cookies; existing WordPress wpEmojiSettingsSupports excluded from comparison",
+  "commit": "NONE",
+  "push": "NONE",
+  "deployment": "NONE"
+}

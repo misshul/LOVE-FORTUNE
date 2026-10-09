@@ -1,0 +1,138 @@
+{
+  "result": "LOCAL_FRONTEND_V1_REGRESSION_PASS_READY_TO_COMMIT",
+  "date": "2026-10-09",
+  "baseline": "3c372bf8ff1213f2a447b4a4dbd56e7900352293",
+  "php": {
+    "lint": "PASS",
+    "tests": 138,
+    "assertions": 1263112
+  },
+  "fullGate": "INTERPRETATION_ROUTE_IMPLEMENTATION_PASS",
+  "structural": {
+    "schemaFiles": 36,
+    "examples": 203,
+    "validExamples": 113,
+    "invalidExamples": 90,
+    "disabledRuleRecords": 5,
+    "enabledRules": 252,
+    "categoryWeights": 8,
+    "canonicalVectors": 6,
+    "signedValid": 2,
+    "signedInvalid": 8,
+    "httpPrivacyVectors": 19,
+    "openapiOperations": 20,
+    "adminOperations": 7,
+    "publicPostOperations": 8,
+    "openapi": "PASS"
+  },
+  "semantic": {
+    "existingSemanticVectors": 36,
+    "v3SemanticVectors": 44,
+    "totalSemanticVectors": 80,
+    "dstVectors": 4,
+    "tzdb": "2026c",
+    "icu": "78.3",
+    "result": "PASS",
+    "comparison": "exact; decimal rational confidence and HALF_UP rounding"
+  },
+  "reference": {
+    "result": "PASS",
+    "locations": 129,
+    "countryCounts": {
+      "JP": 47,
+      "KR": 17,
+      "US": 36,
+      "GB": 7,
+      "AU": 8,
+      "CA": 12,
+      "NZ": 2
+    },
+    "productionZones": 21,
+    "totalZones": 23,
+    "transitionRows": 5041,
+    "pointGoldens": 12,
+    "skippedDates": 1,
+    "longitudeCases": 129,
+    "negativeLongitudeCases": 6,
+    "scope": "REFERENCE_ONLY_NOT_NATAL_E2E"
+  },
+  "solar": {
+    "result": "PASS",
+    "events": 4848,
+    "years": 202,
+    "missing": 0,
+    "duplicate": 0,
+    "orderingAnomaly": 0,
+    "identityMismatch": 0,
+    "raw2400": 2,
+    "eraCounts": {
+      "PRE_1961_S2020": 1488,
+      "UTC_1961_1971_DRIFT": 264,
+      "KNOWN_TAI_UTC": 1314,
+      "FROZEN_FUTURE_37": 1782
+    },
+    "roundingCases": 7,
+    "transitionProbes": 123,
+    "expectedTtGaps": 35,
+    "expectedTtOverlaps": 2,
+    "pre1961Seam": "GAP",
+    "goldenCount": 24,
+    "checksum": "6fc6165b76951a0267d46fe2a7e7d4da190c7e2119dc8d1ffdef12fed399848c"
+  },
+  "interpretation": {
+    "wordpress": "INTERPRETATION_WORDPRESS_E2E_PASS",
+    "signedTypes": 5,
+    "responseExamples": [
+      "Compatibility_ai",
+      "Compatibility_fallback",
+      "Daily_ai",
+      "Daily_fallback",
+      "Monthly_ai",
+      "Monthly_fallback",
+      "Weekly_ai",
+      "Weekly_fallback",
+      "Yearly_ai",
+      "Yearly_fallback"
+    ],
+    "schemaAccepted": 17,
+    "schemaExpectedRejections": 18,
+    "rate": "10/600 PASS",
+    "privacy": "PASS",
+    "noStore": "PASS",
+    "providerCalls": 13,
+    "liveProvider": "NOT_CONFIGURED_TEST_HTTP_INTERCEPTED"
+  },
+  "browser": {
+    "result": "PASS",
+    "wordPress": "7.1.0",
+    "compatibilityWordPress": "6.6.2",
+    "widths": [
+      320,
+      375,
+      768,
+      1280
+    ],
+    "actualHTTP": [
+      "Compatibility",
+      "Interpretation FALLBACK"
+    ],
+    "controlledHTTP": [
+      400,
+      413,
+      415,
+      422,
+      429,
+      503
+    ],
+    "networkFailure": "PASS",
+    "dateBoundaries": "PASS",
+    "locationOptions": 129,
+    "duplicateGuard": "PASS_BOTH_FLOWS",
+    "keyboardLabels": "PASS",
+    "privacy": "PASS; only known non-personal WordPress emoji cache excluded"
+  },
+  "productionCodeChangedDuringFinalReview": false,
+  "stagedGate": "REQUIRED_BEFORE_COMMIT",
+  "push": "NOT_PUSHED",
+  "deployment": "NONE"
+}

@@ -116,4 +116,6 @@ Runtime config is generated from authoritative JSON: `node scripts/generate-zodi
 
 ## Local hosting compatibility
 
+Local Frontend V1: add `[love_fortune]` to a WordPress page. Compatibility inputs/results and manually requested interpretation are available. [Local setup and browser tests](docs/contracts/local-frontend-v1.md). No page is created during plugin activation.
+
 WordPress 6.6/PHP 8.3 validation uses the isolated `compose.compatibility.yaml`; the original development volumes are preserved. Rate limiting now requires an explicit private `LOVE_FORTUNE_RATE_ROOT` and environment/site `LOVE_FORTUNE_RATE_SITE`, in addition to the existing rate secret. Missing/unsafe configuration fails closed; there is no implicit temporary-directory fallback. Tests provision synthetic private storage automatically. Independent CLI cleanup and runtime-only packaging are described in [local pre-deployment instructions](docs/contracts/lolipop-local-predeployment.md). Do not deploy these changes until the separate staging/server gates pass.
