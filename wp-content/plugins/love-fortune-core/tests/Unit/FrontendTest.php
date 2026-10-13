@@ -10,9 +10,40 @@ if (!function_exists('add_shortcode')) {
  function esc_attr($s){return htmlspecialchars($s,ENT_QUOTES,'UTF-8');}
  function esc_html($s){return htmlspecialchars($s,ENT_QUOTES,'UTF-8');}
  function rest_url($path=''){return 'https://example.test/sub/wp-json/'.$path;}
+ function is_admin(){return $GLOBALS['lf_page_context']['admin']??false;}
+ function is_page(){return $GLOBALS['lf_page_context']['page']??false;}
+ function is_feed(){return $GLOBALS['lf_page_context']['feed']??false;}
+ function is_embed(){return $GLOBALS['lf_page_context']['embed']??false;}
+ function post_password_required(){return $GLOBALS['lf_page_context']['password']??false;}
+ function get_queried_object(){return (object)['post_content'=>$GLOBALS['lf_page_context']['content']??''];}
 }
 final class FrontendTest extends \PHPUnit\Framework\TestCase
 {
+ protected function tearDown():void{unset($GLOBALS['lf_page_context']);}
+ public function testDedicatedTemplateIsLimitedToStandalonePublicPages():void{
+  $ui=new \LoveFortune\Core\Frontend\FrontendShortcode();$ui->register();
+  foreach(['template_include','body_class','pre_get_document_title'] as $hook)self::assertIsCallable(end($GLOBALS['public_filters'][$hook]));
+  foreach(['[love_fortune]',"<!-- wp:shortcode -->\n[love_fortune]\n<!-- /wp:shortcode -->"] as $content){
+   $GLOBALS['lf_page_context']=['page'=>true,'content'=>$content];
+   self::assertTrue($ui->isDedicatedPage());self::assertFileExists($ui->template('theme.php'));
+   self::assertSame(['existing','love-fortune-page'],$ui->bodyClasses(['existing']));self::assertSame('LOVE FORTUNE',$ui->documentTitle('Test title'));
+  }
+  foreach(['','Other content','<p>Keep me</p>[love_fortune]','[love_fortune][other]','[love_fortune mode="x"]'] as $content){
+   $GLOBALS['lf_page_context']=['page'=>true,'content'=>$content];
+   self::assertSame('theme.php',$ui->template('theme.php'));self::assertSame(['existing'],$ui->bodyClasses(['existing']));self::assertSame('Original',$ui->documentTitle('Original'));
+  }
+  foreach(['admin','feed','embed','password'] as $excluded){
+   $GLOBALS['lf_page_context']=['page'=>true,'content'=>'[love_fortune]',$excluded=>true];self::assertFalse($ui->isDedicatedPage());
+  }
+  $GLOBALS['lf_page_context']=['page'=>false,'content'=>'[love_fortune]'];self::assertFalse($ui->isDedicatedPage());
+ }
+ public function testPolishMarkupAndAccessibleCopy():void{
+  $html=(new \LoveFortune\Core\Frontend\FrontendShortcode())->render();
+  foreach(['1900~2099년 입력 가능','출생 시간을 몰라요','결과 기준 시간대','브라우저에 저장하지 않아요.','data-action="reset" hidden>입력 수정하기','data-view="score-unit"','aria-describedby='] as $copy)self::assertStringContainsString($copy,$html);
+  self::assertLessThan(strpos($html,'<details>'),strpos($html,'data-view="interpretation"'));
+  self::assertLessThan(strpos($html,'data-view="interpretation"'),strpos($html,'data-action="interpret"'));
+  self::assertStringNotContainsString('<details open',$html);
+ }
  public function testShortcodeAssetsAndFrozenOptions():void{
   $GLOBALS['lf_styles']=[];$GLOBALS['lf_scripts']=[];
   $ui=new \LoveFortune\Core\Frontend\FrontendShortcode();$ui->register();

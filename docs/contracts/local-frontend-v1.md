@@ -1,5 +1,17 @@
 # Local Frontend V1
 
+## Approved V1.1 visual polish
+
+Authority: user request2711ba3b-8145-4831-af61-e049420057da; UI-01 approved. This section supersedes V1 display copy/layout below, not calculation/API/privacy contracts. Implementation and validation: [V1.1 report](local-frontend-v1-1-implementation-report.md).
+
+An ordinary, non-password-protected page containing only `[love_fortune]` (with optional WordPress Shortcode block comments) uses the plugin-owned service template. Mixed content, shortcode attributes, other shortcodes, posts, admin, feeds and embeds retain their existing templates. The service template retains WordPress head/body/footer hooks and admin toolbar support but does not render theme navigation, page title or footer. It uses no slug/host/page-ID binding, DB change or theme file edit. Existing page content/title is not deleted. The body class and document title filters use the same eligibility guard.
+
+UI preserves exact API numeric values and canonical category order. Overall number and unit are separate; null has no `/ 100`. Only explicit COMMUNICATION score=null displays `점수 제공 안 함`; other missing scores remain `계산 정보 없음`. SUPPORT is `서로의 지지`. Status display: CAUTION `배려가 필요한 관계`, BALANCED `균형을 알아가는 관계`, GOOD `좋은 조화`, VERY_GOOD `매우 좋은 조화`, EXCELLENT `뛰어난 조화`, INSUFFICIENT_DATA `아직 결과를 내기 어려워요`. These are enum labels, not frontend classifications.
+
+Interpretation CTA follows categories; interpretation result precedes collapsed details. `입력 수정하기` appears only with a result; it retains inputs, clears results/token, cancels pending work and returns focus without submitting. Unknown time remains null. Date range guidance, grouped time controls, `결과 기준 시간대`, concise privacy/loading/errors and `살펴볼 점` polish presentation only. Locations remain native and exactly the approved129 IDs/order; grouping/search/translation is deferred. Mobile category rows and full-width CTA apply at<=640px; tablet categories have two columns through959px; desktop four columns. Interactive keyboard outlines remain prominent; programmatically focused result sections have a subtle outline.
+
+No account/storage/analytics/new API or Daily/Period UI. No semantic/scoring version change. Final regression and authorized local checkpoint execution are recorded in the [V1.1 final review](local-frontend-v1-1-final-review.md); earlier no-commit statements describe the implementation phase. No push or deployment is authorized.
+
 Scope: Compatibility and manually requested Interpretation only. No persistence, accounts, Daily/Period UI or hosting deployment. Local URL generation uses WordPress rest_url, including subdirectory and plain-permalink REST query routing. The historical screen spec's opt-in browser profile storage is not implemented in this explicitly narrower task.
 
 ## Local setup
