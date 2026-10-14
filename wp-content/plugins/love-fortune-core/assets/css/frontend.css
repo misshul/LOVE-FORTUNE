@@ -71,3 +71,8 @@ body.love-fortune-page{margin:0;background:#fffaf7;color:#352a32;font:16px/1.65 
  .love-fortune-app article p{text-align:right}
  .love-fortune-app .lf-score-unit{font-size:18px}
 }
+.love-fortune-app .lf-view-navigation{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}
+.love-fortune-app .lf-view-navigation [aria-pressed=true]{background:var(--lf-accent,#793c56);color:#fff}
+.love-fortune-app .lf-delta{font-weight:600;color:var(--lf-ink,#342c31)}
+.love-fortune-app article>div{min-width:0}
+.love-fortune-app article .lf-hint{font-size:13px;font-weight:400;line-height:1.6}

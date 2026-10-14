@@ -51,7 +51,7 @@ final class FrontendTest extends \PHPUnit\Framework\TestCase
   $html=$ui->render();self::assertCount(1,$GLOBALS['lf_styles']);self::assertCount(1,$GLOBALS['lf_scripts']);
   self::assertSame(258,substr_count($html,'value="LOC'));self::assertStringNotContainsString('LOC000005',$html);self::assertStringNotContainsString('LOC000006',$html);
   self::assertStringContainsString('https://example.test/sub/wp-json/love-fortune/v1/',$html);
-  self::assertSame(2,substr_count($html,'data-person='));self::assertSame(2,substr_count($html,'min="1900-01-01" max="2099-12-31"'));
+  self::assertSame(2,substr_count($html,'data-person='));self::assertSame(3,substr_count($html,'min="1900-01-01" max="2099-12-31"'));
   self::assertStringNotContainsString('longitude',$html);self::assertStringNotContainsString('signedContext',$html);
  }
  public function testNoSuccessfulFormFieldsOrPersistenceAndUniqueIds():void{
@@ -59,5 +59,18 @@ final class FrontendTest extends \PHPUnit\Framework\TestCase
   self::assertDoesNotMatchRegularExpression('/<(?:input|select)[^>]*\sname=/', $a);
   self::assertStringContainsString('autocomplete="off"',$a);self::assertStringContainsString('type="submit" class="lf-primary" disabled',$a);
   preg_match('/id="([^"]+)date"/',$a,$first);self::assertStringNotContainsString($first[0],$b);
+ }
+ public function testDailyUsesOnlyFrozenCanonicalTimezonesAndExplicitDate():void{
+  $html=(new \LoveFortune\Core\Frontend\FrontendShortcode())->render();
+  preg_match('/<select data-field="dailyTimezone"[^>]*>(.*?)<\/select>/s',$html,$select);
+  preg_match_all('/<option value="([^"]+)"/',$select[1],$options);
+  $reference=json_decode(file_get_contents(__DIR__.'/../../config/references/timezones-v1.json'),true,512,JSON_THROW_ON_ERROR);
+  self::assertSame(array_column($reference['zones'],'timezoneId'),$options[1]);self::assertCount(23,$options[1]);
+  self::assertStringContainsString('value="Asia/Tokyo" selected',$select[1]);
+  self::assertStringContainsString('data-mode="compatibility" aria-pressed="true"',$html);
+  self::assertStringContainsString('data-mode="daily" aria-pressed="false"',$html);
+  preg_match('/<input data-field="date"[^>]*>/',$html,$date);
+  self::assertStringNotContainsString('value=',$date[0]);self::assertStringContainsString('required disabled',$date[0]);
+  self::assertStringNotContainsString('role="tab"',$html);
  }
 }

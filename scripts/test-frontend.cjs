@@ -10,7 +10,7 @@ const assert=require('node:assert/strict');
  assert.equal(await page.title(),'LOVE FORTUNE');assert.equal(await page.locator('body.love-fortune-page').count(),1);
  assert.equal(await page.locator('nav,footer,.wp-block-post-title').count(),0);assert.ok(!(await page.locator('body').innerText()).includes('Local Test'));
  assert.equal(await app.locator('[data-action=reset]').isVisible(),false);
- assert.match(await app.locator('.lf-note').textContent(),/브라우저에 저장하지 않아요/);
+ assert.match(await app.locator('form .lf-note').textContent(),/브라우저에 저장하지 않아요/);
  assert.equal(await app.locator('[data-person=personA] select option').count(),130);
  const reference=require('../wp-content/plugins/love-fortune-core/config/references/locations-v1.json');
  for(const who of ['personA','personB'])assert.deepEqual(await app.locator(`[data-person=${who}] [data-field=birthLocationId] option`).evaluateAll(options=>options.map(o=>o.value).filter(Boolean)),reference.records.map(r=>r.locationId));
