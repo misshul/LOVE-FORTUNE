@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-15",
+  "scope": "LOCAL_ONLY",
+  "baseline": "ecca8799ecdf42fcf2e706d688846af114b4dc87",
+  "backendGate": "INTERPRETATION_ROUTE_IMPLEMENTATION_PASS",
+  "php": {
+    "lint": "PASS",
+    "tests": 142,
+    "assertions": 1263168
+  },
+  "structural": {
+    "schemaFiles": 36,
+    "examples": 203,
+    "validExamples": 113,
+    "invalidExamples": 90,
+    "disabledRuleRecords": 5,
+    "enabledRules": 252,
+    "categoryWeights": 8,
+    "canonicalVectors": 6,
+    "signedValid": 2,
+    "signedInvalid": 8,
+    "httpPrivacyVectors": 19,
+    "openapiOperations": 20,
+    "adminOperations": 7,
+    "publicPostOperations": 8,
+    "openapi": "PASS"
+  },
+  "semantic": {
+    "existingSemanticVectors": 36,
+    "v3SemanticVectors": 44,
+    "totalSemanticVectors": 80,
+    "dstVectors": 4,
+    "tzdb": "2026c",
+    "icu": "78.3",
+    "result": "PASS",
+    "comparison": "exact; decimal rational confidence and HALF_UP rounding"
+  },
+  "backendNumeric": {
+    "daily": "PASS",
+    "zodiac": "PASS",
+    "phpJs": "PASS / differences=0",
+    "sajuGuardrailViolations": 0
+  },
+  "browsers": {
+    "compatibility": "PASS",
+    "daily": "PASS",
+    "period": "PASS",
+    "periodRealCalculationCalls": 3,
+    "periodRealFallbacks": 3,
+    "widths": [
+      320,
+      375,
+      768,
+      1280
+    ],
+    "privacy": "PASS",
+    "cancellation": "PASS",
+    "routeSpecificRetryAfter": "PASS",
+    "safeText": "PASS"
+  },
+  "existingExpectationsChanged": 0,
+  "commit": false,
+  "push": false,
+  "deployment": false,
+  "checkpointReview": {
+    "date": "2026-10-16",
+    "result": "FRONTEND_V1_3_PERIOD_REGRESSION_PASS_READY_TO_COMMIT",
+    "gates": [
+      "INTERPRETATION_ROUTE_IMPLEMENTATION_PASS",
+      "PERIOD_ORCHESTRATION_IMPLEMENTATION_PASS",
+      "DAILY_ORCHESTRATION_IMPLEMENTATION_PASS",
+      "PUBLIC_COMBINED_API_IMPLEMENTATION_PASS",
+      "SAJU_FEATURE_EXTRACTION_IMPLEMENTATION_PASS"
+    ],
+    "php": {
+      "lint": "PASS",
+      "tests": 142,
+      "assertions": 1263168
+    },
+    "structural": {
+      "schemaFiles": 36,
+      "examples": 203,
+      "validExamples": 113,
+      "invalidExamples": 90,
+      "disabledRuleRecords": 5,
+      "enabledRules": 252,
+      "categoryWeights": 8,
+      "canonicalVectors": 6,
+      "signedValid": 2,
+      "signedInvalid": 8,
+      "httpPrivacyVectors": 19,
+      "openapiOperations": 20,
+      "adminOperations": 7,
+      "publicPostOperations": 8,
+      "openapi": "PASS"
+    },
+    "semantic": {
+      "existingSemanticVectors": 36,
+      "v3SemanticVectors": 44,
+      "totalSemanticVectors": 80,
+      "dstVectors": 4,
+      "tzdb": "2026c",
+      "icu": "78.3",
+      "result": "PASS",
+      "comparison": "exact; decimal rational confidence and HALF_UP rounding"
+    },
+    "browsers": {
+      "compatibility": "PASS",
+      "daily": "PASS",
+      "period": "PASS",
+      "realPeriodCalls": 3,
+      "realFallbacks": 3,
+      "cancellation": "PASS / all routes and replacement",
+      "retryAfter": "PASS / 3 blocked routes and 6 unblocked peers",
+      "privacy": "PASS"
+    },
+    "fileCount": 7,
+    "protectedBackend": "UNCHANGED",
+    "existingExpectationsChanged": 0,
+    "commitGate": "authorized after staged validation; post-commit hash reported separately",
+    "push": false,
+    "deployment": false
+  }
+}

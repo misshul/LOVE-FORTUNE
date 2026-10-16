@@ -60,6 +60,20 @@ final class FrontendTest extends \PHPUnit\Framework\TestCase
   self::assertStringContainsString('autocomplete="off"',$a);self::assertStringContainsString('type="submit" class="lf-primary" disabled',$a);
   preg_match('/id="([^"]+)date"/',$a,$first);self::assertStringNotContainsString($first[0],$b);
  }
+ public function testPeriodInputsAreExplicitAndUseFrozenTimezones():void{
+  $html=(new \LoveFortune\Core\Frontend\FrontendShortcode())->render();
+  preg_match('/<select data-field="periodTimezone"[^>]*>(.*?)<\/select>/s',$html,$select);
+  preg_match_all('/<option value="([^"]+)"/',$select[1],$options);
+  $reference=json_decode(file_get_contents(__DIR__.'/../../config/references/timezones-v1.json'),true,512,JSON_THROW_ON_ERROR);
+  self::assertSame(array_column($reference['zones'],'timezoneId'),$options[1]);
+  self::assertCount(23,$options[1]);
+  self::assertStringContainsString('value="Asia/Tokyo" selected',$select[1]);
+  self::assertStringContainsString('data-period="weekly" aria-pressed="true"',$html);
+  self::assertStringContainsString('max="2099-12-21"',$html);
+  self::assertSame(2,substr_count($html,'type="number" min="1900" max="2099" step="1" required disabled'));
+  preg_match('/<select data-field="month"[^>]*>(.*?)<\/select>/s',$html,$months);
+  self::assertSame(13,substr_count($months[1],'<option'));
+ }
  public function testDailyUsesOnlyFrozenCanonicalTimezonesAndExplicitDate():void{
   $html=(new \LoveFortune\Core\Frontend\FrontendShortcode())->render();
   preg_match('/<select data-field="dailyTimezone"[^>]*>(.*?)<\/select>/s',$html,$select);

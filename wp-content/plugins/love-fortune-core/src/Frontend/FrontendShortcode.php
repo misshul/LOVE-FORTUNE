@@ -52,7 +52,8 @@ final class FrontendShortcode
 <section class="love-fortune-app" lang="ko" data-api="<?= $e(rest_url('love-fortune/v1/')) ?>">
 <header><p class="lf-eyebrow">LOVE FORTUNE · 두 사람의 이야기</p><h2>우리 사이, 어떤 조화일까요?</h2><p>두 사람의 생년월일과 출생 정보를 입력하면 궁합 결과를 확인할 수 있습니다.</p></header>
 <noscript>궁합 계산에는 JavaScript가 필요합니다. 입력 정보는 전송되지 않았습니다.</noscript>
-<div class="lf-view-navigation" aria-label="계산 화면 선택"><button type="button" data-mode="compatibility" aria-pressed="true">궁합</button><button type="button" data-mode="daily" aria-pressed="false">날짜별 흐름</button></div>
+<div class="lf-view-navigation" aria-label="계산 화면 선택"><button type="button" data-mode="compatibility" aria-pressed="true">궁합</button><button type="button" data-mode="daily" aria-pressed="false">날짜별 흐름</button><button type="button" data-mode="period" aria-pressed="false">기간별 흐름</button></div>
+<div data-view="period-intro" hidden><h3>기간별 흐름</h3><p>선택한 한 주/달/해의 관계 흐름을 살펴보세요.</p><div class="lf-view-navigation" aria-label="기간 선택"><button type="button" data-period="weekly" aria-pressed="true">주간</button><button type="button" data-period="monthly" aria-pressed="false">월간</button><button type="button" data-period="yearly" aria-pressed="false">연간</button></div></div>
 <div data-view="daily-intro" hidden><h3>날짜별 흐름</h3><p>선택한 날짜를 기준으로 두 사람의 관계 흐름을 살펴보세요.</p><p class="lf-note">관계를 돌아보는 참고 정보이며, 실제 사건이나 미래를 보장하지 않아요.</p></div>
 <form autocomplete="off" class="lf-form" aria-describedby="<?= $e($id) ?>privacy" onsubmit="return false">
 <div class="lf-people">
@@ -70,6 +71,12 @@ final class FrontendShortcode
 <div class="lf-options"><label>두 사람의 관계<select data-field="relationshipType"><option value="UNKNOWN">선택하지 않음</option><option value="COUPLE">연인</option><option value="MARRIED">부부</option><option value="DATING">알아가는 사이</option><option value="CRUSH">관심 있는 사이</option><option value="FRIEND">친구</option></select></label>
 <label data-view="compatibility-timezone">결과 기준 시간대<select data-field="targetTimezone" aria-describedby="<?= $e($id) ?>timezone-hint"><?php $zones=\DateTimeZone::listIdentifiers(); foreach($zones as $zone): ?><option value="<?= $e($zone) ?>" <?= $zone==='Asia/Tokyo'?'selected':'' ?>><?= esc_html($zone) ?></option><?php endforeach; ?></select><span id="<?= $e($id) ?>timezone-hint" class="lf-hint">기본값은 일본 시간이에요. 원하는 시간대를 선택해주세요.</span></label></div>
 <div class="lf-options" data-view="daily-inputs" hidden><label>기준 날짜<input data-field="date" type="date" min="1900-01-01" max="2099-12-31" required disabled autocomplete="off"></label><label>날짜 기준 시간대<select data-field="dailyTimezone" required disabled><?php foreach($dailyZones as $zone): ?><option value="<?= $e($zone) ?>" <?= $zone==='Asia/Tokyo'?'selected':'' ?>><?= esc_html($zone) ?></option><?php endforeach; ?></select><span class="lf-hint">기본값은 Asia/Tokyo예요. 날짜를 해석할 시간대를 직접 선택해주세요.</span></label></div>
+<div data-view="period-inputs" hidden>
+<div data-period-input="weekly"><label>주 시작 날짜<input data-field="weekStartDate" type="date" min="1900-01-01" max="2099-12-21" required disabled aria-describedby="<?= $e($id) ?>week-hint"><span class="lf-hint" id="<?= $e($id) ?>week-hint">월요일을 선택해주세요.</span></label></div>
+<div data-period-input="monthly" class="lf-options" hidden><label>연도<input data-field="monthlyYear" type="number" min="1900" max="2099" step="1" required disabled></label><label>월<select data-field="month" required disabled><option value="">월 선택</option><?php for($month=1;$month<=12;$month++): ?><option value="<?= $month ?>"><?= $month ?>월</option><?php endfor; ?></select></label></div>
+<div data-period-input="yearly" hidden><label>연도<input data-field="yearlyYear" type="number" min="1900" max="2099" step="1" required disabled></label></div>
+<label>기간 기준 시간대<select data-field="periodTimezone" required disabled><?php foreach($dailyZones as $zone): ?><option value="<?= $e($zone) ?>" <?= $zone==='Asia/Tokyo'?'selected':'' ?>><?= esc_html($zone) ?></option><?php endforeach; ?></select></label>
+</div>
 <p id="<?= $e($id) ?>privacy" class="lf-note">입력한 출생 정보는 계산에 사용되며, 브라우저에 저장하지 않아요. 결과는 관계를 이해하는 참고로 봐주세요.</p>
 <div class="lf-submit"><button type="submit" class="lf-primary" disabled>궁합 보기</button></div>
 </form>

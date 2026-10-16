@@ -76,3 +76,10 @@ body.love-fortune-page{margin:0;background:#fffaf7;color:#352a32;font:16px/1.65 
 .love-fortune-app .lf-delta{font-weight:600;color:var(--lf-ink,#342c31)}
 .love-fortune-app article>div{min-width:0}
 .love-fortune-app article .lf-hint{font-size:13px;font-weight:400;line-height:1.6}
+/* Period results preserve API ordering; no chart or client-side score calculation. */
+.love-fortune-app .lf-period-rankings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:1.5rem 0}
+.love-fortune-app .lf-period-rankings section{min-width:0;padding:1rem;background:#f8f5fa;border-radius:1rem}
+.love-fortune-app .lf-period-rankings ol{padding-left:1.5rem}
+.love-fortune-app .lf-period-rankings li{margin:1rem 0;overflow-wrap:anywhere}
+.love-fortune-app .lf-period-rankings li span,.love-fortune-app .lf-period-rankings li small{display:block}
+@media(max-width:640px){.love-fortune-app .lf-period-rankings{grid-template-columns:1fr}}
