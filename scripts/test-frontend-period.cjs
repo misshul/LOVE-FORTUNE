@@ -33,7 +33,7 @@ const reference=require('../wp-content/plugins/love-fortune-core/config/referenc
   assert.deepEqual(Object.keys(body).sort(),['locale','personA','personB','relationshipType','targetTimezone',...(type==='weekly'?['weekStartDate']:type==='monthly'?['year','month']:['year'])].sort());
   assert.equal(body.personA.birthTime,'10:30');assert.equal(body.personB.birthTime,null);assert.equal(body.relationshipType,'FRIEND');assert.equal(body.targetTimezone,'Asia/Tokyo');if(type!=='weekly')assert.equal(body.year,2026);if(type==='monthly')assert.equal(body.month,10);if(type==='weekly')assert.equal(body.weekStartDate,'2026-10-12');
   assert.equal(await view('score').textContent(),String(real[type][type+'Score']));assert.equal(await view('categories').isVisible(),false);assert.equal(await view('categories').locator('article').count(),0);
-  assert.equal(await view('result').evaluate(e=>e===document.activeElement),true);assert.equal(await app.locator('details').evaluate(e=>e.open),false);
+  assert.equal(await view('result').evaluate(e=>e===document.activeElement),true);assert.equal(await app.locator('[data-view=calculation-info]').evaluate(e=>e.open),false);
   const iw=page.waitForResponse(r=>r.url().endsWith('/interpretation/generate'));await action('interpret').click();const ir=await iw;assert.equal(ir.status(),200);assert.equal((await ir.json()).meta.interpretationMode,'FALLBACK');await view('interpretation').waitFor({state:'visible'});assert.deepEqual(Object.keys(requests.at(-1).body).sort(),['locale','signedContext']);assert.equal((await page.content()).includes(real[type].signedInterpretationContext),false);
  }
  assert.equal(requests.length,6);
@@ -48,7 +48,7 @@ const reference=require('../wp-content/plugins/love-fortune-core/config/referenc
    await fake(type,{...r,[type+'Score']:80,periodDelta:delta,trendStatus:trend,trendDirection:direction,coverage:0.25,resultConfidence:0.8,[vol]:0,slope:null,[best]:items,[caution]:[]});
    assert.equal(await view('daily-delta').textContent(),'기본 궁합 대비 차이: '+(delta>0?'+':'')+delta);assert.match(await view('details').textContent(),/0.25.*0.8.*지표: 0/);assert.equal(await view('period-result').locator('li').first().locator('span').textContent(),'80점');
    if(yearly)assert.equal(await view('period-result').locator('li').first().locator('strong').textContent(),'2026년 10월');
-   assert.match(await view('period-result').textContent(),trend==='STABLE'?/큰 차이가 없는/:trend==='NOTICEABLE'?/차이가 있는/:/차이가 큰/);
+   assert.match(await view('trend').textContent(),trend==='STABLE'?/큰 차이가 없는/:trend==='NOTICEABLE'?/차이가 있는/:/차이가 큰/);
   }
  }
  for(const [status,label] of [['CAUTION','배려가 필요한 관계'],['BALANCED','균형을 알아가는 관계'],['GOOD','좋은 조화'],['VERY_GOOD','매우 좋은 조화'],['EXCELLENT','뛰어난 조화']]){await fake('weekly',{...real.weekly,status,slope:0.1234});assert.equal(await view('status').textContent(),label);assert.match(await view('details').textContent(),/기울기: 0.1234/);}

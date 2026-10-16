@@ -26,10 +26,10 @@ const assert=require('node:assert/strict');
  const storageSnapshot=()=>page.evaluate(()=>({local:{...localStorage},session:Object.fromEntries(Object.entries(sessionStorage).filter(([key])=>key!=='wpEmojiSettingsSupports'))}));const baselineStorage=await storageSnapshot();const baselineCookies=await context.cookies();const original=page.url();const initialNavigations=navigations;for(const [p,d] of [['personA','1990-01-01'],['personB','1992-02-02']]){await app.locator(`[data-person=${p}] [data-field=birthDate]`).fill(d);await app.locator(`[data-person=${p}] select`).selectOption('LOC000002');}
  await app.locator('[data-person=personA] [data-field=unknown]').uncheck();await app.locator('[data-person=personA] [data-field=birthTime]').fill('10:30');
  const response=page.waitForResponse(r=>r.url().includes('/compatibility/calculate')&&r.request().method()==='POST');await app.locator('[type=submit]').click();const rr=await response;assert.equal(rr.status(),200);const result=await rr.json();
- await app.locator('[data-view=result]').waitFor({state:'visible'});assert.equal(await app.locator('[data-view=score]').textContent(),String(result.overallScore));assert.equal(await app.locator('.lf-categories article').count(),8);assert.match(await app.locator('.lf-categories article').nth(2).textContent(),/점수 제공 안 함/);
+ await app.locator('[data-view=result]').waitFor({state:'visible'});assert.equal(await app.locator('[data-view=score]').textContent(),String(result.overallScore));assert.equal(await app.locator('.lf-categories article').count(),8);assert.match(await app.locator('.lf-categories article').nth(2).textContent(),/점수로 제공하지 않아요/);
  assert.equal(await app.locator('[data-action=reset]').isVisible(),true);
  for(const [index,key] of ['ATTRACTION','EMOTION','COMMUNICATION','PASSION','STABILITY','HARMONY','SUPPORT','LONG_TERM'].entries())if(result.categories[key].score!==null)assert.equal(await app.locator('.lf-categories article p').nth(index).textContent(),String(result.categories[key].score)+'점');
- assert.equal(await app.evaluate(el=>{const i=el.querySelector('[data-view=interpretation]'),d=el.querySelector('details');return !!(i.compareDocumentPosition(d)&Node.DOCUMENT_POSITION_FOLLOWING)&&!d.open;}),true);
+ assert.equal(await app.evaluate(el=>{const i=el.querySelector('[data-view=interpretation]'),d=el.querySelector('[data-view=calculation-info]');return !!(i.compareDocumentPosition(d)&Node.DOCUMENT_POSITION_FOLLOWING)&&!d.open;}),true);
  assert.equal(await app.evaluate(el=>parseFloat(getComputedStyle(el.querySelector('[data-view=score]')).fontSize)>parseFloat(getComputedStyle(el.querySelector('[data-view=score-unit]')).fontSize)),true);
  assert.equal(requests.length,1);assert.equal(requests[0].body.personB.birthTime,null);assert.equal(requests[0].body.personA.birthTime,'10:30');
  assert.deepEqual(Object.keys(requests[0].body).sort(),['locale','personA','personB','relationshipType','targetTimezone']);
@@ -56,10 +56,10 @@ const assert=require('node:assert/strict');
  for(const [body,phrase] of [['not-json','결과를 불러오지 못했어요.'],['{}','결과를 표시하지 못했어요.']]){
   await page.route('**/compatibility/calculate',route=>route.fulfill({status:200,contentType:'application/json',body}));await app.locator('[type=submit]').click();await app.locator('[data-view=error]').waitFor({state:'visible'});assert.ok((await app.locator('[data-view=error]').textContent()).startsWith(phrase));await page.unroute('**/compatibility/calculate');
  }
- for(const [status,label] of Object.entries({CAUTION:'배려가 필요한 관계',BALANCED:'균형을 알아가는 관계',GOOD:'좋은 조화',VERY_GOOD:'매우 좋은 조화',EXCELLENT:'뛰어난 조화',INSUFFICIENT_DATA:'아직 결과를 내기 어려워요'})){
+ for(const [status,label] of Object.entries({CAUTION:'배려가 필요한 관계',BALANCED:'균형을 알아가는 관계',GOOD:'좋은 조화',VERY_GOOD:'매우 좋은 조화',EXCELLENT:'뛰어난 조화',INSUFFICIENT_DATA:'계산할 정보가 부족해요'})){
   const missing=status==='INSUFFICIENT_DATA';const fixture={...result,status,overallScore:missing?null:result.overallScore,categories:{...result.categories,ATTRACTION:{...result.categories.ATTRACTION,score:null}}};
   await page.route('**/compatibility/calculate',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(fixture)}));await app.locator('[type=submit]').click();await app.locator('[data-view=result]').waitFor({state:'visible'});
-  assert.equal(await app.locator('[data-view=status]').textContent(),label);assert.equal(await app.locator('[data-view=score-unit]').isVisible(),!missing);assert.match(await app.locator('.lf-categories article').first().textContent(),/계산 정보 없음/);await page.unroute('**/compatibility/calculate');
+  assert.equal(await app.locator('[data-view=status]').textContent(),label);assert.equal(await app.locator('[data-view=score-unit]').isVisible(),!missing);assert.match(await app.locator('.lf-categories article').first().textContent(),/계산할 정보가 부족해요/);await page.unroute('**/compatibility/calculate');
  }
  await page.route('**/compatibility/calculate',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(result)}));
  await app.locator('[type=submit]').click();await app.locator('[data-view=result]').waitFor({state:'visible'});

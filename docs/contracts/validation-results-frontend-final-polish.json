@@ -1,0 +1,516 @@
+{
+  "date": "2026-10-16",
+  "result": "FRONTEND_V1_FINAL_POLISH_IMPLEMENTATION_PASS",
+  "baseline": "6c7e9764d7e04df82e180b50e4646a3f550b3933",
+  "scope": "LOCAL_ONLY",
+  "gates": [
+    "INTERPRETATION_ROUTE_IMPLEMENTATION_PASS",
+    "PERIOD_ORCHESTRATION_IMPLEMENTATION_PASS",
+    "DAILY_ORCHESTRATION_IMPLEMENTATION_PASS",
+    "PUBLIC_COMBINED_API_IMPLEMENTATION_PASS",
+    "SAJU_FEATURE_EXTRACTION_IMPLEMENTATION_PASS"
+  ],
+  "php": {
+    "lint": "PASS",
+    "tests": 143,
+    "assertions": 1263182
+  },
+  "phpBaselineDelta": {
+    "tests": 1,
+    "assertions": 14
+  },
+  "structural": {
+    "schemaFiles": 36,
+    "examples": 203,
+    "validExamples": 113,
+    "invalidExamples": 90,
+    "disabledRuleRecords": 5,
+    "enabledRules": 252,
+    "categoryWeights": 8,
+    "canonicalVectors": 6,
+    "signedValid": 2,
+    "signedInvalid": 8,
+    "httpPrivacyVectors": 19,
+    "openapiOperations": 20,
+    "adminOperations": 7,
+    "publicPostOperations": 8,
+    "openapi": "PASS"
+  },
+  "semantic": {
+    "existingSemanticVectors": 36,
+    "v3SemanticVectors": 44,
+    "totalSemanticVectors": 80,
+    "dstVectors": 4,
+    "tzdb": "2026c",
+    "icu": "78.3",
+    "result": "PASS",
+    "comparison": "exact; decimal rational confidence and HALF_UP rounding"
+  },
+  "backend": {
+    "daily": "PASS",
+    "zodiac": "PASS",
+    "crossRuntime": "PASS / differences=0",
+    "sajuImpactViolations": 0
+  },
+  "browser": {
+    "compatibility": "PASS",
+    "daily": "PASS",
+    "period": "PASS",
+    "polish": "PASS",
+    "polishRealCalculationCalls": 5,
+    "polishRealInterpretationCalls": 5,
+    "modes": 5,
+    "widths": [
+      320,
+      375,
+      768,
+      1280
+    ],
+    "responsiveCombinations": 20,
+    "mobileEditButtonHeight": 48,
+    "unknownTimeLabelHeight": 44,
+    "rankingConfidence": "exact values, collapsed per group",
+    "interpretationSummary": "unchanged backend text"
+  },
+  "numericExpectationsChanged": 0,
+  "existingTestsDeleted": 0,
+  "backendChanged": false,
+  "schemasChanged": false,
+  "commit": false,
+  "push": false,
+  "deployment": false,
+  "checkpointReview": {
+    "date": "2026-10-16",
+    "result": "FRONTEND_V1_FINAL_REGRESSION_PASS_READY_TO_COMMIT",
+    "gates": [
+      "INTERPRETATION_ROUTE_IMPLEMENTATION_PASS",
+      "PERIOD_ORCHESTRATION_IMPLEMENTATION_PASS",
+      "DAILY_ORCHESTRATION_IMPLEMENTATION_PASS",
+      "PUBLIC_COMBINED_API_IMPLEMENTATION_PASS",
+      "SAJU_FEATURE_EXTRACTION_IMPLEMENTATION_PASS"
+    ],
+    "php": {
+      "lint": "PASS",
+      "tests": 143,
+      "assertions": 1263182
+    },
+    "structural": {
+      "schemaFiles": 36,
+      "examples": 203,
+      "validExamples": 113,
+      "invalidExamples": 90,
+      "disabledRuleRecords": 5,
+      "enabledRules": 252,
+      "categoryWeights": 8,
+      "canonicalVectors": 6,
+      "signedValid": 2,
+      "signedInvalid": 8,
+      "httpPrivacyVectors": 19,
+      "openapiOperations": 20,
+      "adminOperations": 7,
+      "publicPostOperations": 8,
+      "openapi": "PASS"
+    },
+    "semantic": {
+      "existingSemanticVectors": 36,
+      "v3SemanticVectors": 44,
+      "totalSemanticVectors": 80,
+      "dstVectors": 4,
+      "tzdb": "2026c",
+      "icu": "78.3",
+      "result": "PASS",
+      "comparison": "exact; decimal rational confidence and HALF_UP rounding"
+    },
+    "browser": {
+      "retainedCompatibility": "PASS",
+      "retainedDaily": "PASS",
+      "retainedPeriod": "PASS",
+      "mobileJourneys": [
+        {
+          "result": "FRONTEND_FINAL_POLISH_BROWSER_PASS",
+          "journeyWidth": 320,
+          "calculationCalls": 5,
+          "interpretationCalls": 5,
+          "layout": [
+            {
+              "mode": "compatibility",
+              "width": 320,
+              "pageHeight": 3181,
+              "ctaY": 1675.8125,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "compatibility",
+              "width": 375,
+              "pageHeight": 3124,
+              "ctaY": 1618.96875,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "compatibility",
+              "width": 768,
+              "pageHeight": 2540,
+              "ctaY": 1157.84375,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "compatibility",
+              "width": 1280,
+              "pageHeight": 2356,
+              "ctaY": 1158.140625,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "daily",
+              "width": 320,
+              "pageHeight": 3621,
+              "ctaY": 1851.203125,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "daily",
+              "width": 375,
+              "pageHeight": 3541,
+              "ctaY": 1794.359375,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "daily",
+              "width": 768,
+              "pageHeight": 2973,
+              "ctaY": 1345.234375,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "daily",
+              "width": 1280,
+              "pageHeight": 2789,
+              "ctaY": 1345.53125,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "weekly",
+              "width": 320,
+              "pageHeight": 3924,
+              "ctaY": 1900.109375,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "weekly",
+              "width": 375,
+              "pageHeight": 3867,
+              "ctaY": 1843.265625,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "weekly",
+              "width": 768,
+              "pageHeight": 3044,
+              "ctaY": 1394.140625,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "weekly",
+              "width": 1280,
+              "pageHeight": 3099,
+              "ctaY": 1417.53125,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "monthly",
+              "width": 320,
+              "pageHeight": 4253,
+              "ctaY": 1979.40625,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "monthly",
+              "width": 375,
+              "pageHeight": 4197,
+              "ctaY": 1922.5625,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "monthly",
+              "width": 768,
+              "pageHeight": 3143,
+              "ctaY": 1363.046875,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "monthly",
+              "width": 1280,
+              "pageHeight": 3197,
+              "ctaY": 1386.4375,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "yearly",
+              "width": 320,
+              "pageHeight": 3896,
+              "ctaY": 1873.015625,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "yearly",
+              "width": 375,
+              "pageHeight": 3839,
+              "ctaY": 1816.171875,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "yearly",
+              "width": 768,
+              "pageHeight": 3005,
+              "ctaY": 1363.046875,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "yearly",
+              "width": 1280,
+              "pageHeight": 3059,
+              "ctaY": 1386.4375,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            }
+          ]
+        },
+        {
+          "result": "FRONTEND_FINAL_POLISH_BROWSER_PASS",
+          "journeyWidth": 375,
+          "calculationCalls": 5,
+          "interpretationCalls": 5,
+          "layout": [
+            {
+              "mode": "compatibility",
+              "width": 320,
+              "pageHeight": 3181,
+              "ctaY": 1675.8125,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "compatibility",
+              "width": 375,
+              "pageHeight": 3124,
+              "ctaY": 1618.96875,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "compatibility",
+              "width": 768,
+              "pageHeight": 2540,
+              "ctaY": 1157.84375,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "compatibility",
+              "width": 1280,
+              "pageHeight": 2356,
+              "ctaY": 1158.140625,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "daily",
+              "width": 320,
+              "pageHeight": 3621,
+              "ctaY": 1851.203125,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "daily",
+              "width": 375,
+              "pageHeight": 3541,
+              "ctaY": 1794.359375,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "daily",
+              "width": 768,
+              "pageHeight": 2973,
+              "ctaY": 1345.234375,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "daily",
+              "width": 1280,
+              "pageHeight": 2789,
+              "ctaY": 1345.53125,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "weekly",
+              "width": 320,
+              "pageHeight": 3924,
+              "ctaY": 1900.109375,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "weekly",
+              "width": 375,
+              "pageHeight": 3867,
+              "ctaY": 1843.265625,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "weekly",
+              "width": 768,
+              "pageHeight": 3044,
+              "ctaY": 1394.140625,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "weekly",
+              "width": 1280,
+              "pageHeight": 3099,
+              "ctaY": 1417.53125,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "monthly",
+              "width": 320,
+              "pageHeight": 4253,
+              "ctaY": 1979.40625,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "monthly",
+              "width": 375,
+              "pageHeight": 4197,
+              "ctaY": 1922.5625,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "monthly",
+              "width": 768,
+              "pageHeight": 3143,
+              "ctaY": 1363.046875,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "monthly",
+              "width": 1280,
+              "pageHeight": 3197,
+              "ctaY": 1386.4375,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "yearly",
+              "width": 320,
+              "pageHeight": 3896,
+              "ctaY": 1873.015625,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "yearly",
+              "width": 375,
+              "pageHeight": 3839,
+              "ctaY": 1816.171875,
+              "editBelow": true,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "yearly",
+              "width": 768,
+              "pageHeight": 3005,
+              "ctaY": 1363.046875,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            },
+            {
+              "mode": "yearly",
+              "width": 1280,
+              "pageHeight": 3059,
+              "ctaY": 1386.4375,
+              "editBelow": false,
+              "editHeight": 48,
+              "checkHeight": 44
+            }
+          ]
+        }
+      ],
+      "additionalCancellation": "COMPATIBILITY_INTERPRETATION_CANCELLATION_PASS / intercepted synthetic responses / real API calls 0"
+    },
+    "extraRerun": "Redundant Compatibility suite rerun reached Interpretation HTTP 429 after accumulated requests. Diagnostic confirmed RATE_LIMITED / Retry-After 425. Earlier fresh complete suite passed. New cancellation probes separately passed with intercepted responses. Rate limiter unchanged.",
+    "intendedFiles": 10,
+    "backendChanges": 0,
+    "schemaChanges": 0,
+    "push": "NOT_PUSHED",
+    "deployment": "NONE",
+    "commitGate": "Authorized after staged check; actual hash and clean state reported after commit"
+  }
+}

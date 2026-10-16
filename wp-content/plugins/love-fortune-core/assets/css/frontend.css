@@ -83,3 +83,50 @@ body.love-fortune-page{margin:0;background:#fffaf7;color:#352a32;font:16px/1.65 
 .love-fortune-app .lf-period-rankings li{margin:1rem 0;overflow-wrap:anywhere}
 .love-fortune-app .lf-period-rankings li span,.love-fortune-app .lf-period-rankings li small{display:block}
 @media(max-width:640px){.love-fortune-app .lf-period-rankings{grid-template-columns:1fr}}
+/* V1 final polish: shared inputs, secondary context and compact mobile rhythm. */
+.love-fortune-app header{margin-bottom:20px}
+.love-fortune-app .lf-view-navigation{gap:8px;margin:16px 0 8px}
+.love-fortune-app .lf-view-navigation button{padding:10px 16px;margin:0}
+.love-fortune-app .lf-mode-explanation{margin:8px 0;font-weight:600}
+.love-fortune-app .lf-switch-hint{margin:4px 0 16px}
+.love-fortune-app .lf-period-navigation{padding:8px;background:#f4edf0;border-radius:12px;gap:6px;margin:8px 0 16px;width:fit-content}
+.love-fortune-app .lf-period-navigation button{min-height:44px;padding:8px 16px;font-size:15px}
+.love-fortune-app .lf-input-group{margin-top:24px}
+.love-fortune-app .lf-input-group>h3{font-size:20px;margin-bottom:12px}
+.love-fortune-app .lf-target-group{border-top:1px solid var(--lf-line);padding-top:20px}
+.love-fortune-app .lf-check{min-height:44px}
+.love-fortune-app .lf-common-disclaimer{font-size:14px;color:#665760;margin:4px 0 16px}
+.love-fortune-app .lf-note{margin:16px 0 4px}
+.love-fortune-app [data-action=reset]{white-space:nowrap;flex-shrink:0}
+.love-fortune-app [data-view=comparison]{margin:16px 0}
+.love-fortune-app [data-view=comparison]:has([data-view=daily-delta][hidden]){margin:0}
+.love-fortune-app [data-view=trend] p{margin:8px 0}
+.love-fortune-app .lf-ranking-info{margin:12px 0 0;padding-top:8px}
+.love-fortune-app .lf-ranking-info summary{font-weight:400}
+.love-fortune-app details dl{margin:8px 0}
+.love-fortune-app details dl>div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:8px 0;border-bottom:1px solid var(--lf-line)}
+.love-fortune-app details dd{margin:0;font-variant-numeric:tabular-nums}
+.love-fortune-app [data-view=period-inputs]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.love-fortune-app [data-period-input=monthly]{margin:0;gap:12px}
+.love-fortune-app .lf-score-label{font-size:14px;color:#665760;margin:0 0 8px}
+@media(max-width:640px){
+ .love-fortune-page .lf-service-main{padding:20px 16px}
+ .love-fortune-page .lf-service-title{margin-bottom:16px}
+ .love-fortune-app header{margin-bottom:16px}
+ .love-fortune-app .lf-view-navigation{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+ .love-fortune-app .lf-view-navigation button{padding:8px 4px;font-size:14px;line-height:1.4}
+ .love-fortune-app .lf-period-navigation{display:flex;gap:6px}
+ .love-fortune-app .lf-period-navigation button{padding:8px 16px}
+ .love-fortune-app .lf-input-group{margin-top:16px}
+ .love-fortune-app fieldset{padding:8px 12px 12px}
+ .love-fortune-app label{margin-top:12px}
+ .love-fortune-app .lf-time-group{margin:12px 0}
+ .love-fortune-app .lf-hint{margin-top:4px}
+ .love-fortune-app .lf-people{gap:12px}
+ .love-fortune-app .lf-result-heading{flex-direction:column;align-items:flex-start;gap:8px}
+ .love-fortune-app .lf-result-heading h3{font-size:22px}
+ .love-fortune-app [data-view=period-inputs]{grid-template-columns:1fr;gap:0}
+ .love-fortune-app .lf-overall{padding:16px 0 20px}
+ .love-fortune-app .lf-period-rankings{gap:12px;margin:12px 0}
+ .love-fortune-app .lf-period-rankings li{margin:10px 0}
+}

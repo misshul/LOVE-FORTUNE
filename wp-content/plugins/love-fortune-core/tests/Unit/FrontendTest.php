@@ -39,8 +39,8 @@ final class FrontendTest extends \PHPUnit\Framework\TestCase
  }
  public function testPolishMarkupAndAccessibleCopy():void{
   $html=(new \LoveFortune\Core\Frontend\FrontendShortcode())->render();
-  foreach(['1900~2099년 입력 가능','출생 시간을 몰라요','결과 기준 시간대','브라우저에 저장하지 않아요.','data-action="reset" hidden>입력 수정하기','data-view="score-unit"','aria-describedby='] as $copy)self::assertStringContainsString($copy,$html);
-  self::assertLessThan(strpos($html,'<details>'),strpos($html,'data-view="interpretation"'));
+  foreach(['1900~2099년 입력 가능','출생 시간을 몰라요','결과를 계산할 기준 시간대','브라우저에 저장하지 않아요.','data-action="reset" hidden>입력 수정하기','data-view="score-unit"','aria-describedby='] as $copy)self::assertStringContainsString($copy,$html);
+  self::assertLessThan(strpos($html,'<details data-view='),strpos($html,'data-view="interpretation"'));
   self::assertLessThan(strpos($html,'data-view="interpretation"'),strpos($html,'data-action="interpret"'));
   self::assertStringNotContainsString('<details open',$html);
  }
@@ -73,6 +73,15 @@ final class FrontendTest extends \PHPUnit\Framework\TestCase
   self::assertSame(2,substr_count($html,'type="number" min="1900" max="2099" step="1" required disabled'));
   preg_match('/<select data-field="month"[^>]*>(.*?)<\/select>/s',$html,$months);
   self::assertSame(13,substr_count($months[1],'<option'));
+ }
+ public function testFinalPolishGroupsAndCommonCopy():void{
+  $html=(new \LoveFortune\Core\Frontend\FrontendShortcode())->render();
+  foreach(['두 사람의 출생 정보로 기본 궁합과 선택한 날짜·기간의 관계 흐름을 살펴보세요.','두 사람의 정보','살펴볼 날짜·기간','태어난 지역','결과를 계산할 기준 시간대','입력 정보와 결과는 브라우저에 저장하지 않아요.','궁합 해석 보기','<summary>계산 정보</summary>','lf-period-navigation'] as $copy)self::assertStringContainsString($copy,$html);
+  self::assertSame(1,substr_count($html,'관계를 돌아보는 참고 정보이며, 실제 사건이나 미래를 보장하지 않아요.'));
+  self::assertSame(1,substr_count($html,'화면을 바꿔도 입력한 정보는 유지돼요. 결과는 다시 계산해주세요.'));
+  self::assertStringContainsString('data-view="target-inputs"',$html);
+  self::assertStringContainsString('data-view="shared-inputs"',$html);
+  self::assertStringContainsString('<div data-view="details"></div>',$html);
  }
  public function testDailyUsesOnlyFrozenCanonicalTimezonesAndExplicitDate():void{
   $html=(new \LoveFortune\Core\Frontend\FrontendShortcode())->render();

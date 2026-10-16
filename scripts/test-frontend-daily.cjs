@@ -37,11 +37,11 @@ const reference=require('../wp-content/plugins/love-fortune-core/config/referenc
  assert.equal(await view('result').evaluate(el=>el===document.activeElement),true);
  assert.equal(requests[0].body.personA.birthTime,'10:30');assert.equal(requests[0].body.personB.birthTime,null);assert.equal(requests[0].body.targetTimezone,'America/New_York');
  assert.equal(await view('score').textContent(),String(real.dailyScore));assert.ok((await view('daily-reference').textContent()).includes(real.targetTimezone));
- assert.match(await view('categories').locator('article').nth(2).textContent(),/점수 미제공/);assert.match(await view('categories').locator('article').nth(7).textContent(),/날짜별 변동은 적용하지 않아요/);
+ assert.match(await view('categories').locator('article').nth(2).textContent(),/점수로 제공하지 않아요/);assert.match(await view('categories').locator('article').nth(7).textContent(),/날짜별 변동은 적용하지 않아요/);
  const interpretation=page.waitForResponse(r=>r.url().includes('/interpretation/generate'));await action('interpret').click();const ir=await interpretation;assert.equal(ir.status(),200);assert.equal((await ir.json()).meta.interpretationMode,'FALLBACK');await view('interpretation').waitFor({state:'visible'});
  assert.deepEqual(Object.keys(requests[1].body).sort(),['locale','signedContext']);assert.ok(!(await page.content()).includes(real.signedInterpretationContext));
- assert.equal(await app.locator('details').evaluate(el=>el.open),false);
- assert.equal(await app.evaluate(el=>!!(el.querySelector('[data-view=interpretation]').compareDocumentPosition(el.querySelector('details'))&Node.DOCUMENT_POSITION_FOLLOWING)),true);
+ assert.equal(await app.locator('[data-view=calculation-info]').evaluate(el=>el.open),false);
+ assert.equal(await app.evaluate(el=>!!(el.querySelector('[data-view=interpretation]').compareDocumentPosition(el.querySelector('[data-view=calculation-info]'))&Node.DOCUMENT_POSITION_FOLLOWING)),true);
  for(const width of [320,375,768,1280]){await page.setViewportSize({width,height:900});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert.ok(await app.evaluate(el=>el.scrollWidth<=el.clientWidth));await page.screenshot({path:'.tools/frontend-v1-2-'+width+'.png',fullPage:true});}
  assert.equal(await app.locator('input,select').evaluateAll(xs=>xs.every(x=>x.labels.length>0)),true);
  assert.equal(await view('loading').getAttribute('aria-live'),'polite');assert.equal(await view('interpretation-error').getAttribute('role'),'alert');
@@ -51,13 +51,13 @@ const reference=require('../wp-content/plugins/love-fortune-core/config/referenc
  const fake=async result=>{await page.route(dailyRoute,route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(result)}));await submit.click();await view('result').waitFor({state:'visible'});await page.unroute(dailyRoute);};
  for(const [status,copy,delta] of [['VERY_LOW','신중히 살펴볼 흐름',-6],['LOW','여유를 두면 좋은 흐름',-3],['STABLE','차분한 흐름',0],['GOOD','긍정적인 흐름',3],['VERY_GOOD','한층 긍정적인 흐름',6]]){
   await fake({...real,dailyStatus:status,dailyDelta:delta,dailyScore:100,lifetimeScore:99,coverage:0.25,resultConfidence:0.8});
-  assert.equal(await view('score').textContent(),'100');assert.equal(await view('status').textContent(),copy);assert.equal(await view('daily-delta').textContent(),'기본 궁합 대비 조정값 '+(delta>0?'+':'')+delta);assert.match(await view('details').textContent(),/0.25.*0.8/);
+  assert.equal(await view('score').textContent(),'100');assert.equal(await view('status').textContent(),copy);assert.equal(await view('daily-delta').textContent(),'기본 궁합에 반영된 날짜 조정값 '+(delta>0?'+':'')+delta);assert.match(await view('details').textContent(),/0.25.*0.8/);
  }
  const nullResult={...real,dailyScore:null,lifetimeScore:null,dailyDelta:0,dailyStatus:'INSUFFICIENT_DATA',coverage:0.5,resultConfidence:0};delete nullResult.signedInterpretationContext;
  await fake(nullResult);assert.match(await view('score').textContent(),/정보가 부족/);assert.equal(await view('score-unit').isVisible(),false);assert.equal(await action('interpret').isVisible(),false);assert.match(await view('details').textContent(),/0.5/);
  const fallback={...real,dailyScore:50,lifetimeScore:50,dailyDelta:0,dailyStatus:'INSUFFICIENT_PERIOD_DATA',resultConfidence:0};delete fallback.signedInterpretationContext;
  await fake(fallback);assert.equal(await view('score').textContent(),'50');assert.equal(await view('daily-delta').isVisible(),false);assert.match(await view('warnings').textContent(),/기본 궁합 점수/);assert.equal(await action('interpret').isVisible(),false);
- await fake({...real,categoryScores:{...real.categoryScores,ATTRACTION:null}});assert.match(await view('categories').locator('article').first().textContent(),/계산 정보 부족/);
+ await fake({...real,categoryScores:{...real.categoryScores,ATTRACTION:null}});assert.match(await view('categories').locator('article').first().textContent(),/계산할 정보가 부족해요/);
  const absent={...real};delete absent.categoryScores;await fake(absent);assert.equal(await view('categories').isVisible(),false);assert.equal(await view('categories').locator('article').count(),0);
  await fake(real);await page.route('**/interpretation/generate',route=>route.fulfill({status:503,contentType:'application/json',body:'{"error":{"code":"INTERPRETATION_UNAVAILABLE"}}'}));await action('interpret').click();await view('interpretation-error').waitFor({state:'visible'});assert.equal(await view('result').isVisible(),true);await page.unroute('**/interpretation/generate');
  let release;const held=new Promise(resolve=>release=resolve);await page.route(dailyRoute,async route=>{await held;await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(real)}).catch(()=>{});});
