@@ -18,10 +18,11 @@ final class InterpretationEndpoint extends CompatibilityEndpoint
             $input=InterpretationInput::parse((string)$request->get_body(),(string)$request->get_header('content-type'),$encoding?(string)$request->get_header('content-encoding'):null);
             $now=$this->clock===null?time():($this->clock)();
             if($this->rate!==null){($this->rate)();}else{
-                try{(new CoreRateLimit((string)getenv('LOVE_FORTUNE_RATE_SECRET'),\LoveFortune\Core\Infrastructure\Rate\PrivateRateStorage::configured('interpretation')->directory,10,'Interpretation'))->consume((string)($_SERVER['REMOTE_ADDR']??''),$now);}
+                try{(new CoreRateLimit((string)\LoveFortune\Core\Support\RuntimeConfig::get('LOVE_FORTUNE_RATE_SECRET'),\LoveFortune\Core\Infrastructure\Rate\PrivateRateStorage::configured('interpretation')->directory,10,'Interpretation'))->consume((string)($_SERVER['REMOTE_ADDR']??''),$now);}
                 catch(PublicError $e){if($e->status===429){throw $e;}throw new PublicError(503,'INTERPRETATION_UNAVAILABLE');}
             }
-            $verified=($this->verifier??InterpretationContext::environment())->verify($input['signedContext'],$input['locale'],$now);
+            try{$verified=($this->verifier??InterpretationContext::environment())->verify($input['signedContext'],$input['locale'],$now);}
+            catch(\LoveFortune\Core\Support\RuntimeConfigException){throw new PublicError(422,'INVALID_INTERPRETATION_CONTEXT');}
             $service=$this->service??new InterpretationService(JsonGatewayProvider::environment());
             $result=$service->interpret($verified,bin2hex(random_bytes(16)));
             return new \WP_REST_Response($result,200,$headers);

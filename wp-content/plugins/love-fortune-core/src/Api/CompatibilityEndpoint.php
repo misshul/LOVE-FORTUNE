@@ -27,7 +27,7 @@ class CompatibilityEndpoint implements RegistrationInterface
         $headers=['Cache-Control'=>'no-store'];
         try{
             $now=$this->clock===null?time():($this->clock)();
-            if($this->rate!==null){($this->rate)();}else{(new CoreRateLimit((string)getenv('LOVE_FORTUNE_RATE_SECRET'),\LoveFortune\Core\Infrastructure\Rate\PrivateRateStorage::configured($this->rateDirectory())->directory))->consume((string)($_SERVER['REMOTE_ADDR']??''),$now);}
+            if($this->rate!==null){($this->rate)();}else{(new CoreRateLimit((string)\LoveFortune\Core\Support\RuntimeConfig::get('LOVE_FORTUNE_RATE_SECRET'),\LoveFortune\Core\Infrastructure\Rate\PrivateRateStorage::configured($this->rateDirectory())->directory))->consume((string)($_SERVER['REMOTE_ADDR']??''),$now);}
             if($request->get_query_params()!==[]){throw new PublicError(400,'INVALID_REQUEST');}
             $requestHeaders=$request->get_headers();
             $hasEncoding=array_key_exists('content_encoding',$requestHeaders)||array_key_exists('content-encoding',$requestHeaders);
@@ -40,7 +40,8 @@ class CompatibilityEndpoint implements RegistrationInterface
                 catch(\Throwable){throw new PublicError(503,'SERVICE_UNAVAILABLE');}
             }
             return new \WP_REST_Response($result,200,$headers);
-        }catch(PublicError $e){return new \WP_REST_Response($e->body(),$e->status,$headers+$e->headers);}
+        }catch(\LoveFortune\Core\Support\RuntimeConfigException){$e=new PublicError(503,'SERVICE_UNAVAILABLE');return new \WP_REST_Response($e->body(),503,$headers);}
+        catch(PublicError $e){return new \WP_REST_Response($e->body(),$e->status,$headers+$e->headers);}
         catch(\Throwable){$e=new PublicError(500,'CALCULATION_FAILED');return new \WP_REST_Response($e->body(),500,$headers);}
     }
     protected function calculateResult(array $input,string $id): array { return (new CompatibilityCalculation())->calculate($input,$id); }

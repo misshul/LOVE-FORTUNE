@@ -10,8 +10,8 @@ final class JsonGatewayProvider implements ProviderInterface
     public function __construct(private readonly string $url,private readonly string $key,private readonly string $provider,private readonly string $model) {}
     public static function environment(): ?self
     {
-        if(getenv('LOVE_FORTUNE_AI_ENABLED')!=='1'){return null;}
-        $url=(string)getenv('LOVE_FORTUNE_AI_ENDPOINT');$key=(string)getenv('LOVE_FORTUNE_AI_KEY');$provider=(string)getenv('LOVE_FORTUNE_AI_PROVIDER');$model=(string)getenv('LOVE_FORTUNE_AI_MODEL');
+        if(\LoveFortune\Core\Support\RuntimeConfig::get('LOVE_FORTUNE_AI_ENABLED')!=='1'){return null;}
+        $url=(string)\LoveFortune\Core\Support\RuntimeConfig::get('LOVE_FORTUNE_AI_ENDPOINT');$key=(string)\LoveFortune\Core\Support\RuntimeConfig::get('LOVE_FORTUNE_AI_KEY');$provider=(string)\LoveFortune\Core\Support\RuntimeConfig::get('LOVE_FORTUNE_AI_PROVIDER');$model=(string)\LoveFortune\Core\Support\RuntimeConfig::get('LOVE_FORTUNE_AI_MODEL');
         $parts=parse_url($url);
         if(!is_array($parts)||($parts['scheme']??null)!=='https'||empty($parts['host'])||isset($parts['user'])||isset($parts['pass'])||isset($parts['fragment'])||trim($key)===''||trim($provider)===''||trim($model)===''){return null;}
         return new self($url,$key,$provider,$model);

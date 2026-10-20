@@ -4,7 +4,7 @@ Scope: local implementation/validation only. No deployment, commit or push. Nume
 
 ## Configuration and isolation
 
-Current source order is explicit environment variables only, with no implicit fallback. Existing signing/rate/AI getenv support is preserved. A private secret-file adapter is deferred until actual hosting environment-variable support is known; defining WordPress constants alone does not configure these loaders. Never put secrets in plugin source, wp_options, a public .env or command-line arguments. No production secret is included.
+Current source order is explicit environment variables, then an explicitly selected private JSON source, then existing unconfigured behavior. ENV-only deployments remain supported. See [private runtime configuration](private-config-adapter.md) for LOVE_FORTUNE_CONFIG_FILE ENV/constant selection, strict file safety, precedence and the non-secret Cron wrapper. Arbitrary WordPress secret constants are not configuration inputs. Never put secrets in plugin source, wp_options, a public .env or command-line arguments. No production secret is included.
 
 Required additional non-secret variables:
 

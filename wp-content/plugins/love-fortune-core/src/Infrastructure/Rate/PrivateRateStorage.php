@@ -20,7 +20,8 @@ class PrivateRateStorage
     public static function configured(string $bucket): self
     {
         if(!in_array($bucket,['core','range','week','month','year','interpretation'],true)){throw new PublicError(503,'SERVICE_UNAVAILABLE');}
-        $root=(string)getenv('LOVE_FORTUNE_RATE_ROOT');$site=(string)getenv('LOVE_FORTUNE_RATE_SITE');
+        try{$root=(string)\LoveFortune\Core\Support\RuntimeConfig::get('LOVE_FORTUNE_RATE_ROOT');$site=(string)\LoveFortune\Core\Support\RuntimeConfig::get('LOVE_FORTUNE_RATE_SITE');}
+        catch(\LoveFortune\Core\Support\RuntimeConfigException){throw new PublicError(503,'SERVICE_UNAVAILABLE');}
         if(!preg_match('/^[a-zA-Z0-9_-]{1,64}$/D',$site)){throw new PublicError(503,'SERVICE_UNAVAILABLE');}
         (new self($root))->validate();
         foreach([defined('ABSPATH')?(string)constant('ABSPATH'):'',(string)($_SERVER['DOCUMENT_ROOT']??'')] as $public){

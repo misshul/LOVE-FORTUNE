@@ -9,8 +9,8 @@ final class InterpretationContext
     public static function environment(): self
     {
         // JSON object with one current and optionally one previous key. Never log values.
-        $id=(string)getenv('LOVE_FORTUNE_SIGNING_KID');$previous=getenv('LOVE_FORTUNE_SIGNING_PREVIOUS_KID');
-        try{$keys=json_decode((string)getenv('LOVE_FORTUNE_SIGNING_KEYS'),true,8,JSON_THROW_ON_ERROR);}catch(\Throwable){$keys=[];}
+        $id=(string)\LoveFortune\Core\Support\RuntimeConfig::get('LOVE_FORTUNE_SIGNING_KID');$previous=\LoveFortune\Core\Support\RuntimeConfig::get('LOVE_FORTUNE_SIGNING_PREVIOUS_KID');
+        try{$keys=json_decode((string)\LoveFortune\Core\Support\RuntimeConfig::get('LOVE_FORTUNE_SIGNING_KEYS'),true,8,JSON_THROW_ON_ERROR);}catch(\Throwable){$keys=[];}
         return new self($id,is_array($keys)?$keys:[],$previous===false||$previous===''?null:$previous);
     }
     private static function validateResult(array $r): void

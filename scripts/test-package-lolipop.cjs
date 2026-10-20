@@ -2,6 +2,12 @@
 const assert=require('node:assert/strict'),p=require('./package-lolipop.cjs');
 let checks=0;const reject=f=>{assert.throws(f);checks++;};
 p.validateList(p.required);checks++;
+for(const name of ['RuntimeConfig','PrivateJsonConfig','RuntimeConfigException']){
+  assert(p.allowed('src/Support/'+name+'.php'));checks++;
+}
+for(const file of ['config/private.json','private/love-fortune.json','operational/cron-wrapper.php']){
+  reject(()=>p.validateList([...p.required,file]));
+}
 for(const f of p.required)reject(()=>p.validateList(p.required.filter(x=>x!==f)));
 for(const f of ['tests/fixture.php','assets/js/.env','assets/js/test-secret.json','.git/config','config/references/private.env','.tools/a.log','assets/screenshots/a.png','src/tests/probe.php','../evil.php'])reject(()=>p.validateList([...p.required,f]));
 reject(()=>p.validateList([...p.required,p.required[0]]));
