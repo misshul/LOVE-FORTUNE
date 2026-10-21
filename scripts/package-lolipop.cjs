@@ -1,6 +1,7 @@
 ﻿'use strict';
 // Local candidate only. Always execute fresh approved gates; never infer production rollback.
 const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process'),crypto=require('node:crypto'),assert=require('node:assert/strict');
+const zipPython=require('./package-zip-runner.cjs');
 const plugin='wp-content/plugins/love-fortune-core';
 const required=['love-fortune-core.php','autoload.php','src/Frontend/templates/service-page.php','assets/css/frontend.css','assets/js/frontend.js','config/bootstrap.php','config/zodiac.php','bin/rate-cleanup.php',...['solar-terms-v1.json','locations-v1.json','timezones-v1.json','saju-rules-v1.json','daily-rules-v1.json','location-timezone-LICENSE.md','README.md'].map(x=>'config/references/'+x)];
 const allowed=f=>!f.split('/').some(x=>x.startsWith('.')||/^(tests?|fixtures?|logs?|node_modules|vendor)$/i.test(x))&&(['love-fortune-core.php','autoload.php','config/bootstrap.php','config/zodiac.php'].includes(f)||/^src\/.*\.php$/.test(f)||/^bin\/.*\.php$/.test(f)||/^assets\/(css\/[^/]+\.css|js\/[^/]+\.js)$/.test(f)||/^config\/references\/[^/]+\.(json|md)$/.test(f));
@@ -26,23 +27,27 @@ function main(){
  const out=path.join(destination,'candidate','love-fortune-core');
  for(const f of files){const to=path.join(out,f);fs.mkdirSync(path.dirname(to),{recursive:true});fs.copyFileSync(path.join(plugin,f),to);}
  fs.writeFileSync(path.join(destination,'candidate-sha256.json'),JSON.stringify(manifest,null,2)+'\n');
- const quote=s=>"'"+s.replaceAll("'","''")+"'";
  const zip=path.join(destination,'candidate.zip'),extracted=path.join(destination,'extracted');
- run('powershell.exe',['-NoProfile','-Command','Compress-Archive -LiteralPath '+quote(out)+' -DestinationPath '+quote(zip)]);
- run('powershell.exe',['-NoProfile','-Command','Expand-Archive -LiteralPath '+quote(zip)+' -DestinationPath '+quote(extracted)]);
+ const zipMetadata=zipPython(path.relative(process.cwd(),destination).replaceAll('\\','/'));
+ assert.equal(zipMetadata.files,files.length);
  assert.deepEqual(fs.readdirSync(extracted),['love-fortune-core']);
  const artifact=path.join(extracted,'love-fortune-core');const actual=names(artifact);validateList(actual);assert.deepEqual(actual,files);
  for(const f of actual){const bytes=fs.readFileSync(path.join(artifact,f));assert.equal(sha(bytes),manifest[f]);scan(bytes,f);}
  for(const f of files.filter(f=>f.startsWith('config/references/'))){assert.equal(manifest[f],sha(cp.execFileSync('git',['show',head+':'+plugin+'/'+f],{maxBuffer:32*1024*1024})),'Frozen reference changed: '+f);}
  for(const f of ['assets/css/frontend.css','assets/js/frontend.js'])assert(fs.statSync(path.join(artifact,f)).mtimeMs>0);
  const remote='/tmp/lf-package-'+crypto.randomBytes(8).toString('hex');
- run('docker',['compose','-f','compose.compatibility.yaml','cp',artifact,'wordpress:'+remote]);
+ run('docker',['compose','-f','compose.compatibility.yaml','cp',zip,'wordpress:'+remote+'.zip']);
+ run('docker',['compose','-f','compose.compatibility.yaml','cp','scripts/check-linux-zip.php','wordpress:'+remote+'.php']);
+ const linuxExtraction=runJson(run,'docker',['compose','-f','compose.compatibility.yaml','exec','-T','--user','www-data','wordpress','php',remote+'.php',remote+'.zip',remote]);
+ assert.equal(linuxExtraction.files,files.length);assert.deepEqual(linuxExtraction.manifest,manifest);
+ const linuxArtifact=remote+'/love-fortune-core';
  const lint='$n=0;foreach(new RecursiveIteratorIterator(new RecursiveDirectoryIterator($argv[1])) as $f){if($f->isFile()&&$f->getExtension()==="php"){exec(escapeshellarg(PHP_BINARY)." -l ".escapeshellarg($f->getPathname()),$out,$code);if($code!==0){exit(1);}$n++;}}echo json_encode(["result"=>"PASS","files"=>$n]);';
- const artifactLint=runJson(run,'docker',['compose','-f','compose.compatibility.yaml','exec','-T','wordpress','php','-r',lint,remote]);assert.equal(artifactLint.result,'PASS');assert.equal(artifactLint.files,files.filter(x=>x.endsWith('.php')).length);
+ const artifactLint=runJson(run,'docker',['compose','-f','compose.compatibility.yaml','exec','-T','wordpress','php','-r',lint,linuxArtifact]);assert.equal(artifactLint.result,'PASS');assert.equal(artifactLint.files,files.filter(x=>x.endsWith('.php')).length);
  const probe='require $argv[1]."/autoload.php";(new LoveFortune\\Core\\Engine\\Saju\\LocationReferenceRepository())->get("LOC000002");(new LoveFortune\\Core\\Engine\\Saju\\TimezoneReferenceRepository())->intervals("Asia/Tokyo");(new LoveFortune\\Core\\Engine\\Saju\\SolarTermReference())->provenance();new LoveFortune\\Core\\Engine\\Saju\\SajuFeatureCatalog();new LoveFortune\\Core\\Engine\\Saju\\SajuDailyEvaluator();LoveFortune\\Core\\Engine\\Zodiac\\ZodiacCatalog::configuration();echo json_encode(["result"=>"PASS","readers"=>6]);';
- const reference=runJson(run,'docker',['compose','-f','compose.compatibility.yaml','exec','-T','wordpress','php','-r',probe,remote]);assert.equal(reference.result,'PASS');
+ const reference=runJson(run,'docker',['compose','-f','compose.compatibility.yaml','exec','-T','wordpress','php','-r',probe,linuxArtifact]);assert.equal(reference.result,'PASS');
  assert.deepEqual(snapshot(),manifest,'Runtime changed during packaging');
  const result={result:'FRONTEND_V1_PACKAGING_REPAIR_PASS',sourceCommit:head,artifact:path.relative(process.cwd(),zip).replaceAll('\\','/'),bytes:fs.statSync(zip).size,sha256:sha(fs.readFileSync(zip)),fileCount:files.length,php,artifactLint,reference,manifest:'PASS',frontendAssets:'PASS',secretAndPathScan:'PASS / heuristic scan plus reviewed runtime source; environment variable names are required loaders, not secret values',rollback:'NOT_CREATED / known production artifact must be selected separately',productionApproved:false,installTest:'NOT_RUN / no active plugin or DB mutation',commit:false,push:false,deployment:false};
+ result.zipMetadata=zipMetadata;result.linuxExtraction={...linuxExtraction,manifest:'PASS'};
  fs.writeFileSync(path.join(destination,'validation.json'),JSON.stringify({summary:result,regression,additional},null,2)+'\n');
  console.log(JSON.stringify(result,null,2));
 }

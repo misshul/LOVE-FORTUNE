@@ -21,4 +21,6 @@ reject(()=>p.runJson(()=>'{bad','node',[]));
 reject(()=>p.scan(Buffer.from('C:/Users/example/private'),'probe'));
 reject(()=>p.scan(Buffer.from('-----BEGIN RSA PRIVATE KEY-----'),'probe'));
 p.scan(Buffer.from("getenv('LOVE_FORTUNE_SIGNING_KEYS')"),'loader.php');checks++;
-console.log(JSON.stringify({result:'PACKAGING_TESTS_PASS',checks,futurePassingCounts:'ACCEPTED',nonzeroExit:'REJECTED',missingRequired:'REJECTED',unexpectedFiles:'REJECTED'}));
+const zip=require('./package-zip-runner.cjs')('--self-test');
+assert.equal(zip.result,'ZIP_METADATA_TESTS_PASS');checks+=zip.checks;
+console.log(JSON.stringify({result:'PACKAGING_TESTS_PASS',checks,zip,futurePassingCounts:'ACCEPTED',nonzeroExit:'REJECTED',missingRequired:'REJECTED',unexpectedFiles:'REJECTED'}));
