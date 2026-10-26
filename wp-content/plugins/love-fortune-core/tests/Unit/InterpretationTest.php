@@ -66,7 +66,7 @@ final class InterpretationTest extends \PHPUnit\Framework\TestCase
     public function testCompatibilitySignedSubsetAndDirectionGrounding(): void
     {
         $ctx=$this->context('Compatibility');$dto=ProviderInput::project($ctx);$count=0;
-        foreach($dto['evidence'] as $f){if(!in_array($f['direction'],['POSITIVE','NEGATIVE','MIXED'],true)){continue;}$kind=$f['direction']==='NEGATIVE'?'challenges':'strengths';$out=T::fallback($dto);$out[$kind]=[['text'=>T::evidenceText($f,$dto['locale']),'evidenceRefs'=>[$f['featureId']]]];self::assertSame([],T::validate($out,$dto));$empty=$dto;$empty['evidence']=[];self::assertNotSame([],T::validate($out,$empty));$out[$kind][0]['evidenceRefs']=['ft_unsigned'];self::assertNotSame([],T::validate($out,$dto));$count++;}
+        foreach($dto['evidence'] as $f){if(!in_array($f['direction'],['POSITIVE','NEGATIVE','MIXED'],true)){continue;}$kind=$f['direction']==='NEGATIVE'?'challenges':'strengths';$out=T::fallback($dto);$out[$kind]=[['text'=>T::evidenceText($f,$dto['locale']),'evidenceRefs'=>[$f['featureId']]]];self::assertSame(['V2_EMPTY_ARRAYS'],T::validate($out,$dto));$empty=$dto;$empty['evidence']=[];self::assertNotSame([],T::validate($out,$empty));$out[$kind][0]['evidenceRefs']=['ft_unsigned'];self::assertNotSame([],T::validate($out,$dto));$count++;}
         self::assertGreaterThan(0,$count);
         // Result.features is not a substitute for the signed evidence subset.
         $token=interpretationResign($this->token('Compatibility'),static function($p){$p['evidence']=[];return $p;},self::KEY);
@@ -86,7 +86,7 @@ final class InterpretationTest extends \PHPUnit\Framework\TestCase
         foreach(['summary'=>1200,'advice'=>1600] as $field=>$max){$out=$base;$n=preg_match_all('/./us',$out[$field]);$out[$field].=str_repeat(' ',$max-$n);self::assertSame([],T::validate($out,$dto));$out[$field].=' ';self::assertNotSame([],T::validate($out,$dto));}
         $f=current(array_filter($dto['evidence'],static fn($f)=>$f['direction']==='POSITIVE'));self::assertIsArray($f);$item=['text'=>T::evidenceText($f,'ko-KR'),'evidenceRefs'=>[$f['featureId']]];$item['text'].=str_repeat(' ',500-preg_match_all('/./us',$item['text']));
         foreach(['strengths','challenges'] as $kind){$d=$dto;if($kind==='challenges'){$f['direction']='NEGATIVE';$d['evidence']=[$f];$item['text']=T::evidenceText($f,'ko-KR');$item['text'].=str_repeat(' ',500-preg_match_all('/./us',$item['text']));}
-            $out=$base;$out[$kind]=array_fill(0,5,$item);self::assertSame([],T::validate($out,$d));$out[$kind][]=$item;self::assertNotSame([],T::validate($out,$d));$out[$kind]=[$item];$out[$kind][0]['text'].=' ';self::assertNotSame([],T::validate($out,$d));}
+            $out=$base;$out[$kind]=array_fill(0,5,$item);self::assertSame(['V2_EMPTY_ARRAYS'],T::validate($out,$d));$out[$kind][]=$item;self::assertNotSame([],T::validate($out,$d));$out[$kind]=[$item];$out[$kind][0]['text'].=' ';self::assertNotSame([],T::validate($out,$d));}
         $out=$base;$out['summary']=T::copy('ko-KR')[2];self::assertSame(['LIMITATION_FRAMING'],T::validate($out,$dto));
     }
     public function testRepairAndEveryProviderFailureFallback(): void
@@ -118,6 +118,6 @@ final class InterpretationTest extends \PHPUnit\Framework\TestCase
     public function testProviderUnconfiguredAndCodeOwnedPrompt(): void
     {
         $old=getenv('LOVE_FORTUNE_AI_ENABLED');try{putenv('LOVE_FORTUNE_AI_ENABLED=0');self::assertNull(JsonGatewayProvider::environment());}finally{putenv($old===false?'LOVE_FORTUNE_AI_ENABLED':'LOVE_FORTUNE_AI_ENABLED='.$old);}
-        $prompt=\LoveFortune\Core\Application\Interpretation\InterpretationPrompt::system();self::assertStringContainsString('AI_PROMPT_V1',$prompt);self::assertStringNotContainsString($this->token(),$prompt);
+        $prompt=\LoveFortune\Core\Application\Interpretation\InterpretationPrompt::system();self::assertStringContainsString('AI_PROMPT_V2',$prompt);self::assertStringNotContainsString($this->token(),$prompt);
     }
 }

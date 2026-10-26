@@ -1,4 +1,4 @@
-Current Interpretation authority: [Interpretation business route V1](contracts/interpretation-route-v1.md). Approved five signed result types, AI_PROMPT_V1, empty-evidence interpretation, closed provider DTO, output limits and deterministic fallback supersede earlier placeholders. Relationship personalization is deferred.
+Current Interpretation authority: [Deterministic Fallback V2](contracts/deterministic-fallback-v2.md). AI_PROMPT_V2: Compatibility-only category fallback, input-dependent controlled language, empty strengths/challenges for both AI and fallback. Other result types retain their content grammar; signed context and provider transport are unchanged. Relationship personalization is deferred. Earlier V1 reports remain historical.
 
 # LOVE FORTUNE
 # 08_AI_PROMPT_SPEC.md

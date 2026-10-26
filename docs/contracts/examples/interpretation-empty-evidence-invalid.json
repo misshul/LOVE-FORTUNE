@@ -13,7 +13,7 @@
       "ephemerisProviderVersion": "synthetic-fixture-v1",
       "ephemerisDataVersion": "synthetic-fixture-v1"
     },
-    "aiPromptVersion": "AI_PROMPT_V1",
+    "aiPromptVersion": "AI_PROMPT_V2",
     "provider": null,
     "model": null,
     "interpretationMode": "FALLBACK"

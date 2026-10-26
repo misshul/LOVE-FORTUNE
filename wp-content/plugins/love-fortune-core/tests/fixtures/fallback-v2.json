@@ -1,0 +1,29 @@
+{
+  "description": "Independent approved A-D literal expectations; synthetic formatter fixtures, D is not a signable production result.",
+  "cases": {
+    "A": {"status":"CAUTION","scores":{"EMOTION":20,"PASSION":70}},
+    "B": {"status":"GOOD","scores":{"STABILITY":45,"HARMONY":80}},
+    "C": {"status":"BALANCED","scores":{"EMOTION":50}},
+    "D": {"status":"GOOD","scores":{}}
+  },
+  "expected": {
+    "ko-KR": {
+      "A": {"summary":"이 결과는 관계를 돌아보기 위한 경향 안내이며 확정적인 예측이 아닙니다.\n차이와 기대를 차분히 확인해 볼 구간입니다.\n확인 가능한 항목 중 활동 에너지 항목이 상대적으로 높게 나타납니다.\n평가되지 않은 항목이 있어 확인 가능한 결과를 중심으로 참고해 주세요.","strengths":[],"challenges":[],"advice":"감정 교류 항목에서는 서로의 기대와 편안한 방식을 확인해 보세요."},
+      "B": {"summary":"이 결과는 관계를 돌아보기 위한 경향 안내이며 확정적인 예측이 아닙니다.\n관계의 조화를 활용해 볼 구간입니다.\n확인 가능한 항목 중 선호의 조율 항목이 상대적으로 높게 나타납니다.\n평가되지 않은 항목이 있어 확인 가능한 결과를 중심으로 참고해 주세요.","strengths":[],"challenges":[],"advice":"일상의 일관성 항목에서는 서로의 기대와 편안한 방식을 확인해 보세요."},
+      "C": {"summary":"이 결과는 관계를 돌아보기 위한 경향 안내이며 확정적인 예측이 아닙니다.\n균형을 살피며 서로에게 편안한 방식을 찾아볼 구간입니다.\n평가되지 않은 항목이 있어 확인 가능한 결과를 중심으로 참고해 주세요.","strengths":[],"challenges":[],"advice":"서로의 생각을 확인하고 편안한 속도로 대화해 보세요."},
+      "D": {"summary":"이 결과는 관계를 돌아보기 위한 경향 안내이며 확정적인 예측이 아닙니다.\n관계의 조화를 활용해 볼 구간입니다.\n평가되지 않은 항목이 있어 확인 가능한 결과를 중심으로 참고해 주세요.","strengths":[],"challenges":[],"advice":"서로의 생각을 확인하고 편안한 속도로 대화해 보세요."}
+    },
+    "ja-JP": {
+      "A": {"summary":"この結果は関係を振り返るための傾向の案内であり、確定的な予測ではありません。\n違いや期待を落ち着いて確かめたい範囲です。\n評価できる項目の中では、活動のエネルギーの項目が相対的に高く表れています。\n評価されていない項目があるため、確認できる結果を中心に参考にしてください。","strengths":[],"challenges":[],"advice":"感情の交流の項目では、互いの期待や無理のない関わり方を確かめてみてください。"},
+      "B": {"summary":"この結果は関係を振り返るための傾向の案内であり、確定的な予測ではありません。\n関係の調和を生かすことを考えられる範囲です。\n評価できる項目の中では、好みのすり合わせの項目が相対的に高く表れています。\n評価されていない項目があるため、確認できる結果を中心に参考にしてください。","strengths":[],"challenges":[],"advice":"日常の一貫性の項目では、互いの期待や無理のない関わり方を確かめてみてください。"},
+      "C": {"summary":"この結果は関係を振り返るための傾向の案内であり、確定的な予測ではありません。\nバランスを見ながら、互いに無理のない関わり方を探す範囲です。\n評価されていない項目があるため、確認できる結果を中心に参考にしてください。","strengths":[],"challenges":[],"advice":"互いの考えを確かめ、無理のないペースで対話してみてください。"},
+      "D": {"summary":"この結果は関係を振り返るための傾向の案内であり、確定的な予測ではありません。\n関係の調和を生かすことを考えられる範囲です。\n評価されていない項目があるため、確認できる結果を中心に参考にしてください。","strengths":[],"challenges":[],"advice":"互いの考えを確かめ、無理のないペースで対話してみてください。"}
+    },
+    "en-US": {
+      "A": {"summary":"This result offers tendencies for reflection, not a deterministic prediction.\nThis range invites a careful check of differences and expectations.\nAmong the available results, the area of activity and energy is relatively higher.\nSome areas were not evaluated, so use the available results as a limited reference.","strengths":[],"challenges":[],"advice":"For emotional exchange, consider checking each other's expectations and what feels comfortable."},
+      "B": {"summary":"This result offers tendencies for reflection, not a deterministic prediction.\nThis range suggests opportunities to draw on harmony in the relationship.\nAmong the available results, the area of coordination of preferences is relatively higher.\nSome areas were not evaluated, so use the available results as a limited reference.","strengths":[],"challenges":[],"advice":"For everyday consistency, consider checking each other's expectations and what feels comfortable."},
+      "C": {"summary":"This result offers tendencies for reflection, not a deterministic prediction.\nThis range invites attention to balance and a comfortable way of relating.\nSome areas were not evaluated, so use the available results as a limited reference.","strengths":[],"challenges":[],"advice":"Check in with each other and communicate at a comfortable pace."},
+      "D": {"summary":"This result offers tendencies for reflection, not a deterministic prediction.\nThis range suggests opportunities to draw on harmony in the relationship.\nSome areas were not evaluated, so use the available results as a limited reference.","strengths":[],"challenges":[],"advice":"Check in with each other and communicate at a comfortable pace."}
+    }
+  }
+}

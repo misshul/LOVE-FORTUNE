@@ -33,7 +33,7 @@ final class InterpretationService
         }
         if($content===null){
             try{$content=$this->fallback===null?InterpretationText::fallback($dto):($this->fallback)($dto);
-                if(InterpretationText::validate($content,$dto)!==[]){throw new \RuntimeException();}
+                if(InterpretationText::validateFallback($content,$dto)!==[]){throw new \RuntimeException();}
             }catch(\Throwable){throw new PublicError(503,'INTERPRETATION_UNAVAILABLE');}
         }
         return ['meta'=>['requestId'=>$requestId,'versions'=>$verified['result']['meta']['versions'],'aiPromptVersion'=>InterpretationText::VERSION,

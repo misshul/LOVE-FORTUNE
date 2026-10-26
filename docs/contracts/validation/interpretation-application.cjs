@@ -16,7 +16,12 @@ const schema=n=>ajv.getSchema('https://love-fortune.invalid/contracts/schemas/'+
 const response=schema('interpretation-response'),request=schema('interpretation-request');
 let accepted=0,rejected=0;
 function check(v,data,expected){assert.equal(v(data),expected,JSON.stringify(v.errors));expected?accepted++:rejected++;}
-for(const data of Object.values(rest.responses))check(response,data,true);
+for(const data of Object.values(rest.responses)){
+ check(response,data,true);
+ assert.equal(data.meta.aiPromptVersion,'AI_PROMPT_V2');
+ assert.deepEqual(data.strengths,[]);assert.deepEqual(data.challenges,[]);
+}
+// Retained nonempty evidence examples below exercise schema shape only, not V2 runtime acceptance.
 const fixture=rest.responses.Compatibility_ai;
 for(const [field,max] of [['summary',1200],['advice',1600]]){for(const n of [max,max+1]){const x=structuredClone(fixture);x[field]='😀'.repeat(n);check(response,x,n===max);}}
 for(const field of ['strengths','challenges']){for(const n of [5,6]){const x=structuredClone(fixture);x[field]=Array.from({length:n},()=>({text:'x',evidenceRefs:['ft_synthetic']}));check(response,x,n===5);}for(const n of [500,501]){const x=structuredClone(fixture);x[field]=[{text:'😀'.repeat(n),evidenceRefs:['ft_synthetic']}];check(response,x,n===500);}}

@@ -4,13 +4,13 @@ namespace LoveFortune\Core\Application\Interpretation;
 
 use LoveFortune\Core\Api\CanonicalJson;
 
-/** V1 fail-closed controlled language. Unsupported prose is repaired or falls back.
+/** V2 fail-closed controlled language. Unsupported prose is repaired or falls back.
  * This is an acceptance grammar, not a claim that regex proves arbitrary prose safe.
  * Each numeric/date clause is generated from a typed signed field, never a global number bag.
  */
 final class InterpretationText
 {
-    public const VERSION='AI_PROMPT_V1';
+    public const VERSION='AI_PROMPT_V2';
     public static function copy(string $locale): array
     {
         return match($locale){
@@ -59,14 +59,33 @@ final class InterpretationText
     }
     public static function fallback(array $dto): array
     {
+        if($dto['resultType']==='Compatibility'){
+            try{return CompatibilityFallback::content($dto);}
+            catch(\Throwable){return self::safeFallback($dto);}
+        }
         $c=self::copy($dto['locale']);$lines=self::clauses($dto);
         // Include one result-bound clause when available, without manufacturing a score.
         return ['summary'=>$c[0]."\n".($lines[3]??$c[2]),'strengths'=>[],'challenges'=>[],'advice'=>$c[1]];
     }
+    public static function safeFallback(array $dto): array
+    {
+        $c=self::copy($dto['locale']);
+        return ['summary'=>$c[0]."\n".$c[2],'strengths'=>[],'challenges'=>[],'advice'=>$c[1]];
+    }
+    public static function validateFallback(mixed $content,array $dto): array
+    {
+        if($content!==self::fallback($dto)){return ['FALLBACK_CONTENT'];}
+        return self::validate($content,$dto);
+    }
     public static function validate(mixed $content,array $dto): array
     {
         if(!is_array($content)||array_is_list($content)||count($content)!==4||array_diff(['summary','strengths','challenges','advice'],array_keys($content))!==[]){return ['SHAPE'];}
+        if($content['strengths']!==[]||$content['challenges']!==[]){return ['V2_EMPTY_ARRAYS'];}
         $allowed=self::clauses($dto);$allText=[];
+        if($dto['resultType']==='Compatibility'){
+            $expected=self::fallback($dto);
+            $allowed=[...$allowed,...explode("\n",$expected['summary']),$expected['advice']];
+        }
         foreach(['summary'=>1200,'advice'=>1600] as $key=>$max){
             if(!self::text($content[$key],$max)){return ['TEXT_LIMIT_OR_MARKUP'];}
             foreach(explode("\n",$content[$key]) as $line){if(!in_array(trim($line),$allowed,true)){return ['UNSUPPORTED_OR_UNGROUNDED_CONTENT'];}}
